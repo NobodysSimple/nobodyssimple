@@ -1,0 +1,2828 @@
+{
+  "courseId": "scams",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Editable curriculum map only; learning nodes must be independently authored and reviewed before publication.",
+  "books": [
+    {
+      "id": "scams-book-1",
+      "title": "Why clever people are deceived",
+      "distinction": "susceptibility versus intelligence",
+      "modules": [
+        {
+          "id": "scams-module-01",
+          "title": "Time pressure and cognitive overload",
+          "problem": "Time pressure and cognitive overload",
+          "lessons": [
+            {
+              "id": "scams-m1-l1",
+              "title": "Case file: Time pressure and cognitive overload",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Time pressure and cognitive overload.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m1-l2",
+              "title": "How the deception works: Time pressure and cognitive overload",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Time pressure and cognitive overload.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m1-l3",
+              "title": "Distinguish Time pressure and cognitive overload: susceptibility versus intelligence",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Time pressure and cognitive overload.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m1-l4",
+              "title": "Evidence investigation: Time pressure and cognitive overload",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Time pressure and cognitive overload.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m1-l5",
+              "title": "Protect choice and safety: Time pressure and cognitive overload",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Time pressure and cognitive overload.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m1-l6",
+              "title": "Transfer mission: Time pressure and cognitive overload",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Time pressure and cognitive overload.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-02",
+          "title": "Trust built before the request",
+          "problem": "Trust built before the request",
+          "lessons": [
+            {
+              "id": "scams-m2-l1",
+              "title": "Case file: Trust built before the request",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Trust built before the request.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m2-l2",
+              "title": "How the deception works: Trust built before the request",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Trust built before the request.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m2-l3",
+              "title": "Distinguish Trust built before the request: susceptibility versus intelligence",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Trust built before the request.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m2-l4",
+              "title": "Evidence investigation: Trust built before the request",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Trust built before the request.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m2-l5",
+              "title": "Protect choice and safety: Trust built before the request",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Trust built before the request.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m2-l6",
+              "title": "Transfer mission: Trust built before the request",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Trust built before the request.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-03",
+          "title": "When a familiar voice feels safe",
+          "problem": "When a familiar voice feels safe",
+          "lessons": [
+            {
+              "id": "scams-m3-l1",
+              "title": "Case file: When a familiar voice feels safe",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: When a familiar voice feels safe.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m3-l2",
+              "title": "How the deception works: When a familiar voice feels safe",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: When a familiar voice feels safe.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m3-l3",
+              "title": "Distinguish When a familiar voice feels safe: susceptibility versus intelligence",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: When a familiar voice feels safe.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m3-l4",
+              "title": "Evidence investigation: When a familiar voice feels safe",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: When a familiar voice feels safe.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m3-l5",
+              "title": "Protect choice and safety: When a familiar voice feels safe",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: When a familiar voice feels safe.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m3-l6",
+              "title": "Transfer mission: When a familiar voice feels safe",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: When a familiar voice feels safe.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-04",
+          "title": "Authority cues without authentication",
+          "problem": "Authority cues without authentication",
+          "lessons": [
+            {
+              "id": "scams-m4-l1",
+              "title": "Case file: Authority cues without authentication",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Authority cues without authentication.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m4-l2",
+              "title": "How the deception works: Authority cues without authentication",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Authority cues without authentication.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m4-l3",
+              "title": "Distinguish Authority cues without authentication: susceptibility versus intelligence",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Authority cues without authentication.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m4-l4",
+              "title": "Evidence investigation: Authority cues without authentication",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Authority cues without authentication.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m4-l5",
+              "title": "Protect choice and safety: Authority cues without authentication",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Authority cues without authentication.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m4-l6",
+              "title": "Transfer mission: Authority cues without authentication",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Authority cues without authentication.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-05",
+          "title": "Shame that prevents reporting",
+          "problem": "Shame that prevents reporting",
+          "lessons": [
+            {
+              "id": "scams-m5-l1",
+              "title": "Case file: Shame that prevents reporting",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Shame that prevents reporting.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m5-l2",
+              "title": "How the deception works: Shame that prevents reporting",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Shame that prevents reporting.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m5-l3",
+              "title": "Distinguish Shame that prevents reporting: susceptibility versus intelligence",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Shame that prevents reporting.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m5-l4",
+              "title": "Evidence investigation: Shame that prevents reporting",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Shame that prevents reporting.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m5-l5",
+              "title": "Protect choice and safety: Shame that prevents reporting",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Shame that prevents reporting.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m5-l6",
+              "title": "Transfer mission: Shame that prevents reporting",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Shame that prevents reporting.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scams-book-2",
+      "title": "Urgency and fear tactics",
+      "distinction": "real emergency versus manufactured urgency",
+      "modules": [
+        {
+          "id": "scams-module-06",
+          "title": "Suspicious account-lock warnings",
+          "problem": "Suspicious account-lock warnings",
+          "lessons": [
+            {
+              "id": "scams-m6-l1",
+              "title": "Case file: Suspicious account-lock warnings",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Suspicious account-lock warnings.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m6-l2",
+              "title": "How the deception works: Suspicious account-lock warnings",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Suspicious account-lock warnings.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m6-l3",
+              "title": "Distinguish Suspicious account-lock warnings: real emergency versus manufactured urgency",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Suspicious account-lock warnings.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m6-l4",
+              "title": "Evidence investigation: Suspicious account-lock warnings",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Suspicious account-lock warnings.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m6-l5",
+              "title": "Protect choice and safety: Suspicious account-lock warnings",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Suspicious account-lock warnings.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m6-l6",
+              "title": "Transfer mission: Suspicious account-lock warnings",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Suspicious account-lock warnings.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-07",
+          "title": "Family emergency impersonation",
+          "problem": "Family emergency impersonation",
+          "lessons": [
+            {
+              "id": "scams-m7-l1",
+              "title": "Case file: Family emergency impersonation",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Family emergency impersonation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m7-l2",
+              "title": "How the deception works: Family emergency impersonation",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Family emergency impersonation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m7-l3",
+              "title": "Distinguish Family emergency impersonation: real emergency versus manufactured urgency",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Family emergency impersonation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m7-l4",
+              "title": "Evidence investigation: Family emergency impersonation",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Family emergency impersonation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m7-l5",
+              "title": "Protect choice and safety: Family emergency impersonation",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Family emergency impersonation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m7-l6",
+              "title": "Transfer mission: Family emergency impersonation",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Family emergency impersonation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-08",
+          "title": "Threats of legal consequences",
+          "problem": "Threats of legal consequences",
+          "lessons": [
+            {
+              "id": "scams-m8-l1",
+              "title": "Case file: Threats of legal consequences",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Threats of legal consequences.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m8-l2",
+              "title": "How the deception works: Threats of legal consequences",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Threats of legal consequences.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m8-l3",
+              "title": "Distinguish Threats of legal consequences: real emergency versus manufactured urgency",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Threats of legal consequences.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m8-l4",
+              "title": "Evidence investigation: Threats of legal consequences",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Threats of legal consequences.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m8-l5",
+              "title": "Protect choice and safety: Threats of legal consequences",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Threats of legal consequences.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m8-l6",
+              "title": "Transfer mission: Threats of legal consequences",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Threats of legal consequences.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-09",
+          "title": "Pressure to keep a secret",
+          "problem": "Pressure to keep a secret",
+          "lessons": [
+            {
+              "id": "scams-m9-l1",
+              "title": "Case file: Pressure to keep a secret",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Pressure to keep a secret.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m9-l2",
+              "title": "How the deception works: Pressure to keep a secret",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Pressure to keep a secret.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m9-l3",
+              "title": "Distinguish Pressure to keep a secret: real emergency versus manufactured urgency",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Pressure to keep a secret.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m9-l4",
+              "title": "Evidence investigation: Pressure to keep a secret",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Pressure to keep a secret.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m9-l5",
+              "title": "Protect choice and safety: Pressure to keep a secret",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Pressure to keep a secret.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m9-l6",
+              "title": "Transfer mission: Pressure to keep a secret",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Pressure to keep a secret.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-10",
+          "title": "Interrupting the urgency cycle",
+          "problem": "Interrupting the urgency cycle",
+          "lessons": [
+            {
+              "id": "scams-m10-l1",
+              "title": "Case file: Interrupting the urgency cycle",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Interrupting the urgency cycle.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m10-l2",
+              "title": "How the deception works: Interrupting the urgency cycle",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Interrupting the urgency cycle.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m10-l3",
+              "title": "Distinguish Interrupting the urgency cycle: real emergency versus manufactured urgency",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Interrupting the urgency cycle.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m10-l4",
+              "title": "Evidence investigation: Interrupting the urgency cycle",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Interrupting the urgency cycle.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m10-l5",
+              "title": "Protect choice and safety: Interrupting the urgency cycle",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Interrupting the urgency cycle.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m10-l6",
+              "title": "Transfer mission: Interrupting the urgency cycle",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Interrupting the urgency cycle.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scams-book-3",
+      "title": "Authority and institutional mimicry",
+      "distinction": "official appearance versus authenticity",
+      "modules": [
+        {
+          "id": "scams-module-11",
+          "title": "Spoofed calls and sender names",
+          "problem": "Spoofed calls and sender names",
+          "lessons": [
+            {
+              "id": "scams-m11-l1",
+              "title": "Case file: Spoofed calls and sender names",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Spoofed calls and sender names.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m11-l2",
+              "title": "How the deception works: Spoofed calls and sender names",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Spoofed calls and sender names.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m11-l3",
+              "title": "Distinguish Spoofed calls and sender names: official appearance versus authenticity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Spoofed calls and sender names.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m11-l4",
+              "title": "Evidence investigation: Spoofed calls and sender names",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Spoofed calls and sender names.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m11-l5",
+              "title": "Protect choice and safety: Spoofed calls and sender names",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Spoofed calls and sender names.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m11-l6",
+              "title": "Transfer mission: Spoofed calls and sender names",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Spoofed calls and sender names.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-12",
+          "title": "Fake government letters",
+          "problem": "Fake government letters",
+          "lessons": [
+            {
+              "id": "scams-m12-l1",
+              "title": "Case file: Fake government letters",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Fake government letters.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m12-l2",
+              "title": "How the deception works: Fake government letters",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Fake government letters.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m12-l3",
+              "title": "Distinguish Fake government letters: official appearance versus authenticity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Fake government letters.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m12-l4",
+              "title": "Evidence investigation: Fake government letters",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Fake government letters.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m12-l5",
+              "title": "Protect choice and safety: Fake government letters",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Fake government letters.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m12-l6",
+              "title": "Transfer mission: Fake government letters",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Fake government letters.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-13",
+          "title": "Imitation bank security teams",
+          "problem": "Imitation bank security teams",
+          "lessons": [
+            {
+              "id": "scams-m13-l1",
+              "title": "Case file: Imitation bank security teams",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Imitation bank security teams.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m13-l2",
+              "title": "How the deception works: Imitation bank security teams",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Imitation bank security teams.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m13-l3",
+              "title": "Distinguish Imitation bank security teams: official appearance versus authenticity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Imitation bank security teams.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m13-l4",
+              "title": "Evidence investigation: Imitation bank security teams",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Imitation bank security teams.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m13-l5",
+              "title": "Protect choice and safety: Imitation bank security teams",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Imitation bank security teams.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m13-l6",
+              "title": "Transfer mission: Imitation bank security teams",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Imitation bank security teams.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-14",
+          "title": "Employer and executive impersonation",
+          "problem": "Employer and executive impersonation",
+          "lessons": [
+            {
+              "id": "scams-m14-l1",
+              "title": "Case file: Employer and executive impersonation",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Employer and executive impersonation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m14-l2",
+              "title": "How the deception works: Employer and executive impersonation",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Employer and executive impersonation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m14-l3",
+              "title": "Distinguish Employer and executive impersonation: official appearance versus authenticity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Employer and executive impersonation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m14-l4",
+              "title": "Evidence investigation: Employer and executive impersonation",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Employer and executive impersonation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m14-l5",
+              "title": "Protect choice and safety: Employer and executive impersonation",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Employer and executive impersonation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m14-l6",
+              "title": "Transfer mission: Employer and executive impersonation",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Employer and executive impersonation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-15",
+          "title": "Verifying via independent contact routes",
+          "problem": "Verifying via independent contact routes",
+          "lessons": [
+            {
+              "id": "scams-m15-l1",
+              "title": "Case file: Verifying via independent contact routes",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Verifying via independent contact routes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m15-l2",
+              "title": "How the deception works: Verifying via independent contact routes",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Verifying via independent contact routes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m15-l3",
+              "title": "Distinguish Verifying via independent contact routes: official appearance versus authenticity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Verifying via independent contact routes.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m15-l4",
+              "title": "Evidence investigation: Verifying via independent contact routes",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Verifying via independent contact routes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m15-l5",
+              "title": "Protect choice and safety: Verifying via independent contact routes",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Verifying via independent contact routes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m15-l6",
+              "title": "Transfer mission: Verifying via independent contact routes",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Verifying via independent contact routes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scams-book-4",
+      "title": "Romance and relationship fraud",
+      "distinction": "emotional connection versus financial exploitation",
+      "modules": [
+        {
+          "id": "scams-module-16",
+          "title": "Rapid attachment and future promises",
+          "problem": "Rapid attachment and future promises",
+          "lessons": [
+            {
+              "id": "scams-m16-l1",
+              "title": "Case file: Rapid attachment and future promises",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Rapid attachment and future promises.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m16-l2",
+              "title": "How the deception works: Rapid attachment and future promises",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Rapid attachment and future promises.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m16-l3",
+              "title": "Distinguish Rapid attachment and future promises: emotional connection versus financial exploitation",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Rapid attachment and future promises.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m16-l4",
+              "title": "Evidence investigation: Rapid attachment and future promises",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Rapid attachment and future promises.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m16-l5",
+              "title": "Protect choice and safety: Rapid attachment and future promises",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Rapid attachment and future promises.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m16-l6",
+              "title": "Transfer mission: Rapid attachment and future promises",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Rapid attachment and future promises.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-17",
+          "title": "Requests for travel or medical money",
+          "problem": "Requests for travel or medical money",
+          "lessons": [
+            {
+              "id": "scams-m17-l1",
+              "title": "Case file: Requests for travel or medical money",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Requests for travel or medical money.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m17-l2",
+              "title": "How the deception works: Requests for travel or medical money",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Requests for travel or medical money.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m17-l3",
+              "title": "Distinguish Requests for travel or medical money: emotional connection versus financial exploitation",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Requests for travel or medical money.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m17-l4",
+              "title": "Evidence investigation: Requests for travel or medical money",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Requests for travel or medical money.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m17-l5",
+              "title": "Protect choice and safety: Requests for travel or medical money",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Requests for travel or medical money.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m17-l6",
+              "title": "Transfer mission: Requests for travel or medical money",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Requests for travel or medical money.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-18",
+          "title": "Isolation from skeptical friends",
+          "problem": "Isolation from skeptical friends",
+          "lessons": [
+            {
+              "id": "scams-m18-l1",
+              "title": "Case file: Isolation from skeptical friends",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Isolation from skeptical friends.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m18-l2",
+              "title": "How the deception works: Isolation from skeptical friends",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Isolation from skeptical friends.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m18-l3",
+              "title": "Distinguish Isolation from skeptical friends: emotional connection versus financial exploitation",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Isolation from skeptical friends.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m18-l4",
+              "title": "Evidence investigation: Isolation from skeptical friends",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Isolation from skeptical friends.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m18-l5",
+              "title": "Protect choice and safety: Isolation from skeptical friends",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Isolation from skeptical friends.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m18-l6",
+              "title": "Transfer mission: Isolation from skeptical friends",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Isolation from skeptical friends.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-19",
+          "title": "Shame after emotional investment",
+          "problem": "Shame after emotional investment",
+          "lessons": [
+            {
+              "id": "scams-m19-l1",
+              "title": "Case file: Shame after emotional investment",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Shame after emotional investment.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m19-l2",
+              "title": "How the deception works: Shame after emotional investment",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Shame after emotional investment.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m19-l3",
+              "title": "Distinguish Shame after emotional investment: emotional connection versus financial exploitation",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Shame after emotional investment.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m19-l4",
+              "title": "Evidence investigation: Shame after emotional investment",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Shame after emotional investment.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m19-l5",
+              "title": "Protect choice and safety: Shame after emotional investment",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Shame after emotional investment.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m19-l6",
+              "title": "Transfer mission: Shame after emotional investment",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Shame after emotional investment.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-20",
+          "title": "Leaving without unsafe confrontation",
+          "problem": "Leaving without unsafe confrontation",
+          "lessons": [
+            {
+              "id": "scams-m20-l1",
+              "title": "Case file: Leaving without unsafe confrontation",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Leaving without unsafe confrontation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m20-l2",
+              "title": "How the deception works: Leaving without unsafe confrontation",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Leaving without unsafe confrontation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m20-l3",
+              "title": "Distinguish Leaving without unsafe confrontation: emotional connection versus financial exploitation",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Leaving without unsafe confrontation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m20-l4",
+              "title": "Evidence investigation: Leaving without unsafe confrontation",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Leaving without unsafe confrontation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m20-l5",
+              "title": "Protect choice and safety: Leaving without unsafe confrontation",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Leaving without unsafe confrontation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m20-l6",
+              "title": "Transfer mission: Leaving without unsafe confrontation",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Leaving without unsafe confrontation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scams-book-5",
+      "title": "Investment and financial deception",
+      "distinction": "return claims versus evidence",
+      "modules": [
+        {
+          "id": "scams-module-21",
+          "title": "Guaranteed profits and improbable returns",
+          "problem": "Guaranteed profits and improbable returns",
+          "lessons": [
+            {
+              "id": "scams-m21-l1",
+              "title": "Case file: Guaranteed profits and improbable returns",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Guaranteed profits and improbable returns.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m21-l2",
+              "title": "How the deception works: Guaranteed profits and improbable returns",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Guaranteed profits and improbable returns.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m21-l3",
+              "title": "Distinguish Guaranteed profits and improbable returns: return claims versus evidence",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Guaranteed profits and improbable returns.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m21-l4",
+              "title": "Evidence investigation: Guaranteed profits and improbable returns",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Guaranteed profits and improbable returns.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m21-l5",
+              "title": "Protect choice and safety: Guaranteed profits and improbable returns",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Guaranteed profits and improbable returns.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m21-l6",
+              "title": "Transfer mission: Guaranteed profits and improbable returns",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Guaranteed profits and improbable returns.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-22",
+          "title": "Social proof from fabricated testimonials",
+          "problem": "Social proof from fabricated testimonials",
+          "lessons": [
+            {
+              "id": "scams-m22-l1",
+              "title": "Case file: Social proof from fabricated testimonials",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Social proof from fabricated testimonials.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m22-l2",
+              "title": "How the deception works: Social proof from fabricated testimonials",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Social proof from fabricated testimonials.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m22-l3",
+              "title": "Distinguish Social proof from fabricated testimonials: return claims versus evidence",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Social proof from fabricated testimonials.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m22-l4",
+              "title": "Evidence investigation: Social proof from fabricated testimonials",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Social proof from fabricated testimonials.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m22-l5",
+              "title": "Protect choice and safety: Social proof from fabricated testimonials",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Social proof from fabricated testimonials.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m22-l6",
+              "title": "Transfer mission: Social proof from fabricated testimonials",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Social proof from fabricated testimonials.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-23",
+          "title": "Ponzi-style payment narratives",
+          "problem": "Ponzi-style payment narratives",
+          "lessons": [
+            {
+              "id": "scams-m23-l1",
+              "title": "Case file: Ponzi-style payment narratives",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Ponzi-style payment narratives.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m23-l2",
+              "title": "How the deception works: Ponzi-style payment narratives",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Ponzi-style payment narratives.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m23-l3",
+              "title": "Distinguish Ponzi-style payment narratives: return claims versus evidence",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Ponzi-style payment narratives.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m23-l4",
+              "title": "Evidence investigation: Ponzi-style payment narratives",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Ponzi-style payment narratives.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m23-l5",
+              "title": "Protect choice and safety: Ponzi-style payment narratives",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Ponzi-style payment narratives.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m23-l6",
+              "title": "Transfer mission: Ponzi-style payment narratives",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Ponzi-style payment narratives.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-24",
+          "title": "Crypto and app-based deception",
+          "problem": "Crypto and app-based deception",
+          "lessons": [
+            {
+              "id": "scams-m24-l1",
+              "title": "Case file: Crypto and app-based deception",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Crypto and app-based deception.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m24-l2",
+              "title": "How the deception works: Crypto and app-based deception",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Crypto and app-based deception.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m24-l3",
+              "title": "Distinguish Crypto and app-based deception: return claims versus evidence",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Crypto and app-based deception.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m24-l4",
+              "title": "Evidence investigation: Crypto and app-based deception",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Crypto and app-based deception.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m24-l5",
+              "title": "Protect choice and safety: Crypto and app-based deception",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Crypto and app-based deception.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m24-l6",
+              "title": "Transfer mission: Crypto and app-based deception",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Crypto and app-based deception.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-25",
+          "title": "Recovery scams after a previous loss",
+          "problem": "Recovery scams after a previous loss",
+          "lessons": [
+            {
+              "id": "scams-m25-l1",
+              "title": "Case file: Recovery scams after a previous loss",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Recovery scams after a previous loss.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m25-l2",
+              "title": "How the deception works: Recovery scams after a previous loss",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Recovery scams after a previous loss.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m25-l3",
+              "title": "Distinguish Recovery scams after a previous loss: return claims versus evidence",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Recovery scams after a previous loss.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m25-l4",
+              "title": "Evidence investigation: Recovery scams after a previous loss",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Recovery scams after a previous loss.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m25-l5",
+              "title": "Protect choice and safety: Recovery scams after a previous loss",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Recovery scams after a previous loss.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m25-l6",
+              "title": "Transfer mission: Recovery scams after a previous loss",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Recovery scams after a previous loss.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scams-book-6",
+      "title": "Digital technical tactics",
+      "distinction": "authentic interface versus secure action",
+      "modules": [
+        {
+          "id": "scams-module-26",
+          "title": "Phishing links and fake login pages",
+          "problem": "Phishing links and fake login pages",
+          "lessons": [
+            {
+              "id": "scams-m26-l1",
+              "title": "Case file: Phishing links and fake login pages",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Phishing links and fake login pages.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m26-l2",
+              "title": "How the deception works: Phishing links and fake login pages",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Phishing links and fake login pages.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m26-l3",
+              "title": "Distinguish Phishing links and fake login pages: authentic interface versus secure action",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Phishing links and fake login pages.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m26-l4",
+              "title": "Evidence investigation: Phishing links and fake login pages",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Phishing links and fake login pages.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m26-l5",
+              "title": "Protect choice and safety: Phishing links and fake login pages",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Phishing links and fake login pages.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m26-l6",
+              "title": "Transfer mission: Phishing links and fake login pages",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Phishing links and fake login pages.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-27",
+          "title": "QR-code redirection and hidden destinations",
+          "problem": "QR-code redirection and hidden destinations",
+          "lessons": [
+            {
+              "id": "scams-m27-l1",
+              "title": "Case file: QR-code redirection and hidden destinations",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: QR-code redirection and hidden destinations.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m27-l2",
+              "title": "How the deception works: QR-code redirection and hidden destinations",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: QR-code redirection and hidden destinations.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m27-l3",
+              "title": "Distinguish QR-code redirection and hidden destinations: authentic interface versus secure action",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: QR-code redirection and hidden destinations.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m27-l4",
+              "title": "Evidence investigation: QR-code redirection and hidden destinations",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: QR-code redirection and hidden destinations.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m27-l5",
+              "title": "Protect choice and safety: QR-code redirection and hidden destinations",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: QR-code redirection and hidden destinations.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m27-l6",
+              "title": "Transfer mission: QR-code redirection and hidden destinations",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: QR-code redirection and hidden destinations.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-28",
+          "title": "Malicious attachments and permissions",
+          "problem": "Malicious attachments and permissions",
+          "lessons": [
+            {
+              "id": "scams-m28-l1",
+              "title": "Case file: Malicious attachments and permissions",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Malicious attachments and permissions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m28-l2",
+              "title": "How the deception works: Malicious attachments and permissions",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Malicious attachments and permissions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m28-l3",
+              "title": "Distinguish Malicious attachments and permissions: authentic interface versus secure action",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Malicious attachments and permissions.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m28-l4",
+              "title": "Evidence investigation: Malicious attachments and permissions",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Malicious attachments and permissions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m28-l5",
+              "title": "Protect choice and safety: Malicious attachments and permissions",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Malicious attachments and permissions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m28-l6",
+              "title": "Transfer mission: Malicious attachments and permissions",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Malicious attachments and permissions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-29",
+          "title": "Deepfake voices and video persuasion",
+          "problem": "Deepfake voices and video persuasion",
+          "lessons": [
+            {
+              "id": "scams-m29-l1",
+              "title": "Case file: Deepfake voices and video persuasion",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Deepfake voices and video persuasion.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m29-l2",
+              "title": "How the deception works: Deepfake voices and video persuasion",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Deepfake voices and video persuasion.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m29-l3",
+              "title": "Distinguish Deepfake voices and video persuasion: authentic interface versus secure action",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Deepfake voices and video persuasion.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m29-l4",
+              "title": "Evidence investigation: Deepfake voices and video persuasion",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Deepfake voices and video persuasion.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m29-l5",
+              "title": "Protect choice and safety: Deepfake voices and video persuasion",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Deepfake voices and video persuasion.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m29-l6",
+              "title": "Transfer mission: Deepfake voices and video persuasion",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Deepfake voices and video persuasion.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-30",
+          "title": "Account takeover and password reuse",
+          "problem": "Account takeover and password reuse",
+          "lessons": [
+            {
+              "id": "scams-m30-l1",
+              "title": "Case file: Account takeover and password reuse",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Account takeover and password reuse.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m30-l2",
+              "title": "How the deception works: Account takeover and password reuse",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Account takeover and password reuse.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m30-l3",
+              "title": "Distinguish Account takeover and password reuse: authentic interface versus secure action",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Account takeover and password reuse.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m30-l4",
+              "title": "Evidence investigation: Account takeover and password reuse",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Account takeover and password reuse.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m30-l5",
+              "title": "Protect choice and safety: Account takeover and password reuse",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Account takeover and password reuse.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m30-l6",
+              "title": "Transfer mission: Account takeover and password reuse",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Account takeover and password reuse.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scams-book-7",
+      "title": "Social psychology of compliance",
+      "distinction": "consent versus manipulated choice",
+      "modules": [
+        {
+          "id": "scams-module-31",
+          "title": "Reciprocity and small favours",
+          "problem": "Reciprocity and small favours",
+          "lessons": [
+            {
+              "id": "scams-m31-l1",
+              "title": "Case file: Reciprocity and small favours",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Reciprocity and small favours.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m31-l2",
+              "title": "How the deception works: Reciprocity and small favours",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Reciprocity and small favours.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m31-l3",
+              "title": "Distinguish Reciprocity and small favours: consent versus manipulated choice",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Reciprocity and small favours.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m31-l4",
+              "title": "Evidence investigation: Reciprocity and small favours",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Reciprocity and small favours.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m31-l5",
+              "title": "Protect choice and safety: Reciprocity and small favours",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Reciprocity and small favours.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m31-l6",
+              "title": "Transfer mission: Reciprocity and small favours",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Reciprocity and small favours.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-32",
+          "title": "Commitment escalation and sunk costs",
+          "problem": "Commitment escalation and sunk costs",
+          "lessons": [
+            {
+              "id": "scams-m32-l1",
+              "title": "Case file: Commitment escalation and sunk costs",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Commitment escalation and sunk costs.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m32-l2",
+              "title": "How the deception works: Commitment escalation and sunk costs",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Commitment escalation and sunk costs.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m32-l3",
+              "title": "Distinguish Commitment escalation and sunk costs: consent versus manipulated choice",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Commitment escalation and sunk costs.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m32-l4",
+              "title": "Evidence investigation: Commitment escalation and sunk costs",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Commitment escalation and sunk costs.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m32-l5",
+              "title": "Protect choice and safety: Commitment escalation and sunk costs",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Commitment escalation and sunk costs.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m32-l6",
+              "title": "Transfer mission: Commitment escalation and sunk costs",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Commitment escalation and sunk costs.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-33",
+          "title": "Scarcity and limited-time decisions",
+          "problem": "Scarcity and limited-time decisions",
+          "lessons": [
+            {
+              "id": "scams-m33-l1",
+              "title": "Case file: Scarcity and limited-time decisions",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Scarcity and limited-time decisions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m33-l2",
+              "title": "How the deception works: Scarcity and limited-time decisions",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Scarcity and limited-time decisions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m33-l3",
+              "title": "Distinguish Scarcity and limited-time decisions: consent versus manipulated choice",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Scarcity and limited-time decisions.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m33-l4",
+              "title": "Evidence investigation: Scarcity and limited-time decisions",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Scarcity and limited-time decisions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m33-l5",
+              "title": "Protect choice and safety: Scarcity and limited-time decisions",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Scarcity and limited-time decisions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m33-l6",
+              "title": "Transfer mission: Scarcity and limited-time decisions",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Scarcity and limited-time decisions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-34",
+          "title": "Group pressure and fear of exclusion",
+          "problem": "Group pressure and fear of exclusion",
+          "lessons": [
+            {
+              "id": "scams-m34-l1",
+              "title": "Case file: Group pressure and fear of exclusion",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Group pressure and fear of exclusion.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m34-l2",
+              "title": "How the deception works: Group pressure and fear of exclusion",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Group pressure and fear of exclusion.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m34-l3",
+              "title": "Distinguish Group pressure and fear of exclusion: consent versus manipulated choice",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Group pressure and fear of exclusion.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m34-l4",
+              "title": "Evidence investigation: Group pressure and fear of exclusion",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Group pressure and fear of exclusion.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m34-l5",
+              "title": "Protect choice and safety: Group pressure and fear of exclusion",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Group pressure and fear of exclusion.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m34-l6",
+              "title": "Transfer mission: Group pressure and fear of exclusion",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Group pressure and fear of exclusion.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-35",
+          "title": "Trusted relationship used as a channel",
+          "problem": "Trusted relationship used as a channel",
+          "lessons": [
+            {
+              "id": "scams-m35-l1",
+              "title": "Case file: Trusted relationship used as a channel",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Trusted relationship used as a channel.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m35-l2",
+              "title": "How the deception works: Trusted relationship used as a channel",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Trusted relationship used as a channel.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m35-l3",
+              "title": "Distinguish Trusted relationship used as a channel: consent versus manipulated choice",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Trusted relationship used as a channel.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m35-l4",
+              "title": "Evidence investigation: Trusted relationship used as a channel",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Trusted relationship used as a channel.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m35-l5",
+              "title": "Protect choice and safety: Trusted relationship used as a channel",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Trusted relationship used as a channel.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m35-l6",
+              "title": "Transfer mission: Trusted relationship used as a channel",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Trusted relationship used as a channel.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scams-book-8",
+      "title": "Prevention and response",
+      "distinction": "panic versus practical containment",
+      "modules": [
+        {
+          "id": "scams-module-36",
+          "title": "Pause and verify through another channel",
+          "problem": "Pause and verify through another channel",
+          "lessons": [
+            {
+              "id": "scams-m36-l1",
+              "title": "Case file: Pause and verify through another channel",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Pause and verify through another channel.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m36-l2",
+              "title": "How the deception works: Pause and verify through another channel",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Pause and verify through another channel.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m36-l3",
+              "title": "Distinguish Pause and verify through another channel: panic versus practical containment",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Pause and verify through another channel.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m36-l4",
+              "title": "Evidence investigation: Pause and verify through another channel",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Pause and verify through another channel.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m36-l5",
+              "title": "Protect choice and safety: Pause and verify through another channel",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Pause and verify through another channel.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m36-l6",
+              "title": "Transfer mission: Pause and verify through another channel",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Pause and verify through another channel.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-37",
+          "title": "What to do after sharing a password",
+          "problem": "What to do after sharing a password",
+          "lessons": [
+            {
+              "id": "scams-m37-l1",
+              "title": "Case file: What to do after sharing a password",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: What to do after sharing a password.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m37-l2",
+              "title": "How the deception works: What to do after sharing a password",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: What to do after sharing a password.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m37-l3",
+              "title": "Distinguish What to do after sharing a password: panic versus practical containment",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: What to do after sharing a password.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m37-l4",
+              "title": "Evidence investigation: What to do after sharing a password",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: What to do after sharing a password.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m37-l5",
+              "title": "Protect choice and safety: What to do after sharing a password",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: What to do after sharing a password.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m37-l6",
+              "title": "Transfer mission: What to do after sharing a password",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: What to do after sharing a password.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-38",
+          "title": "Responding after a financial transfer",
+          "problem": "Responding after a financial transfer",
+          "lessons": [
+            {
+              "id": "scams-m38-l1",
+              "title": "Case file: Responding after a financial transfer",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Responding after a financial transfer.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m38-l2",
+              "title": "How the deception works: Responding after a financial transfer",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Responding after a financial transfer.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m38-l3",
+              "title": "Distinguish Responding after a financial transfer: panic versus practical containment",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Responding after a financial transfer.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m38-l4",
+              "title": "Evidence investigation: Responding after a financial transfer",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Responding after a financial transfer.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m38-l5",
+              "title": "Protect choice and safety: Responding after a financial transfer",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Responding after a financial transfer.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m38-l6",
+              "title": "Transfer mission: Responding after a financial transfer",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Responding after a financial transfer.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-39",
+          "title": "Preserving useful records safely",
+          "problem": "Preserving useful records safely",
+          "lessons": [
+            {
+              "id": "scams-m39-l1",
+              "title": "Case file: Preserving useful records safely",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Preserving useful records safely.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m39-l2",
+              "title": "How the deception works: Preserving useful records safely",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Preserving useful records safely.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m39-l3",
+              "title": "Distinguish Preserving useful records safely: panic versus practical containment",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Preserving useful records safely.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m39-l4",
+              "title": "Evidence investigation: Preserving useful records safely",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Preserving useful records safely.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m39-l5",
+              "title": "Protect choice and safety: Preserving useful records safely",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Preserving useful records safely.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m39-l6",
+              "title": "Transfer mission: Preserving useful records safely",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Preserving useful records safely.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-40",
+          "title": "Getting assistance without secondary scams",
+          "problem": "Getting assistance without secondary scams",
+          "lessons": [
+            {
+              "id": "scams-m40-l1",
+              "title": "Case file: Getting assistance without secondary scams",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Getting assistance without secondary scams.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m40-l2",
+              "title": "How the deception works: Getting assistance without secondary scams",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Getting assistance without secondary scams.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m40-l3",
+              "title": "Distinguish Getting assistance without secondary scams: panic versus practical containment",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Getting assistance without secondary scams.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m40-l4",
+              "title": "Evidence investigation: Getting assistance without secondary scams",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Getting assistance without secondary scams.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m40-l5",
+              "title": "Protect choice and safety: Getting assistance without secondary scams",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Getting assistance without secondary scams.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m40-l6",
+              "title": "Transfer mission: Getting assistance without secondary scams",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Getting assistance without secondary scams.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scams-book-9",
+      "title": "Social distribution of fraud risk",
+      "distinction": "personal vigilance versus institutional responsibility",
+      "modules": [
+        {
+          "id": "scams-module-41",
+          "title": "Older adults and stereotypes",
+          "problem": "Older adults and stereotypes",
+          "lessons": [
+            {
+              "id": "scams-m41-l1",
+              "title": "Case file: Older adults and stereotypes",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Older adults and stereotypes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m41-l2",
+              "title": "How the deception works: Older adults and stereotypes",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Older adults and stereotypes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m41-l3",
+              "title": "Distinguish Older adults and stereotypes: personal vigilance versus institutional responsibility",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Older adults and stereotypes.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m41-l4",
+              "title": "Evidence investigation: Older adults and stereotypes",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Older adults and stereotypes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m41-l5",
+              "title": "Protect choice and safety: Older adults and stereotypes",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Older adults and stereotypes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m41-l6",
+              "title": "Transfer mission: Older adults and stereotypes",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Older adults and stereotypes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-42",
+          "title": "Language and immigration barriers",
+          "problem": "Language and immigration barriers",
+          "lessons": [
+            {
+              "id": "scams-m42-l1",
+              "title": "Case file: Language and immigration barriers",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Language and immigration barriers.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m42-l2",
+              "title": "How the deception works: Language and immigration barriers",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Language and immigration barriers.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m42-l3",
+              "title": "Distinguish Language and immigration barriers: personal vigilance versus institutional responsibility",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Language and immigration barriers.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m42-l4",
+              "title": "Evidence investigation: Language and immigration barriers",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Language and immigration barriers.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m42-l5",
+              "title": "Protect choice and safety: Language and immigration barriers",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Language and immigration barriers.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m42-l6",
+              "title": "Transfer mission: Language and immigration barriers",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Language and immigration barriers.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-43",
+          "title": "Disability accessibility and scam prevention",
+          "problem": "Disability accessibility and scam prevention",
+          "lessons": [
+            {
+              "id": "scams-m43-l1",
+              "title": "Case file: Disability accessibility and scam prevention",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Disability accessibility and scam prevention.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m43-l2",
+              "title": "How the deception works: Disability accessibility and scam prevention",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Disability accessibility and scam prevention.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m43-l3",
+              "title": "Distinguish Disability accessibility and scam prevention: personal vigilance versus institutional responsibility",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Disability accessibility and scam prevention.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m43-l4",
+              "title": "Evidence investigation: Disability accessibility and scam prevention",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Disability accessibility and scam prevention.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m43-l5",
+              "title": "Protect choice and safety: Disability accessibility and scam prevention",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Disability accessibility and scam prevention.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m43-l6",
+              "title": "Transfer mission: Disability accessibility and scam prevention",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Disability accessibility and scam prevention.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-44",
+          "title": "Platform advertisements carrying fraud",
+          "problem": "Platform advertisements carrying fraud",
+          "lessons": [
+            {
+              "id": "scams-m44-l1",
+              "title": "Case file: Platform advertisements carrying fraud",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Platform advertisements carrying fraud.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m44-l2",
+              "title": "How the deception works: Platform advertisements carrying fraud",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Platform advertisements carrying fraud.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m44-l3",
+              "title": "Distinguish Platform advertisements carrying fraud: personal vigilance versus institutional responsibility",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Platform advertisements carrying fraud.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m44-l4",
+              "title": "Evidence investigation: Platform advertisements carrying fraud",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Platform advertisements carrying fraud.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m44-l5",
+              "title": "Protect choice and safety: Platform advertisements carrying fraud",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Platform advertisements carrying fraud.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m44-l6",
+              "title": "Transfer mission: Platform advertisements carrying fraud",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Platform advertisements carrying fraud.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-45",
+          "title": "Responsibilities of banks and technology firms",
+          "problem": "Responsibilities of banks and technology firms",
+          "lessons": [
+            {
+              "id": "scams-m45-l1",
+              "title": "Case file: Responsibilities of banks and technology firms",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Responsibilities of banks and technology firms.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m45-l2",
+              "title": "How the deception works: Responsibilities of banks and technology firms",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Responsibilities of banks and technology firms.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m45-l3",
+              "title": "Distinguish Responsibilities of banks and technology firms: personal vigilance versus institutional responsibility",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Responsibilities of banks and technology firms.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m45-l4",
+              "title": "Evidence investigation: Responsibilities of banks and technology firms",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Responsibilities of banks and technology firms.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m45-l5",
+              "title": "Protect choice and safety: Responsibilities of banks and technology firms",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Responsibilities of banks and technology firms.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m45-l6",
+              "title": "Transfer mission: Responsibilities of banks and technology firms",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Responsibilities of banks and technology firms.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scams-book-10",
+      "title": "Advanced deception cases",
+      "distinction": "strange detail versus reliable red flag",
+      "modules": [
+        {
+          "id": "scams-module-46",
+          "title": "A legitimate request that looks suspicious",
+          "problem": "A legitimate request that looks suspicious",
+          "lessons": [
+            {
+              "id": "scams-m46-l1",
+              "title": "Case file: A legitimate request that looks suspicious",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: A legitimate request that looks suspicious.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m46-l2",
+              "title": "How the deception works: A legitimate request that looks suspicious",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: A legitimate request that looks suspicious.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m46-l3",
+              "title": "Distinguish A legitimate request that looks suspicious: strange detail versus reliable red flag",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: A legitimate request that looks suspicious.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m46-l4",
+              "title": "Evidence investigation: A legitimate request that looks suspicious",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: A legitimate request that looks suspicious.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m46-l5",
+              "title": "Protect choice and safety: A legitimate request that looks suspicious",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: A legitimate request that looks suspicious.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m46-l6",
+              "title": "Transfer mission: A legitimate request that looks suspicious",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: A legitimate request that looks suspicious.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-47",
+          "title": "A convincing scam with no obvious errors",
+          "problem": "A convincing scam with no obvious errors",
+          "lessons": [
+            {
+              "id": "scams-m47-l1",
+              "title": "Case file: A convincing scam with no obvious errors",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: A convincing scam with no obvious errors.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m47-l2",
+              "title": "How the deception works: A convincing scam with no obvious errors",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: A convincing scam with no obvious errors.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m47-l3",
+              "title": "Distinguish A convincing scam with no obvious errors: strange detail versus reliable red flag",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: A convincing scam with no obvious errors.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m47-l4",
+              "title": "Evidence investigation: A convincing scam with no obvious errors",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: A convincing scam with no obvious errors.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m47-l5",
+              "title": "Protect choice and safety: A convincing scam with no obvious errors",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: A convincing scam with no obvious errors.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m47-l6",
+              "title": "Transfer mission: A convincing scam with no obvious errors",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: A convincing scam with no obvious errors.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-48",
+          "title": "Ambiguous AI-generated evidence",
+          "problem": "Ambiguous AI-generated evidence",
+          "lessons": [
+            {
+              "id": "scams-m48-l1",
+              "title": "Case file: Ambiguous AI-generated evidence",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Ambiguous AI-generated evidence.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m48-l2",
+              "title": "How the deception works: Ambiguous AI-generated evidence",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Ambiguous AI-generated evidence.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m48-l3",
+              "title": "Distinguish Ambiguous AI-generated evidence: strange detail versus reliable red flag",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Ambiguous AI-generated evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m48-l4",
+              "title": "Evidence investigation: Ambiguous AI-generated evidence",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Ambiguous AI-generated evidence.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m48-l5",
+              "title": "Protect choice and safety: Ambiguous AI-generated evidence",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Ambiguous AI-generated evidence.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m48-l6",
+              "title": "Transfer mission: Ambiguous AI-generated evidence",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Ambiguous AI-generated evidence.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-49",
+          "title": "Balancing privacy with verification",
+          "problem": "Balancing privacy with verification",
+          "lessons": [
+            {
+              "id": "scams-m49-l1",
+              "title": "Case file: Balancing privacy with verification",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Balancing privacy with verification.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m49-l2",
+              "title": "How the deception works: Balancing privacy with verification",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Balancing privacy with verification.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m49-l3",
+              "title": "Distinguish Balancing privacy with verification: strange detail versus reliable red flag",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Balancing privacy with verification.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m49-l4",
+              "title": "Evidence investigation: Balancing privacy with verification",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Balancing privacy with verification.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m49-l5",
+              "title": "Protect choice and safety: Balancing privacy with verification",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Balancing privacy with verification.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m49-l6",
+              "title": "Transfer mission: Balancing privacy with verification",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Balancing privacy with verification.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "scams-module-50",
+          "title": "Integrated mission: protect someone without shaming",
+          "problem": "Integrated mission: protect someone without shaming",
+          "lessons": [
+            {
+              "id": "scams-m50-l1",
+              "title": "Case file: Integrated mission: protect someone without shaming",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Integrated mission: protect someone without shaming.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m50-l2",
+              "title": "How the deception works: Integrated mission: protect someone without shaming",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Integrated mission: protect someone without shaming.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m50-l3",
+              "title": "Distinguish Integrated mission: protect someone without shaming: strange detail versus reliable red flag",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Integrated mission: protect someone without shaming.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m50-l4",
+              "title": "Evidence investigation: Integrated mission: protect someone without shaming",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Integrated mission: protect someone without shaming.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m50-l5",
+              "title": "Protect choice and safety: Integrated mission: protect someone without shaming",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Integrated mission: protect someone without shaming.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "scams-m50-l6",
+              "title": "Transfer mission: Integrated mission: protect someone without shaming",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Integrated mission: protect someone without shaming.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

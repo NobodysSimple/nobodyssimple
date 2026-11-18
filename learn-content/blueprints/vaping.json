@@ -1,0 +1,2828 @@
+{
+  "courseId": "vaping",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Editable curriculum map only; learning nodes must be independently authored and reviewed before publication.",
+  "books": [
+    {
+      "id": "vaping-book-1",
+      "title": "Understanding social influence",
+      "distinction": "individual preference versus social pressure",
+      "modules": [
+        {
+          "id": "vaping-module-01",
+          "title": "Conformity without direct coercion",
+          "problem": "Conformity without direct coercion",
+          "lessons": [
+            {
+              "id": "vaping-m1-l1",
+              "title": "Case file: Conformity without direct coercion",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Conformity without direct coercion.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m1-l2",
+              "title": "Influence and behaviour systems: Conformity without direct coercion",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Conformity without direct coercion.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m1-l3",
+              "title": "Distinguish Conformity without direct coercion: individual preference versus social pressure",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Conformity without direct coercion.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m1-l4",
+              "title": "Evidence investigation: Conformity without direct coercion",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Conformity without direct coercion.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m1-l5",
+              "title": "Choose a proportionate prevention or change strategy: Conformity without direct coercion",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Conformity without direct coercion.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m1-l6",
+              "title": "Transfer mission: Conformity without direct coercion",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Conformity without direct coercion.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-02",
+          "title": "Descriptive versus injunctive norms",
+          "problem": "Descriptive versus injunctive norms",
+          "lessons": [
+            {
+              "id": "vaping-m2-l1",
+              "title": "Case file: Descriptive versus injunctive norms",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Descriptive versus injunctive norms.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m2-l2",
+              "title": "Influence and behaviour systems: Descriptive versus injunctive norms",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Descriptive versus injunctive norms.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m2-l3",
+              "title": "Distinguish Descriptive versus injunctive norms: individual preference versus social pressure",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Descriptive versus injunctive norms.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m2-l4",
+              "title": "Evidence investigation: Descriptive versus injunctive norms",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Descriptive versus injunctive norms.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m2-l5",
+              "title": "Choose a proportionate prevention or change strategy: Descriptive versus injunctive norms",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Descriptive versus injunctive norms.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m2-l6",
+              "title": "Transfer mission: Descriptive versus injunctive norms",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Descriptive versus injunctive norms.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-03",
+          "title": "Pluralistic ignorance in a peer group",
+          "problem": "Pluralistic ignorance in a peer group",
+          "lessons": [
+            {
+              "id": "vaping-m3-l1",
+              "title": "Case file: Pluralistic ignorance in a peer group",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Pluralistic ignorance in a peer group.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m3-l2",
+              "title": "Influence and behaviour systems: Pluralistic ignorance in a peer group",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Pluralistic ignorance in a peer group.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m3-l3",
+              "title": "Distinguish Pluralistic ignorance in a peer group: individual preference versus social pressure",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Pluralistic ignorance in a peer group.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m3-l4",
+              "title": "Evidence investigation: Pluralistic ignorance in a peer group",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Pluralistic ignorance in a peer group.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m3-l5",
+              "title": "Choose a proportionate prevention or change strategy: Pluralistic ignorance in a peer group",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Pluralistic ignorance in a peer group.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m3-l6",
+              "title": "Transfer mission: Pluralistic ignorance in a peer group",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Pluralistic ignorance in a peer group.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-04",
+          "title": "Authority and expertise cues",
+          "problem": "Authority and expertise cues",
+          "lessons": [
+            {
+              "id": "vaping-m4-l1",
+              "title": "Case file: Authority and expertise cues",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Authority and expertise cues.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m4-l2",
+              "title": "Influence and behaviour systems: Authority and expertise cues",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Authority and expertise cues.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m4-l3",
+              "title": "Distinguish Authority and expertise cues: individual preference versus social pressure",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Authority and expertise cues.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m4-l4",
+              "title": "Evidence investigation: Authority and expertise cues",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Authority and expertise cues.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m4-l5",
+              "title": "Choose a proportionate prevention or change strategy: Authority and expertise cues",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Authority and expertise cues.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m4-l6",
+              "title": "Transfer mission: Authority and expertise cues",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Authority and expertise cues.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-05",
+          "title": "When choosing freely is difficult",
+          "problem": "When choosing freely is difficult",
+          "lessons": [
+            {
+              "id": "vaping-m5-l1",
+              "title": "Case file: When choosing freely is difficult",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: When choosing freely is difficult.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m5-l2",
+              "title": "Influence and behaviour systems: When choosing freely is difficult",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: When choosing freely is difficult.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m5-l3",
+              "title": "Distinguish When choosing freely is difficult: individual preference versus social pressure",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: When choosing freely is difficult.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m5-l4",
+              "title": "Evidence investigation: When choosing freely is difficult",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: When choosing freely is difficult.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m5-l5",
+              "title": "Choose a proportionate prevention or change strategy: When choosing freely is difficult",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: When choosing freely is difficult.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m5-l6",
+              "title": "Transfer mission: When choosing freely is difficult",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: When choosing freely is difficult.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vaping-book-2",
+      "title": "How dependence develops",
+      "distinction": "enjoyment versus reinforcement",
+      "modules": [
+        {
+          "id": "vaping-module-06",
+          "title": "Reward prediction and repeated use",
+          "problem": "Reward prediction and repeated use",
+          "lessons": [
+            {
+              "id": "vaping-m6-l1",
+              "title": "Case file: Reward prediction and repeated use",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Reward prediction and repeated use.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m6-l2",
+              "title": "Influence and behaviour systems: Reward prediction and repeated use",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Reward prediction and repeated use.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m6-l3",
+              "title": "Distinguish Reward prediction and repeated use: enjoyment versus reinforcement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Reward prediction and repeated use.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m6-l4",
+              "title": "Evidence investigation: Reward prediction and repeated use",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Reward prediction and repeated use.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m6-l5",
+              "title": "Choose a proportionate prevention or change strategy: Reward prediction and repeated use",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Reward prediction and repeated use.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m6-l6",
+              "title": "Transfer mission: Reward prediction and repeated use",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Reward prediction and repeated use.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-07",
+          "title": "Negative reinforcement and relief",
+          "problem": "Negative reinforcement and relief",
+          "lessons": [
+            {
+              "id": "vaping-m7-l1",
+              "title": "Case file: Negative reinforcement and relief",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Negative reinforcement and relief.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m7-l2",
+              "title": "Influence and behaviour systems: Negative reinforcement and relief",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Negative reinforcement and relief.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m7-l3",
+              "title": "Distinguish Negative reinforcement and relief: enjoyment versus reinforcement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Negative reinforcement and relief.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m7-l4",
+              "title": "Evidence investigation: Negative reinforcement and relief",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Negative reinforcement and relief.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m7-l5",
+              "title": "Choose a proportionate prevention or change strategy: Negative reinforcement and relief",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Negative reinforcement and relief.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m7-l6",
+              "title": "Transfer mission: Negative reinforcement and relief",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Negative reinforcement and relief.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-08",
+          "title": "Tolerance, withdrawal and craving",
+          "problem": "Tolerance, withdrawal and craving",
+          "lessons": [
+            {
+              "id": "vaping-m8-l1",
+              "title": "Case file: Tolerance, withdrawal and craving",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Tolerance, withdrawal and craving.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m8-l2",
+              "title": "Influence and behaviour systems: Tolerance, withdrawal and craving",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Tolerance, withdrawal and craving.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m8-l3",
+              "title": "Distinguish Tolerance, withdrawal and craving: enjoyment versus reinforcement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Tolerance, withdrawal and craving.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m8-l4",
+              "title": "Evidence investigation: Tolerance, withdrawal and craving",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Tolerance, withdrawal and craving.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m8-l5",
+              "title": "Choose a proportionate prevention or change strategy: Tolerance, withdrawal and craving",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Tolerance, withdrawal and craving.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m8-l6",
+              "title": "Transfer mission: Tolerance, withdrawal and craving",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Tolerance, withdrawal and craving.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-09",
+          "title": "Cues that trigger automatic wanting",
+          "problem": "Cues that trigger automatic wanting",
+          "lessons": [
+            {
+              "id": "vaping-m9-l1",
+              "title": "Case file: Cues that trigger automatic wanting",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Cues that trigger automatic wanting.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m9-l2",
+              "title": "Influence and behaviour systems: Cues that trigger automatic wanting",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Cues that trigger automatic wanting.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m9-l3",
+              "title": "Distinguish Cues that trigger automatic wanting: enjoyment versus reinforcement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Cues that trigger automatic wanting.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m9-l4",
+              "title": "Evidence investigation: Cues that trigger automatic wanting",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Cues that trigger automatic wanting.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m9-l5",
+              "title": "Choose a proportionate prevention or change strategy: Cues that trigger automatic wanting",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Cues that trigger automatic wanting.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m9-l6",
+              "title": "Transfer mission: Cues that trigger automatic wanting",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Cues that trigger automatic wanting.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-10",
+          "title": "Dependence without a fixed stereotype",
+          "problem": "Dependence without a fixed stereotype",
+          "lessons": [
+            {
+              "id": "vaping-m10-l1",
+              "title": "Case file: Dependence without a fixed stereotype",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Dependence without a fixed stereotype.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m10-l2",
+              "title": "Influence and behaviour systems: Dependence without a fixed stereotype",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Dependence without a fixed stereotype.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m10-l3",
+              "title": "Distinguish Dependence without a fixed stereotype: enjoyment versus reinforcement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Dependence without a fixed stereotype.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m10-l4",
+              "title": "Evidence investigation: Dependence without a fixed stereotype",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Dependence without a fixed stereotype.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m10-l5",
+              "title": "Choose a proportionate prevention or change strategy: Dependence without a fixed stereotype",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Dependence without a fixed stereotype.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m10-l6",
+              "title": "Transfer mission: Dependence without a fixed stereotype",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Dependence without a fixed stereotype.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vaping-book-3",
+      "title": "Nicotine and vaping in context",
+      "distinction": "harm comparison versus harmlessness",
+      "modules": [
+        {
+          "id": "vaping-module-11",
+          "title": "Nicotine's pharmacological effects",
+          "problem": "Nicotine's pharmacological effects",
+          "lessons": [
+            {
+              "id": "vaping-m11-l1",
+              "title": "Case file: Nicotine's pharmacological effects",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Nicotine's pharmacological effects.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m11-l2",
+              "title": "Influence and behaviour systems: Nicotine's pharmacological effects",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Nicotine's pharmacological effects.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m11-l3",
+              "title": "Distinguish Nicotine's pharmacological effects: harm comparison versus harmlessness",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Nicotine's pharmacological effects.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m11-l4",
+              "title": "Evidence investigation: Nicotine's pharmacological effects",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Nicotine's pharmacological effects.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m11-l5",
+              "title": "Choose a proportionate prevention or change strategy: Nicotine's pharmacological effects",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Nicotine's pharmacological effects.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m11-l6",
+              "title": "Transfer mission: Nicotine's pharmacological effects",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Nicotine's pharmacological effects.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-12",
+          "title": "Vaping versus combustible tobacco risk",
+          "problem": "Vaping versus combustible tobacco risk",
+          "lessons": [
+            {
+              "id": "vaping-m12-l1",
+              "title": "Case file: Vaping versus combustible tobacco risk",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Vaping versus combustible tobacco risk.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m12-l2",
+              "title": "Influence and behaviour systems: Vaping versus combustible tobacco risk",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Vaping versus combustible tobacco risk.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m12-l3",
+              "title": "Distinguish Vaping versus combustible tobacco risk: harm comparison versus harmlessness",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Vaping versus combustible tobacco risk.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m12-l4",
+              "title": "Evidence investigation: Vaping versus combustible tobacco risk",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Vaping versus combustible tobacco risk.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m12-l5",
+              "title": "Choose a proportionate prevention or change strategy: Vaping versus combustible tobacco risk",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Vaping versus combustible tobacco risk.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m12-l6",
+              "title": "Transfer mission: Vaping versus combustible tobacco risk",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Vaping versus combustible tobacco risk.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-13",
+          "title": "Marketing flavours and perceived safety",
+          "problem": "Marketing flavours and perceived safety",
+          "lessons": [
+            {
+              "id": "vaping-m13-l1",
+              "title": "Case file: Marketing flavours and perceived safety",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Marketing flavours and perceived safety.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m13-l2",
+              "title": "Influence and behaviour systems: Marketing flavours and perceived safety",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Marketing flavours and perceived safety.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m13-l3",
+              "title": "Distinguish Marketing flavours and perceived safety: harm comparison versus harmlessness",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Marketing flavours and perceived safety.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m13-l4",
+              "title": "Evidence investigation: Marketing flavours and perceived safety",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Marketing flavours and perceived safety.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m13-l5",
+              "title": "Choose a proportionate prevention or change strategy: Marketing flavours and perceived safety",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Marketing flavours and perceived safety.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m13-l6",
+              "title": "Transfer mission: Marketing flavours and perceived safety",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Marketing flavours and perceived safety.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-14",
+          "title": "Adolescent exposure and dependence",
+          "problem": "Adolescent exposure and dependence",
+          "lessons": [
+            {
+              "id": "vaping-m14-l1",
+              "title": "Case file: Adolescent exposure and dependence",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Adolescent exposure and dependence.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m14-l2",
+              "title": "Influence and behaviour systems: Adolescent exposure and dependence",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Adolescent exposure and dependence.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m14-l3",
+              "title": "Distinguish Adolescent exposure and dependence: harm comparison versus harmlessness",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Adolescent exposure and dependence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m14-l4",
+              "title": "Evidence investigation: Adolescent exposure and dependence",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Adolescent exposure and dependence.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m14-l5",
+              "title": "Choose a proportionate prevention or change strategy: Adolescent exposure and dependence",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Adolescent exposure and dependence.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m14-l6",
+              "title": "Transfer mission: Adolescent exposure and dependence",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Adolescent exposure and dependence.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-15",
+          "title": "The difference between risk reduction and endorsement",
+          "problem": "The difference between risk reduction and endorsement",
+          "lessons": [
+            {
+              "id": "vaping-m15-l1",
+              "title": "Case file: The difference between risk reduction and endorsement",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: The difference between risk reduction and endorsement.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m15-l2",
+              "title": "Influence and behaviour systems: The difference between risk reduction and endorsement",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: The difference between risk reduction and endorsement.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m15-l3",
+              "title": "Distinguish The difference between risk reduction and endorsement: harm comparison versus harmlessness",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: The difference between risk reduction and endorsement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m15-l4",
+              "title": "Evidence investigation: The difference between risk reduction and endorsement",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: The difference between risk reduction and endorsement.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m15-l5",
+              "title": "Choose a proportionate prevention or change strategy: The difference between risk reduction and endorsement",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: The difference between risk reduction and endorsement.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m15-l6",
+              "title": "Transfer mission: The difference between risk reduction and endorsement",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: The difference between risk reduction and endorsement.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vaping-book-4",
+      "title": "Peers, identity and status",
+      "distinction": "belonging versus conformity",
+      "modules": [
+        {
+          "id": "vaping-module-16",
+          "title": "Joining in to avoid exclusion",
+          "problem": "Joining in to avoid exclusion",
+          "lessons": [
+            {
+              "id": "vaping-m16-l1",
+              "title": "Case file: Joining in to avoid exclusion",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Joining in to avoid exclusion.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m16-l2",
+              "title": "Influence and behaviour systems: Joining in to avoid exclusion",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Joining in to avoid exclusion.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m16-l3",
+              "title": "Distinguish Joining in to avoid exclusion: belonging versus conformity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Joining in to avoid exclusion.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m16-l4",
+              "title": "Evidence investigation: Joining in to avoid exclusion",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Joining in to avoid exclusion.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m16-l5",
+              "title": "Choose a proportionate prevention or change strategy: Joining in to avoid exclusion",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Joining in to avoid exclusion.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m16-l6",
+              "title": "Transfer mission: Joining in to avoid exclusion",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Joining in to avoid exclusion.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-17",
+          "title": "Refusing without losing face",
+          "problem": "Refusing without losing face",
+          "lessons": [
+            {
+              "id": "vaping-m17-l1",
+              "title": "Case file: Refusing without losing face",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Refusing without losing face.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m17-l2",
+              "title": "Influence and behaviour systems: Refusing without losing face",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Refusing without losing face.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m17-l3",
+              "title": "Distinguish Refusing without losing face: belonging versus conformity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Refusing without losing face.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m17-l4",
+              "title": "Evidence investigation: Refusing without losing face",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Refusing without losing face.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m17-l5",
+              "title": "Choose a proportionate prevention or change strategy: Refusing without losing face",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Refusing without losing face.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m17-l6",
+              "title": "Transfer mission: Refusing without losing face",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Refusing without losing face.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-18",
+          "title": "Status and group rituals",
+          "problem": "Status and group rituals",
+          "lessons": [
+            {
+              "id": "vaping-m18-l1",
+              "title": "Case file: Status and group rituals",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Status and group rituals.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m18-l2",
+              "title": "Influence and behaviour systems: Status and group rituals",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Status and group rituals.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m18-l3",
+              "title": "Distinguish Status and group rituals: belonging versus conformity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Status and group rituals.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m18-l4",
+              "title": "Evidence investigation: Status and group rituals",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Status and group rituals.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m18-l5",
+              "title": "Choose a proportionate prevention or change strategy: Status and group rituals",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Status and group rituals.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m18-l6",
+              "title": "Transfer mission: Status and group rituals",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Status and group rituals.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-19",
+          "title": "Relationships with different use patterns",
+          "problem": "Relationships with different use patterns",
+          "lessons": [
+            {
+              "id": "vaping-m19-l1",
+              "title": "Case file: Relationships with different use patterns",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Relationships with different use patterns.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m19-l2",
+              "title": "Influence and behaviour systems: Relationships with different use patterns",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Relationships with different use patterns.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m19-l3",
+              "title": "Distinguish Relationships with different use patterns: belonging versus conformity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Relationships with different use patterns.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m19-l4",
+              "title": "Evidence investigation: Relationships with different use patterns",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Relationships with different use patterns.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m19-l5",
+              "title": "Choose a proportionate prevention or change strategy: Relationships with different use patterns",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Relationships with different use patterns.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m19-l6",
+              "title": "Transfer mission: Relationships with different use patterns",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Relationships with different use patterns.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-20",
+          "title": "When friendship is conditional on use",
+          "problem": "When friendship is conditional on use",
+          "lessons": [
+            {
+              "id": "vaping-m20-l1",
+              "title": "Case file: When friendship is conditional on use",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: When friendship is conditional on use.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m20-l2",
+              "title": "Influence and behaviour systems: When friendship is conditional on use",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: When friendship is conditional on use.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m20-l3",
+              "title": "Distinguish When friendship is conditional on use: belonging versus conformity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: When friendship is conditional on use.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m20-l4",
+              "title": "Evidence investigation: When friendship is conditional on use",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: When friendship is conditional on use.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m20-l5",
+              "title": "Choose a proportionate prevention or change strategy: When friendship is conditional on use",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: When friendship is conditional on use.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m20-l6",
+              "title": "Transfer mission: When friendship is conditional on use",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: When friendship is conditional on use.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vaping-book-5",
+      "title": "Advertising and persuasive systems",
+      "distinction": "information versus engineered desire",
+      "modules": [
+        {
+          "id": "vaping-module-21",
+          "title": "Scarcity marketing and urgency",
+          "problem": "Scarcity marketing and urgency",
+          "lessons": [
+            {
+              "id": "vaping-m21-l1",
+              "title": "Case file: Scarcity marketing and urgency",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Scarcity marketing and urgency.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m21-l2",
+              "title": "Influence and behaviour systems: Scarcity marketing and urgency",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Scarcity marketing and urgency.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m21-l3",
+              "title": "Distinguish Scarcity marketing and urgency: information versus engineered desire",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Scarcity marketing and urgency.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m21-l4",
+              "title": "Evidence investigation: Scarcity marketing and urgency",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Scarcity marketing and urgency.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m21-l5",
+              "title": "Choose a proportionate prevention or change strategy: Scarcity marketing and urgency",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Scarcity marketing and urgency.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m21-l6",
+              "title": "Transfer mission: Scarcity marketing and urgency",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Scarcity marketing and urgency.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-22",
+          "title": "Influencer sponsorship and social proof",
+          "problem": "Influencer sponsorship and social proof",
+          "lessons": [
+            {
+              "id": "vaping-m22-l1",
+              "title": "Case file: Influencer sponsorship and social proof",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Influencer sponsorship and social proof.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m22-l2",
+              "title": "Influence and behaviour systems: Influencer sponsorship and social proof",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Influencer sponsorship and social proof.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m22-l3",
+              "title": "Distinguish Influencer sponsorship and social proof: information versus engineered desire",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Influencer sponsorship and social proof.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m22-l4",
+              "title": "Evidence investigation: Influencer sponsorship and social proof",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Influencer sponsorship and social proof.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m22-l5",
+              "title": "Choose a proportionate prevention or change strategy: Influencer sponsorship and social proof",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Influencer sponsorship and social proof.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m22-l6",
+              "title": "Transfer mission: Influencer sponsorship and social proof",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Influencer sponsorship and social proof.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-23",
+          "title": "Packaging that normalises risk",
+          "problem": "Packaging that normalises risk",
+          "lessons": [
+            {
+              "id": "vaping-m23-l1",
+              "title": "Case file: Packaging that normalises risk",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Packaging that normalises risk.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m23-l2",
+              "title": "Influence and behaviour systems: Packaging that normalises risk",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Packaging that normalises risk.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m23-l3",
+              "title": "Distinguish Packaging that normalises risk: information versus engineered desire",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Packaging that normalises risk.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m23-l4",
+              "title": "Evidence investigation: Packaging that normalises risk",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Packaging that normalises risk.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m23-l5",
+              "title": "Choose a proportionate prevention or change strategy: Packaging that normalises risk",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Packaging that normalises risk.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m23-l6",
+              "title": "Transfer mission: Packaging that normalises risk",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Packaging that normalises risk.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-24",
+          "title": "Platform targeting and personalisation",
+          "problem": "Platform targeting and personalisation",
+          "lessons": [
+            {
+              "id": "vaping-m24-l1",
+              "title": "Case file: Platform targeting and personalisation",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Platform targeting and personalisation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m24-l2",
+              "title": "Influence and behaviour systems: Platform targeting and personalisation",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Platform targeting and personalisation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m24-l3",
+              "title": "Distinguish Platform targeting and personalisation: information versus engineered desire",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Platform targeting and personalisation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m24-l4",
+              "title": "Evidence investigation: Platform targeting and personalisation",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Platform targeting and personalisation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m24-l5",
+              "title": "Choose a proportionate prevention or change strategy: Platform targeting and personalisation",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Platform targeting and personalisation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m24-l6",
+              "title": "Transfer mission: Platform targeting and personalisation",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Platform targeting and personalisation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-25",
+          "title": "Who profits from repeated consumption",
+          "problem": "Who profits from repeated consumption",
+          "lessons": [
+            {
+              "id": "vaping-m25-l1",
+              "title": "Case file: Who profits from repeated consumption",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Who profits from repeated consumption.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m25-l2",
+              "title": "Influence and behaviour systems: Who profits from repeated consumption",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Who profits from repeated consumption.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m25-l3",
+              "title": "Distinguish Who profits from repeated consumption: information versus engineered desire",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Who profits from repeated consumption.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m25-l4",
+              "title": "Evidence investigation: Who profits from repeated consumption",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Who profits from repeated consumption.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m25-l5",
+              "title": "Choose a proportionate prevention or change strategy: Who profits from repeated consumption",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Who profits from repeated consumption.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m25-l6",
+              "title": "Transfer mission: Who profits from repeated consumption",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Who profits from repeated consumption.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vaping-book-6",
+      "title": "Behavioural addiction concepts",
+      "distinction": "habit versus clinically significant impairment",
+      "modules": [
+        {
+          "id": "vaping-module-26",
+          "title": "Compulsive checking and variable rewards",
+          "problem": "Compulsive checking and variable rewards",
+          "lessons": [
+            {
+              "id": "vaping-m26-l1",
+              "title": "Case file: Compulsive checking and variable rewards",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Compulsive checking and variable rewards.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m26-l2",
+              "title": "Influence and behaviour systems: Compulsive checking and variable rewards",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Compulsive checking and variable rewards.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m26-l3",
+              "title": "Distinguish Compulsive checking and variable rewards: habit versus clinically significant impairment",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Compulsive checking and variable rewards.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m26-l4",
+              "title": "Evidence investigation: Compulsive checking and variable rewards",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Compulsive checking and variable rewards.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m26-l5",
+              "title": "Choose a proportionate prevention or change strategy: Compulsive checking and variable rewards",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Compulsive checking and variable rewards.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m26-l6",
+              "title": "Transfer mission: Compulsive checking and variable rewards",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Compulsive checking and variable rewards.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-27",
+          "title": "Gaming engagement versus gaming disorder",
+          "problem": "Gaming engagement versus gaming disorder",
+          "lessons": [
+            {
+              "id": "vaping-m27-l1",
+              "title": "Case file: Gaming engagement versus gaming disorder",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Gaming engagement versus gaming disorder.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m27-l2",
+              "title": "Influence and behaviour systems: Gaming engagement versus gaming disorder",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Gaming engagement versus gaming disorder.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m27-l3",
+              "title": "Distinguish Gaming engagement versus gaming disorder: habit versus clinically significant impairment",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Gaming engagement versus gaming disorder.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m27-l4",
+              "title": "Evidence investigation: Gaming engagement versus gaming disorder",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Gaming engagement versus gaming disorder.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m27-l5",
+              "title": "Choose a proportionate prevention or change strategy: Gaming engagement versus gaming disorder",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Gaming engagement versus gaming disorder.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m27-l6",
+              "title": "Transfer mission: Gaming engagement versus gaming disorder",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Gaming engagement versus gaming disorder.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-28",
+          "title": "Gambling reinforcement and loss chasing",
+          "problem": "Gambling reinforcement and loss chasing",
+          "lessons": [
+            {
+              "id": "vaping-m28-l1",
+              "title": "Case file: Gambling reinforcement and loss chasing",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Gambling reinforcement and loss chasing.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m28-l2",
+              "title": "Influence and behaviour systems: Gambling reinforcement and loss chasing",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Gambling reinforcement and loss chasing.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m28-l3",
+              "title": "Distinguish Gambling reinforcement and loss chasing: habit versus clinically significant impairment",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Gambling reinforcement and loss chasing.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m28-l4",
+              "title": "Evidence investigation: Gambling reinforcement and loss chasing",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Gambling reinforcement and loss chasing.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m28-l5",
+              "title": "Choose a proportionate prevention or change strategy: Gambling reinforcement and loss chasing",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Gambling reinforcement and loss chasing.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m28-l6",
+              "title": "Transfer mission: Gambling reinforcement and loss chasing",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Gambling reinforcement and loss chasing.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-29",
+          "title": "Substance versus behavioural addictions",
+          "problem": "Substance versus behavioural addictions",
+          "lessons": [
+            {
+              "id": "vaping-m29-l1",
+              "title": "Case file: Substance versus behavioural addictions",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Substance versus behavioural addictions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m29-l2",
+              "title": "Influence and behaviour systems: Substance versus behavioural addictions",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Substance versus behavioural addictions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m29-l3",
+              "title": "Distinguish Substance versus behavioural addictions: habit versus clinically significant impairment",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Substance versus behavioural addictions.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m29-l4",
+              "title": "Evidence investigation: Substance versus behavioural addictions",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Substance versus behavioural addictions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m29-l5",
+              "title": "Choose a proportionate prevention or change strategy: Substance versus behavioural addictions",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Substance versus behavioural addictions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m29-l6",
+              "title": "Transfer mission: Substance versus behavioural addictions",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Substance versus behavioural addictions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-30",
+          "title": "Why not every habit is an addiction",
+          "problem": "Why not every habit is an addiction",
+          "lessons": [
+            {
+              "id": "vaping-m30-l1",
+              "title": "Case file: Why not every habit is an addiction",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Why not every habit is an addiction.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m30-l2",
+              "title": "Influence and behaviour systems: Why not every habit is an addiction",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Why not every habit is an addiction.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m30-l3",
+              "title": "Distinguish Why not every habit is an addiction: habit versus clinically significant impairment",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Why not every habit is an addiction.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m30-l4",
+              "title": "Evidence investigation: Why not every habit is an addiction",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Why not every habit is an addiction.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m30-l5",
+              "title": "Choose a proportionate prevention or change strategy: Why not every habit is an addiction",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Why not every habit is an addiction.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m30-l6",
+              "title": "Transfer mission: Why not every habit is an addiction",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Why not every habit is an addiction.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vaping-book-7",
+      "title": "Change, relapse and support",
+      "distinction": "lapse versus total failure",
+      "modules": [
+        {
+          "id": "vaping-module-31",
+          "title": "Identifying triggers and substitutes",
+          "problem": "Identifying triggers and substitutes",
+          "lessons": [
+            {
+              "id": "vaping-m31-l1",
+              "title": "Case file: Identifying triggers and substitutes",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Identifying triggers and substitutes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m31-l2",
+              "title": "Influence and behaviour systems: Identifying triggers and substitutes",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Identifying triggers and substitutes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m31-l3",
+              "title": "Distinguish Identifying triggers and substitutes: lapse versus total failure",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Identifying triggers and substitutes.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m31-l4",
+              "title": "Evidence investigation: Identifying triggers and substitutes",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Identifying triggers and substitutes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m31-l5",
+              "title": "Choose a proportionate prevention or change strategy: Identifying triggers and substitutes",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Identifying triggers and substitutes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m31-l6",
+              "title": "Transfer mission: Identifying triggers and substitutes",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Identifying triggers and substitutes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-32",
+          "title": "Planning around social invitations",
+          "problem": "Planning around social invitations",
+          "lessons": [
+            {
+              "id": "vaping-m32-l1",
+              "title": "Case file: Planning around social invitations",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Planning around social invitations.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m32-l2",
+              "title": "Influence and behaviour systems: Planning around social invitations",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Planning around social invitations.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m32-l3",
+              "title": "Distinguish Planning around social invitations: lapse versus total failure",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Planning around social invitations.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m32-l4",
+              "title": "Evidence investigation: Planning around social invitations",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Planning around social invitations.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m32-l5",
+              "title": "Choose a proportionate prevention or change strategy: Planning around social invitations",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Planning around social invitations.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m32-l6",
+              "title": "Transfer mission: Planning around social invitations",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Planning around social invitations.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-33",
+          "title": "Managing cravings and withdrawal",
+          "problem": "Managing cravings and withdrawal",
+          "lessons": [
+            {
+              "id": "vaping-m33-l1",
+              "title": "Case file: Managing cravings and withdrawal",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Managing cravings and withdrawal.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m33-l2",
+              "title": "Influence and behaviour systems: Managing cravings and withdrawal",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Managing cravings and withdrawal.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m33-l3",
+              "title": "Distinguish Managing cravings and withdrawal: lapse versus total failure",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Managing cravings and withdrawal.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m33-l4",
+              "title": "Evidence investigation: Managing cravings and withdrawal",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Managing cravings and withdrawal.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m33-l5",
+              "title": "Choose a proportionate prevention or change strategy: Managing cravings and withdrawal",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Managing cravings and withdrawal.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m33-l6",
+              "title": "Transfer mission: Managing cravings and withdrawal",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Managing cravings and withdrawal.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-34",
+          "title": "Harm reduction and professional support",
+          "problem": "Harm reduction and professional support",
+          "lessons": [
+            {
+              "id": "vaping-m34-l1",
+              "title": "Case file: Harm reduction and professional support",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Harm reduction and professional support.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m34-l2",
+              "title": "Influence and behaviour systems: Harm reduction and professional support",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Harm reduction and professional support.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m34-l3",
+              "title": "Distinguish Harm reduction and professional support: lapse versus total failure",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Harm reduction and professional support.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m34-l4",
+              "title": "Evidence investigation: Harm reduction and professional support",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Harm reduction and professional support.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m34-l5",
+              "title": "Choose a proportionate prevention or change strategy: Harm reduction and professional support",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Harm reduction and professional support.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m34-l6",
+              "title": "Transfer mission: Harm reduction and professional support",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Harm reduction and professional support.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-35",
+          "title": "Avoiding shame-based relapse cycles",
+          "problem": "Avoiding shame-based relapse cycles",
+          "lessons": [
+            {
+              "id": "vaping-m35-l1",
+              "title": "Case file: Avoiding shame-based relapse cycles",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Avoiding shame-based relapse cycles.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m35-l2",
+              "title": "Influence and behaviour systems: Avoiding shame-based relapse cycles",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Avoiding shame-based relapse cycles.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m35-l3",
+              "title": "Distinguish Avoiding shame-based relapse cycles: lapse versus total failure",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Avoiding shame-based relapse cycles.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m35-l4",
+              "title": "Evidence investigation: Avoiding shame-based relapse cycles",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Avoiding shame-based relapse cycles.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m35-l5",
+              "title": "Choose a proportionate prevention or change strategy: Avoiding shame-based relapse cycles",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Avoiding shame-based relapse cycles.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m35-l6",
+              "title": "Transfer mission: Avoiding shame-based relapse cycles",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Avoiding shame-based relapse cycles.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vaping-book-8",
+      "title": "Risk contexts and vulnerability",
+      "distinction": "moral blame versus lived constraint",
+      "modules": [
+        {
+          "id": "vaping-module-36",
+          "title": "Stress, poverty and use patterns",
+          "problem": "Stress, poverty and use patterns",
+          "lessons": [
+            {
+              "id": "vaping-m36-l1",
+              "title": "Case file: Stress, poverty and use patterns",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Stress, poverty and use patterns.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m36-l2",
+              "title": "Influence and behaviour systems: Stress, poverty and use patterns",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Stress, poverty and use patterns.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m36-l3",
+              "title": "Distinguish Stress, poverty and use patterns: moral blame versus lived constraint",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Stress, poverty and use patterns.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m36-l4",
+              "title": "Evidence investigation: Stress, poverty and use patterns",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Stress, poverty and use patterns.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m36-l5",
+              "title": "Choose a proportionate prevention or change strategy: Stress, poverty and use patterns",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Stress, poverty and use patterns.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m36-l6",
+              "title": "Transfer mission: Stress, poverty and use patterns",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Stress, poverty and use patterns.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-37",
+          "title": "Trauma and coping through substances",
+          "problem": "Trauma and coping through substances",
+          "lessons": [
+            {
+              "id": "vaping-m37-l1",
+              "title": "Case file: Trauma and coping through substances",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Trauma and coping through substances.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m37-l2",
+              "title": "Influence and behaviour systems: Trauma and coping through substances",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Trauma and coping through substances.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m37-l3",
+              "title": "Distinguish Trauma and coping through substances: moral blame versus lived constraint",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Trauma and coping through substances.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m37-l4",
+              "title": "Evidence investigation: Trauma and coping through substances",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Trauma and coping through substances.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m37-l5",
+              "title": "Choose a proportionate prevention or change strategy: Trauma and coping through substances",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Trauma and coping through substances.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m37-l6",
+              "title": "Transfer mission: Trauma and coping through substances",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Trauma and coping through substances.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-38",
+          "title": "Neurodevelopmental differences and risk",
+          "problem": "Neurodevelopmental differences and risk",
+          "lessons": [
+            {
+              "id": "vaping-m38-l1",
+              "title": "Case file: Neurodevelopmental differences and risk",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Neurodevelopmental differences and risk.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m38-l2",
+              "title": "Influence and behaviour systems: Neurodevelopmental differences and risk",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Neurodevelopmental differences and risk.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m38-l3",
+              "title": "Distinguish Neurodevelopmental differences and risk: moral blame versus lived constraint",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Neurodevelopmental differences and risk.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m38-l4",
+              "title": "Evidence investigation: Neurodevelopmental differences and risk",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Neurodevelopmental differences and risk.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m38-l5",
+              "title": "Choose a proportionate prevention or change strategy: Neurodevelopmental differences and risk",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Neurodevelopmental differences and risk.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m38-l6",
+              "title": "Transfer mission: Neurodevelopmental differences and risk",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Neurodevelopmental differences and risk.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-39",
+          "title": "Age and developmental vulnerability",
+          "problem": "Age and developmental vulnerability",
+          "lessons": [
+            {
+              "id": "vaping-m39-l1",
+              "title": "Case file: Age and developmental vulnerability",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Age and developmental vulnerability.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m39-l2",
+              "title": "Influence and behaviour systems: Age and developmental vulnerability",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Age and developmental vulnerability.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m39-l3",
+              "title": "Distinguish Age and developmental vulnerability: moral blame versus lived constraint",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Age and developmental vulnerability.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m39-l4",
+              "title": "Evidence investigation: Age and developmental vulnerability",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Age and developmental vulnerability.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m39-l5",
+              "title": "Choose a proportionate prevention or change strategy: Age and developmental vulnerability",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Age and developmental vulnerability.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m39-l6",
+              "title": "Transfer mission: Age and developmental vulnerability",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Age and developmental vulnerability.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-40",
+          "title": "Barriers to cessation services",
+          "problem": "Barriers to cessation services",
+          "lessons": [
+            {
+              "id": "vaping-m40-l1",
+              "title": "Case file: Barriers to cessation services",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Barriers to cessation services.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m40-l2",
+              "title": "Influence and behaviour systems: Barriers to cessation services",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Barriers to cessation services.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m40-l3",
+              "title": "Distinguish Barriers to cessation services: moral blame versus lived constraint",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Barriers to cessation services.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m40-l4",
+              "title": "Evidence investigation: Barriers to cessation services",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Barriers to cessation services.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m40-l5",
+              "title": "Choose a proportionate prevention or change strategy: Barriers to cessation services",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Barriers to cessation services.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m40-l6",
+              "title": "Transfer mission: Barriers to cessation services",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Barriers to cessation services.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vaping-book-9",
+      "title": "Collective prevention and policy",
+      "distinction": "individual refusal versus environmental prevention",
+      "modules": [
+        {
+          "id": "vaping-module-41",
+          "title": "Age restrictions and enforcement",
+          "problem": "Age restrictions and enforcement",
+          "lessons": [
+            {
+              "id": "vaping-m41-l1",
+              "title": "Case file: Age restrictions and enforcement",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Age restrictions and enforcement.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m41-l2",
+              "title": "Influence and behaviour systems: Age restrictions and enforcement",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Age restrictions and enforcement.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m41-l3",
+              "title": "Distinguish Age restrictions and enforcement: individual refusal versus environmental prevention",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Age restrictions and enforcement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m41-l4",
+              "title": "Evidence investigation: Age restrictions and enforcement",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Age restrictions and enforcement.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m41-l5",
+              "title": "Choose a proportionate prevention or change strategy: Age restrictions and enforcement",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Age restrictions and enforcement.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m41-l6",
+              "title": "Transfer mission: Age restrictions and enforcement",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Age restrictions and enforcement.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-42",
+          "title": "Product availability and marketing rules",
+          "problem": "Product availability and marketing rules",
+          "lessons": [
+            {
+              "id": "vaping-m42-l1",
+              "title": "Case file: Product availability and marketing rules",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Product availability and marketing rules.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m42-l2",
+              "title": "Influence and behaviour systems: Product availability and marketing rules",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Product availability and marketing rules.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m42-l3",
+              "title": "Distinguish Product availability and marketing rules: individual refusal versus environmental prevention",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Product availability and marketing rules.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m42-l4",
+              "title": "Evidence investigation: Product availability and marketing rules",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Product availability and marketing rules.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m42-l5",
+              "title": "Choose a proportionate prevention or change strategy: Product availability and marketing rules",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Product availability and marketing rules.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m42-l6",
+              "title": "Transfer mission: Product availability and marketing rules",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Product availability and marketing rules.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-43",
+          "title": "Public health messaging without stigma",
+          "problem": "Public health messaging without stigma",
+          "lessons": [
+            {
+              "id": "vaping-m43-l1",
+              "title": "Case file: Public health messaging without stigma",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Public health messaging without stigma.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m43-l2",
+              "title": "Influence and behaviour systems: Public health messaging without stigma",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Public health messaging without stigma.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m43-l3",
+              "title": "Distinguish Public health messaging without stigma: individual refusal versus environmental prevention",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Public health messaging without stigma.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m43-l4",
+              "title": "Evidence investigation: Public health messaging without stigma",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Public health messaging without stigma.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m43-l5",
+              "title": "Choose a proportionate prevention or change strategy: Public health messaging without stigma",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Public health messaging without stigma.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m43-l6",
+              "title": "Transfer mission: Public health messaging without stigma",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Public health messaging without stigma.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-44",
+          "title": "Industry accountability and lobbying",
+          "problem": "Industry accountability and lobbying",
+          "lessons": [
+            {
+              "id": "vaping-m44-l1",
+              "title": "Case file: Industry accountability and lobbying",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Industry accountability and lobbying.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m44-l2",
+              "title": "Influence and behaviour systems: Industry accountability and lobbying",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Industry accountability and lobbying.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m44-l3",
+              "title": "Distinguish Industry accountability and lobbying: individual refusal versus environmental prevention",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Industry accountability and lobbying.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m44-l4",
+              "title": "Evidence investigation: Industry accountability and lobbying",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Industry accountability and lobbying.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m44-l5",
+              "title": "Choose a proportionate prevention or change strategy: Industry accountability and lobbying",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Industry accountability and lobbying.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m44-l6",
+              "title": "Transfer mission: Industry accountability and lobbying",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Industry accountability and lobbying.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-45",
+          "title": "Unequal exposure to commercial risk",
+          "problem": "Unequal exposure to commercial risk",
+          "lessons": [
+            {
+              "id": "vaping-m45-l1",
+              "title": "Case file: Unequal exposure to commercial risk",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Unequal exposure to commercial risk.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m45-l2",
+              "title": "Influence and behaviour systems: Unequal exposure to commercial risk",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Unequal exposure to commercial risk.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m45-l3",
+              "title": "Distinguish Unequal exposure to commercial risk: individual refusal versus environmental prevention",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Unequal exposure to commercial risk.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m45-l4",
+              "title": "Evidence investigation: Unequal exposure to commercial risk",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Unequal exposure to commercial risk.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m45-l5",
+              "title": "Choose a proportionate prevention or change strategy: Unequal exposure to commercial risk",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Unequal exposure to commercial risk.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m45-l6",
+              "title": "Transfer mission: Unequal exposure to commercial risk",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Unequal exposure to commercial risk.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vaping-book-10",
+      "title": "Advanced choices and transfer",
+      "distinction": "single mechanism versus interacting systems",
+      "modules": [
+        {
+          "id": "vaping-module-46",
+          "title": "When abstinence advice does not fit",
+          "problem": "When abstinence advice does not fit",
+          "lessons": [
+            {
+              "id": "vaping-m46-l1",
+              "title": "Case file: When abstinence advice does not fit",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: When abstinence advice does not fit.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m46-l2",
+              "title": "Influence and behaviour systems: When abstinence advice does not fit",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: When abstinence advice does not fit.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m46-l3",
+              "title": "Distinguish When abstinence advice does not fit: single mechanism versus interacting systems",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: When abstinence advice does not fit.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m46-l4",
+              "title": "Evidence investigation: When abstinence advice does not fit",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: When abstinence advice does not fit.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m46-l5",
+              "title": "Choose a proportionate prevention or change strategy: When abstinence advice does not fit",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: When abstinence advice does not fit.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m46-l6",
+              "title": "Transfer mission: When abstinence advice does not fit",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: When abstinence advice does not fit.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-47",
+          "title": "Social pressure after quitting",
+          "problem": "Social pressure after quitting",
+          "lessons": [
+            {
+              "id": "vaping-m47-l1",
+              "title": "Case file: Social pressure after quitting",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Social pressure after quitting.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m47-l2",
+              "title": "Influence and behaviour systems: Social pressure after quitting",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Social pressure after quitting.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m47-l3",
+              "title": "Distinguish Social pressure after quitting: single mechanism versus interacting systems",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Social pressure after quitting.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m47-l4",
+              "title": "Evidence investigation: Social pressure after quitting",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Social pressure after quitting.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m47-l5",
+              "title": "Choose a proportionate prevention or change strategy: Social pressure after quitting",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Social pressure after quitting.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m47-l6",
+              "title": "Transfer mission: Social pressure after quitting",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Social pressure after quitting.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-48",
+          "title": "Digital and substance dependence overlap",
+          "problem": "Digital and substance dependence overlap",
+          "lessons": [
+            {
+              "id": "vaping-m48-l1",
+              "title": "Case file: Digital and substance dependence overlap",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Digital and substance dependence overlap.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m48-l2",
+              "title": "Influence and behaviour systems: Digital and substance dependence overlap",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Digital and substance dependence overlap.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m48-l3",
+              "title": "Distinguish Digital and substance dependence overlap: single mechanism versus interacting systems",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Digital and substance dependence overlap.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m48-l4",
+              "title": "Evidence investigation: Digital and substance dependence overlap",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Digital and substance dependence overlap.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m48-l5",
+              "title": "Choose a proportionate prevention or change strategy: Digital and substance dependence overlap",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Digital and substance dependence overlap.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m48-l6",
+              "title": "Transfer mission: Digital and substance dependence overlap",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Digital and substance dependence overlap.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-49",
+          "title": "Helping someone without coercion",
+          "problem": "Helping someone without coercion",
+          "lessons": [
+            {
+              "id": "vaping-m49-l1",
+              "title": "Case file: Helping someone without coercion",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Helping someone without coercion.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m49-l2",
+              "title": "Influence and behaviour systems: Helping someone without coercion",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Helping someone without coercion.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m49-l3",
+              "title": "Distinguish Helping someone without coercion: single mechanism versus interacting systems",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Helping someone without coercion.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m49-l4",
+              "title": "Evidence investigation: Helping someone without coercion",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Helping someone without coercion.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m49-l5",
+              "title": "Choose a proportionate prevention or change strategy: Helping someone without coercion",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Helping someone without coercion.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m49-l6",
+              "title": "Transfer mission: Helping someone without coercion",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Helping someone without coercion.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "vaping-module-50",
+          "title": "Integrated mission: design a realistic change plan",
+          "problem": "Integrated mission: design a realistic change plan",
+          "lessons": [
+            {
+              "id": "vaping-m50-l1",
+              "title": "Case file: Integrated mission: design a realistic change plan",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Integrated mission: design a realistic change plan.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m50-l2",
+              "title": "Influence and behaviour systems: Integrated mission: design a realistic change plan",
+              "objective": "Explain interacting social, behavioural, developmental and environmental influences without assuming that everyone follows the same pathway. Topic: Integrated mission: design a realistic change plan.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m50-l3",
+              "title": "Distinguish Integrated mission: design a realistic change plan: single mechanism versus interacting systems",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Integrated mission: design a realistic change plan.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m50-l4",
+              "title": "Evidence investigation: Integrated mission: design a realistic change plan",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Integrated mission: design a realistic change plan.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m50-l5",
+              "title": "Choose a proportionate prevention or change strategy: Integrated mission: design a realistic change plan",
+              "objective": "Compare realistic choices, harm reduction and structural levers without moralising dependence. Topic: Integrated mission: design a realistic change plan.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "vaping-m50-l6",
+              "title": "Transfer mission: Integrated mission: design a realistic change plan",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Integrated mission: design a realistic change plan.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

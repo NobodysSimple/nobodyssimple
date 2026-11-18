@@ -1,0 +1,2828 @@
+{
+  "courseId": "masculinity",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Editable curriculum map only; learning nodes must be independently authored and reviewed before publication.",
+  "books": [
+    {
+      "id": "masculinity-book-1",
+      "title": "Sex, gender and sexuality precisely",
+      "distinction": "biological attributes versus social identity",
+      "modules": [
+        {
+          "id": "masculinity-module-01",
+          "title": "Sex characteristics and variation",
+          "problem": "Sex characteristics and variation",
+          "lessons": [
+            {
+              "id": "masculinity-m1-l1",
+              "title": "Case file: Sex characteristics and variation",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Sex characteristics and variation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m1-l2",
+              "title": "Psychology, development and social context: Sex characteristics and variation",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Sex characteristics and variation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m1-l3",
+              "title": "Distinguish Sex characteristics and variation: biological attributes versus social identity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Sex characteristics and variation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m1-l4",
+              "title": "Evidence investigation: Sex characteristics and variation",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Sex characteristics and variation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m1-l5",
+              "title": "Support informed and respectful choices: Sex characteristics and variation",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Sex characteristics and variation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m1-l6",
+              "title": "Transfer mission: Sex characteristics and variation",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Sex characteristics and variation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-02",
+          "title": "Gender identity versus gender expression",
+          "problem": "Gender identity versus gender expression",
+          "lessons": [
+            {
+              "id": "masculinity-m2-l1",
+              "title": "Case file: Gender identity versus gender expression",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Gender identity versus gender expression.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m2-l2",
+              "title": "Psychology, development and social context: Gender identity versus gender expression",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Gender identity versus gender expression.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m2-l3",
+              "title": "Distinguish Gender identity versus gender expression: biological attributes versus social identity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Gender identity versus gender expression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m2-l4",
+              "title": "Evidence investigation: Gender identity versus gender expression",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Gender identity versus gender expression.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m2-l5",
+              "title": "Support informed and respectful choices: Gender identity versus gender expression",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Gender identity versus gender expression.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m2-l6",
+              "title": "Transfer mission: Gender identity versus gender expression",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Gender identity versus gender expression.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-03",
+          "title": "Sexual orientation versus behaviour",
+          "problem": "Sexual orientation versus behaviour",
+          "lessons": [
+            {
+              "id": "masculinity-m3-l1",
+              "title": "Case file: Sexual orientation versus behaviour",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Sexual orientation versus behaviour.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m3-l2",
+              "title": "Psychology, development and social context: Sexual orientation versus behaviour",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Sexual orientation versus behaviour.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m3-l3",
+              "title": "Distinguish Sexual orientation versus behaviour: biological attributes versus social identity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Sexual orientation versus behaviour.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m3-l4",
+              "title": "Evidence investigation: Sexual orientation versus behaviour",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Sexual orientation versus behaviour.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m3-l5",
+              "title": "Support informed and respectful choices: Sexual orientation versus behaviour",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Sexual orientation versus behaviour.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m3-l6",
+              "title": "Transfer mission: Sexual orientation versus behaviour",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Sexual orientation versus behaviour.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-04",
+          "title": "Attraction, fantasy and identification",
+          "problem": "Attraction, fantasy and identification",
+          "lessons": [
+            {
+              "id": "masculinity-m4-l1",
+              "title": "Case file: Attraction, fantasy and identification",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Attraction, fantasy and identification.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m4-l2",
+              "title": "Psychology, development and social context: Attraction, fantasy and identification",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Attraction, fantasy and identification.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m4-l3",
+              "title": "Distinguish Attraction, fantasy and identification: biological attributes versus social identity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Attraction, fantasy and identification.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m4-l4",
+              "title": "Evidence investigation: Attraction, fantasy and identification",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Attraction, fantasy and identification.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m4-l5",
+              "title": "Support informed and respectful choices: Attraction, fantasy and identification",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Attraction, fantasy and identification.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m4-l6",
+              "title": "Transfer mission: Attraction, fantasy and identification",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Attraction, fantasy and identification.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-05",
+          "title": "Why categorical assumptions fail",
+          "problem": "Why categorical assumptions fail",
+          "lessons": [
+            {
+              "id": "masculinity-m5-l1",
+              "title": "Case file: Why categorical assumptions fail",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Why categorical assumptions fail.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m5-l2",
+              "title": "Psychology, development and social context: Why categorical assumptions fail",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Why categorical assumptions fail.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m5-l3",
+              "title": "Distinguish Why categorical assumptions fail: biological attributes versus social identity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Why categorical assumptions fail.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m5-l4",
+              "title": "Evidence investigation: Why categorical assumptions fail",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Why categorical assumptions fail.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m5-l5",
+              "title": "Support informed and respectful choices: Why categorical assumptions fail",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Why categorical assumptions fail.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m5-l6",
+              "title": "Transfer mission: Why categorical assumptions fail",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Why categorical assumptions fail.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "masculinity-book-2",
+      "title": "Development and identity exploration",
+      "distinction": "exploration versus pressure to declare",
+      "modules": [
+        {
+          "id": "masculinity-module-06",
+          "title": "Questions about labels and belonging",
+          "problem": "Questions about labels and belonging",
+          "lessons": [
+            {
+              "id": "masculinity-m6-l1",
+              "title": "Case file: Questions about labels and belonging",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Questions about labels and belonging.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m6-l2",
+              "title": "Psychology, development and social context: Questions about labels and belonging",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Questions about labels and belonging.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m6-l3",
+              "title": "Distinguish Questions about labels and belonging: exploration versus pressure to declare",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Questions about labels and belonging.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m6-l4",
+              "title": "Evidence investigation: Questions about labels and belonging",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Questions about labels and belonging.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m6-l5",
+              "title": "Support informed and respectful choices: Questions about labels and belonging",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Questions about labels and belonging.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m6-l6",
+              "title": "Transfer mission: Questions about labels and belonging",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Questions about labels and belonging.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-07",
+          "title": "Adolescence, change and continuity",
+          "problem": "Adolescence, change and continuity",
+          "lessons": [
+            {
+              "id": "masculinity-m7-l1",
+              "title": "Case file: Adolescence, change and continuity",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Adolescence, change and continuity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m7-l2",
+              "title": "Psychology, development and social context: Adolescence, change and continuity",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Adolescence, change and continuity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m7-l3",
+              "title": "Distinguish Adolescence, change and continuity: exploration versus pressure to declare",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Adolescence, change and continuity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m7-l4",
+              "title": "Evidence investigation: Adolescence, change and continuity",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Adolescence, change and continuity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m7-l5",
+              "title": "Support informed and respectful choices: Adolescence, change and continuity",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Adolescence, change and continuity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m7-l6",
+              "title": "Transfer mission: Adolescence, change and continuity",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Adolescence, change and continuity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-08",
+          "title": "Body comfort and social presentation",
+          "problem": "Body comfort and social presentation",
+          "lessons": [
+            {
+              "id": "masculinity-m8-l1",
+              "title": "Case file: Body comfort and social presentation",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Body comfort and social presentation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m8-l2",
+              "title": "Psychology, development and social context: Body comfort and social presentation",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Body comfort and social presentation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m8-l3",
+              "title": "Distinguish Body comfort and social presentation: exploration versus pressure to declare",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Body comfort and social presentation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m8-l4",
+              "title": "Evidence investigation: Body comfort and social presentation",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Body comfort and social presentation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m8-l5",
+              "title": "Support informed and respectful choices: Body comfort and social presentation",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Body comfort and social presentation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m8-l6",
+              "title": "Transfer mission: Body comfort and social presentation",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Body comfort and social presentation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-09",
+          "title": "Identity without public disclosure",
+          "problem": "Identity without public disclosure",
+          "lessons": [
+            {
+              "id": "masculinity-m9-l1",
+              "title": "Case file: Identity without public disclosure",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Identity without public disclosure.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m9-l2",
+              "title": "Psychology, development and social context: Identity without public disclosure",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Identity without public disclosure.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m9-l3",
+              "title": "Distinguish Identity without public disclosure: exploration versus pressure to declare",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Identity without public disclosure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m9-l4",
+              "title": "Evidence investigation: Identity without public disclosure",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Identity without public disclosure.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m9-l5",
+              "title": "Support informed and respectful choices: Identity without public disclosure",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Identity without public disclosure.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m9-l6",
+              "title": "Transfer mission: Identity without public disclosure",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Identity without public disclosure.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-10",
+          "title": "When uncertainty is not pathology",
+          "problem": "When uncertainty is not pathology",
+          "lessons": [
+            {
+              "id": "masculinity-m10-l1",
+              "title": "Case file: When uncertainty is not pathology",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: When uncertainty is not pathology.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m10-l2",
+              "title": "Psychology, development and social context: When uncertainty is not pathology",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: When uncertainty is not pathology.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m10-l3",
+              "title": "Distinguish When uncertainty is not pathology: exploration versus pressure to declare",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: When uncertainty is not pathology.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m10-l4",
+              "title": "Evidence investigation: When uncertainty is not pathology",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: When uncertainty is not pathology.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m10-l5",
+              "title": "Support informed and respectful choices: When uncertainty is not pathology",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: When uncertainty is not pathology.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m10-l6",
+              "title": "Transfer mission: When uncertainty is not pathology",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: When uncertainty is not pathology.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "masculinity-book-3",
+      "title": "Gender norms and social learning",
+      "distinction": "expectation versus inherent trait",
+      "modules": [
+        {
+          "id": "masculinity-module-11",
+          "title": "Rules about acceptable masculinity",
+          "problem": "Rules about acceptable masculinity",
+          "lessons": [
+            {
+              "id": "masculinity-m11-l1",
+              "title": "Case file: Rules about acceptable masculinity",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Rules about acceptable masculinity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m11-l2",
+              "title": "Psychology, development and social context: Rules about acceptable masculinity",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Rules about acceptable masculinity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m11-l3",
+              "title": "Distinguish Rules about acceptable masculinity: expectation versus inherent trait",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Rules about acceptable masculinity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m11-l4",
+              "title": "Evidence investigation: Rules about acceptable masculinity",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Rules about acceptable masculinity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m11-l5",
+              "title": "Support informed and respectful choices: Rules about acceptable masculinity",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Rules about acceptable masculinity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m11-l6",
+              "title": "Transfer mission: Rules about acceptable masculinity",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Rules about acceptable masculinity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-12",
+          "title": "Femininity and emotional expression",
+          "problem": "Femininity and emotional expression",
+          "lessons": [
+            {
+              "id": "masculinity-m12-l1",
+              "title": "Case file: Femininity and emotional expression",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Femininity and emotional expression.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m12-l2",
+              "title": "Psychology, development and social context: Femininity and emotional expression",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Femininity and emotional expression.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m12-l3",
+              "title": "Distinguish Femininity and emotional expression: expectation versus inherent trait",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Femininity and emotional expression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m12-l4",
+              "title": "Evidence investigation: Femininity and emotional expression",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Femininity and emotional expression.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m12-l5",
+              "title": "Support informed and respectful choices: Femininity and emotional expression",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Femininity and emotional expression.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m12-l6",
+              "title": "Transfer mission: Femininity and emotional expression",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Femininity and emotional expression.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-13",
+          "title": "Status policing among peers",
+          "problem": "Status policing among peers",
+          "lessons": [
+            {
+              "id": "masculinity-m13-l1",
+              "title": "Case file: Status policing among peers",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Status policing among peers.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m13-l2",
+              "title": "Psychology, development and social context: Status policing among peers",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Status policing among peers.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m13-l3",
+              "title": "Distinguish Status policing among peers: expectation versus inherent trait",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Status policing among peers.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m13-l4",
+              "title": "Evidence investigation: Status policing among peers",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Status policing among peers.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m13-l5",
+              "title": "Support informed and respectful choices: Status policing among peers",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Status policing among peers.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m13-l6",
+              "title": "Transfer mission: Status policing among peers",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Status policing among peers.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-14",
+          "title": "Family and cultural gender scripts",
+          "problem": "Family and cultural gender scripts",
+          "lessons": [
+            {
+              "id": "masculinity-m14-l1",
+              "title": "Case file: Family and cultural gender scripts",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Family and cultural gender scripts.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m14-l2",
+              "title": "Psychology, development and social context: Family and cultural gender scripts",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Family and cultural gender scripts.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m14-l3",
+              "title": "Distinguish Family and cultural gender scripts: expectation versus inherent trait",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Family and cultural gender scripts.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m14-l4",
+              "title": "Evidence investigation: Family and cultural gender scripts",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Family and cultural gender scripts.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m14-l5",
+              "title": "Support informed and respectful choices: Family and cultural gender scripts",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Family and cultural gender scripts.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m14-l6",
+              "title": "Transfer mission: Family and cultural gender scripts",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Family and cultural gender scripts.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-15",
+          "title": "When deviation triggers punishment",
+          "problem": "When deviation triggers punishment",
+          "lessons": [
+            {
+              "id": "masculinity-m15-l1",
+              "title": "Case file: When deviation triggers punishment",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: When deviation triggers punishment.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m15-l2",
+              "title": "Psychology, development and social context: When deviation triggers punishment",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: When deviation triggers punishment.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m15-l3",
+              "title": "Distinguish When deviation triggers punishment: expectation versus inherent trait",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: When deviation triggers punishment.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m15-l4",
+              "title": "Evidence investigation: When deviation triggers punishment",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: When deviation triggers punishment.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m15-l5",
+              "title": "Support informed and respectful choices: When deviation triggers punishment",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: When deviation triggers punishment.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m15-l6",
+              "title": "Transfer mission: When deviation triggers punishment",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: When deviation triggers punishment.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "masculinity-book-4",
+      "title": "Sexuality and relationship diversity",
+      "distinction": "preference versus moral judgement",
+      "modules": [
+        {
+          "id": "masculinity-module-16",
+          "title": "Attraction across contexts",
+          "problem": "Attraction across contexts",
+          "lessons": [
+            {
+              "id": "masculinity-m16-l1",
+              "title": "Case file: Attraction across contexts",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Attraction across contexts.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m16-l2",
+              "title": "Psychology, development and social context: Attraction across contexts",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Attraction across contexts.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m16-l3",
+              "title": "Distinguish Attraction across contexts: preference versus moral judgement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Attraction across contexts.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m16-l4",
+              "title": "Evidence investigation: Attraction across contexts",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Attraction across contexts.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m16-l5",
+              "title": "Support informed and respectful choices: Attraction across contexts",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Attraction across contexts.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m16-l6",
+              "title": "Transfer mission: Attraction across contexts",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Attraction across contexts.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-17",
+          "title": "Romantic versus sexual orientation",
+          "problem": "Romantic versus sexual orientation",
+          "lessons": [
+            {
+              "id": "masculinity-m17-l1",
+              "title": "Case file: Romantic versus sexual orientation",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Romantic versus sexual orientation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m17-l2",
+              "title": "Psychology, development and social context: Romantic versus sexual orientation",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Romantic versus sexual orientation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m17-l3",
+              "title": "Distinguish Romantic versus sexual orientation: preference versus moral judgement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Romantic versus sexual orientation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m17-l4",
+              "title": "Evidence investigation: Romantic versus sexual orientation",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Romantic versus sexual orientation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m17-l5",
+              "title": "Support informed and respectful choices: Romantic versus sexual orientation",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Romantic versus sexual orientation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m17-l6",
+              "title": "Transfer mission: Romantic versus sexual orientation",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Romantic versus sexual orientation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-18",
+          "title": "Desire that changes over time",
+          "problem": "Desire that changes over time",
+          "lessons": [
+            {
+              "id": "masculinity-m18-l1",
+              "title": "Case file: Desire that changes over time",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Desire that changes over time.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m18-l2",
+              "title": "Psychology, development and social context: Desire that changes over time",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Desire that changes over time.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m18-l3",
+              "title": "Distinguish Desire that changes over time: preference versus moral judgement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Desire that changes over time.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m18-l4",
+              "title": "Evidence investigation: Desire that changes over time",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Desire that changes over time.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m18-l5",
+              "title": "Support informed and respectful choices: Desire that changes over time",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Desire that changes over time.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m18-l6",
+              "title": "Transfer mission: Desire that changes over time",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Desire that changes over time.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-19",
+          "title": "Consensual kink and power exchange",
+          "problem": "Consensual kink and power exchange",
+          "lessons": [
+            {
+              "id": "masculinity-m19-l1",
+              "title": "Case file: Consensual kink and power exchange",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Consensual kink and power exchange.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m19-l2",
+              "title": "Psychology, development and social context: Consensual kink and power exchange",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Consensual kink and power exchange.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m19-l3",
+              "title": "Distinguish Consensual kink and power exchange: preference versus moral judgement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Consensual kink and power exchange.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m19-l4",
+              "title": "Evidence investigation: Consensual kink and power exchange",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Consensual kink and power exchange.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m19-l5",
+              "title": "Support informed and respectful choices: Consensual kink and power exchange",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Consensual kink and power exchange.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m19-l6",
+              "title": "Transfer mission: Consensual kink and power exchange",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Consensual kink and power exchange.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-20",
+          "title": "When fantasy does not dictate identity",
+          "problem": "When fantasy does not dictate identity",
+          "lessons": [
+            {
+              "id": "masculinity-m20-l1",
+              "title": "Case file: When fantasy does not dictate identity",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: When fantasy does not dictate identity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m20-l2",
+              "title": "Psychology, development and social context: When fantasy does not dictate identity",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: When fantasy does not dictate identity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m20-l3",
+              "title": "Distinguish When fantasy does not dictate identity: preference versus moral judgement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: When fantasy does not dictate identity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m20-l4",
+              "title": "Evidence investigation: When fantasy does not dictate identity",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: When fantasy does not dictate identity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m20-l5",
+              "title": "Support informed and respectful choices: When fantasy does not dictate identity",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: When fantasy does not dictate identity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m20-l6",
+              "title": "Transfer mission: When fantasy does not dictate identity",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: When fantasy does not dictate identity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "masculinity-book-5",
+      "title": "Consent and interpersonal power",
+      "distinction": "negotiated agreement versus coercion",
+      "modules": [
+        {
+          "id": "masculinity-module-21",
+          "title": "Enthusiastic ongoing consent",
+          "problem": "Enthusiastic ongoing consent",
+          "lessons": [
+            {
+              "id": "masculinity-m21-l1",
+              "title": "Case file: Enthusiastic ongoing consent",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Enthusiastic ongoing consent.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m21-l2",
+              "title": "Psychology, development and social context: Enthusiastic ongoing consent",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Enthusiastic ongoing consent.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m21-l3",
+              "title": "Distinguish Enthusiastic ongoing consent: negotiated agreement versus coercion",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Enthusiastic ongoing consent.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m21-l4",
+              "title": "Evidence investigation: Enthusiastic ongoing consent",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Enthusiastic ongoing consent.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m21-l5",
+              "title": "Support informed and respectful choices: Enthusiastic ongoing consent",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Enthusiastic ongoing consent.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m21-l6",
+              "title": "Transfer mission: Enthusiastic ongoing consent",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Enthusiastic ongoing consent.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-22",
+          "title": "Boundaries that apply to both partners",
+          "problem": "Boundaries that apply to both partners",
+          "lessons": [
+            {
+              "id": "masculinity-m22-l1",
+              "title": "Case file: Boundaries that apply to both partners",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Boundaries that apply to both partners.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m22-l2",
+              "title": "Psychology, development and social context: Boundaries that apply to both partners",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Boundaries that apply to both partners.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m22-l3",
+              "title": "Distinguish Boundaries that apply to both partners: negotiated agreement versus coercion",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Boundaries that apply to both partners.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m22-l4",
+              "title": "Evidence investigation: Boundaries that apply to both partners",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Boundaries that apply to both partners.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m22-l5",
+              "title": "Support informed and respectful choices: Boundaries that apply to both partners",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Boundaries that apply to both partners.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m22-l6",
+              "title": "Transfer mission: Boundaries that apply to both partners",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Boundaries that apply to both partners.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-23",
+          "title": "Negotiating roles without obligation",
+          "problem": "Negotiating roles without obligation",
+          "lessons": [
+            {
+              "id": "masculinity-m23-l1",
+              "title": "Case file: Negotiating roles without obligation",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Negotiating roles without obligation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m23-l2",
+              "title": "Psychology, development and social context: Negotiating roles without obligation",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Negotiating roles without obligation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m23-l3",
+              "title": "Distinguish Negotiating roles without obligation: negotiated agreement versus coercion",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Negotiating roles without obligation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m23-l4",
+              "title": "Evidence investigation: Negotiating roles without obligation",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Negotiating roles without obligation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m23-l5",
+              "title": "Support informed and respectful choices: Negotiating roles without obligation",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Negotiating roles without obligation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m23-l6",
+              "title": "Transfer mission: Negotiating roles without obligation",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Negotiating roles without obligation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-24",
+          "title": "When inequality compromises free choice",
+          "problem": "When inequality compromises free choice",
+          "lessons": [
+            {
+              "id": "masculinity-m24-l1",
+              "title": "Case file: When inequality compromises free choice",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: When inequality compromises free choice.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m24-l2",
+              "title": "Psychology, development and social context: When inequality compromises free choice",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: When inequality compromises free choice.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m24-l3",
+              "title": "Distinguish When inequality compromises free choice: negotiated agreement versus coercion",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: When inequality compromises free choice.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m24-l4",
+              "title": "Evidence investigation: When inequality compromises free choice",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: When inequality compromises free choice.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m24-l5",
+              "title": "Support informed and respectful choices: When inequality compromises free choice",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: When inequality compromises free choice.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m24-l6",
+              "title": "Transfer mission: When inequality compromises free choice",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: When inequality compromises free choice.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-25",
+          "title": "Recognising manipulation in sexual contexts",
+          "problem": "Recognising manipulation in sexual contexts",
+          "lessons": [
+            {
+              "id": "masculinity-m25-l1",
+              "title": "Case file: Recognising manipulation in sexual contexts",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Recognising manipulation in sexual contexts.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m25-l2",
+              "title": "Psychology, development and social context: Recognising manipulation in sexual contexts",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Recognising manipulation in sexual contexts.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m25-l3",
+              "title": "Distinguish Recognising manipulation in sexual contexts: negotiated agreement versus coercion",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Recognising manipulation in sexual contexts.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m25-l4",
+              "title": "Evidence investigation: Recognising manipulation in sexual contexts",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Recognising manipulation in sexual contexts.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m25-l5",
+              "title": "Support informed and respectful choices: Recognising manipulation in sexual contexts",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Recognising manipulation in sexual contexts.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m25-l6",
+              "title": "Transfer mission: Recognising manipulation in sexual contexts",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Recognising manipulation in sexual contexts.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "masculinity-book-6",
+      "title": "Shame, stigma and internal conflict",
+      "distinction": "private preference versus internalised judgement",
+      "modules": [
+        {
+          "id": "masculinity-module-26",
+          "title": "Shame after desire or pleasure",
+          "problem": "Shame after desire or pleasure",
+          "lessons": [
+            {
+              "id": "masculinity-m26-l1",
+              "title": "Case file: Shame after desire or pleasure",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Shame after desire or pleasure.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m26-l2",
+              "title": "Psychology, development and social context: Shame after desire or pleasure",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Shame after desire or pleasure.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m26-l3",
+              "title": "Distinguish Shame after desire or pleasure: private preference versus internalised judgement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Shame after desire or pleasure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m26-l4",
+              "title": "Evidence investigation: Shame after desire or pleasure",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Shame after desire or pleasure.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m26-l5",
+              "title": "Support informed and respectful choices: Shame after desire or pleasure",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Shame after desire or pleasure.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m26-l6",
+              "title": "Transfer mission: Shame after desire or pleasure",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Shame after desire or pleasure.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-27",
+          "title": "Religious or cultural pressure and identity",
+          "problem": "Religious or cultural pressure and identity",
+          "lessons": [
+            {
+              "id": "masculinity-m27-l1",
+              "title": "Case file: Religious or cultural pressure and identity",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Religious or cultural pressure and identity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m27-l2",
+              "title": "Psychology, development and social context: Religious or cultural pressure and identity",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Religious or cultural pressure and identity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m27-l3",
+              "title": "Distinguish Religious or cultural pressure and identity: private preference versus internalised judgement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Religious or cultural pressure and identity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m27-l4",
+              "title": "Evidence investigation: Religious or cultural pressure and identity",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Religious or cultural pressure and identity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m27-l5",
+              "title": "Support informed and respectful choices: Religious or cultural pressure and identity",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Religious or cultural pressure and identity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m27-l6",
+              "title": "Transfer mission: Religious or cultural pressure and identity",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Religious or cultural pressure and identity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-28",
+          "title": "Fear of being judged by partners",
+          "problem": "Fear of being judged by partners",
+          "lessons": [
+            {
+              "id": "masculinity-m28-l1",
+              "title": "Case file: Fear of being judged by partners",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Fear of being judged by partners.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m28-l2",
+              "title": "Psychology, development and social context: Fear of being judged by partners",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Fear of being judged by partners.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m28-l3",
+              "title": "Distinguish Fear of being judged by partners: private preference versus internalised judgement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Fear of being judged by partners.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m28-l4",
+              "title": "Evidence investigation: Fear of being judged by partners",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Fear of being judged by partners.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m28-l5",
+              "title": "Support informed and respectful choices: Fear of being judged by partners",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Fear of being judged by partners.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m28-l6",
+              "title": "Transfer mission: Fear of being judged by partners",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Fear of being judged by partners.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-29",
+          "title": "Compulsive self-analysis of sexuality",
+          "problem": "Compulsive self-analysis of sexuality",
+          "lessons": [
+            {
+              "id": "masculinity-m29-l1",
+              "title": "Case file: Compulsive self-analysis of sexuality",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Compulsive self-analysis of sexuality.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m29-l2",
+              "title": "Psychology, development and social context: Compulsive self-analysis of sexuality",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Compulsive self-analysis of sexuality.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m29-l3",
+              "title": "Distinguish Compulsive self-analysis of sexuality: private preference versus internalised judgement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Compulsive self-analysis of sexuality.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m29-l4",
+              "title": "Evidence investigation: Compulsive self-analysis of sexuality",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Compulsive self-analysis of sexuality.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m29-l5",
+              "title": "Support informed and respectful choices: Compulsive self-analysis of sexuality",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Compulsive self-analysis of sexuality.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m29-l6",
+              "title": "Transfer mission: Compulsive self-analysis of sexuality",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Compulsive self-analysis of sexuality.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-30",
+          "title": "Seeking self-understanding without forced labels",
+          "problem": "Seeking self-understanding without forced labels",
+          "lessons": [
+            {
+              "id": "masculinity-m30-l1",
+              "title": "Case file: Seeking self-understanding without forced labels",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Seeking self-understanding without forced labels.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m30-l2",
+              "title": "Psychology, development and social context: Seeking self-understanding without forced labels",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Seeking self-understanding without forced labels.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m30-l3",
+              "title": "Distinguish Seeking self-understanding without forced labels: private preference versus internalised judgement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Seeking self-understanding without forced labels.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m30-l4",
+              "title": "Evidence investigation: Seeking self-understanding without forced labels",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Seeking self-understanding without forced labels.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m30-l5",
+              "title": "Support informed and respectful choices: Seeking self-understanding without forced labels",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Seeking self-understanding without forced labels.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m30-l6",
+              "title": "Transfer mission: Seeking self-understanding without forced labels",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Seeking self-understanding without forced labels.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "masculinity-book-7",
+      "title": "Sexual health and psychological wellbeing",
+      "distinction": "behaviour versus risk stereotype",
+      "modules": [
+        {
+          "id": "masculinity-module-31",
+          "title": "Sexual communication and pleasure",
+          "problem": "Sexual communication and pleasure",
+          "lessons": [
+            {
+              "id": "masculinity-m31-l1",
+              "title": "Case file: Sexual communication and pleasure",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Sexual communication and pleasure.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m31-l2",
+              "title": "Psychology, development and social context: Sexual communication and pleasure",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Sexual communication and pleasure.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m31-l3",
+              "title": "Distinguish Sexual communication and pleasure: behaviour versus risk stereotype",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Sexual communication and pleasure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m31-l4",
+              "title": "Evidence investigation: Sexual communication and pleasure",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Sexual communication and pleasure.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m31-l5",
+              "title": "Support informed and respectful choices: Sexual communication and pleasure",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Sexual communication and pleasure.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m31-l6",
+              "title": "Transfer mission: Sexual communication and pleasure",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Sexual communication and pleasure.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-32",
+          "title": "Safer-sex decisions and access",
+          "problem": "Safer-sex decisions and access",
+          "lessons": [
+            {
+              "id": "masculinity-m32-l1",
+              "title": "Case file: Safer-sex decisions and access",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Safer-sex decisions and access.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m32-l2",
+              "title": "Psychology, development and social context: Safer-sex decisions and access",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Safer-sex decisions and access.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m32-l3",
+              "title": "Distinguish Safer-sex decisions and access: behaviour versus risk stereotype",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Safer-sex decisions and access.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m32-l4",
+              "title": "Evidence investigation: Safer-sex decisions and access",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Safer-sex decisions and access.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m32-l5",
+              "title": "Support informed and respectful choices: Safer-sex decisions and access",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Safer-sex decisions and access.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m32-l6",
+              "title": "Transfer mission: Safer-sex decisions and access",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Safer-sex decisions and access.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-33",
+          "title": "Distress from unwanted repetitive behaviour",
+          "problem": "Distress from unwanted repetitive behaviour",
+          "lessons": [
+            {
+              "id": "masculinity-m33-l1",
+              "title": "Case file: Distress from unwanted repetitive behaviour",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Distress from unwanted repetitive behaviour.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m33-l2",
+              "title": "Psychology, development and social context: Distress from unwanted repetitive behaviour",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Distress from unwanted repetitive behaviour.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m33-l3",
+              "title": "Distinguish Distress from unwanted repetitive behaviour: behaviour versus risk stereotype",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Distress from unwanted repetitive behaviour.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m33-l4",
+              "title": "Evidence investigation: Distress from unwanted repetitive behaviour",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Distress from unwanted repetitive behaviour.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m33-l5",
+              "title": "Support informed and respectful choices: Distress from unwanted repetitive behaviour",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Distress from unwanted repetitive behaviour.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m33-l6",
+              "title": "Transfer mission: Distress from unwanted repetitive behaviour",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Distress from unwanted repetitive behaviour.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-34",
+          "title": "Sexual functioning and performance anxiety",
+          "problem": "Sexual functioning and performance anxiety",
+          "lessons": [
+            {
+              "id": "masculinity-m34-l1",
+              "title": "Case file: Sexual functioning and performance anxiety",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Sexual functioning and performance anxiety.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m34-l2",
+              "title": "Psychology, development and social context: Sexual functioning and performance anxiety",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Sexual functioning and performance anxiety.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m34-l3",
+              "title": "Distinguish Sexual functioning and performance anxiety: behaviour versus risk stereotype",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Sexual functioning and performance anxiety.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m34-l4",
+              "title": "Evidence investigation: Sexual functioning and performance anxiety",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Sexual functioning and performance anxiety.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m34-l5",
+              "title": "Support informed and respectful choices: Sexual functioning and performance anxiety",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Sexual functioning and performance anxiety.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m34-l6",
+              "title": "Transfer mission: Sexual functioning and performance anxiety",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Sexual functioning and performance anxiety.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-35",
+          "title": "Support for coercion or sexual violence",
+          "problem": "Support for coercion or sexual violence",
+          "lessons": [
+            {
+              "id": "masculinity-m35-l1",
+              "title": "Case file: Support for coercion or sexual violence",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Support for coercion or sexual violence.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m35-l2",
+              "title": "Psychology, development and social context: Support for coercion or sexual violence",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Support for coercion or sexual violence.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m35-l3",
+              "title": "Distinguish Support for coercion or sexual violence: behaviour versus risk stereotype",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Support for coercion or sexual violence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m35-l4",
+              "title": "Evidence investigation: Support for coercion or sexual violence",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Support for coercion or sexual violence.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m35-l5",
+              "title": "Support informed and respectful choices: Support for coercion or sexual violence",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Support for coercion or sexual violence.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m35-l6",
+              "title": "Transfer mission: Support for coercion or sexual violence",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Support for coercion or sexual violence.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "masculinity-book-8",
+      "title": "Online gender and sexuality narratives",
+      "distinction": "belonging versus ideological capture",
+      "modules": [
+        {
+          "id": "masculinity-module-36",
+          "title": "Manosphere accounts of status",
+          "problem": "Manosphere accounts of status",
+          "lessons": [
+            {
+              "id": "masculinity-m36-l1",
+              "title": "Case file: Manosphere accounts of status",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Manosphere accounts of status.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m36-l2",
+              "title": "Psychology, development and social context: Manosphere accounts of status",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Manosphere accounts of status.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m36-l3",
+              "title": "Distinguish Manosphere accounts of status: belonging versus ideological capture",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Manosphere accounts of status.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m36-l4",
+              "title": "Evidence investigation: Manosphere accounts of status",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Manosphere accounts of status.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m36-l5",
+              "title": "Support informed and respectful choices: Manosphere accounts of status",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Manosphere accounts of status.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m36-l6",
+              "title": "Transfer mission: Manosphere accounts of status",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Manosphere accounts of status.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-37",
+          "title": "Misogyny framed as self-improvement",
+          "problem": "Misogyny framed as self-improvement",
+          "lessons": [
+            {
+              "id": "masculinity-m37-l1",
+              "title": "Case file: Misogyny framed as self-improvement",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Misogyny framed as self-improvement.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m37-l2",
+              "title": "Psychology, development and social context: Misogyny framed as self-improvement",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Misogyny framed as self-improvement.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m37-l3",
+              "title": "Distinguish Misogyny framed as self-improvement: belonging versus ideological capture",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Misogyny framed as self-improvement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m37-l4",
+              "title": "Evidence investigation: Misogyny framed as self-improvement",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Misogyny framed as self-improvement.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m37-l5",
+              "title": "Support informed and respectful choices: Misogyny framed as self-improvement",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Misogyny framed as self-improvement.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m37-l6",
+              "title": "Transfer mission: Misogyny framed as self-improvement",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Misogyny framed as self-improvement.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-38",
+          "title": "Influencer incentives and outrage",
+          "problem": "Influencer incentives and outrage",
+          "lessons": [
+            {
+              "id": "masculinity-m38-l1",
+              "title": "Case file: Influencer incentives and outrage",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Influencer incentives and outrage.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m38-l2",
+              "title": "Psychology, development and social context: Influencer incentives and outrage",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Influencer incentives and outrage.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m38-l3",
+              "title": "Distinguish Influencer incentives and outrage: belonging versus ideological capture",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Influencer incentives and outrage.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m38-l4",
+              "title": "Evidence investigation: Influencer incentives and outrage",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Influencer incentives and outrage.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m38-l5",
+              "title": "Support informed and respectful choices: Influencer incentives and outrage",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Influencer incentives and outrage.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m38-l6",
+              "title": "Transfer mission: Influencer incentives and outrage",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Influencer incentives and outrage.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-39",
+          "title": "Pornography myths about relationships",
+          "problem": "Pornography myths about relationships",
+          "lessons": [
+            {
+              "id": "masculinity-m39-l1",
+              "title": "Case file: Pornography myths about relationships",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Pornography myths about relationships.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m39-l2",
+              "title": "Psychology, development and social context: Pornography myths about relationships",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Pornography myths about relationships.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m39-l3",
+              "title": "Distinguish Pornography myths about relationships: belonging versus ideological capture",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Pornography myths about relationships.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m39-l4",
+              "title": "Evidence investigation: Pornography myths about relationships",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Pornography myths about relationships.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m39-l5",
+              "title": "Support informed and respectful choices: Pornography myths about relationships",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Pornography myths about relationships.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m39-l6",
+              "title": "Transfer mission: Pornography myths about relationships",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Pornography myths about relationships.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-40",
+          "title": "Algorithmic reinforcement of gender hostility",
+          "problem": "Algorithmic reinforcement of gender hostility",
+          "lessons": [
+            {
+              "id": "masculinity-m40-l1",
+              "title": "Case file: Algorithmic reinforcement of gender hostility",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Algorithmic reinforcement of gender hostility.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m40-l2",
+              "title": "Psychology, development and social context: Algorithmic reinforcement of gender hostility",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Algorithmic reinforcement of gender hostility.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m40-l3",
+              "title": "Distinguish Algorithmic reinforcement of gender hostility: belonging versus ideological capture",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Algorithmic reinforcement of gender hostility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m40-l4",
+              "title": "Evidence investigation: Algorithmic reinforcement of gender hostility",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Algorithmic reinforcement of gender hostility.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m40-l5",
+              "title": "Support informed and respectful choices: Algorithmic reinforcement of gender hostility",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Algorithmic reinforcement of gender hostility.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m40-l6",
+              "title": "Transfer mission: Algorithmic reinforcement of gender hostility",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Algorithmic reinforcement of gender hostility.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "masculinity-book-9",
+      "title": "Institutions and inequality",
+      "distinction": "individual prejudice versus structural conditions",
+      "modules": [
+        {
+          "id": "masculinity-module-41",
+          "title": "Gender-based violence and risk",
+          "problem": "Gender-based violence and risk",
+          "lessons": [
+            {
+              "id": "masculinity-m41-l1",
+              "title": "Case file: Gender-based violence and risk",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Gender-based violence and risk.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m41-l2",
+              "title": "Psychology, development and social context: Gender-based violence and risk",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Gender-based violence and risk.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m41-l3",
+              "title": "Distinguish Gender-based violence and risk: individual prejudice versus structural conditions",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Gender-based violence and risk.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m41-l4",
+              "title": "Evidence investigation: Gender-based violence and risk",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Gender-based violence and risk.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m41-l5",
+              "title": "Support informed and respectful choices: Gender-based violence and risk",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Gender-based violence and risk.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m41-l6",
+              "title": "Transfer mission: Gender-based violence and risk",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Gender-based violence and risk.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-42",
+          "title": "LGBTQ+ discrimination and minority stress",
+          "problem": "LGBTQ+ discrimination and minority stress",
+          "lessons": [
+            {
+              "id": "masculinity-m42-l1",
+              "title": "Case file: LGBTQ+ discrimination and minority stress",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: LGBTQ+ discrimination and minority stress.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m42-l2",
+              "title": "Psychology, development and social context: LGBTQ+ discrimination and minority stress",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: LGBTQ+ discrimination and minority stress.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m42-l3",
+              "title": "Distinguish LGBTQ+ discrimination and minority stress: individual prejudice versus structural conditions",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: LGBTQ+ discrimination and minority stress.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m42-l4",
+              "title": "Evidence investigation: LGBTQ+ discrimination and minority stress",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: LGBTQ+ discrimination and minority stress.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m42-l5",
+              "title": "Support informed and respectful choices: LGBTQ+ discrimination and minority stress",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: LGBTQ+ discrimination and minority stress.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m42-l6",
+              "title": "Transfer mission: LGBTQ+ discrimination and minority stress",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: LGBTQ+ discrimination and minority stress.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-43",
+          "title": "Schools, sex education and omission",
+          "problem": "Schools, sex education and omission",
+          "lessons": [
+            {
+              "id": "masculinity-m43-l1",
+              "title": "Case file: Schools, sex education and omission",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Schools, sex education and omission.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m43-l2",
+              "title": "Psychology, development and social context: Schools, sex education and omission",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Schools, sex education and omission.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m43-l3",
+              "title": "Distinguish Schools, sex education and omission: individual prejudice versus structural conditions",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Schools, sex education and omission.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m43-l4",
+              "title": "Evidence investigation: Schools, sex education and omission",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Schools, sex education and omission.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m43-l5",
+              "title": "Support informed and respectful choices: Schools, sex education and omission",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Schools, sex education and omission.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m43-l6",
+              "title": "Transfer mission: Schools, sex education and omission",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Schools, sex education and omission.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-44",
+          "title": "Workplace harassment and stereotypes",
+          "problem": "Workplace harassment and stereotypes",
+          "lessons": [
+            {
+              "id": "masculinity-m44-l1",
+              "title": "Case file: Workplace harassment and stereotypes",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Workplace harassment and stereotypes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m44-l2",
+              "title": "Psychology, development and social context: Workplace harassment and stereotypes",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Workplace harassment and stereotypes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m44-l3",
+              "title": "Distinguish Workplace harassment and stereotypes: individual prejudice versus structural conditions",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Workplace harassment and stereotypes.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m44-l4",
+              "title": "Evidence investigation: Workplace harassment and stereotypes",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Workplace harassment and stereotypes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m44-l5",
+              "title": "Support informed and respectful choices: Workplace harassment and stereotypes",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Workplace harassment and stereotypes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m44-l6",
+              "title": "Transfer mission: Workplace harassment and stereotypes",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Workplace harassment and stereotypes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-45",
+          "title": "Policy debates and lived consequences",
+          "problem": "Policy debates and lived consequences",
+          "lessons": [
+            {
+              "id": "masculinity-m45-l1",
+              "title": "Case file: Policy debates and lived consequences",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Policy debates and lived consequences.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m45-l2",
+              "title": "Psychology, development and social context: Policy debates and lived consequences",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Policy debates and lived consequences.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m45-l3",
+              "title": "Distinguish Policy debates and lived consequences: individual prejudice versus structural conditions",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Policy debates and lived consequences.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m45-l4",
+              "title": "Evidence investigation: Policy debates and lived consequences",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Policy debates and lived consequences.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m45-l5",
+              "title": "Support informed and respectful choices: Policy debates and lived consequences",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Policy debates and lived consequences.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m45-l6",
+              "title": "Transfer mission: Policy debates and lived consequences",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Policy debates and lived consequences.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "masculinity-book-10",
+      "title": "Advanced ethics and cases",
+      "distinction": "difference versus harm",
+      "modules": [
+        {
+          "id": "masculinity-module-46",
+          "title": "A couple with contrasting gender roles",
+          "problem": "A couple with contrasting gender roles",
+          "lessons": [
+            {
+              "id": "masculinity-m46-l1",
+              "title": "Case file: A couple with contrasting gender roles",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: A couple with contrasting gender roles.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m46-l2",
+              "title": "Psychology, development and social context: A couple with contrasting gender roles",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: A couple with contrasting gender roles.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m46-l3",
+              "title": "Distinguish A couple with contrasting gender roles: difference versus harm",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: A couple with contrasting gender roles.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m46-l4",
+              "title": "Evidence investigation: A couple with contrasting gender roles",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: A couple with contrasting gender roles.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m46-l5",
+              "title": "Support informed and respectful choices: A couple with contrasting gender roles",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: A couple with contrasting gender roles.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m46-l6",
+              "title": "Transfer mission: A couple with contrasting gender roles",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: A couple with contrasting gender roles.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-47",
+          "title": "Respecting identity without assuming experience",
+          "problem": "Respecting identity without assuming experience",
+          "lessons": [
+            {
+              "id": "masculinity-m47-l1",
+              "title": "Case file: Respecting identity without assuming experience",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Respecting identity without assuming experience.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m47-l2",
+              "title": "Psychology, development and social context: Respecting identity without assuming experience",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Respecting identity without assuming experience.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m47-l3",
+              "title": "Distinguish Respecting identity without assuming experience: difference versus harm",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Respecting identity without assuming experience.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m47-l4",
+              "title": "Evidence investigation: Respecting identity without assuming experience",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Respecting identity without assuming experience.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m47-l5",
+              "title": "Support informed and respectful choices: Respecting identity without assuming experience",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Respecting identity without assuming experience.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m47-l6",
+              "title": "Transfer mission: Respecting identity without assuming experience",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Respecting identity without assuming experience.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-48",
+          "title": "Navigating family disagreement safely",
+          "problem": "Navigating family disagreement safely",
+          "lessons": [
+            {
+              "id": "masculinity-m48-l1",
+              "title": "Case file: Navigating family disagreement safely",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Navigating family disagreement safely.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m48-l2",
+              "title": "Psychology, development and social context: Navigating family disagreement safely",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Navigating family disagreement safely.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m48-l3",
+              "title": "Distinguish Navigating family disagreement safely: difference versus harm",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Navigating family disagreement safely.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m48-l4",
+              "title": "Evidence investigation: Navigating family disagreement safely",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Navigating family disagreement safely.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m48-l5",
+              "title": "Support informed and respectful choices: Navigating family disagreement safely",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Navigating family disagreement safely.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m48-l6",
+              "title": "Transfer mission: Navigating family disagreement safely",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Navigating family disagreement safely.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-49",
+          "title": "Differentiating prejudice from genuine incompatibility",
+          "problem": "Differentiating prejudice from genuine incompatibility",
+          "lessons": [
+            {
+              "id": "masculinity-m49-l1",
+              "title": "Case file: Differentiating prejudice from genuine incompatibility",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Differentiating prejudice from genuine incompatibility.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m49-l2",
+              "title": "Psychology, development and social context: Differentiating prejudice from genuine incompatibility",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Differentiating prejudice from genuine incompatibility.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m49-l3",
+              "title": "Distinguish Differentiating prejudice from genuine incompatibility: difference versus harm",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Differentiating prejudice from genuine incompatibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m49-l4",
+              "title": "Evidence investigation: Differentiating prejudice from genuine incompatibility",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Differentiating prejudice from genuine incompatibility.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m49-l5",
+              "title": "Support informed and respectful choices: Differentiating prejudice from genuine incompatibility",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Differentiating prejudice from genuine incompatibility.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m49-l6",
+              "title": "Transfer mission: Differentiating prejudice from genuine incompatibility",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Differentiating prejudice from genuine incompatibility.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "masculinity-module-50",
+          "title": "Integrated mission: autonomy, respect and evidence",
+          "problem": "Integrated mission: autonomy, respect and evidence",
+          "lessons": [
+            {
+              "id": "masculinity-m50-l1",
+              "title": "Case file: Integrated mission: autonomy, respect and evidence",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Integrated mission: autonomy, respect and evidence.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m50-l2",
+              "title": "Psychology, development and social context: Integrated mission: autonomy, respect and evidence",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Integrated mission: autonomy, respect and evidence.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m50-l3",
+              "title": "Distinguish Integrated mission: autonomy, respect and evidence: difference versus harm",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Integrated mission: autonomy, respect and evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m50-l4",
+              "title": "Evidence investigation: Integrated mission: autonomy, respect and evidence",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Integrated mission: autonomy, respect and evidence.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m50-l5",
+              "title": "Support informed and respectful choices: Integrated mission: autonomy, respect and evidence",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Integrated mission: autonomy, respect and evidence.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "masculinity-m50-l6",
+              "title": "Transfer mission: Integrated mission: autonomy, respect and evidence",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Integrated mission: autonomy, respect and evidence.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

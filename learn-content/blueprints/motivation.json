@@ -1,0 +1,2828 @@
+{
+  "courseId": "motivation",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Working lesson headings and learning objectives; no published content.",
+  "books": [
+    {
+      "id": "motivation-book-1",
+      "title": "The real problem with starting",
+      "distinction": "laziness label versus functional analysis",
+      "modules": [
+        {
+          "id": "motivation-module-01",
+          "title": "Knowing what to do but not beginning",
+          "problem": "Knowing what to do but not beginning",
+          "lessons": [
+            {
+              "id": "motivation-m1-l1",
+              "title": "Case file: Knowing what to do but not beginning",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Knowing what to do but not beginning.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m1-l2",
+              "title": "The mechanism behind Knowing what to do but not beginning",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Knowing what to do but not beginning.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m1-l3",
+              "title": "Distinguish Knowing what to do but not beginning: laziness label versus functional analysis",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Knowing what to do but not beginning. Contrast: laziness label versus functional analysis.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m1-l4",
+              "title": "Evidence investigation: Knowing what to do but not beginning",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Knowing what to do but not beginning.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m1-l5",
+              "title": "Strategy clinic: Knowing what to do but not beginning",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Knowing what to do but not beginning.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m1-l6",
+              "title": "Transfer mission: Knowing what to do but not beginning",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Knowing what to do but not beginning.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-02",
+          "title": "Task aversion and emotional cost",
+          "problem": "Task aversion and emotional cost",
+          "lessons": [
+            {
+              "id": "motivation-m2-l1",
+              "title": "Case file: Task aversion and emotional cost",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Task aversion and emotional cost.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m2-l2",
+              "title": "The mechanism behind Task aversion and emotional cost",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Task aversion and emotional cost.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m2-l3",
+              "title": "Distinguish Task aversion and emotional cost: laziness label versus functional analysis",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Task aversion and emotional cost. Contrast: laziness label versus functional analysis.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m2-l4",
+              "title": "Evidence investigation: Task aversion and emotional cost",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Task aversion and emotional cost.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m2-l5",
+              "title": "Strategy clinic: Task aversion and emotional cost",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Task aversion and emotional cost.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m2-l6",
+              "title": "Transfer mission: Task aversion and emotional cost",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Task aversion and emotional cost.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-03",
+          "title": "Motivation after versus before action",
+          "problem": "Motivation after versus before action",
+          "lessons": [
+            {
+              "id": "motivation-m3-l1",
+              "title": "Case file: Motivation after versus before action",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Motivation after versus before action.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m3-l2",
+              "title": "The mechanism behind Motivation after versus before action",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Motivation after versus before action.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m3-l3",
+              "title": "Distinguish Motivation after versus before action: laziness label versus functional analysis",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Motivation after versus before action. Contrast: laziness label versus functional analysis.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m3-l4",
+              "title": "Evidence investigation: Motivation after versus before action",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Motivation after versus before action.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m3-l5",
+              "title": "Strategy clinic: Motivation after versus before action",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Motivation after versus before action.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m3-l6",
+              "title": "Transfer mission: Motivation after versus before action",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Motivation after versus before action.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-04",
+          "title": "Why willpower is not an explanation",
+          "problem": "Why willpower is not an explanation",
+          "lessons": [
+            {
+              "id": "motivation-m4-l1",
+              "title": "Case file: Why willpower is not an explanation",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Why willpower is not an explanation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m4-l2",
+              "title": "The mechanism behind Why willpower is not an explanation",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Why willpower is not an explanation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m4-l3",
+              "title": "Distinguish Why willpower is not an explanation: laziness label versus functional analysis",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Why willpower is not an explanation. Contrast: laziness label versus functional analysis.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m4-l4",
+              "title": "Evidence investigation: Why willpower is not an explanation",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Why willpower is not an explanation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m4-l5",
+              "title": "Strategy clinic: Why willpower is not an explanation",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Why willpower is not an explanation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m4-l6",
+              "title": "Transfer mission: Why willpower is not an explanation",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Why willpower is not an explanation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-05",
+          "title": "Choosing the smallest meaningful start",
+          "problem": "Choosing the smallest meaningful start",
+          "lessons": [
+            {
+              "id": "motivation-m5-l1",
+              "title": "Case file: Choosing the smallest meaningful start",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Choosing the smallest meaningful start.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m5-l2",
+              "title": "The mechanism behind Choosing the smallest meaningful start",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Choosing the smallest meaningful start.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m5-l3",
+              "title": "Distinguish Choosing the smallest meaningful start: laziness label versus functional analysis",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Choosing the smallest meaningful start. Contrast: laziness label versus functional analysis.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m5-l4",
+              "title": "Evidence investigation: Choosing the smallest meaningful start",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Choosing the smallest meaningful start.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m5-l5",
+              "title": "Strategy clinic: Choosing the smallest meaningful start",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Choosing the smallest meaningful start.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m5-l6",
+              "title": "Transfer mission: Choosing the smallest meaningful start",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Choosing the smallest meaningful start.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motivation-book-2",
+      "title": "Reward and reinforcement",
+      "distinction": "enjoyment versus reinforcement",
+      "modules": [
+        {
+          "id": "motivation-module-06",
+          "title": "Immediate relief from postponing work",
+          "problem": "Immediate relief from postponing work",
+          "lessons": [
+            {
+              "id": "motivation-m6-l1",
+              "title": "Case file: Immediate relief from postponing work",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Immediate relief from postponing work.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m6-l2",
+              "title": "The mechanism behind Immediate relief from postponing work",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Immediate relief from postponing work.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m6-l3",
+              "title": "Distinguish Immediate relief from postponing work: enjoyment versus reinforcement",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Immediate relief from postponing work. Contrast: enjoyment versus reinforcement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m6-l4",
+              "title": "Evidence investigation: Immediate relief from postponing work",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Immediate relief from postponing work.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m6-l5",
+              "title": "Strategy clinic: Immediate relief from postponing work",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Immediate relief from postponing work.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m6-l6",
+              "title": "Transfer mission: Immediate relief from postponing work",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Immediate relief from postponing work.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-07",
+          "title": "Delayed rewards and present bias",
+          "problem": "Delayed rewards and present bias",
+          "lessons": [
+            {
+              "id": "motivation-m7-l1",
+              "title": "Case file: Delayed rewards and present bias",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Delayed rewards and present bias.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m7-l2",
+              "title": "The mechanism behind Delayed rewards and present bias",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Delayed rewards and present bias.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m7-l3",
+              "title": "Distinguish Delayed rewards and present bias: enjoyment versus reinforcement",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Delayed rewards and present bias. Contrast: enjoyment versus reinforcement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m7-l4",
+              "title": "Evidence investigation: Delayed rewards and present bias",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Delayed rewards and present bias.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m7-l5",
+              "title": "Strategy clinic: Delayed rewards and present bias",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Delayed rewards and present bias.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m7-l6",
+              "title": "Transfer mission: Delayed rewards and present bias",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Delayed rewards and present bias.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-08",
+          "title": "Escape as negative reinforcement",
+          "problem": "Escape as negative reinforcement",
+          "lessons": [
+            {
+              "id": "motivation-m8-l1",
+              "title": "Case file: Escape as negative reinforcement",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Escape as negative reinforcement.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m8-l2",
+              "title": "The mechanism behind Escape as negative reinforcement",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Escape as negative reinforcement.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m8-l3",
+              "title": "Distinguish Escape as negative reinforcement: enjoyment versus reinforcement",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Escape as negative reinforcement. Contrast: enjoyment versus reinforcement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m8-l4",
+              "title": "Evidence investigation: Escape as negative reinforcement",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Escape as negative reinforcement.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m8-l5",
+              "title": "Strategy clinic: Escape as negative reinforcement",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Escape as negative reinforcement.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m8-l6",
+              "title": "Transfer mission: Escape as negative reinforcement",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Escape as negative reinforcement.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-09",
+          "title": "Reward prediction and novelty",
+          "problem": "Reward prediction and novelty",
+          "lessons": [
+            {
+              "id": "motivation-m9-l1",
+              "title": "Case file: Reward prediction and novelty",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Reward prediction and novelty.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m9-l2",
+              "title": "The mechanism behind Reward prediction and novelty",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Reward prediction and novelty.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m9-l3",
+              "title": "Distinguish Reward prediction and novelty: enjoyment versus reinforcement",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Reward prediction and novelty. Contrast: enjoyment versus reinforcement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m9-l4",
+              "title": "Evidence investigation: Reward prediction and novelty",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Reward prediction and novelty.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m9-l5",
+              "title": "Strategy clinic: Reward prediction and novelty",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Reward prediction and novelty.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m9-l6",
+              "title": "Transfer mission: Reward prediction and novelty",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Reward prediction and novelty.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-10",
+          "title": "Why punishment can backfire",
+          "problem": "Why punishment can backfire",
+          "lessons": [
+            {
+              "id": "motivation-m10-l1",
+              "title": "Case file: Why punishment can backfire",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Why punishment can backfire.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m10-l2",
+              "title": "The mechanism behind Why punishment can backfire",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Why punishment can backfire.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m10-l3",
+              "title": "Distinguish Why punishment can backfire: enjoyment versus reinforcement",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Why punishment can backfire. Contrast: enjoyment versus reinforcement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m10-l4",
+              "title": "Evidence investigation: Why punishment can backfire",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Why punishment can backfire.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m10-l5",
+              "title": "Strategy clinic: Why punishment can backfire",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Why punishment can backfire.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m10-l6",
+              "title": "Transfer mission: Why punishment can backfire",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Why punishment can backfire.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motivation-book-3",
+      "title": "Habit formation and context",
+      "distinction": "automaticity versus conscious intention",
+      "modules": [
+        {
+          "id": "motivation-module-11",
+          "title": "Cues that initiate routines",
+          "problem": "Cues that initiate routines",
+          "lessons": [
+            {
+              "id": "motivation-m11-l1",
+              "title": "Case file: Cues that initiate routines",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Cues that initiate routines.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m11-l2",
+              "title": "The mechanism behind Cues that initiate routines",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Cues that initiate routines.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m11-l3",
+              "title": "Distinguish Cues that initiate routines: automaticity versus conscious intention",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Cues that initiate routines. Contrast: automaticity versus conscious intention.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m11-l4",
+              "title": "Evidence investigation: Cues that initiate routines",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Cues that initiate routines.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m11-l5",
+              "title": "Strategy clinic: Cues that initiate routines",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Cues that initiate routines.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m11-l6",
+              "title": "Transfer mission: Cues that initiate routines",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Cues that initiate routines.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-12",
+          "title": "Environment design for desired actions",
+          "problem": "Environment design for desired actions",
+          "lessons": [
+            {
+              "id": "motivation-m12-l1",
+              "title": "Case file: Environment design for desired actions",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Environment design for desired actions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m12-l2",
+              "title": "The mechanism behind Environment design for desired actions",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Environment design for desired actions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m12-l3",
+              "title": "Distinguish Environment design for desired actions: automaticity versus conscious intention",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Environment design for desired actions. Contrast: automaticity versus conscious intention.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m12-l4",
+              "title": "Evidence investigation: Environment design for desired actions",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Environment design for desired actions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m12-l5",
+              "title": "Strategy clinic: Environment design for desired actions",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Environment design for desired actions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m12-l6",
+              "title": "Transfer mission: Environment design for desired actions",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Environment design for desired actions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-13",
+          "title": "Changing a habit without a new identity",
+          "problem": "Changing a habit without a new identity",
+          "lessons": [
+            {
+              "id": "motivation-m13-l1",
+              "title": "Case file: Changing a habit without a new identity",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Changing a habit without a new identity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m13-l2",
+              "title": "The mechanism behind Changing a habit without a new identity",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Changing a habit without a new identity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m13-l3",
+              "title": "Distinguish Changing a habit without a new identity: automaticity versus conscious intention",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Changing a habit without a new identity. Contrast: automaticity versus conscious intention.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m13-l4",
+              "title": "Evidence investigation: Changing a habit without a new identity",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Changing a habit without a new identity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m13-l5",
+              "title": "Strategy clinic: Changing a habit without a new identity",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Changing a habit without a new identity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m13-l6",
+              "title": "Transfer mission: Changing a habit without a new identity",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Changing a habit without a new identity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-14",
+          "title": "Why streaks collapse after disruption",
+          "problem": "Why streaks collapse after disruption",
+          "lessons": [
+            {
+              "id": "motivation-m14-l1",
+              "title": "Case file: Why streaks collapse after disruption",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Why streaks collapse after disruption.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m14-l2",
+              "title": "The mechanism behind Why streaks collapse after disruption",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Why streaks collapse after disruption.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m14-l3",
+              "title": "Distinguish Why streaks collapse after disruption: automaticity versus conscious intention",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Why streaks collapse after disruption. Contrast: automaticity versus conscious intention.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m14-l4",
+              "title": "Evidence investigation: Why streaks collapse after disruption",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Why streaks collapse after disruption.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m14-l5",
+              "title": "Strategy clinic: Why streaks collapse after disruption",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Why streaks collapse after disruption.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m14-l6",
+              "title": "Transfer mission: Why streaks collapse after disruption",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Why streaks collapse after disruption.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-15",
+          "title": "Flexible routines for changing contexts",
+          "problem": "Flexible routines for changing contexts",
+          "lessons": [
+            {
+              "id": "motivation-m15-l1",
+              "title": "Case file: Flexible routines for changing contexts",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Flexible routines for changing contexts.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m15-l2",
+              "title": "The mechanism behind Flexible routines for changing contexts",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Flexible routines for changing contexts.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m15-l3",
+              "title": "Distinguish Flexible routines for changing contexts: automaticity versus conscious intention",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Flexible routines for changing contexts. Contrast: automaticity versus conscious intention.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m15-l4",
+              "title": "Evidence investigation: Flexible routines for changing contexts",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Flexible routines for changing contexts.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m15-l5",
+              "title": "Strategy clinic: Flexible routines for changing contexts",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Flexible routines for changing contexts.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m15-l6",
+              "title": "Transfer mission: Flexible routines for changing contexts",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Flexible routines for changing contexts.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motivation-book-4",
+      "title": "Attention and executive demands",
+      "distinction": "interest versus available capacity",
+      "modules": [
+        {
+          "id": "motivation-module-16",
+          "title": "Starting when instructions are ambiguous",
+          "problem": "Starting when instructions are ambiguous",
+          "lessons": [
+            {
+              "id": "motivation-m16-l1",
+              "title": "Case file: Starting when instructions are ambiguous",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Starting when instructions are ambiguous.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m16-l2",
+              "title": "The mechanism behind Starting when instructions are ambiguous",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Starting when instructions are ambiguous.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m16-l3",
+              "title": "Distinguish Starting when instructions are ambiguous: interest versus available capacity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Starting when instructions are ambiguous. Contrast: interest versus available capacity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m16-l4",
+              "title": "Evidence investigation: Starting when instructions are ambiguous",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Starting when instructions are ambiguous.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m16-l5",
+              "title": "Strategy clinic: Starting when instructions are ambiguous",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Starting when instructions are ambiguous.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m16-l6",
+              "title": "Transfer mission: Starting when instructions are ambiguous",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Starting when instructions are ambiguous.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-17",
+          "title": "Task switching and residual attention",
+          "problem": "Task switching and residual attention",
+          "lessons": [
+            {
+              "id": "motivation-m17-l1",
+              "title": "Case file: Task switching and residual attention",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Task switching and residual attention.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m17-l2",
+              "title": "The mechanism behind Task switching and residual attention",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Task switching and residual attention.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m17-l3",
+              "title": "Distinguish Task switching and residual attention: interest versus available capacity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Task switching and residual attention. Contrast: interest versus available capacity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m17-l4",
+              "title": "Evidence investigation: Task switching and residual attention",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Task switching and residual attention.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m17-l5",
+              "title": "Strategy clinic: Task switching and residual attention",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Task switching and residual attention.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m17-l6",
+              "title": "Transfer mission: Task switching and residual attention",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Task switching and residual attention.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-18",
+          "title": "Working memory and external scaffolds",
+          "problem": "Working memory and external scaffolds",
+          "lessons": [
+            {
+              "id": "motivation-m18-l1",
+              "title": "Case file: Working memory and external scaffolds",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Working memory and external scaffolds.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m18-l2",
+              "title": "The mechanism behind Working memory and external scaffolds",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Working memory and external scaffolds.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m18-l3",
+              "title": "Distinguish Working memory and external scaffolds: interest versus available capacity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Working memory and external scaffolds. Contrast: interest versus available capacity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m18-l4",
+              "title": "Evidence investigation: Working memory and external scaffolds",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Working memory and external scaffolds.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m18-l5",
+              "title": "Strategy clinic: Working memory and external scaffolds",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Working memory and external scaffolds.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m18-l6",
+              "title": "Transfer mission: Working memory and external scaffolds",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Working memory and external scaffolds.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-19",
+          "title": "ADHD-related executive variability",
+          "problem": "ADHD-related executive variability",
+          "lessons": [
+            {
+              "id": "motivation-m19-l1",
+              "title": "Case file: ADHD-related executive variability",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: ADHD-related executive variability.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m19-l2",
+              "title": "The mechanism behind ADHD-related executive variability",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: ADHD-related executive variability.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m19-l3",
+              "title": "Distinguish ADHD-related executive variability: interest versus available capacity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: ADHD-related executive variability. Contrast: interest versus available capacity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m19-l4",
+              "title": "Evidence investigation: ADHD-related executive variability",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: ADHD-related executive variability.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m19-l5",
+              "title": "Strategy clinic: ADHD-related executive variability",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: ADHD-related executive variability.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m19-l6",
+              "title": "Transfer mission: ADHD-related executive variability",
+              "objective": "Apply the concept in a new social or clinical context. Focus: ADHD-related executive variability.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-20",
+          "title": "Distinguishing fatigue from avoidance",
+          "problem": "Distinguishing fatigue from avoidance",
+          "lessons": [
+            {
+              "id": "motivation-m20-l1",
+              "title": "Case file: Distinguishing fatigue from avoidance",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Distinguishing fatigue from avoidance.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m20-l2",
+              "title": "The mechanism behind Distinguishing fatigue from avoidance",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Distinguishing fatigue from avoidance.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m20-l3",
+              "title": "Distinguish Distinguishing fatigue from avoidance: interest versus available capacity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Distinguishing fatigue from avoidance. Contrast: interest versus available capacity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m20-l4",
+              "title": "Evidence investigation: Distinguishing fatigue from avoidance",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Distinguishing fatigue from avoidance.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m20-l5",
+              "title": "Strategy clinic: Distinguishing fatigue from avoidance",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Distinguishing fatigue from avoidance.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m20-l6",
+              "title": "Transfer mission: Distinguishing fatigue from avoidance",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Distinguishing fatigue from avoidance.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motivation-book-5",
+      "title": "Perfectionism and fear",
+      "distinction": "quality control versus avoidance",
+      "modules": [
+        {
+          "id": "motivation-module-21",
+          "title": "Procrastination to protect self-image",
+          "problem": "Procrastination to protect self-image",
+          "lessons": [
+            {
+              "id": "motivation-m21-l1",
+              "title": "Case file: Procrastination to protect self-image",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Procrastination to protect self-image.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m21-l2",
+              "title": "The mechanism behind Procrastination to protect self-image",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Procrastination to protect self-image.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m21-l3",
+              "title": "Distinguish Procrastination to protect self-image: quality control versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Procrastination to protect self-image. Contrast: quality control versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m21-l4",
+              "title": "Evidence investigation: Procrastination to protect self-image",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Procrastination to protect self-image.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m21-l5",
+              "title": "Strategy clinic: Procrastination to protect self-image",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Procrastination to protect self-image.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m21-l6",
+              "title": "Transfer mission: Procrastination to protect self-image",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Procrastination to protect self-image.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-22",
+          "title": "Planning as a substitute for acting",
+          "problem": "Planning as a substitute for acting",
+          "lessons": [
+            {
+              "id": "motivation-m22-l1",
+              "title": "Case file: Planning as a substitute for acting",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Planning as a substitute for acting.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m22-l2",
+              "title": "The mechanism behind Planning as a substitute for acting",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Planning as a substitute for acting.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m22-l3",
+              "title": "Distinguish Planning as a substitute for acting: quality control versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Planning as a substitute for acting. Contrast: quality control versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m22-l4",
+              "title": "Evidence investigation: Planning as a substitute for acting",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Planning as a substitute for acting.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m22-l5",
+              "title": "Strategy clinic: Planning as a substitute for acting",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Planning as a substitute for acting.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m22-l6",
+              "title": "Transfer mission: Planning as a substitute for acting",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Planning as a substitute for acting.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-23",
+          "title": "Avoiding feedback and exposure",
+          "problem": "Avoiding feedback and exposure",
+          "lessons": [
+            {
+              "id": "motivation-m23-l1",
+              "title": "Case file: Avoiding feedback and exposure",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Avoiding feedback and exposure.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m23-l2",
+              "title": "The mechanism behind Avoiding feedback and exposure",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Avoiding feedback and exposure.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m23-l3",
+              "title": "Distinguish Avoiding feedback and exposure: quality control versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Avoiding feedback and exposure. Contrast: quality control versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m23-l4",
+              "title": "Evidence investigation: Avoiding feedback and exposure",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Avoiding feedback and exposure.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m23-l5",
+              "title": "Strategy clinic: Avoiding feedback and exposure",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Avoiding feedback and exposure.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m23-l6",
+              "title": "Transfer mission: Avoiding feedback and exposure",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Avoiding feedback and exposure.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-24",
+          "title": "When standards sabotage completion",
+          "problem": "When standards sabotage completion",
+          "lessons": [
+            {
+              "id": "motivation-m24-l1",
+              "title": "Case file: When standards sabotage completion",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When standards sabotage completion.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m24-l2",
+              "title": "The mechanism behind When standards sabotage completion",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When standards sabotage completion.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m24-l3",
+              "title": "Distinguish When standards sabotage completion: quality control versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When standards sabotage completion. Contrast: quality control versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m24-l4",
+              "title": "Evidence investigation: When standards sabotage completion",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When standards sabotage completion.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m24-l5",
+              "title": "Strategy clinic: When standards sabotage completion",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When standards sabotage completion.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m24-l6",
+              "title": "Transfer mission: When standards sabotage completion",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When standards sabotage completion.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-25",
+          "title": "Finishing imperfect work deliberately",
+          "problem": "Finishing imperfect work deliberately",
+          "lessons": [
+            {
+              "id": "motivation-m25-l1",
+              "title": "Case file: Finishing imperfect work deliberately",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Finishing imperfect work deliberately.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m25-l2",
+              "title": "The mechanism behind Finishing imperfect work deliberately",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Finishing imperfect work deliberately.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m25-l3",
+              "title": "Distinguish Finishing imperfect work deliberately: quality control versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Finishing imperfect work deliberately. Contrast: quality control versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m25-l4",
+              "title": "Evidence investigation: Finishing imperfect work deliberately",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Finishing imperfect work deliberately.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m25-l5",
+              "title": "Strategy clinic: Finishing imperfect work deliberately",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Finishing imperfect work deliberately.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m25-l6",
+              "title": "Transfer mission: Finishing imperfect work deliberately",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Finishing imperfect work deliberately.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motivation-book-6",
+      "title": "Time and prioritisation",
+      "distinction": "importance versus urgency",
+      "modules": [
+        {
+          "id": "motivation-module-26",
+          "title": "Every task appearing equally critical",
+          "problem": "Every task appearing equally critical",
+          "lessons": [
+            {
+              "id": "motivation-m26-l1",
+              "title": "Case file: Every task appearing equally critical",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Every task appearing equally critical.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m26-l2",
+              "title": "The mechanism behind Every task appearing equally critical",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Every task appearing equally critical.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m26-l3",
+              "title": "Distinguish Every task appearing equally critical: importance versus urgency",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Every task appearing equally critical. Contrast: importance versus urgency.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m26-l4",
+              "title": "Evidence investigation: Every task appearing equally critical",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Every task appearing equally critical.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m26-l5",
+              "title": "Strategy clinic: Every task appearing equally critical",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Every task appearing equally critical.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m26-l6",
+              "title": "Transfer mission: Every task appearing equally critical",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Every task appearing equally critical.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-27",
+          "title": "Estimating duration realistically",
+          "problem": "Estimating duration realistically",
+          "lessons": [
+            {
+              "id": "motivation-m27-l1",
+              "title": "Case file: Estimating duration realistically",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Estimating duration realistically.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m27-l2",
+              "title": "The mechanism behind Estimating duration realistically",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Estimating duration realistically.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m27-l3",
+              "title": "Distinguish Estimating duration realistically: importance versus urgency",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Estimating duration realistically. Contrast: importance versus urgency.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m27-l4",
+              "title": "Evidence investigation: Estimating duration realistically",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Estimating duration realistically.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m27-l5",
+              "title": "Strategy clinic: Estimating duration realistically",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Estimating duration realistically.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m27-l6",
+              "title": "Transfer mission: Estimating duration realistically",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Estimating duration realistically.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-28",
+          "title": "Unstructured days and initiation",
+          "problem": "Unstructured days and initiation",
+          "lessons": [
+            {
+              "id": "motivation-m28-l1",
+              "title": "Case file: Unstructured days and initiation",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Unstructured days and initiation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m28-l2",
+              "title": "The mechanism behind Unstructured days and initiation",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Unstructured days and initiation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m28-l3",
+              "title": "Distinguish Unstructured days and initiation: importance versus urgency",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Unstructured days and initiation. Contrast: importance versus urgency.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m28-l4",
+              "title": "Evidence investigation: Unstructured days and initiation",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Unstructured days and initiation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m28-l5",
+              "title": "Strategy clinic: Unstructured days and initiation",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Unstructured days and initiation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m28-l6",
+              "title": "Transfer mission: Unstructured days and initiation",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Unstructured days and initiation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-29",
+          "title": "Deadlines, panic and work sprints",
+          "problem": "Deadlines, panic and work sprints",
+          "lessons": [
+            {
+              "id": "motivation-m29-l1",
+              "title": "Case file: Deadlines, panic and work sprints",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Deadlines, panic and work sprints.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m29-l2",
+              "title": "The mechanism behind Deadlines, panic and work sprints",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Deadlines, panic and work sprints.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m29-l3",
+              "title": "Distinguish Deadlines, panic and work sprints: importance versus urgency",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Deadlines, panic and work sprints. Contrast: importance versus urgency.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m29-l4",
+              "title": "Evidence investigation: Deadlines, panic and work sprints",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Deadlines, panic and work sprints.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m29-l5",
+              "title": "Strategy clinic: Deadlines, panic and work sprints",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Deadlines, panic and work sprints.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m29-l6",
+              "title": "Transfer mission: Deadlines, panic and work sprints",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Deadlines, panic and work sprints.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-30",
+          "title": "Protecting deep work from interruptions",
+          "problem": "Protecting deep work from interruptions",
+          "lessons": [
+            {
+              "id": "motivation-m30-l1",
+              "title": "Case file: Protecting deep work from interruptions",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Protecting deep work from interruptions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m30-l2",
+              "title": "The mechanism behind Protecting deep work from interruptions",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Protecting deep work from interruptions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m30-l3",
+              "title": "Distinguish Protecting deep work from interruptions: importance versus urgency",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Protecting deep work from interruptions. Contrast: importance versus urgency.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m30-l4",
+              "title": "Evidence investigation: Protecting deep work from interruptions",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Protecting deep work from interruptions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m30-l5",
+              "title": "Strategy clinic: Protecting deep work from interruptions",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Protecting deep work from interruptions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m30-l6",
+              "title": "Transfer mission: Protecting deep work from interruptions",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Protecting deep work from interruptions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motivation-book-7",
+      "title": "Motivation under distress",
+      "distinction": "motivation difficulty versus depression",
+      "modules": [
+        {
+          "id": "motivation-module-31",
+          "title": "Anhedonia and reward sensitivity",
+          "problem": "Anhedonia and reward sensitivity",
+          "lessons": [
+            {
+              "id": "motivation-m31-l1",
+              "title": "Case file: Anhedonia and reward sensitivity",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Anhedonia and reward sensitivity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m31-l2",
+              "title": "The mechanism behind Anhedonia and reward sensitivity",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Anhedonia and reward sensitivity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m31-l3",
+              "title": "Distinguish Anhedonia and reward sensitivity: motivation difficulty versus depression",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Anhedonia and reward sensitivity. Contrast: motivation difficulty versus depression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m31-l4",
+              "title": "Evidence investigation: Anhedonia and reward sensitivity",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Anhedonia and reward sensitivity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m31-l5",
+              "title": "Strategy clinic: Anhedonia and reward sensitivity",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Anhedonia and reward sensitivity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m31-l6",
+              "title": "Transfer mission: Anhedonia and reward sensitivity",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Anhedonia and reward sensitivity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-32",
+          "title": "Burnout and depleted resources",
+          "problem": "Burnout and depleted resources",
+          "lessons": [
+            {
+              "id": "motivation-m32-l1",
+              "title": "Case file: Burnout and depleted resources",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Burnout and depleted resources.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m32-l2",
+              "title": "The mechanism behind Burnout and depleted resources",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Burnout and depleted resources.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m32-l3",
+              "title": "Distinguish Burnout and depleted resources: motivation difficulty versus depression",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Burnout and depleted resources. Contrast: motivation difficulty versus depression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m32-l4",
+              "title": "Evidence investigation: Burnout and depleted resources",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Burnout and depleted resources.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m32-l5",
+              "title": "Strategy clinic: Burnout and depleted resources",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Burnout and depleted resources.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m32-l6",
+              "title": "Transfer mission: Burnout and depleted resources",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Burnout and depleted resources.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-33",
+          "title": "Anxiety disguised as procrastination",
+          "problem": "Anxiety disguised as procrastination",
+          "lessons": [
+            {
+              "id": "motivation-m33-l1",
+              "title": "Case file: Anxiety disguised as procrastination",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Anxiety disguised as procrastination.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m33-l2",
+              "title": "The mechanism behind Anxiety disguised as procrastination",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Anxiety disguised as procrastination.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m33-l3",
+              "title": "Distinguish Anxiety disguised as procrastination: motivation difficulty versus depression",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Anxiety disguised as procrastination. Contrast: motivation difficulty versus depression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m33-l4",
+              "title": "Evidence investigation: Anxiety disguised as procrastination",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Anxiety disguised as procrastination.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m33-l5",
+              "title": "Strategy clinic: Anxiety disguised as procrastination",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Anxiety disguised as procrastination.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m33-l6",
+              "title": "Transfer mission: Anxiety disguised as procrastination",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Anxiety disguised as procrastination.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-34",
+          "title": "Sleep debt and initiation failures",
+          "problem": "Sleep debt and initiation failures",
+          "lessons": [
+            {
+              "id": "motivation-m34-l1",
+              "title": "Case file: Sleep debt and initiation failures",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Sleep debt and initiation failures.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m34-l2",
+              "title": "The mechanism behind Sleep debt and initiation failures",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Sleep debt and initiation failures.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m34-l3",
+              "title": "Distinguish Sleep debt and initiation failures: motivation difficulty versus depression",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Sleep debt and initiation failures. Contrast: motivation difficulty versus depression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m34-l4",
+              "title": "Evidence investigation: Sleep debt and initiation failures",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Sleep debt and initiation failures.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m34-l5",
+              "title": "Strategy clinic: Sleep debt and initiation failures",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Sleep debt and initiation failures.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m34-l6",
+              "title": "Transfer mission: Sleep debt and initiation failures",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Sleep debt and initiation failures.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-35",
+          "title": "When a productivity system is the wrong answer",
+          "problem": "When a productivity system is the wrong answer",
+          "lessons": [
+            {
+              "id": "motivation-m35-l1",
+              "title": "Case file: When a productivity system is the wrong answer",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When a productivity system is the wrong answer.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m35-l2",
+              "title": "The mechanism behind When a productivity system is the wrong answer",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When a productivity system is the wrong answer.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m35-l3",
+              "title": "Distinguish When a productivity system is the wrong answer: motivation difficulty versus depression",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When a productivity system is the wrong answer. Contrast: motivation difficulty versus depression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m35-l4",
+              "title": "Evidence investigation: When a productivity system is the wrong answer",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When a productivity system is the wrong answer.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m35-l5",
+              "title": "Strategy clinic: When a productivity system is the wrong answer",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When a productivity system is the wrong answer.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m35-l6",
+              "title": "Transfer mission: When a productivity system is the wrong answer",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When a productivity system is the wrong answer.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motivation-book-8",
+      "title": "Sustainable behaviour change",
+      "distinction": "optimising people versus optimising context",
+      "modules": [
+        {
+          "id": "motivation-module-36",
+          "title": "Implementation intentions and cues",
+          "problem": "Implementation intentions and cues",
+          "lessons": [
+            {
+              "id": "motivation-m36-l1",
+              "title": "Case file: Implementation intentions and cues",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Implementation intentions and cues.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m36-l2",
+              "title": "The mechanism behind Implementation intentions and cues",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Implementation intentions and cues.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m36-l3",
+              "title": "Distinguish Implementation intentions and cues: optimising people versus optimising context",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Implementation intentions and cues. Contrast: optimising people versus optimising context.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m36-l4",
+              "title": "Evidence investigation: Implementation intentions and cues",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Implementation intentions and cues.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m36-l5",
+              "title": "Strategy clinic: Implementation intentions and cues",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Implementation intentions and cues.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m36-l6",
+              "title": "Transfer mission: Implementation intentions and cues",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Implementation intentions and cues.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-37",
+          "title": "Shaping tasks by successive steps",
+          "problem": "Shaping tasks by successive steps",
+          "lessons": [
+            {
+              "id": "motivation-m37-l1",
+              "title": "Case file: Shaping tasks by successive steps",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Shaping tasks by successive steps.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m37-l2",
+              "title": "The mechanism behind Shaping tasks by successive steps",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Shaping tasks by successive steps.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m37-l3",
+              "title": "Distinguish Shaping tasks by successive steps: optimising people versus optimising context",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Shaping tasks by successive steps. Contrast: optimising people versus optimising context.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m37-l4",
+              "title": "Evidence investigation: Shaping tasks by successive steps",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Shaping tasks by successive steps.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m37-l5",
+              "title": "Strategy clinic: Shaping tasks by successive steps",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Shaping tasks by successive steps.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m37-l6",
+              "title": "Transfer mission: Shaping tasks by successive steps",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Shaping tasks by successive steps.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-38",
+          "title": "Tracking progress without obsession",
+          "problem": "Tracking progress without obsession",
+          "lessons": [
+            {
+              "id": "motivation-m38-l1",
+              "title": "Case file: Tracking progress without obsession",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Tracking progress without obsession.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m38-l2",
+              "title": "The mechanism behind Tracking progress without obsession",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Tracking progress without obsession.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m38-l3",
+              "title": "Distinguish Tracking progress without obsession: optimising people versus optimising context",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Tracking progress without obsession. Contrast: optimising people versus optimising context.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m38-l4",
+              "title": "Evidence investigation: Tracking progress without obsession",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Tracking progress without obsession.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m38-l5",
+              "title": "Strategy clinic: Tracking progress without obsession",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Tracking progress without obsession.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m38-l6",
+              "title": "Transfer mission: Tracking progress without obsession",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Tracking progress without obsession.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-39",
+          "title": "Building recovery into a plan",
+          "problem": "Building recovery into a plan",
+          "lessons": [
+            {
+              "id": "motivation-m39-l1",
+              "title": "Case file: Building recovery into a plan",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Building recovery into a plan.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m39-l2",
+              "title": "The mechanism behind Building recovery into a plan",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Building recovery into a plan.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m39-l3",
+              "title": "Distinguish Building recovery into a plan: optimising people versus optimising context",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Building recovery into a plan. Contrast: optimising people versus optimising context.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m39-l4",
+              "title": "Evidence investigation: Building recovery into a plan",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Building recovery into a plan.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m39-l5",
+              "title": "Strategy clinic: Building recovery into a plan",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Building recovery into a plan.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m39-l6",
+              "title": "Transfer mission: Building recovery into a plan",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Building recovery into a plan.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-40",
+          "title": "Designing for lapses instead of perfection",
+          "problem": "Designing for lapses instead of perfection",
+          "lessons": [
+            {
+              "id": "motivation-m40-l1",
+              "title": "Case file: Designing for lapses instead of perfection",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Designing for lapses instead of perfection.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m40-l2",
+              "title": "The mechanism behind Designing for lapses instead of perfection",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Designing for lapses instead of perfection.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m40-l3",
+              "title": "Distinguish Designing for lapses instead of perfection: optimising people versus optimising context",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Designing for lapses instead of perfection. Contrast: optimising people versus optimising context.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m40-l4",
+              "title": "Evidence investigation: Designing for lapses instead of perfection",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Designing for lapses instead of perfection.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m40-l5",
+              "title": "Strategy clinic: Designing for lapses instead of perfection",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Designing for lapses instead of perfection.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m40-l6",
+              "title": "Transfer mission: Designing for lapses instead of perfection",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Designing for lapses instead of perfection.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motivation-book-9",
+      "title": "Institutions and motivation",
+      "distinction": "individual discipline versus social opportunity",
+      "modules": [
+        {
+          "id": "motivation-module-41",
+          "title": "Insecure work and cognitive load",
+          "problem": "Insecure work and cognitive load",
+          "lessons": [
+            {
+              "id": "motivation-m41-l1",
+              "title": "Case file: Insecure work and cognitive load",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Insecure work and cognitive load.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m41-l2",
+              "title": "The mechanism behind Insecure work and cognitive load",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Insecure work and cognitive load.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m41-l3",
+              "title": "Distinguish Insecure work and cognitive load: individual discipline versus social opportunity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Insecure work and cognitive load. Contrast: individual discipline versus social opportunity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m41-l4",
+              "title": "Evidence investigation: Insecure work and cognitive load",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Insecure work and cognitive load.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m41-l5",
+              "title": "Strategy clinic: Insecure work and cognitive load",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Insecure work and cognitive load.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m41-l6",
+              "title": "Transfer mission: Insecure work and cognitive load",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Insecure work and cognitive load.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-42",
+          "title": "School punishment and disengagement",
+          "problem": "School punishment and disengagement",
+          "lessons": [
+            {
+              "id": "motivation-m42-l1",
+              "title": "Case file: School punishment and disengagement",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: School punishment and disengagement.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m42-l2",
+              "title": "The mechanism behind School punishment and disengagement",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: School punishment and disengagement.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m42-l3",
+              "title": "Distinguish School punishment and disengagement: individual discipline versus social opportunity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: School punishment and disengagement. Contrast: individual discipline versus social opportunity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m42-l4",
+              "title": "Evidence investigation: School punishment and disengagement",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: School punishment and disengagement.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m42-l5",
+              "title": "Strategy clinic: School punishment and disengagement",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: School punishment and disengagement.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m42-l6",
+              "title": "Transfer mission: School punishment and disengagement",
+              "objective": "Apply the concept in a new social or clinical context. Focus: School punishment and disengagement.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-43",
+          "title": "Algorithmic distraction and attention markets",
+          "problem": "Algorithmic distraction and attention markets",
+          "lessons": [
+            {
+              "id": "motivation-m43-l1",
+              "title": "Case file: Algorithmic distraction and attention markets",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Algorithmic distraction and attention markets.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m43-l2",
+              "title": "The mechanism behind Algorithmic distraction and attention markets",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Algorithmic distraction and attention markets.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m43-l3",
+              "title": "Distinguish Algorithmic distraction and attention markets: individual discipline versus social opportunity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Algorithmic distraction and attention markets. Contrast: individual discipline versus social opportunity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m43-l4",
+              "title": "Evidence investigation: Algorithmic distraction and attention markets",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Algorithmic distraction and attention markets.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m43-l5",
+              "title": "Strategy clinic: Algorithmic distraction and attention markets",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Algorithmic distraction and attention markets.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m43-l6",
+              "title": "Transfer mission: Algorithmic distraction and attention markets",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Algorithmic distraction and attention markets.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-44",
+          "title": "Neuroinclusive workplace design",
+          "problem": "Neuroinclusive workplace design",
+          "lessons": [
+            {
+              "id": "motivation-m44-l1",
+              "title": "Case file: Neuroinclusive workplace design",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Neuroinclusive workplace design.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m44-l2",
+              "title": "The mechanism behind Neuroinclusive workplace design",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Neuroinclusive workplace design.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m44-l3",
+              "title": "Distinguish Neuroinclusive workplace design: individual discipline versus social opportunity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Neuroinclusive workplace design. Contrast: individual discipline versus social opportunity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m44-l4",
+              "title": "Evidence investigation: Neuroinclusive workplace design",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Neuroinclusive workplace design.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m44-l5",
+              "title": "Strategy clinic: Neuroinclusive workplace design",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Neuroinclusive workplace design.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m44-l6",
+              "title": "Transfer mission: Neuroinclusive workplace design",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Neuroinclusive workplace design.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-45",
+          "title": "Access barriers to healthy routines",
+          "problem": "Access barriers to healthy routines",
+          "lessons": [
+            {
+              "id": "motivation-m45-l1",
+              "title": "Case file: Access barriers to healthy routines",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Access barriers to healthy routines.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m45-l2",
+              "title": "The mechanism behind Access barriers to healthy routines",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Access barriers to healthy routines.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m45-l3",
+              "title": "Distinguish Access barriers to healthy routines: individual discipline versus social opportunity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Access barriers to healthy routines. Contrast: individual discipline versus social opportunity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m45-l4",
+              "title": "Evidence investigation: Access barriers to healthy routines",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Access barriers to healthy routines.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m45-l5",
+              "title": "Strategy clinic: Access barriers to healthy routines",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Access barriers to healthy routines.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m45-l6",
+              "title": "Transfer mission: Access barriers to healthy routines",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Access barriers to healthy routines.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motivation-book-10",
+      "title": "Complex strategy lab",
+      "distinction": "quick fix versus maintaining system",
+      "modules": [
+        {
+          "id": "motivation-module-46",
+          "title": "When rewards undermine intrinsic interest",
+          "problem": "When rewards undermine intrinsic interest",
+          "lessons": [
+            {
+              "id": "motivation-m46-l1",
+              "title": "Case file: When rewards undermine intrinsic interest",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When rewards undermine intrinsic interest.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m46-l2",
+              "title": "The mechanism behind When rewards undermine intrinsic interest",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When rewards undermine intrinsic interest.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m46-l3",
+              "title": "Distinguish When rewards undermine intrinsic interest: quick fix versus maintaining system",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When rewards undermine intrinsic interest. Contrast: quick fix versus maintaining system.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m46-l4",
+              "title": "Evidence investigation: When rewards undermine intrinsic interest",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When rewards undermine intrinsic interest.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m46-l5",
+              "title": "Strategy clinic: When rewards undermine intrinsic interest",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When rewards undermine intrinsic interest.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m46-l6",
+              "title": "Transfer mission: When rewards undermine intrinsic interest",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When rewards undermine intrinsic interest.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-47",
+          "title": "Choosing among competing goals",
+          "problem": "Choosing among competing goals",
+          "lessons": [
+            {
+              "id": "motivation-m47-l1",
+              "title": "Case file: Choosing among competing goals",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Choosing among competing goals.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m47-l2",
+              "title": "The mechanism behind Choosing among competing goals",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Choosing among competing goals.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m47-l3",
+              "title": "Distinguish Choosing among competing goals: quick fix versus maintaining system",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Choosing among competing goals. Contrast: quick fix versus maintaining system.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m47-l4",
+              "title": "Evidence investigation: Choosing among competing goals",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Choosing among competing goals.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m47-l5",
+              "title": "Strategy clinic: Choosing among competing goals",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Choosing among competing goals.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m47-l6",
+              "title": "Transfer mission: Choosing among competing goals",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Choosing among competing goals.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-48",
+          "title": "Habits during illness and transition",
+          "problem": "Habits during illness and transition",
+          "lessons": [
+            {
+              "id": "motivation-m48-l1",
+              "title": "Case file: Habits during illness and transition",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Habits during illness and transition.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m48-l2",
+              "title": "The mechanism behind Habits during illness and transition",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Habits during illness and transition.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m48-l3",
+              "title": "Distinguish Habits during illness and transition: quick fix versus maintaining system",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Habits during illness and transition. Contrast: quick fix versus maintaining system.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m48-l4",
+              "title": "Evidence investigation: Habits during illness and transition",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Habits during illness and transition.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m48-l5",
+              "title": "Strategy clinic: Habits during illness and transition",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Habits during illness and transition.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m48-l6",
+              "title": "Transfer mission: Habits during illness and transition",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Habits during illness and transition.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-49",
+          "title": "Testing an intervention over weeks",
+          "problem": "Testing an intervention over weeks",
+          "lessons": [
+            {
+              "id": "motivation-m49-l1",
+              "title": "Case file: Testing an intervention over weeks",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Testing an intervention over weeks.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m49-l2",
+              "title": "The mechanism behind Testing an intervention over weeks",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Testing an intervention over weeks.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m49-l3",
+              "title": "Distinguish Testing an intervention over weeks: quick fix versus maintaining system",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Testing an intervention over weeks. Contrast: quick fix versus maintaining system.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m49-l4",
+              "title": "Evidence investigation: Testing an intervention over weeks",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Testing an intervention over weeks.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m49-l5",
+              "title": "Strategy clinic: Testing an intervention over weeks",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Testing an intervention over weeks.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m49-l6",
+              "title": "Transfer mission: Testing an intervention over weeks",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Testing an intervention over weeks.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "motivation-module-50",
+          "title": "Integrated case: redesign the obstacle",
+          "problem": "Integrated case: redesign the obstacle",
+          "lessons": [
+            {
+              "id": "motivation-m50-l1",
+              "title": "Case file: Integrated case: redesign the obstacle",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Integrated case: redesign the obstacle.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m50-l2",
+              "title": "The mechanism behind Integrated case: redesign the obstacle",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Integrated case: redesign the obstacle.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m50-l3",
+              "title": "Distinguish Integrated case: redesign the obstacle: quick fix versus maintaining system",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Integrated case: redesign the obstacle. Contrast: quick fix versus maintaining system.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m50-l4",
+              "title": "Evidence investigation: Integrated case: redesign the obstacle",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Integrated case: redesign the obstacle.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m50-l5",
+              "title": "Strategy clinic: Integrated case: redesign the obstacle",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Integrated case: redesign the obstacle.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "motivation-m50-l6",
+              "title": "Transfer mission: Integrated case: redesign the obstacle",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Integrated case: redesign the obstacle.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

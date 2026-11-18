@@ -1,0 +1,2828 @@
+{
+  "courseId": "narcissism",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Unpublished Course Lab blueprint; lesson titles and objectives only, no published learning nodes.",
+  "books": [
+    {
+      "id": "narcissism-book-1",
+      "title": "What the label actually means",
+      "distinction": "traits versus diagnosis",
+      "modules": [
+        {
+          "id": "narcissism-module-01",
+          "title": "Everyday self-focus versus a persistent trait",
+          "problem": "Everyday self-focus versus a persistent trait",
+          "lessons": [
+            {
+              "id": "narcissism-m1-l1",
+              "title": "Case file: Everyday self-focus versus a persistent trait",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Everyday self-focus versus a persistent trait. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m1-l2",
+              "title": "The mechanism behind Everyday self-focus versus a persistent trait",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Everyday self-focus versus a persistent trait. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m1-l3",
+              "title": "Distinguish Everyday self-focus versus a persistent trait: traits versus diagnosis",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Everyday self-focus versus a persistent trait. Contrasting cases: traits versus diagnosis.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m1-l4",
+              "title": "Evidence investigation: Everyday self-focus versus a persistent trait",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Everyday self-focus versus a persistent trait. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m1-l5",
+              "title": "Choose a proportionate response to Everyday self-focus versus a persistent trait",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Everyday self-focus versus a persistent trait. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m1-l6",
+              "title": "Transfer mission: Everyday self-focus versus a persistent trait in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Everyday self-focus versus a persistent trait. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-02",
+          "title": "Healthy pride versus grandiosity",
+          "problem": "Healthy pride versus grandiosity",
+          "lessons": [
+            {
+              "id": "narcissism-m2-l1",
+              "title": "Case file: Healthy pride versus grandiosity",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Healthy pride versus grandiosity. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m2-l2",
+              "title": "The mechanism behind Healthy pride versus grandiosity",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Healthy pride versus grandiosity. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m2-l3",
+              "title": "Distinguish Healthy pride versus grandiosity: traits versus diagnosis",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Healthy pride versus grandiosity. Contrasting cases: traits versus diagnosis.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m2-l4",
+              "title": "Evidence investigation: Healthy pride versus grandiosity",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Healthy pride versus grandiosity. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m2-l5",
+              "title": "Choose a proportionate response to Healthy pride versus grandiosity",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Healthy pride versus grandiosity. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m2-l6",
+              "title": "Transfer mission: Healthy pride versus grandiosity in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Healthy pride versus grandiosity. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-03",
+          "title": "Wanting praise versus needing admiration",
+          "problem": "Wanting praise versus needing admiration",
+          "lessons": [
+            {
+              "id": "narcissism-m3-l1",
+              "title": "Case file: Wanting praise versus needing admiration",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Wanting praise versus needing admiration. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m3-l2",
+              "title": "The mechanism behind Wanting praise versus needing admiration",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Wanting praise versus needing admiration. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m3-l3",
+              "title": "Distinguish Wanting praise versus needing admiration: traits versus diagnosis",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Wanting praise versus needing admiration. Contrasting cases: traits versus diagnosis.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m3-l4",
+              "title": "Evidence investigation: Wanting praise versus needing admiration",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Wanting praise versus needing admiration. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m3-l5",
+              "title": "Choose a proportionate response to Wanting praise versus needing admiration",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Wanting praise versus needing admiration. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m3-l6",
+              "title": "Transfer mission: Wanting praise versus needing admiration in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Wanting praise versus needing admiration. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-04",
+          "title": "Entitlement versus having legitimate needs",
+          "problem": "Entitlement versus having legitimate needs",
+          "lessons": [
+            {
+              "id": "narcissism-m4-l1",
+              "title": "Case file: Entitlement versus having legitimate needs",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Entitlement versus having legitimate needs. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m4-l2",
+              "title": "The mechanism behind Entitlement versus having legitimate needs",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Entitlement versus having legitimate needs. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m4-l3",
+              "title": "Distinguish Entitlement versus having legitimate needs: traits versus diagnosis",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Entitlement versus having legitimate needs. Contrasting cases: traits versus diagnosis.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m4-l4",
+              "title": "Evidence investigation: Entitlement versus having legitimate needs",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Entitlement versus having legitimate needs. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m4-l5",
+              "title": "Choose a proportionate response to Entitlement versus having legitimate needs",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Entitlement versus having legitimate needs. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m4-l6",
+              "title": "Transfer mission: Entitlement versus having legitimate needs in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Entitlement versus having legitimate needs. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-05",
+          "title": "NPD criteria and diagnostic thresholds",
+          "problem": "NPD criteria and diagnostic thresholds",
+          "lessons": [
+            {
+              "id": "narcissism-m5-l1",
+              "title": "Case file: NPD criteria and diagnostic thresholds",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: NPD criteria and diagnostic thresholds. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m5-l2",
+              "title": "The mechanism behind NPD criteria and diagnostic thresholds",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: NPD criteria and diagnostic thresholds. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m5-l3",
+              "title": "Distinguish NPD criteria and diagnostic thresholds: traits versus diagnosis",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: NPD criteria and diagnostic thresholds. Contrasting cases: traits versus diagnosis.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m5-l4",
+              "title": "Evidence investigation: NPD criteria and diagnostic thresholds",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: NPD criteria and diagnostic thresholds. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m5-l5",
+              "title": "Choose a proportionate response to NPD criteria and diagnostic thresholds",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: NPD criteria and diagnostic thresholds. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m5-l6",
+              "title": "Transfer mission: NPD criteria and diagnostic thresholds in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: NPD criteria and diagnostic thresholds. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narcissism-book-2",
+      "title": "The self-worth system",
+      "distinction": "vulnerability versus fragility stereotypes",
+      "modules": [
+        {
+          "id": "narcissism-module-06",
+          "title": "When approval controls self-worth",
+          "problem": "When approval controls self-worth",
+          "lessons": [
+            {
+              "id": "narcissism-m6-l1",
+              "title": "Case file: When approval controls self-worth",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When approval controls self-worth. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m6-l2",
+              "title": "The mechanism behind When approval controls self-worth",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When approval controls self-worth. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m6-l3",
+              "title": "Distinguish When approval controls self-worth: vulnerability versus fragility stereotypes",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When approval controls self-worth. Contrasting cases: vulnerability versus fragility stereotypes.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m6-l4",
+              "title": "Evidence investigation: When approval controls self-worth",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When approval controls self-worth. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m6-l5",
+              "title": "Choose a proportionate response to When approval controls self-worth",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When approval controls self-worth. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m6-l6",
+              "title": "Transfer mission: When approval controls self-worth in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When approval controls self-worth. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-07",
+          "title": "Feeling humiliated by ordinary feedback",
+          "problem": "Feeling humiliated by ordinary feedback",
+          "lessons": [
+            {
+              "id": "narcissism-m7-l1",
+              "title": "Case file: Feeling humiliated by ordinary feedback",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Feeling humiliated by ordinary feedback. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m7-l2",
+              "title": "The mechanism behind Feeling humiliated by ordinary feedback",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Feeling humiliated by ordinary feedback. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m7-l3",
+              "title": "Distinguish Feeling humiliated by ordinary feedback: vulnerability versus fragility stereotypes",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Feeling humiliated by ordinary feedback. Contrasting cases: vulnerability versus fragility stereotypes.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m7-l4",
+              "title": "Evidence investigation: Feeling humiliated by ordinary feedback",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Feeling humiliated by ordinary feedback. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m7-l5",
+              "title": "Choose a proportionate response to Feeling humiliated by ordinary feedback",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Feeling humiliated by ordinary feedback. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m7-l6",
+              "title": "Transfer mission: Feeling humiliated by ordinary feedback in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Feeling humiliated by ordinary feedback. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-08",
+          "title": "Public confidence and private insecurity",
+          "problem": "Public confidence and private insecurity",
+          "lessons": [
+            {
+              "id": "narcissism-m8-l1",
+              "title": "Case file: Public confidence and private insecurity",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Public confidence and private insecurity. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m8-l2",
+              "title": "The mechanism behind Public confidence and private insecurity",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Public confidence and private insecurity. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m8-l3",
+              "title": "Distinguish Public confidence and private insecurity: vulnerability versus fragility stereotypes",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Public confidence and private insecurity. Contrasting cases: vulnerability versus fragility stereotypes.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m8-l4",
+              "title": "Evidence investigation: Public confidence and private insecurity",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Public confidence and private insecurity. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m8-l5",
+              "title": "Choose a proportionate response to Public confidence and private insecurity",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Public confidence and private insecurity. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m8-l6",
+              "title": "Transfer mission: Public confidence and private insecurity in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Public confidence and private insecurity. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-09",
+          "title": "Shame responses that resemble arrogance",
+          "problem": "Shame responses that resemble arrogance",
+          "lessons": [
+            {
+              "id": "narcissism-m9-l1",
+              "title": "Case file: Shame responses that resemble arrogance",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Shame responses that resemble arrogance. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m9-l2",
+              "title": "The mechanism behind Shame responses that resemble arrogance",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Shame responses that resemble arrogance. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m9-l3",
+              "title": "Distinguish Shame responses that resemble arrogance: vulnerability versus fragility stereotypes",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Shame responses that resemble arrogance. Contrasting cases: vulnerability versus fragility stereotypes.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m9-l4",
+              "title": "Evidence investigation: Shame responses that resemble arrogance",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Shame responses that resemble arrogance. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m9-l5",
+              "title": "Choose a proportionate response to Shame responses that resemble arrogance",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Shame responses that resemble arrogance. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m9-l6",
+              "title": "Transfer mission: Shame responses that resemble arrogance in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Shame responses that resemble arrogance. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-10",
+          "title": "Grandiose and vulnerable presentations",
+          "problem": "Grandiose and vulnerable presentations",
+          "lessons": [
+            {
+              "id": "narcissism-m10-l1",
+              "title": "Case file: Grandiose and vulnerable presentations",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Grandiose and vulnerable presentations. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m10-l2",
+              "title": "The mechanism behind Grandiose and vulnerable presentations",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Grandiose and vulnerable presentations. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m10-l3",
+              "title": "Distinguish Grandiose and vulnerable presentations: vulnerability versus fragility stereotypes",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Grandiose and vulnerable presentations. Contrasting cases: vulnerability versus fragility stereotypes.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m10-l4",
+              "title": "Evidence investigation: Grandiose and vulnerable presentations",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Grandiose and vulnerable presentations. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m10-l5",
+              "title": "Choose a proportionate response to Grandiose and vulnerable presentations",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Grandiose and vulnerable presentations. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m10-l6",
+              "title": "Transfer mission: Grandiose and vulnerable presentations in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Grandiose and vulnerable presentations. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narcissism-book-3",
+      "title": "Difficult interpersonal patterns",
+      "distinction": "impact versus assumed intention",
+      "modules": [
+        {
+          "id": "narcissism-module-11",
+          "title": "Conversation monopolising and reciprocity",
+          "problem": "Conversation monopolising and reciprocity",
+          "lessons": [
+            {
+              "id": "narcissism-m11-l1",
+              "title": "Case file: Conversation monopolising and reciprocity",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Conversation monopolising and reciprocity. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m11-l2",
+              "title": "The mechanism behind Conversation monopolising and reciprocity",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Conversation monopolising and reciprocity. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m11-l3",
+              "title": "Distinguish Conversation monopolising and reciprocity: impact versus assumed intention",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Conversation monopolising and reciprocity. Contrasting cases: impact versus assumed intention.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m11-l4",
+              "title": "Evidence investigation: Conversation monopolising and reciprocity",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Conversation monopolising and reciprocity. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m11-l5",
+              "title": "Choose a proportionate response to Conversation monopolising and reciprocity",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Conversation monopolising and reciprocity. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m11-l6",
+              "title": "Transfer mission: Conversation monopolising and reciprocity in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Conversation monopolising and reciprocity. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-12",
+          "title": "The cost of constant status comparison",
+          "problem": "The cost of constant status comparison",
+          "lessons": [
+            {
+              "id": "narcissism-m12-l1",
+              "title": "Case file: The cost of constant status comparison",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: The cost of constant status comparison. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m12-l2",
+              "title": "The mechanism behind The cost of constant status comparison",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: The cost of constant status comparison. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m12-l3",
+              "title": "Distinguish The cost of constant status comparison: impact versus assumed intention",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: The cost of constant status comparison. Contrasting cases: impact versus assumed intention.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m12-l4",
+              "title": "Evidence investigation: The cost of constant status comparison",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: The cost of constant status comparison. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m12-l5",
+              "title": "Choose a proportionate response to The cost of constant status comparison",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: The cost of constant status comparison. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m12-l6",
+              "title": "Transfer mission: The cost of constant status comparison in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: The cost of constant status comparison. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-13",
+          "title": "Reacting to another person's success",
+          "problem": "Reacting to another person's success",
+          "lessons": [
+            {
+              "id": "narcissism-m13-l1",
+              "title": "Case file: Reacting to another person's success",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Reacting to another person's success. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m13-l2",
+              "title": "The mechanism behind Reacting to another person's success",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Reacting to another person's success. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m13-l3",
+              "title": "Distinguish Reacting to another person's success: impact versus assumed intention",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Reacting to another person's success. Contrasting cases: impact versus assumed intention.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m13-l4",
+              "title": "Evidence investigation: Reacting to another person's success",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Reacting to another person's success. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m13-l5",
+              "title": "Choose a proportionate response to Reacting to another person's success",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Reacting to another person's success. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m13-l6",
+              "title": "Transfer mission: Reacting to another person's success in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Reacting to another person's success. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-14",
+          "title": "Demanding exceptions to shared rules",
+          "problem": "Demanding exceptions to shared rules",
+          "lessons": [
+            {
+              "id": "narcissism-m14-l1",
+              "title": "Case file: Demanding exceptions to shared rules",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Demanding exceptions to shared rules. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m14-l2",
+              "title": "The mechanism behind Demanding exceptions to shared rules",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Demanding exceptions to shared rules. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m14-l3",
+              "title": "Distinguish Demanding exceptions to shared rules: impact versus assumed intention",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Demanding exceptions to shared rules. Contrasting cases: impact versus assumed intention.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m14-l4",
+              "title": "Evidence investigation: Demanding exceptions to shared rules",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Demanding exceptions to shared rules. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m14-l5",
+              "title": "Choose a proportionate response to Demanding exceptions to shared rules",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Demanding exceptions to shared rules. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m14-l6",
+              "title": "Transfer mission: Demanding exceptions to shared rules in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Demanding exceptions to shared rules. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-15",
+          "title": "When empathy appears inconsistent",
+          "problem": "When empathy appears inconsistent",
+          "lessons": [
+            {
+              "id": "narcissism-m15-l1",
+              "title": "Case file: When empathy appears inconsistent",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When empathy appears inconsistent. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m15-l2",
+              "title": "The mechanism behind When empathy appears inconsistent",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When empathy appears inconsistent. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m15-l3",
+              "title": "Distinguish When empathy appears inconsistent: impact versus assumed intention",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When empathy appears inconsistent. Contrasting cases: impact versus assumed intention.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m15-l4",
+              "title": "Evidence investigation: When empathy appears inconsistent",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When empathy appears inconsistent. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m15-l5",
+              "title": "Choose a proportionate response to When empathy appears inconsistent",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When empathy appears inconsistent. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m15-l6",
+              "title": "Transfer mission: When empathy appears inconsistent in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When empathy appears inconsistent. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narcissism-book-4",
+      "title": "After criticism or disagreement",
+      "distinction": "defensive process versus deliberate abuse",
+      "modules": [
+        {
+          "id": "narcissism-module-16",
+          "title": "Criticism interpreted as humiliation",
+          "problem": "Criticism interpreted as humiliation",
+          "lessons": [
+            {
+              "id": "narcissism-m16-l1",
+              "title": "Case file: Criticism interpreted as humiliation",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Criticism interpreted as humiliation. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m16-l2",
+              "title": "The mechanism behind Criticism interpreted as humiliation",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Criticism interpreted as humiliation. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m16-l3",
+              "title": "Distinguish Criticism interpreted as humiliation: defensive process versus deliberate abuse",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Criticism interpreted as humiliation. Contrasting cases: defensive process versus deliberate abuse.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m16-l4",
+              "title": "Evidence investigation: Criticism interpreted as humiliation",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Criticism interpreted as humiliation. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m16-l5",
+              "title": "Choose a proportionate response to Criticism interpreted as humiliation",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Criticism interpreted as humiliation. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m16-l6",
+              "title": "Transfer mission: Criticism interpreted as humiliation in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Criticism interpreted as humiliation. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-17",
+          "title": "Rage, withdrawal or contempt after setbacks",
+          "problem": "Rage, withdrawal or contempt after setbacks",
+          "lessons": [
+            {
+              "id": "narcissism-m17-l1",
+              "title": "Case file: Rage, withdrawal or contempt after setbacks",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Rage, withdrawal or contempt after setbacks. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m17-l2",
+              "title": "The mechanism behind Rage, withdrawal or contempt after setbacks",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Rage, withdrawal or contempt after setbacks. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m17-l3",
+              "title": "Distinguish Rage, withdrawal or contempt after setbacks: defensive process versus deliberate abuse",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Rage, withdrawal or contempt after setbacks. Contrasting cases: defensive process versus deliberate abuse.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m17-l4",
+              "title": "Evidence investigation: Rage, withdrawal or contempt after setbacks",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Rage, withdrawal or contempt after setbacks. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m17-l5",
+              "title": "Choose a proportionate response to Rage, withdrawal or contempt after setbacks",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Rage, withdrawal or contempt after setbacks. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m17-l6",
+              "title": "Transfer mission: Rage, withdrawal or contempt after setbacks in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Rage, withdrawal or contempt after setbacks. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-18",
+          "title": "Blame-shifting without diagnosing motives",
+          "problem": "Blame-shifting without diagnosing motives",
+          "lessons": [
+            {
+              "id": "narcissism-m18-l1",
+              "title": "Case file: Blame-shifting without diagnosing motives",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Blame-shifting without diagnosing motives. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m18-l2",
+              "title": "The mechanism behind Blame-shifting without diagnosing motives",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Blame-shifting without diagnosing motives. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m18-l3",
+              "title": "Distinguish Blame-shifting without diagnosing motives: defensive process versus deliberate abuse",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Blame-shifting without diagnosing motives. Contrasting cases: defensive process versus deliberate abuse.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m18-l4",
+              "title": "Evidence investigation: Blame-shifting without diagnosing motives",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Blame-shifting without diagnosing motives. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m18-l5",
+              "title": "Choose a proportionate response to Blame-shifting without diagnosing motives",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Blame-shifting without diagnosing motives. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m18-l6",
+              "title": "Transfer mission: Blame-shifting without diagnosing motives in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Blame-shifting without diagnosing motives. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-19",
+          "title": "Restoring superiority after a mistake",
+          "problem": "Restoring superiority after a mistake",
+          "lessons": [
+            {
+              "id": "narcissism-m19-l1",
+              "title": "Case file: Restoring superiority after a mistake",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Restoring superiority after a mistake. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m19-l2",
+              "title": "The mechanism behind Restoring superiority after a mistake",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Restoring superiority after a mistake. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m19-l3",
+              "title": "Distinguish Restoring superiority after a mistake: defensive process versus deliberate abuse",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Restoring superiority after a mistake. Contrasting cases: defensive process versus deliberate abuse.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m19-l4",
+              "title": "Evidence investigation: Restoring superiority after a mistake",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Restoring superiority after a mistake. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m19-l5",
+              "title": "Choose a proportionate response to Restoring superiority after a mistake",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Restoring superiority after a mistake. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m19-l6",
+              "title": "Transfer mission: Restoring superiority after a mistake in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Restoring superiority after a mistake. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-20",
+          "title": "Repair attempts and their sincerity",
+          "problem": "Repair attempts and their sincerity",
+          "lessons": [
+            {
+              "id": "narcissism-m20-l1",
+              "title": "Case file: Repair attempts and their sincerity",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Repair attempts and their sincerity. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m20-l2",
+              "title": "The mechanism behind Repair attempts and their sincerity",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Repair attempts and their sincerity. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m20-l3",
+              "title": "Distinguish Repair attempts and their sincerity: defensive process versus deliberate abuse",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Repair attempts and their sincerity. Contrasting cases: defensive process versus deliberate abuse.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m20-l4",
+              "title": "Evidence investigation: Repair attempts and their sincerity",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Repair attempts and their sincerity. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m20-l5",
+              "title": "Choose a proportionate response to Repair attempts and their sincerity",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Repair attempts and their sincerity. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m20-l6",
+              "title": "Transfer mission: Repair attempts and their sincerity in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Repair attempts and their sincerity. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narcissism-book-5",
+      "title": "Interpreting evidence carefully",
+      "distinction": "single episode versus enduring pattern",
+      "modules": [
+        {
+          "id": "narcissism-module-21",
+          "title": "A selfish act is not a personality disorder",
+          "problem": "A selfish act is not a personality disorder",
+          "lessons": [
+            {
+              "id": "narcissism-m21-l1",
+              "title": "Case file: A selfish act is not a personality disorder",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: A selfish act is not a personality disorder. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m21-l2",
+              "title": "The mechanism behind A selfish act is not a personality disorder",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: A selfish act is not a personality disorder. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m21-l3",
+              "title": "Distinguish A selfish act is not a personality disorder: single episode versus enduring pattern",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: A selfish act is not a personality disorder. Contrasting cases: single episode versus enduring pattern.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m21-l4",
+              "title": "Evidence investigation: A selfish act is not a personality disorder",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: A selfish act is not a personality disorder. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m21-l5",
+              "title": "Choose a proportionate response to A selfish act is not a personality disorder",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: A selfish act is not a personality disorder. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m21-l6",
+              "title": "Transfer mission: A selfish act is not a personality disorder in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: A selfish act is not a personality disorder. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-22",
+          "title": "How to sample behaviour across contexts",
+          "problem": "How to sample behaviour across contexts",
+          "lessons": [
+            {
+              "id": "narcissism-m22-l1",
+              "title": "Case file: How to sample behaviour across contexts",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: How to sample behaviour across contexts. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m22-l2",
+              "title": "The mechanism behind How to sample behaviour across contexts",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: How to sample behaviour across contexts. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m22-l3",
+              "title": "Distinguish How to sample behaviour across contexts: single episode versus enduring pattern",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: How to sample behaviour across contexts. Contrasting cases: single episode versus enduring pattern.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m22-l4",
+              "title": "Evidence investigation: How to sample behaviour across contexts",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: How to sample behaviour across contexts. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m22-l5",
+              "title": "Choose a proportionate response to How to sample behaviour across contexts",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: How to sample behaviour across contexts. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m22-l6",
+              "title": "Transfer mission: How to sample behaviour across contexts in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: How to sample behaviour across contexts. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-23",
+          "title": "Situational pressures and trait expression",
+          "problem": "Situational pressures and trait expression",
+          "lessons": [
+            {
+              "id": "narcissism-m23-l1",
+              "title": "Case file: Situational pressures and trait expression",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Situational pressures and trait expression. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m23-l2",
+              "title": "The mechanism behind Situational pressures and trait expression",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Situational pressures and trait expression. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m23-l3",
+              "title": "Distinguish Situational pressures and trait expression: single episode versus enduring pattern",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Situational pressures and trait expression. Contrasting cases: single episode versus enduring pattern.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m23-l4",
+              "title": "Evidence investigation: Situational pressures and trait expression",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Situational pressures and trait expression. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m23-l5",
+              "title": "Choose a proportionate response to Situational pressures and trait expression",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Situational pressures and trait expression. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m23-l6",
+              "title": "Transfer mission: Situational pressures and trait expression in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Situational pressures and trait expression. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-24",
+          "title": "Observer bias in troubled relationships",
+          "problem": "Observer bias in troubled relationships",
+          "lessons": [
+            {
+              "id": "narcissism-m24-l1",
+              "title": "Case file: Observer bias in troubled relationships",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Observer bias in troubled relationships. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m24-l2",
+              "title": "The mechanism behind Observer bias in troubled relationships",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Observer bias in troubled relationships. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m24-l3",
+              "title": "Distinguish Observer bias in troubled relationships: single episode versus enduring pattern",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Observer bias in troubled relationships. Contrasting cases: single episode versus enduring pattern.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m24-l4",
+              "title": "Evidence investigation: Observer bias in troubled relationships",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Observer bias in troubled relationships. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m24-l5",
+              "title": "Choose a proportionate response to Observer bias in troubled relationships",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Observer bias in troubled relationships. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m24-l6",
+              "title": "Transfer mission: Observer bias in troubled relationships in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Observer bias in troubled relationships. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-25",
+          "title": "What clinical assessment can establish",
+          "problem": "What clinical assessment can establish",
+          "lessons": [
+            {
+              "id": "narcissism-m25-l1",
+              "title": "Case file: What clinical assessment can establish",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: What clinical assessment can establish. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m25-l2",
+              "title": "The mechanism behind What clinical assessment can establish",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: What clinical assessment can establish. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m25-l3",
+              "title": "Distinguish What clinical assessment can establish: single episode versus enduring pattern",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: What clinical assessment can establish. Contrasting cases: single episode versus enduring pattern.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m25-l4",
+              "title": "Evidence investigation: What clinical assessment can establish",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: What clinical assessment can establish. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m25-l5",
+              "title": "Choose a proportionate response to What clinical assessment can establish",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: What clinical assessment can establish. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m25-l6",
+              "title": "Transfer mission: What clinical assessment can establish in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: What clinical assessment can establish. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narcissism-book-6",
+      "title": "Origins and development",
+      "distinction": "risk factor versus deterministic cause",
+      "modules": [
+        {
+          "id": "narcissism-module-26",
+          "title": "Temperament and sensitivity to reward",
+          "problem": "Temperament and sensitivity to reward",
+          "lessons": [
+            {
+              "id": "narcissism-m26-l1",
+              "title": "Case file: Temperament and sensitivity to reward",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Temperament and sensitivity to reward. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m26-l2",
+              "title": "The mechanism behind Temperament and sensitivity to reward",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Temperament and sensitivity to reward. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m26-l3",
+              "title": "Distinguish Temperament and sensitivity to reward: risk factor versus deterministic cause",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Temperament and sensitivity to reward. Contrasting cases: risk factor versus deterministic cause.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m26-l4",
+              "title": "Evidence investigation: Temperament and sensitivity to reward",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Temperament and sensitivity to reward. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m26-l5",
+              "title": "Choose a proportionate response to Temperament and sensitivity to reward",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Temperament and sensitivity to reward. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m26-l6",
+              "title": "Transfer mission: Temperament and sensitivity to reward in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Temperament and sensitivity to reward. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-27",
+          "title": "Parenting narratives and their limitations",
+          "problem": "Parenting narratives and their limitations",
+          "lessons": [
+            {
+              "id": "narcissism-m27-l1",
+              "title": "Case file: Parenting narratives and their limitations",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Parenting narratives and their limitations. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m27-l2",
+              "title": "The mechanism behind Parenting narratives and their limitations",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Parenting narratives and their limitations. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m27-l3",
+              "title": "Distinguish Parenting narratives and their limitations: risk factor versus deterministic cause",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Parenting narratives and their limitations. Contrasting cases: risk factor versus deterministic cause.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m27-l4",
+              "title": "Evidence investigation: Parenting narratives and their limitations",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Parenting narratives and their limitations. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m27-l5",
+              "title": "Choose a proportionate response to Parenting narratives and their limitations",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Parenting narratives and their limitations. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m27-l6",
+              "title": "Transfer mission: Parenting narratives and their limitations in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Parenting narratives and their limitations. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-28",
+          "title": "Status, competition and cultural norms",
+          "problem": "Status, competition and cultural norms",
+          "lessons": [
+            {
+              "id": "narcissism-m28-l1",
+              "title": "Case file: Status, competition and cultural norms",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Status, competition and cultural norms. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m28-l2",
+              "title": "The mechanism behind Status, competition and cultural norms",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Status, competition and cultural norms. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m28-l3",
+              "title": "Distinguish Status, competition and cultural norms: risk factor versus deterministic cause",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Status, competition and cultural norms. Contrasting cases: risk factor versus deterministic cause.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m28-l4",
+              "title": "Evidence investigation: Status, competition and cultural norms",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Status, competition and cultural norms. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m28-l5",
+              "title": "Choose a proportionate response to Status, competition and cultural norms",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Status, competition and cultural norms. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m28-l6",
+              "title": "Transfer mission: Status, competition and cultural norms in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Status, competition and cultural norms. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-29",
+          "title": "Developmental change across adulthood",
+          "problem": "Developmental change across adulthood",
+          "lessons": [
+            {
+              "id": "narcissism-m29-l1",
+              "title": "Case file: Developmental change across adulthood",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Developmental change across adulthood. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m29-l2",
+              "title": "The mechanism behind Developmental change across adulthood",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Developmental change across adulthood. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m29-l3",
+              "title": "Distinguish Developmental change across adulthood: risk factor versus deterministic cause",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Developmental change across adulthood. Contrasting cases: risk factor versus deterministic cause.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m29-l4",
+              "title": "Evidence investigation: Developmental change across adulthood",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Developmental change across adulthood. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m29-l5",
+              "title": "Choose a proportionate response to Developmental change across adulthood",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Developmental change across adulthood. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m29-l6",
+              "title": "Transfer mission: Developmental change across adulthood in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Developmental change across adulthood. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-30",
+          "title": "Why no childhood story proves a diagnosis",
+          "problem": "Why no childhood story proves a diagnosis",
+          "lessons": [
+            {
+              "id": "narcissism-m30-l1",
+              "title": "Case file: Why no childhood story proves a diagnosis",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Why no childhood story proves a diagnosis. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m30-l2",
+              "title": "The mechanism behind Why no childhood story proves a diagnosis",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Why no childhood story proves a diagnosis. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m30-l3",
+              "title": "Distinguish Why no childhood story proves a diagnosis: risk factor versus deterministic cause",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Why no childhood story proves a diagnosis. Contrasting cases: risk factor versus deterministic cause.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m30-l4",
+              "title": "Evidence investigation: Why no childhood story proves a diagnosis",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Why no childhood story proves a diagnosis. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m30-l5",
+              "title": "Choose a proportionate response to Why no childhood story proves a diagnosis",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Why no childhood story proves a diagnosis. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m30-l6",
+              "title": "Transfer mission: Why no childhood story proves a diagnosis in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Why no childhood story proves a diagnosis. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narcissism-book-7",
+      "title": "Relationships and power",
+      "distinction": "incompatibility versus coercive behaviour",
+      "modules": [
+        {
+          "id": "narcissism-module-31",
+          "title": "Mutual admiration or one-way validation",
+          "problem": "Mutual admiration or one-way validation",
+          "lessons": [
+            {
+              "id": "narcissism-m31-l1",
+              "title": "Case file: Mutual admiration or one-way validation",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Mutual admiration or one-way validation. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m31-l2",
+              "title": "The mechanism behind Mutual admiration or one-way validation",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Mutual admiration or one-way validation. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m31-l3",
+              "title": "Distinguish Mutual admiration or one-way validation: incompatibility versus coercive behaviour",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Mutual admiration or one-way validation. Contrasting cases: incompatibility versus coercive behaviour.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m31-l4",
+              "title": "Evidence investigation: Mutual admiration or one-way validation",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Mutual admiration or one-way validation. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m31-l5",
+              "title": "Choose a proportionate response to Mutual admiration or one-way validation",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Mutual admiration or one-way validation. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m31-l6",
+              "title": "Transfer mission: Mutual admiration or one-way validation in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Mutual admiration or one-way validation. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-32",
+          "title": "When affection feels conditional",
+          "problem": "When affection feels conditional",
+          "lessons": [
+            {
+              "id": "narcissism-m32-l1",
+              "title": "Case file: When affection feels conditional",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When affection feels conditional. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m32-l2",
+              "title": "The mechanism behind When affection feels conditional",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When affection feels conditional. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m32-l3",
+              "title": "Distinguish When affection feels conditional: incompatibility versus coercive behaviour",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When affection feels conditional. Contrasting cases: incompatibility versus coercive behaviour.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m32-l4",
+              "title": "Evidence investigation: When affection feels conditional",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When affection feels conditional. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m32-l5",
+              "title": "Choose a proportionate response to When affection feels conditional",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When affection feels conditional. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m32-l6",
+              "title": "Transfer mission: When affection feels conditional in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When affection feels conditional. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-33",
+          "title": "Repeated devaluation and emotional impact",
+          "problem": "Repeated devaluation and emotional impact",
+          "lessons": [
+            {
+              "id": "narcissism-m33-l1",
+              "title": "Case file: Repeated devaluation and emotional impact",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Repeated devaluation and emotional impact. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m33-l2",
+              "title": "The mechanism behind Repeated devaluation and emotional impact",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Repeated devaluation and emotional impact. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m33-l3",
+              "title": "Distinguish Repeated devaluation and emotional impact: incompatibility versus coercive behaviour",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Repeated devaluation and emotional impact. Contrasting cases: incompatibility versus coercive behaviour.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m33-l4",
+              "title": "Evidence investigation: Repeated devaluation and emotional impact",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Repeated devaluation and emotional impact. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m33-l5",
+              "title": "Choose a proportionate response to Repeated devaluation and emotional impact",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Repeated devaluation and emotional impact. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m33-l6",
+              "title": "Transfer mission: Repeated devaluation and emotional impact in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Repeated devaluation and emotional impact. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-34",
+          "title": "Dependency, isolation and power differences",
+          "problem": "Dependency, isolation and power differences",
+          "lessons": [
+            {
+              "id": "narcissism-m34-l1",
+              "title": "Case file: Dependency, isolation and power differences",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Dependency, isolation and power differences. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m34-l2",
+              "title": "The mechanism behind Dependency, isolation and power differences",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Dependency, isolation and power differences. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m34-l3",
+              "title": "Distinguish Dependency, isolation and power differences: incompatibility versus coercive behaviour",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Dependency, isolation and power differences. Contrasting cases: incompatibility versus coercive behaviour.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m34-l4",
+              "title": "Evidence investigation: Dependency, isolation and power differences",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Dependency, isolation and power differences. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m34-l5",
+              "title": "Choose a proportionate response to Dependency, isolation and power differences",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Dependency, isolation and power differences. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m34-l6",
+              "title": "Transfer mission: Dependency, isolation and power differences in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Dependency, isolation and power differences. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-35",
+          "title": "When boundaries provoke retaliation",
+          "problem": "When boundaries provoke retaliation",
+          "lessons": [
+            {
+              "id": "narcissism-m35-l1",
+              "title": "Case file: When boundaries provoke retaliation",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When boundaries provoke retaliation. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m35-l2",
+              "title": "The mechanism behind When boundaries provoke retaliation",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When boundaries provoke retaliation. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m35-l3",
+              "title": "Distinguish When boundaries provoke retaliation: incompatibility versus coercive behaviour",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When boundaries provoke retaliation. Contrasting cases: incompatibility versus coercive behaviour.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m35-l4",
+              "title": "Evidence investigation: When boundaries provoke retaliation",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When boundaries provoke retaliation. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m35-l5",
+              "title": "Choose a proportionate response to When boundaries provoke retaliation",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When boundaries provoke retaliation. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m35-l6",
+              "title": "Transfer mission: When boundaries provoke retaliation in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When boundaries provoke retaliation. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narcissism-book-8",
+      "title": "Responses and self-protection",
+      "distinction": "repairable conflict versus safety concern",
+      "modules": [
+        {
+          "id": "narcissism-module-36",
+          "title": "Responding to entitlement without escalation",
+          "problem": "Responding to entitlement without escalation",
+          "lessons": [
+            {
+              "id": "narcissism-m36-l1",
+              "title": "Case file: Responding to entitlement without escalation",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Responding to entitlement without escalation. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m36-l2",
+              "title": "The mechanism behind Responding to entitlement without escalation",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Responding to entitlement without escalation. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m36-l3",
+              "title": "Distinguish Responding to entitlement without escalation: repairable conflict versus safety concern",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Responding to entitlement without escalation. Contrasting cases: repairable conflict versus safety concern.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m36-l4",
+              "title": "Evidence investigation: Responding to entitlement without escalation",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Responding to entitlement without escalation. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m36-l5",
+              "title": "Choose a proportionate response to Responding to entitlement without escalation",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Responding to entitlement without escalation. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m36-l6",
+              "title": "Transfer mission: Responding to entitlement without escalation in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Responding to entitlement without escalation. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-37",
+          "title": "Deciding which behaviour to address",
+          "problem": "Deciding which behaviour to address",
+          "lessons": [
+            {
+              "id": "narcissism-m37-l1",
+              "title": "Case file: Deciding which behaviour to address",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Deciding which behaviour to address. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m37-l2",
+              "title": "The mechanism behind Deciding which behaviour to address",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Deciding which behaviour to address. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m37-l3",
+              "title": "Distinguish Deciding which behaviour to address: repairable conflict versus safety concern",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Deciding which behaviour to address. Contrasting cases: repairable conflict versus safety concern.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m37-l4",
+              "title": "Evidence investigation: Deciding which behaviour to address",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Deciding which behaviour to address. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m37-l5",
+              "title": "Choose a proportionate response to Deciding which behaviour to address",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Deciding which behaviour to address. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m37-l6",
+              "title": "Transfer mission: Deciding which behaviour to address in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Deciding which behaviour to address. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-38",
+          "title": "Requests, boundaries and enforceable limits",
+          "problem": "Requests, boundaries and enforceable limits",
+          "lessons": [
+            {
+              "id": "narcissism-m38-l1",
+              "title": "Case file: Requests, boundaries and enforceable limits",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Requests, boundaries and enforceable limits. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m38-l2",
+              "title": "The mechanism behind Requests, boundaries and enforceable limits",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Requests, boundaries and enforceable limits. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m38-l3",
+              "title": "Distinguish Requests, boundaries and enforceable limits: repairable conflict versus safety concern",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Requests, boundaries and enforceable limits. Contrasting cases: repairable conflict versus safety concern.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m38-l4",
+              "title": "Evidence investigation: Requests, boundaries and enforceable limits",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Requests, boundaries and enforceable limits. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m38-l5",
+              "title": "Choose a proportionate response to Requests, boundaries and enforceable limits",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Requests, boundaries and enforceable limits. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m38-l6",
+              "title": "Transfer mission: Requests, boundaries and enforceable limits in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Requests, boundaries and enforceable limits. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-39",
+          "title": "Documenting patterns without obsession",
+          "problem": "Documenting patterns without obsession",
+          "lessons": [
+            {
+              "id": "narcissism-m39-l1",
+              "title": "Case file: Documenting patterns without obsession",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Documenting patterns without obsession. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m39-l2",
+              "title": "The mechanism behind Documenting patterns without obsession",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Documenting patterns without obsession. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m39-l3",
+              "title": "Distinguish Documenting patterns without obsession: repairable conflict versus safety concern",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Documenting patterns without obsession. Contrasting cases: repairable conflict versus safety concern.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m39-l4",
+              "title": "Evidence investigation: Documenting patterns without obsession",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Documenting patterns without obsession. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m39-l5",
+              "title": "Choose a proportionate response to Documenting patterns without obsession",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Documenting patterns without obsession. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m39-l6",
+              "title": "Transfer mission: Documenting patterns without obsession in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Documenting patterns without obsession. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-40",
+          "title": "When to seek support or leave safely",
+          "problem": "When to seek support or leave safely",
+          "lessons": [
+            {
+              "id": "narcissism-m40-l1",
+              "title": "Case file: When to seek support or leave safely",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When to seek support or leave safely. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m40-l2",
+              "title": "The mechanism behind When to seek support or leave safely",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When to seek support or leave safely. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m40-l3",
+              "title": "Distinguish When to seek support or leave safely: repairable conflict versus safety concern",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When to seek support or leave safely. Contrasting cases: repairable conflict versus safety concern.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m40-l4",
+              "title": "Evidence investigation: When to seek support or leave safely",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When to seek support or leave safely. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m40-l5",
+              "title": "Choose a proportionate response to When to seek support or leave safely",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When to seek support or leave safely. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m40-l6",
+              "title": "Transfer mission: When to seek support or leave safely in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When to seek support or leave safely. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narcissism-book-9",
+      "title": "The social ecology of narcissism",
+      "distinction": "individual pathology versus institutional incentives",
+      "modules": [
+        {
+          "id": "narcissism-module-41",
+          "title": "Celebrity culture and visibility rewards",
+          "problem": "Celebrity culture and visibility rewards",
+          "lessons": [
+            {
+              "id": "narcissism-m41-l1",
+              "title": "Case file: Celebrity culture and visibility rewards",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Celebrity culture and visibility rewards. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m41-l2",
+              "title": "The mechanism behind Celebrity culture and visibility rewards",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Celebrity culture and visibility rewards. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m41-l3",
+              "title": "Distinguish Celebrity culture and visibility rewards: individual pathology versus institutional incentives",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Celebrity culture and visibility rewards. Contrasting cases: individual pathology versus institutional incentives.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m41-l4",
+              "title": "Evidence investigation: Celebrity culture and visibility rewards",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Celebrity culture and visibility rewards. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m41-l5",
+              "title": "Choose a proportionate response to Celebrity culture and visibility rewards",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Celebrity culture and visibility rewards. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m41-l6",
+              "title": "Transfer mission: Celebrity culture and visibility rewards in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Celebrity culture and visibility rewards. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-42",
+          "title": "Self-promotion in workplaces",
+          "problem": "Self-promotion in workplaces",
+          "lessons": [
+            {
+              "id": "narcissism-m42-l1",
+              "title": "Case file: Self-promotion in workplaces",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Self-promotion in workplaces. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m42-l2",
+              "title": "The mechanism behind Self-promotion in workplaces",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Self-promotion in workplaces. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m42-l3",
+              "title": "Distinguish Self-promotion in workplaces: individual pathology versus institutional incentives",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Self-promotion in workplaces. Contrasting cases: individual pathology versus institutional incentives.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m42-l4",
+              "title": "Evidence investigation: Self-promotion in workplaces",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Self-promotion in workplaces. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m42-l5",
+              "title": "Choose a proportionate response to Self-promotion in workplaces",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Self-promotion in workplaces. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m42-l6",
+              "title": "Transfer mission: Self-promotion in workplaces in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Self-promotion in workplaces. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-43",
+          "title": "Online diagnosis trends and stigma",
+          "problem": "Online diagnosis trends and stigma",
+          "lessons": [
+            {
+              "id": "narcissism-m43-l1",
+              "title": "Case file: Online diagnosis trends and stigma",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Online diagnosis trends and stigma. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m43-l2",
+              "title": "The mechanism behind Online diagnosis trends and stigma",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Online diagnosis trends and stigma. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m43-l3",
+              "title": "Distinguish Online diagnosis trends and stigma: individual pathology versus institutional incentives",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Online diagnosis trends and stigma. Contrasting cases: individual pathology versus institutional incentives.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m43-l4",
+              "title": "Evidence investigation: Online diagnosis trends and stigma",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Online diagnosis trends and stigma. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m43-l5",
+              "title": "Choose a proportionate response to Online diagnosis trends and stigma",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Online diagnosis trends and stigma. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m43-l6",
+              "title": "Transfer mission: Online diagnosis trends and stigma in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Online diagnosis trends and stigma. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-44",
+          "title": "Leadership, charisma and exploitation",
+          "problem": "Leadership, charisma and exploitation",
+          "lessons": [
+            {
+              "id": "narcissism-m44-l1",
+              "title": "Case file: Leadership, charisma and exploitation",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Leadership, charisma and exploitation. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m44-l2",
+              "title": "The mechanism behind Leadership, charisma and exploitation",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Leadership, charisma and exploitation. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m44-l3",
+              "title": "Distinguish Leadership, charisma and exploitation: individual pathology versus institutional incentives",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Leadership, charisma and exploitation. Contrasting cases: individual pathology versus institutional incentives.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m44-l4",
+              "title": "Evidence investigation: Leadership, charisma and exploitation",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Leadership, charisma and exploitation. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m44-l5",
+              "title": "Choose a proportionate response to Leadership, charisma and exploitation",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Leadership, charisma and exploitation. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m44-l6",
+              "title": "Transfer mission: Leadership, charisma and exploitation in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Leadership, charisma and exploitation. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-45",
+          "title": "How institutions reward callous behaviour",
+          "problem": "How institutions reward callous behaviour",
+          "lessons": [
+            {
+              "id": "narcissism-m45-l1",
+              "title": "Case file: How institutions reward callous behaviour",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: How institutions reward callous behaviour. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m45-l2",
+              "title": "The mechanism behind How institutions reward callous behaviour",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: How institutions reward callous behaviour. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m45-l3",
+              "title": "Distinguish How institutions reward callous behaviour: individual pathology versus institutional incentives",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: How institutions reward callous behaviour. Contrasting cases: individual pathology versus institutional incentives.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m45-l4",
+              "title": "Evidence investigation: How institutions reward callous behaviour",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: How institutions reward callous behaviour. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m45-l5",
+              "title": "Choose a proportionate response to How institutions reward callous behaviour",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: How institutions reward callous behaviour. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m45-l6",
+              "title": "Transfer mission: How institutions reward callous behaviour in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: How institutions reward callous behaviour. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narcissism-book-10",
+      "title": "Advanced interpretation and transfer",
+      "distinction": "explanation versus excuse",
+      "modules": [
+        {
+          "id": "narcissism-module-46",
+          "title": "Differential explanations for similar behaviour",
+          "problem": "Differential explanations for similar behaviour",
+          "lessons": [
+            {
+              "id": "narcissism-m46-l1",
+              "title": "Case file: Differential explanations for similar behaviour",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Differential explanations for similar behaviour. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m46-l2",
+              "title": "The mechanism behind Differential explanations for similar behaviour",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Differential explanations for similar behaviour. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m46-l3",
+              "title": "Distinguish Differential explanations for similar behaviour: explanation versus excuse",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Differential explanations for similar behaviour. Contrasting cases: explanation versus excuse.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m46-l4",
+              "title": "Evidence investigation: Differential explanations for similar behaviour",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Differential explanations for similar behaviour. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m46-l5",
+              "title": "Choose a proportionate response to Differential explanations for similar behaviour",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Differential explanations for similar behaviour. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m46-l6",
+              "title": "Transfer mission: Differential explanations for similar behaviour in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Differential explanations for similar behaviour. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-47",
+          "title": "Comorbidity and overlap with other traits",
+          "problem": "Comorbidity and overlap with other traits",
+          "lessons": [
+            {
+              "id": "narcissism-m47-l1",
+              "title": "Case file: Comorbidity and overlap with other traits",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Comorbidity and overlap with other traits. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m47-l2",
+              "title": "The mechanism behind Comorbidity and overlap with other traits",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Comorbidity and overlap with other traits. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m47-l3",
+              "title": "Distinguish Comorbidity and overlap with other traits: explanation versus excuse",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Comorbidity and overlap with other traits. Contrasting cases: explanation versus excuse.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m47-l4",
+              "title": "Evidence investigation: Comorbidity and overlap with other traits",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Comorbidity and overlap with other traits. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m47-l5",
+              "title": "Choose a proportionate response to Comorbidity and overlap with other traits",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Comorbidity and overlap with other traits. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m47-l6",
+              "title": "Transfer mission: Comorbidity and overlap with other traits in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Comorbidity and overlap with other traits. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-48",
+          "title": "When perceived narcissism masks other problems",
+          "problem": "When perceived narcissism masks other problems",
+          "lessons": [
+            {
+              "id": "narcissism-m48-l1",
+              "title": "Case file: When perceived narcissism masks other problems",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When perceived narcissism masks other problems. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m48-l2",
+              "title": "The mechanism behind When perceived narcissism masks other problems",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When perceived narcissism masks other problems. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m48-l3",
+              "title": "Distinguish When perceived narcissism masks other problems: explanation versus excuse",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When perceived narcissism masks other problems. Contrasting cases: explanation versus excuse.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m48-l4",
+              "title": "Evidence investigation: When perceived narcissism masks other problems",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When perceived narcissism masks other problems. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m48-l5",
+              "title": "Choose a proportionate response to When perceived narcissism masks other problems",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When perceived narcissism masks other problems. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m48-l6",
+              "title": "Transfer mission: When perceived narcissism masks other problems in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When perceived narcissism masks other problems. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-49",
+          "title": "Limits of predicting change or treatment",
+          "problem": "Limits of predicting change or treatment",
+          "lessons": [
+            {
+              "id": "narcissism-m49-l1",
+              "title": "Case file: Limits of predicting change or treatment",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Limits of predicting change or treatment. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m49-l2",
+              "title": "The mechanism behind Limits of predicting change or treatment",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Limits of predicting change or treatment. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m49-l3",
+              "title": "Distinguish Limits of predicting change or treatment: explanation versus excuse",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Limits of predicting change or treatment. Contrasting cases: explanation versus excuse.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m49-l4",
+              "title": "Evidence investigation: Limits of predicting change or treatment",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Limits of predicting change or treatment. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m49-l5",
+              "title": "Choose a proportionate response to Limits of predicting change or treatment",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Limits of predicting change or treatment. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m49-l6",
+              "title": "Transfer mission: Limits of predicting change or treatment in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Limits of predicting change or treatment. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "narcissism-module-50",
+          "title": "Integrated case: insight without amateur diagnosis",
+          "problem": "Integrated case: insight without amateur diagnosis",
+          "lessons": [
+            {
+              "id": "narcissism-m50-l1",
+              "title": "Case file: Integrated case: insight without amateur diagnosis",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Integrated case: insight without amateur diagnosis. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m50-l2",
+              "title": "The mechanism behind Integrated case: insight without amateur diagnosis",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Integrated case: insight without amateur diagnosis. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m50-l3",
+              "title": "Distinguish Integrated case: insight without amateur diagnosis: explanation versus excuse",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Integrated case: insight without amateur diagnosis. Contrasting cases: explanation versus excuse.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m50-l4",
+              "title": "Evidence investigation: Integrated case: insight without amateur diagnosis",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Integrated case: insight without amateur diagnosis. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m50-l5",
+              "title": "Choose a proportionate response to Integrated case: insight without amateur diagnosis",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Integrated case: insight without amateur diagnosis. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "narcissism-m50-l6",
+              "title": "Transfer mission: Integrated case: insight without amateur diagnosis in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Integrated case: insight without amateur diagnosis. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

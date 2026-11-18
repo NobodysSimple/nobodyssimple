@@ -1,0 +1,2828 @@
+{
+  "courseId": "sleep",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Editable curriculum map only; learning nodes must be independently authored and reviewed before publication.",
+  "books": [
+    {
+      "id": "sleep-book-1",
+      "title": "How sleep regulation works",
+      "distinction": "sleep pressure versus circadian timing",
+      "modules": [
+        {
+          "id": "sleep-module-01",
+          "title": "Sleep pressure accumulated through waking",
+          "problem": "Sleep pressure accumulated through waking",
+          "lessons": [
+            {
+              "id": "sleep-m1-l1",
+              "title": "Case file: Sleep pressure accumulated through waking",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Sleep pressure accumulated through waking.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m1-l2",
+              "title": "How sleep regulation works: Sleep pressure accumulated through waking",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Sleep pressure accumulated through waking.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m1-l3",
+              "title": "Distinguish Sleep pressure accumulated through waking: sleep pressure versus circadian timing",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Sleep pressure accumulated through waking.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m1-l4",
+              "title": "Evidence investigation: Sleep pressure accumulated through waking",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Sleep pressure accumulated through waking.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m1-l5",
+              "title": "Choose a sleep-supporting response: Sleep pressure accumulated through waking",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Sleep pressure accumulated through waking.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m1-l6",
+              "title": "Transfer mission: Sleep pressure accumulated through waking",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Sleep pressure accumulated through waking.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-02",
+          "title": "Circadian rhythm and light cues",
+          "problem": "Circadian rhythm and light cues",
+          "lessons": [
+            {
+              "id": "sleep-m2-l1",
+              "title": "Case file: Circadian rhythm and light cues",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Circadian rhythm and light cues.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m2-l2",
+              "title": "How sleep regulation works: Circadian rhythm and light cues",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Circadian rhythm and light cues.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m2-l3",
+              "title": "Distinguish Circadian rhythm and light cues: sleep pressure versus circadian timing",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Circadian rhythm and light cues.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m2-l4",
+              "title": "Evidence investigation: Circadian rhythm and light cues",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Circadian rhythm and light cues.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m2-l5",
+              "title": "Choose a sleep-supporting response: Circadian rhythm and light cues",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Circadian rhythm and light cues.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m2-l6",
+              "title": "Transfer mission: Circadian rhythm and light cues",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Circadian rhythm and light cues.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-03",
+          "title": "Why sleep schedules drift",
+          "problem": "Why sleep schedules drift",
+          "lessons": [
+            {
+              "id": "sleep-m3-l1",
+              "title": "Case file: Why sleep schedules drift",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Why sleep schedules drift.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m3-l2",
+              "title": "How sleep regulation works: Why sleep schedules drift",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Why sleep schedules drift.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m3-l3",
+              "title": "Distinguish Why sleep schedules drift: sleep pressure versus circadian timing",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Why sleep schedules drift.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m3-l4",
+              "title": "Evidence investigation: Why sleep schedules drift",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Why sleep schedules drift.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m3-l5",
+              "title": "Choose a sleep-supporting response: Why sleep schedules drift",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Why sleep schedules drift.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m3-l6",
+              "title": "Transfer mission: Why sleep schedules drift",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Why sleep schedules drift.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-04",
+          "title": "Individual differences in sleep need",
+          "problem": "Individual differences in sleep need",
+          "lessons": [
+            {
+              "id": "sleep-m4-l1",
+              "title": "Case file: Individual differences in sleep need",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Individual differences in sleep need.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m4-l2",
+              "title": "How sleep regulation works: Individual differences in sleep need",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Individual differences in sleep need.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m4-l3",
+              "title": "Distinguish Individual differences in sleep need: sleep pressure versus circadian timing",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Individual differences in sleep need.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m4-l4",
+              "title": "Evidence investigation: Individual differences in sleep need",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Individual differences in sleep need.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m4-l5",
+              "title": "Choose a sleep-supporting response: Individual differences in sleep need",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Individual differences in sleep need.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m4-l6",
+              "title": "Transfer mission: Individual differences in sleep need",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Individual differences in sleep need.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-05",
+          "title": "Sleep quality versus total hours",
+          "problem": "Sleep quality versus total hours",
+          "lessons": [
+            {
+              "id": "sleep-m5-l1",
+              "title": "Case file: Sleep quality versus total hours",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Sleep quality versus total hours.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m5-l2",
+              "title": "How sleep regulation works: Sleep quality versus total hours",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Sleep quality versus total hours.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m5-l3",
+              "title": "Distinguish Sleep quality versus total hours: sleep pressure versus circadian timing",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Sleep quality versus total hours.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m5-l4",
+              "title": "Evidence investigation: Sleep quality versus total hours",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Sleep quality versus total hours.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m5-l5",
+              "title": "Choose a sleep-supporting response: Sleep quality versus total hours",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Sleep quality versus total hours.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m5-l6",
+              "title": "Transfer mission: Sleep quality versus total hours",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Sleep quality versus total hours.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sleep-book-2",
+      "title": "Insomnia as a learned pattern",
+      "distinction": "tiredness versus sleepiness",
+      "modules": [
+        {
+          "id": "sleep-module-06",
+          "title": "Trying harder to fall asleep",
+          "problem": "Trying harder to fall asleep",
+          "lessons": [
+            {
+              "id": "sleep-m6-l1",
+              "title": "Case file: Trying harder to fall asleep",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Trying harder to fall asleep.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m6-l2",
+              "title": "How sleep regulation works: Trying harder to fall asleep",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Trying harder to fall asleep.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m6-l3",
+              "title": "Distinguish Trying harder to fall asleep: tiredness versus sleepiness",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Trying harder to fall asleep.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m6-l4",
+              "title": "Evidence investigation: Trying harder to fall asleep",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Trying harder to fall asleep.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m6-l5",
+              "title": "Choose a sleep-supporting response: Trying harder to fall asleep",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Trying harder to fall asleep.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m6-l6",
+              "title": "Transfer mission: Trying harder to fall asleep",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Trying harder to fall asleep.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-07",
+          "title": "The bed becoming a place of frustration",
+          "problem": "The bed becoming a place of frustration",
+          "lessons": [
+            {
+              "id": "sleep-m7-l1",
+              "title": "Case file: The bed becoming a place of frustration",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: The bed becoming a place of frustration.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m7-l2",
+              "title": "How sleep regulation works: The bed becoming a place of frustration",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: The bed becoming a place of frustration.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m7-l3",
+              "title": "Distinguish The bed becoming a place of frustration: tiredness versus sleepiness",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: The bed becoming a place of frustration.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m7-l4",
+              "title": "Evidence investigation: The bed becoming a place of frustration",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: The bed becoming a place of frustration.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m7-l5",
+              "title": "Choose a sleep-supporting response: The bed becoming a place of frustration",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: The bed becoming a place of frustration.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m7-l6",
+              "title": "Transfer mission: The bed becoming a place of frustration",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: The bed becoming a place of frustration.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-08",
+          "title": "Clock-watching and arousal",
+          "problem": "Clock-watching and arousal",
+          "lessons": [
+            {
+              "id": "sleep-m8-l1",
+              "title": "Case file: Clock-watching and arousal",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Clock-watching and arousal.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m8-l2",
+              "title": "How sleep regulation works: Clock-watching and arousal",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Clock-watching and arousal.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m8-l3",
+              "title": "Distinguish Clock-watching and arousal: tiredness versus sleepiness",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Clock-watching and arousal.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m8-l4",
+              "title": "Evidence investigation: Clock-watching and arousal",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Clock-watching and arousal.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m8-l5",
+              "title": "Choose a sleep-supporting response: Clock-watching and arousal",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Clock-watching and arousal.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m8-l6",
+              "title": "Transfer mission: Clock-watching and arousal",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Clock-watching and arousal.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-09",
+          "title": "Anticipatory worry about tomorrow",
+          "problem": "Anticipatory worry about tomorrow",
+          "lessons": [
+            {
+              "id": "sleep-m9-l1",
+              "title": "Case file: Anticipatory worry about tomorrow",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Anticipatory worry about tomorrow.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m9-l2",
+              "title": "How sleep regulation works: Anticipatory worry about tomorrow",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Anticipatory worry about tomorrow.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m9-l3",
+              "title": "Distinguish Anticipatory worry about tomorrow: tiredness versus sleepiness",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Anticipatory worry about tomorrow.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m9-l4",
+              "title": "Evidence investigation: Anticipatory worry about tomorrow",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Anticipatory worry about tomorrow.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m9-l5",
+              "title": "Choose a sleep-supporting response: Anticipatory worry about tomorrow",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Anticipatory worry about tomorrow.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m9-l6",
+              "title": "Transfer mission: Anticipatory worry about tomorrow",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Anticipatory worry about tomorrow.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-10",
+          "title": "When insomnia becomes self-maintaining",
+          "problem": "When insomnia becomes self-maintaining",
+          "lessons": [
+            {
+              "id": "sleep-m10-l1",
+              "title": "Case file: When insomnia becomes self-maintaining",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: When insomnia becomes self-maintaining.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m10-l2",
+              "title": "How sleep regulation works: When insomnia becomes self-maintaining",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: When insomnia becomes self-maintaining.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m10-l3",
+              "title": "Distinguish When insomnia becomes self-maintaining: tiredness versus sleepiness",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: When insomnia becomes self-maintaining.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m10-l4",
+              "title": "Evidence investigation: When insomnia becomes self-maintaining",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: When insomnia becomes self-maintaining.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m10-l5",
+              "title": "Choose a sleep-supporting response: When insomnia becomes self-maintaining",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: When insomnia becomes self-maintaining.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m10-l6",
+              "title": "Transfer mission: When insomnia becomes self-maintaining",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: When insomnia becomes self-maintaining.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sleep-book-3",
+      "title": "The anxious relationship with sleep",
+      "distinction": "rest versus forced sleep",
+      "modules": [
+        {
+          "id": "sleep-module-11",
+          "title": "Fear of not functioning tomorrow",
+          "problem": "Fear of not functioning tomorrow",
+          "lessons": [
+            {
+              "id": "sleep-m11-l1",
+              "title": "Case file: Fear of not functioning tomorrow",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Fear of not functioning tomorrow.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m11-l2",
+              "title": "How sleep regulation works: Fear of not functioning tomorrow",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Fear of not functioning tomorrow.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m11-l3",
+              "title": "Distinguish Fear of not functioning tomorrow: rest versus forced sleep",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Fear of not functioning tomorrow.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m11-l4",
+              "title": "Evidence investigation: Fear of not functioning tomorrow",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Fear of not functioning tomorrow.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m11-l5",
+              "title": "Choose a sleep-supporting response: Fear of not functioning tomorrow",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Fear of not functioning tomorrow.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m11-l6",
+              "title": "Transfer mission: Fear of not functioning tomorrow",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Fear of not functioning tomorrow.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-12",
+          "title": "Searching for the perfect bedtime",
+          "problem": "Searching for the perfect bedtime",
+          "lessons": [
+            {
+              "id": "sleep-m12-l1",
+              "title": "Case file: Searching for the perfect bedtime",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Searching for the perfect bedtime.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m12-l2",
+              "title": "How sleep regulation works: Searching for the perfect bedtime",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Searching for the perfect bedtime.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m12-l3",
+              "title": "Distinguish Searching for the perfect bedtime: rest versus forced sleep",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Searching for the perfect bedtime.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m12-l4",
+              "title": "Evidence investigation: Searching for the perfect bedtime",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Searching for the perfect bedtime.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m12-l5",
+              "title": "Choose a sleep-supporting response: Searching for the perfect bedtime",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Searching for the perfect bedtime.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m12-l6",
+              "title": "Transfer mission: Searching for the perfect bedtime",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Searching for the perfect bedtime.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-13",
+          "title": "Reassurance from sleep trackers",
+          "problem": "Reassurance from sleep trackers",
+          "lessons": [
+            {
+              "id": "sleep-m13-l1",
+              "title": "Case file: Reassurance from sleep trackers",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Reassurance from sleep trackers.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m13-l2",
+              "title": "How sleep regulation works: Reassurance from sleep trackers",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Reassurance from sleep trackers.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m13-l3",
+              "title": "Distinguish Reassurance from sleep trackers: rest versus forced sleep",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Reassurance from sleep trackers.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m13-l4",
+              "title": "Evidence investigation: Reassurance from sleep trackers",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Reassurance from sleep trackers.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m13-l5",
+              "title": "Choose a sleep-supporting response: Reassurance from sleep trackers",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Reassurance from sleep trackers.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m13-l6",
+              "title": "Transfer mission: Reassurance from sleep trackers",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Reassurance from sleep trackers.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-14",
+          "title": "Monitoring every night as a test",
+          "problem": "Monitoring every night as a test",
+          "lessons": [
+            {
+              "id": "sleep-m14-l1",
+              "title": "Case file: Monitoring every night as a test",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Monitoring every night as a test.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m14-l2",
+              "title": "How sleep regulation works: Monitoring every night as a test",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Monitoring every night as a test.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m14-l3",
+              "title": "Distinguish Monitoring every night as a test: rest versus forced sleep",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Monitoring every night as a test.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m14-l4",
+              "title": "Evidence investigation: Monitoring every night as a test",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Monitoring every night as a test.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m14-l5",
+              "title": "Choose a sleep-supporting response: Monitoring every night as a test",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Monitoring every night as a test.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m14-l6",
+              "title": "Transfer mission: Monitoring every night as a test",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Monitoring every night as a test.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-15",
+          "title": "Catastrophic meaning attached to waking",
+          "problem": "Catastrophic meaning attached to waking",
+          "lessons": [
+            {
+              "id": "sleep-m15-l1",
+              "title": "Case file: Catastrophic meaning attached to waking",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Catastrophic meaning attached to waking.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m15-l2",
+              "title": "How sleep regulation works: Catastrophic meaning attached to waking",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Catastrophic meaning attached to waking.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m15-l3",
+              "title": "Distinguish Catastrophic meaning attached to waking: rest versus forced sleep",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Catastrophic meaning attached to waking.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m15-l4",
+              "title": "Evidence investigation: Catastrophic meaning attached to waking",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Catastrophic meaning attached to waking.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m15-l5",
+              "title": "Choose a sleep-supporting response: Catastrophic meaning attached to waking",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Catastrophic meaning attached to waking.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m15-l6",
+              "title": "Transfer mission: Catastrophic meaning attached to waking",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Catastrophic meaning attached to waking.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sleep-book-4",
+      "title": "Behavioural sleep principles",
+      "distinction": "sleep opportunity versus sleep efficiency",
+      "modules": [
+        {
+          "id": "sleep-module-16",
+          "title": "Irregular rise times and weekend drift",
+          "problem": "Irregular rise times and weekend drift",
+          "lessons": [
+            {
+              "id": "sleep-m16-l1",
+              "title": "Case file: Irregular rise times and weekend drift",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Irregular rise times and weekend drift.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m16-l2",
+              "title": "How sleep regulation works: Irregular rise times and weekend drift",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Irregular rise times and weekend drift.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m16-l3",
+              "title": "Distinguish Irregular rise times and weekend drift: sleep opportunity versus sleep efficiency",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Irregular rise times and weekend drift.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m16-l4",
+              "title": "Evidence investigation: Irregular rise times and weekend drift",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Irregular rise times and weekend drift.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m16-l5",
+              "title": "Choose a sleep-supporting response: Irregular rise times and weekend drift",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Irregular rise times and weekend drift.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m16-l6",
+              "title": "Transfer mission: Irregular rise times and weekend drift",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Irregular rise times and weekend drift.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-17",
+          "title": "Naps and shifting sleep pressure",
+          "problem": "Naps and shifting sleep pressure",
+          "lessons": [
+            {
+              "id": "sleep-m17-l1",
+              "title": "Case file: Naps and shifting sleep pressure",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Naps and shifting sleep pressure.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m17-l2",
+              "title": "How sleep regulation works: Naps and shifting sleep pressure",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Naps and shifting sleep pressure.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m17-l3",
+              "title": "Distinguish Naps and shifting sleep pressure: sleep opportunity versus sleep efficiency",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Naps and shifting sleep pressure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m17-l4",
+              "title": "Evidence investigation: Naps and shifting sleep pressure",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Naps and shifting sleep pressure.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m17-l5",
+              "title": "Choose a sleep-supporting response: Naps and shifting sleep pressure",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Naps and shifting sleep pressure.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m17-l6",
+              "title": "Transfer mission: Naps and shifting sleep pressure",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Naps and shifting sleep pressure.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-18",
+          "title": "Conditioned arousal and stimulus control",
+          "problem": "Conditioned arousal and stimulus control",
+          "lessons": [
+            {
+              "id": "sleep-m18-l1",
+              "title": "Case file: Conditioned arousal and stimulus control",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Conditioned arousal and stimulus control.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m18-l2",
+              "title": "How sleep regulation works: Conditioned arousal and stimulus control",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Conditioned arousal and stimulus control.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m18-l3",
+              "title": "Distinguish Conditioned arousal and stimulus control: sleep opportunity versus sleep efficiency",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Conditioned arousal and stimulus control.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m18-l4",
+              "title": "Evidence investigation: Conditioned arousal and stimulus control",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Conditioned arousal and stimulus control.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m18-l5",
+              "title": "Choose a sleep-supporting response: Conditioned arousal and stimulus control",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Conditioned arousal and stimulus control.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m18-l6",
+              "title": "Transfer mission: Conditioned arousal and stimulus control",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Conditioned arousal and stimulus control.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-19",
+          "title": "Adjusting time in bed with clinical guidance",
+          "problem": "Adjusting time in bed with clinical guidance",
+          "lessons": [
+            {
+              "id": "sleep-m19-l1",
+              "title": "Case file: Adjusting time in bed with clinical guidance",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Adjusting time in bed with clinical guidance.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m19-l2",
+              "title": "How sleep regulation works: Adjusting time in bed with clinical guidance",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Adjusting time in bed with clinical guidance.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m19-l3",
+              "title": "Distinguish Adjusting time in bed with clinical guidance: sleep opportunity versus sleep efficiency",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Adjusting time in bed with clinical guidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m19-l4",
+              "title": "Evidence investigation: Adjusting time in bed with clinical guidance",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Adjusting time in bed with clinical guidance.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m19-l5",
+              "title": "Choose a sleep-supporting response: Adjusting time in bed with clinical guidance",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Adjusting time in bed with clinical guidance.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m19-l6",
+              "title": "Transfer mission: Adjusting time in bed with clinical guidance",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Adjusting time in bed with clinical guidance.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-20",
+          "title": "Why extreme sleep restriction is unsafe",
+          "problem": "Why extreme sleep restriction is unsafe",
+          "lessons": [
+            {
+              "id": "sleep-m20-l1",
+              "title": "Case file: Why extreme sleep restriction is unsafe",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Why extreme sleep restriction is unsafe.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m20-l2",
+              "title": "How sleep regulation works: Why extreme sleep restriction is unsafe",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Why extreme sleep restriction is unsafe.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m20-l3",
+              "title": "Distinguish Why extreme sleep restriction is unsafe: sleep opportunity versus sleep efficiency",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Why extreme sleep restriction is unsafe.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m20-l4",
+              "title": "Evidence investigation: Why extreme sleep restriction is unsafe",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Why extreme sleep restriction is unsafe.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m20-l5",
+              "title": "Choose a sleep-supporting response: Why extreme sleep restriction is unsafe",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Why extreme sleep restriction is unsafe.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m20-l6",
+              "title": "Transfer mission: Why extreme sleep restriction is unsafe",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Why extreme sleep restriction is unsafe.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sleep-book-5",
+      "title": "Body and environment",
+      "distinction": "sleep environment versus sleep disorder",
+      "modules": [
+        {
+          "id": "sleep-module-21",
+          "title": "Light, temperature and noise",
+          "problem": "Light, temperature and noise",
+          "lessons": [
+            {
+              "id": "sleep-m21-l1",
+              "title": "Case file: Light, temperature and noise",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Light, temperature and noise.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m21-l2",
+              "title": "How sleep regulation works: Light, temperature and noise",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Light, temperature and noise.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m21-l3",
+              "title": "Distinguish Light, temperature and noise: sleep environment versus sleep disorder",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Light, temperature and noise.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m21-l4",
+              "title": "Evidence investigation: Light, temperature and noise",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Light, temperature and noise.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m21-l5",
+              "title": "Choose a sleep-supporting response: Light, temperature and noise",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Light, temperature and noise.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m21-l6",
+              "title": "Transfer mission: Light, temperature and noise",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Light, temperature and noise.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-22",
+          "title": "Caffeine, alcohol and timing",
+          "problem": "Caffeine, alcohol and timing",
+          "lessons": [
+            {
+              "id": "sleep-m22-l1",
+              "title": "Case file: Caffeine, alcohol and timing",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Caffeine, alcohol and timing.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m22-l2",
+              "title": "How sleep regulation works: Caffeine, alcohol and timing",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Caffeine, alcohol and timing.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m22-l3",
+              "title": "Distinguish Caffeine, alcohol and timing: sleep environment versus sleep disorder",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Caffeine, alcohol and timing.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m22-l4",
+              "title": "Evidence investigation: Caffeine, alcohol and timing",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Caffeine, alcohol and timing.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m22-l5",
+              "title": "Choose a sleep-supporting response: Caffeine, alcohol and timing",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Caffeine, alcohol and timing.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m22-l6",
+              "title": "Transfer mission: Caffeine, alcohol and timing",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Caffeine, alcohol and timing.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-23",
+          "title": "Medication effects and sleep quality",
+          "problem": "Medication effects and sleep quality",
+          "lessons": [
+            {
+              "id": "sleep-m23-l1",
+              "title": "Case file: Medication effects and sleep quality",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Medication effects and sleep quality.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m23-l2",
+              "title": "How sleep regulation works: Medication effects and sleep quality",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Medication effects and sleep quality.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m23-l3",
+              "title": "Distinguish Medication effects and sleep quality: sleep environment versus sleep disorder",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Medication effects and sleep quality.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m23-l4",
+              "title": "Evidence investigation: Medication effects and sleep quality",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Medication effects and sleep quality.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m23-l5",
+              "title": "Choose a sleep-supporting response: Medication effects and sleep quality",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Medication effects and sleep quality.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m23-l6",
+              "title": "Transfer mission: Medication effects and sleep quality",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Medication effects and sleep quality.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-24",
+          "title": "Shift work and circadian strain",
+          "problem": "Shift work and circadian strain",
+          "lessons": [
+            {
+              "id": "sleep-m24-l1",
+              "title": "Case file: Shift work and circadian strain",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Shift work and circadian strain.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m24-l2",
+              "title": "How sleep regulation works: Shift work and circadian strain",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Shift work and circadian strain.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m24-l3",
+              "title": "Distinguish Shift work and circadian strain: sleep environment versus sleep disorder",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Shift work and circadian strain.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m24-l4",
+              "title": "Evidence investigation: Shift work and circadian strain",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Shift work and circadian strain.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m24-l5",
+              "title": "Choose a sleep-supporting response: Shift work and circadian strain",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Shift work and circadian strain.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m24-l6",
+              "title": "Transfer mission: Shift work and circadian strain",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Shift work and circadian strain.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-25",
+          "title": "Housing conditions and poor sleep",
+          "problem": "Housing conditions and poor sleep",
+          "lessons": [
+            {
+              "id": "sleep-m25-l1",
+              "title": "Case file: Housing conditions and poor sleep",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Housing conditions and poor sleep.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m25-l2",
+              "title": "How sleep regulation works: Housing conditions and poor sleep",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Housing conditions and poor sleep.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m25-l3",
+              "title": "Distinguish Housing conditions and poor sleep: sleep environment versus sleep disorder",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Housing conditions and poor sleep.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m25-l4",
+              "title": "Evidence investigation: Housing conditions and poor sleep",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Housing conditions and poor sleep.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m25-l5",
+              "title": "Choose a sleep-supporting response: Housing conditions and poor sleep",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Housing conditions and poor sleep.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m25-l6",
+              "title": "Transfer mission: Housing conditions and poor sleep",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Housing conditions and poor sleep.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sleep-book-6",
+      "title": "Other sleep and health conditions",
+      "distinction": "insomnia versus another disorder",
+      "modules": [
+        {
+          "id": "sleep-module-26",
+          "title": "Snoring and possible sleep apnoea",
+          "problem": "Snoring and possible sleep apnoea",
+          "lessons": [
+            {
+              "id": "sleep-m26-l1",
+              "title": "Case file: Snoring and possible sleep apnoea",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Snoring and possible sleep apnoea.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m26-l2",
+              "title": "How sleep regulation works: Snoring and possible sleep apnoea",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Snoring and possible sleep apnoea.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m26-l3",
+              "title": "Distinguish Snoring and possible sleep apnoea: insomnia versus another disorder",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Snoring and possible sleep apnoea.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m26-l4",
+              "title": "Evidence investigation: Snoring and possible sleep apnoea",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Snoring and possible sleep apnoea.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m26-l5",
+              "title": "Choose a sleep-supporting response: Snoring and possible sleep apnoea",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Snoring and possible sleep apnoea.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m26-l6",
+              "title": "Transfer mission: Snoring and possible sleep apnoea",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Snoring and possible sleep apnoea.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-27",
+          "title": "Restless legs and nocturnal discomfort",
+          "problem": "Restless legs and nocturnal discomfort",
+          "lessons": [
+            {
+              "id": "sleep-m27-l1",
+              "title": "Case file: Restless legs and nocturnal discomfort",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Restless legs and nocturnal discomfort.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m27-l2",
+              "title": "How sleep regulation works: Restless legs and nocturnal discomfort",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Restless legs and nocturnal discomfort.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m27-l3",
+              "title": "Distinguish Restless legs and nocturnal discomfort: insomnia versus another disorder",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Restless legs and nocturnal discomfort.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m27-l4",
+              "title": "Evidence investigation: Restless legs and nocturnal discomfort",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Restless legs and nocturnal discomfort.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m27-l5",
+              "title": "Choose a sleep-supporting response: Restless legs and nocturnal discomfort",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Restless legs and nocturnal discomfort.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m27-l6",
+              "title": "Transfer mission: Restless legs and nocturnal discomfort",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Restless legs and nocturnal discomfort.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-28",
+          "title": "Parasomnias and abnormal nighttime events",
+          "problem": "Parasomnias and abnormal nighttime events",
+          "lessons": [
+            {
+              "id": "sleep-m28-l1",
+              "title": "Case file: Parasomnias and abnormal nighttime events",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Parasomnias and abnormal nighttime events.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m28-l2",
+              "title": "How sleep regulation works: Parasomnias and abnormal nighttime events",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Parasomnias and abnormal nighttime events.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m28-l3",
+              "title": "Distinguish Parasomnias and abnormal nighttime events: insomnia versus another disorder",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Parasomnias and abnormal nighttime events.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m28-l4",
+              "title": "Evidence investigation: Parasomnias and abnormal nighttime events",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Parasomnias and abnormal nighttime events.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m28-l5",
+              "title": "Choose a sleep-supporting response: Parasomnias and abnormal nighttime events",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Parasomnias and abnormal nighttime events.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m28-l6",
+              "title": "Transfer mission: Parasomnias and abnormal nighttime events",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Parasomnias and abnormal nighttime events.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-29",
+          "title": "Circadian phase delay versus insomnia",
+          "problem": "Circadian phase delay versus insomnia",
+          "lessons": [
+            {
+              "id": "sleep-m29-l1",
+              "title": "Case file: Circadian phase delay versus insomnia",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Circadian phase delay versus insomnia.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m29-l2",
+              "title": "How sleep regulation works: Circadian phase delay versus insomnia",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Circadian phase delay versus insomnia.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m29-l3",
+              "title": "Distinguish Circadian phase delay versus insomnia: insomnia versus another disorder",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Circadian phase delay versus insomnia.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m29-l4",
+              "title": "Evidence investigation: Circadian phase delay versus insomnia",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Circadian phase delay versus insomnia.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m29-l5",
+              "title": "Choose a sleep-supporting response: Circadian phase delay versus insomnia",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Circadian phase delay versus insomnia.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m29-l6",
+              "title": "Transfer mission: Circadian phase delay versus insomnia",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Circadian phase delay versus insomnia.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-30",
+          "title": "When daytime sleepiness warrants assessment",
+          "problem": "When daytime sleepiness warrants assessment",
+          "lessons": [
+            {
+              "id": "sleep-m30-l1",
+              "title": "Case file: When daytime sleepiness warrants assessment",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: When daytime sleepiness warrants assessment.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m30-l2",
+              "title": "How sleep regulation works: When daytime sleepiness warrants assessment",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: When daytime sleepiness warrants assessment.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m30-l3",
+              "title": "Distinguish When daytime sleepiness warrants assessment: insomnia versus another disorder",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: When daytime sleepiness warrants assessment.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m30-l4",
+              "title": "Evidence investigation: When daytime sleepiness warrants assessment",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: When daytime sleepiness warrants assessment.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m30-l5",
+              "title": "Choose a sleep-supporting response: When daytime sleepiness warrants assessment",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: When daytime sleepiness warrants assessment.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m30-l6",
+              "title": "Transfer mission: When daytime sleepiness warrants assessment",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: When daytime sleepiness warrants assessment.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sleep-book-7",
+      "title": "Daytime coping and wellbeing",
+      "distinction": "functioning versus sleep perfectionism",
+      "modules": [
+        {
+          "id": "sleep-module-31",
+          "title": "Responding to fatigue without panic",
+          "problem": "Responding to fatigue without panic",
+          "lessons": [
+            {
+              "id": "sleep-m31-l1",
+              "title": "Case file: Responding to fatigue without panic",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Responding to fatigue without panic.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m31-l2",
+              "title": "How sleep regulation works: Responding to fatigue without panic",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Responding to fatigue without panic.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m31-l3",
+              "title": "Distinguish Responding to fatigue without panic: functioning versus sleep perfectionism",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Responding to fatigue without panic.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m31-l4",
+              "title": "Evidence investigation: Responding to fatigue without panic",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Responding to fatigue without panic.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m31-l5",
+              "title": "Choose a sleep-supporting response: Responding to fatigue without panic",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Responding to fatigue without panic.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m31-l6",
+              "title": "Transfer mission: Responding to fatigue without panic",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Responding to fatigue without panic.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-32",
+          "title": "Movement and daytime light",
+          "problem": "Movement and daytime light",
+          "lessons": [
+            {
+              "id": "sleep-m32-l1",
+              "title": "Case file: Movement and daytime light",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Movement and daytime light.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m32-l2",
+              "title": "How sleep regulation works: Movement and daytime light",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Movement and daytime light.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m32-l3",
+              "title": "Distinguish Movement and daytime light: functioning versus sleep perfectionism",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Movement and daytime light.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m32-l4",
+              "title": "Evidence investigation: Movement and daytime light",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Movement and daytime light.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m32-l5",
+              "title": "Choose a sleep-supporting response: Movement and daytime light",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Movement and daytime light.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m32-l6",
+              "title": "Transfer mission: Movement and daytime light",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Movement and daytime light.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-33",
+          "title": "Mood effects of fragmented sleep",
+          "problem": "Mood effects of fragmented sleep",
+          "lessons": [
+            {
+              "id": "sleep-m33-l1",
+              "title": "Case file: Mood effects of fragmented sleep",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Mood effects of fragmented sleep.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m33-l2",
+              "title": "How sleep regulation works: Mood effects of fragmented sleep",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Mood effects of fragmented sleep.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m33-l3",
+              "title": "Distinguish Mood effects of fragmented sleep: functioning versus sleep perfectionism",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Mood effects of fragmented sleep.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m33-l4",
+              "title": "Evidence investigation: Mood effects of fragmented sleep",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Mood effects of fragmented sleep.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m33-l5",
+              "title": "Choose a sleep-supporting response: Mood effects of fragmented sleep",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Mood effects of fragmented sleep.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m33-l6",
+              "title": "Transfer mission: Mood effects of fragmented sleep",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Mood effects of fragmented sleep.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-34",
+          "title": "Driving and safety after sleep loss",
+          "problem": "Driving and safety after sleep loss",
+          "lessons": [
+            {
+              "id": "sleep-m34-l1",
+              "title": "Case file: Driving and safety after sleep loss",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Driving and safety after sleep loss.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m34-l2",
+              "title": "How sleep regulation works: Driving and safety after sleep loss",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Driving and safety after sleep loss.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m34-l3",
+              "title": "Distinguish Driving and safety after sleep loss: functioning versus sleep perfectionism",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Driving and safety after sleep loss.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m34-l4",
+              "title": "Evidence investigation: Driving and safety after sleep loss",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Driving and safety after sleep loss.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m34-l5",
+              "title": "Choose a sleep-supporting response: Driving and safety after sleep loss",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Driving and safety after sleep loss.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m34-l6",
+              "title": "Transfer mission: Driving and safety after sleep loss",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Driving and safety after sleep loss.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-35",
+          "title": "Planning demanding days realistically",
+          "problem": "Planning demanding days realistically",
+          "lessons": [
+            {
+              "id": "sleep-m35-l1",
+              "title": "Case file: Planning demanding days realistically",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Planning demanding days realistically.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m35-l2",
+              "title": "How sleep regulation works: Planning demanding days realistically",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Planning demanding days realistically.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m35-l3",
+              "title": "Distinguish Planning demanding days realistically: functioning versus sleep perfectionism",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Planning demanding days realistically.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m35-l4",
+              "title": "Evidence investigation: Planning demanding days realistically",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Planning demanding days realistically.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m35-l5",
+              "title": "Choose a sleep-supporting response: Planning demanding days realistically",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Planning demanding days realistically.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m35-l6",
+              "title": "Transfer mission: Planning demanding days realistically",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Planning demanding days realistically.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sleep-book-8",
+      "title": "Evidence-based treatment reasoning",
+      "distinction": "supportive routine versus insomnia therapy",
+      "modules": [
+        {
+          "id": "sleep-module-36",
+          "title": "CBT-I components and rationale",
+          "problem": "CBT-I components and rationale",
+          "lessons": [
+            {
+              "id": "sleep-m36-l1",
+              "title": "Case file: CBT-I components and rationale",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: CBT-I components and rationale.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m36-l2",
+              "title": "How sleep regulation works: CBT-I components and rationale",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: CBT-I components and rationale.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m36-l3",
+              "title": "Distinguish CBT-I components and rationale: supportive routine versus insomnia therapy",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: CBT-I components and rationale.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m36-l4",
+              "title": "Evidence investigation: CBT-I components and rationale",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: CBT-I components and rationale.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m36-l5",
+              "title": "Choose a sleep-supporting response: CBT-I components and rationale",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: CBT-I components and rationale.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m36-l6",
+              "title": "Transfer mission: CBT-I components and rationale",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: CBT-I components and rationale.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-37",
+          "title": "How behavioural experiments address arousal",
+          "problem": "How behavioural experiments address arousal",
+          "lessons": [
+            {
+              "id": "sleep-m37-l1",
+              "title": "Case file: How behavioural experiments address arousal",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: How behavioural experiments address arousal.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m37-l2",
+              "title": "How sleep regulation works: How behavioural experiments address arousal",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: How behavioural experiments address arousal.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m37-l3",
+              "title": "Distinguish How behavioural experiments address arousal: supportive routine versus insomnia therapy",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: How behavioural experiments address arousal.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m37-l4",
+              "title": "Evidence investigation: How behavioural experiments address arousal",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: How behavioural experiments address arousal.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m37-l5",
+              "title": "Choose a sleep-supporting response: How behavioural experiments address arousal",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: How behavioural experiments address arousal.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m37-l6",
+              "title": "Transfer mission: How behavioural experiments address arousal",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: How behavioural experiments address arousal.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-38",
+          "title": "Sleep diaries without obsessive monitoring",
+          "problem": "Sleep diaries without obsessive monitoring",
+          "lessons": [
+            {
+              "id": "sleep-m38-l1",
+              "title": "Case file: Sleep diaries without obsessive monitoring",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Sleep diaries without obsessive monitoring.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m38-l2",
+              "title": "How sleep regulation works: Sleep diaries without obsessive monitoring",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Sleep diaries without obsessive monitoring.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m38-l3",
+              "title": "Distinguish Sleep diaries without obsessive monitoring: supportive routine versus insomnia therapy",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Sleep diaries without obsessive monitoring.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m38-l4",
+              "title": "Evidence investigation: Sleep diaries without obsessive monitoring",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Sleep diaries without obsessive monitoring.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m38-l5",
+              "title": "Choose a sleep-supporting response: Sleep diaries without obsessive monitoring",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Sleep diaries without obsessive monitoring.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m38-l6",
+              "title": "Transfer mission: Sleep diaries without obsessive monitoring",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Sleep diaries without obsessive monitoring.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-39",
+          "title": "Limits of over-the-counter remedies",
+          "problem": "Limits of over-the-counter remedies",
+          "lessons": [
+            {
+              "id": "sleep-m39-l1",
+              "title": "Case file: Limits of over-the-counter remedies",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Limits of over-the-counter remedies.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m39-l2",
+              "title": "How sleep regulation works: Limits of over-the-counter remedies",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Limits of over-the-counter remedies.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m39-l3",
+              "title": "Distinguish Limits of over-the-counter remedies: supportive routine versus insomnia therapy",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Limits of over-the-counter remedies.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m39-l4",
+              "title": "Evidence investigation: Limits of over-the-counter remedies",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Limits of over-the-counter remedies.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m39-l5",
+              "title": "Choose a sleep-supporting response: Limits of over-the-counter remedies",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Limits of over-the-counter remedies.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m39-l6",
+              "title": "Transfer mission: Limits of over-the-counter remedies",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Limits of over-the-counter remedies.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-40",
+          "title": "Medication decisions and clinical review",
+          "problem": "Medication decisions and clinical review",
+          "lessons": [
+            {
+              "id": "sleep-m40-l1",
+              "title": "Case file: Medication decisions and clinical review",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Medication decisions and clinical review.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m40-l2",
+              "title": "How sleep regulation works: Medication decisions and clinical review",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Medication decisions and clinical review.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m40-l3",
+              "title": "Distinguish Medication decisions and clinical review: supportive routine versus insomnia therapy",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Medication decisions and clinical review.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m40-l4",
+              "title": "Evidence investigation: Medication decisions and clinical review",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Medication decisions and clinical review.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m40-l5",
+              "title": "Choose a sleep-supporting response: Medication decisions and clinical review",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Medication decisions and clinical review.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m40-l6",
+              "title": "Transfer mission: Medication decisions and clinical review",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Medication decisions and clinical review.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sleep-book-9",
+      "title": "Sleep in social systems",
+      "distinction": "individual hygiene versus structural constraint",
+      "modules": [
+        {
+          "id": "sleep-module-41",
+          "title": "Night shifts and labour policy",
+          "problem": "Night shifts and labour policy",
+          "lessons": [
+            {
+              "id": "sleep-m41-l1",
+              "title": "Case file: Night shifts and labour policy",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Night shifts and labour policy.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m41-l2",
+              "title": "How sleep regulation works: Night shifts and labour policy",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Night shifts and labour policy.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m41-l3",
+              "title": "Distinguish Night shifts and labour policy: individual hygiene versus structural constraint",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Night shifts and labour policy.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m41-l4",
+              "title": "Evidence investigation: Night shifts and labour policy",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Night shifts and labour policy.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m41-l5",
+              "title": "Choose a sleep-supporting response: Night shifts and labour policy",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Night shifts and labour policy.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m41-l6",
+              "title": "Transfer mission: Night shifts and labour policy",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Night shifts and labour policy.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-42",
+          "title": "Caregiving and interrupted sleep",
+          "problem": "Caregiving and interrupted sleep",
+          "lessons": [
+            {
+              "id": "sleep-m42-l1",
+              "title": "Case file: Caregiving and interrupted sleep",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Caregiving and interrupted sleep.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m42-l2",
+              "title": "How sleep regulation works: Caregiving and interrupted sleep",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Caregiving and interrupted sleep.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m42-l3",
+              "title": "Distinguish Caregiving and interrupted sleep: individual hygiene versus structural constraint",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Caregiving and interrupted sleep.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m42-l4",
+              "title": "Evidence investigation: Caregiving and interrupted sleep",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Caregiving and interrupted sleep.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m42-l5",
+              "title": "Choose a sleep-supporting response: Caregiving and interrupted sleep",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Caregiving and interrupted sleep.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m42-l6",
+              "title": "Transfer mission: Caregiving and interrupted sleep",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Caregiving and interrupted sleep.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-43",
+          "title": "Student schedules and late transport",
+          "problem": "Student schedules and late transport",
+          "lessons": [
+            {
+              "id": "sleep-m43-l1",
+              "title": "Case file: Student schedules and late transport",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Student schedules and late transport.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m43-l2",
+              "title": "How sleep regulation works: Student schedules and late transport",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Student schedules and late transport.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m43-l3",
+              "title": "Distinguish Student schedules and late transport: individual hygiene versus structural constraint",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Student schedules and late transport.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m43-l4",
+              "title": "Evidence investigation: Student schedules and late transport",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Student schedules and late transport.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m43-l5",
+              "title": "Choose a sleep-supporting response: Student schedules and late transport",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Student schedules and late transport.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m43-l6",
+              "title": "Transfer mission: Student schedules and late transport",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Student schedules and late transport.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-44",
+          "title": "Poverty, overcrowding and noise",
+          "problem": "Poverty, overcrowding and noise",
+          "lessons": [
+            {
+              "id": "sleep-m44-l1",
+              "title": "Case file: Poverty, overcrowding and noise",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Poverty, overcrowding and noise.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m44-l2",
+              "title": "How sleep regulation works: Poverty, overcrowding and noise",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Poverty, overcrowding and noise.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m44-l3",
+              "title": "Distinguish Poverty, overcrowding and noise: individual hygiene versus structural constraint",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Poverty, overcrowding and noise.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m44-l4",
+              "title": "Evidence investigation: Poverty, overcrowding and noise",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Poverty, overcrowding and noise.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m44-l5",
+              "title": "Choose a sleep-supporting response: Poverty, overcrowding and noise",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Poverty, overcrowding and noise.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m44-l6",
+              "title": "Transfer mission: Poverty, overcrowding and noise",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Poverty, overcrowding and noise.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-45",
+          "title": "Disability and sensory accessibility",
+          "problem": "Disability and sensory accessibility",
+          "lessons": [
+            {
+              "id": "sleep-m45-l1",
+              "title": "Case file: Disability and sensory accessibility",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Disability and sensory accessibility.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m45-l2",
+              "title": "How sleep regulation works: Disability and sensory accessibility",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Disability and sensory accessibility.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m45-l3",
+              "title": "Distinguish Disability and sensory accessibility: individual hygiene versus structural constraint",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Disability and sensory accessibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m45-l4",
+              "title": "Evidence investigation: Disability and sensory accessibility",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Disability and sensory accessibility.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m45-l5",
+              "title": "Choose a sleep-supporting response: Disability and sensory accessibility",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Disability and sensory accessibility.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m45-l6",
+              "title": "Transfer mission: Disability and sensory accessibility",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Disability and sensory accessibility.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sleep-book-10",
+      "title": "Advanced sleep judgement",
+      "distinction": "single bad night versus chronic difficulty",
+      "modules": [
+        {
+          "id": "sleep-module-46",
+          "title": "Insomnia with depression or anxiety",
+          "problem": "Insomnia with depression or anxiety",
+          "lessons": [
+            {
+              "id": "sleep-m46-l1",
+              "title": "Case file: Insomnia with depression or anxiety",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Insomnia with depression or anxiety.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m46-l2",
+              "title": "How sleep regulation works: Insomnia with depression or anxiety",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Insomnia with depression or anxiety.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m46-l3",
+              "title": "Distinguish Insomnia with depression or anxiety: single bad night versus chronic difficulty",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Insomnia with depression or anxiety.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m46-l4",
+              "title": "Evidence investigation: Insomnia with depression or anxiety",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Insomnia with depression or anxiety.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m46-l5",
+              "title": "Choose a sleep-supporting response: Insomnia with depression or anxiety",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Insomnia with depression or anxiety.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m46-l6",
+              "title": "Transfer mission: Insomnia with depression or anxiety",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Insomnia with depression or anxiety.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-47",
+          "title": "Sleep tracking and measurement error",
+          "problem": "Sleep tracking and measurement error",
+          "lessons": [
+            {
+              "id": "sleep-m47-l1",
+              "title": "Case file: Sleep tracking and measurement error",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Sleep tracking and measurement error.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m47-l2",
+              "title": "How sleep regulation works: Sleep tracking and measurement error",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Sleep tracking and measurement error.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m47-l3",
+              "title": "Distinguish Sleep tracking and measurement error: single bad night versus chronic difficulty",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Sleep tracking and measurement error.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m47-l4",
+              "title": "Evidence investigation: Sleep tracking and measurement error",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Sleep tracking and measurement error.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m47-l5",
+              "title": "Choose a sleep-supporting response: Sleep tracking and measurement error",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Sleep tracking and measurement error.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m47-l6",
+              "title": "Transfer mission: Sleep tracking and measurement error",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Sleep tracking and measurement error.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-48",
+          "title": "Relapse after illness or travel",
+          "problem": "Relapse after illness or travel",
+          "lessons": [
+            {
+              "id": "sleep-m48-l1",
+              "title": "Case file: Relapse after illness or travel",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Relapse after illness or travel.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m48-l2",
+              "title": "How sleep regulation works: Relapse after illness or travel",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Relapse after illness or travel.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m48-l3",
+              "title": "Distinguish Relapse after illness or travel: single bad night versus chronic difficulty",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Relapse after illness or travel.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m48-l4",
+              "title": "Evidence investigation: Relapse after illness or travel",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Relapse after illness or travel.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m48-l5",
+              "title": "Choose a sleep-supporting response: Relapse after illness or travel",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Relapse after illness or travel.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m48-l6",
+              "title": "Transfer mission: Relapse after illness or travel",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Relapse after illness or travel.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-49",
+          "title": "Adapting treatment to irregular routines",
+          "problem": "Adapting treatment to irregular routines",
+          "lessons": [
+            {
+              "id": "sleep-m49-l1",
+              "title": "Case file: Adapting treatment to irregular routines",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Adapting treatment to irregular routines.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m49-l2",
+              "title": "How sleep regulation works: Adapting treatment to irregular routines",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Adapting treatment to irregular routines.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m49-l3",
+              "title": "Distinguish Adapting treatment to irregular routines: single bad night versus chronic difficulty",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Adapting treatment to irregular routines.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m49-l4",
+              "title": "Evidence investigation: Adapting treatment to irregular routines",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Adapting treatment to irregular routines.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m49-l5",
+              "title": "Choose a sleep-supporting response: Adapting treatment to irregular routines",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Adapting treatment to irregular routines.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m49-l6",
+              "title": "Transfer mission: Adapting treatment to irregular routines",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Adapting treatment to irregular routines.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "sleep-module-50",
+          "title": "Integrated case: target the actual mechanism",
+          "problem": "Integrated case: target the actual mechanism",
+          "lessons": [
+            {
+              "id": "sleep-m50-l1",
+              "title": "Case file: Integrated case: target the actual mechanism",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Integrated case: target the actual mechanism.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m50-l2",
+              "title": "How sleep regulation works: Integrated case: target the actual mechanism",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Integrated case: target the actual mechanism.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m50-l3",
+              "title": "Distinguish Integrated case: target the actual mechanism: single bad night versus chronic difficulty",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Integrated case: target the actual mechanism.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m50-l4",
+              "title": "Evidence investigation: Integrated case: target the actual mechanism",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Integrated case: target the actual mechanism.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m50-l5",
+              "title": "Choose a sleep-supporting response: Integrated case: target the actual mechanism",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Integrated case: target the actual mechanism.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "sleep-m50-l6",
+              "title": "Transfer mission: Integrated case: target the actual mechanism",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Integrated case: target the actual mechanism.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

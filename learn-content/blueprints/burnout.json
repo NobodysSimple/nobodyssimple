@@ -1,0 +1,2828 @@
+{
+  "courseId": "burnout",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Curriculum map only; all lesson content and interactive nodes must be authored and reviewed before publication.",
+  "books": [
+    {
+      "id": "burnout-book-1",
+      "title": "Stress is not one problem",
+      "distinction": "activation versus harm",
+      "modules": [
+        {
+          "id": "burnout-module-01",
+          "title": "A busy week versus chronic overload",
+          "problem": "A busy week versus chronic overload",
+          "lessons": [
+            {
+              "id": "burnout-m1-l1",
+              "title": "Case file: A busy week versus chronic overload",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: A busy week versus chronic overload.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m1-l2",
+              "title": "Trace the mechanisms of A busy week versus chronic overload",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: A busy week versus chronic overload.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m1-l3",
+              "title": "Distinguish A busy week versus chronic overload from activation versus harm",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: A busy week versus chronic overload.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m1-l4",
+              "title": "Evidence investigation: A busy week versus chronic overload",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: A busy week versus chronic overload.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m1-l5",
+              "title": "Design a response to A busy week versus chronic overload",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: A busy week versus chronic overload.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m1-l6",
+              "title": "Transfer challenge: A busy week versus chronic overload",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: A busy week versus chronic overload.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-02",
+          "title": "When recovery stops restoring energy",
+          "problem": "When recovery stops restoring energy",
+          "lessons": [
+            {
+              "id": "burnout-m2-l1",
+              "title": "Case file: When recovery stops restoring energy",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: When recovery stops restoring energy.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m2-l2",
+              "title": "Trace the mechanisms of When recovery stops restoring energy",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: When recovery stops restoring energy.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m2-l3",
+              "title": "Distinguish When recovery stops restoring energy from activation versus harm",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: When recovery stops restoring energy.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m2-l4",
+              "title": "Evidence investigation: When recovery stops restoring energy",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: When recovery stops restoring energy.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m2-l5",
+              "title": "Design a response to When recovery stops restoring energy",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: When recovery stops restoring energy.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m2-l6",
+              "title": "Transfer challenge: When recovery stops restoring energy",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: When recovery stops restoring energy.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-03",
+          "title": "Distinguishing stress from burnout",
+          "problem": "Distinguishing stress from burnout",
+          "lessons": [
+            {
+              "id": "burnout-m3-l1",
+              "title": "Case file: Distinguishing stress from burnout",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Distinguishing stress from burnout.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m3-l2",
+              "title": "Trace the mechanisms of Distinguishing stress from burnout",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Distinguishing stress from burnout.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m3-l3",
+              "title": "Distinguish Distinguishing stress from burnout from activation versus harm",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Distinguishing stress from burnout.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m3-l4",
+              "title": "Evidence investigation: Distinguishing stress from burnout",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Distinguishing stress from burnout.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m3-l5",
+              "title": "Design a response to Distinguishing stress from burnout",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Distinguishing stress from burnout.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m3-l6",
+              "title": "Transfer challenge: Distinguishing stress from burnout",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Distinguishing stress from burnout.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-04",
+          "title": "Work stress that follows you home",
+          "problem": "Work stress that follows you home",
+          "lessons": [
+            {
+              "id": "burnout-m4-l1",
+              "title": "Case file: Work stress that follows you home",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Work stress that follows you home.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m4-l2",
+              "title": "Trace the mechanisms of Work stress that follows you home",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Work stress that follows you home.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m4-l3",
+              "title": "Distinguish Work stress that follows you home from activation versus harm",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Work stress that follows you home.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m4-l4",
+              "title": "Evidence investigation: Work stress that follows you home",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Work stress that follows you home.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m4-l5",
+              "title": "Design a response to Work stress that follows you home",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Work stress that follows you home.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m4-l6",
+              "title": "Transfer challenge: Work stress that follows you home",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Work stress that follows you home.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-05",
+          "title": "Why coping advice can miss the cause",
+          "problem": "Why coping advice can miss the cause",
+          "lessons": [
+            {
+              "id": "burnout-m5-l1",
+              "title": "Case file: Why coping advice can miss the cause",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Why coping advice can miss the cause.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m5-l2",
+              "title": "Trace the mechanisms of Why coping advice can miss the cause",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Why coping advice can miss the cause.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m5-l3",
+              "title": "Distinguish Why coping advice can miss the cause from activation versus harm",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Why coping advice can miss the cause.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m5-l4",
+              "title": "Evidence investigation: Why coping advice can miss the cause",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Why coping advice can miss the cause.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m5-l5",
+              "title": "Design a response to Why coping advice can miss the cause",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Why coping advice can miss the cause.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m5-l6",
+              "title": "Transfer challenge: Why coping advice can miss the cause",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Why coping advice can miss the cause.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "burnout-book-2",
+      "title": "Demand, control and support",
+      "distinction": "individual reaction versus job design",
+      "modules": [
+        {
+          "id": "burnout-module-06",
+          "title": "High demands with little autonomy",
+          "problem": "High demands with little autonomy",
+          "lessons": [
+            {
+              "id": "burnout-m6-l1",
+              "title": "Case file: High demands with little autonomy",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: High demands with little autonomy.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m6-l2",
+              "title": "Trace the mechanisms of High demands with little autonomy",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: High demands with little autonomy.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m6-l3",
+              "title": "Distinguish High demands with little autonomy from individual reaction versus job design",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: High demands with little autonomy.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m6-l4",
+              "title": "Evidence investigation: High demands with little autonomy",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: High demands with little autonomy.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m6-l5",
+              "title": "Design a response to High demands with little autonomy",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: High demands with little autonomy.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m6-l6",
+              "title": "Transfer challenge: High demands with little autonomy",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: High demands with little autonomy.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-07",
+          "title": "Responsibility without real authority",
+          "problem": "Responsibility without real authority",
+          "lessons": [
+            {
+              "id": "burnout-m7-l1",
+              "title": "Case file: Responsibility without real authority",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Responsibility without real authority.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m7-l2",
+              "title": "Trace the mechanisms of Responsibility without real authority",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Responsibility without real authority.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m7-l3",
+              "title": "Distinguish Responsibility without real authority from individual reaction versus job design",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Responsibility without real authority.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m7-l4",
+              "title": "Evidence investigation: Responsibility without real authority",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Responsibility without real authority.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m7-l5",
+              "title": "Design a response to Responsibility without real authority",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Responsibility without real authority.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m7-l6",
+              "title": "Transfer challenge: Responsibility without real authority",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Responsibility without real authority.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-08",
+          "title": "Ambiguous roles and changing expectations",
+          "problem": "Ambiguous roles and changing expectations",
+          "lessons": [
+            {
+              "id": "burnout-m8-l1",
+              "title": "Case file: Ambiguous roles and changing expectations",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Ambiguous roles and changing expectations.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m8-l2",
+              "title": "Trace the mechanisms of Ambiguous roles and changing expectations",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Ambiguous roles and changing expectations.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m8-l3",
+              "title": "Distinguish Ambiguous roles and changing expectations from individual reaction versus job design",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Ambiguous roles and changing expectations.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m8-l4",
+              "title": "Evidence investigation: Ambiguous roles and changing expectations",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Ambiguous roles and changing expectations.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m8-l5",
+              "title": "Design a response to Ambiguous roles and changing expectations",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Ambiguous roles and changing expectations.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m8-l6",
+              "title": "Transfer challenge: Ambiguous roles and changing expectations",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Ambiguous roles and changing expectations.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-09",
+          "title": "Unfair workload distribution",
+          "problem": "Unfair workload distribution",
+          "lessons": [
+            {
+              "id": "burnout-m9-l1",
+              "title": "Case file: Unfair workload distribution",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Unfair workload distribution.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m9-l2",
+              "title": "Trace the mechanisms of Unfair workload distribution",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Unfair workload distribution.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m9-l3",
+              "title": "Distinguish Unfair workload distribution from individual reaction versus job design",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Unfair workload distribution.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m9-l4",
+              "title": "Evidence investigation: Unfair workload distribution",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Unfair workload distribution.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m9-l5",
+              "title": "Design a response to Unfair workload distribution",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Unfair workload distribution.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m9-l6",
+              "title": "Transfer challenge: Unfair workload distribution",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Unfair workload distribution.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-10",
+          "title": "Social support that exists only on paper",
+          "problem": "Social support that exists only on paper",
+          "lessons": [
+            {
+              "id": "burnout-m10-l1",
+              "title": "Case file: Social support that exists only on paper",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Social support that exists only on paper.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m10-l2",
+              "title": "Trace the mechanisms of Social support that exists only on paper",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Social support that exists only on paper.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m10-l3",
+              "title": "Distinguish Social support that exists only on paper from individual reaction versus job design",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Social support that exists only on paper.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m10-l4",
+              "title": "Evidence investigation: Social support that exists only on paper",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Social support that exists only on paper.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m10-l5",
+              "title": "Design a response to Social support that exists only on paper",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Social support that exists only on paper.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m10-l6",
+              "title": "Transfer challenge: Social support that exists only on paper",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Social support that exists only on paper.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "burnout-book-3",
+      "title": "The physiology of sustained strain",
+      "distinction": "acute alarm versus chronic burden",
+      "modules": [
+        {
+          "id": "burnout-module-11",
+          "title": "Persistent physiological activation",
+          "problem": "Persistent physiological activation",
+          "lessons": [
+            {
+              "id": "burnout-m11-l1",
+              "title": "Case file: Persistent physiological activation",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Persistent physiological activation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m11-l2",
+              "title": "Trace the mechanisms of Persistent physiological activation",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Persistent physiological activation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m11-l3",
+              "title": "Distinguish Persistent physiological activation from acute alarm versus chronic burden",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Persistent physiological activation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m11-l4",
+              "title": "Evidence investigation: Persistent physiological activation",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Persistent physiological activation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m11-l5",
+              "title": "Design a response to Persistent physiological activation",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Persistent physiological activation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m11-l6",
+              "title": "Transfer challenge: Persistent physiological activation",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Persistent physiological activation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-12",
+          "title": "Sleep disruption after demanding shifts",
+          "problem": "Sleep disruption after demanding shifts",
+          "lessons": [
+            {
+              "id": "burnout-m12-l1",
+              "title": "Case file: Sleep disruption after demanding shifts",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Sleep disruption after demanding shifts.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m12-l2",
+              "title": "Trace the mechanisms of Sleep disruption after demanding shifts",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Sleep disruption after demanding shifts.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m12-l3",
+              "title": "Distinguish Sleep disruption after demanding shifts from acute alarm versus chronic burden",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Sleep disruption after demanding shifts.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m12-l4",
+              "title": "Evidence investigation: Sleep disruption after demanding shifts",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Sleep disruption after demanding shifts.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m12-l5",
+              "title": "Design a response to Sleep disruption after demanding shifts",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Sleep disruption after demanding shifts.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m12-l6",
+              "title": "Transfer challenge: Sleep disruption after demanding shifts",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Sleep disruption after demanding shifts.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-13",
+          "title": "Cognitive fatigue and decision errors",
+          "problem": "Cognitive fatigue and decision errors",
+          "lessons": [
+            {
+              "id": "burnout-m13-l1",
+              "title": "Case file: Cognitive fatigue and decision errors",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Cognitive fatigue and decision errors.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m13-l2",
+              "title": "Trace the mechanisms of Cognitive fatigue and decision errors",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Cognitive fatigue and decision errors.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m13-l3",
+              "title": "Distinguish Cognitive fatigue and decision errors from acute alarm versus chronic burden",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Cognitive fatigue and decision errors.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m13-l4",
+              "title": "Evidence investigation: Cognitive fatigue and decision errors",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Cognitive fatigue and decision errors.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m13-l5",
+              "title": "Design a response to Cognitive fatigue and decision errors",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Cognitive fatigue and decision errors.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m13-l6",
+              "title": "Transfer challenge: Cognitive fatigue and decision errors",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Cognitive fatigue and decision errors.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-14",
+          "title": "Pain, illness and mental workload",
+          "problem": "Pain, illness and mental workload",
+          "lessons": [
+            {
+              "id": "burnout-m14-l1",
+              "title": "Case file: Pain, illness and mental workload",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Pain, illness and mental workload.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m14-l2",
+              "title": "Trace the mechanisms of Pain, illness and mental workload",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Pain, illness and mental workload.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m14-l3",
+              "title": "Distinguish Pain, illness and mental workload from acute alarm versus chronic burden",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Pain, illness and mental workload.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m14-l4",
+              "title": "Evidence investigation: Pain, illness and mental workload",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Pain, illness and mental workload.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m14-l5",
+              "title": "Design a response to Pain, illness and mental workload",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Pain, illness and mental workload.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m14-l6",
+              "title": "Transfer challenge: Pain, illness and mental workload",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Pain, illness and mental workload.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-15",
+          "title": "Why one rest day may be insufficient",
+          "problem": "Why one rest day may be insufficient",
+          "lessons": [
+            {
+              "id": "burnout-m15-l1",
+              "title": "Case file: Why one rest day may be insufficient",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Why one rest day may be insufficient.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m15-l2",
+              "title": "Trace the mechanisms of Why one rest day may be insufficient",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Why one rest day may be insufficient.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m15-l3",
+              "title": "Distinguish Why one rest day may be insufficient from acute alarm versus chronic burden",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Why one rest day may be insufficient.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m15-l4",
+              "title": "Evidence investigation: Why one rest day may be insufficient",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Why one rest day may be insufficient.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m15-l5",
+              "title": "Design a response to Why one rest day may be insufficient",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Why one rest day may be insufficient.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m15-l6",
+              "title": "Transfer challenge: Why one rest day may be insufficient",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Why one rest day may be insufficient.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "burnout-book-4",
+      "title": "Emotional labour and identity",
+      "distinction": "care versus compulsory emotional performance",
+      "modules": [
+        {
+          "id": "burnout-module-16",
+          "title": "Being pleasant while distressed",
+          "problem": "Being pleasant while distressed",
+          "lessons": [
+            {
+              "id": "burnout-m16-l1",
+              "title": "Case file: Being pleasant while distressed",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Being pleasant while distressed.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m16-l2",
+              "title": "Trace the mechanisms of Being pleasant while distressed",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Being pleasant while distressed.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m16-l3",
+              "title": "Distinguish Being pleasant while distressed from care versus compulsory emotional performance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Being pleasant while distressed.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m16-l4",
+              "title": "Evidence investigation: Being pleasant while distressed",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Being pleasant while distressed.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m16-l5",
+              "title": "Design a response to Being pleasant while distressed",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Being pleasant while distressed.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m16-l6",
+              "title": "Transfer challenge: Being pleasant while distressed",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Being pleasant while distressed.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-17",
+          "title": "Compassion fatigue in helping professions",
+          "problem": "Compassion fatigue in helping professions",
+          "lessons": [
+            {
+              "id": "burnout-m17-l1",
+              "title": "Case file: Compassion fatigue in helping professions",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Compassion fatigue in helping professions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m17-l2",
+              "title": "Trace the mechanisms of Compassion fatigue in helping professions",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Compassion fatigue in helping professions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m17-l3",
+              "title": "Distinguish Compassion fatigue in helping professions from care versus compulsory emotional performance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Compassion fatigue in helping professions.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m17-l4",
+              "title": "Evidence investigation: Compassion fatigue in helping professions",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Compassion fatigue in helping professions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m17-l5",
+              "title": "Design a response to Compassion fatigue in helping professions",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Compassion fatigue in helping professions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m17-l6",
+              "title": "Transfer challenge: Compassion fatigue in helping professions",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Compassion fatigue in helping professions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-18",
+          "title": "Perfectionism in caring roles",
+          "problem": "Perfectionism in caring roles",
+          "lessons": [
+            {
+              "id": "burnout-m18-l1",
+              "title": "Case file: Perfectionism in caring roles",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Perfectionism in caring roles.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m18-l2",
+              "title": "Trace the mechanisms of Perfectionism in caring roles",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Perfectionism in caring roles.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m18-l3",
+              "title": "Distinguish Perfectionism in caring roles from care versus compulsory emotional performance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Perfectionism in caring roles.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m18-l4",
+              "title": "Evidence investigation: Perfectionism in caring roles",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Perfectionism in caring roles.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m18-l5",
+              "title": "Design a response to Perfectionism in caring roles",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Perfectionism in caring roles.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m18-l6",
+              "title": "Transfer challenge: Perfectionism in caring roles",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Perfectionism in caring roles.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-19",
+          "title": "Identity fused with productivity",
+          "problem": "Identity fused with productivity",
+          "lessons": [
+            {
+              "id": "burnout-m19-l1",
+              "title": "Case file: Identity fused with productivity",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Identity fused with productivity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m19-l2",
+              "title": "Trace the mechanisms of Identity fused with productivity",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Identity fused with productivity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m19-l3",
+              "title": "Distinguish Identity fused with productivity from care versus compulsory emotional performance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Identity fused with productivity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m19-l4",
+              "title": "Evidence investigation: Identity fused with productivity",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Identity fused with productivity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m19-l5",
+              "title": "Design a response to Identity fused with productivity",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Identity fused with productivity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m19-l6",
+              "title": "Transfer challenge: Identity fused with productivity",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Identity fused with productivity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-20",
+          "title": "Shame over needing support",
+          "problem": "Shame over needing support",
+          "lessons": [
+            {
+              "id": "burnout-m20-l1",
+              "title": "Case file: Shame over needing support",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Shame over needing support.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m20-l2",
+              "title": "Trace the mechanisms of Shame over needing support",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Shame over needing support.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m20-l3",
+              "title": "Distinguish Shame over needing support from care versus compulsory emotional performance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Shame over needing support.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m20-l4",
+              "title": "Evidence investigation: Shame over needing support",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Shame over needing support.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m20-l5",
+              "title": "Design a response to Shame over needing support",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Shame over needing support.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m20-l6",
+              "title": "Transfer challenge: Shame over needing support",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Shame over needing support.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "burnout-book-5",
+      "title": "Recognising warning patterns",
+      "distinction": "ordinary tiredness versus serious impairment",
+      "modules": [
+        {
+          "id": "burnout-module-21",
+          "title": "Irritability and reduced concentration",
+          "problem": "Irritability and reduced concentration",
+          "lessons": [
+            {
+              "id": "burnout-m21-l1",
+              "title": "Case file: Irritability and reduced concentration",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Irritability and reduced concentration.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m21-l2",
+              "title": "Trace the mechanisms of Irritability and reduced concentration",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Irritability and reduced concentration.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m21-l3",
+              "title": "Distinguish Irritability and reduced concentration from ordinary tiredness versus serious impairment",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Irritability and reduced concentration.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m21-l4",
+              "title": "Evidence investigation: Irritability and reduced concentration",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Irritability and reduced concentration.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m21-l5",
+              "title": "Design a response to Irritability and reduced concentration",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Irritability and reduced concentration.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m21-l6",
+              "title": "Transfer challenge: Irritability and reduced concentration",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Irritability and reduced concentration.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-22",
+          "title": "Cynicism toward work or service users",
+          "problem": "Cynicism toward work or service users",
+          "lessons": [
+            {
+              "id": "burnout-m22-l1",
+              "title": "Case file: Cynicism toward work or service users",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Cynicism toward work or service users.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m22-l2",
+              "title": "Trace the mechanisms of Cynicism toward work or service users",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Cynicism toward work or service users.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m22-l3",
+              "title": "Distinguish Cynicism toward work or service users from ordinary tiredness versus serious impairment",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Cynicism toward work or service users.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m22-l4",
+              "title": "Evidence investigation: Cynicism toward work or service users",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Cynicism toward work or service users.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m22-l5",
+              "title": "Design a response to Cynicism toward work or service users",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Cynicism toward work or service users.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m22-l6",
+              "title": "Transfer challenge: Cynicism toward work or service users",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Cynicism toward work or service users.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-23",
+          "title": "Withdrawal from meaningful activities",
+          "problem": "Withdrawal from meaningful activities",
+          "lessons": [
+            {
+              "id": "burnout-m23-l1",
+              "title": "Case file: Withdrawal from meaningful activities",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Withdrawal from meaningful activities.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m23-l2",
+              "title": "Trace the mechanisms of Withdrawal from meaningful activities",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Withdrawal from meaningful activities.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m23-l3",
+              "title": "Distinguish Withdrawal from meaningful activities from ordinary tiredness versus serious impairment",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Withdrawal from meaningful activities.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m23-l4",
+              "title": "Evidence investigation: Withdrawal from meaningful activities",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Withdrawal from meaningful activities.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m23-l5",
+              "title": "Design a response to Withdrawal from meaningful activities",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Withdrawal from meaningful activities.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m23-l6",
+              "title": "Transfer challenge: Withdrawal from meaningful activities",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Withdrawal from meaningful activities.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-24",
+          "title": "Feeling ineffective despite competence",
+          "problem": "Feeling ineffective despite competence",
+          "lessons": [
+            {
+              "id": "burnout-m24-l1",
+              "title": "Case file: Feeling ineffective despite competence",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Feeling ineffective despite competence.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m24-l2",
+              "title": "Trace the mechanisms of Feeling ineffective despite competence",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Feeling ineffective despite competence.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m24-l3",
+              "title": "Distinguish Feeling ineffective despite competence from ordinary tiredness versus serious impairment",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Feeling ineffective despite competence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m24-l4",
+              "title": "Evidence investigation: Feeling ineffective despite competence",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Feeling ineffective despite competence.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m24-l5",
+              "title": "Design a response to Feeling ineffective despite competence",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Feeling ineffective despite competence.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m24-l6",
+              "title": "Transfer challenge: Feeling ineffective despite competence",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Feeling ineffective despite competence.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-25",
+          "title": "When symptoms indicate another condition",
+          "problem": "When symptoms indicate another condition",
+          "lessons": [
+            {
+              "id": "burnout-m25-l1",
+              "title": "Case file: When symptoms indicate another condition",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: When symptoms indicate another condition.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m25-l2",
+              "title": "Trace the mechanisms of When symptoms indicate another condition",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: When symptoms indicate another condition.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m25-l3",
+              "title": "Distinguish When symptoms indicate another condition from ordinary tiredness versus serious impairment",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: When symptoms indicate another condition.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m25-l4",
+              "title": "Evidence investigation: When symptoms indicate another condition",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: When symptoms indicate another condition.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m25-l5",
+              "title": "Design a response to When symptoms indicate another condition",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: When symptoms indicate another condition.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m25-l6",
+              "title": "Transfer challenge: When symptoms indicate another condition",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: When symptoms indicate another condition.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "burnout-book-6",
+      "title": "Recovery and boundaries",
+      "distinction": "restoration versus avoidance",
+      "modules": [
+        {
+          "id": "burnout-module-26",
+          "title": "Protected time without notifications",
+          "problem": "Protected time without notifications",
+          "lessons": [
+            {
+              "id": "burnout-m26-l1",
+              "title": "Case file: Protected time without notifications",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Protected time without notifications.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m26-l2",
+              "title": "Trace the mechanisms of Protected time without notifications",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Protected time without notifications.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m26-l3",
+              "title": "Distinguish Protected time without notifications from restoration versus avoidance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Protected time without notifications.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m26-l4",
+              "title": "Evidence investigation: Protected time without notifications",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Protected time without notifications.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m26-l5",
+              "title": "Design a response to Protected time without notifications",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Protected time without notifications.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m26-l6",
+              "title": "Transfer challenge: Protected time without notifications",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Protected time without notifications.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-27",
+          "title": "Small recoveries between demands",
+          "problem": "Small recoveries between demands",
+          "lessons": [
+            {
+              "id": "burnout-m27-l1",
+              "title": "Case file: Small recoveries between demands",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Small recoveries between demands.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m27-l2",
+              "title": "Trace the mechanisms of Small recoveries between demands",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Small recoveries between demands.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m27-l3",
+              "title": "Distinguish Small recoveries between demands from restoration versus avoidance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Small recoveries between demands.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m27-l4",
+              "title": "Evidence investigation: Small recoveries between demands",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Small recoveries between demands.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m27-l5",
+              "title": "Design a response to Small recoveries between demands",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Small recoveries between demands.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m27-l6",
+              "title": "Transfer challenge: Small recoveries between demands",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Small recoveries between demands.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-28",
+          "title": "Negotiating realistic workloads",
+          "problem": "Negotiating realistic workloads",
+          "lessons": [
+            {
+              "id": "burnout-m28-l1",
+              "title": "Case file: Negotiating realistic workloads",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Negotiating realistic workloads.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m28-l2",
+              "title": "Trace the mechanisms of Negotiating realistic workloads",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Negotiating realistic workloads.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m28-l3",
+              "title": "Distinguish Negotiating realistic workloads from restoration versus avoidance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Negotiating realistic workloads.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m28-l4",
+              "title": "Evidence investigation: Negotiating realistic workloads",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Negotiating realistic workloads.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m28-l5",
+              "title": "Design a response to Negotiating realistic workloads",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Negotiating realistic workloads.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m28-l6",
+              "title": "Transfer challenge: Negotiating realistic workloads",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Negotiating realistic workloads.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-29",
+          "title": "Returning after prolonged absence",
+          "problem": "Returning after prolonged absence",
+          "lessons": [
+            {
+              "id": "burnout-m29-l1",
+              "title": "Case file: Returning after prolonged absence",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Returning after prolonged absence.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m29-l2",
+              "title": "Trace the mechanisms of Returning after prolonged absence",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Returning after prolonged absence.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m29-l3",
+              "title": "Distinguish Returning after prolonged absence from restoration versus avoidance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Returning after prolonged absence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m29-l4",
+              "title": "Evidence investigation: Returning after prolonged absence",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Returning after prolonged absence.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m29-l5",
+              "title": "Design a response to Returning after prolonged absence",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Returning after prolonged absence.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m29-l6",
+              "title": "Transfer challenge: Returning after prolonged absence",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Returning after prolonged absence.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-30",
+          "title": "Choosing recovery that fits your circumstances",
+          "problem": "Choosing recovery that fits your circumstances",
+          "lessons": [
+            {
+              "id": "burnout-m30-l1",
+              "title": "Case file: Choosing recovery that fits your circumstances",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Choosing recovery that fits your circumstances.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m30-l2",
+              "title": "Trace the mechanisms of Choosing recovery that fits your circumstances",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Choosing recovery that fits your circumstances.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m30-l3",
+              "title": "Distinguish Choosing recovery that fits your circumstances from restoration versus avoidance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Choosing recovery that fits your circumstances.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m30-l4",
+              "title": "Evidence investigation: Choosing recovery that fits your circumstances",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Choosing recovery that fits your circumstances.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m30-l5",
+              "title": "Design a response to Choosing recovery that fits your circumstances",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Choosing recovery that fits your circumstances.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m30-l6",
+              "title": "Transfer challenge: Choosing recovery that fits your circumstances",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Choosing recovery that fits your circumstances.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "burnout-book-7",
+      "title": "Workplace interventions",
+      "distinction": "individual self-care versus systemic prevention",
+      "modules": [
+        {
+          "id": "burnout-module-31",
+          "title": "Staffing ratios and workload measurement",
+          "problem": "Staffing ratios and workload measurement",
+          "lessons": [
+            {
+              "id": "burnout-m31-l1",
+              "title": "Case file: Staffing ratios and workload measurement",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Staffing ratios and workload measurement.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m31-l2",
+              "title": "Trace the mechanisms of Staffing ratios and workload measurement",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Staffing ratios and workload measurement.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m31-l3",
+              "title": "Distinguish Staffing ratios and workload measurement from individual self-care versus systemic prevention",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Staffing ratios and workload measurement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m31-l4",
+              "title": "Evidence investigation: Staffing ratios and workload measurement",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Staffing ratios and workload measurement.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m31-l5",
+              "title": "Design a response to Staffing ratios and workload measurement",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Staffing ratios and workload measurement.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m31-l6",
+              "title": "Transfer challenge: Staffing ratios and workload measurement",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Staffing ratios and workload measurement.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-32",
+          "title": "Manager behaviour and psychological safety",
+          "problem": "Manager behaviour and psychological safety",
+          "lessons": [
+            {
+              "id": "burnout-m32-l1",
+              "title": "Case file: Manager behaviour and psychological safety",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Manager behaviour and psychological safety.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m32-l2",
+              "title": "Trace the mechanisms of Manager behaviour and psychological safety",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Manager behaviour and psychological safety.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m32-l3",
+              "title": "Distinguish Manager behaviour and psychological safety from individual self-care versus systemic prevention",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Manager behaviour and psychological safety.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m32-l4",
+              "title": "Evidence investigation: Manager behaviour and psychological safety",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Manager behaviour and psychological safety.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m32-l5",
+              "title": "Design a response to Manager behaviour and psychological safety",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Manager behaviour and psychological safety.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m32-l6",
+              "title": "Transfer challenge: Manager behaviour and psychological safety",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Manager behaviour and psychological safety.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-33",
+          "title": "Flexible scheduling and autonomy",
+          "problem": "Flexible scheduling and autonomy",
+          "lessons": [
+            {
+              "id": "burnout-m33-l1",
+              "title": "Case file: Flexible scheduling and autonomy",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Flexible scheduling and autonomy.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m33-l2",
+              "title": "Trace the mechanisms of Flexible scheduling and autonomy",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Flexible scheduling and autonomy.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m33-l3",
+              "title": "Distinguish Flexible scheduling and autonomy from individual self-care versus systemic prevention",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Flexible scheduling and autonomy.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m33-l4",
+              "title": "Evidence investigation: Flexible scheduling and autonomy",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Flexible scheduling and autonomy.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m33-l5",
+              "title": "Design a response to Flexible scheduling and autonomy",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Flexible scheduling and autonomy.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m33-l6",
+              "title": "Transfer challenge: Flexible scheduling and autonomy",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Flexible scheduling and autonomy.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-34",
+          "title": "Fair recognition and job security",
+          "problem": "Fair recognition and job security",
+          "lessons": [
+            {
+              "id": "burnout-m34-l1",
+              "title": "Case file: Fair recognition and job security",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Fair recognition and job security.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m34-l2",
+              "title": "Trace the mechanisms of Fair recognition and job security",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Fair recognition and job security.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m34-l3",
+              "title": "Distinguish Fair recognition and job security from individual self-care versus systemic prevention",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Fair recognition and job security.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m34-l4",
+              "title": "Evidence investigation: Fair recognition and job security",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Fair recognition and job security.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m34-l5",
+              "title": "Design a response to Fair recognition and job security",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Fair recognition and job security.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m34-l6",
+              "title": "Transfer challenge: Fair recognition and job security",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Fair recognition and job security.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-35",
+          "title": "When organisational change is necessary",
+          "problem": "When organisational change is necessary",
+          "lessons": [
+            {
+              "id": "burnout-m35-l1",
+              "title": "Case file: When organisational change is necessary",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: When organisational change is necessary.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m35-l2",
+              "title": "Trace the mechanisms of When organisational change is necessary",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: When organisational change is necessary.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m35-l3",
+              "title": "Distinguish When organisational change is necessary from individual self-care versus systemic prevention",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: When organisational change is necessary.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m35-l4",
+              "title": "Evidence investigation: When organisational change is necessary",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: When organisational change is necessary.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m35-l5",
+              "title": "Design a response to When organisational change is necessary",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: When organisational change is necessary.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m35-l6",
+              "title": "Transfer challenge: When organisational change is necessary",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: When organisational change is necessary.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "burnout-book-8",
+      "title": "Different labour contexts",
+      "distinction": "paid employment versus invisible work",
+      "modules": [
+        {
+          "id": "burnout-module-36",
+          "title": "Unpaid caregiving and chronic demand",
+          "problem": "Unpaid caregiving and chronic demand",
+          "lessons": [
+            {
+              "id": "burnout-m36-l1",
+              "title": "Case file: Unpaid caregiving and chronic demand",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Unpaid caregiving and chronic demand.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m36-l2",
+              "title": "Trace the mechanisms of Unpaid caregiving and chronic demand",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Unpaid caregiving and chronic demand.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m36-l3",
+              "title": "Distinguish Unpaid caregiving and chronic demand from paid employment versus invisible work",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Unpaid caregiving and chronic demand.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m36-l4",
+              "title": "Evidence investigation: Unpaid caregiving and chronic demand",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Unpaid caregiving and chronic demand.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m36-l5",
+              "title": "Design a response to Unpaid caregiving and chronic demand",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Unpaid caregiving and chronic demand.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m36-l6",
+              "title": "Transfer challenge: Unpaid caregiving and chronic demand",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Unpaid caregiving and chronic demand.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-37",
+          "title": "Gig work and unpredictable income",
+          "problem": "Gig work and unpredictable income",
+          "lessons": [
+            {
+              "id": "burnout-m37-l1",
+              "title": "Case file: Gig work and unpredictable income",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Gig work and unpredictable income.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m37-l2",
+              "title": "Trace the mechanisms of Gig work and unpredictable income",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Gig work and unpredictable income.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m37-l3",
+              "title": "Distinguish Gig work and unpredictable income from paid employment versus invisible work",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Gig work and unpredictable income.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m37-l4",
+              "title": "Evidence investigation: Gig work and unpredictable income",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Gig work and unpredictable income.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m37-l5",
+              "title": "Design a response to Gig work and unpredictable income",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Gig work and unpredictable income.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m37-l6",
+              "title": "Transfer challenge: Gig work and unpredictable income",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Gig work and unpredictable income.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-38",
+          "title": "Student workload and precarious futures",
+          "problem": "Student workload and precarious futures",
+          "lessons": [
+            {
+              "id": "burnout-m38-l1",
+              "title": "Case file: Student workload and precarious futures",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Student workload and precarious futures.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m38-l2",
+              "title": "Trace the mechanisms of Student workload and precarious futures",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Student workload and precarious futures.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m38-l3",
+              "title": "Distinguish Student workload and precarious futures from paid employment versus invisible work",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Student workload and precarious futures.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m38-l4",
+              "title": "Evidence investigation: Student workload and precarious futures",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Student workload and precarious futures.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m38-l5",
+              "title": "Design a response to Student workload and precarious futures",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Student workload and precarious futures.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m38-l6",
+              "title": "Transfer challenge: Student workload and precarious futures",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Student workload and precarious futures.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-39",
+          "title": "Disability accommodations and fatigue",
+          "problem": "Disability accommodations and fatigue",
+          "lessons": [
+            {
+              "id": "burnout-m39-l1",
+              "title": "Case file: Disability accommodations and fatigue",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Disability accommodations and fatigue.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m39-l2",
+              "title": "Trace the mechanisms of Disability accommodations and fatigue",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Disability accommodations and fatigue.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m39-l3",
+              "title": "Distinguish Disability accommodations and fatigue from paid employment versus invisible work",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Disability accommodations and fatigue.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m39-l4",
+              "title": "Evidence investigation: Disability accommodations and fatigue",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Disability accommodations and fatigue.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m39-l5",
+              "title": "Design a response to Disability accommodations and fatigue",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Disability accommodations and fatigue.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m39-l6",
+              "title": "Transfer challenge: Disability accommodations and fatigue",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Disability accommodations and fatigue.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-40",
+          "title": "Burnout-like strain outside employment",
+          "problem": "Burnout-like strain outside employment",
+          "lessons": [
+            {
+              "id": "burnout-m40-l1",
+              "title": "Case file: Burnout-like strain outside employment",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Burnout-like strain outside employment.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m40-l2",
+              "title": "Trace the mechanisms of Burnout-like strain outside employment",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Burnout-like strain outside employment.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m40-l3",
+              "title": "Distinguish Burnout-like strain outside employment from paid employment versus invisible work",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Burnout-like strain outside employment.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m40-l4",
+              "title": "Evidence investigation: Burnout-like strain outside employment",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Burnout-like strain outside employment.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m40-l5",
+              "title": "Design a response to Burnout-like strain outside employment",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Burnout-like strain outside employment.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m40-l6",
+              "title": "Transfer challenge: Burnout-like strain outside employment",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Burnout-like strain outside employment.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "burnout-book-9",
+      "title": "Culture and political economy",
+      "distinction": "personal resilience versus institutional incentives",
+      "modules": [
+        {
+          "id": "burnout-module-41",
+          "title": "Hustle culture and moralised productivity",
+          "problem": "Hustle culture and moralised productivity",
+          "lessons": [
+            {
+              "id": "burnout-m41-l1",
+              "title": "Case file: Hustle culture and moralised productivity",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Hustle culture and moralised productivity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m41-l2",
+              "title": "Trace the mechanisms of Hustle culture and moralised productivity",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Hustle culture and moralised productivity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m41-l3",
+              "title": "Distinguish Hustle culture and moralised productivity from personal resilience versus institutional incentives",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Hustle culture and moralised productivity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m41-l4",
+              "title": "Evidence investigation: Hustle culture and moralised productivity",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Hustle culture and moralised productivity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m41-l5",
+              "title": "Design a response to Hustle culture and moralised productivity",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Hustle culture and moralised productivity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m41-l6",
+              "title": "Transfer challenge: Hustle culture and moralised productivity",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Hustle culture and moralised productivity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-42",
+          "title": "Understaffing normalised as dedication",
+          "problem": "Understaffing normalised as dedication",
+          "lessons": [
+            {
+              "id": "burnout-m42-l1",
+              "title": "Case file: Understaffing normalised as dedication",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Understaffing normalised as dedication.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m42-l2",
+              "title": "Trace the mechanisms of Understaffing normalised as dedication",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Understaffing normalised as dedication.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m42-l3",
+              "title": "Distinguish Understaffing normalised as dedication from personal resilience versus institutional incentives",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Understaffing normalised as dedication.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m42-l4",
+              "title": "Evidence investigation: Understaffing normalised as dedication",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Understaffing normalised as dedication.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m42-l5",
+              "title": "Design a response to Understaffing normalised as dedication",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Understaffing normalised as dedication.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m42-l6",
+              "title": "Transfer challenge: Understaffing normalised as dedication",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Understaffing normalised as dedication.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-43",
+          "title": "Gendered care expectations",
+          "problem": "Gendered care expectations",
+          "lessons": [
+            {
+              "id": "burnout-m43-l1",
+              "title": "Case file: Gendered care expectations",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Gendered care expectations.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m43-l2",
+              "title": "Trace the mechanisms of Gendered care expectations",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Gendered care expectations.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m43-l3",
+              "title": "Distinguish Gendered care expectations from personal resilience versus institutional incentives",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Gendered care expectations.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m43-l4",
+              "title": "Evidence investigation: Gendered care expectations",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Gendered care expectations.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m43-l5",
+              "title": "Design a response to Gendered care expectations",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Gendered care expectations.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m43-l6",
+              "title": "Transfer challenge: Gendered care expectations",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Gendered care expectations.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-44",
+          "title": "Class inequality and recovery opportunities",
+          "problem": "Class inequality and recovery opportunities",
+          "lessons": [
+            {
+              "id": "burnout-m44-l1",
+              "title": "Case file: Class inequality and recovery opportunities",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Class inequality and recovery opportunities.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m44-l2",
+              "title": "Trace the mechanisms of Class inequality and recovery opportunities",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Class inequality and recovery opportunities.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m44-l3",
+              "title": "Distinguish Class inequality and recovery opportunities from personal resilience versus institutional incentives",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Class inequality and recovery opportunities.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m44-l4",
+              "title": "Evidence investigation: Class inequality and recovery opportunities",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Class inequality and recovery opportunities.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m44-l5",
+              "title": "Design a response to Class inequality and recovery opportunities",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Class inequality and recovery opportunities.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m44-l6",
+              "title": "Transfer challenge: Class inequality and recovery opportunities",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Class inequality and recovery opportunities.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-45",
+          "title": "Digital surveillance and always-on work",
+          "problem": "Digital surveillance and always-on work",
+          "lessons": [
+            {
+              "id": "burnout-m45-l1",
+              "title": "Case file: Digital surveillance and always-on work",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Digital surveillance and always-on work.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m45-l2",
+              "title": "Trace the mechanisms of Digital surveillance and always-on work",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Digital surveillance and always-on work.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m45-l3",
+              "title": "Distinguish Digital surveillance and always-on work from personal resilience versus institutional incentives",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Digital surveillance and always-on work.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m45-l4",
+              "title": "Evidence investigation: Digital surveillance and always-on work",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Digital surveillance and always-on work.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m45-l5",
+              "title": "Design a response to Digital surveillance and always-on work",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Digital surveillance and always-on work.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m45-l6",
+              "title": "Transfer challenge: Digital surveillance and always-on work",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Digital surveillance and always-on work.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "burnout-book-10",
+      "title": "Advanced sustainable systems",
+      "distinction": "symptom relief versus lasting change",
+      "modules": [
+        {
+          "id": "burnout-module-46",
+          "title": "Distinguishing burnout from depression",
+          "problem": "Distinguishing burnout from depression",
+          "lessons": [
+            {
+              "id": "burnout-m46-l1",
+              "title": "Case file: Distinguishing burnout from depression",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Distinguishing burnout from depression.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m46-l2",
+              "title": "Trace the mechanisms of Distinguishing burnout from depression",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Distinguishing burnout from depression.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m46-l3",
+              "title": "Distinguish Distinguishing burnout from depression from symptom relief versus lasting change",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Distinguishing burnout from depression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m46-l4",
+              "title": "Evidence investigation: Distinguishing burnout from depression",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Distinguishing burnout from depression.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m46-l5",
+              "title": "Design a response to Distinguishing burnout from depression",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Distinguishing burnout from depression.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m46-l6",
+              "title": "Transfer challenge: Distinguishing burnout from depression",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Distinguishing burnout from depression.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-47",
+          "title": "Prioritising when every task matters",
+          "problem": "Prioritising when every task matters",
+          "lessons": [
+            {
+              "id": "burnout-m47-l1",
+              "title": "Case file: Prioritising when every task matters",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Prioritising when every task matters.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m47-l2",
+              "title": "Trace the mechanisms of Prioritising when every task matters",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Prioritising when every task matters.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m47-l3",
+              "title": "Distinguish Prioritising when every task matters from symptom relief versus lasting change",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Prioritising when every task matters.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m47-l4",
+              "title": "Evidence investigation: Prioritising when every task matters",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Prioritising when every task matters.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m47-l5",
+              "title": "Design a response to Prioritising when every task matters",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Prioritising when every task matters.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m47-l6",
+              "title": "Transfer challenge: Prioritising when every task matters",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Prioritising when every task matters.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-48",
+          "title": "Escalating concerns without retaliation",
+          "problem": "Escalating concerns without retaliation",
+          "lessons": [
+            {
+              "id": "burnout-m48-l1",
+              "title": "Case file: Escalating concerns without retaliation",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Escalating concerns without retaliation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m48-l2",
+              "title": "Trace the mechanisms of Escalating concerns without retaliation",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Escalating concerns without retaliation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m48-l3",
+              "title": "Distinguish Escalating concerns without retaliation from symptom relief versus lasting change",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Escalating concerns without retaliation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m48-l4",
+              "title": "Evidence investigation: Escalating concerns without retaliation",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Escalating concerns without retaliation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m48-l5",
+              "title": "Design a response to Escalating concerns without retaliation",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Escalating concerns without retaliation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m48-l6",
+              "title": "Transfer challenge: Escalating concerns without retaliation",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Escalating concerns without retaliation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-49",
+          "title": "Designing a team-level prevention plan",
+          "problem": "Designing a team-level prevention plan",
+          "lessons": [
+            {
+              "id": "burnout-m49-l1",
+              "title": "Case file: Designing a team-level prevention plan",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Designing a team-level prevention plan.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m49-l2",
+              "title": "Trace the mechanisms of Designing a team-level prevention plan",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Designing a team-level prevention plan.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m49-l3",
+              "title": "Distinguish Designing a team-level prevention plan from symptom relief versus lasting change",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Designing a team-level prevention plan.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m49-l4",
+              "title": "Evidence investigation: Designing a team-level prevention plan",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Designing a team-level prevention plan.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m49-l5",
+              "title": "Design a response to Designing a team-level prevention plan",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Designing a team-level prevention plan.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m49-l6",
+              "title": "Transfer challenge: Designing a team-level prevention plan",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Designing a team-level prevention plan.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "burnout-module-50",
+          "title": "Integration: demands, resources and dignity",
+          "problem": "Integration: demands, resources and dignity",
+          "lessons": [
+            {
+              "id": "burnout-m50-l1",
+              "title": "Case file: Integration: demands, resources and dignity",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Integration: demands, resources and dignity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m50-l2",
+              "title": "Trace the mechanisms of Integration: demands, resources and dignity",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Integration: demands, resources and dignity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m50-l3",
+              "title": "Distinguish Integration: demands, resources and dignity from symptom relief versus lasting change",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Integration: demands, resources and dignity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m50-l4",
+              "title": "Evidence investigation: Integration: demands, resources and dignity",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Integration: demands, resources and dignity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m50-l5",
+              "title": "Design a response to Integration: demands, resources and dignity",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Integration: demands, resources and dignity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "burnout-m50-l6",
+              "title": "Transfer challenge: Integration: demands, resources and dignity",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Integration: demands, resources and dignity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2828 @@
+{
+  "courseId": "low-mood",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Editable curriculum map only; learning nodes must be independently authored and reviewed before publication.",
+  "books": [
+    {
+      "id": "low-mood-book-1",
+      "title": "What low mood is and isn't",
+      "distinction": "temporary sadness versus depressive syndrome",
+      "modules": [
+        {
+          "id": "low-mood-module-01",
+          "title": "Sadness after disappointment",
+          "problem": "Sadness after disappointment",
+          "lessons": [
+            {
+              "id": "low-mood-m1-l1",
+              "title": "Case file: Sadness after disappointment",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Sadness after disappointment.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m1-l2",
+              "title": "Processes that shape low mood: Sadness after disappointment",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Sadness after disappointment.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m1-l3",
+              "title": "Distinguish Sadness after disappointment: temporary sadness versus depressive syndrome",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Sadness after disappointment.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m1-l4",
+              "title": "Evidence investigation: Sadness after disappointment",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Sadness after disappointment.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m1-l5",
+              "title": "Plan a proportionate response: Sadness after disappointment",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Sadness after disappointment.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m1-l6",
+              "title": "Transfer mission: Sadness after disappointment",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Sadness after disappointment.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-02",
+          "title": "Anhedonia without feeling sad",
+          "problem": "Anhedonia without feeling sad",
+          "lessons": [
+            {
+              "id": "low-mood-m2-l1",
+              "title": "Case file: Anhedonia without feeling sad",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Anhedonia without feeling sad.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m2-l2",
+              "title": "Processes that shape low mood: Anhedonia without feeling sad",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Anhedonia without feeling sad.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m2-l3",
+              "title": "Distinguish Anhedonia without feeling sad: temporary sadness versus depressive syndrome",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Anhedonia without feeling sad.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m2-l4",
+              "title": "Evidence investigation: Anhedonia without feeling sad",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Anhedonia without feeling sad.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m2-l5",
+              "title": "Plan a proportionate response: Anhedonia without feeling sad",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Anhedonia without feeling sad.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m2-l6",
+              "title": "Transfer mission: Anhedonia without feeling sad",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Anhedonia without feeling sad.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-03",
+          "title": "Impairment and time course",
+          "problem": "Impairment and time course",
+          "lessons": [
+            {
+              "id": "low-mood-m3-l1",
+              "title": "Case file: Impairment and time course",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Impairment and time course.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m3-l2",
+              "title": "Processes that shape low mood: Impairment and time course",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Impairment and time course.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m3-l3",
+              "title": "Distinguish Impairment and time course: temporary sadness versus depressive syndrome",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Impairment and time course.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m3-l4",
+              "title": "Evidence investigation: Impairment and time course",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Impairment and time course.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m3-l5",
+              "title": "Plan a proportionate response: Impairment and time course",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Impairment and time course.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m3-l6",
+              "title": "Transfer mission: Impairment and time course",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Impairment and time course.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-04",
+          "title": "Why a label needs assessment",
+          "problem": "Why a label needs assessment",
+          "lessons": [
+            {
+              "id": "low-mood-m4-l1",
+              "title": "Case file: Why a label needs assessment",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Why a label needs assessment.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m4-l2",
+              "title": "Processes that shape low mood: Why a label needs assessment",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Why a label needs assessment.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m4-l3",
+              "title": "Distinguish Why a label needs assessment: temporary sadness versus depressive syndrome",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Why a label needs assessment.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m4-l4",
+              "title": "Evidence investigation: Why a label needs assessment",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Why a label needs assessment.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m4-l5",
+              "title": "Plan a proportionate response: Why a label needs assessment",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Why a label needs assessment.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m4-l6",
+              "title": "Transfer mission: Why a label needs assessment",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Why a label needs assessment.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-05",
+          "title": "Contextual grief versus depressive disorder",
+          "problem": "Contextual grief versus depressive disorder",
+          "lessons": [
+            {
+              "id": "low-mood-m5-l1",
+              "title": "Case file: Contextual grief versus depressive disorder",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Contextual grief versus depressive disorder.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m5-l2",
+              "title": "Processes that shape low mood: Contextual grief versus depressive disorder",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Contextual grief versus depressive disorder.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m5-l3",
+              "title": "Distinguish Contextual grief versus depressive disorder: temporary sadness versus depressive syndrome",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Contextual grief versus depressive disorder.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m5-l4",
+              "title": "Evidence investigation: Contextual grief versus depressive disorder",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Contextual grief versus depressive disorder.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m5-l5",
+              "title": "Plan a proportionate response: Contextual grief versus depressive disorder",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Contextual grief versus depressive disorder.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m5-l6",
+              "title": "Transfer mission: Contextual grief versus depressive disorder",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Contextual grief versus depressive disorder.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "low-mood-book-2",
+      "title": "Reward loss and behavioural withdrawal",
+      "distinction": "fatigue versus reduced reinforcement",
+      "modules": [
+        {
+          "id": "low-mood-module-06",
+          "title": "Stopping enjoyable activities",
+          "problem": "Stopping enjoyable activities",
+          "lessons": [
+            {
+              "id": "low-mood-m6-l1",
+              "title": "Case file: Stopping enjoyable activities",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Stopping enjoyable activities.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m6-l2",
+              "title": "Processes that shape low mood: Stopping enjoyable activities",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Stopping enjoyable activities.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m6-l3",
+              "title": "Distinguish Stopping enjoyable activities: fatigue versus reduced reinforcement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Stopping enjoyable activities.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m6-l4",
+              "title": "Evidence investigation: Stopping enjoyable activities",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Stopping enjoyable activities.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m6-l5",
+              "title": "Plan a proportionate response: Stopping enjoyable activities",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Stopping enjoyable activities.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m6-l6",
+              "title": "Transfer mission: Stopping enjoyable activities",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Stopping enjoyable activities.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-07",
+          "title": "Withdrawal after repeated setbacks",
+          "problem": "Withdrawal after repeated setbacks",
+          "lessons": [
+            {
+              "id": "low-mood-m7-l1",
+              "title": "Case file: Withdrawal after repeated setbacks",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Withdrawal after repeated setbacks.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m7-l2",
+              "title": "Processes that shape low mood: Withdrawal after repeated setbacks",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Withdrawal after repeated setbacks.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m7-l3",
+              "title": "Distinguish Withdrawal after repeated setbacks: fatigue versus reduced reinforcement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Withdrawal after repeated setbacks.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m7-l4",
+              "title": "Evidence investigation: Withdrawal after repeated setbacks",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Withdrawal after repeated setbacks.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m7-l5",
+              "title": "Plan a proportionate response: Withdrawal after repeated setbacks",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Withdrawal after repeated setbacks.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m7-l6",
+              "title": "Transfer mission: Withdrawal after repeated setbacks",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Withdrawal after repeated setbacks.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-08",
+          "title": "Reduced social contact and low mood",
+          "problem": "Reduced social contact and low mood",
+          "lessons": [
+            {
+              "id": "low-mood-m8-l1",
+              "title": "Case file: Reduced social contact and low mood",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Reduced social contact and low mood.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m8-l2",
+              "title": "Processes that shape low mood: Reduced social contact and low mood",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Reduced social contact and low mood.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m8-l3",
+              "title": "Distinguish Reduced social contact and low mood: fatigue versus reduced reinforcement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Reduced social contact and low mood.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m8-l4",
+              "title": "Evidence investigation: Reduced social contact and low mood",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Reduced social contact and low mood.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m8-l5",
+              "title": "Plan a proportionate response: Reduced social contact and low mood",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Reduced social contact and low mood.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m8-l6",
+              "title": "Transfer mission: Reduced social contact and low mood",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Reduced social contact and low mood.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-09",
+          "title": "Avoidance when effort feels pointless",
+          "problem": "Avoidance when effort feels pointless",
+          "lessons": [
+            {
+              "id": "low-mood-m9-l1",
+              "title": "Case file: Avoidance when effort feels pointless",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Avoidance when effort feels pointless.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m9-l2",
+              "title": "Processes that shape low mood: Avoidance when effort feels pointless",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Avoidance when effort feels pointless.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m9-l3",
+              "title": "Distinguish Avoidance when effort feels pointless: fatigue versus reduced reinforcement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Avoidance when effort feels pointless.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m9-l4",
+              "title": "Evidence investigation: Avoidance when effort feels pointless",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Avoidance when effort feels pointless.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m9-l5",
+              "title": "Plan a proportionate response: Avoidance when effort feels pointless",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Avoidance when effort feels pointless.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m9-l6",
+              "title": "Transfer mission: Avoidance when effort feels pointless",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Avoidance when effort feels pointless.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-10",
+          "title": "Feedback loops between mood and activity",
+          "problem": "Feedback loops between mood and activity",
+          "lessons": [
+            {
+              "id": "low-mood-m10-l1",
+              "title": "Case file: Feedback loops between mood and activity",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Feedback loops between mood and activity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m10-l2",
+              "title": "Processes that shape low mood: Feedback loops between mood and activity",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Feedback loops between mood and activity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m10-l3",
+              "title": "Distinguish Feedback loops between mood and activity: fatigue versus reduced reinforcement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Feedback loops between mood and activity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m10-l4",
+              "title": "Evidence investigation: Feedback loops between mood and activity",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Feedback loops between mood and activity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m10-l5",
+              "title": "Plan a proportionate response: Feedback loops between mood and activity",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Feedback loops between mood and activity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m10-l6",
+              "title": "Transfer mission: Feedback loops between mood and activity",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Feedback loops between mood and activity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "low-mood-book-3",
+      "title": "Thinking patterns and mood",
+      "distinction": "negative thought versus proven fact",
+      "modules": [
+        {
+          "id": "low-mood-module-11",
+          "title": "Hopeless predictions after failure",
+          "problem": "Hopeless predictions after failure",
+          "lessons": [
+            {
+              "id": "low-mood-m11-l1",
+              "title": "Case file: Hopeless predictions after failure",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Hopeless predictions after failure.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m11-l2",
+              "title": "Processes that shape low mood: Hopeless predictions after failure",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Hopeless predictions after failure.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m11-l3",
+              "title": "Distinguish Hopeless predictions after failure: negative thought versus proven fact",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Hopeless predictions after failure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m11-l4",
+              "title": "Evidence investigation: Hopeless predictions after failure",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Hopeless predictions after failure.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m11-l5",
+              "title": "Plan a proportionate response: Hopeless predictions after failure",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Hopeless predictions after failure.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m11-l6",
+              "title": "Transfer mission: Hopeless predictions after failure",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Hopeless predictions after failure.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-12",
+          "title": "Rumination on past mistakes",
+          "problem": "Rumination on past mistakes",
+          "lessons": [
+            {
+              "id": "low-mood-m12-l1",
+              "title": "Case file: Rumination on past mistakes",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Rumination on past mistakes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m12-l2",
+              "title": "Processes that shape low mood: Rumination on past mistakes",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Rumination on past mistakes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m12-l3",
+              "title": "Distinguish Rumination on past mistakes: negative thought versus proven fact",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Rumination on past mistakes.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m12-l4",
+              "title": "Evidence investigation: Rumination on past mistakes",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Rumination on past mistakes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m12-l5",
+              "title": "Plan a proportionate response: Rumination on past mistakes",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Rumination on past mistakes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m12-l6",
+              "title": "Transfer mission: Rumination on past mistakes",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Rumination on past mistakes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-13",
+          "title": "Overgeneralising from one loss",
+          "problem": "Overgeneralising from one loss",
+          "lessons": [
+            {
+              "id": "low-mood-m13-l1",
+              "title": "Case file: Overgeneralising from one loss",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Overgeneralising from one loss.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m13-l2",
+              "title": "Processes that shape low mood: Overgeneralising from one loss",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Overgeneralising from one loss.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m13-l3",
+              "title": "Distinguish Overgeneralising from one loss: negative thought versus proven fact",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Overgeneralising from one loss.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m13-l4",
+              "title": "Evidence investigation: Overgeneralising from one loss",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Overgeneralising from one loss.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m13-l5",
+              "title": "Plan a proportionate response: Overgeneralising from one loss",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Overgeneralising from one loss.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m13-l6",
+              "title": "Transfer mission: Overgeneralising from one loss",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Overgeneralising from one loss.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-14",
+          "title": "Memory biased toward negative events",
+          "problem": "Memory biased toward negative events",
+          "lessons": [
+            {
+              "id": "low-mood-m14-l1",
+              "title": "Case file: Memory biased toward negative events",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Memory biased toward negative events.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m14-l2",
+              "title": "Processes that shape low mood: Memory biased toward negative events",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Memory biased toward negative events.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m14-l3",
+              "title": "Distinguish Memory biased toward negative events: negative thought versus proven fact",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Memory biased toward negative events.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m14-l4",
+              "title": "Evidence investigation: Memory biased toward negative events",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Memory biased toward negative events.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m14-l5",
+              "title": "Plan a proportionate response: Memory biased toward negative events",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Memory biased toward negative events.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m14-l6",
+              "title": "Transfer mission: Memory biased toward negative events",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Memory biased toward negative events.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-15",
+          "title": "Making decisions under pessimistic beliefs",
+          "problem": "Making decisions under pessimistic beliefs",
+          "lessons": [
+            {
+              "id": "low-mood-m15-l1",
+              "title": "Case file: Making decisions under pessimistic beliefs",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Making decisions under pessimistic beliefs.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m15-l2",
+              "title": "Processes that shape low mood: Making decisions under pessimistic beliefs",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Making decisions under pessimistic beliefs.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m15-l3",
+              "title": "Distinguish Making decisions under pessimistic beliefs: negative thought versus proven fact",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Making decisions under pessimistic beliefs.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m15-l4",
+              "title": "Evidence investigation: Making decisions under pessimistic beliefs",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Making decisions under pessimistic beliefs.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m15-l5",
+              "title": "Plan a proportionate response: Making decisions under pessimistic beliefs",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Making decisions under pessimistic beliefs.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m15-l6",
+              "title": "Transfer mission: Making decisions under pessimistic beliefs",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Making decisions under pessimistic beliefs.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "low-mood-book-4",
+      "title": "Self-evaluation and shame",
+      "distinction": "symptom versus moral failing",
+      "modules": [
+        {
+          "id": "low-mood-module-16",
+          "title": "Feeling like a burden",
+          "problem": "Feeling like a burden",
+          "lessons": [
+            {
+              "id": "low-mood-m16-l1",
+              "title": "Case file: Feeling like a burden",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Feeling like a burden.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m16-l2",
+              "title": "Processes that shape low mood: Feeling like a burden",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Feeling like a burden.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m16-l3",
+              "title": "Distinguish Feeling like a burden: symptom versus moral failing",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Feeling like a burden.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m16-l4",
+              "title": "Evidence investigation: Feeling like a burden",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Feeling like a burden.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m16-l5",
+              "title": "Plan a proportionate response: Feeling like a burden",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Feeling like a burden.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m16-l6",
+              "title": "Transfer mission: Feeling like a burden",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Feeling like a burden.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-17",
+          "title": "Criticism interpreted as worthlessness",
+          "problem": "Criticism interpreted as worthlessness",
+          "lessons": [
+            {
+              "id": "low-mood-m17-l1",
+              "title": "Case file: Criticism interpreted as worthlessness",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Criticism interpreted as worthlessness.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m17-l2",
+              "title": "Processes that shape low mood: Criticism interpreted as worthlessness",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Criticism interpreted as worthlessness.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m17-l3",
+              "title": "Distinguish Criticism interpreted as worthlessness: symptom versus moral failing",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Criticism interpreted as worthlessness.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m17-l4",
+              "title": "Evidence investigation: Criticism interpreted as worthlessness",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Criticism interpreted as worthlessness.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m17-l5",
+              "title": "Plan a proportionate response: Criticism interpreted as worthlessness",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Criticism interpreted as worthlessness.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m17-l6",
+              "title": "Transfer mission: Criticism interpreted as worthlessness",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Criticism interpreted as worthlessness.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-18",
+          "title": "Guilt for reduced productivity",
+          "problem": "Guilt for reduced productivity",
+          "lessons": [
+            {
+              "id": "low-mood-m18-l1",
+              "title": "Case file: Guilt for reduced productivity",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Guilt for reduced productivity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m18-l2",
+              "title": "Processes that shape low mood: Guilt for reduced productivity",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Guilt for reduced productivity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m18-l3",
+              "title": "Distinguish Guilt for reduced productivity: symptom versus moral failing",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Guilt for reduced productivity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m18-l4",
+              "title": "Evidence investigation: Guilt for reduced productivity",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Guilt for reduced productivity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m18-l5",
+              "title": "Plan a proportionate response: Guilt for reduced productivity",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Guilt for reduced productivity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m18-l6",
+              "title": "Transfer mission: Guilt for reduced productivity",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Guilt for reduced productivity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-19",
+          "title": "Perfectionism and depression",
+          "problem": "Perfectionism and depression",
+          "lessons": [
+            {
+              "id": "low-mood-m19-l1",
+              "title": "Case file: Perfectionism and depression",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Perfectionism and depression.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m19-l2",
+              "title": "Processes that shape low mood: Perfectionism and depression",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Perfectionism and depression.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m19-l3",
+              "title": "Distinguish Perfectionism and depression: symptom versus moral failing",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Perfectionism and depression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m19-l4",
+              "title": "Evidence investigation: Perfectionism and depression",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Perfectionism and depression.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m19-l5",
+              "title": "Plan a proportionate response: Perfectionism and depression",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Perfectionism and depression.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m19-l6",
+              "title": "Transfer mission: Perfectionism and depression",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Perfectionism and depression.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-20",
+          "title": "When reassurance cannot penetrate shame",
+          "problem": "When reassurance cannot penetrate shame",
+          "lessons": [
+            {
+              "id": "low-mood-m20-l1",
+              "title": "Case file: When reassurance cannot penetrate shame",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: When reassurance cannot penetrate shame.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m20-l2",
+              "title": "Processes that shape low mood: When reassurance cannot penetrate shame",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: When reassurance cannot penetrate shame.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m20-l3",
+              "title": "Distinguish When reassurance cannot penetrate shame: symptom versus moral failing",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: When reassurance cannot penetrate shame.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m20-l4",
+              "title": "Evidence investigation: When reassurance cannot penetrate shame",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: When reassurance cannot penetrate shame.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m20-l5",
+              "title": "Plan a proportionate response: When reassurance cannot penetrate shame",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: When reassurance cannot penetrate shame.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m20-l6",
+              "title": "Transfer mission: When reassurance cannot penetrate shame",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: When reassurance cannot penetrate shame.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "low-mood-book-5",
+      "title": "Energy, sleep and physical health",
+      "distinction": "psychological symptom versus medical issue",
+      "modules": [
+        {
+          "id": "low-mood-module-21",
+          "title": "Sleep changes with low mood",
+          "problem": "Sleep changes with low mood",
+          "lessons": [
+            {
+              "id": "low-mood-m21-l1",
+              "title": "Case file: Sleep changes with low mood",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Sleep changes with low mood.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m21-l2",
+              "title": "Processes that shape low mood: Sleep changes with low mood",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Sleep changes with low mood.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m21-l3",
+              "title": "Distinguish Sleep changes with low mood: psychological symptom versus medical issue",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Sleep changes with low mood.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m21-l4",
+              "title": "Evidence investigation: Sleep changes with low mood",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Sleep changes with low mood.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m21-l5",
+              "title": "Plan a proportionate response: Sleep changes with low mood",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Sleep changes with low mood.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m21-l6",
+              "title": "Transfer mission: Sleep changes with low mood",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Sleep changes with low mood.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-22",
+          "title": "Appetite and weight changes",
+          "problem": "Appetite and weight changes",
+          "lessons": [
+            {
+              "id": "low-mood-m22-l1",
+              "title": "Case file: Appetite and weight changes",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Appetite and weight changes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m22-l2",
+              "title": "Processes that shape low mood: Appetite and weight changes",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Appetite and weight changes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m22-l3",
+              "title": "Distinguish Appetite and weight changes: psychological symptom versus medical issue",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Appetite and weight changes.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m22-l4",
+              "title": "Evidence investigation: Appetite and weight changes",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Appetite and weight changes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m22-l5",
+              "title": "Plan a proportionate response: Appetite and weight changes",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Appetite and weight changes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m22-l6",
+              "title": "Transfer mission: Appetite and weight changes",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Appetite and weight changes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-23",
+          "title": "Psychomotor slowing or agitation",
+          "problem": "Psychomotor slowing or agitation",
+          "lessons": [
+            {
+              "id": "low-mood-m23-l1",
+              "title": "Case file: Psychomotor slowing or agitation",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Psychomotor slowing or agitation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m23-l2",
+              "title": "Processes that shape low mood: Psychomotor slowing or agitation",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Psychomotor slowing or agitation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m23-l3",
+              "title": "Distinguish Psychomotor slowing or agitation: psychological symptom versus medical issue",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Psychomotor slowing or agitation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m23-l4",
+              "title": "Evidence investigation: Psychomotor slowing or agitation",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Psychomotor slowing or agitation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m23-l5",
+              "title": "Plan a proportionate response: Psychomotor slowing or agitation",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Psychomotor slowing or agitation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m23-l6",
+              "title": "Transfer mission: Psychomotor slowing or agitation",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Psychomotor slowing or agitation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-24",
+          "title": "Pain and persistent fatigue",
+          "problem": "Pain and persistent fatigue",
+          "lessons": [
+            {
+              "id": "low-mood-m24-l1",
+              "title": "Case file: Pain and persistent fatigue",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Pain and persistent fatigue.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m24-l2",
+              "title": "Processes that shape low mood: Pain and persistent fatigue",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Pain and persistent fatigue.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m24-l3",
+              "title": "Distinguish Pain and persistent fatigue: psychological symptom versus medical issue",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Pain and persistent fatigue.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m24-l4",
+              "title": "Evidence investigation: Pain and persistent fatigue",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Pain and persistent fatigue.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m24-l5",
+              "title": "Plan a proportionate response: Pain and persistent fatigue",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Pain and persistent fatigue.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m24-l6",
+              "title": "Transfer mission: Pain and persistent fatigue",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Pain and persistent fatigue.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-25",
+          "title": "Medical conditions and treatment effects",
+          "problem": "Medical conditions and treatment effects",
+          "lessons": [
+            {
+              "id": "low-mood-m25-l1",
+              "title": "Case file: Medical conditions and treatment effects",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Medical conditions and treatment effects.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m25-l2",
+              "title": "Processes that shape low mood: Medical conditions and treatment effects",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Medical conditions and treatment effects.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m25-l3",
+              "title": "Distinguish Medical conditions and treatment effects: psychological symptom versus medical issue",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Medical conditions and treatment effects.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m25-l4",
+              "title": "Evidence investigation: Medical conditions and treatment effects",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Medical conditions and treatment effects.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m25-l5",
+              "title": "Plan a proportionate response: Medical conditions and treatment effects",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Medical conditions and treatment effects.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m25-l6",
+              "title": "Transfer mission: Medical conditions and treatment effects",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Medical conditions and treatment effects.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "low-mood-book-6",
+      "title": "Connection and support",
+      "distinction": "social withdrawal versus chosen solitude",
+      "modules": [
+        {
+          "id": "low-mood-module-26",
+          "title": "Not replying to friends",
+          "problem": "Not replying to friends",
+          "lessons": [
+            {
+              "id": "low-mood-m26-l1",
+              "title": "Case file: Not replying to friends",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Not replying to friends.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m26-l2",
+              "title": "Processes that shape low mood: Not replying to friends",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Not replying to friends.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m26-l3",
+              "title": "Distinguish Not replying to friends: social withdrawal versus chosen solitude",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Not replying to friends.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m26-l4",
+              "title": "Evidence investigation: Not replying to friends",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Not replying to friends.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m26-l5",
+              "title": "Plan a proportionate response: Not replying to friends",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Not replying to friends.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m26-l6",
+              "title": "Transfer mission: Not replying to friends",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Not replying to friends.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-27",
+          "title": "Asking for support without overexplaining",
+          "problem": "Asking for support without overexplaining",
+          "lessons": [
+            {
+              "id": "low-mood-m27-l1",
+              "title": "Case file: Asking for support without overexplaining",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Asking for support without overexplaining.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m27-l2",
+              "title": "Processes that shape low mood: Asking for support without overexplaining",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Asking for support without overexplaining.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m27-l3",
+              "title": "Distinguish Asking for support without overexplaining: social withdrawal versus chosen solitude",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Asking for support without overexplaining.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m27-l4",
+              "title": "Evidence investigation: Asking for support without overexplaining",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Asking for support without overexplaining.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m27-l5",
+              "title": "Plan a proportionate response: Asking for support without overexplaining",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Asking for support without overexplaining.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m27-l6",
+              "title": "Transfer mission: Asking for support without overexplaining",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Asking for support without overexplaining.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-28",
+          "title": "Partners carrying too much responsibility",
+          "problem": "Partners carrying too much responsibility",
+          "lessons": [
+            {
+              "id": "low-mood-m28-l1",
+              "title": "Case file: Partners carrying too much responsibility",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Partners carrying too much responsibility.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m28-l2",
+              "title": "Processes that shape low mood: Partners carrying too much responsibility",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Partners carrying too much responsibility.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m28-l3",
+              "title": "Distinguish Partners carrying too much responsibility: social withdrawal versus chosen solitude",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Partners carrying too much responsibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m28-l4",
+              "title": "Evidence investigation: Partners carrying too much responsibility",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Partners carrying too much responsibility.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m28-l5",
+              "title": "Plan a proportionate response: Partners carrying too much responsibility",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Partners carrying too much responsibility.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m28-l6",
+              "title": "Transfer mission: Partners carrying too much responsibility",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Partners carrying too much responsibility.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-29",
+          "title": "Loneliness as maintaining factor",
+          "problem": "Loneliness as maintaining factor",
+          "lessons": [
+            {
+              "id": "low-mood-m29-l1",
+              "title": "Case file: Loneliness as maintaining factor",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Loneliness as maintaining factor.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m29-l2",
+              "title": "Processes that shape low mood: Loneliness as maintaining factor",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Loneliness as maintaining factor.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m29-l3",
+              "title": "Distinguish Loneliness as maintaining factor: social withdrawal versus chosen solitude",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Loneliness as maintaining factor.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m29-l4",
+              "title": "Evidence investigation: Loneliness as maintaining factor",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Loneliness as maintaining factor.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m29-l5",
+              "title": "Plan a proportionate response: Loneliness as maintaining factor",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Loneliness as maintaining factor.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m29-l6",
+              "title": "Transfer mission: Loneliness as maintaining factor",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Loneliness as maintaining factor.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-30",
+          "title": "Support that respects autonomy",
+          "problem": "Support that respects autonomy",
+          "lessons": [
+            {
+              "id": "low-mood-m30-l1",
+              "title": "Case file: Support that respects autonomy",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Support that respects autonomy.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m30-l2",
+              "title": "Processes that shape low mood: Support that respects autonomy",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Support that respects autonomy.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m30-l3",
+              "title": "Distinguish Support that respects autonomy: social withdrawal versus chosen solitude",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Support that respects autonomy.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m30-l4",
+              "title": "Evidence investigation: Support that respects autonomy",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Support that respects autonomy.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m30-l5",
+              "title": "Plan a proportionate response: Support that respects autonomy",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Support that respects autonomy.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m30-l6",
+              "title": "Transfer mission: Support that respects autonomy",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Support that respects autonomy.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "low-mood-book-7",
+      "title": "Behavioural activation and recovery",
+      "distinction": "motivation versus action scheduling",
+      "modules": [
+        {
+          "id": "low-mood-module-31",
+          "title": "Mapping activity and reward",
+          "problem": "Mapping activity and reward",
+          "lessons": [
+            {
+              "id": "low-mood-m31-l1",
+              "title": "Case file: Mapping activity and reward",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Mapping activity and reward.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m31-l2",
+              "title": "Processes that shape low mood: Mapping activity and reward",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Mapping activity and reward.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m31-l3",
+              "title": "Distinguish Mapping activity and reward: motivation versus action scheduling",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Mapping activity and reward.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m31-l4",
+              "title": "Evidence investigation: Mapping activity and reward",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Mapping activity and reward.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m31-l5",
+              "title": "Plan a proportionate response: Mapping activity and reward",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Mapping activity and reward.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m31-l6",
+              "title": "Transfer mission: Mapping activity and reward",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Mapping activity and reward.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-32",
+          "title": "Choosing tasks matched to capacity",
+          "problem": "Choosing tasks matched to capacity",
+          "lessons": [
+            {
+              "id": "low-mood-m32-l1",
+              "title": "Case file: Choosing tasks matched to capacity",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Choosing tasks matched to capacity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m32-l2",
+              "title": "Processes that shape low mood: Choosing tasks matched to capacity",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Choosing tasks matched to capacity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m32-l3",
+              "title": "Distinguish Choosing tasks matched to capacity: motivation versus action scheduling",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Choosing tasks matched to capacity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m32-l4",
+              "title": "Evidence investigation: Choosing tasks matched to capacity",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Choosing tasks matched to capacity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m32-l5",
+              "title": "Plan a proportionate response: Choosing tasks matched to capacity",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Choosing tasks matched to capacity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m32-l6",
+              "title": "Transfer mission: Choosing tasks matched to capacity",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Choosing tasks matched to capacity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-33",
+          "title": "Reducing avoidant withdrawal",
+          "problem": "Reducing avoidant withdrawal",
+          "lessons": [
+            {
+              "id": "low-mood-m33-l1",
+              "title": "Case file: Reducing avoidant withdrawal",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Reducing avoidant withdrawal.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m33-l2",
+              "title": "Processes that shape low mood: Reducing avoidant withdrawal",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Reducing avoidant withdrawal.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m33-l3",
+              "title": "Distinguish Reducing avoidant withdrawal: motivation versus action scheduling",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Reducing avoidant withdrawal.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m33-l4",
+              "title": "Evidence investigation: Reducing avoidant withdrawal",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Reducing avoidant withdrawal.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m33-l5",
+              "title": "Plan a proportionate response: Reducing avoidant withdrawal",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Reducing avoidant withdrawal.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m33-l6",
+              "title": "Transfer mission: Reducing avoidant withdrawal",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Reducing avoidant withdrawal.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-34",
+          "title": "Balancing rest and activation",
+          "problem": "Balancing rest and activation",
+          "lessons": [
+            {
+              "id": "low-mood-m34-l1",
+              "title": "Case file: Balancing rest and activation",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Balancing rest and activation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m34-l2",
+              "title": "Processes that shape low mood: Balancing rest and activation",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Balancing rest and activation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m34-l3",
+              "title": "Distinguish Balancing rest and activation: motivation versus action scheduling",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Balancing rest and activation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m34-l4",
+              "title": "Evidence investigation: Balancing rest and activation",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Balancing rest and activation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m34-l5",
+              "title": "Plan a proportionate response: Balancing rest and activation",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Balancing rest and activation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m34-l6",
+              "title": "Transfer mission: Balancing rest and activation",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Balancing rest and activation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-35",
+          "title": "Measuring change without demanding happiness",
+          "problem": "Measuring change without demanding happiness",
+          "lessons": [
+            {
+              "id": "low-mood-m35-l1",
+              "title": "Case file: Measuring change without demanding happiness",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Measuring change without demanding happiness.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m35-l2",
+              "title": "Processes that shape low mood: Measuring change without demanding happiness",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Measuring change without demanding happiness.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m35-l3",
+              "title": "Distinguish Measuring change without demanding happiness: motivation versus action scheduling",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Measuring change without demanding happiness.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m35-l4",
+              "title": "Evidence investigation: Measuring change without demanding happiness",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Measuring change without demanding happiness.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m35-l5",
+              "title": "Plan a proportionate response: Measuring change without demanding happiness",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Measuring change without demanding happiness.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m35-l6",
+              "title": "Transfer mission: Measuring change without demanding happiness",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Measuring change without demanding happiness.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "low-mood-book-8",
+      "title": "Safety, treatment and escalation",
+      "distinction": "self-help versus care requirement",
+      "modules": [
+        {
+          "id": "low-mood-module-36",
+          "title": "Recognising persistent impairment",
+          "problem": "Recognising persistent impairment",
+          "lessons": [
+            {
+              "id": "low-mood-m36-l1",
+              "title": "Case file: Recognising persistent impairment",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Recognising persistent impairment.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m36-l2",
+              "title": "Processes that shape low mood: Recognising persistent impairment",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Recognising persistent impairment.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m36-l3",
+              "title": "Distinguish Recognising persistent impairment: self-help versus care requirement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Recognising persistent impairment.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m36-l4",
+              "title": "Evidence investigation: Recognising persistent impairment",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Recognising persistent impairment.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m36-l5",
+              "title": "Plan a proportionate response: Recognising persistent impairment",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Recognising persistent impairment.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m36-l6",
+              "title": "Transfer mission: Recognising persistent impairment",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Recognising persistent impairment.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-37",
+          "title": "Thoughts of self-harm and immediate safety",
+          "problem": "Thoughts of self-harm and immediate safety",
+          "lessons": [
+            {
+              "id": "low-mood-m37-l1",
+              "title": "Case file: Thoughts of self-harm and immediate safety",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Thoughts of self-harm and immediate safety.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m37-l2",
+              "title": "Processes that shape low mood: Thoughts of self-harm and immediate safety",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Thoughts of self-harm and immediate safety.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m37-l3",
+              "title": "Distinguish Thoughts of self-harm and immediate safety: self-help versus care requirement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Thoughts of self-harm and immediate safety.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m37-l4",
+              "title": "Evidence investigation: Thoughts of self-harm and immediate safety",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Thoughts of self-harm and immediate safety.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m37-l5",
+              "title": "Plan a proportionate response: Thoughts of self-harm and immediate safety",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Thoughts of self-harm and immediate safety.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m37-l6",
+              "title": "Transfer mission: Thoughts of self-harm and immediate safety",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Thoughts of self-harm and immediate safety.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-38",
+          "title": "Clinical assessment and support options",
+          "problem": "Clinical assessment and support options",
+          "lessons": [
+            {
+              "id": "low-mood-m38-l1",
+              "title": "Case file: Clinical assessment and support options",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Clinical assessment and support options.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m38-l2",
+              "title": "Processes that shape low mood: Clinical assessment and support options",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Clinical assessment and support options.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m38-l3",
+              "title": "Distinguish Clinical assessment and support options: self-help versus care requirement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Clinical assessment and support options.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m38-l4",
+              "title": "Evidence investigation: Clinical assessment and support options",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Clinical assessment and support options.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m38-l5",
+              "title": "Plan a proportionate response: Clinical assessment and support options",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Clinical assessment and support options.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m38-l6",
+              "title": "Transfer mission: Clinical assessment and support options",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Clinical assessment and support options.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-39",
+          "title": "Shared treatment decision making",
+          "problem": "Shared treatment decision making",
+          "lessons": [
+            {
+              "id": "low-mood-m39-l1",
+              "title": "Case file: Shared treatment decision making",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Shared treatment decision making.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m39-l2",
+              "title": "Processes that shape low mood: Shared treatment decision making",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Shared treatment decision making.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m39-l3",
+              "title": "Distinguish Shared treatment decision making: self-help versus care requirement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Shared treatment decision making.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m39-l4",
+              "title": "Evidence investigation: Shared treatment decision making",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Shared treatment decision making.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m39-l5",
+              "title": "Plan a proportionate response: Shared treatment decision making",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Shared treatment decision making.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m39-l6",
+              "title": "Transfer mission: Shared treatment decision making",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Shared treatment decision making.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-40",
+          "title": "Relapse planning and early warning signs",
+          "problem": "Relapse planning and early warning signs",
+          "lessons": [
+            {
+              "id": "low-mood-m40-l1",
+              "title": "Case file: Relapse planning and early warning signs",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Relapse planning and early warning signs.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m40-l2",
+              "title": "Processes that shape low mood: Relapse planning and early warning signs",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Relapse planning and early warning signs.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m40-l3",
+              "title": "Distinguish Relapse planning and early warning signs: self-help versus care requirement",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Relapse planning and early warning signs.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m40-l4",
+              "title": "Evidence investigation: Relapse planning and early warning signs",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Relapse planning and early warning signs.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m40-l5",
+              "title": "Plan a proportionate response: Relapse planning and early warning signs",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Relapse planning and early warning signs.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m40-l6",
+              "title": "Transfer mission: Relapse planning and early warning signs",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Relapse planning and early warning signs.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "low-mood-book-9",
+      "title": "Structural causes and inequities",
+      "distinction": "personal defect versus social adversity",
+      "modules": [
+        {
+          "id": "low-mood-module-41",
+          "title": "Poverty and loss of control",
+          "problem": "Poverty and loss of control",
+          "lessons": [
+            {
+              "id": "low-mood-m41-l1",
+              "title": "Case file: Poverty and loss of control",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Poverty and loss of control.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m41-l2",
+              "title": "Processes that shape low mood: Poverty and loss of control",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Poverty and loss of control.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m41-l3",
+              "title": "Distinguish Poverty and loss of control: personal defect versus social adversity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Poverty and loss of control.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m41-l4",
+              "title": "Evidence investigation: Poverty and loss of control",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Poverty and loss of control.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m41-l5",
+              "title": "Plan a proportionate response: Poverty and loss of control",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Poverty and loss of control.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m41-l6",
+              "title": "Transfer mission: Poverty and loss of control",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Poverty and loss of control.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-42",
+          "title": "Discrimination and chronic invalidation",
+          "problem": "Discrimination and chronic invalidation",
+          "lessons": [
+            {
+              "id": "low-mood-m42-l1",
+              "title": "Case file: Discrimination and chronic invalidation",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Discrimination and chronic invalidation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m42-l2",
+              "title": "Processes that shape low mood: Discrimination and chronic invalidation",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Discrimination and chronic invalidation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m42-l3",
+              "title": "Distinguish Discrimination and chronic invalidation: personal defect versus social adversity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Discrimination and chronic invalidation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m42-l4",
+              "title": "Evidence investigation: Discrimination and chronic invalidation",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Discrimination and chronic invalidation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m42-l5",
+              "title": "Plan a proportionate response: Discrimination and chronic invalidation",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Discrimination and chronic invalidation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m42-l6",
+              "title": "Transfer mission: Discrimination and chronic invalidation",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Discrimination and chronic invalidation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-43",
+          "title": "Job insecurity and demoralisation",
+          "problem": "Job insecurity and demoralisation",
+          "lessons": [
+            {
+              "id": "low-mood-m43-l1",
+              "title": "Case file: Job insecurity and demoralisation",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Job insecurity and demoralisation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m43-l2",
+              "title": "Processes that shape low mood: Job insecurity and demoralisation",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Job insecurity and demoralisation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m43-l3",
+              "title": "Distinguish Job insecurity and demoralisation: personal defect versus social adversity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Job insecurity and demoralisation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m43-l4",
+              "title": "Evidence investigation: Job insecurity and demoralisation",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Job insecurity and demoralisation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m43-l5",
+              "title": "Plan a proportionate response: Job insecurity and demoralisation",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Job insecurity and demoralisation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m43-l6",
+              "title": "Transfer mission: Job insecurity and demoralisation",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Job insecurity and demoralisation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-44",
+          "title": "Disability, illness and access to care",
+          "problem": "Disability, illness and access to care",
+          "lessons": [
+            {
+              "id": "low-mood-m44-l1",
+              "title": "Case file: Disability, illness and access to care",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Disability, illness and access to care.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m44-l2",
+              "title": "Processes that shape low mood: Disability, illness and access to care",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Disability, illness and access to care.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m44-l3",
+              "title": "Distinguish Disability, illness and access to care: personal defect versus social adversity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Disability, illness and access to care.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m44-l4",
+              "title": "Evidence investigation: Disability, illness and access to care",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Disability, illness and access to care.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m44-l5",
+              "title": "Plan a proportionate response: Disability, illness and access to care",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Disability, illness and access to care.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m44-l6",
+              "title": "Transfer mission: Disability, illness and access to care",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Disability, illness and access to care.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-45",
+          "title": "Why positive thinking cannot fix unsafe conditions",
+          "problem": "Why positive thinking cannot fix unsafe conditions",
+          "lessons": [
+            {
+              "id": "low-mood-m45-l1",
+              "title": "Case file: Why positive thinking cannot fix unsafe conditions",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Why positive thinking cannot fix unsafe conditions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m45-l2",
+              "title": "Processes that shape low mood: Why positive thinking cannot fix unsafe conditions",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Why positive thinking cannot fix unsafe conditions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m45-l3",
+              "title": "Distinguish Why positive thinking cannot fix unsafe conditions: personal defect versus social adversity",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Why positive thinking cannot fix unsafe conditions.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m45-l4",
+              "title": "Evidence investigation: Why positive thinking cannot fix unsafe conditions",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Why positive thinking cannot fix unsafe conditions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m45-l5",
+              "title": "Plan a proportionate response: Why positive thinking cannot fix unsafe conditions",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Why positive thinking cannot fix unsafe conditions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m45-l6",
+              "title": "Transfer mission: Why positive thinking cannot fix unsafe conditions",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Why positive thinking cannot fix unsafe conditions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "low-mood-book-10",
+      "title": "Advanced formulation",
+      "distinction": "one label versus multiple maintaining mechanisms",
+      "modules": [
+        {
+          "id": "low-mood-module-46",
+          "title": "Depression with anxiety",
+          "problem": "Depression with anxiety",
+          "lessons": [
+            {
+              "id": "low-mood-m46-l1",
+              "title": "Case file: Depression with anxiety",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Depression with anxiety.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m46-l2",
+              "title": "Processes that shape low mood: Depression with anxiety",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Depression with anxiety.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m46-l3",
+              "title": "Distinguish Depression with anxiety: one label versus multiple maintaining mechanisms",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Depression with anxiety.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m46-l4",
+              "title": "Evidence investigation: Depression with anxiety",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Depression with anxiety.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m46-l5",
+              "title": "Plan a proportionate response: Depression with anxiety",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Depression with anxiety.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m46-l6",
+              "title": "Transfer mission: Depression with anxiety",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Depression with anxiety.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-47",
+          "title": "Bereavement, trauma and low mood",
+          "problem": "Bereavement, trauma and low mood",
+          "lessons": [
+            {
+              "id": "low-mood-m47-l1",
+              "title": "Case file: Bereavement, trauma and low mood",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Bereavement, trauma and low mood.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m47-l2",
+              "title": "Processes that shape low mood: Bereavement, trauma and low mood",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Bereavement, trauma and low mood.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m47-l3",
+              "title": "Distinguish Bereavement, trauma and low mood: one label versus multiple maintaining mechanisms",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Bereavement, trauma and low mood.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m47-l4",
+              "title": "Evidence investigation: Bereavement, trauma and low mood",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Bereavement, trauma and low mood.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m47-l5",
+              "title": "Plan a proportionate response: Bereavement, trauma and low mood",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Bereavement, trauma and low mood.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m47-l6",
+              "title": "Transfer mission: Bereavement, trauma and low mood",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Bereavement, trauma and low mood.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-48",
+          "title": "Bipolar-spectrum history and differential care",
+          "problem": "Bipolar-spectrum history and differential care",
+          "lessons": [
+            {
+              "id": "low-mood-m48-l1",
+              "title": "Case file: Bipolar-spectrum history and differential care",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Bipolar-spectrum history and differential care.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m48-l2",
+              "title": "Processes that shape low mood: Bipolar-spectrum history and differential care",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Bipolar-spectrum history and differential care.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m48-l3",
+              "title": "Distinguish Bipolar-spectrum history and differential care: one label versus multiple maintaining mechanisms",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Bipolar-spectrum history and differential care.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m48-l4",
+              "title": "Evidence investigation: Bipolar-spectrum history and differential care",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Bipolar-spectrum history and differential care.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m48-l5",
+              "title": "Plan a proportionate response: Bipolar-spectrum history and differential care",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Bipolar-spectrum history and differential care.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m48-l6",
+              "title": "Transfer mission: Bipolar-spectrum history and differential care",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Bipolar-spectrum history and differential care.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-49",
+          "title": "When activity plans fail for understandable reasons",
+          "problem": "When activity plans fail for understandable reasons",
+          "lessons": [
+            {
+              "id": "low-mood-m49-l1",
+              "title": "Case file: When activity plans fail for understandable reasons",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: When activity plans fail for understandable reasons.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m49-l2",
+              "title": "Processes that shape low mood: When activity plans fail for understandable reasons",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: When activity plans fail for understandable reasons.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m49-l3",
+              "title": "Distinguish When activity plans fail for understandable reasons: one label versus multiple maintaining mechanisms",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: When activity plans fail for understandable reasons.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m49-l4",
+              "title": "Evidence investigation: When activity plans fail for understandable reasons",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: When activity plans fail for understandable reasons.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m49-l5",
+              "title": "Plan a proportionate response: When activity plans fail for understandable reasons",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: When activity plans fail for understandable reasons.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m49-l6",
+              "title": "Transfer mission: When activity plans fail for understandable reasons",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: When activity plans fail for understandable reasons.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "low-mood-module-50",
+          "title": "Integrated mission: compassionate realistic plan",
+          "problem": "Integrated mission: compassionate realistic plan",
+          "lessons": [
+            {
+              "id": "low-mood-m50-l1",
+              "title": "Case file: Integrated mission: compassionate realistic plan",
+              "objective": "Distinguish observations from interpretations without making premature diagnoses. Target problem: Integrated mission: compassionate realistic plan.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m50-l2",
+              "title": "Processes that shape low mood: Integrated mission: compassionate realistic plan",
+              "objective": "Examine interacting emotional, cognitive, behavioural, biological and social pathways without assuming a single cause. Topic: Integrated mission: compassionate realistic plan.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m50-l3",
+              "title": "Distinguish Integrated mission: compassionate realistic plan: one label versus multiple maintaining mechanisms",
+              "objective": "Differentiate a subtle lookalike or competing explanation. Target problem: Integrated mission: compassionate realistic plan.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m50-l4",
+              "title": "Evidence investigation: Integrated mission: compassionate realistic plan",
+              "objective": "Identify what evidence supports or undermines the proposed account. Target problem: Integrated mission: compassionate realistic plan.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m50-l5",
+              "title": "Plan a proportionate response: Integrated mission: compassionate realistic plan",
+              "objective": "Compare support, environmental change and treatment choices without offering a universal cure. Topic: Integrated mission: compassionate realistic plan.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "low-mood-m50-l6",
+              "title": "Transfer mission: Integrated mission: compassionate realistic plan",
+              "objective": "Solve an unfamiliar case and explain the limits of the conclusion. Target problem: Integrated mission: compassionate realistic plan.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
