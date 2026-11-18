@@ -24,8 +24,8 @@
             },
             {
               "id": "sleep-m1-l2",
-              "title": "The maintaining mechanism of Sleep pressure accumulated through waking",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Sleep pressure accumulated through waking.",
+              "title": "How sleep regulation works: Sleep pressure accumulated through waking",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Sleep pressure accumulated through waking.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -48,8 +48,8 @@
             },
             {
               "id": "sleep-m1-l5",
-              "title": "Strategy challenge: Sleep pressure accumulated through waking",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Sleep pressure accumulated through waking.",
+              "title": "Choose a sleep-supporting response: Sleep pressure accumulated through waking",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Sleep pressure accumulated through waking.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -79,8 +79,8 @@
             },
             {
               "id": "sleep-m2-l2",
-              "title": "The maintaining mechanism of Circadian rhythm and light cues",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Circadian rhythm and light cues.",
+              "title": "How sleep regulation works: Circadian rhythm and light cues",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Circadian rhythm and light cues.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -103,8 +103,8 @@
             },
             {
               "id": "sleep-m2-l5",
-              "title": "Strategy challenge: Circadian rhythm and light cues",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Circadian rhythm and light cues.",
+              "title": "Choose a sleep-supporting response: Circadian rhythm and light cues",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Circadian rhythm and light cues.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -134,8 +134,8 @@
             },
             {
               "id": "sleep-m3-l2",
-              "title": "The maintaining mechanism of Why sleep schedules drift",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Why sleep schedules drift.",
+              "title": "How sleep regulation works: Why sleep schedules drift",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Why sleep schedules drift.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -158,8 +158,8 @@
             },
             {
               "id": "sleep-m3-l5",
-              "title": "Strategy challenge: Why sleep schedules drift",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Why sleep schedules drift.",
+              "title": "Choose a sleep-supporting response: Why sleep schedules drift",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Why sleep schedules drift.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -189,8 +189,8 @@
             },
             {
               "id": "sleep-m4-l2",
-              "title": "The maintaining mechanism of Individual differences in sleep need",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Individual differences in sleep need.",
+              "title": "How sleep regulation works: Individual differences in sleep need",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Individual differences in sleep need.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -213,8 +213,8 @@
             },
             {
               "id": "sleep-m4-l5",
-              "title": "Strategy challenge: Individual differences in sleep need",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Individual differences in sleep need.",
+              "title": "Choose a sleep-supporting response: Individual differences in sleep need",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Individual differences in sleep need.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -244,8 +244,8 @@
             },
             {
               "id": "sleep-m5-l2",
-              "title": "The maintaining mechanism of Sleep quality versus total hours",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Sleep quality versus total hours.",
+              "title": "How sleep regulation works: Sleep quality versus total hours",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Sleep quality versus total hours.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -268,8 +268,8 @@
             },
             {
               "id": "sleep-m5-l5",
-              "title": "Strategy challenge: Sleep quality versus total hours",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Sleep quality versus total hours.",
+              "title": "Choose a sleep-supporting response: Sleep quality versus total hours",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Sleep quality versus total hours.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -306,8 +306,8 @@
             },
             {
               "id": "sleep-m6-l2",
-              "title": "The maintaining mechanism of Trying harder to fall asleep",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Trying harder to fall asleep.",
+              "title": "How sleep regulation works: Trying harder to fall asleep",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Trying harder to fall asleep.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -330,8 +330,8 @@
             },
             {
               "id": "sleep-m6-l5",
-              "title": "Strategy challenge: Trying harder to fall asleep",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Trying harder to fall asleep.",
+              "title": "Choose a sleep-supporting response: Trying harder to fall asleep",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Trying harder to fall asleep.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -361,8 +361,8 @@
             },
             {
               "id": "sleep-m7-l2",
-              "title": "The maintaining mechanism of The bed becoming a place of frustration",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: The bed becoming a place of frustration.",
+              "title": "How sleep regulation works: The bed becoming a place of frustration",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: The bed becoming a place of frustration.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -385,8 +385,8 @@
             },
             {
               "id": "sleep-m7-l5",
-              "title": "Strategy challenge: The bed becoming a place of frustration",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: The bed becoming a place of frustration.",
+              "title": "Choose a sleep-supporting response: The bed becoming a place of frustration",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: The bed becoming a place of frustration.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -416,8 +416,8 @@
             },
             {
               "id": "sleep-m8-l2",
-              "title": "The maintaining mechanism of Clock-watching and arousal",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Clock-watching and arousal.",
+              "title": "How sleep regulation works: Clock-watching and arousal",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Clock-watching and arousal.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -440,8 +440,8 @@
             },
             {
               "id": "sleep-m8-l5",
-              "title": "Strategy challenge: Clock-watching and arousal",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Clock-watching and arousal.",
+              "title": "Choose a sleep-supporting response: Clock-watching and arousal",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Clock-watching and arousal.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -471,8 +471,8 @@
             },
             {
               "id": "sleep-m9-l2",
-              "title": "The maintaining mechanism of Anticipatory worry about tomorrow",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Anticipatory worry about tomorrow.",
+              "title": "How sleep regulation works: Anticipatory worry about tomorrow",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Anticipatory worry about tomorrow.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -495,8 +495,8 @@
             },
             {
               "id": "sleep-m9-l5",
-              "title": "Strategy challenge: Anticipatory worry about tomorrow",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Anticipatory worry about tomorrow.",
+              "title": "Choose a sleep-supporting response: Anticipatory worry about tomorrow",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Anticipatory worry about tomorrow.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -526,8 +526,8 @@
             },
             {
               "id": "sleep-m10-l2",
-              "title": "The maintaining mechanism of When insomnia becomes self-maintaining",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: When insomnia becomes self-maintaining.",
+              "title": "How sleep regulation works: When insomnia becomes self-maintaining",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: When insomnia becomes self-maintaining.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -550,8 +550,8 @@
             },
             {
               "id": "sleep-m10-l5",
-              "title": "Strategy challenge: When insomnia becomes self-maintaining",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: When insomnia becomes self-maintaining.",
+              "title": "Choose a sleep-supporting response: When insomnia becomes self-maintaining",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: When insomnia becomes self-maintaining.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -588,8 +588,8 @@
             },
             {
               "id": "sleep-m11-l2",
-              "title": "The maintaining mechanism of Fear of not functioning tomorrow",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Fear of not functioning tomorrow.",
+              "title": "How sleep regulation works: Fear of not functioning tomorrow",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Fear of not functioning tomorrow.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -612,8 +612,8 @@
             },
             {
               "id": "sleep-m11-l5",
-              "title": "Strategy challenge: Fear of not functioning tomorrow",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Fear of not functioning tomorrow.",
+              "title": "Choose a sleep-supporting response: Fear of not functioning tomorrow",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Fear of not functioning tomorrow.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -643,8 +643,8 @@
             },
             {
               "id": "sleep-m12-l2",
-              "title": "The maintaining mechanism of Searching for the perfect bedtime",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Searching for the perfect bedtime.",
+              "title": "How sleep regulation works: Searching for the perfect bedtime",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Searching for the perfect bedtime.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -667,8 +667,8 @@
             },
             {
               "id": "sleep-m12-l5",
-              "title": "Strategy challenge: Searching for the perfect bedtime",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Searching for the perfect bedtime.",
+              "title": "Choose a sleep-supporting response: Searching for the perfect bedtime",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Searching for the perfect bedtime.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -698,8 +698,8 @@
             },
             {
               "id": "sleep-m13-l2",
-              "title": "The maintaining mechanism of Reassurance from sleep trackers",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Reassurance from sleep trackers.",
+              "title": "How sleep regulation works: Reassurance from sleep trackers",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Reassurance from sleep trackers.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -722,8 +722,8 @@
             },
             {
               "id": "sleep-m13-l5",
-              "title": "Strategy challenge: Reassurance from sleep trackers",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Reassurance from sleep trackers.",
+              "title": "Choose a sleep-supporting response: Reassurance from sleep trackers",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Reassurance from sleep trackers.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -753,8 +753,8 @@
             },
             {
               "id": "sleep-m14-l2",
-              "title": "The maintaining mechanism of Monitoring every night as a test",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Monitoring every night as a test.",
+              "title": "How sleep regulation works: Monitoring every night as a test",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Monitoring every night as a test.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -777,8 +777,8 @@
             },
             {
               "id": "sleep-m14-l5",
-              "title": "Strategy challenge: Monitoring every night as a test",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Monitoring every night as a test.",
+              "title": "Choose a sleep-supporting response: Monitoring every night as a test",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Monitoring every night as a test.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -808,8 +808,8 @@
             },
             {
               "id": "sleep-m15-l2",
-              "title": "The maintaining mechanism of Catastrophic meaning attached to waking",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Catastrophic meaning attached to waking.",
+              "title": "How sleep regulation works: Catastrophic meaning attached to waking",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Catastrophic meaning attached to waking.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -832,8 +832,8 @@
             },
             {
               "id": "sleep-m15-l5",
-              "title": "Strategy challenge: Catastrophic meaning attached to waking",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Catastrophic meaning attached to waking.",
+              "title": "Choose a sleep-supporting response: Catastrophic meaning attached to waking",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Catastrophic meaning attached to waking.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -870,8 +870,8 @@
             },
             {
               "id": "sleep-m16-l2",
-              "title": "The maintaining mechanism of Irregular rise times and weekend drift",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Irregular rise times and weekend drift.",
+              "title": "How sleep regulation works: Irregular rise times and weekend drift",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Irregular rise times and weekend drift.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -894,8 +894,8 @@
             },
             {
               "id": "sleep-m16-l5",
-              "title": "Strategy challenge: Irregular rise times and weekend drift",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Irregular rise times and weekend drift.",
+              "title": "Choose a sleep-supporting response: Irregular rise times and weekend drift",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Irregular rise times and weekend drift.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -925,8 +925,8 @@
             },
             {
               "id": "sleep-m17-l2",
-              "title": "The maintaining mechanism of Naps and shifting sleep pressure",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Naps and shifting sleep pressure.",
+              "title": "How sleep regulation works: Naps and shifting sleep pressure",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Naps and shifting sleep pressure.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -949,8 +949,8 @@
             },
             {
               "id": "sleep-m17-l5",
-              "title": "Strategy challenge: Naps and shifting sleep pressure",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Naps and shifting sleep pressure.",
+              "title": "Choose a sleep-supporting response: Naps and shifting sleep pressure",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Naps and shifting sleep pressure.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -980,8 +980,8 @@
             },
             {
               "id": "sleep-m18-l2",
-              "title": "The maintaining mechanism of Conditioned arousal and stimulus control",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Conditioned arousal and stimulus control.",
+              "title": "How sleep regulation works: Conditioned arousal and stimulus control",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Conditioned arousal and stimulus control.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1004,8 +1004,8 @@
             },
             {
               "id": "sleep-m18-l5",
-              "title": "Strategy challenge: Conditioned arousal and stimulus control",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Conditioned arousal and stimulus control.",
+              "title": "Choose a sleep-supporting response: Conditioned arousal and stimulus control",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Conditioned arousal and stimulus control.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1035,8 +1035,8 @@
             },
             {
               "id": "sleep-m19-l2",
-              "title": "The maintaining mechanism of Adjusting time in bed with clinical guidance",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Adjusting time in bed with clinical guidance.",
+              "title": "How sleep regulation works: Adjusting time in bed with clinical guidance",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Adjusting time in bed with clinical guidance.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1059,8 +1059,8 @@
             },
             {
               "id": "sleep-m19-l5",
-              "title": "Strategy challenge: Adjusting time in bed with clinical guidance",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Adjusting time in bed with clinical guidance.",
+              "title": "Choose a sleep-supporting response: Adjusting time in bed with clinical guidance",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Adjusting time in bed with clinical guidance.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1090,8 +1090,8 @@
             },
             {
               "id": "sleep-m20-l2",
-              "title": "The maintaining mechanism of Why extreme sleep restriction is unsafe",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Why extreme sleep restriction is unsafe.",
+              "title": "How sleep regulation works: Why extreme sleep restriction is unsafe",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Why extreme sleep restriction is unsafe.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1114,8 +1114,8 @@
             },
             {
               "id": "sleep-m20-l5",
-              "title": "Strategy challenge: Why extreme sleep restriction is unsafe",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Why extreme sleep restriction is unsafe.",
+              "title": "Choose a sleep-supporting response: Why extreme sleep restriction is unsafe",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Why extreme sleep restriction is unsafe.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1152,8 +1152,8 @@
             },
             {
               "id": "sleep-m21-l2",
-              "title": "The maintaining mechanism of Light, temperature and noise",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Light, temperature and noise.",
+              "title": "How sleep regulation works: Light, temperature and noise",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Light, temperature and noise.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1176,8 +1176,8 @@
             },
             {
               "id": "sleep-m21-l5",
-              "title": "Strategy challenge: Light, temperature and noise",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Light, temperature and noise.",
+              "title": "Choose a sleep-supporting response: Light, temperature and noise",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Light, temperature and noise.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1207,8 +1207,8 @@
             },
             {
               "id": "sleep-m22-l2",
-              "title": "The maintaining mechanism of Caffeine, alcohol and timing",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Caffeine, alcohol and timing.",
+              "title": "How sleep regulation works: Caffeine, alcohol and timing",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Caffeine, alcohol and timing.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1231,8 +1231,8 @@
             },
             {
               "id": "sleep-m22-l5",
-              "title": "Strategy challenge: Caffeine, alcohol and timing",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Caffeine, alcohol and timing.",
+              "title": "Choose a sleep-supporting response: Caffeine, alcohol and timing",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Caffeine, alcohol and timing.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1262,8 +1262,8 @@
             },
             {
               "id": "sleep-m23-l2",
-              "title": "The maintaining mechanism of Medication effects and sleep quality",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Medication effects and sleep quality.",
+              "title": "How sleep regulation works: Medication effects and sleep quality",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Medication effects and sleep quality.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1286,8 +1286,8 @@
             },
             {
               "id": "sleep-m23-l5",
-              "title": "Strategy challenge: Medication effects and sleep quality",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Medication effects and sleep quality.",
+              "title": "Choose a sleep-supporting response: Medication effects and sleep quality",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Medication effects and sleep quality.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1317,8 +1317,8 @@
             },
             {
               "id": "sleep-m24-l2",
-              "title": "The maintaining mechanism of Shift work and circadian strain",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Shift work and circadian strain.",
+              "title": "How sleep regulation works: Shift work and circadian strain",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Shift work and circadian strain.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1341,8 +1341,8 @@
             },
             {
               "id": "sleep-m24-l5",
-              "title": "Strategy challenge: Shift work and circadian strain",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Shift work and circadian strain.",
+              "title": "Choose a sleep-supporting response: Shift work and circadian strain",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Shift work and circadian strain.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1372,8 +1372,8 @@
             },
             {
               "id": "sleep-m25-l2",
-              "title": "The maintaining mechanism of Housing conditions and poor sleep",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Housing conditions and poor sleep.",
+              "title": "How sleep regulation works: Housing conditions and poor sleep",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Housing conditions and poor sleep.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1396,8 +1396,8 @@
             },
             {
               "id": "sleep-m25-l5",
-              "title": "Strategy challenge: Housing conditions and poor sleep",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Housing conditions and poor sleep.",
+              "title": "Choose a sleep-supporting response: Housing conditions and poor sleep",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Housing conditions and poor sleep.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1434,8 +1434,8 @@
             },
             {
               "id": "sleep-m26-l2",
-              "title": "The maintaining mechanism of Snoring and possible sleep apnoea",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Snoring and possible sleep apnoea.",
+              "title": "How sleep regulation works: Snoring and possible sleep apnoea",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Snoring and possible sleep apnoea.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1458,8 +1458,8 @@
             },
             {
               "id": "sleep-m26-l5",
-              "title": "Strategy challenge: Snoring and possible sleep apnoea",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Snoring and possible sleep apnoea.",
+              "title": "Choose a sleep-supporting response: Snoring and possible sleep apnoea",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Snoring and possible sleep apnoea.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1489,8 +1489,8 @@
             },
             {
               "id": "sleep-m27-l2",
-              "title": "The maintaining mechanism of Restless legs and nocturnal discomfort",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Restless legs and nocturnal discomfort.",
+              "title": "How sleep regulation works: Restless legs and nocturnal discomfort",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Restless legs and nocturnal discomfort.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1513,8 +1513,8 @@
             },
             {
               "id": "sleep-m27-l5",
-              "title": "Strategy challenge: Restless legs and nocturnal discomfort",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Restless legs and nocturnal discomfort.",
+              "title": "Choose a sleep-supporting response: Restless legs and nocturnal discomfort",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Restless legs and nocturnal discomfort.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1544,8 +1544,8 @@
             },
             {
               "id": "sleep-m28-l2",
-              "title": "The maintaining mechanism of Parasomnias and abnormal nighttime events",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Parasomnias and abnormal nighttime events.",
+              "title": "How sleep regulation works: Parasomnias and abnormal nighttime events",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Parasomnias and abnormal nighttime events.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1568,8 +1568,8 @@
             },
             {
               "id": "sleep-m28-l5",
-              "title": "Strategy challenge: Parasomnias and abnormal nighttime events",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Parasomnias and abnormal nighttime events.",
+              "title": "Choose a sleep-supporting response: Parasomnias and abnormal nighttime events",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Parasomnias and abnormal nighttime events.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1599,8 +1599,8 @@
             },
             {
               "id": "sleep-m29-l2",
-              "title": "The maintaining mechanism of Circadian phase delay versus insomnia",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Circadian phase delay versus insomnia.",
+              "title": "How sleep regulation works: Circadian phase delay versus insomnia",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Circadian phase delay versus insomnia.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1623,8 +1623,8 @@
             },
             {
               "id": "sleep-m29-l5",
-              "title": "Strategy challenge: Circadian phase delay versus insomnia",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Circadian phase delay versus insomnia.",
+              "title": "Choose a sleep-supporting response: Circadian phase delay versus insomnia",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Circadian phase delay versus insomnia.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1654,8 +1654,8 @@
             },
             {
               "id": "sleep-m30-l2",
-              "title": "The maintaining mechanism of When daytime sleepiness warrants assessment",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: When daytime sleepiness warrants assessment.",
+              "title": "How sleep regulation works: When daytime sleepiness warrants assessment",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: When daytime sleepiness warrants assessment.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1678,8 +1678,8 @@
             },
             {
               "id": "sleep-m30-l5",
-              "title": "Strategy challenge: When daytime sleepiness warrants assessment",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: When daytime sleepiness warrants assessment.",
+              "title": "Choose a sleep-supporting response: When daytime sleepiness warrants assessment",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: When daytime sleepiness warrants assessment.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1716,8 +1716,8 @@
             },
             {
               "id": "sleep-m31-l2",
-              "title": "The maintaining mechanism of Responding to fatigue without panic",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Responding to fatigue without panic.",
+              "title": "How sleep regulation works: Responding to fatigue without panic",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Responding to fatigue without panic.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1740,8 +1740,8 @@
             },
             {
               "id": "sleep-m31-l5",
-              "title": "Strategy challenge: Responding to fatigue without panic",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Responding to fatigue without panic.",
+              "title": "Choose a sleep-supporting response: Responding to fatigue without panic",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Responding to fatigue without panic.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1771,8 +1771,8 @@
             },
             {
               "id": "sleep-m32-l2",
-              "title": "The maintaining mechanism of Movement and daytime light",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Movement and daytime light.",
+              "title": "How sleep regulation works: Movement and daytime light",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Movement and daytime light.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1795,8 +1795,8 @@
             },
             {
               "id": "sleep-m32-l5",
-              "title": "Strategy challenge: Movement and daytime light",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Movement and daytime light.",
+              "title": "Choose a sleep-supporting response: Movement and daytime light",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Movement and daytime light.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1826,8 +1826,8 @@
             },
             {
               "id": "sleep-m33-l2",
-              "title": "The maintaining mechanism of Mood effects of fragmented sleep",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Mood effects of fragmented sleep.",
+              "title": "How sleep regulation works: Mood effects of fragmented sleep",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Mood effects of fragmented sleep.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1850,8 +1850,8 @@
             },
             {
               "id": "sleep-m33-l5",
-              "title": "Strategy challenge: Mood effects of fragmented sleep",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Mood effects of fragmented sleep.",
+              "title": "Choose a sleep-supporting response: Mood effects of fragmented sleep",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Mood effects of fragmented sleep.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1881,8 +1881,8 @@
             },
             {
               "id": "sleep-m34-l2",
-              "title": "The maintaining mechanism of Driving and safety after sleep loss",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Driving and safety after sleep loss.",
+              "title": "How sleep regulation works: Driving and safety after sleep loss",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Driving and safety after sleep loss.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1905,8 +1905,8 @@
             },
             {
               "id": "sleep-m34-l5",
-              "title": "Strategy challenge: Driving and safety after sleep loss",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Driving and safety after sleep loss.",
+              "title": "Choose a sleep-supporting response: Driving and safety after sleep loss",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Driving and safety after sleep loss.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1936,8 +1936,8 @@
             },
             {
               "id": "sleep-m35-l2",
-              "title": "The maintaining mechanism of Planning demanding days realistically",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Planning demanding days realistically.",
+              "title": "How sleep regulation works: Planning demanding days realistically",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Planning demanding days realistically.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1960,8 +1960,8 @@
             },
             {
               "id": "sleep-m35-l5",
-              "title": "Strategy challenge: Planning demanding days realistically",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Planning demanding days realistically.",
+              "title": "Choose a sleep-supporting response: Planning demanding days realistically",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Planning demanding days realistically.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1998,8 +1998,8 @@
             },
             {
               "id": "sleep-m36-l2",
-              "title": "The maintaining mechanism of CBT-I components and rationale",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: CBT-I components and rationale.",
+              "title": "How sleep regulation works: CBT-I components and rationale",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: CBT-I components and rationale.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2022,8 +2022,8 @@
             },
             {
               "id": "sleep-m36-l5",
-              "title": "Strategy challenge: CBT-I components and rationale",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: CBT-I components and rationale.",
+              "title": "Choose a sleep-supporting response: CBT-I components and rationale",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: CBT-I components and rationale.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2053,8 +2053,8 @@
             },
             {
               "id": "sleep-m37-l2",
-              "title": "The maintaining mechanism of How behavioural experiments address arousal",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: How behavioural experiments address arousal.",
+              "title": "How sleep regulation works: How behavioural experiments address arousal",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: How behavioural experiments address arousal.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2077,8 +2077,8 @@
             },
             {
               "id": "sleep-m37-l5",
-              "title": "Strategy challenge: How behavioural experiments address arousal",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: How behavioural experiments address arousal.",
+              "title": "Choose a sleep-supporting response: How behavioural experiments address arousal",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: How behavioural experiments address arousal.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2108,8 +2108,8 @@
             },
             {
               "id": "sleep-m38-l2",
-              "title": "The maintaining mechanism of Sleep diaries without obsessive monitoring",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Sleep diaries without obsessive monitoring.",
+              "title": "How sleep regulation works: Sleep diaries without obsessive monitoring",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Sleep diaries without obsessive monitoring.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2132,8 +2132,8 @@
             },
             {
               "id": "sleep-m38-l5",
-              "title": "Strategy challenge: Sleep diaries without obsessive monitoring",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Sleep diaries without obsessive monitoring.",
+              "title": "Choose a sleep-supporting response: Sleep diaries without obsessive monitoring",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Sleep diaries without obsessive monitoring.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2163,8 +2163,8 @@
             },
             {
               "id": "sleep-m39-l2",
-              "title": "The maintaining mechanism of Limits of over-the-counter remedies",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Limits of over-the-counter remedies.",
+              "title": "How sleep regulation works: Limits of over-the-counter remedies",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Limits of over-the-counter remedies.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2187,8 +2187,8 @@
             },
             {
               "id": "sleep-m39-l5",
-              "title": "Strategy challenge: Limits of over-the-counter remedies",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Limits of over-the-counter remedies.",
+              "title": "Choose a sleep-supporting response: Limits of over-the-counter remedies",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Limits of over-the-counter remedies.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2218,8 +2218,8 @@
             },
             {
               "id": "sleep-m40-l2",
-              "title": "The maintaining mechanism of Medication decisions and clinical review",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Medication decisions and clinical review.",
+              "title": "How sleep regulation works: Medication decisions and clinical review",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Medication decisions and clinical review.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2242,8 +2242,8 @@
             },
             {
               "id": "sleep-m40-l5",
-              "title": "Strategy challenge: Medication decisions and clinical review",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Medication decisions and clinical review.",
+              "title": "Choose a sleep-supporting response: Medication decisions and clinical review",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Medication decisions and clinical review.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2280,8 +2280,8 @@
             },
             {
               "id": "sleep-m41-l2",
-              "title": "The maintaining mechanism of Night shifts and labour policy",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Night shifts and labour policy.",
+              "title": "How sleep regulation works: Night shifts and labour policy",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Night shifts and labour policy.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2304,8 +2304,8 @@
             },
             {
               "id": "sleep-m41-l5",
-              "title": "Strategy challenge: Night shifts and labour policy",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Night shifts and labour policy.",
+              "title": "Choose a sleep-supporting response: Night shifts and labour policy",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Night shifts and labour policy.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2335,8 +2335,8 @@
             },
             {
               "id": "sleep-m42-l2",
-              "title": "The maintaining mechanism of Caregiving and interrupted sleep",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Caregiving and interrupted sleep.",
+              "title": "How sleep regulation works: Caregiving and interrupted sleep",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Caregiving and interrupted sleep.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2359,8 +2359,8 @@
             },
             {
               "id": "sleep-m42-l5",
-              "title": "Strategy challenge: Caregiving and interrupted sleep",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Caregiving and interrupted sleep.",
+              "title": "Choose a sleep-supporting response: Caregiving and interrupted sleep",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Caregiving and interrupted sleep.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2390,8 +2390,8 @@
             },
             {
               "id": "sleep-m43-l2",
-              "title": "The maintaining mechanism of Student schedules and late transport",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Student schedules and late transport.",
+              "title": "How sleep regulation works: Student schedules and late transport",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Student schedules and late transport.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2414,8 +2414,8 @@
             },
             {
               "id": "sleep-m43-l5",
-              "title": "Strategy challenge: Student schedules and late transport",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Student schedules and late transport.",
+              "title": "Choose a sleep-supporting response: Student schedules and late transport",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Student schedules and late transport.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2445,8 +2445,8 @@
             },
             {
               "id": "sleep-m44-l2",
-              "title": "The maintaining mechanism of Poverty, overcrowding and noise",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Poverty, overcrowding and noise.",
+              "title": "How sleep regulation works: Poverty, overcrowding and noise",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Poverty, overcrowding and noise.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2469,8 +2469,8 @@
             },
             {
               "id": "sleep-m44-l5",
-              "title": "Strategy challenge: Poverty, overcrowding and noise",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Poverty, overcrowding and noise.",
+              "title": "Choose a sleep-supporting response: Poverty, overcrowding and noise",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Poverty, overcrowding and noise.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2500,8 +2500,8 @@
             },
             {
               "id": "sleep-m45-l2",
-              "title": "The maintaining mechanism of Disability and sensory accessibility",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Disability and sensory accessibility.",
+              "title": "How sleep regulation works: Disability and sensory accessibility",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Disability and sensory accessibility.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2524,8 +2524,8 @@
             },
             {
               "id": "sleep-m45-l5",
-              "title": "Strategy challenge: Disability and sensory accessibility",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Disability and sensory accessibility.",
+              "title": "Choose a sleep-supporting response: Disability and sensory accessibility",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Disability and sensory accessibility.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2562,8 +2562,8 @@
             },
             {
               "id": "sleep-m46-l2",
-              "title": "The maintaining mechanism of Insomnia with depression or anxiety",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Insomnia with depression or anxiety.",
+              "title": "How sleep regulation works: Insomnia with depression or anxiety",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Insomnia with depression or anxiety.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2586,8 +2586,8 @@
             },
             {
               "id": "sleep-m46-l5",
-              "title": "Strategy challenge: Insomnia with depression or anxiety",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Insomnia with depression or anxiety.",
+              "title": "Choose a sleep-supporting response: Insomnia with depression or anxiety",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Insomnia with depression or anxiety.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2617,8 +2617,8 @@
             },
             {
               "id": "sleep-m47-l2",
-              "title": "The maintaining mechanism of Sleep tracking and measurement error",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Sleep tracking and measurement error.",
+              "title": "How sleep regulation works: Sleep tracking and measurement error",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Sleep tracking and measurement error.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2641,8 +2641,8 @@
             },
             {
               "id": "sleep-m47-l5",
-              "title": "Strategy challenge: Sleep tracking and measurement error",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Sleep tracking and measurement error.",
+              "title": "Choose a sleep-supporting response: Sleep tracking and measurement error",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Sleep tracking and measurement error.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2672,8 +2672,8 @@
             },
             {
               "id": "sleep-m48-l2",
-              "title": "The maintaining mechanism of Relapse after illness or travel",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Relapse after illness or travel.",
+              "title": "How sleep regulation works: Relapse after illness or travel",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Relapse after illness or travel.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2696,8 +2696,8 @@
             },
             {
               "id": "sleep-m48-l5",
-              "title": "Strategy challenge: Relapse after illness or travel",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Relapse after illness or travel.",
+              "title": "Choose a sleep-supporting response: Relapse after illness or travel",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Relapse after illness or travel.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2727,8 +2727,8 @@
             },
             {
               "id": "sleep-m49-l2",
-              "title": "The maintaining mechanism of Adapting treatment to irregular routines",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Adapting treatment to irregular routines.",
+              "title": "How sleep regulation works: Adapting treatment to irregular routines",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Adapting treatment to irregular routines.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2751,8 +2751,8 @@
             },
             {
               "id": "sleep-m49-l5",
-              "title": "Strategy challenge: Adapting treatment to irregular routines",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Adapting treatment to irregular routines.",
+              "title": "Choose a sleep-supporting response: Adapting treatment to irregular routines",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Adapting treatment to irregular routines.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2782,8 +2782,8 @@
             },
             {
               "id": "sleep-m50-l2",
-              "title": "The maintaining mechanism of Integrated case: target the actual mechanism",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Integrated case: target the actual mechanism.",
+              "title": "How sleep regulation works: Integrated case: target the actual mechanism",
+              "objective": "Explain the relevant physiology, conditioning and life constraints without treating normal variation as a disorder. Topic: Integrated case: target the actual mechanism.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2806,8 +2806,8 @@
             },
             {
               "id": "sleep-m50-l5",
-              "title": "Strategy challenge: Integrated case: target the actual mechanism",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Integrated case: target the actual mechanism.",
+              "title": "Choose a sleep-supporting response: Integrated case: target the actual mechanism",
+              "objective": "Compare evidence-based options, their limitations and when assessment is appropriate. Topic: Integrated case: target the actual mechanism.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []

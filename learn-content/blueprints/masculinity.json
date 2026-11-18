@@ -24,8 +24,8 @@
             },
             {
               "id": "masculinity-m1-l2",
-              "title": "The maintaining mechanism of Sex characteristics and variation",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Sex characteristics and variation.",
+              "title": "Psychology, development and social context: Sex characteristics and variation",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Sex characteristics and variation.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -48,8 +48,8 @@
             },
             {
               "id": "masculinity-m1-l5",
-              "title": "Strategy challenge: Sex characteristics and variation",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Sex characteristics and variation.",
+              "title": "Support informed and respectful choices: Sex characteristics and variation",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Sex characteristics and variation.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -79,8 +79,8 @@
             },
             {
               "id": "masculinity-m2-l2",
-              "title": "The maintaining mechanism of Gender identity versus gender expression",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Gender identity versus gender expression.",
+              "title": "Psychology, development and social context: Gender identity versus gender expression",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Gender identity versus gender expression.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -103,8 +103,8 @@
             },
             {
               "id": "masculinity-m2-l5",
-              "title": "Strategy challenge: Gender identity versus gender expression",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Gender identity versus gender expression.",
+              "title": "Support informed and respectful choices: Gender identity versus gender expression",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Gender identity versus gender expression.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -134,8 +134,8 @@
             },
             {
               "id": "masculinity-m3-l2",
-              "title": "The maintaining mechanism of Sexual orientation versus behaviour",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Sexual orientation versus behaviour.",
+              "title": "Psychology, development and social context: Sexual orientation versus behaviour",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Sexual orientation versus behaviour.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -158,8 +158,8 @@
             },
             {
               "id": "masculinity-m3-l5",
-              "title": "Strategy challenge: Sexual orientation versus behaviour",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Sexual orientation versus behaviour.",
+              "title": "Support informed and respectful choices: Sexual orientation versus behaviour",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Sexual orientation versus behaviour.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -189,8 +189,8 @@
             },
             {
               "id": "masculinity-m4-l2",
-              "title": "The maintaining mechanism of Attraction, fantasy and identification",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Attraction, fantasy and identification.",
+              "title": "Psychology, development and social context: Attraction, fantasy and identification",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Attraction, fantasy and identification.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -213,8 +213,8 @@
             },
             {
               "id": "masculinity-m4-l5",
-              "title": "Strategy challenge: Attraction, fantasy and identification",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Attraction, fantasy and identification.",
+              "title": "Support informed and respectful choices: Attraction, fantasy and identification",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Attraction, fantasy and identification.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -244,8 +244,8 @@
             },
             {
               "id": "masculinity-m5-l2",
-              "title": "The maintaining mechanism of Why categorical assumptions fail",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Why categorical assumptions fail.",
+              "title": "Psychology, development and social context: Why categorical assumptions fail",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Why categorical assumptions fail.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -268,8 +268,8 @@
             },
             {
               "id": "masculinity-m5-l5",
-              "title": "Strategy challenge: Why categorical assumptions fail",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Why categorical assumptions fail.",
+              "title": "Support informed and respectful choices: Why categorical assumptions fail",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Why categorical assumptions fail.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -306,8 +306,8 @@
             },
             {
               "id": "masculinity-m6-l2",
-              "title": "The maintaining mechanism of Questions about labels and belonging",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Questions about labels and belonging.",
+              "title": "Psychology, development and social context: Questions about labels and belonging",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Questions about labels and belonging.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -330,8 +330,8 @@
             },
             {
               "id": "masculinity-m6-l5",
-              "title": "Strategy challenge: Questions about labels and belonging",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Questions about labels and belonging.",
+              "title": "Support informed and respectful choices: Questions about labels and belonging",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Questions about labels and belonging.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -361,8 +361,8 @@
             },
             {
               "id": "masculinity-m7-l2",
-              "title": "The maintaining mechanism of Adolescence, change and continuity",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Adolescence, change and continuity.",
+              "title": "Psychology, development and social context: Adolescence, change and continuity",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Adolescence, change and continuity.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -385,8 +385,8 @@
             },
             {
               "id": "masculinity-m7-l5",
-              "title": "Strategy challenge: Adolescence, change and continuity",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Adolescence, change and continuity.",
+              "title": "Support informed and respectful choices: Adolescence, change and continuity",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Adolescence, change and continuity.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -416,8 +416,8 @@
             },
             {
               "id": "masculinity-m8-l2",
-              "title": "The maintaining mechanism of Body comfort and social presentation",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Body comfort and social presentation.",
+              "title": "Psychology, development and social context: Body comfort and social presentation",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Body comfort and social presentation.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -440,8 +440,8 @@
             },
             {
               "id": "masculinity-m8-l5",
-              "title": "Strategy challenge: Body comfort and social presentation",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Body comfort and social presentation.",
+              "title": "Support informed and respectful choices: Body comfort and social presentation",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Body comfort and social presentation.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -471,8 +471,8 @@
             },
             {
               "id": "masculinity-m9-l2",
-              "title": "The maintaining mechanism of Identity without public disclosure",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Identity without public disclosure.",
+              "title": "Psychology, development and social context: Identity without public disclosure",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Identity without public disclosure.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -495,8 +495,8 @@
             },
             {
               "id": "masculinity-m9-l5",
-              "title": "Strategy challenge: Identity without public disclosure",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Identity without public disclosure.",
+              "title": "Support informed and respectful choices: Identity without public disclosure",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Identity without public disclosure.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -526,8 +526,8 @@
             },
             {
               "id": "masculinity-m10-l2",
-              "title": "The maintaining mechanism of When uncertainty is not pathology",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: When uncertainty is not pathology.",
+              "title": "Psychology, development and social context: When uncertainty is not pathology",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: When uncertainty is not pathology.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -550,8 +550,8 @@
             },
             {
               "id": "masculinity-m10-l5",
-              "title": "Strategy challenge: When uncertainty is not pathology",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: When uncertainty is not pathology.",
+              "title": "Support informed and respectful choices: When uncertainty is not pathology",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: When uncertainty is not pathology.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -588,8 +588,8 @@
             },
             {
               "id": "masculinity-m11-l2",
-              "title": "The maintaining mechanism of Rules about acceptable masculinity",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Rules about acceptable masculinity.",
+              "title": "Psychology, development and social context: Rules about acceptable masculinity",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Rules about acceptable masculinity.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -612,8 +612,8 @@
             },
             {
               "id": "masculinity-m11-l5",
-              "title": "Strategy challenge: Rules about acceptable masculinity",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Rules about acceptable masculinity.",
+              "title": "Support informed and respectful choices: Rules about acceptable masculinity",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Rules about acceptable masculinity.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -643,8 +643,8 @@
             },
             {
               "id": "masculinity-m12-l2",
-              "title": "The maintaining mechanism of Femininity and emotional expression",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Femininity and emotional expression.",
+              "title": "Psychology, development and social context: Femininity and emotional expression",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Femininity and emotional expression.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -667,8 +667,8 @@
             },
             {
               "id": "masculinity-m12-l5",
-              "title": "Strategy challenge: Femininity and emotional expression",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Femininity and emotional expression.",
+              "title": "Support informed and respectful choices: Femininity and emotional expression",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Femininity and emotional expression.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -698,8 +698,8 @@
             },
             {
               "id": "masculinity-m13-l2",
-              "title": "The maintaining mechanism of Status policing among peers",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Status policing among peers.",
+              "title": "Psychology, development and social context: Status policing among peers",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Status policing among peers.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -722,8 +722,8 @@
             },
             {
               "id": "masculinity-m13-l5",
-              "title": "Strategy challenge: Status policing among peers",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Status policing among peers.",
+              "title": "Support informed and respectful choices: Status policing among peers",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Status policing among peers.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -753,8 +753,8 @@
             },
             {
               "id": "masculinity-m14-l2",
-              "title": "The maintaining mechanism of Family and cultural gender scripts",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Family and cultural gender scripts.",
+              "title": "Psychology, development and social context: Family and cultural gender scripts",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Family and cultural gender scripts.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -777,8 +777,8 @@
             },
             {
               "id": "masculinity-m14-l5",
-              "title": "Strategy challenge: Family and cultural gender scripts",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Family and cultural gender scripts.",
+              "title": "Support informed and respectful choices: Family and cultural gender scripts",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Family and cultural gender scripts.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -808,8 +808,8 @@
             },
             {
               "id": "masculinity-m15-l2",
-              "title": "The maintaining mechanism of When deviation triggers punishment",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: When deviation triggers punishment.",
+              "title": "Psychology, development and social context: When deviation triggers punishment",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: When deviation triggers punishment.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -832,8 +832,8 @@
             },
             {
               "id": "masculinity-m15-l5",
-              "title": "Strategy challenge: When deviation triggers punishment",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: When deviation triggers punishment.",
+              "title": "Support informed and respectful choices: When deviation triggers punishment",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: When deviation triggers punishment.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -870,8 +870,8 @@
             },
             {
               "id": "masculinity-m16-l2",
-              "title": "The maintaining mechanism of Attraction across contexts",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Attraction across contexts.",
+              "title": "Psychology, development and social context: Attraction across contexts",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Attraction across contexts.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -894,8 +894,8 @@
             },
             {
               "id": "masculinity-m16-l5",
-              "title": "Strategy challenge: Attraction across contexts",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Attraction across contexts.",
+              "title": "Support informed and respectful choices: Attraction across contexts",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Attraction across contexts.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -925,8 +925,8 @@
             },
             {
               "id": "masculinity-m17-l2",
-              "title": "The maintaining mechanism of Romantic versus sexual orientation",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Romantic versus sexual orientation.",
+              "title": "Psychology, development and social context: Romantic versus sexual orientation",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Romantic versus sexual orientation.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -949,8 +949,8 @@
             },
             {
               "id": "masculinity-m17-l5",
-              "title": "Strategy challenge: Romantic versus sexual orientation",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Romantic versus sexual orientation.",
+              "title": "Support informed and respectful choices: Romantic versus sexual orientation",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Romantic versus sexual orientation.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -980,8 +980,8 @@
             },
             {
               "id": "masculinity-m18-l2",
-              "title": "The maintaining mechanism of Desire that changes over time",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Desire that changes over time.",
+              "title": "Psychology, development and social context: Desire that changes over time",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Desire that changes over time.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1004,8 +1004,8 @@
             },
             {
               "id": "masculinity-m18-l5",
-              "title": "Strategy challenge: Desire that changes over time",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Desire that changes over time.",
+              "title": "Support informed and respectful choices: Desire that changes over time",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Desire that changes over time.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1035,8 +1035,8 @@
             },
             {
               "id": "masculinity-m19-l2",
-              "title": "The maintaining mechanism of Consensual kink and power exchange",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Consensual kink and power exchange.",
+              "title": "Psychology, development and social context: Consensual kink and power exchange",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Consensual kink and power exchange.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1059,8 +1059,8 @@
             },
             {
               "id": "masculinity-m19-l5",
-              "title": "Strategy challenge: Consensual kink and power exchange",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Consensual kink and power exchange.",
+              "title": "Support informed and respectful choices: Consensual kink and power exchange",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Consensual kink and power exchange.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1090,8 +1090,8 @@
             },
             {
               "id": "masculinity-m20-l2",
-              "title": "The maintaining mechanism of When fantasy does not dictate identity",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: When fantasy does not dictate identity.",
+              "title": "Psychology, development and social context: When fantasy does not dictate identity",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: When fantasy does not dictate identity.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1114,8 +1114,8 @@
             },
             {
               "id": "masculinity-m20-l5",
-              "title": "Strategy challenge: When fantasy does not dictate identity",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: When fantasy does not dictate identity.",
+              "title": "Support informed and respectful choices: When fantasy does not dictate identity",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: When fantasy does not dictate identity.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1152,8 +1152,8 @@
             },
             {
               "id": "masculinity-m21-l2",
-              "title": "The maintaining mechanism of Enthusiastic ongoing consent",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Enthusiastic ongoing consent.",
+              "title": "Psychology, development and social context: Enthusiastic ongoing consent",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Enthusiastic ongoing consent.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1176,8 +1176,8 @@
             },
             {
               "id": "masculinity-m21-l5",
-              "title": "Strategy challenge: Enthusiastic ongoing consent",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Enthusiastic ongoing consent.",
+              "title": "Support informed and respectful choices: Enthusiastic ongoing consent",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Enthusiastic ongoing consent.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1207,8 +1207,8 @@
             },
             {
               "id": "masculinity-m22-l2",
-              "title": "The maintaining mechanism of Boundaries that apply to both partners",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Boundaries that apply to both partners.",
+              "title": "Psychology, development and social context: Boundaries that apply to both partners",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Boundaries that apply to both partners.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1231,8 +1231,8 @@
             },
             {
               "id": "masculinity-m22-l5",
-              "title": "Strategy challenge: Boundaries that apply to both partners",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Boundaries that apply to both partners.",
+              "title": "Support informed and respectful choices: Boundaries that apply to both partners",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Boundaries that apply to both partners.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1262,8 +1262,8 @@
             },
             {
               "id": "masculinity-m23-l2",
-              "title": "The maintaining mechanism of Negotiating roles without obligation",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Negotiating roles without obligation.",
+              "title": "Psychology, development and social context: Negotiating roles without obligation",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Negotiating roles without obligation.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1286,8 +1286,8 @@
             },
             {
               "id": "masculinity-m23-l5",
-              "title": "Strategy challenge: Negotiating roles without obligation",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Negotiating roles without obligation.",
+              "title": "Support informed and respectful choices: Negotiating roles without obligation",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Negotiating roles without obligation.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1317,8 +1317,8 @@
             },
             {
               "id": "masculinity-m24-l2",
-              "title": "The maintaining mechanism of When inequality compromises free choice",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: When inequality compromises free choice.",
+              "title": "Psychology, development and social context: When inequality compromises free choice",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: When inequality compromises free choice.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1341,8 +1341,8 @@
             },
             {
               "id": "masculinity-m24-l5",
-              "title": "Strategy challenge: When inequality compromises free choice",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: When inequality compromises free choice.",
+              "title": "Support informed and respectful choices: When inequality compromises free choice",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: When inequality compromises free choice.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1372,8 +1372,8 @@
             },
             {
               "id": "masculinity-m25-l2",
-              "title": "The maintaining mechanism of Recognising manipulation in sexual contexts",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Recognising manipulation in sexual contexts.",
+              "title": "Psychology, development and social context: Recognising manipulation in sexual contexts",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Recognising manipulation in sexual contexts.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1396,8 +1396,8 @@
             },
             {
               "id": "masculinity-m25-l5",
-              "title": "Strategy challenge: Recognising manipulation in sexual contexts",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Recognising manipulation in sexual contexts.",
+              "title": "Support informed and respectful choices: Recognising manipulation in sexual contexts",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Recognising manipulation in sexual contexts.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1434,8 +1434,8 @@
             },
             {
               "id": "masculinity-m26-l2",
-              "title": "The maintaining mechanism of Shame after desire or pleasure",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Shame after desire or pleasure.",
+              "title": "Psychology, development and social context: Shame after desire or pleasure",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Shame after desire or pleasure.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1458,8 +1458,8 @@
             },
             {
               "id": "masculinity-m26-l5",
-              "title": "Strategy challenge: Shame after desire or pleasure",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Shame after desire or pleasure.",
+              "title": "Support informed and respectful choices: Shame after desire or pleasure",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Shame after desire or pleasure.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1489,8 +1489,8 @@
             },
             {
               "id": "masculinity-m27-l2",
-              "title": "The maintaining mechanism of Religious or cultural pressure and identity",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Religious or cultural pressure and identity.",
+              "title": "Psychology, development and social context: Religious or cultural pressure and identity",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Religious or cultural pressure and identity.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1513,8 +1513,8 @@
             },
             {
               "id": "masculinity-m27-l5",
-              "title": "Strategy challenge: Religious or cultural pressure and identity",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Religious or cultural pressure and identity.",
+              "title": "Support informed and respectful choices: Religious or cultural pressure and identity",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Religious or cultural pressure and identity.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1544,8 +1544,8 @@
             },
             {
               "id": "masculinity-m28-l2",
-              "title": "The maintaining mechanism of Fear of being judged by partners",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Fear of being judged by partners.",
+              "title": "Psychology, development and social context: Fear of being judged by partners",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Fear of being judged by partners.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1568,8 +1568,8 @@
             },
             {
               "id": "masculinity-m28-l5",
-              "title": "Strategy challenge: Fear of being judged by partners",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Fear of being judged by partners.",
+              "title": "Support informed and respectful choices: Fear of being judged by partners",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Fear of being judged by partners.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1599,8 +1599,8 @@
             },
             {
               "id": "masculinity-m29-l2",
-              "title": "The maintaining mechanism of Compulsive self-analysis of sexuality",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Compulsive self-analysis of sexuality.",
+              "title": "Psychology, development and social context: Compulsive self-analysis of sexuality",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Compulsive self-analysis of sexuality.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1623,8 +1623,8 @@
             },
             {
               "id": "masculinity-m29-l5",
-              "title": "Strategy challenge: Compulsive self-analysis of sexuality",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Compulsive self-analysis of sexuality.",
+              "title": "Support informed and respectful choices: Compulsive self-analysis of sexuality",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Compulsive self-analysis of sexuality.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1654,8 +1654,8 @@
             },
             {
               "id": "masculinity-m30-l2",
-              "title": "The maintaining mechanism of Seeking self-understanding without forced labels",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Seeking self-understanding without forced labels.",
+              "title": "Psychology, development and social context: Seeking self-understanding without forced labels",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Seeking self-understanding without forced labels.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1678,8 +1678,8 @@
             },
             {
               "id": "masculinity-m30-l5",
-              "title": "Strategy challenge: Seeking self-understanding without forced labels",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Seeking self-understanding without forced labels.",
+              "title": "Support informed and respectful choices: Seeking self-understanding without forced labels",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Seeking self-understanding without forced labels.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1716,8 +1716,8 @@
             },
             {
               "id": "masculinity-m31-l2",
-              "title": "The maintaining mechanism of Sexual communication and pleasure",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Sexual communication and pleasure.",
+              "title": "Psychology, development and social context: Sexual communication and pleasure",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Sexual communication and pleasure.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1740,8 +1740,8 @@
             },
             {
               "id": "masculinity-m31-l5",
-              "title": "Strategy challenge: Sexual communication and pleasure",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Sexual communication and pleasure.",
+              "title": "Support informed and respectful choices: Sexual communication and pleasure",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Sexual communication and pleasure.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1771,8 +1771,8 @@
             },
             {
               "id": "masculinity-m32-l2",
-              "title": "The maintaining mechanism of Safer-sex decisions and access",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Safer-sex decisions and access.",
+              "title": "Psychology, development and social context: Safer-sex decisions and access",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Safer-sex decisions and access.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1795,8 +1795,8 @@
             },
             {
               "id": "masculinity-m32-l5",
-              "title": "Strategy challenge: Safer-sex decisions and access",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Safer-sex decisions and access.",
+              "title": "Support informed and respectful choices: Safer-sex decisions and access",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Safer-sex decisions and access.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1826,8 +1826,8 @@
             },
             {
               "id": "masculinity-m33-l2",
-              "title": "The maintaining mechanism of Distress from unwanted repetitive behaviour",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Distress from unwanted repetitive behaviour.",
+              "title": "Psychology, development and social context: Distress from unwanted repetitive behaviour",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Distress from unwanted repetitive behaviour.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1850,8 +1850,8 @@
             },
             {
               "id": "masculinity-m33-l5",
-              "title": "Strategy challenge: Distress from unwanted repetitive behaviour",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Distress from unwanted repetitive behaviour.",
+              "title": "Support informed and respectful choices: Distress from unwanted repetitive behaviour",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Distress from unwanted repetitive behaviour.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1881,8 +1881,8 @@
             },
             {
               "id": "masculinity-m34-l2",
-              "title": "The maintaining mechanism of Sexual functioning and performance anxiety",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Sexual functioning and performance anxiety.",
+              "title": "Psychology, development and social context: Sexual functioning and performance anxiety",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Sexual functioning and performance anxiety.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1905,8 +1905,8 @@
             },
             {
               "id": "masculinity-m34-l5",
-              "title": "Strategy challenge: Sexual functioning and performance anxiety",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Sexual functioning and performance anxiety.",
+              "title": "Support informed and respectful choices: Sexual functioning and performance anxiety",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Sexual functioning and performance anxiety.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1936,8 +1936,8 @@
             },
             {
               "id": "masculinity-m35-l2",
-              "title": "The maintaining mechanism of Support for coercion or sexual violence",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Support for coercion or sexual violence.",
+              "title": "Psychology, development and social context: Support for coercion or sexual violence",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Support for coercion or sexual violence.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1960,8 +1960,8 @@
             },
             {
               "id": "masculinity-m35-l5",
-              "title": "Strategy challenge: Support for coercion or sexual violence",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Support for coercion or sexual violence.",
+              "title": "Support informed and respectful choices: Support for coercion or sexual violence",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Support for coercion or sexual violence.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1998,8 +1998,8 @@
             },
             {
               "id": "masculinity-m36-l2",
-              "title": "The maintaining mechanism of Manosphere accounts of status",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Manosphere accounts of status.",
+              "title": "Psychology, development and social context: Manosphere accounts of status",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Manosphere accounts of status.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2022,8 +2022,8 @@
             },
             {
               "id": "masculinity-m36-l5",
-              "title": "Strategy challenge: Manosphere accounts of status",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Manosphere accounts of status.",
+              "title": "Support informed and respectful choices: Manosphere accounts of status",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Manosphere accounts of status.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2053,8 +2053,8 @@
             },
             {
               "id": "masculinity-m37-l2",
-              "title": "The maintaining mechanism of Misogyny framed as self-improvement",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Misogyny framed as self-improvement.",
+              "title": "Psychology, development and social context: Misogyny framed as self-improvement",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Misogyny framed as self-improvement.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2077,8 +2077,8 @@
             },
             {
               "id": "masculinity-m37-l5",
-              "title": "Strategy challenge: Misogyny framed as self-improvement",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Misogyny framed as self-improvement.",
+              "title": "Support informed and respectful choices: Misogyny framed as self-improvement",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Misogyny framed as self-improvement.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2108,8 +2108,8 @@
             },
             {
               "id": "masculinity-m38-l2",
-              "title": "The maintaining mechanism of Influencer incentives and outrage",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Influencer incentives and outrage.",
+              "title": "Psychology, development and social context: Influencer incentives and outrage",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Influencer incentives and outrage.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2132,8 +2132,8 @@
             },
             {
               "id": "masculinity-m38-l5",
-              "title": "Strategy challenge: Influencer incentives and outrage",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Influencer incentives and outrage.",
+              "title": "Support informed and respectful choices: Influencer incentives and outrage",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Influencer incentives and outrage.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2163,8 +2163,8 @@
             },
             {
               "id": "masculinity-m39-l2",
-              "title": "The maintaining mechanism of Pornography myths about relationships",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Pornography myths about relationships.",
+              "title": "Psychology, development and social context: Pornography myths about relationships",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Pornography myths about relationships.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2187,8 +2187,8 @@
             },
             {
               "id": "masculinity-m39-l5",
-              "title": "Strategy challenge: Pornography myths about relationships",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Pornography myths about relationships.",
+              "title": "Support informed and respectful choices: Pornography myths about relationships",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Pornography myths about relationships.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2218,8 +2218,8 @@
             },
             {
               "id": "masculinity-m40-l2",
-              "title": "The maintaining mechanism of Algorithmic reinforcement of gender hostility",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Algorithmic reinforcement of gender hostility.",
+              "title": "Psychology, development and social context: Algorithmic reinforcement of gender hostility",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Algorithmic reinforcement of gender hostility.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2242,8 +2242,8 @@
             },
             {
               "id": "masculinity-m40-l5",
-              "title": "Strategy challenge: Algorithmic reinforcement of gender hostility",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Algorithmic reinforcement of gender hostility.",
+              "title": "Support informed and respectful choices: Algorithmic reinforcement of gender hostility",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Algorithmic reinforcement of gender hostility.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2280,8 +2280,8 @@
             },
             {
               "id": "masculinity-m41-l2",
-              "title": "The maintaining mechanism of Gender-based violence and risk",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Gender-based violence and risk.",
+              "title": "Psychology, development and social context: Gender-based violence and risk",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Gender-based violence and risk.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2304,8 +2304,8 @@
             },
             {
               "id": "masculinity-m41-l5",
-              "title": "Strategy challenge: Gender-based violence and risk",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Gender-based violence and risk.",
+              "title": "Support informed and respectful choices: Gender-based violence and risk",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Gender-based violence and risk.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2335,8 +2335,8 @@
             },
             {
               "id": "masculinity-m42-l2",
-              "title": "The maintaining mechanism of LGBTQ+ discrimination and minority stress",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: LGBTQ+ discrimination and minority stress.",
+              "title": "Psychology, development and social context: LGBTQ+ discrimination and minority stress",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: LGBTQ+ discrimination and minority stress.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2359,8 +2359,8 @@
             },
             {
               "id": "masculinity-m42-l5",
-              "title": "Strategy challenge: LGBTQ+ discrimination and minority stress",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: LGBTQ+ discrimination and minority stress.",
+              "title": "Support informed and respectful choices: LGBTQ+ discrimination and minority stress",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: LGBTQ+ discrimination and minority stress.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2390,8 +2390,8 @@
             },
             {
               "id": "masculinity-m43-l2",
-              "title": "The maintaining mechanism of Schools, sex education and omission",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Schools, sex education and omission.",
+              "title": "Psychology, development and social context: Schools, sex education and omission",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Schools, sex education and omission.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2414,8 +2414,8 @@
             },
             {
               "id": "masculinity-m43-l5",
-              "title": "Strategy challenge: Schools, sex education and omission",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Schools, sex education and omission.",
+              "title": "Support informed and respectful choices: Schools, sex education and omission",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Schools, sex education and omission.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2445,8 +2445,8 @@
             },
             {
               "id": "masculinity-m44-l2",
-              "title": "The maintaining mechanism of Workplace harassment and stereotypes",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Workplace harassment and stereotypes.",
+              "title": "Psychology, development and social context: Workplace harassment and stereotypes",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Workplace harassment and stereotypes.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2469,8 +2469,8 @@
             },
             {
               "id": "masculinity-m44-l5",
-              "title": "Strategy challenge: Workplace harassment and stereotypes",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Workplace harassment and stereotypes.",
+              "title": "Support informed and respectful choices: Workplace harassment and stereotypes",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Workplace harassment and stereotypes.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2500,8 +2500,8 @@
             },
             {
               "id": "masculinity-m45-l2",
-              "title": "The maintaining mechanism of Policy debates and lived consequences",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Policy debates and lived consequences.",
+              "title": "Psychology, development and social context: Policy debates and lived consequences",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Policy debates and lived consequences.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2524,8 +2524,8 @@
             },
             {
               "id": "masculinity-m45-l5",
-              "title": "Strategy challenge: Policy debates and lived consequences",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Policy debates and lived consequences.",
+              "title": "Support informed and respectful choices: Policy debates and lived consequences",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Policy debates and lived consequences.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2562,8 +2562,8 @@
             },
             {
               "id": "masculinity-m46-l2",
-              "title": "The maintaining mechanism of A couple with contrasting gender roles",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: A couple with contrasting gender roles.",
+              "title": "Psychology, development and social context: A couple with contrasting gender roles",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: A couple with contrasting gender roles.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2586,8 +2586,8 @@
             },
             {
               "id": "masculinity-m46-l5",
-              "title": "Strategy challenge: A couple with contrasting gender roles",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: A couple with contrasting gender roles.",
+              "title": "Support informed and respectful choices: A couple with contrasting gender roles",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: A couple with contrasting gender roles.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2617,8 +2617,8 @@
             },
             {
               "id": "masculinity-m47-l2",
-              "title": "The maintaining mechanism of Respecting identity without assuming experience",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Respecting identity without assuming experience.",
+              "title": "Psychology, development and social context: Respecting identity without assuming experience",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Respecting identity without assuming experience.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2641,8 +2641,8 @@
             },
             {
               "id": "masculinity-m47-l5",
-              "title": "Strategy challenge: Respecting identity without assuming experience",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Respecting identity without assuming experience.",
+              "title": "Support informed and respectful choices: Respecting identity without assuming experience",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Respecting identity without assuming experience.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2672,8 +2672,8 @@
             },
             {
               "id": "masculinity-m48-l2",
-              "title": "The maintaining mechanism of Navigating family disagreement safely",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Navigating family disagreement safely.",
+              "title": "Psychology, development and social context: Navigating family disagreement safely",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Navigating family disagreement safely.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2696,8 +2696,8 @@
             },
             {
               "id": "masculinity-m48-l5",
-              "title": "Strategy challenge: Navigating family disagreement safely",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Navigating family disagreement safely.",
+              "title": "Support informed and respectful choices: Navigating family disagreement safely",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Navigating family disagreement safely.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2727,8 +2727,8 @@
             },
             {
               "id": "masculinity-m49-l2",
-              "title": "The maintaining mechanism of Differentiating prejudice from genuine incompatibility",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Differentiating prejudice from genuine incompatibility.",
+              "title": "Psychology, development and social context: Differentiating prejudice from genuine incompatibility",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Differentiating prejudice from genuine incompatibility.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2751,8 +2751,8 @@
             },
             {
               "id": "masculinity-m49-l5",
-              "title": "Strategy challenge: Differentiating prejudice from genuine incompatibility",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Differentiating prejudice from genuine incompatibility.",
+              "title": "Support informed and respectful choices: Differentiating prejudice from genuine incompatibility",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Differentiating prejudice from genuine incompatibility.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2782,8 +2782,8 @@
             },
             {
               "id": "masculinity-m50-l2",
-              "title": "The maintaining mechanism of Integrated mission: autonomy, respect and evidence",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Integrated mission: autonomy, respect and evidence.",
+              "title": "Psychology, development and social context: Integrated mission: autonomy, respect and evidence",
+              "objective": "Explain relevant distinctions and social processes without treating any identity, orientation or bodily variation as a disorder. Topic: Integrated mission: autonomy, respect and evidence.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2806,8 +2806,8 @@
             },
             {
               "id": "masculinity-m50-l5",
-              "title": "Strategy challenge: Integrated mission: autonomy, respect and evidence",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Integrated mission: autonomy, respect and evidence.",
+              "title": "Support informed and respectful choices: Integrated mission: autonomy, respect and evidence",
+              "objective": "Identify evidence-informed, autonomy-respecting responses while accounting for consent, stigma and power. Topic: Integrated mission: autonomy, respect and evidence.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []

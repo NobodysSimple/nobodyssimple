@@ -24,8 +24,8 @@
             },
             {
               "id": "scams-m1-l2",
-              "title": "The maintaining mechanism of Time pressure and cognitive overload",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Time pressure and cognitive overload.",
+              "title": "How the deception works: Time pressure and cognitive overload",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Time pressure and cognitive overload.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -48,8 +48,8 @@
             },
             {
               "id": "scams-m1-l5",
-              "title": "Strategy challenge: Time pressure and cognitive overload",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Time pressure and cognitive overload.",
+              "title": "Protect choice and safety: Time pressure and cognitive overload",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Time pressure and cognitive overload.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -79,8 +79,8 @@
             },
             {
               "id": "scams-m2-l2",
-              "title": "The maintaining mechanism of Trust built before the request",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Trust built before the request.",
+              "title": "How the deception works: Trust built before the request",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Trust built before the request.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -103,8 +103,8 @@
             },
             {
               "id": "scams-m2-l5",
-              "title": "Strategy challenge: Trust built before the request",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Trust built before the request.",
+              "title": "Protect choice and safety: Trust built before the request",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Trust built before the request.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -134,8 +134,8 @@
             },
             {
               "id": "scams-m3-l2",
-              "title": "The maintaining mechanism of When a familiar voice feels safe",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: When a familiar voice feels safe.",
+              "title": "How the deception works: When a familiar voice feels safe",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: When a familiar voice feels safe.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -158,8 +158,8 @@
             },
             {
               "id": "scams-m3-l5",
-              "title": "Strategy challenge: When a familiar voice feels safe",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: When a familiar voice feels safe.",
+              "title": "Protect choice and safety: When a familiar voice feels safe",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: When a familiar voice feels safe.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -189,8 +189,8 @@
             },
             {
               "id": "scams-m4-l2",
-              "title": "The maintaining mechanism of Authority cues without authentication",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Authority cues without authentication.",
+              "title": "How the deception works: Authority cues without authentication",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Authority cues without authentication.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -213,8 +213,8 @@
             },
             {
               "id": "scams-m4-l5",
-              "title": "Strategy challenge: Authority cues without authentication",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Authority cues without authentication.",
+              "title": "Protect choice and safety: Authority cues without authentication",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Authority cues without authentication.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -244,8 +244,8 @@
             },
             {
               "id": "scams-m5-l2",
-              "title": "The maintaining mechanism of Shame that prevents reporting",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Shame that prevents reporting.",
+              "title": "How the deception works: Shame that prevents reporting",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Shame that prevents reporting.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -268,8 +268,8 @@
             },
             {
               "id": "scams-m5-l5",
-              "title": "Strategy challenge: Shame that prevents reporting",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Shame that prevents reporting.",
+              "title": "Protect choice and safety: Shame that prevents reporting",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Shame that prevents reporting.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -306,8 +306,8 @@
             },
             {
               "id": "scams-m6-l2",
-              "title": "The maintaining mechanism of Suspicious account-lock warnings",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Suspicious account-lock warnings.",
+              "title": "How the deception works: Suspicious account-lock warnings",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Suspicious account-lock warnings.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -330,8 +330,8 @@
             },
             {
               "id": "scams-m6-l5",
-              "title": "Strategy challenge: Suspicious account-lock warnings",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Suspicious account-lock warnings.",
+              "title": "Protect choice and safety: Suspicious account-lock warnings",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Suspicious account-lock warnings.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -361,8 +361,8 @@
             },
             {
               "id": "scams-m7-l2",
-              "title": "The maintaining mechanism of Family emergency impersonation",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Family emergency impersonation.",
+              "title": "How the deception works: Family emergency impersonation",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Family emergency impersonation.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -385,8 +385,8 @@
             },
             {
               "id": "scams-m7-l5",
-              "title": "Strategy challenge: Family emergency impersonation",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Family emergency impersonation.",
+              "title": "Protect choice and safety: Family emergency impersonation",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Family emergency impersonation.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -416,8 +416,8 @@
             },
             {
               "id": "scams-m8-l2",
-              "title": "The maintaining mechanism of Threats of legal consequences",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Threats of legal consequences.",
+              "title": "How the deception works: Threats of legal consequences",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Threats of legal consequences.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -440,8 +440,8 @@
             },
             {
               "id": "scams-m8-l5",
-              "title": "Strategy challenge: Threats of legal consequences",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Threats of legal consequences.",
+              "title": "Protect choice and safety: Threats of legal consequences",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Threats of legal consequences.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -471,8 +471,8 @@
             },
             {
               "id": "scams-m9-l2",
-              "title": "The maintaining mechanism of Pressure to keep a secret",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Pressure to keep a secret.",
+              "title": "How the deception works: Pressure to keep a secret",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Pressure to keep a secret.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -495,8 +495,8 @@
             },
             {
               "id": "scams-m9-l5",
-              "title": "Strategy challenge: Pressure to keep a secret",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Pressure to keep a secret.",
+              "title": "Protect choice and safety: Pressure to keep a secret",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Pressure to keep a secret.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -526,8 +526,8 @@
             },
             {
               "id": "scams-m10-l2",
-              "title": "The maintaining mechanism of Interrupting the urgency cycle",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Interrupting the urgency cycle.",
+              "title": "How the deception works: Interrupting the urgency cycle",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Interrupting the urgency cycle.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -550,8 +550,8 @@
             },
             {
               "id": "scams-m10-l5",
-              "title": "Strategy challenge: Interrupting the urgency cycle",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Interrupting the urgency cycle.",
+              "title": "Protect choice and safety: Interrupting the urgency cycle",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Interrupting the urgency cycle.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -588,8 +588,8 @@
             },
             {
               "id": "scams-m11-l2",
-              "title": "The maintaining mechanism of Spoofed calls and sender names",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Spoofed calls and sender names.",
+              "title": "How the deception works: Spoofed calls and sender names",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Spoofed calls and sender names.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -612,8 +612,8 @@
             },
             {
               "id": "scams-m11-l5",
-              "title": "Strategy challenge: Spoofed calls and sender names",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Spoofed calls and sender names.",
+              "title": "Protect choice and safety: Spoofed calls and sender names",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Spoofed calls and sender names.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -643,8 +643,8 @@
             },
             {
               "id": "scams-m12-l2",
-              "title": "The maintaining mechanism of Fake government letters",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Fake government letters.",
+              "title": "How the deception works: Fake government letters",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Fake government letters.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -667,8 +667,8 @@
             },
             {
               "id": "scams-m12-l5",
-              "title": "Strategy challenge: Fake government letters",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Fake government letters.",
+              "title": "Protect choice and safety: Fake government letters",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Fake government letters.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -698,8 +698,8 @@
             },
             {
               "id": "scams-m13-l2",
-              "title": "The maintaining mechanism of Imitation bank security teams",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Imitation bank security teams.",
+              "title": "How the deception works: Imitation bank security teams",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Imitation bank security teams.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -722,8 +722,8 @@
             },
             {
               "id": "scams-m13-l5",
-              "title": "Strategy challenge: Imitation bank security teams",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Imitation bank security teams.",
+              "title": "Protect choice and safety: Imitation bank security teams",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Imitation bank security teams.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -753,8 +753,8 @@
             },
             {
               "id": "scams-m14-l2",
-              "title": "The maintaining mechanism of Employer and executive impersonation",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Employer and executive impersonation.",
+              "title": "How the deception works: Employer and executive impersonation",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Employer and executive impersonation.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -777,8 +777,8 @@
             },
             {
               "id": "scams-m14-l5",
-              "title": "Strategy challenge: Employer and executive impersonation",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Employer and executive impersonation.",
+              "title": "Protect choice and safety: Employer and executive impersonation",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Employer and executive impersonation.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -808,8 +808,8 @@
             },
             {
               "id": "scams-m15-l2",
-              "title": "The maintaining mechanism of Verifying via independent contact routes",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Verifying via independent contact routes.",
+              "title": "How the deception works: Verifying via independent contact routes",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Verifying via independent contact routes.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -832,8 +832,8 @@
             },
             {
               "id": "scams-m15-l5",
-              "title": "Strategy challenge: Verifying via independent contact routes",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Verifying via independent contact routes.",
+              "title": "Protect choice and safety: Verifying via independent contact routes",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Verifying via independent contact routes.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -870,8 +870,8 @@
             },
             {
               "id": "scams-m16-l2",
-              "title": "The maintaining mechanism of Rapid attachment and future promises",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Rapid attachment and future promises.",
+              "title": "How the deception works: Rapid attachment and future promises",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Rapid attachment and future promises.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -894,8 +894,8 @@
             },
             {
               "id": "scams-m16-l5",
-              "title": "Strategy challenge: Rapid attachment and future promises",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Rapid attachment and future promises.",
+              "title": "Protect choice and safety: Rapid attachment and future promises",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Rapid attachment and future promises.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -925,8 +925,8 @@
             },
             {
               "id": "scams-m17-l2",
-              "title": "The maintaining mechanism of Requests for travel or medical money",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Requests for travel or medical money.",
+              "title": "How the deception works: Requests for travel or medical money",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Requests for travel or medical money.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -949,8 +949,8 @@
             },
             {
               "id": "scams-m17-l5",
-              "title": "Strategy challenge: Requests for travel or medical money",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Requests for travel or medical money.",
+              "title": "Protect choice and safety: Requests for travel or medical money",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Requests for travel or medical money.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -980,8 +980,8 @@
             },
             {
               "id": "scams-m18-l2",
-              "title": "The maintaining mechanism of Isolation from skeptical friends",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Isolation from skeptical friends.",
+              "title": "How the deception works: Isolation from skeptical friends",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Isolation from skeptical friends.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1004,8 +1004,8 @@
             },
             {
               "id": "scams-m18-l5",
-              "title": "Strategy challenge: Isolation from skeptical friends",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Isolation from skeptical friends.",
+              "title": "Protect choice and safety: Isolation from skeptical friends",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Isolation from skeptical friends.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1035,8 +1035,8 @@
             },
             {
               "id": "scams-m19-l2",
-              "title": "The maintaining mechanism of Shame after emotional investment",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Shame after emotional investment.",
+              "title": "How the deception works: Shame after emotional investment",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Shame after emotional investment.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1059,8 +1059,8 @@
             },
             {
               "id": "scams-m19-l5",
-              "title": "Strategy challenge: Shame after emotional investment",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Shame after emotional investment.",
+              "title": "Protect choice and safety: Shame after emotional investment",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Shame after emotional investment.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1090,8 +1090,8 @@
             },
             {
               "id": "scams-m20-l2",
-              "title": "The maintaining mechanism of Leaving without unsafe confrontation",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Leaving without unsafe confrontation.",
+              "title": "How the deception works: Leaving without unsafe confrontation",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Leaving without unsafe confrontation.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1114,8 +1114,8 @@
             },
             {
               "id": "scams-m20-l5",
-              "title": "Strategy challenge: Leaving without unsafe confrontation",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Leaving without unsafe confrontation.",
+              "title": "Protect choice and safety: Leaving without unsafe confrontation",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Leaving without unsafe confrontation.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1152,8 +1152,8 @@
             },
             {
               "id": "scams-m21-l2",
-              "title": "The maintaining mechanism of Guaranteed profits and improbable returns",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Guaranteed profits and improbable returns.",
+              "title": "How the deception works: Guaranteed profits and improbable returns",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Guaranteed profits and improbable returns.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1176,8 +1176,8 @@
             },
             {
               "id": "scams-m21-l5",
-              "title": "Strategy challenge: Guaranteed profits and improbable returns",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Guaranteed profits and improbable returns.",
+              "title": "Protect choice and safety: Guaranteed profits and improbable returns",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Guaranteed profits and improbable returns.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1207,8 +1207,8 @@
             },
             {
               "id": "scams-m22-l2",
-              "title": "The maintaining mechanism of Social proof from fabricated testimonials",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Social proof from fabricated testimonials.",
+              "title": "How the deception works: Social proof from fabricated testimonials",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Social proof from fabricated testimonials.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1231,8 +1231,8 @@
             },
             {
               "id": "scams-m22-l5",
-              "title": "Strategy challenge: Social proof from fabricated testimonials",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Social proof from fabricated testimonials.",
+              "title": "Protect choice and safety: Social proof from fabricated testimonials",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Social proof from fabricated testimonials.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1262,8 +1262,8 @@
             },
             {
               "id": "scams-m23-l2",
-              "title": "The maintaining mechanism of Ponzi-style payment narratives",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Ponzi-style payment narratives.",
+              "title": "How the deception works: Ponzi-style payment narratives",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Ponzi-style payment narratives.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1286,8 +1286,8 @@
             },
             {
               "id": "scams-m23-l5",
-              "title": "Strategy challenge: Ponzi-style payment narratives",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Ponzi-style payment narratives.",
+              "title": "Protect choice and safety: Ponzi-style payment narratives",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Ponzi-style payment narratives.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1317,8 +1317,8 @@
             },
             {
               "id": "scams-m24-l2",
-              "title": "The maintaining mechanism of Crypto and app-based deception",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Crypto and app-based deception.",
+              "title": "How the deception works: Crypto and app-based deception",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Crypto and app-based deception.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1341,8 +1341,8 @@
             },
             {
               "id": "scams-m24-l5",
-              "title": "Strategy challenge: Crypto and app-based deception",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Crypto and app-based deception.",
+              "title": "Protect choice and safety: Crypto and app-based deception",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Crypto and app-based deception.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1372,8 +1372,8 @@
             },
             {
               "id": "scams-m25-l2",
-              "title": "The maintaining mechanism of Recovery scams after a previous loss",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Recovery scams after a previous loss.",
+              "title": "How the deception works: Recovery scams after a previous loss",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Recovery scams after a previous loss.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1396,8 +1396,8 @@
             },
             {
               "id": "scams-m25-l5",
-              "title": "Strategy challenge: Recovery scams after a previous loss",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Recovery scams after a previous loss.",
+              "title": "Protect choice and safety: Recovery scams after a previous loss",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Recovery scams after a previous loss.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1434,8 +1434,8 @@
             },
             {
               "id": "scams-m26-l2",
-              "title": "The maintaining mechanism of Phishing links and fake login pages",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Phishing links and fake login pages.",
+              "title": "How the deception works: Phishing links and fake login pages",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Phishing links and fake login pages.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1458,8 +1458,8 @@
             },
             {
               "id": "scams-m26-l5",
-              "title": "Strategy challenge: Phishing links and fake login pages",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Phishing links and fake login pages.",
+              "title": "Protect choice and safety: Phishing links and fake login pages",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Phishing links and fake login pages.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1489,8 +1489,8 @@
             },
             {
               "id": "scams-m27-l2",
-              "title": "The maintaining mechanism of QR-code redirection and hidden destinations",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: QR-code redirection and hidden destinations.",
+              "title": "How the deception works: QR-code redirection and hidden destinations",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: QR-code redirection and hidden destinations.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1513,8 +1513,8 @@
             },
             {
               "id": "scams-m27-l5",
-              "title": "Strategy challenge: QR-code redirection and hidden destinations",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: QR-code redirection and hidden destinations.",
+              "title": "Protect choice and safety: QR-code redirection and hidden destinations",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: QR-code redirection and hidden destinations.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1544,8 +1544,8 @@
             },
             {
               "id": "scams-m28-l2",
-              "title": "The maintaining mechanism of Malicious attachments and permissions",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Malicious attachments and permissions.",
+              "title": "How the deception works: Malicious attachments and permissions",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Malicious attachments and permissions.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1568,8 +1568,8 @@
             },
             {
               "id": "scams-m28-l5",
-              "title": "Strategy challenge: Malicious attachments and permissions",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Malicious attachments and permissions.",
+              "title": "Protect choice and safety: Malicious attachments and permissions",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Malicious attachments and permissions.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1599,8 +1599,8 @@
             },
             {
               "id": "scams-m29-l2",
-              "title": "The maintaining mechanism of Deepfake voices and video persuasion",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Deepfake voices and video persuasion.",
+              "title": "How the deception works: Deepfake voices and video persuasion",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Deepfake voices and video persuasion.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1623,8 +1623,8 @@
             },
             {
               "id": "scams-m29-l5",
-              "title": "Strategy challenge: Deepfake voices and video persuasion",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Deepfake voices and video persuasion.",
+              "title": "Protect choice and safety: Deepfake voices and video persuasion",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Deepfake voices and video persuasion.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1654,8 +1654,8 @@
             },
             {
               "id": "scams-m30-l2",
-              "title": "The maintaining mechanism of Account takeover and password reuse",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Account takeover and password reuse.",
+              "title": "How the deception works: Account takeover and password reuse",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Account takeover and password reuse.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1678,8 +1678,8 @@
             },
             {
               "id": "scams-m30-l5",
-              "title": "Strategy challenge: Account takeover and password reuse",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Account takeover and password reuse.",
+              "title": "Protect choice and safety: Account takeover and password reuse",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Account takeover and password reuse.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1716,8 +1716,8 @@
             },
             {
               "id": "scams-m31-l2",
-              "title": "The maintaining mechanism of Reciprocity and small favours",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Reciprocity and small favours.",
+              "title": "How the deception works: Reciprocity and small favours",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Reciprocity and small favours.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1740,8 +1740,8 @@
             },
             {
               "id": "scams-m31-l5",
-              "title": "Strategy challenge: Reciprocity and small favours",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Reciprocity and small favours.",
+              "title": "Protect choice and safety: Reciprocity and small favours",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Reciprocity and small favours.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1771,8 +1771,8 @@
             },
             {
               "id": "scams-m32-l2",
-              "title": "The maintaining mechanism of Commitment escalation and sunk costs",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Commitment escalation and sunk costs.",
+              "title": "How the deception works: Commitment escalation and sunk costs",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Commitment escalation and sunk costs.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1795,8 +1795,8 @@
             },
             {
               "id": "scams-m32-l5",
-              "title": "Strategy challenge: Commitment escalation and sunk costs",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Commitment escalation and sunk costs.",
+              "title": "Protect choice and safety: Commitment escalation and sunk costs",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Commitment escalation and sunk costs.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1826,8 +1826,8 @@
             },
             {
               "id": "scams-m33-l2",
-              "title": "The maintaining mechanism of Scarcity and limited-time decisions",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Scarcity and limited-time decisions.",
+              "title": "How the deception works: Scarcity and limited-time decisions",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Scarcity and limited-time decisions.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1850,8 +1850,8 @@
             },
             {
               "id": "scams-m33-l5",
-              "title": "Strategy challenge: Scarcity and limited-time decisions",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Scarcity and limited-time decisions.",
+              "title": "Protect choice and safety: Scarcity and limited-time decisions",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Scarcity and limited-time decisions.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1881,8 +1881,8 @@
             },
             {
               "id": "scams-m34-l2",
-              "title": "The maintaining mechanism of Group pressure and fear of exclusion",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Group pressure and fear of exclusion.",
+              "title": "How the deception works: Group pressure and fear of exclusion",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Group pressure and fear of exclusion.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1905,8 +1905,8 @@
             },
             {
               "id": "scams-m34-l5",
-              "title": "Strategy challenge: Group pressure and fear of exclusion",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Group pressure and fear of exclusion.",
+              "title": "Protect choice and safety: Group pressure and fear of exclusion",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Group pressure and fear of exclusion.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1936,8 +1936,8 @@
             },
             {
               "id": "scams-m35-l2",
-              "title": "The maintaining mechanism of Trusted relationship used as a channel",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Trusted relationship used as a channel.",
+              "title": "How the deception works: Trusted relationship used as a channel",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Trusted relationship used as a channel.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1960,8 +1960,8 @@
             },
             {
               "id": "scams-m35-l5",
-              "title": "Strategy challenge: Trusted relationship used as a channel",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Trusted relationship used as a channel.",
+              "title": "Protect choice and safety: Trusted relationship used as a channel",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Trusted relationship used as a channel.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -1998,8 +1998,8 @@
             },
             {
               "id": "scams-m36-l2",
-              "title": "The maintaining mechanism of Pause and verify through another channel",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Pause and verify through another channel.",
+              "title": "How the deception works: Pause and verify through another channel",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Pause and verify through another channel.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2022,8 +2022,8 @@
             },
             {
               "id": "scams-m36-l5",
-              "title": "Strategy challenge: Pause and verify through another channel",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Pause and verify through another channel.",
+              "title": "Protect choice and safety: Pause and verify through another channel",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Pause and verify through another channel.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2053,8 +2053,8 @@
             },
             {
               "id": "scams-m37-l2",
-              "title": "The maintaining mechanism of What to do after sharing a password",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: What to do after sharing a password.",
+              "title": "How the deception works: What to do after sharing a password",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: What to do after sharing a password.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2077,8 +2077,8 @@
             },
             {
               "id": "scams-m37-l5",
-              "title": "Strategy challenge: What to do after sharing a password",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: What to do after sharing a password.",
+              "title": "Protect choice and safety: What to do after sharing a password",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: What to do after sharing a password.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2108,8 +2108,8 @@
             },
             {
               "id": "scams-m38-l2",
-              "title": "The maintaining mechanism of Responding after a financial transfer",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Responding after a financial transfer.",
+              "title": "How the deception works: Responding after a financial transfer",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Responding after a financial transfer.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2132,8 +2132,8 @@
             },
             {
               "id": "scams-m38-l5",
-              "title": "Strategy challenge: Responding after a financial transfer",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Responding after a financial transfer.",
+              "title": "Protect choice and safety: Responding after a financial transfer",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Responding after a financial transfer.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2163,8 +2163,8 @@
             },
             {
               "id": "scams-m39-l2",
-              "title": "The maintaining mechanism of Preserving useful records safely",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Preserving useful records safely.",
+              "title": "How the deception works: Preserving useful records safely",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Preserving useful records safely.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2187,8 +2187,8 @@
             },
             {
               "id": "scams-m39-l5",
-              "title": "Strategy challenge: Preserving useful records safely",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Preserving useful records safely.",
+              "title": "Protect choice and safety: Preserving useful records safely",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Preserving useful records safely.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2218,8 +2218,8 @@
             },
             {
               "id": "scams-m40-l2",
-              "title": "The maintaining mechanism of Getting assistance without secondary scams",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Getting assistance without secondary scams.",
+              "title": "How the deception works: Getting assistance without secondary scams",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Getting assistance without secondary scams.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2242,8 +2242,8 @@
             },
             {
               "id": "scams-m40-l5",
-              "title": "Strategy challenge: Getting assistance without secondary scams",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Getting assistance without secondary scams.",
+              "title": "Protect choice and safety: Getting assistance without secondary scams",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Getting assistance without secondary scams.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2280,8 +2280,8 @@
             },
             {
               "id": "scams-m41-l2",
-              "title": "The maintaining mechanism of Older adults and stereotypes",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Older adults and stereotypes.",
+              "title": "How the deception works: Older adults and stereotypes",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Older adults and stereotypes.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2304,8 +2304,8 @@
             },
             {
               "id": "scams-m41-l5",
-              "title": "Strategy challenge: Older adults and stereotypes",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Older adults and stereotypes.",
+              "title": "Protect choice and safety: Older adults and stereotypes",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Older adults and stereotypes.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2335,8 +2335,8 @@
             },
             {
               "id": "scams-m42-l2",
-              "title": "The maintaining mechanism of Language and immigration barriers",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Language and immigration barriers.",
+              "title": "How the deception works: Language and immigration barriers",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Language and immigration barriers.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2359,8 +2359,8 @@
             },
             {
               "id": "scams-m42-l5",
-              "title": "Strategy challenge: Language and immigration barriers",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Language and immigration barriers.",
+              "title": "Protect choice and safety: Language and immigration barriers",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Language and immigration barriers.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2390,8 +2390,8 @@
             },
             {
               "id": "scams-m43-l2",
-              "title": "The maintaining mechanism of Disability accessibility and scam prevention",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Disability accessibility and scam prevention.",
+              "title": "How the deception works: Disability accessibility and scam prevention",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Disability accessibility and scam prevention.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2414,8 +2414,8 @@
             },
             {
               "id": "scams-m43-l5",
-              "title": "Strategy challenge: Disability accessibility and scam prevention",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Disability accessibility and scam prevention.",
+              "title": "Protect choice and safety: Disability accessibility and scam prevention",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Disability accessibility and scam prevention.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2445,8 +2445,8 @@
             },
             {
               "id": "scams-m44-l2",
-              "title": "The maintaining mechanism of Platform advertisements carrying fraud",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Platform advertisements carrying fraud.",
+              "title": "How the deception works: Platform advertisements carrying fraud",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Platform advertisements carrying fraud.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2469,8 +2469,8 @@
             },
             {
               "id": "scams-m44-l5",
-              "title": "Strategy challenge: Platform advertisements carrying fraud",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Platform advertisements carrying fraud.",
+              "title": "Protect choice and safety: Platform advertisements carrying fraud",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Platform advertisements carrying fraud.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2500,8 +2500,8 @@
             },
             {
               "id": "scams-m45-l2",
-              "title": "The maintaining mechanism of Responsibilities of banks and technology firms",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Responsibilities of banks and technology firms.",
+              "title": "How the deception works: Responsibilities of banks and technology firms",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Responsibilities of banks and technology firms.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2524,8 +2524,8 @@
             },
             {
               "id": "scams-m45-l5",
-              "title": "Strategy challenge: Responsibilities of banks and technology firms",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Responsibilities of banks and technology firms.",
+              "title": "Protect choice and safety: Responsibilities of banks and technology firms",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Responsibilities of banks and technology firms.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2562,8 +2562,8 @@
             },
             {
               "id": "scams-m46-l2",
-              "title": "The maintaining mechanism of A legitimate request that looks suspicious",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: A legitimate request that looks suspicious.",
+              "title": "How the deception works: A legitimate request that looks suspicious",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: A legitimate request that looks suspicious.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2586,8 +2586,8 @@
             },
             {
               "id": "scams-m46-l5",
-              "title": "Strategy challenge: A legitimate request that looks suspicious",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: A legitimate request that looks suspicious.",
+              "title": "Protect choice and safety: A legitimate request that looks suspicious",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: A legitimate request that looks suspicious.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2617,8 +2617,8 @@
             },
             {
               "id": "scams-m47-l2",
-              "title": "The maintaining mechanism of A convincing scam with no obvious errors",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: A convincing scam with no obvious errors.",
+              "title": "How the deception works: A convincing scam with no obvious errors",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: A convincing scam with no obvious errors.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2641,8 +2641,8 @@
             },
             {
               "id": "scams-m47-l5",
-              "title": "Strategy challenge: A convincing scam with no obvious errors",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: A convincing scam with no obvious errors.",
+              "title": "Protect choice and safety: A convincing scam with no obvious errors",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: A convincing scam with no obvious errors.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2672,8 +2672,8 @@
             },
             {
               "id": "scams-m48-l2",
-              "title": "The maintaining mechanism of Ambiguous AI-generated evidence",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Ambiguous AI-generated evidence.",
+              "title": "How the deception works: Ambiguous AI-generated evidence",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Ambiguous AI-generated evidence.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2696,8 +2696,8 @@
             },
             {
               "id": "scams-m48-l5",
-              "title": "Strategy challenge: Ambiguous AI-generated evidence",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Ambiguous AI-generated evidence.",
+              "title": "Protect choice and safety: Ambiguous AI-generated evidence",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Ambiguous AI-generated evidence.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2727,8 +2727,8 @@
             },
             {
               "id": "scams-m49-l2",
-              "title": "The maintaining mechanism of Balancing privacy with verification",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Balancing privacy with verification.",
+              "title": "How the deception works: Balancing privacy with verification",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Balancing privacy with verification.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2751,8 +2751,8 @@
             },
             {
               "id": "scams-m49-l5",
-              "title": "Strategy challenge: Balancing privacy with verification",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Balancing privacy with verification.",
+              "title": "Protect choice and safety: Balancing privacy with verification",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Balancing privacy with verification.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2782,8 +2782,8 @@
             },
             {
               "id": "scams-m50-l2",
-              "title": "The maintaining mechanism of Integrated mission: protect someone without shaming",
-              "objective": "Explain a plausible maintaining mechanism and its context. Target problem: Integrated mission: protect someone without shaming.",
+              "title": "How the deception works: Integrated mission: protect someone without shaming",
+              "objective": "Trace influence tactics, decision constraints and trust cues without treating deception as the victim's fault. Topic: Integrated mission: protect someone without shaming.",
               "recommendedType": "chain",
               "editorialStatus": "not-authored",
               "nodes": []
@@ -2806,8 +2806,8 @@
             },
             {
               "id": "scams-m50-l5",
-              "title": "Strategy challenge: Integrated mission: protect someone without shaming",
-              "objective": "Compare strategies, constraints, risks and available supports. Target problem: Integrated mission: protect someone without shaming.",
+              "title": "Protect choice and safety: Integrated mission: protect someone without shaming",
+              "objective": "Compare safe verification, prevention, reporting and support options under different threat levels. Topic: Integrated mission: protect someone without shaming.",
               "recommendedType": "predict",
               "editorialStatus": "not-authored",
               "nodes": []
