@@ -146,7 +146,8 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   'node-delete':b=>{if(!selectedLesson()||!confirm('Remove this node?'))return;selectedLesson().nodes.splice(Number(b.dataset.n),1);n=Math.max(0,Math.min(n,selectedLesson().nodes.length-1));renderSequence();queueSave();},
   'add-row':b=>{const node=selectedNode(),key=b.dataset.list;if(!Array.isArray(node?.[key]))return;const item=rowDefault(key);node[key].push(item);renderSequence();queueSave();},
   'remove-row':b=>{const node=selectedNode();node?.[b.dataset.list]?.splice(Number(b.dataset.pos),1);renderSequence();queueSave();},
-  'row-up':b=>{const a=node?.[b.dataset.list];},
+  'row-up':b=>{const a=selectedNode()?.[b.dataset.list];if(move(a,Number(b.dataset.pos),Number(b.dataset.pos)-1)){renderSequence();queueSave();}},
+  'row-down':b=>{const a=selectedNode()?.[b.dataset.list];if(move(a,Number(b.dataset.pos),Number(b.dataset.pos)+1)){renderSequence();queueSave();}},
   'add-answer':()=>{selectedNode()?.answers?.push('');renderSequence();queueSave();},
   'remove-answer':b=>{selectedNode()?.answers?.splice(Number(b.dataset.pos),1);renderSequence();queueSave();},
   'choose-image':()=>void openMedia(),
@@ -158,8 +159,6 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   'publish':()=>void publish(),
   'unpublish':()=>void unpublish()
  };
- actions['row-up']=b=>{const a=selectedNode()?.[b.dataset.list];if(move(a,Number(b.dataset.pos),Number(b.dataset.pos)-1)){renderSequence();queueSave();}};
- actions['row-down']=b=>{const a=selectedNode()?.[b.dataset.list];if(move(a,Number(b.dataset.pos),Number(b.dataset.pos)+1)){renderSequence();queueSave();}};
  async function publish(){
   const issues=validateCourseForPublish(draft);
   if(issues.length){status(issues.slice(0,5).join(' · '),true);liveStatus('Publication blocked: '+issues.length+' issue(s).');return;}
