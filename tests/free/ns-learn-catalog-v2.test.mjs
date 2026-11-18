@@ -59,7 +59,7 @@ test('course details retain the illustrated art and do not pretend there are les
  assert.match(root.innerHTML,/No lessons published yet/);
  assert.doesNotMatch(root.innerHTML,/#learn\/lesson\//);
  renderCourseHub(root,{route:['how-it-works']});
- for(const f of LESSON_FORMATS)assert.match(root.innerHTML,new RegExp(f.name));
+ for(const f of LESSON_FORMATS)assert.match(root.innerHTML,new RegExp(f.name.replace(/&/g,'&amp;')));
 });
 
 test('catalogue retains original hero and layered paper cards',()=>{
