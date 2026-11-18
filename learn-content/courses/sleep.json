@@ -884,13 +884,13 @@
                     },
                     {
                       "id": "sleep-m1-node-1-check1-alternative-1",
-                      "label": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
-                      "feedback": "This would be relevant if intake and timing support it; neither has been recorded yet."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     },
                     {
                       "id": "sleep-m1-node-1-check1-alternative-2",
-                      "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "sleep-m1-node-1-check1-opt1",
@@ -910,26 +910,31 @@
                     },
                     {
                       "id": "sleep-m1-node-1-check2-opt2",
-                      "label": "Keep increasing the hours spent in bed until sleep arrives sooner.",
-                      "reply": "Going to bed early doesn't guarantee the body is ready for sleep.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                      "reply": "Did your wake-up time move earlier?",
+                      "consequence": "A jointly agreed next step is reasonable, though the other person may still decline.",
+                      "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                     },
                     {
                       "id": "sleep-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Are you sleepy, or mainly worried about tomorrow?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                      "reply": "Did your wake-up time move earlier?",
+                      "consequence": "This can reveal different priorities, but it may also delay an urgent factual correction.",
+                      "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                     },
                     {
                       "id": "sleep-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Keep the wake time steady for a trial period and record whether the attempted bedtime begins to feel more realistic.",
                       "reply": "Did your wake-up time move earlier?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "This may support timing, but the plan must account for how much sleep Nora is actually getting.",
+                      "feedback": "This may support timing, but the plan must account for how much sleep Nora is actually getting."
                     },
                     {
-                      "id": "sleep-m1-node-1-check2-alternative-1",
-                      "label": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
-                      "feedback": "This would be relevant if intake and timing support it; neither has been recorded yet."
+                      "id": "sleep-m1-node-1-check2-alternative-4",
+                      "label": "Consider moving bedtime gradually rather than spending extra awake hours in bed waiting for sleep.",
+                      "feedback": "A gradual change could reduce frustration, although bedtime alone may not address circadian timing.",
+                      "reply": "Did your wake-up time move earlier?",
+                      "consequence": "A gradual change could reduce frustration, although bedtime alone may not address circadian timing."
                     }
                   ],
                   "answer": "sleep-m1-node-1-check2-opt1",
@@ -1075,7 +1080,8 @@
                 },
                 {
                   "id": "sleep-m1-plan-opt2",
-                  "label": "Keep increasing the hours spent in bed until sleep arrives sooner."
+                  "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
+                  "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                 }
               ],
               "outcomes": [
@@ -1126,8 +1132,8 @@
                 },
                 {
                   "id": "sleep-m1-node-7-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Check whether the speakers had agreed on the practical expectation before the exchange.",
+                  "feedback": "The agreement may determine whether the original request was reasonable, although not why the response was so strong."
                 }
               ],
               "answer": "sleep-m1-repair-opt1"
@@ -1201,13 +1207,13 @@
                     },
                     {
                       "id": "sleep-m1-node-8-check1-alternative-1",
-                      "label": "Bea may be carrying alertness from a stimulating shift, independent of her circadian rhythm.",
-                      "feedback": "Arousal could contribute, although the repeated morning timing is suggestive."
+                      "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                      "feedback": "This is a reasonable line of inquiry, although Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry. is more directly tied to the words in this scene. Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary."
                     },
                     {
                       "id": "sleep-m1-node-8-check1-alternative-2",
-                      "label": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
-                      "feedback": "This would be relevant if intake and timing support it; neither has been recorded yet."
+                      "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                      "feedback": "This is a reasonable line of inquiry, although Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry. is more directly tied to the words in this scene. Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary."
                     }
                   ],
                   "answer": "sleep-m1-node-8-check1-opt1",
@@ -1248,8 +1254,8 @@
                 },
                 {
                   "id": "sleep-m1-node-9-alternative-1",
-                  "label": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
-                  "feedback": "This would be relevant if intake and timing support it; neither has been recorded yet."
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry. is more directly tied to the words in this scene. Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary."
                 }
               ],
               "answer": "sleep-m1-new-opt1"
@@ -1332,8 +1338,8 @@
                 },
                 {
                   "id": "sleep-m1-node-10-alternative-1",
-                  "label": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
-                  "feedback": "This would be relevant if intake and timing support it; neither has been recorded yet."
+                  "label": "Nora may be experiencing a separate persistent sleep disorder that needs assessment.",
+                  "feedback": "This alternative deserves consideration. It would become stronger if earlier expectations supported it. Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary."
                 }
               ],
               "answer": "sleep-m1-view-opt1"
@@ -1423,8 +1429,8 @@
                 },
                 {
                   "id": "sleep-m1-node-14-evidence-alternative-1",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry. is more directly tied to the words in this scene. Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary."
                 }
               ],
               "evidenceAnswer": "sleep-m1-transfer-e-opt1",
@@ -1443,8 +1449,8 @@
                 },
                 {
                   "id": "sleep-m1-node-14-response-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 }
               ],
               "responseAnswer": "sleep-m1-transfer-a-opt1"
@@ -1542,8 +1548,8 @@
                 },
                 {
                   "id": "sleep-m1-l3-n3-alternative-1",
-                  "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
+                  "feedback": "This would be relevant if intake and timing support it; neither has been recorded yet."
                 }
               ],
               "answer": "sleep-m1-l3-n3-opt2",
@@ -1581,8 +1587,8 @@
                 },
                 {
                   "id": "sleep-m1-l3-n4-alternative-1",
-                  "label": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "sleep-m1-l3-n4-opt2",
@@ -1737,8 +1743,8 @@
                   "options": [
                     {
                       "id": "sleep-m1-l4-n2-question-opt1",
-                      "label": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "Bea may have enough sleep pressure but a circadian wake signal that makes daytime sleep harder.",
+                      "feedback": "The conflict between waking history and body-clock timing fits shift work."
                     },
                     {
                       "id": "sleep-m1-l4-n2-question-opt2",
@@ -1747,8 +1753,8 @@
                     },
                     {
                       "id": "sleep-m1-l4-n2-question-opt3",
-                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                      "label": "Bea may be carrying alertness from a stimulating shift, independent of her circadian rhythm.",
+                      "feedback": "Arousal could contribute, although the repeated morning timing is suggestive."
                     },
                     {
                       "id": "sleep-m1-l4-n2-question-opt4",
@@ -1757,8 +1763,8 @@
                     },
                     {
                       "id": "sleep-m1-l4-n2-question-alternative-3",
-                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                      "label": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
+                      "feedback": "This would be relevant if intake and timing support it; neither has been recorded yet."
                     }
                   ],
                   "answer": "sleep-m1-l4-n2-question-opt2",
@@ -1799,8 +1805,8 @@
                 },
                 {
                   "id": "sleep-m1-l4-n4-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "sleep-m1-l4-n4-opt2",
@@ -1910,8 +1916,8 @@
                 },
                 {
                   "id": "sleep-m1-l4-n6-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "sleep-m1-l4-n6-opt2"
@@ -1947,8 +1953,8 @@
               "evidenceOptions": [
                 {
                   "id": "sleep-m1-l5-n2-evidence-opt1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 },
                 {
                   "id": "sleep-m1-l5-n2-evidence-opt2",
@@ -1957,21 +1963,21 @@
                 },
                 {
                   "id": "sleep-m1-l5-n2-evidence-alternative-2",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "Bea may have enough sleep pressure but a circadian wake signal that makes daytime sleep harder.",
+                  "feedback": "The conflict between waking history and body-clock timing fits shift work."
                 },
                 {
                   "id": "sleep-m1-l5-n2-evidence-alternative-3",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Bea may be carrying alertness from a stimulating shift, independent of her circadian rhythm.",
+                  "feedback": "Arousal could contribute, although the repeated morning timing is suggestive."
                 }
               ],
               "evidenceAnswer": "sleep-m1-l5-n2-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "sleep-m1-l5-n2-response-opt1",
-                  "label": "What clock time does your body normally expect wakefulness, and how has shift work changed that?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 },
                 {
                   "id": "sleep-m1-l5-n2-response-opt2",
@@ -1980,13 +1986,13 @@
                 },
                 {
                   "id": "sleep-m1-l5-n2-response-alternative-2",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Plan the sleep opportunity around shifts and control light exposure where practical.",
+                  "feedback": "This addresses timing while allowing for constraints of the work schedule."
                 },
                 {
                   "id": "sleep-m1-l5-n2-response-alternative-3",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "Record caffeine use and the timing of short naps before deciding which change to try first.",
+                  "feedback": "These factors matter, though tracking should not become another source of sleep-related worry."
                 }
               ],
               "responseAnswer": "sleep-m1-l5-n2-response-opt2"
@@ -2014,8 +2020,8 @@
                 },
                 {
                   "id": "sleep-m1-l5-n3-change-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Plan the sleep opportunity around shifts and control light exposure where practical.",
+                  "feedback": "This addresses timing while allowing for constraints of the work schedule."
                 }
               ],
               "outcomes": [
@@ -2061,8 +2067,8 @@
                 },
                 {
                   "id": "sleep-m1-l5-n4-opt3",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "Bea may be carrying alertness from a stimulating shift, independent of her circadian rhythm.",
+                  "feedback": "Arousal could contribute, although the repeated morning timing is suggestive."
                 },
                 {
                   "id": "sleep-m1-l5-n4-opt4",
@@ -2071,8 +2077,8 @@
                 },
                 {
                   "id": "sleep-m1-l5-n4-alternative-2",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
+                  "feedback": "This would be relevant if intake and timing support it; neither has been recorded yet."
                 }
               ],
               "answer": "sleep-m1-l5-n4-opt2",
@@ -2110,8 +2116,8 @@
                 },
                 {
                   "id": "sleep-m1-l5-n5-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
+                  "feedback": "This would be relevant if intake and timing support it; neither has been recorded yet."
                 }
               ],
               "answer": "sleep-m1-l5-n5-opt2",
@@ -2204,8 +2210,8 @@
                 },
                 {
                   "id": "sleep-m1-l6-n2-alternative-1",
-                  "label": "What clock time does your body normally expect wakefulness, and how has shift work changed that?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "answer": "sleep-m1-l6-n2-opt2"
