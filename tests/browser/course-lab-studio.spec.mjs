@@ -12,9 +12,9 @@ test('Course Lab authoring controls create units, lessons, reading and quizzes w
  });
  const root=page.locator('#course-lab-test-host');
  await expect(root.locator('#cl-course option')).toHaveCount(20);
- await expect(root.locator('#cl-state')).toContainText('New blank course draft');
- await root.locator('[data-act=add-unit]').click();
- await root.locator('[data-act=add-lesson]').click();
+ await expect(root.locator('.cl-unit')).toHaveCount(50);
+ await expect(root.locator('.cl-book-heading')).toHaveCount(10);
+ await expect(root.locator('#cl-meta-hint')).toContainText('300 planned lessons');
  await root.locator('#cl-new-type').selectOption('read');
  await root.locator('[data-act=add-node]').click();
  await root.locator('[data-field=body]').fill('Psychological explanations are hypotheses, not diagnoses.');
@@ -24,7 +24,7 @@ test('Course Lab authoring controls create units, lessons, reading and quizzes w
  await expect(root.locator('.cl-node')).toHaveCount(2);
  await root.locator('[data-act=preview]').click();
  await expect(root.locator('#cl-preview')).toBeVisible();
- await expect(root.locator('#cl-preview-host')).toContainText('New lesson');
+ await expect(root.locator('#cl-preview-host')).toContainText('Case file:');
  await root.locator('#cl-preview [data-start]').click();
  await expect(root.locator('#cl-preview-host')).toContainText('Psychological explanations are hypotheses');
  await root.locator('#cl-preview [data-next]').click();
@@ -33,7 +33,7 @@ test('Course Lab authoring controls create units, lessons, reading and quizzes w
  await root.locator('[data-act=save]').click();
  await expect(root.locator('#cl-state')).toContainText('Draft saved');
  await root.locator('#cl-course').selectOption('anxiety');
- await expect(root.locator('#cl-state')).toContainText('New blank course draft');
+ await expect(root.locator('.cl-unit')).toHaveCount(50);
  await root.locator('#cl-course').selectOption('narcissism');
  await expect(root.locator('.cl-node')).toHaveCount(2);
  await root.locator('[data-act=select-node][data-n="0"]').click();
