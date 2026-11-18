@@ -59,12 +59,19 @@ export function gradeLearnItem(item,response){
  }else if(item.type==='character'){
   valid=isObject(response)&&item.evidenceOptions.some(o=>o.id===response.evidence)&&item.responseOptions.some(o=>o.id===response.action);
   correct=valid&&response.evidence===item.evidenceAnswer&&response.action===item.responseAnswer;
+ }else if(item.type==='dialogue'){
+  valid=isObject(response)&&Array.isArray(item.checks)&&item.checks.length>0&&item.checks.every(check=>check.options?.some(choice=>choice.id===response[check.id]));
+  correct=valid&&item.checks.every(check=>check.answer===response[check.id]);
  }
  return {valid:!!valid,correct:!!correct,explanation:item.explanation||'',counterexample:item.counterexample||''};
 }
 export function learnLessonScore(lesson,responses){
  const items=learningNodes(lesson).filter(item=>QUESTION_TYPES.includes(item.type));
- const details=items.map(item=>({id:item.id,conceptId:item.conceptId,...gradeLearnItem(item,responses?.[item.id])}));
+ const details=items.flatMap(item=>item.type==='dialogue'?(item.checks||[]).map(check=>{
+  const chosen=responses?.[item.id]?.[check.id];
+  const valid=!!check.options?.some(option=>option.id===chosen);
+  return {id:item.id+':'+check.id,conceptId:item.conceptId,valid,correct:valid&&check.answer===chosen};
+ }):[{id:item.id,conceptId:item.conceptId,...gradeLearnItem(item,responses?.[item.id])}]);
  return {total:details.length,correct:details.filter(d=>d.correct).length,allAnswered:details.every(d=>d.valid),details};
 }
 export function flattenLearnLessons(bundle){return (bundle?.modules||[]).flatMap(module=>module.lessons.map(lesson=>({...lesson,moduleId:module.id,moduleTitle:module.title})))}
