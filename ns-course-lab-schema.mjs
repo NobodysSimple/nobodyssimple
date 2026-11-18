@@ -70,11 +70,11 @@ export function validateCourseForPublish(course){
     if(['read','image'].includes(node.type))continue;
     if(node.type==='dialogue'){
      if(!isText(node.prompt)||!isText(node.conceptId)||!isText(node.scenario)||!isText(node.speakerA)||!isText(node.speakerB))report(here,'add the learning focus, concept ID, scene and both character names');
-     const turns=node.turns||[],checks=node.checks||[];
+     const turns=Array.isArray(node.turns)?node.turns:[],checks=Array.isArray(node.checks)?node.checks:[];
      if(!Array.isArray(turns)||turns.length<2||turns.length>36||turns.some(t=>!isText(t?.id)||!['a','b'].includes(t.speaker)||!isText(t.text))||!unique(turns.map(t=>t.id))||!['a','b'].every(sp=>turns.some(t=>t.speaker===sp)))report(here,'add 2–36 valid dialogue turns featuring both characters, each with a unique ID');
-     if(!Array.isArray(checks)||checks.length<1||checks.length>8||!unique(checks.map(c=>c.id)))report(here,'add 1–8 distinct analysis questions');
+     if(!Array.isArray(checks)||checks.length<1||checks.length>8||!unique(checks.map(c=>c?.id)))report(here,'add 1–8 distinct analysis questions');
      for(const [ci,check] of (Array.isArray(checks)?checks:[]).entries()){
-      if(!isText(check.id)||!isText(check.prompt)||!validOptions(check.options)||!contains(check.options||[],check.answer)||!isText(check.explanation)||!isText(check.counterexample)||check.focusTurn&&!turns.some(t=>t.id===check.focusTurn))report(here+', question '+(ci+1),'add a question, choices, correct answer, explanation and boundary; spotlight must reference a dialogue line');
+      if(!isText(check?.id)||!isText(check?.prompt)||!validOptions(check?.options)||!contains(check?.options||[],check?.answer)||!isText(check?.explanation)||!isText(check?.counterexample)||check?.focusTurn&&!turns.some(t=>t?.id===check.focusTurn))report(here+', question '+(ci+1),'add a question, choices, correct answer, explanation and boundary; spotlight must reference a dialogue line');
      }
      continue;
     }
