@@ -3,15 +3,19 @@ Updated 18 November 2026. The **Course Lab** lives at `staff.html` behind the ex
 
 ## First-time workflow
 1. Open `staff.html`; connect with the repository owner account using an appropriately scoped GitHub token. The token is held in this page's memory only.
-2. Click **Course Lab** in the staff rail. Choose any of the existing 20 Learn courses from the selector. Each course has a permanent ID; changing the title does not break existing links.
+2. Click **Course Lab** in the staff rail. Choose any of the existing 20 Learn courses from the selector. Unstarted courses automatically load the matching **50-module / 300-lesson editorial curriculum blueprint**. Existing local work is preserved; the **Restore 50-module curriculum** button is a deliberate replacement operation.
 3. Edit the public title and summary. Click **＋ Unit** to create an ordered unit and **＋ Lesson** to create a lesson inside it.
 4. Add any number of nodes to each lesson, mixing reading pages, images, and exercises in the exact desired order.
 5. Select a node in the centre panel to edit the template's fields in the right inspector. Move nodes up/down or drag them to reorder; duplicate and delete are supported. Lessons and units also have move controls.
 6. **Save draft** stores the entire course locally in this browser using IndexedDB (with a localStorage fallback). Drafts are also autosaved, and large unfinished courses do not compete for the browser's small localStorage quota. **Export** creates a JSON backup. **Import** restores that same course's draft from a JSON file.
 7. **Preview lesson** runs the actual public Learn player without saving learner progress. Complete every exercise and inspect explanations before publishing.
-8. **Publish course** validates the complete course and commits one versioned `learn-content/courses/{courseId}.json` bundle and `learn-content/index.json` index **in the same GitHub commit**.
+8. **Publish reviewed lessons** validates only the complete lessons you have explicitly marked **Ready** and commits one versioned `learn-content/courses/{courseId}.json` bundle and `learn-content/index.json` index **in the same GitHub commit**.
 9. After GitHub Pages deploys, the correct Learn card shows the published course and its lessons at `#learn/course/{courseId}`. Opening the lesson uses `#learn/lesson/{courseId}/{lessonId}`.
 10. **Unpublish** removes that course's entry from the public index but does not delete its content history or visitors' saved progress. Republishing uses new versioning and should be reviewed.
+
+The 10 themed books contain five problem-centred modules each, and each module starts with six empty lesson outlines. You can freely rename, reorder, combine or remove these. Each lesson has an editable learning objective and recommended practice format; you must author the actual text, images and answer keys. **Never treat the generated outline as a reviewed course.**
+
+Mark a lesson **Ready** only after checking its clinical/scientific accuracy, examples, citations, accessibility and safety. The builder publishes completed Ready lessons alone, so you can release a small chapter while the remaining 295+ lessons stay in draft. The public Learn course index is unchanged until staff publishes.
 
 ## Node templates
 - **Reading page:** free text with paragraphs, optional image, caption, attribution and source note; Continue advances without scoring.
