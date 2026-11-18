@@ -278,3 +278,20 @@ body:has(.ns-learn-player--immersive){overflow:hidden!important}
  :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-avatar{flex-basis:36px;}
  :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-character__portrait--small{width:36px;height:36px;min-width:36px;flex-basis:36px;}
 }
+
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__glossary{
+ margin:0 0 18px;padding:11px 14px;background:#1c3137;border:1px solid #426b68;border-radius:14px;
+ color:#d0e7dc;font-size:13px;line-height:1.55;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__glossary summary{
+ cursor:pointer;color:#b7e6c8;font:700 13px/1.5 system-ui,sans-serif;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__glossary dl{
+ display:grid;gap:10px;margin:15px 0 4px;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__glossary dt{
+ color:#ebf8e9;font-weight:800;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__glossary dd{
+ margin:4px 0 0;color:#d6e5dd;
+}
