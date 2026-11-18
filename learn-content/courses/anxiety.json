@@ -1,10 +1,804 @@
 {
   "id": "anxiety",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Anxiety, Fear & Avoidance",
-  "description": "Explore when the body alarms before the mind through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "anxiety-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Ava",
+        "Tom"
+      ],
+      "glossary": [
+        {
+          "term": "Alarm response",
+          "definition": "A set of bodily changes that prepares us to respond to possible threat.",
+          "example": "Heart rate rises and breathing becomes faster before a crowded lecture.",
+          "limit": "A familiar anxiety response is not automatically dangerous; new or severe symptoms still deserve appropriate assessment."
+        },
+        {
+          "term": "Threat appraisal",
+          "definition": "The mind's estimate of what could go wrong and how likely or costly it might be.",
+          "example": "A racing heart is interpreted as proof of an imminent collapse.",
+          "limit": "An appraisal can be compelling without being accurate."
+        },
+        {
+          "term": "Avoidance",
+          "definition": "Staying away from a feared situation or leaving it to reduce distress.",
+          "example": "Someone steps out of a room each time their heart begins to race.",
+          "limit": "Leaving can be reasonable when danger is real; its effects differ when the threat is only anticipated."
+        },
+        {
+          "term": "Exposure",
+          "definition": "Approaching a safe feared situation sufficiently to learn what happens without relying on escape.",
+          "example": "Someone gradually stays through a familiar anxiety surge and observes it change.",
+          "limit": "Exposure should be planned around real safety and a person's circumstances, not forced regardless of risk."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "anxiety-f1-l1",
+          "title": "What are we studying?",
+          "teach": "Your body's alarm system can activate before you have worked out what is happening. We need to understand the signal before deciding how much authority to give it.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "anxiety-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "Your body's alarm system can activate before you have worked out what is happening. We need to understand the signal before deciding how much authority to give it.\n\nWhat is a bodily alarm telling us, and how do our responses affect the next one?",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            },
+            {
+              "id": "anxiety-f1-l1-n2",
+              "type": "read",
+              "title": "What alarm response means",
+              "body": "A set of bodily changes that prepares us to respond to possible threat.\n\nFor example: Heart rate rises and breathing becomes faster before a crowded lecture.\n\nOne important limit: A familiar anxiety response is not automatically dangerous; new or severe symptoms still deserve appropriate assessment.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            },
+            {
+              "id": "anxiety-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: Heart rate rises and breathing becomes faster before a crowded lecture. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "anxiety-foundation:choose",
+              "explanation": "The example most directly supports alarm response. A set of bodily changes that prepares us to respond to possible threat. A familiar anxiety response is not automatically dangerous; new or severe symptoms still deserve appropriate assessment.",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "options": [
+                {
+                  "id": "anxiety-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Alarm response.",
+                  "feedback": "This description follows from the example. A set of bodily changes that prepares us to respond to possible threat."
+                },
+                {
+                  "id": "anxiety-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Threat appraisal.",
+                  "feedback": "Threat appraisal is a genuine psychological idea, but the observation by itself does not establish it. An appraisal can be compelling without being accurate."
+                },
+                {
+                  "id": "anxiety-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Avoidance.",
+                  "feedback": "Avoidance is a genuine psychological idea, but the observation by itself does not establish it. Leaving can be reasonable when danger is real; its effects differ when the threat is only anticipated."
+                },
+                {
+                  "id": "anxiety-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Exposure.",
+                  "feedback": "Exposure is a genuine psychological idea, but the observation by itself does not establish it. Exposure should be planned around real safety and a person's circumstances, not forced regardless of risk."
+                },
+                {
+                  "id": "anxiety-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "anxiety-f1-l1-n3-o1"
+            },
+            {
+              "id": "anxiety-f1-l1-n4",
+              "type": "read",
+              "title": "What threat appraisal means",
+              "body": "The mind's estimate of what could go wrong and how likely or costly it might be.\n\nFor example: A racing heart is interpreted as proof of an imminent collapse.\n\nOne important limit: An appraisal can be compelling without being accurate.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            },
+            {
+              "id": "anxiety-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: A racing heart is interpreted as proof of an imminent collapse. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "anxiety-foundation:choose",
+              "explanation": "The example most directly supports threat appraisal. The mind's estimate of what could go wrong and how likely or costly it might be. An appraisal can be compelling without being accurate.",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "options": [
+                {
+                  "id": "anxiety-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Alarm response.",
+                  "feedback": "Alarm response is a genuine psychological idea, but the observation by itself does not establish it. A familiar anxiety response is not automatically dangerous; new or severe symptoms still deserve appropriate assessment."
+                },
+                {
+                  "id": "anxiety-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Threat appraisal.",
+                  "feedback": "This description follows from the example. The mind's estimate of what could go wrong and how likely or costly it might be."
+                },
+                {
+                  "id": "anxiety-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Avoidance.",
+                  "feedback": "Avoidance is a genuine psychological idea, but the observation by itself does not establish it. Leaving can be reasonable when danger is real; its effects differ when the threat is only anticipated."
+                },
+                {
+                  "id": "anxiety-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Exposure.",
+                  "feedback": "Exposure is a genuine psychological idea, but the observation by itself does not establish it. Exposure should be planned around real safety and a person's circumstances, not forced regardless of risk."
+                },
+                {
+                  "id": "anxiety-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "anxiety-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "anxiety-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "anxiety-f1-l2-n1",
+              "type": "read",
+              "title": "What avoidance means",
+              "body": "Staying away from a feared situation or leaving it to reduce distress.\n\nFor example: Someone steps out of a room each time their heart begins to race.\n\nOne important limit: Leaving can be reasonable when danger is real; its effects differ when the threat is only anticipated.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            },
+            {
+              "id": "anxiety-f1-l2-n2",
+              "type": "read",
+              "title": "What exposure means",
+              "body": "Approaching a safe feared situation sufficiently to learn what happens without relying on escape.\n\nFor example: Someone gradually stays through a familiar anxiety surge and observes it change.\n\nOne important limit: Exposure should be planned around real safety and a person's circumstances, not forced regardless of risk.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            },
+            {
+              "id": "anxiety-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "anxiety-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what is a bodily alarm telling us, and how do our responses affect the next one?",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "pairs": [
+                {
+                  "id": "anxiety-f1-l2-n3-p0",
+                  "label": "Alarm response",
+                  "answer": "A set of bodily changes that prepares us to respond to possible threat."
+                },
+                {
+                  "id": "anxiety-f1-l2-n3-p1",
+                  "label": "Threat appraisal",
+                  "answer": "The mind's estimate of what could go wrong and how likely or costly it might be."
+                },
+                {
+                  "id": "anxiety-f1-l2-n3-p2",
+                  "label": "Avoidance",
+                  "answer": "Staying away from a feared situation or leaving it to reduce distress."
+                },
+                {
+                  "id": "anxiety-f1-l2-n3-p3",
+                  "label": "Exposure",
+                  "answer": "Approaching a safe feared situation sufficiently to learn what happens without relying on escape."
+                }
+              ]
+            },
+            {
+              "id": "anxiety-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: Someone steps out of a room each time their heart begins to race. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "anxiety-foundation:choose",
+              "explanation": "The example most directly supports avoidance. Staying away from a feared situation or leaving it to reduce distress. Leaving can be reasonable when danger is real; its effects differ when the threat is only anticipated.",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "options": [
+                {
+                  "id": "anxiety-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Alarm response.",
+                  "feedback": "Alarm response is a genuine psychological idea, but the observation by itself does not establish it. A familiar anxiety response is not automatically dangerous; new or severe symptoms still deserve appropriate assessment."
+                },
+                {
+                  "id": "anxiety-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Threat appraisal.",
+                  "feedback": "Threat appraisal is a genuine psychological idea, but the observation by itself does not establish it. An appraisal can be compelling without being accurate."
+                },
+                {
+                  "id": "anxiety-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Avoidance.",
+                  "feedback": "This description follows from the example. Staying away from a feared situation or leaving it to reduce distress."
+                },
+                {
+                  "id": "anxiety-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Exposure.",
+                  "feedback": "Exposure is a genuine psychological idea, but the observation by itself does not establish it. Exposure should be planned around real safety and a person's circumstances, not forced regardless of risk."
+                },
+                {
+                  "id": "anxiety-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "anxiety-f1-l2-n4-o3"
+            },
+            {
+              "id": "anxiety-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "Leaving can be reasonable when danger is real; its effects differ when the threat is only anticipated.\n\nExposure should be planned around real safety and a person's circumstances, not forced regardless of risk.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            }
+          ]
+        },
+        {
+          "id": "anxiety-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "anxiety-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "A set of bodily changes that prepares us to respond to possible threat.\n\nThe mind's estimate of what could go wrong and how likely or costly it might be.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            },
+            {
+              "id": "anxiety-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: Someone gradually stays through a familiar anxiety surge and observes it change. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "anxiety-foundation:choose",
+              "explanation": "The example most directly supports exposure. Approaching a safe feared situation sufficiently to learn what happens without relying on escape. Exposure should be planned around real safety and a person's circumstances, not forced regardless of risk.",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "options": [
+                {
+                  "id": "anxiety-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Alarm response.",
+                  "feedback": "Alarm response is a genuine psychological idea, but the observation by itself does not establish it. A familiar anxiety response is not automatically dangerous; new or severe symptoms still deserve appropriate assessment."
+                },
+                {
+                  "id": "anxiety-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Threat appraisal.",
+                  "feedback": "Threat appraisal is a genuine psychological idea, but the observation by itself does not establish it. An appraisal can be compelling without being accurate."
+                },
+                {
+                  "id": "anxiety-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Avoidance.",
+                  "feedback": "Avoidance is a genuine psychological idea, but the observation by itself does not establish it. Leaving can be reasonable when danger is real; its effects differ when the threat is only anticipated."
+                },
+                {
+                  "id": "anxiety-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Exposure.",
+                  "feedback": "This description follows from the example. Approaching a safe feared situation sufficiently to learn what happens without relying on escape."
+                },
+                {
+                  "id": "anxiety-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "anxiety-f1-l3-n2-o4"
+            },
+            {
+              "id": "anxiety-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "anxiety-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what is a bodily alarm telling us, and how do our responses affect the next one?",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "pairs": [
+                {
+                  "id": "anxiety-f1-l3-n3-p0",
+                  "label": "Alarm response",
+                  "answer": "A set of bodily changes that prepares us to respond to possible threat."
+                },
+                {
+                  "id": "anxiety-f1-l3-n3-p1",
+                  "label": "Threat appraisal",
+                  "answer": "The mind's estimate of what could go wrong and how likely or costly it might be."
+                },
+                {
+                  "id": "anxiety-f1-l3-n3-p2",
+                  "label": "Avoidance",
+                  "answer": "Staying away from a feared situation or leaving it to reduce distress."
+                },
+                {
+                  "id": "anxiety-f1-l3-n3-p3",
+                  "label": "Exposure",
+                  "answer": "Approaching a safe feared situation sufficiently to learn what happens without relying on escape."
+                }
+              ]
+            },
+            {
+              "id": "anxiety-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: A racing heart is interpreted as proof of an imminent collapse. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "anxiety-foundation:choose",
+              "explanation": "The example most directly supports threat appraisal. The mind's estimate of what could go wrong and how likely or costly it might be. An appraisal can be compelling without being accurate.",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "options": [
+                {
+                  "id": "anxiety-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Alarm response.",
+                  "feedback": "Alarm response is a genuine psychological idea, but the observation by itself does not establish it. A familiar anxiety response is not automatically dangerous; new or severe symptoms still deserve appropriate assessment."
+                },
+                {
+                  "id": "anxiety-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Threat appraisal.",
+                  "feedback": "This description follows from the example. The mind's estimate of what could go wrong and how likely or costly it might be."
+                },
+                {
+                  "id": "anxiety-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Avoidance.",
+                  "feedback": "Avoidance is a genuine psychological idea, but the observation by itself does not establish it. Leaving can be reasonable when danger is real; its effects differ when the threat is only anticipated."
+                },
+                {
+                  "id": "anxiety-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Exposure.",
+                  "feedback": "Exposure is a genuine psychological idea, but the observation by itself does not establish it. Exposure should be planned around real safety and a person's circumstances, not forced regardless of risk."
+                },
+                {
+                  "id": "anxiety-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "anxiety-f1-l3-n4-o2"
+            },
+            {
+              "id": "anxiety-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between alarm response, threat appraisal, avoidance, exposure. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anxiety-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Ava",
+        "Tom"
+      ],
+      "glossary": [
+        {
+          "term": "Alarm response",
+          "definition": "A set of bodily changes that prepares us to respond to possible threat.",
+          "example": "Heart rate rises and breathing becomes faster before a crowded lecture.",
+          "limit": "A familiar anxiety response is not automatically dangerous; new or severe symptoms still deserve appropriate assessment."
+        },
+        {
+          "term": "Threat appraisal",
+          "definition": "The mind's estimate of what could go wrong and how likely or costly it might be.",
+          "example": "A racing heart is interpreted as proof of an imminent collapse.",
+          "limit": "An appraisal can be compelling without being accurate."
+        },
+        {
+          "term": "Avoidance",
+          "definition": "Staying away from a feared situation or leaving it to reduce distress.",
+          "example": "Someone steps out of a room each time their heart begins to race.",
+          "limit": "Leaving can be reasonable when danger is real; its effects differ when the threat is only anticipated."
+        },
+        {
+          "term": "Exposure",
+          "definition": "Approaching a safe feared situation sufficiently to learn what happens without relying on escape.",
+          "example": "Someone gradually stays through a familiar anxiety surge and observes it change.",
+          "limit": "Exposure should be planned around real safety and a person's circumstances, not forced regardless of risk."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "anxiety-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "anxiety-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Ava is about to enter a crowded lecture theatre. Her heart is pounding. Tom is waiting beside her.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            },
+            {
+              "id": "anxiety-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "anxiety-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "scenario": "Ava is about to enter a crowded lecture theatre. Her heart is pounding. Tom is waiting beside her.",
+              "speakerA": "Ava",
+              "speakerB": "Tom",
+              "turns": [
+                {
+                  "id": "anxiety-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "My heart's racing. Something feels wrong."
+                },
+                {
+                  "id": "anxiety-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "Are you having any new symptoms that need medical attention?"
+                },
+                {
+                  "id": "anxiety-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "No, it's the familiar surge I get before crowded rooms."
+                },
+                {
+                  "id": "anxiety-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "What usually happens if you leave straight away?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "anxiety-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "anxiety-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "anxiety-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "anxiety-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "anxiety-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "anxiety-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "anxiety-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "anxiety-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+                  "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms."
+                }
+              ]
+            },
+            {
+              "id": "anxiety-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "anxiety-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "categories": [
+                {
+                  "id": "anxiety-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "anxiety-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "anxiety-f2-l1-n3-a",
+                  "label": "“My heart's racing. Something feels wrong.”",
+                  "answer": "anxiety-f2-l1-n3-seen"
+                },
+                {
+                  "id": "anxiety-f2-l1-n3-b",
+                  "label": "The bodily alarm may be interpreted as evidence of danger. Escaping brings rapid relief, which can reinforce future avoidance even when the anticipated harm remains untested.",
+                  "answer": "anxiety-f2-l1-n3-guess"
+                },
+                {
+                  "id": "anxiety-f2-l1-n3-c",
+                  "label": "“Are you having any new symptoms that need medical attention?”",
+                  "answer": "anxiety-f2-l1-n3-seen"
+                },
+                {
+                  "id": "anxiety-f2-l1-n3-d",
+                  "label": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
+                  "answer": "anxiety-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "anxiety-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.\n\nA strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            }
+          ]
+        },
+        {
+          "id": "anxiety-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "anxiety-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "The bodily alarm may be interpreted as evidence of danger. Escaping brings rapid relief, which can reinforce future avoidance even when the anticipated harm remains untested.\n\nAnother possibility: Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            },
+            {
+              "id": "anxiety-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "anxiety-foundation:investigate",
+              "explanation": "Compare anticipated outcomes with what happens when the situation is approached safely, with appropriate medical safeguards. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "options": [
+                {
+                  "id": "anxiety-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "anxiety-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "anxiety-f2-l2-n2-o3",
+                  "label": "Compare anticipated outcomes with what happens when the situation is approached safely, with appropriate medical safeguards.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "anxiety-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "anxiety-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "anxiety-f2-l2-n2-o3"
+            },
+            {
+              "id": "anxiety-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "On three previous occasions Ava stayed in the room despite a similar familiar surge; the sensations peaked and then reduced without the feared collapse.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            },
+            {
+              "id": "anxiety-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "anxiety-foundation:choose",
+              "explanation": "Those experiences weaken the prediction that the familiar sensations necessarily lead to collapse and give her evidence about tolerating them.",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "options": [
+                {
+                  "id": "anxiety-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "anxiety-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "anxiety-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "anxiety-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "anxiety-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "anxiety-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "anxiety-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "anxiety-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "Your body's alarm system can activate before you have worked out what is happening. We need to understand the signal before deciding how much authority to give it.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            },
+            {
+              "id": "anxiety-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: Someone steps out of a room each time their heart begins to race. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "anxiety-foundation:choose",
+              "explanation": "The example most directly supports avoidance. Staying away from a feared situation or leaving it to reduce distress. Leaving can be reasonable when danger is real; its effects differ when the threat is only anticipated.",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "options": [
+                {
+                  "id": "anxiety-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Alarm response.",
+                  "feedback": "Alarm response is a genuine psychological idea, but the observation by itself does not establish it. A familiar anxiety response is not automatically dangerous; new or severe symptoms still deserve appropriate assessment."
+                },
+                {
+                  "id": "anxiety-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Threat appraisal.",
+                  "feedback": "Threat appraisal is a genuine psychological idea, but the observation by itself does not establish it. An appraisal can be compelling without being accurate."
+                },
+                {
+                  "id": "anxiety-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Avoidance.",
+                  "feedback": "This description follows from the example. Staying away from a feared situation or leaving it to reduce distress."
+                },
+                {
+                  "id": "anxiety-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Exposure.",
+                  "feedback": "Exposure is a genuine psychological idea, but the observation by itself does not establish it. Exposure should be planned around real safety and a person's circumstances, not forced regardless of risk."
+                },
+                {
+                  "id": "anxiety-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "anxiety-f2-l3-n2-o3"
+            },
+            {
+              "id": "anxiety-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "anxiety-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "categories": [
+                {
+                  "id": "anxiety-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "anxiety-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "anxiety-f2-l3-n3-a",
+                  "label": "“My heart's racing. Something feels wrong.”",
+                  "answer": "anxiety-f2-l3-n3-seen"
+                },
+                {
+                  "id": "anxiety-f2-l3-n3-b",
+                  "label": "The bodily alarm may be interpreted as evidence of danger. Escaping brings rapid relief, which can reinforce future avoidance even when the anticipated harm remains untested.",
+                  "answer": "anxiety-f2-l3-n3-guess"
+                },
+                {
+                  "id": "anxiety-f2-l3-n3-c",
+                  "label": "“Are you having any new symptoms that need medical attention?”",
+                  "answer": "anxiety-f2-l3-n3-seen"
+                },
+                {
+                  "id": "anxiety-f2-l3-n3-d",
+                  "label": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
+                  "answer": "anxiety-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "anxiety-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "anxiety-foundation:investigate",
+              "explanation": "Compare anticipated outcomes with what happens when the situation is approached safely, with appropriate medical safeguards. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance.",
+              "options": [
+                {
+                  "id": "anxiety-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "anxiety-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "anxiety-f2-l3-n4-o3",
+                  "label": "Compare anticipated outcomes with what happens when the situation is approached safely, with appropriate medical safeguards.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "anxiety-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "anxiety-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "anxiety-f2-l3-n4-o3"
+            },
+            {
+              "id": "anxiety-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. A strong bodily response is not itself proof of either safety or danger. Clinical assessment and context matter, especially for unfamiliar or severe symptoms.",
+              "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "anxiety-module-01",
       "title": "When the body alarms before the mind",
@@ -87,6 +881,16 @@
                     {
                       "id": "anxiety-m1-node-1-check1-opt3",
                       "label": "The crowd's noise or proximity may be overwhelming without fear of collapse."
+                    },
+                    {
+                      "id": "anxiety-m1-node-1-check1-alternative-1",
+                      "label": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
+                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                    },
+                    {
+                      "id": "anxiety-m1-node-1-check1-alternative-2",
+                      "label": "The bodily alarm may be interpreted as evidence of danger. Escaping brings rapid relief, which can reinforce future avoidance even when the anticipated harm remains untested.",
+                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
                     }
                   ],
                   "answer": "anxiety-m1-node-1-check1-opt1",
@@ -121,6 +925,11 @@
                       "label": "Leave every crowded place as soon as your pulse changes.",
                       "reply": "We should check actual risk without treating the sensation alone as a prediction.",
                       "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "anxiety-m1-node-1-check2-alternative-1",
+                      "label": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
+                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                     }
                   ],
                   "answer": "anxiety-m1-node-1-check2-opt1",
@@ -314,6 +1123,11 @@
                 {
                   "id": "anxiety-m1-repair-opt3",
                   "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "anxiety-m1-node-7-alternative-1",
+                  "label": "Check whether the same sensations occur in non-crowded contexts and whether they have been medically assessed when appropriate.",
+                  "feedback": "The distribution and history of symptoms can change the formulation."
                 }
               ],
               "answer": "anxiety-m1-repair-opt1"
@@ -384,6 +1198,16 @@
                     {
                       "id": "anxiety-m1-node-8-check1-opt1",
                       "label": "Attention appears to influence Iris's experience, without establishing that the symptoms have no physical cause. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "anxiety-m1-node-8-check1-alternative-1",
+                      "label": "Ava may have experienced a previous medical event that makes similar sensations especially threatening.",
+                      "feedback": "History could alter both the explanation and what a safe plan requires; it is not established here."
+                    },
+                    {
+                      "id": "anxiety-m1-node-8-check1-alternative-2",
+                      "label": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
+                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                     }
                   ],
                   "answer": "anxiety-m1-node-8-check1-opt1",
@@ -421,6 +1245,11 @@
                 {
                   "id": "anxiety-m1-new-opt1",
                   "label": "Attention appears to influence Iris's experience, without establishing that the symptoms have no physical cause. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "anxiety-m1-node-9-alternative-1",
+                  "label": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "anxiety-m1-new-opt1"
@@ -500,6 +1329,11 @@
                 {
                   "id": "anxiety-m1-view-opt2",
                   "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "anxiety-m1-node-10-alternative-1",
+                  "label": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "anxiety-m1-view-opt1"
@@ -567,6 +1401,11 @@
                 {
                   "id": "anxiety-m1-test-opt1",
                   "label": "Look for independent observations that support a physical cause for the racing heart needs medical attention. and explain the original dialogue."
+                },
+                {
+                  "id": "anxiety-m1-node-13-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "anxiety-m1-test-opt1"
@@ -597,6 +1436,11 @@
                 {
                   "id": "anxiety-m1-transfer-e-opt3",
                   "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "anxiety-m1-node-14-evidence-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "evidenceAnswer": "anxiety-m1-transfer-e-opt1",
@@ -612,6 +1456,11 @@
                 {
                   "id": "anxiety-m1-transfer-a-opt3",
                   "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "anxiety-m1-node-14-response-alternative-1",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "anxiety-m1-transfer-a-opt1"
@@ -706,6 +1555,11 @@
                   "id": "anxiety-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "anxiety-m1-l3-n3-alternative-1",
+                  "label": "The bodily alarm may be interpreted as evidence of danger. Escaping brings rapid relief, which can reinforce future avoidance even when the anticipated harm remains untested.",
+                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
                 }
               ],
               "answer": "anxiety-m1-l3-n3-opt2",
@@ -740,6 +1594,11 @@
                   "id": "anxiety-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "anxiety-m1-l3-n4-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "anxiety-m1-l3-n4-opt2",
@@ -766,19 +1625,39 @@
                   "id": "anxiety-m1-l3-n5-evidence-opt2",
                   "label": "The bodily alarm may be interpreted as evidence of danger. Escaping brings rapid relief, which can reinforce future avoidance even when the anticipated harm remains untested.",
                   "feedback": ""
+                },
+                {
+                  "id": "anxiety-m1-l3-n5-evidence-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                },
+                {
+                  "id": "anxiety-m1-l3-n5-evidence-alternative-2",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "evidenceAnswer": "anxiety-m1-l3-n5-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "anxiety-m1-l3-n5-response-opt1",
-                  "label": "Force yourself to remain inside regardless of any symptom changes.",
-                  "feedback": ""
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 },
                 {
                   "id": "anxiety-m1-l3-n5-response-opt2",
                   "label": "If this is your familiar anxiety response and the situation is safe, stay long enough to gather evidence about what the sensations do.",
                   "feedback": ""
+                },
+                {
+                  "id": "anxiety-m1-l3-n5-response-alternative-2",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                },
+                {
+                  "id": "anxiety-m1-l3-n5-response-alternative-3",
+                  "label": "Check whether the symptoms are familiar, then practise entering at a manageable pace while tracking what actually happens.",
+                  "feedback": "This supports learning without dismissing medical uncertainty."
                 }
               ],
               "responseAnswer": "anxiety-m1-l3-n5-response-opt2"
@@ -884,13 +1763,18 @@
                     },
                     {
                       "id": "anxiety-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "The bodily alarm may be interpreted as evidence of danger. Escaping brings rapid relief, which can reinforce future avoidance even when the anticipated harm remains untested.",
+                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
                     },
                     {
                       "id": "anxiety-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "anxiety-m1-l4-n2-question-alternative-2",
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     }
                   ],
                   "answer": "anxiety-m1-l4-n2-question-opt2",
@@ -928,6 +1812,11 @@
                   "id": "anxiety-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "anxiety-m1-l4-n3-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "anxiety-m1-l4-n3-opt2",
@@ -962,6 +1851,11 @@
                   "id": "anxiety-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "anxiety-m1-l4-n4-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "anxiety-m1-l4-n4-opt2",
@@ -1029,6 +1923,11 @@
                   "id": "anxiety-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "anxiety-m1-l4-n6-alternative-1",
+                  "label": "Ava may be anticipating social embarrassment rather than interpreting her bodily sensations as a physical emergency.",
+                  "feedback": "Both are plausible sources of threat, but her concern about the familiar surge needs closer examination."
                 }
               ],
               "answer": "anxiety-m1-l4-n6-opt2"
@@ -1071,19 +1970,39 @@
                   "id": "anxiety-m1-l5-n2-evidence-opt2",
                   "label": "The bodily alarm may be interpreted as evidence of danger. Escaping brings rapid relief, which can reinforce future avoidance even when the anticipated harm remains untested.",
                   "feedback": ""
+                },
+                {
+                  "id": "anxiety-m1-l5-n2-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                },
+                {
+                  "id": "anxiety-m1-l5-n2-evidence-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "anxiety-m1-l5-n2-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "anxiety-m1-l5-n2-response-opt1",
-                  "label": "Force yourself to remain inside regardless of any symptom changes.",
-                  "feedback": ""
+                  "label": "What does your body predict will happen if you stay, and what happened on previous occasions?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "anxiety-m1-l5-n2-response-opt2",
                   "label": "If this is your familiar anxiety response and the situation is safe, stay long enough to gather evidence about what the sensations do.",
                   "feedback": ""
+                },
+                {
+                  "id": "anxiety-m1-l5-n2-response-alternative-2",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                },
+                {
+                  "id": "anxiety-m1-l5-n2-response-alternative-3",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "anxiety-m1-l5-n2-response-opt2"
@@ -1110,13 +2029,18 @@
                 },
                 {
                   "id": "anxiety-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 },
                 {
                   "id": "anxiety-m1-l5-n4-opt4",
                   "label": "What does your body predict will happen if you stay, and what happened on previous occasions?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "anxiety-m1-l5-n4-alternative-2",
+                  "label": "Ava may be anticipating social embarrassment rather than interpreting her bodily sensations as a physical emergency.",
+                  "feedback": "Both are plausible sources of threat, but her concern about the familiar surge needs closer examination."
                 }
               ],
               "answer": "anxiety-m1-l5-n4-opt2",
@@ -1142,6 +2066,11 @@
                   "id": "anxiety-m1-l5-n3-action-opt2",
                   "label": "If this is your familiar anxiety response and the situation is safe, stay long enough to gather evidence about what the sensations do.",
                   "feedback": ""
+                },
+                {
+                  "id": "anxiety-m1-l5-n3-change-alternative-1",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "outcomes": [
@@ -1154,6 +2083,11 @@
                   "id": "anxiety-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "anxiety-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "anxiety-m1-l5-n3-action-opt2",
@@ -1189,6 +2123,11 @@
                   "id": "anxiety-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "anxiety-m1-l5-n5-alternative-1",
+                  "label": "Ava may be anticipating social embarrassment rather than interpreting her bodily sensations as a physical emergency.",
+                  "feedback": "Both are plausible sources of threat, but her concern about the familiar surge needs closer examination."
                 }
               ],
               "answer": "anxiety-m1-l5-n5-opt2",
@@ -1223,6 +2162,11 @@
                   "id": "anxiety-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "anxiety-m1-l5-n6-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "anxiety-m1-l5-n6-opt2"
@@ -1273,6 +2217,11 @@
                   "id": "anxiety-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "anxiety-m1-l6-n2-alternative-1",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "answer": "anxiety-m1-l6-n2-opt2"
@@ -1349,6 +2298,11 @@
                   "id": "anxiety-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "anxiety-m1-l6-n4-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "anxiety-m1-l6-n4-opt2",
@@ -1391,6 +2345,36 @@
               "sources": "Clark (1986), cognitive model of panic; NICE CG113 anxiety and panic guidance."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Ava",
+        "Tom"
+      ],
+      "glossary": [
+        {
+          "term": "Alarm response",
+          "definition": "A set of bodily changes that prepares us to respond to possible threat.",
+          "example": "Heart rate rises and breathing becomes faster before a crowded lecture.",
+          "limit": "A familiar anxiety response is not automatically dangerous; new or severe symptoms still deserve appropriate assessment."
+        },
+        {
+          "term": "Threat appraisal",
+          "definition": "The mind's estimate of what could go wrong and how likely or costly it might be.",
+          "example": "A racing heart is interpreted as proof of an imminent collapse.",
+          "limit": "An appraisal can be compelling without being accurate."
+        },
+        {
+          "term": "Avoidance",
+          "definition": "Staying away from a feared situation or leaving it to reduce distress.",
+          "example": "Someone steps out of a room each time their heart begins to race.",
+          "limit": "Leaving can be reasonable when danger is real; its effects differ when the threat is only anticipated."
+        },
+        {
+          "term": "Exposure",
+          "definition": "Approaching a safe feared situation sufficiently to learn what happens without relying on escape.",
+          "example": "Someone gradually stays through a familiar anxiety surge and observes it change.",
+          "limit": "Exposure should be planned around real safety and a person's circumstances, not forced regardless of risk."
         }
       ]
     }
