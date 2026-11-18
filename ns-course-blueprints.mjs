@@ -33,6 +33,35 @@ export function createDraftFromBlueprint(doc,{id,title,description}={}){
  })));
  return draft;
 }
+/** Rehydrate the complete editorial plan on another staff device while retaining
+ * each published lesson's authored nodes, stable IDs, edits and review status.
+ * Private, un-published local drafts do not sync until explicitly exported. */
+export function mergePublishedIntoBlueprint(blueprint,published){
+ if(!published?.id)throw Error('Missing published course to merge.');
+ const draft=createDraftFromBlueprint(blueprint,{
+  id:published.id,title:published.title||published.id,description:published.description||''
+ });
+ draft.version=published.version||1;
+ const original=new Map(draft.modules.map(unit=>[unit.id,unit]));
+ for(const publishedUnit of published.modules||[]){
+  let unit=original.get(publishedUnit.id);
+  if(!unit){
+   unit=JSON.parse(JSON.stringify(publishedUnit));
+   draft.modules.push(unit);original.set(unit.id,unit);
+   continue;
+  }
+  const baseLessons=new Map(unit.lessons.map(l=>[l.id,l]));
+  const authored=[];
+  for(const lesson of publishedUnit.lessons||[]){
+   const saved={...lesson,nodes:lesson.nodes||[],editorialStatus:'ready'};
+   if(baseLessons.has(lesson.id))Object.assign(baseLessons.get(lesson.id),saved);
+   else authored.push(saved);
+  }
+  unit.title=publishedUnit.title||unit.title;
+  unit.lessons.push(...authored);
+ }
+ return draft;
+}
 export async function fetchCurriculumBlueprint(courseId,{fetcher=fetch}={}){
  if(!idOk(courseId))throw Error('Invalid catalogue course ID.');
  const resp=await fetcher('learn-content/blueprints/'+courseId+'.json',{cache:'no-store'});
