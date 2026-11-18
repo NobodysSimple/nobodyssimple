@@ -1,10 +1,804 @@
 {
   "id": "vaping",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Social Influence & Addiction",
-  "description": "Explore conformity without direct coercion through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "vaping-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Kai",
+        "Milo"
+      ],
+      "glossary": [
+        {
+          "term": "Social norm",
+          "definition": "A belief about what people in a group commonly do or approve of.",
+          "example": "A student thinks nearly everyone in a friendship group vapes.",
+          "limit": "A perceived norm can be inaccurate, especially when noticeable behaviour stands out."
+        },
+        {
+          "term": "Normative influence",
+          "definition": "Changing behaviour because we want acceptance or fear standing out.",
+          "example": "Someone accepts a vape because they assume refusing will seem unfriendly.",
+          "limit": "Pressure can exist without overt bullying or explicit orders."
+        },
+        {
+          "term": "Nicotine dependence",
+          "definition": "A pattern in which nicotine use is maintained partly by its effects and by withdrawal or craving.",
+          "example": "Someone who initially tried vaping socially now feels uncomfortable when they go without it.",
+          "limit": "Dependence requires attention to use over time; one social episode does not establish it."
+        },
+        {
+          "term": "Autonomous choice",
+          "definition": "Making a decision that reflects your own reasons rather than untested expectations of others.",
+          "example": "A student declines to vape and stays with the group to enjoy their company.",
+          "limit": "Being included and using a particular product are not necessarily the same thing."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "vaping-f1-l1",
+          "title": "What are we studying?",
+          "teach": "Groups can influence our decisions without anybody issuing a command. At the same time, what initially leads someone to try nicotine may differ from what keeps them using it.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "vaping-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "Groups can influence our decisions without anybody issuing a command. At the same time, what initially leads someone to try nicotine may differ from what keeps them using it.\n\nHow do social expectations and nicotine's effects influence a choice?",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-f1-l1-n2",
+              "type": "read",
+              "title": "What social norm means",
+              "body": "A belief about what people in a group commonly do or approve of.\n\nFor example: A student thinks nearly everyone in a friendship group vapes.\n\nOne important limit: A perceived norm can be inaccurate, especially when noticeable behaviour stands out.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: A student thinks nearly everyone in a friendship group vapes. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "vaping-foundation:choose",
+              "explanation": "The example most directly supports social norm. A belief about what people in a group commonly do or approve of. A perceived norm can be inaccurate, especially when noticeable behaviour stands out.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Social norm.",
+                  "feedback": "This description follows from the example. A belief about what people in a group commonly do or approve of."
+                },
+                {
+                  "id": "vaping-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Normative influence.",
+                  "feedback": "Normative influence is a genuine psychological idea, but the observation by itself does not establish it. Pressure can exist without overt bullying or explicit orders."
+                },
+                {
+                  "id": "vaping-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Nicotine dependence.",
+                  "feedback": "Nicotine dependence is a genuine psychological idea, but the observation by itself does not establish it. Dependence requires attention to use over time; one social episode does not establish it."
+                },
+                {
+                  "id": "vaping-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Autonomous choice.",
+                  "feedback": "Autonomous choice is a genuine psychological idea, but the observation by itself does not establish it. Being included and using a particular product are not necessarily the same thing."
+                },
+                {
+                  "id": "vaping-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "vaping-f1-l1-n3-o1"
+            },
+            {
+              "id": "vaping-f1-l1-n4",
+              "type": "read",
+              "title": "What normative influence means",
+              "body": "Changing behaviour because we want acceptance or fear standing out.\n\nFor example: Someone accepts a vape because they assume refusing will seem unfriendly.\n\nOne important limit: Pressure can exist without overt bullying or explicit orders.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: Someone accepts a vape because they assume refusing will seem unfriendly. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "vaping-foundation:choose",
+              "explanation": "The example most directly supports normative influence. Changing behaviour because we want acceptance or fear standing out. Pressure can exist without overt bullying or explicit orders.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Social norm.",
+                  "feedback": "Social norm is a genuine psychological idea, but the observation by itself does not establish it. A perceived norm can be inaccurate, especially when noticeable behaviour stands out."
+                },
+                {
+                  "id": "vaping-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Normative influence.",
+                  "feedback": "This description follows from the example. Changing behaviour because we want acceptance or fear standing out."
+                },
+                {
+                  "id": "vaping-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Nicotine dependence.",
+                  "feedback": "Nicotine dependence is a genuine psychological idea, but the observation by itself does not establish it. Dependence requires attention to use over time; one social episode does not establish it."
+                },
+                {
+                  "id": "vaping-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Autonomous choice.",
+                  "feedback": "Autonomous choice is a genuine psychological idea, but the observation by itself does not establish it. Being included and using a particular product are not necessarily the same thing."
+                },
+                {
+                  "id": "vaping-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "vaping-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "vaping-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "vaping-f1-l2-n1",
+              "type": "read",
+              "title": "What nicotine dependence means",
+              "body": "A pattern in which nicotine use is maintained partly by its effects and by withdrawal or craving.\n\nFor example: Someone who initially tried vaping socially now feels uncomfortable when they go without it.\n\nOne important limit: Dependence requires attention to use over time; one social episode does not establish it.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-f1-l2-n2",
+              "type": "read",
+              "title": "What autonomous choice means",
+              "body": "Making a decision that reflects your own reasons rather than untested expectations of others.\n\nFor example: A student declines to vape and stays with the group to enjoy their company.\n\nOne important limit: Being included and using a particular product are not necessarily the same thing.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "vaping-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of how do social expectations and nicotine's effects influence a choice?",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "pairs": [
+                {
+                  "id": "vaping-f1-l2-n3-p0",
+                  "label": "Social norm",
+                  "answer": "A belief about what people in a group commonly do or approve of."
+                },
+                {
+                  "id": "vaping-f1-l2-n3-p1",
+                  "label": "Normative influence",
+                  "answer": "Changing behaviour because we want acceptance or fear standing out."
+                },
+                {
+                  "id": "vaping-f1-l2-n3-p2",
+                  "label": "Nicotine dependence",
+                  "answer": "A pattern in which nicotine use is maintained partly by its effects and by withdrawal or craving."
+                },
+                {
+                  "id": "vaping-f1-l2-n3-p3",
+                  "label": "Autonomous choice",
+                  "answer": "Making a decision that reflects your own reasons rather than untested expectations of others."
+                }
+              ]
+            },
+            {
+              "id": "vaping-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: Someone who initially tried vaping socially now feels uncomfortable when they go without it. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "vaping-foundation:choose",
+              "explanation": "The example most directly supports nicotine dependence. A pattern in which nicotine use is maintained partly by its effects and by withdrawal or craving. Dependence requires attention to use over time; one social episode does not establish it.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Social norm.",
+                  "feedback": "Social norm is a genuine psychological idea, but the observation by itself does not establish it. A perceived norm can be inaccurate, especially when noticeable behaviour stands out."
+                },
+                {
+                  "id": "vaping-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Normative influence.",
+                  "feedback": "Normative influence is a genuine psychological idea, but the observation by itself does not establish it. Pressure can exist without overt bullying or explicit orders."
+                },
+                {
+                  "id": "vaping-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Nicotine dependence.",
+                  "feedback": "This description follows from the example. A pattern in which nicotine use is maintained partly by its effects and by withdrawal or craving."
+                },
+                {
+                  "id": "vaping-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Autonomous choice.",
+                  "feedback": "Autonomous choice is a genuine psychological idea, but the observation by itself does not establish it. Being included and using a particular product are not necessarily the same thing."
+                },
+                {
+                  "id": "vaping-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "vaping-f1-l2-n4-o3"
+            },
+            {
+              "id": "vaping-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "Dependence requires attention to use over time; one social episode does not establish it.\n\nBeing included and using a particular product are not necessarily the same thing.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            }
+          ]
+        },
+        {
+          "id": "vaping-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "vaping-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "A belief about what people in a group commonly do or approve of.\n\nChanging behaviour because we want acceptance or fear standing out.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: A student declines to vape and stays with the group to enjoy their company. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "vaping-foundation:choose",
+              "explanation": "The example most directly supports autonomous choice. Making a decision that reflects your own reasons rather than untested expectations of others. Being included and using a particular product are not necessarily the same thing.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Social norm.",
+                  "feedback": "Social norm is a genuine psychological idea, but the observation by itself does not establish it. A perceived norm can be inaccurate, especially when noticeable behaviour stands out."
+                },
+                {
+                  "id": "vaping-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Normative influence.",
+                  "feedback": "Normative influence is a genuine psychological idea, but the observation by itself does not establish it. Pressure can exist without overt bullying or explicit orders."
+                },
+                {
+                  "id": "vaping-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Nicotine dependence.",
+                  "feedback": "Nicotine dependence is a genuine psychological idea, but the observation by itself does not establish it. Dependence requires attention to use over time; one social episode does not establish it."
+                },
+                {
+                  "id": "vaping-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Autonomous choice.",
+                  "feedback": "This description follows from the example. Making a decision that reflects your own reasons rather than untested expectations of others."
+                },
+                {
+                  "id": "vaping-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "vaping-f1-l3-n2-o4"
+            },
+            {
+              "id": "vaping-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "vaping-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of how do social expectations and nicotine's effects influence a choice?",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "pairs": [
+                {
+                  "id": "vaping-f1-l3-n3-p0",
+                  "label": "Social norm",
+                  "answer": "A belief about what people in a group commonly do or approve of."
+                },
+                {
+                  "id": "vaping-f1-l3-n3-p1",
+                  "label": "Normative influence",
+                  "answer": "Changing behaviour because we want acceptance or fear standing out."
+                },
+                {
+                  "id": "vaping-f1-l3-n3-p2",
+                  "label": "Nicotine dependence",
+                  "answer": "A pattern in which nicotine use is maintained partly by its effects and by withdrawal or craving."
+                },
+                {
+                  "id": "vaping-f1-l3-n3-p3",
+                  "label": "Autonomous choice",
+                  "answer": "Making a decision that reflects your own reasons rather than untested expectations of others."
+                }
+              ]
+            },
+            {
+              "id": "vaping-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: Someone accepts a vape because they assume refusing will seem unfriendly. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "vaping-foundation:choose",
+              "explanation": "The example most directly supports normative influence. Changing behaviour because we want acceptance or fear standing out. Pressure can exist without overt bullying or explicit orders.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Social norm.",
+                  "feedback": "Social norm is a genuine psychological idea, but the observation by itself does not establish it. A perceived norm can be inaccurate, especially when noticeable behaviour stands out."
+                },
+                {
+                  "id": "vaping-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Normative influence.",
+                  "feedback": "This description follows from the example. Changing behaviour because we want acceptance or fear standing out."
+                },
+                {
+                  "id": "vaping-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Nicotine dependence.",
+                  "feedback": "Nicotine dependence is a genuine psychological idea, but the observation by itself does not establish it. Dependence requires attention to use over time; one social episode does not establish it."
+                },
+                {
+                  "id": "vaping-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Autonomous choice.",
+                  "feedback": "Autonomous choice is a genuine psychological idea, but the observation by itself does not establish it. Being included and using a particular product are not necessarily the same thing."
+                },
+                {
+                  "id": "vaping-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "vaping-f1-l3-n4-o2"
+            },
+            {
+              "id": "vaping-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between social norm, normative influence, nicotine dependence, autonomous choice. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vaping-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Kai",
+        "Milo"
+      ],
+      "glossary": [
+        {
+          "term": "Social norm",
+          "definition": "A belief about what people in a group commonly do or approve of.",
+          "example": "A student thinks nearly everyone in a friendship group vapes.",
+          "limit": "A perceived norm can be inaccurate, especially when noticeable behaviour stands out."
+        },
+        {
+          "term": "Normative influence",
+          "definition": "Changing behaviour because we want acceptance or fear standing out.",
+          "example": "Someone accepts a vape because they assume refusing will seem unfriendly.",
+          "limit": "Pressure can exist without overt bullying or explicit orders."
+        },
+        {
+          "term": "Nicotine dependence",
+          "definition": "A pattern in which nicotine use is maintained partly by its effects and by withdrawal or craving.",
+          "example": "Someone who initially tried vaping socially now feels uncomfortable when they go without it.",
+          "limit": "Dependence requires attention to use over time; one social episode does not establish it."
+        },
+        {
+          "term": "Autonomous choice",
+          "definition": "Making a decision that reflects your own reasons rather than untested expectations of others.",
+          "example": "A student declines to vape and stays with the group to enjoy their company.",
+          "limit": "Being included and using a particular product are not necessarily the same thing."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "vaping-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "vaping-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Kai is new to a friendship group where several people vape during breaks. Milo notices Kai has started joining them.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "vaping-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "scenario": "Kai is new to a friendship group where several people vape during breaks. Milo notices Kai has started joining them.",
+              "speakerA": "Kai",
+              "speakerB": "Milo",
+              "turns": [
+                {
+                  "id": "vaping-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "I didn't really want to try it, but everyone was outside vaping."
+                },
+                {
+                  "id": "vaping-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "Did anyone actually ask you to take one?"
+                },
+                {
+                  "id": "vaping-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "No. I just felt strange being the only person standing there without one."
+                },
+                {
+                  "id": "vaping-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "What did you think they'd conclude if you declined?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "vaping-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "vaping-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "vaping-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "vaping-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "vaping-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "vaping-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "vaping-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "vaping-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+                  "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention."
+                }
+              ]
+            },
+            {
+              "id": "vaping-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "vaping-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "categories": [
+                {
+                  "id": "vaping-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "vaping-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "vaping-f2-l1-n3-a",
+                  "label": "“I didn't really want to try it, but everyone was outside vaping.”",
+                  "answer": "vaping-f2-l1-n3-seen"
+                },
+                {
+                  "id": "vaping-f2-l1-n3-b",
+                  "label": "Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.",
+                  "answer": "vaping-f2-l1-n3-guess"
+                },
+                {
+                  "id": "vaping-f2-l1-n3-c",
+                  "label": "“Did anyone actually ask you to take one?”",
+                  "answer": "vaping-f2-l1-n3-seen"
+                },
+                {
+                  "id": "vaping-f2-l1-n3-d",
+                  "label": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
+                  "answer": "vaping-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "vaping-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.\n\nSocial influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            }
+          ]
+        },
+        {
+          "id": "vaping-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "vaping-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.\n\nAnother possibility: Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "vaping-foundation:investigate",
+              "explanation": "Compare Kai's anticipated social consequences with how the group responds to a clear refusal, while separately considering cravings and habit cues. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "vaping-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "vaping-f2-l2-n2-o3",
+                  "label": "Compare Kai's anticipated social consequences with how the group responds to a clear refusal, while separately considering cravings and habit cues.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "vaping-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "vaping-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "vaping-f2-l2-n2-o3"
+            },
+            {
+              "id": "vaping-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "Kai tells a friend he doesn't want to vape; the friend replies that nobody expects him to and still invites him to join every break.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "vaping-foundation:choose",
+              "explanation": "The response weakens Kai's prediction of rejection for refusing. If he continues vaping, other reinforcers may require closer examination.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "vaping-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "vaping-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "vaping-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "vaping-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "vaping-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "vaping-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "vaping-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "Groups can influence our decisions without anybody issuing a command. At the same time, what initially leads someone to try nicotine may differ from what keeps them using it.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: Someone who initially tried vaping socially now feels uncomfortable when they go without it. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "vaping-foundation:choose",
+              "explanation": "The example most directly supports nicotine dependence. A pattern in which nicotine use is maintained partly by its effects and by withdrawal or craving. Dependence requires attention to use over time; one social episode does not establish it.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Social norm.",
+                  "feedback": "Social norm is a genuine psychological idea, but the observation by itself does not establish it. A perceived norm can be inaccurate, especially when noticeable behaviour stands out."
+                },
+                {
+                  "id": "vaping-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Normative influence.",
+                  "feedback": "Normative influence is a genuine psychological idea, but the observation by itself does not establish it. Pressure can exist without overt bullying or explicit orders."
+                },
+                {
+                  "id": "vaping-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Nicotine dependence.",
+                  "feedback": "This description follows from the example. A pattern in which nicotine use is maintained partly by its effects and by withdrawal or craving."
+                },
+                {
+                  "id": "vaping-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Autonomous choice.",
+                  "feedback": "Autonomous choice is a genuine psychological idea, but the observation by itself does not establish it. Being included and using a particular product are not necessarily the same thing."
+                },
+                {
+                  "id": "vaping-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "vaping-f2-l3-n2-o3"
+            },
+            {
+              "id": "vaping-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "vaping-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "categories": [
+                {
+                  "id": "vaping-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "vaping-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "vaping-f2-l3-n3-a",
+                  "label": "“I didn't really want to try it, but everyone was outside vaping.”",
+                  "answer": "vaping-f2-l3-n3-seen"
+                },
+                {
+                  "id": "vaping-f2-l3-n3-b",
+                  "label": "Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.",
+                  "answer": "vaping-f2-l3-n3-guess"
+                },
+                {
+                  "id": "vaping-f2-l3-n3-c",
+                  "label": "“Did anyone actually ask you to take one?”",
+                  "answer": "vaping-f2-l3-n3-seen"
+                },
+                {
+                  "id": "vaping-f2-l3-n3-d",
+                  "label": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
+                  "answer": "vaping-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "vaping-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "vaping-foundation:investigate",
+              "explanation": "Compare Kai's anticipated social consequences with how the group responds to a clear refusal, while separately considering cravings and habit cues. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "vaping-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "vaping-f2-l3-n4-o3",
+                  "label": "Compare Kai's anticipated social consequences with how the group responds to a clear refusal, while separately considering cravings and habit cues.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "vaping-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "vaping-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "vaping-f2-l3-n4-o3"
+            },
+            {
+              "id": "vaping-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "vaping-module-01",
       "title": "Conformity without direct coercion",
@@ -87,6 +881,16 @@
                     {
                       "id": "vaping-m1-node-1-check1-opt2",
                       "label": "Pip may independently be curious about the experience of vaping."
+                    },
+                    {
+                      "id": "vaping-m1-node-1-check1-alternative-1",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                    },
+                    {
+                      "id": "vaping-m1-node-1-check1-alternative-2",
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "vaping-m1-node-1-check1-opt1",
@@ -106,9 +910,10 @@
                     },
                     {
                       "id": "vaping-m1-node-1-check2-opt2",
-                      "label": "Try it once so nobody has to wonder whether you fit in.",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
                       "reply": "A group's habits can change what feels expected without anyone issuing a command.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     },
                     {
                       "id": "vaping-m1-node-1-check2-opt3",
@@ -121,6 +926,11 @@
                       "label": "Let's ask someone else to intervene before discussing this further.",
                       "reply": "Did anyone say you'd be left out?",
                       "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    },
+                    {
+                      "id": "vaping-m1-node-1-check2-alternative-2",
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "vaping-m1-node-1-check2-opt1",
@@ -270,6 +1080,11 @@
                 {
                   "id": "vaping-m1-repair-opt1",
                   "label": "The account is consistent with the evidence, but pip may independently be curious about the experience of vaping. still deserves consideration."
+                },
+                {
+                  "id": "vaping-m1-node-7-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "vaping-m1-repair-opt1"
@@ -294,7 +1109,8 @@
                 },
                 {
                   "id": "vaping-m1-plan-opt2",
-                  "label": "Try it once so nobody has to wonder whether you fit in."
+                  "label": "Tell the group you don't want to vape and join the break on your own terms, watching how people actually respond.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "vaping-m1-plan-opt3",
@@ -384,6 +1200,16 @@
                     {
                       "id": "vaping-m1-node-8-check1-opt3",
                       "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "vaping-m1-node-8-check1-alternative-1",
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                    },
+                    {
+                      "id": "vaping-m1-node-8-check1-alternative-2",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "vaping-m1-node-8-check1-opt1",
@@ -467,6 +1293,11 @@
                 {
                   "id": "vaping-m1-view-opt4",
                   "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "vaping-m1-node-10-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "vaping-m1-view-opt1"
@@ -500,6 +1331,11 @@
                 {
                   "id": "vaping-m1-new-opt3",
                   "label": "The new evidence establishes pip may independently be curious about the experience of vaping. as the sole explanation."
+                },
+                {
+                  "id": "vaping-m1-node-9-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "vaping-m1-new-opt1"
@@ -532,6 +1368,11 @@
                 {
                   "id": "vaping-m1-test-opt3",
                   "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "vaping-m1-node-13-alternative-1",
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "vaping-m1-test-opt1"
@@ -581,6 +1422,11 @@
                 {
                   "id": "vaping-m1-transfer-e-opt2",
                   "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "vaping-m1-node-14-evidence-alternative-1",
+                  "label": "Kai may also enjoy the effects of nicotine, so maintaining use may eventually have a different explanation than the first attempt.",
+                  "feedback": "Different stages of use can have different contributors; there is no direct evidence of dependence yet."
                 }
               ],
               "evidenceAnswer": "vaping-m1-transfer-e-opt1",
@@ -596,6 +1442,11 @@
                 {
                   "id": "vaping-m1-transfer-a-opt2",
                   "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "vaping-m1-node-14-response-alternative-1",
+                  "label": "Stop spending time with the group altogether whenever anyone vapes.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "vaping-m1-transfer-a-opt1"
@@ -647,6 +1498,11 @@
                   "id": "vaping-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "vaping-m1-l3-n3-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "vaping-m1-l3-n3-opt2",
@@ -724,6 +1580,11 @@
                   "id": "vaping-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "vaping-m1-l3-n4-alternative-1",
+                  "label": "Kai may be overestimating the social cost of refusal because nobody has explicitly required him to vape.",
+                  "feedback": "The perceived norm could differ from the actual expectations of the group."
                 }
               ],
               "answer": "vaping-m1-l3-n4-opt2",
@@ -750,6 +1611,16 @@
                   "id": "vaping-m1-l3-n5-evidence-opt2",
                   "label": "Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.",
                   "feedback": ""
+                },
+                {
+                  "id": "vaping-m1-l3-n5-evidence-alternative-1",
+                  "label": "Vaping may make Kai feel more involved in group breaks, apart from any pharmacological effect.",
+                  "feedback": "A belonging motive is plausible, especially at first use."
+                },
+                {
+                  "id": "vaping-m1-l3-n5-evidence-alternative-2",
+                  "label": "Kai may also enjoy the effects of nicotine, so maintaining use may eventually have a different explanation than the first attempt.",
+                  "feedback": "Different stages of use can have different contributors; there is no direct evidence of dependence yet."
                 }
               ],
               "evidenceAnswer": "vaping-m1-l3-n5-evidence-opt2",
@@ -763,6 +1634,16 @@
                   "id": "vaping-m1-l3-n5-response-opt2",
                   "label": "Tell the group you don't want to vape and join the break on your own terms, watching how people actually respond.",
                   "feedback": ""
+                },
+                {
+                  "id": "vaping-m1-l3-n5-response-alternative-1",
+                  "label": "Arrange a different shared break activity and observe whether the same friends participate.",
+                  "feedback": "The response may show whether the friendship extends beyond the vaping routine."
+                },
+                {
+                  "id": "vaping-m1-l3-n5-response-alternative-2",
+                  "label": "Stop spending time with the group altogether whenever anyone vapes.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "vaping-m1-l3-n5-response-opt2"
@@ -868,13 +1749,18 @@
                     },
                     {
                       "id": "vaping-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     },
                     {
                       "id": "vaping-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "vaping-m1-l4-n2-question-alternative-2",
+                      "label": "Kai may be overestimating the social cost of refusal because nobody has explicitly required him to vape.",
+                      "feedback": "The perceived norm could differ from the actual expectations of the group."
                     }
                   ],
                   "answer": "vaping-m1-l4-n2-question-opt2",
@@ -912,6 +1798,11 @@
                   "id": "vaping-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "vaping-m1-l4-n3-alternative-1",
+                  "label": "Compare Kai’s predicted rejection with how friends actually respond to a clear refusal.",
+                  "feedback": "This tests the perceived norm."
                 }
               ],
               "answer": "vaping-m1-l4-n3-opt2",
@@ -946,6 +1837,11 @@
                   "id": "vaping-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "vaping-m1-l4-n4-alternative-1",
+                  "label": "Ask whether Kai uses nicotine when he is alone and whether cravings are developing.",
+                  "feedback": "This helps distinguish social initiation from possible dependence."
                 }
               ],
               "answer": "vaping-m1-l4-n4-opt2",
@@ -1013,6 +1909,11 @@
                   "id": "vaping-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "vaping-m1-l4-n6-alternative-1",
+                  "label": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "vaping-m1-l4-n6-opt2"
@@ -1055,6 +1956,16 @@
                   "id": "vaping-m1-l5-n2-evidence-opt2",
                   "label": "Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.",
                   "feedback": ""
+                },
+                {
+                  "id": "vaping-m1-l5-n2-evidence-alternative-1",
+                  "label": "Kai may be overestimating the social cost of refusal because nobody has explicitly required him to vape.",
+                  "feedback": "The perceived norm could differ from the actual expectations of the group."
+                },
+                {
+                  "id": "vaping-m1-l5-n2-evidence-alternative-2",
+                  "label": "Vaping may make Kai feel more involved in group breaks, apart from any pharmacological effect.",
+                  "feedback": "A belonging motive is plausible, especially at first use."
                 }
               ],
               "evidenceAnswer": "vaping-m1-l5-n2-evidence-opt2",
@@ -1068,6 +1979,16 @@
                   "id": "vaping-m1-l5-n2-response-opt2",
                   "label": "Tell the group you don't want to vape and join the break on your own terms, watching how people actually respond.",
                   "feedback": ""
+                },
+                {
+                  "id": "vaping-m1-l5-n2-response-alternative-1",
+                  "label": "Tell one friend he does not want to vape and continue joining the group's breaks.",
+                  "feedback": "This tests whether belonging really requires using nicotine."
+                },
+                {
+                  "id": "vaping-m1-l5-n2-response-alternative-2",
+                  "label": "Arrange a different shared break activity and observe whether the same friends participate.",
+                  "feedback": "The response may show whether the friendship extends beyond the vaping routine."
                 }
               ],
               "responseAnswer": "vaping-m1-l5-n2-response-opt2"
@@ -1092,6 +2013,11 @@
                   "id": "vaping-m1-l5-n3-action-opt2",
                   "label": "Tell the group you don't want to vape and join the break on your own terms, watching how people actually respond.",
                   "feedback": ""
+                },
+                {
+                  "id": "vaping-m1-l5-n3-change-alternative-1",
+                  "label": "Arrange a different shared break activity and observe whether the same friends participate.",
+                  "feedback": "The response may show whether the friendship extends beyond the vaping routine."
                 }
               ],
               "outcomes": [
@@ -1104,6 +2030,11 @@
                   "id": "vaping-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "vaping-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "vaping-m1-l5-n3-action-opt2",
@@ -1132,13 +2063,18 @@
                 },
                 {
                   "id": "vaping-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "Kai may also enjoy the effects of nicotine, so maintaining use may eventually have a different explanation than the first attempt.",
+                  "feedback": "Different stages of use can have different contributors; there is no direct evidence of dependence yet."
                 },
                 {
                   "id": "vaping-m1-l5-n4-opt4",
                   "label": "What evidence suggests the group expects you to vape, rather than simply enjoying your company?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "vaping-m1-l5-n4-alternative-2",
+                  "label": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "vaping-m1-l5-n4-opt2",
@@ -1173,6 +2109,11 @@
                   "id": "vaping-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "vaping-m1-l5-n5-alternative-1",
+                  "label": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "vaping-m1-l5-n5-opt2",
@@ -1207,6 +2148,11 @@
                   "id": "vaping-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "vaping-m1-l5-n6-alternative-1",
+                  "label": "Compare Kai’s predicted rejection with how friends actually respond to a clear refusal.",
+                  "feedback": "This tests the perceived norm."
                 }
               ],
               "answer": "vaping-m1-l5-n6-opt2"
@@ -1257,6 +2203,11 @@
                   "id": "vaping-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "vaping-m1-l6-n2-alternative-1",
+                  "label": "Arrange a different shared break activity and observe whether the same friends participate.",
+                  "feedback": "The response may show whether the friendship extends beyond the vaping routine."
                 }
               ],
               "answer": "vaping-m1-l6-n2-opt2"
@@ -1290,6 +2241,11 @@
                   "id": "vaping-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "vaping-m1-l6-n4-alternative-1",
+                  "label": "Ask whether Kai uses nicotine when he is alone and whether cravings are developing.",
+                  "feedback": "This helps distinguish social initiation from possible dependence."
                 }
               ],
               "answer": "vaping-m1-l6-n4-opt2",
@@ -1375,6 +2331,36 @@
               "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Kai",
+        "Milo"
+      ],
+      "glossary": [
+        {
+          "term": "Social norm",
+          "definition": "A belief about what people in a group commonly do or approve of.",
+          "example": "A student thinks nearly everyone in a friendship group vapes.",
+          "limit": "A perceived norm can be inaccurate, especially when noticeable behaviour stands out."
+        },
+        {
+          "term": "Normative influence",
+          "definition": "Changing behaviour because we want acceptance or fear standing out.",
+          "example": "Someone accepts a vape because they assume refusing will seem unfriendly.",
+          "limit": "Pressure can exist without overt bullying or explicit orders."
+        },
+        {
+          "term": "Nicotine dependence",
+          "definition": "A pattern in which nicotine use is maintained partly by its effects and by withdrawal or craving.",
+          "example": "Someone who initially tried vaping socially now feels uncomfortable when they go without it.",
+          "limit": "Dependence requires attention to use over time; one social episode does not establish it."
+        },
+        {
+          "term": "Autonomous choice",
+          "definition": "Making a decision that reflects your own reasons rather than untested expectations of others.",
+          "example": "A student declines to vape and stays with the group to enjoy their company.",
+          "limit": "Being included and using a particular product are not necessarily the same thing."
         }
       ]
     }
