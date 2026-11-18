@@ -28,7 +28,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const lesson=bundle&&flattenLearnLessons(bundle).find(l=>l.id===lessonId);
  const home='#learn/course/'+encodeURIComponent(courseId);
  if(!lesson){root.innerHTML='<section class="ns-learn-player"><a href="'+home+'">← Back to course</a><h1>No published lesson found</h1><p>This course has no available lesson at that address.</p></section>';return;}
- const nodes=learningNodes(lesson),state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,saved:false};
+ const nodes=learningNodes(lesson),state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,saved:false};
  const current=()=>nodes[state.i];
  function renderControls(node){
   if(['choose','respond','repair','investigate'].includes(node.type))return fieldset('choice',node.options);
@@ -56,7 +56,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   if(node.type==='character')return {evidence:root.querySelector('input[name="evidence"]:checked')?.value||'',action:root.querySelector('input[name="action"]:checked')?.value||''};
   if(node.type==='dialogue')return root.querySelector('input[name="dialogue-choice"]:checked')?.value||'';
  }
- const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;const node=current();state.order=['sequence','chain'].includes(node?.type)?[...node.steps.map(s=>s.id)].reverse():[];};
+ const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;const node=current();state.order=['sequence','chain'].includes(node?.type)?[...node.steps.map(s=>s.id)].reverse():[];};
  const advance=()=>{if(state.i+1>=nodes.length)state.phase='done';else {state.i++;reset();}paint();};
  function paint(){
   const exit=preview?'':'<a class="ns-learn-player__back" href="'+home+'">← Exit course</a>';
@@ -75,11 +75,12 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    const heading=node.title||node.prompt||'Learning activity';
    const promptLine=!read&&node.title&&node.prompt&&node.title!==node.prompt?'<p class="ns-learn-player__question-prompt">'+esc(node.prompt)+'</p>':'';
    const body=read?'<div class="ns-learn-player__reading">'+(node.type==='read'?paragraphs(node.body):'')+photo(node)+(node.sources?'<p class="ns-learn-player__sources">'+esc(node.sources)+'</p>':'')+'</div>':promptLine+photo(node)+renderControls(node);
-   root.innerHTML='<section class="ns-learn-player">'+exit+'<p class="ns-learn-player__eyebrow">'+esc(lesson.title)+' · '+(state.i+1)+' / '+nodes.length+'</p><div class="ns-learn-player__meter" role="progressbar" aria-valuenow="'+(state.i+1)+'" aria-valuemin="0" aria-valuemax="'+nodes.length+'"><i style="width:'+Math.round((state.i+1)/nodes.length*100)+'%"></i></div><h1>'+esc(heading)+'</h1>'+(!read&&node.type==='character'?'':body)+(read?'':'')+(!read&&node.type==='character'?body:'')+(state.notice?'<p class="ns-learn-player__notice" role="alert">'+esc(state.notice)+'</p>':'')+(checked?'<div class="ns-learn-player__feedback" role="status"><strong>'+(state.checked.correct?'Correct.':'Review the distinction.')+'</strong><p>'+esc(state.checked.explanation)+'</p><small>Counterexample: '+esc(state.checked.counterexample)+'</small>'+(node.sources?'<small>Sources: '+esc(node.sources)+'</small>':'')+'</div>':'')+'<button type="button" class="ns-learn-player__primary" data-next>'+ (node.type==='dialogue'&&state.dialogueCheck<0?'Analyse conversation →':node.type==='dialogue'&&checked&&state.dialogueCheck<(node.checks?.length||0)-1?'Next question →':read||checked?(state.i+1===nodes.length?'Finish lesson':'Continue →'):'Check answer')+'</button></section>';
+   root.innerHTML='<section class="ns-learn-player">'+exit+'<p class="ns-learn-player__eyebrow">'+esc(lesson.title)+' · '+(state.i+1)+' / '+nodes.length+'</p><div class="ns-learn-player__meter" role="progressbar" aria-valuenow="'+(state.i+1)+'" aria-valuemin="0" aria-valuemax="'+nodes.length+'"><i style="width:'+Math.round((state.i+1)/nodes.length*100)+'%"></i></div><h1>'+esc(heading)+'</h1>'+(!read&&node.type==='character'?'':body)+(read?'':'')+(!read&&node.type==='character'?body:'')+(state.notice?'<p class="ns-learn-player__notice" role="alert">'+esc(state.notice)+'</p>':'')+(checked?'<div class="ns-learn-player__feedback" role="status"><strong>'+(state.checked.correct?'Correct.':'Review the distinction.')+'</strong><p>'+esc(state.checked.explanation)+'</p><small>Counterexample: '+esc(state.checked.counterexample)+'</small>'+(node.sources?'<small>Sources: '+esc(node.sources)+'</small>':'')+(state.checked.reply?'<div class="ns-learn-player__branch"><strong>'+(node.speakerB?esc(node.speakerB):'Their response')+'</strong><p>'+esc(state.checked.reply)+'</p>'+(state.checked.consequence?'<small>'+esc(state.checked.consequence)+'</small>':'')+'</div>':'')+'</div>':'')+(node.type==='dialogue'&&state.dialogueCheck<0&&state.dialogueVisible<(node.turns||[]).length?'':'<button type="button" class="ns-learn-player__primary" data-next>')+ (node.type==='dialogue'&&state.dialogueCheck<0?'Analyse conversation →':node.type==='dialogue'&&checked&&state.dialogueCheck<(node.checks?.length||0)-1?'Next question →':read||checked?(state.i+1===nodes.length?'Finish lesson':'Continue →'):'Check answer')+'</button></section>';
   }
   wire();
  }
  function wire(){
+  root.querySelector('[data-dialogue-reveal]')?.addEventListener('click',()=>{const node=current();if(node?.type!=='dialogue')return;state.dialogueVisible=Math.min((node.turns||[]).length,state.dialogueVisible+1);paint();(root.querySelector('[data-dialogue-reveal]')||root.querySelector('[data-next]'))?.focus();});
   root.querySelector('[data-start]')?.addEventListener('click',()=>{state.phase='node';state.i=0;reset();paint();});
   root.querySelector('[data-restart]')?.addEventListener('click',()=>{state.phase='intro';state.i=0;state.answers={};state.saved=false;paint();});
   root.querySelectorAll('[data-segment]').forEach(button=>button.addEventListener('click',()=>{const id=button.dataset.segment;if(state.labels.has(id))state.labels.delete(id);else state.labels.add(id);button.setAttribute('aria-pressed',String(state.labels.has(id)));}));
@@ -87,7 +88,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   root.querySelector('[data-next]')?.addEventListener('click',()=>{
    const node=current();
    if(node.type==='dialogue'){
-    if(state.dialogueCheck<0){state.dialogueCheck=0;state.notice='';paint();return;}
+    if(state.dialogueCheck<0){if(state.dialogueVisible<(node.turns||[]).length)return;state.dialogueCheck=0;state.notice='';paint();return;}
     if(state.checked){if(state.dialogueCheck<node.checks.length-1){state.dialogueCheck++;state.checked=null;state.notice='';paint();}else advance();return;}
     const check=node.checks[state.dialogueCheck],answer=response(node);
     if(!check.options.some(o=>o.id===answer)){
@@ -95,7 +96,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
     }
     if(!state.answers[node.id])state.answers[node.id]={};
     state.answers[node.id][check.id]=answer;
-    state.checked={correct:answer===check.answer,explanation:check.explanation,counterexample:check.counterexample};paint();return;
+    const chosen=check.options.find(o=>o.id===answer);state.checked={correct:answer===check.answer,explanation:check.explanation,counterexample:check.counterexample,reply:chosen?.reply||'',consequence:chosen?.consequence||''};paint();return;
    }
    if(['read','image'].includes(node.type)||state.checked){advance();return;}
    const answer=response(node),result=gradeLearnItem(node,answer);
