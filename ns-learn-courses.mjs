@@ -71,7 +71,7 @@ function catalogue(root,{category='all',focusCourses=false}={}){
  '</section>'+
  '<section class="ns-catalogue-learning" aria-labelledby="ns-catalogue-method-title">'+
  '<div><span class="ns-courses-kicker">WHAT MAKES LEARN DIFFERENT</span><h2 id="ns-catalogue-method-title">Short to play. Deep to understand.</h2>'+
- '<p>Ten ways to practise psychological thinking, from recognising specialist concepts to testing evidence and helping characters.</p>'+
+ '<p>'+LESSON_FORMATS.length+' ways to practise psychological thinking, from recognising specialist concepts to testing evidence and helping characters.</p>'+
  '<a href="#learn/how-it-works">Explore the learning method →</a></div>'+
  '<div class="ns-catalogue-method-list">'+LESSON_FORMATS.map((f,i)=>'<span><b>'+String(i+1).padStart(2,'0')+'</b> '+esc(f.name)+'</span>').join('')+'</div></section>'+
  '<footer class="ns-courses-ending">'+image('ns-character-hiking.webp','ns-courses-ending__character')+
@@ -121,7 +121,7 @@ function detail(root,id){
  '<h2>What you’ll explore</h2><p>These are subject areas for future lesson writing—not completed units or activities.</p>'+
  '<div class="ns-catalogue-focus">'+course.focus.map((t,i)=>'<div><span>'+String(i+1).padStart(2,'0')+'</span><strong>'+esc(t)+'</strong></div>').join('')+'</div></section>'+
  '<section class="ns-catalogue-outline"><span class="ns-courses-kicker">THE COURSE JOURNEY</span><h2>How you’ll learn</h2>'+
- '<p>Each independent course will introduce the science, teach important distinctions, then offer small interactive drills and revisits.</p>'+
+ '<p>Each independent course will introduce the science, teach important distinctions, then offer small interactive drills and revisits. Dialogue Labs will appear where analysing a conversation or disagreement helps transfer the skill to everyday life.</p>'+
  '<div class="ns-catalogue-phases"><span>Understand the idea</span><span>Spot the distinction</span><span>Apply it carefully</span><span>Review over time</span></div>'+
  '<a href="#learn/how-it-works">See our learning method →</a></section></div>'+
  '<section class="ns-catalogue-syllabus"><h2>Course lessons</h2>'+lessonMarkup+'</section>'+
@@ -137,7 +137,7 @@ function how(root){
  '<div><b>02</b><strong>Differentiate</strong><p>Practise distinguishing related ideas, exceptions and cases where the evidence is not enough.</p></div>'+
  '<div><b>03</b><strong>Apply</strong><p>Choose responses and hypotheses appropriate to the particular circumstances rather than memorising one-size-fits-all rules.</p></div>'+
  '<div><b>04</b><strong>Revisit</strong><p>Practise retrieval later, including unfamiliar examples that test transfer rather than remembering a button.</p></div></div>'+
- '<h2>Ten ways to practise</h2><div class="ns-catalogue-formats">'+LESSON_FORMATS.map((x,i)=>'<article><span>'+String(i+1).padStart(2,'0')+'</span><h3>'+esc(x.name)+'</h3><p>'+esc(x.description)+'</p></article>').join('')+'</div>'+
+ '<h2>'+LESSON_FORMATS.length+' ways to practise</h2><div class="ns-catalogue-formats">'+LESSON_FORMATS.map((x,i)=>'<article><span>'+String(i+1).padStart(2,'0')+'</span><h3>'+esc(x.name)+'</h3><p>'+esc(x.description)+'</p></article>').join('')+'</div>'+
  '<p class="ns-catalogue-notice">Course Lab publishes reviewed lessons here. Opening a course page does not record progress; completing a lesson does.</p>'+
  '<a class="ns-courses-feature__link" href="#learn/courses">Discover the planned courses →</a>'+
  '</section></div></div>';
