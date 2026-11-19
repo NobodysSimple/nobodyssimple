@@ -159,7 +159,8 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
     const correctionLabel=state.correcting?'<p class="ns-learn-player__retry-intro" role="note">CORRECTION PRACTICE · You saw this question earlier. Use what you learned before trying again.</p>':'';
    const promptLine=!read&&node.title&&node.prompt&&node.title!==node.prompt?'<p class="ns-learn-player__question-prompt">'+esc(node.prompt)+'</p>':'';
    const faces=node.type==='dialogue'?'':castMarkup(charactersMentioned(node,cast));
-   const lifeArt=isLifeNode(node.type)&&!safeCourseImage(node.image)&&safeCourseImage(course?.landscape)?'<figure class="ns-life-node__figure"><img src="'+esc(course.landscape)+'" alt="Illustrated course landscape" loading="lazy"></figure>':'';
+   // An unrelated course illustration cannot stand in for visual evidence in a case.
+   const lifeArt='';
    const body=read?'<div class="ns-learn-player__reading">'+(node.type==='read'?paragraphs(node.body):'')+photo(node)+(node.sources?'<p class="ns-learn-player__sources">'+esc(node.sources)+'</p>':'')+'</div>':promptLine+photo(node)+lifeArt+renderControls(node);
    const notice=state.notice?'<p class="ns-learn-player__notice" role="alert">'+esc(state.notice)+'</p>':'';
    const answerLabel=checked&&!state.checked.correct?correctAnswerText(node,node.type==='dialogue'?node.checks?.[state.dialogueCheck]:null):'';
@@ -197,9 +198,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   root.querySelectorAll('[data-life-frame]').forEach(button=>button.addEventListener('click',()=>{
    state.lifeFrame=Number(button.dataset.lifeFrame);state.lifeVisited.add(state.lifeFrame);paint();
   }));
-  root.querySelectorAll('input[name="life-initial"]').forEach(input=>input.addEventListener('change',()=>{
-   state.lifeInitial=input.value;paint();
-  }));
+
   root.querySelectorAll('input[name="life-choice"]').forEach(input=>input.addEventListener('change',()=>{
    state.lifeChoice=input.value;if(lifeNodeMode(current()?.type)==='edit')paint();
   }));
