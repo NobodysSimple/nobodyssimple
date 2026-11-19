@@ -7,6 +7,7 @@ import {getLearnCourse,LEARN_COMPANIONS} from './ns-learn-catalog-v2.mjs';
 import {validateLearnBundle,gradeLearnItem,learnLessonScore,flattenLearnLessons,QUESTION_TYPES} from './ns-learn-engine-v2.mjs';
 import {learningNodes,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {renderDialogue} from './ns-learn-dialogue.mjs';
+import {displayedLessonMinutes} from './ns-learn-quality.mjs';
 import {createRepairQueue,addRepair,takeRepair,finishRepair,repairSummary,readSoundPreference,saveSoundPreference,playLearningCue,correctAnswerText} from './ns-learn-feedback.mjs';
 import {isLifeNode,lifeNodeMode,lifeNodeDefinition,lifeControls} from './ns-life-node-types.mjs?v=everyday-nodes-v2';
 import {knownCastForLesson,charactersMentioned,characterPortrait} from './ns-learn-cast.mjs';
@@ -132,7 +133,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   const head='<header class="ns-learn-immersive__header">'+exit+'<div class="ns-learn-immersive__meter" role="progressbar" aria-valuenow="'+progress+'" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson progress"><i style="width:'+progress+'%"></i></div><button type="button" class="ns-learn-player__sound-toggle" data-sound-toggle aria-label="'+(state.soundOn?'Mute':'Enable')+' answer sounds" aria-pressed="'+state.soundOn+'" title="'+(state.soundOn?'Mute':'Enable')+' feedback sounds">'+(state.soundOn?'♪':'♪̸')+'</button><span class="ns-learn-immersive__badge" title="Nobody’s Simple">✿</span></header>';
   let middle='',foot='';
   if(state.phase==='intro'){
-   middle='<div class="ns-learn-immersive__welcome"><span class="ns-learn-immersive__welcome-art">'+companion+'</span><p class="ns-learn-player__eyebrow">'+esc(course?.title||bundle.title||courseId)+' · Unit '+unitIndex+'</p><h1>'+esc(lesson.title)+'</h1><div class="ns-learn-immersive__lead">'+castMarkup(charactersMentioned({body:lesson.teach},cast))+paragraphs(lesson.teach||'Work through a real situation and decide what the evidence can support.')+'</div><p class="ns-learn-player__hint">About 5 minutes · '+nodes.length+' short activities · No timer</p></div>';
+   middle='<div class="ns-learn-immersive__welcome"><span class="ns-learn-immersive__welcome-art">'+companion+'</span><p class="ns-learn-player__eyebrow">'+esc(course?.title||bundle.title||courseId)+' · Unit '+unitIndex+'</p><h1>'+esc(lesson.title)+'</h1><div class="ns-learn-immersive__lead">'+castMarkup(charactersMentioned({body:lesson.teach},cast))+paragraphs(String(lesson.teach||'Work through a real situation and decide what the evidence can support.').replace(/\\s*About (?:five|5) minutes\\.?/gi,'').trim())+'</div><p class="ns-learn-player__hint">About '+displayedLessonMinutes(lesson)+' minutes · '+nodes.length+' short activities · No timer</p></div>';
    foot='<button type="button" class="ns-learn-player__primary" data-start>Start lesson →</button>';
   }else if(state.phase==='done'){
    const score=learnLessonScore(lesson,state.answers);
