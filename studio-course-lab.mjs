@@ -7,6 +7,7 @@ import {LEARN_COURSES} from './ns-learn-catalog-v2.mjs';
 import {COURSE_LAB_TYPES,createCourseDraft,newCourseUnit,newCourseLesson,createCourseNode,
  makeCourseId,validateCourseForPublish,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {renderLearnLesson} from './ns-learn-player-v2.mjs?v=everyday-nodes-v2';
+import {auditLesson} from './ns-learn-quality.mjs';
 import {isLifeNode,lifeNodeEditor} from './ns-life-node-types.mjs?v=everyday-nodes-v2';
 import {readCourseLabDraft,saveCourseLabDraft,deleteCourseLabDraft} from './studio-course-lab-drafts.mjs';
 import {fetchCurriculumBlueprint,createDraftFromBlueprint,mergePublishedIntoBlueprint,countAuthoredLessons,makePublishableSubset} from './ns-course-blueprints.mjs';
@@ -138,6 +139,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
  };
  const renderSequence=()=>{
   const unit=selectedUnit(),lesson=selectedLesson();
+  const report=lesson?auditLesson(lesson,{strict:lesson.standard==='deep-10'}):null;
   $('#cl-lesson-meta').innerHTML=unit&&lesson?
     (unit.bookTitle?'<p class="cl-arc"><strong>'+esc(unit.bookTitle)+'</strong><span>Key distinction: '+esc(unit.distinction||'')+'</span></p>':'')+
     '<label class="cl-field"><span>Module title</span><input data-meta="unit-title" value="'+esc(unit.title)+'"></label>'+
@@ -151,6 +153,14 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
       '</select><small>Only authored lessons explicitly marked Ready are eligible for public release.</small></label>'+
     '<label class="cl-field"><span>Optional lesson introduction</span><textarea data-meta="lesson-teach" rows="3">'+esc(lesson.teach||'')+'</textarea></label>'+ 
     '<label class="cl-field"><span>Lesson takeaway · shown on completion</span><textarea data-meta="lesson-takeaway" rows="2">'+esc(lesson.takeaway||'')+'</textarea></label>'+
+    '<details class="cl-quality-panel" open><summary>Ten-minute teaching standard · '+report.drills+' drills · about '+report.estimatedMinutes+' minutes</summary>'+
+    '<p>New lessons use the deep-ten standard. This checker finds missing teaching and practice; research accuracy still needs a qualified human review.</p>'+
+    (report.blockers.length?'<strong class="cl-quality-bad">Needs improvement before publishing</strong><ul>'+report.blockers.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'<strong class="cl-quality-good">No structural publishing blockers</strong>')+
+    (report.warnings.length?'<ul>'+report.warnings.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
+    '<label class="cl-field"><span>Novel-case transfer prompt</span><textarea data-meta="lesson-transfer" rows="3">'+esc(lesson.transferPrompt||'')+'</textarea></label>'+
+    '<label class="cl-field"><span>Research and editorial review notes (staff only)</span><textarea data-meta="lesson-research" rows="4">'+esc(lesson.staffReview||'')+'</textarea></label>'+
+    '<label class="cl-field"><span>Expected learner time, minutes</span><input type="number" min="3" max="60" data-meta="lesson-duration" value="'+esc(lesson.durationMinutes||10)+'"></label>'+
+    '</details>'+
     '<div class="cl-lesson-actions"><button data-act="lesson-up" type="button">Move lesson ↑</button><button data-act="lesson-down" type="button">Move lesson ↓</button><button data-act="delete-lesson" type="button">Delete lesson</button></div>':'<p class="cl-hint">Select a lesson in the outline, or add one to a unit.</p>';
   $('#cl-nodes').innerHTML=lesson?(lesson.nodes||[]).map((node,i)=>'<article class="cl-node '+(i===n?'active':'')+'" draggable="true" data-node-index="'+i+'"><button type="button" data-act="select-node" data-n="'+i+'"><small>'+String(i+1).padStart(2,'0')+' · '+esc(types[node.type]?.name||node.type)+'</small><strong>'+esc(node.title||node.prompt||node.body?.slice(0,65)||'Untitled node')+'</strong></button><div><button type="button" data-act="node-up" data-n="'+i+'" '+(i===0?'disabled':'')+' aria-label="Move node up">↑</button><button type="button" data-act="node-down" data-n="'+i+'" '+(i===lesson.nodes.length-1?'disabled':'')+' aria-label="Move node down">↓</button><button type="button" data-act="node-copy" data-n="'+i+'" aria-label="Duplicate node">⧉</button><button type="button" data-act="node-delete" data-n="'+i+'" aria-label="Delete node">×</button></div></article>').join('')||'<p class="cl-hint">Add reading pages and exercises in any order.</p>':'';
   $('#cl-node-fields').innerHTML=editorFields(selectedNode());
@@ -209,6 +219,9 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
    if(target.dataset.meta==='lesson-title'&&lesson)lesson.title=target.value;
    if(target.dataset.meta==='lesson-teach'&&lesson)lesson.teach=target.value;
    if(target.dataset.meta==='lesson-takeaway'&&lesson)lesson.takeaway=target.value;
+   if(target.dataset.meta==='lesson-transfer'&&lesson)lesson.transferPrompt=target.value;
+   if(target.dataset.meta==='lesson-research'&&lesson)lesson.staffReview=target.value;
+   if(target.dataset.meta==='lesson-duration'&&lesson)lesson.durationMinutes=Math.max(3,Math.min(60,Number(target.value)||10));
    if(target.dataset.meta==='lesson-objective'&&lesson)lesson.objective=target.value;
    if(target.dataset.meta==='lesson-mode'&&lesson)lesson.recommendedType=target.value;
    if(target.dataset.meta==='lesson-status'&&lesson)lesson.editorialStatus=target.value;
