@@ -60,11 +60,11 @@ function editorFields(node){
  const media='<details class="cl-media-fields"><summary>Image and illustration</summary>'+
  textField('Site image path','image',node.image,{hint:'Choose from the repository or upload; images must be hosted on this site.'})+
  '<button type="button" class="cl-light-button" data-act="choose-image">Browse / upload image</button>'+textField('Alt text','alt',node.alt)+textField('Caption / credit','caption',node.caption)+'</details>';
- if(node.type==='read')return head+textField('Reading text','body',node.body,{rows:12,hint:'Write freely. Blank lines separate paragraphs.'})+textField('Sources / further reading','sources',node.sources,{rows:3})+media;
+ if(node.type==='read')return head+(node.editorialPrompt?'<p class="cl-hint">'+esc(node.editorialPrompt)+'</p>':'')+textField('Reading text','body',node.body,{rows:12,hint:'Write freely. Blank lines separate paragraphs.'})+textField('Sources / further reading','sources',node.sources,{rows:3})+media;
  if(node.type==='image')return head+media+textField('Sources / attribution','sources',node.sources,{rows:3});
- if(node.type==='dialogue')return head+textField('Learning focus / what to notice','prompt',node.prompt,{rows:2})+textField('Concept ID','conceptId',node.conceptId,{hint:'For review, e.g. validation-without-agreement.'})+dialogueEditor(node)+textField('Sources / references','sources',node.sources,{rows:2})+media;
+ if(node.type==='dialogue')return head+(node.editorialPrompt?'<p class="cl-hint">'+esc(node.editorialPrompt)+'</p>':'')+textField('Learning focus / what to notice','prompt',node.prompt,{rows:2})+textField('Concept ID','conceptId',node.conceptId,{hint:'For review, e.g. validation-without-agreement.'})+dialogueEditor(node)+textField('Sources / references','sources',node.sources,{rows:2})+media;
  if(isLifeNode(node.type))return head+textField('Learning focus / question','prompt',node.prompt,{rows:2})+textField('Concept ID','conceptId',node.conceptId,{hint:'Stable identifier for review.'})+lifeNodeEditor(node,textField)+textField('Explanation after answering','explanation',node.explanation,{rows:4})+textField('Boundary / counterexample','counterexample',node.counterexample,{rows:3})+textField('Evidence / sources','sources',node.sources,{rows:2})+media;
- let html=head+textField('Question / task','prompt',node.prompt,{rows:3})+
+ let html=head+(node.editorialPrompt?'<p class="cl-hint">'+esc(node.editorialPrompt)+'</p>':'')+textField('Question / task','prompt',node.prompt,{rows:3})+
  textField('Concept ID','conceptId',node.conceptId,{hint:'A stable learning concept, e.g. negative-reinforcement.'});
  if(node.type==='character')html+=textField('Character name','characterName',node.characterName)+textField('Character situation','scenario',node.scenario,{rows:4});
  if(node.type==='update')html+=textField('New evidence revealed after the initial case','newEvidence',node.newEvidence,{rows:3});
@@ -91,7 +91,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
  '<div class="cl-toolbar cl-publish-toolbar"><button type="button" data-act="preview">Preview lesson</button><button type="button" class="cl-publish" data-act="publish">Publish reviewed lessons</button><button type="button" data-act="unpublish">Unpublish</button><span id="cl-publish-state" role="status"></span></div>'+
  '<div class="cl-meta"><label>Published course title <input id="cl-title" maxlength="160" placeholder="Course title"></label><label>Course card description <textarea id="cl-description" rows="2" maxlength="400" placeholder="A short summary shown in Learn"></textarea></label><p id="cl-meta-hint"></p></div>'+
  '<div class="cl-grid"><aside class="cl-outline"><div class="cl-section-head"><h2>Units & lessons</h2><button type="button" data-act="add-unit">＋ Unit</button></div><label class="cl-field"><span>Find a module or lesson</span><input id="cl-outline-search" type="search" placeholder="Search the 300 lessons…"></label><div id="cl-units"></div></aside>'+
- '<section class="cl-sequence"><div class="cl-section-head"><h2>Lesson sequence</h2><button type="button" data-act="add-lesson">＋ Lesson</button></div><div id="cl-lesson-meta"></div><div id="cl-nodes"></div><div class="cl-add-node"><label>Add a node <select id="cl-new-type">'+COURSE_LAB_TYPES.map(t=>'<option value="'+t.id+'">'+esc(t.name)+'</option>').join('')+'</select></label><button data-act="add-node" type="button">＋ Add to sequence</button></div></section>'+
+ '<section class="cl-sequence"><div class="cl-section-head"><h2>Lesson sequence</h2><button type="button" data-act="add-lesson">＋ Lesson</button><button type="button" data-act="deep-skeleton">＋ 10-minute teaching outline</button></div><div id="cl-lesson-meta"></div><div id="cl-nodes"></div><div class="cl-add-node"><label>Add a node <select id="cl-new-type">'+COURSE_LAB_TYPES.map(t=>'<option value="'+t.id+'">'+esc(t.name)+'</option>').join('')+'</select></label><button data-act="add-node" type="button">＋ Add to sequence</button></div></section>'+
  '<section class="cl-inspector"><div class="cl-section-head"><h2>Node editor</h2></div><div id="cl-node-fields"></div></section></div>'+
  '<section id="cl-preview" class="cl-preview" hidden><div class="cl-section-head"><h2>Student preview · progress disabled</h2><button data-act="close-preview" type="button">Close</button></div><div id="cl-preview-host"></div></section>'+
  '<p class="cl-footer-note">Publishing requires the authorised Nobody’s Simple GitHub owner account. Media uploads publish the image file immediately; course content remains private until you publish it. The course URL uses its permanent ID, even if you rename its title.</p></section>'+
@@ -260,6 +260,28 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   'lesson-down':()=>{if(move(selectedUnit()?.lessons,l,l+1)){l++;render();queueSave();}},
   'delete-lesson':()=>{if(selectedLesson()&&confirm('Delete this lesson and all its nodes?')){selectedUnit().lessons.splice(l,1);l=Math.max(0,Math.min(l,selectedUnit().lessons.length-1));n=0;render();queueSave();}},
   'add-node':()=>{const lesson=selectedLesson();if(!lesson){status('Add a lesson first.',true);return;}const node=createCourseNode($('#cl-new-type').value);lesson.nodes.push(node);n=lesson.nodes.length-1;render();queueSave();},
+  'deep-skeleton':()=>{
+   const lesson=selectedLesson();if(!lesson){status('Choose a lesson first.',true);return;}
+   if((lesson.nodes||[]).length){status('Use an empty lesson for the outline. No existing work has been replaced.',true);return;}
+   const plan=[
+    ['read','The everyday problem','Open with one recognisable situation, what is at stake and the question to investigate.'],
+    ['dialogue','Watch the scene','Write a believable exchange with conflicting interests and at least one analysis question.'],
+    ['label','Find the evidence','Ask the learner to identify the observations that most directly support an interpretation.'],
+    ['read','Explain the mechanism','Explain the central process in ordinary language before naming it.'],
+    ['rank','Compare explanations','Provide plausible rival explanations and ground the strongest inference in evidence.'],
+    ['chain','Build the process','Link the situation, interpretation, behaviour and consequences.'],
+    ['read','What research establishes','Explain the evidence, cite identifiable sources and state genuine limitations.'],
+    ['update','New evidence','Introduce evidence that meaningfully changes the judgement.'],
+    ['predict','What would you do?','Compare plausible actions, what they might achieve and their practical costs.'],
+    ['repair','Repair an overclaim','Correct an attractive but unjustified leap in reasoning.'],
+    ['choose','Transfer to a new situation','Test the same skill in an unfamiliar context.'],
+    ['read','What to remember','State a usable conclusion grounded in the lesson’s evidence.']
+   ];
+   lesson.nodes=plan.map(([type,title,editorialPrompt])=>({...createCourseNode(type),title,editorialPrompt}));
+   lesson.standard='deep-10';lesson.durationMinutes=10;lesson.editorialStatus='draft';
+   n=0;render();queueSave();
+   status('Teaching outline added. Replace guidance with researched content and complete the quality review before publishing.');
+  },
   'select-node':b=>{n=Number(b.dataset.n);renderSequence();},
   'node-up':b=>{const i=Number(b.dataset.n);if(move(selectedLesson()?.nodes,i,i-1)){n=i-1;renderSequence();queueSave();}},
   'node-down':b=>{const i=Number(b.dataset.n);if(move(selectedLesson()?.nodes,i,i+1)){n=i+1;renderSequence();queueSave();}},
