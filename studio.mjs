@@ -14,7 +14,7 @@ import {
 import { Publisher } from "./publisher.mjs";
 import {notebookBlogMarkup} from "./ns-blog-notebook.mjs";
 import {mountTopicStudio} from "./studio-topics.mjs";
-import {mountCourseLab} from "./studio-course-lab.mjs?v=deep-learn-20261119-r2";
+import {mountCourseLab} from "./studio-course-lab.mjs?v=narcissism-audit-20261119";
 
 const $ = (id) => document.getElementById(id);
 const now = () => new Date().toISOString();
