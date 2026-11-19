@@ -7,6 +7,7 @@ import {getLearnCourse,LEARN_COMPANIONS} from './ns-learn-catalog-v2.mjs';
 import {validateLearnBundle,gradeLearnItem,learnLessonScore,flattenLearnLessons,QUESTION_TYPES} from './ns-learn-engine-v2.mjs';
 import {learningNodes,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {renderDialogue} from './ns-learn-dialogue.mjs';
+import {renderInvestigation} from './ns-learn-investigation.mjs';
 import {displayedLessonMinutes,lessonMetrics} from './ns-learn-quality.mjs';
 import {lessonResearchMarkup} from './ns-learn-evidence.mjs';
 import {createRepairQueue,addRepair,takeRepair,finishRepair,repairSummary,readSoundPreference,saveSoundPreference,playLearningCue,correctAnswerText} from './ns-learn-feedback.mjs';
@@ -57,7 +58,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const castMarkup=names=>names.length?'<div class="ns-learn-immersive__cast" aria-label="People in this example">'+names.map(name=>'<span class="ns-learn-immersive__cast-person">'+characterPortrait(name,cast,esc,true)+'<span>'+esc(name)+'</span></span>').join('')+'</div>':'';
  const originalNodes=learningNodes(lesson);
  let nodes=arrange(originalNodes);
- const state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,lifeFrame:0,lifeVisited:new Set(),lifeTargeted:false,lifeInitial:'',lifeRevealed:false,lifeChoice:'',lifeSort:{},lifeBefore:0,lifeAfter:0,saved:false,options:new Map(),repairs:createRepairQueue(),correcting:false,repairTask:null,soundOn:readSoundPreference()};
+ const state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,lifeFrame:0,lifeVisited:new Set(),lifeTargeted:false,lifeInitial:'',lifeRevealed:false,lifeChoice:'',lifeSort:{},lifeBefore:0,lifeAfter:0,investigationStage:0,saved:false,options:new Map(),repairs:createRepairQueue(),correcting:false,repairTask:null,soundOn:readSoundPreference()};
  const orderedOptions=(name,items)=>{
   const key=name+':'+(items||[]).map(x=>x.id).join('/');
   if(!state.options.has(key))state.options.set(key,scramble(items));
@@ -101,6 +102,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   if(node.type==='predict')return '<div class="ns-learn-player__two"><h2>'+esc(node.changePrompt||'What changes?')+'</h2>'+choiceSet('change',node.changes)+'<h2>What is the best prediction?</h2>'+choiceSet('outcome',node.outcomes)+'</div>';
   if(node.type==='character')return '<div class="ns-learn-player__two"><p>'+esc(node.characterName)+': '+esc(node.scenario)+'</p><h2>What does the evidence support?</h2>'+choiceSet('evidence',node.evidenceOptions)+'<h2>What response fits best?</h2>'+choiceSet('action',node.responseOptions)+'</div>';
   if(node.type==='dialogue')return renderDialogue(node,state.correcting?{...state,answers:{}}:state,esc,choiceSet);
+  if(node.type==='investigation')return renderInvestigation(node,state.correcting?{...state,answers:{}}:state,esc,choiceSet);
   return '';
  }
  function response(node){
@@ -121,15 +123,15 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   if(node.type==='label')return [...state.labels];
   if(node.type==='predict')return {change:root.querySelector('input[name="change"]:checked')?.value||'',outcome:root.querySelector('input[name="outcome"]:checked')?.value||''};
   if(node.type==='character')return {evidence:root.querySelector('input[name="evidence"]:checked')?.value||'',action:root.querySelector('input[name="action"]:checked')?.value||''};
-  if(node.type==='dialogue')return root.querySelector('input[name="dialogue-choice"]:checked')?.value||'';
+  if(['dialogue','investigation'].includes(node.type))return root.querySelector('input[name="dialogue-choice"]:checked')?.value||'';
  }
- const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;state.lifeFrame=0;state.lifeVisited=new Set();state.lifeTargeted=false;state.lifeInitial='';state.lifeRevealed=false;state.lifeChoice='';state.lifeSort={};const node=current();state.lifeBefore=Number(node?.initialValue??80);state.lifeAfter=state.lifeBefore;const ids=['sequence','chain','rank'].includes(node?.type)?node.steps.map(s=>s.id):[];state.order=scramble(ids);if(ids.length>1&&ids.every((id,i)=>state.order[i]===id))state.order.reverse();};
+ const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;state.lifeFrame=0;state.lifeVisited=new Set();state.lifeTargeted=false;state.investigationStage=0;state.lifeInitial='';state.lifeRevealed=false;state.lifeChoice='';state.lifeSort={};const node=current();state.lifeBefore=Number(node?.initialValue??80);state.lifeAfter=state.lifeBefore;const ids=['sequence','chain','rank'].includes(node?.type)?node.steps.map(s=>s.id):[];state.order=scramble(ids);if(ids.length>1&&ids.every((id,i)=>state.order[i]===id))state.order.reverse();};
  const beginNextCorrection=()=>{
    const task=takeRepair(state.repairs);
    if(!task){state.correcting=false;state.repairTask=null;state.phase='done';return;}
    state.correcting=true;state.repairTask=task;state.i=task.nodeIndex;reset();
    const node=current();
-   if(node?.type==='dialogue'){state.dialogueCheck=task.checkIndex;state.dialogueVisible=(node.turns||[]).length;}
+   if(['dialogue','investigation'].includes(node?.type)){state.dialogueCheck=task.checkIndex;state.dialogueVisible=(node.turns||[]).length;}
   };
   const advance=()=>{
    if(state.correcting||state.i+1>=nodes.length)beginNextCorrection();
@@ -165,17 +167,17 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
     const correctionLabel=state.correcting?'<p class="ns-learn-player__retry-intro" role="note">CORRECTION PRACTICE · You saw this question earlier. Use what you learned before trying again.</p>':'';
    const hideRevealQuestion=isLifeNode(node.type)&&lifeNodeMode(node.type)==='reveal'&&!state.lifeRevealed;
    const promptLine=!read&&!hideRevealQuestion&&node.title&&node.prompt&&node.title!==node.prompt?'<p class="ns-learn-player__question-prompt">'+esc(node.prompt)+'</p>':'';
-   const faces=node.type==='dialogue'?'':castMarkup(charactersMentioned(node,cast));
+   const faces=['dialogue','investigation'].includes(node.type)?'':castMarkup(charactersMentioned(node,cast));
    // An unrelated course illustration cannot stand in for visual evidence in a case.
    const lifeArt='';
    const body=read?'<div class="ns-learn-player__reading">'+(node.type==='read'?paragraphs(node.body):'')+photo(node)+'</div>':promptLine+photo(node)+lifeArt+renderControls(node);
    const notice=state.notice?'<p class="ns-learn-player__notice" role="alert">'+esc(state.notice)+'</p>':'';
-   const answerLabel=checked&&!state.checked.correct?correctAnswerText(node,node.type==='dialogue'?node.checks?.[state.dialogueCheck]:null):'';
+   const answerLabel=checked&&!state.checked.correct?correctAnswerText(node,['dialogue','investigation'].includes(node.type)?node.checks?.[state.dialogueCheck]:null):'';
     const response=checked?'<div class="ns-learn-player__feedback ns-learn-player__feedback--'+(state.checked.correct?'correct':'incorrect')+'" data-result="'+(state.checked.correct?'correct':'incorrect')+'" role="status"><strong>'+(state.checked.correct?'✓ Correct.':'✕ Not quite. Review the reasoning.')+'</strong>'+(answerLabel?'<p><strong>Best-supported answer:</strong> '+esc(answerLabel)+'</p>':'')+paragraphs(state.checked.explanation)+(state.checked.counterexample?'<p><small>Where this may differ: '+esc(state.checked.counterexample)+'</small></p>':'')+(state.checked.reply?'<div class="ns-learn-player__branch"><strong>'+esc(node.speakerB||'Possible reply')+'</strong><p>'+esc(state.checked.reply)+'</p>'+(state.checked.consequence?'<small>'+esc(state.checked.consequence)+'</small>':'')+'</div>':'')+'</div>':'';
-   middle='<div class="ns-learn-immersive__task"><p class="ns-learn-player__eyebrow">'+esc(node.type==='dialogue'?'CONVERSATION':isLifeNode(node.type)?lifeNodeDefinition(node.type).name.toUpperCase():node.type.toUpperCase())+' · '+(state.i+1)+' / '+nodes.length+'</p><h1>'+esc(heading)+'</h1>'+correctionLabel+faces+(glossary.some(entry=>JSON.stringify(node).toLowerCase().includes(entry.term.toLowerCase()))?glossaryHelp:'')+body+notice+response+'</div>';
+   middle='<div class="ns-learn-immersive__task"><p class="ns-learn-player__eyebrow">'+esc(node.type==='investigation'?'MESSAGE INVESTIGATION':node.type==='dialogue'?'CONVERSATION':isLifeNode(node.type)?lifeNodeDefinition(node.type).name.toUpperCase():node.type.toUpperCase())+' · '+(state.i+1)+' / '+nodes.length+'</p><h1>'+esc(heading)+'</h1>'+correctionLabel+faces+(glossary.some(entry=>JSON.stringify(node).toLowerCase().includes(entry.term.toLowerCase()))?glossaryHelp:'')+body+notice+response+'</div>';
    if(!(node.type==='dialogue'&&state.dialogueCheck<0&&state.dialogueVisible<(node.turns||[]).length)){
-    const buttonText=node.type==='dialogue'&&state.dialogueCheck<0?'Analyse the exchange →':
-     node.type==='dialogue'&&checked&&!state.correcting&&state.dialogueCheck<(node.checks?.length||0)-1?'Next question →':
+    const buttonText=['dialogue','investigation'].includes(node.type)&&state.dialogueCheck<0?'Analyse the exchange →':
+     ['dialogue','investigation'].includes(node.type)&&checked&&!state.correcting&&state.dialogueCheck<(node.checks?.length||0)-1?'Next question →':
      read||checked?(state.correcting?'Continue correction practice →':state.i+1===nodes.length?(state.repairs.pending.length?'Review missed questions →':'Complete lesson →'):'Continue →'):'Check answer';
     foot='<button type="button" class="ns-learn-player__primary" data-next>'+buttonText+'</button>';
    }else foot='<p class="ns-learn-immersive__helper">Read one message at a time. You can open the earlier messages whenever you need them.</p>';
@@ -201,6 +203,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  }
  function wire(){
   root.querySelector('[data-sound-toggle]')?.addEventListener('click',()=>{state.soundOn=!state.soundOn;saveSoundPreference(state.soundOn);paint();});
+  root.querySelectorAll('[data-investigation-stage]').forEach(button=>button.addEventListener('click',()=>{state.investigationStage=Number(button.dataset.investigationStage);paint();root.querySelector('[data-investigation-stage="'+state.investigationStage+'"]')?.focus();}));
   root.querySelector('[data-life-target]')?.addEventListener('click',()=>{state.lifeTargeted=true;paint();});
   root.querySelectorAll('[data-life-frame]').forEach(button=>button.addEventListener('click',()=>{
    state.lifeFrame=Number(button.dataset.lifeFrame);state.lifeVisited.add(state.lifeFrame);paint();
@@ -235,8 +238,8 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   root.querySelectorAll('[data-move]').forEach(button=>button.addEventListener('click',()=>{if(state.checked)return;const a=Number(button.dataset.move),b=a+Number(button.dataset.dir);if(b<0||b>=state.order.length)return;[state.order[a],state.order[b]]=[state.order[b],state.order[a]];paint();root.querySelector('[data-move="'+b+'"][data-dir="'+button.dataset.dir+'"]')?.focus();}));
   root.querySelector('[data-next]')?.addEventListener('click',()=>{
    const node=current();
-   if(node.type==='dialogue'){
-    if(state.dialogueCheck<0){if(state.dialogueVisible<(node.turns||[]).length)return;state.dialogueCheck=0;state.notice='';paint();return;}
+   if(['dialogue','investigation'].includes(node.type)){
+    if(state.dialogueCheck<0){if(node.type==='dialogue'&&state.dialogueVisible<(node.turns||[]).length)return;state.dialogueCheck=0;state.notice='';paint();return;}
     if(state.checked){if(state.correcting){advance();return;}if(state.dialogueCheck<node.checks.length-1){state.dialogueCheck++;state.checked=null;state.notice='';paint();}else advance();return;}
     const check=node.checks[state.dialogueCheck],answer=response(node);
     if(!check.options.some(o=>o.id===answer)){
