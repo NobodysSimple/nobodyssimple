@@ -385,31 +385,31 @@
             {
               "id": "narcissism-f1-l1-deep-new-evidence",
               "type": "update",
-              "title": "A short contrasting case",
+              "title": "New evidence in a different relationship",
               "conceptId": "narcissism-f1-l1-deep-concept",
-              "explanation": "The private acknowledgement weakens simple role confusion. It strengthens a conclusion about his knowledge, not a full diagnosis.",
-              "counterexample": "If we notice only dishonesty, we may miss why he reacts so intensely to an available correction. A good account improves practical judgement because it explains what further evidence would distinguish the possibilities.",
+              "explanation": "The earlier acknowledgement directly weakens an innocent authorship mistake. The draft could still serve both an instrumental interest and protection of the lead's self-image.",
+              "counterexample": "A contract that uses 'author' differently could change the attribution dispute, but would need to be shown.",
               "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987",
               "image": "",
               "alt": "",
               "caption": "",
-              "prompt": "What does this additional evidence change?",
+              "prompt": "In another team, a project lead insists on being credited as author of research completed by a junior colleague. What follows from the newly disclosed record?",
               "options": [
                 {
-                  "id": "narcissism-f1-l1-revision-0",
-                  "label": "Knowing misattribution becomes more plausible, while threatened identity may still contribute."
+                  "id": "narcissism-f1-l1-deep-new-evidence-answer-0",
+                  "label": "The contradiction supports knowing misattribution; a desire to appear indispensable could still help explain the choice."
                 },
                 {
-                  "id": "narcissism-f1-l1-revision-1",
-                  "label": "The messages prove a clinical personality disorder."
+                  "id": "narcissism-f1-l1-deep-new-evidence-answer-1",
+                  "label": "The earlier praise makes role confusion the most likely explanation because the lead may mean overall ownership."
                 },
                 {
-                  "id": "narcissism-f1-l1-revision-2",
-                  "label": "The earlier discussion no longer matters because motives cannot be known."
+                  "id": "narcissism-f1-l1-deep-new-evidence-answer-2",
+                  "label": "The contradiction chiefly supports a fear of rejection, whereas deliberate career benefit becomes less relevant."
                 }
               ],
-              "answer": "narcissism-f1-l1-revision-0",
-              "newEvidence": "A month-old message shows Leo praising Maya for taking charge of the analysis. Yesterday he wrote to management that he personally developed it."
+              "answer": "narcissism-f1-l1-deep-new-evidence-answer-0",
+              "newEvidence": "Months earlier the lead wrote, 'Your modelling made this possible. I'll make sure the board knows it was yours.' The board-facing draft later names only the lead."
             },
             {
               "id": "narcissism-f1-l1-deep-recall",
@@ -804,31 +804,31 @@
             {
               "id": "narcissism-f1-l2-deep-new-evidence",
               "type": "update",
-              "title": "A short contrasting case",
+              "title": "New evidence in a different relationship",
               "conceptId": "narcissism-f1-l2-deep-concept",
-              "explanation": "A policy can explain why someone expects a certain practice. It does not establish that the policy is fair or that the work should be misdescribed.",
-              "counterexample": "Neither volume nor manners are reliable tests of a person's underlying trait. The question is whether an expectation remains reasonable when the same standard is applied to everyone affected, and whether the person can revise it when credible evidence arrives.",
+              "explanation": "The actual agreement sets one boundary; the researcher's changing emotional response may have several explanations. Earlier conduct weakens a fixed character claim but does not make the new obligation real.",
+              "counterexample": "An additional documented commitment or essential handover responsibility would still need to be considered.",
               "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987",
               "image": "",
               "alt": "",
               "caption": "",
-              "prompt": "How should the judgement change?",
+              "prompt": "A senior researcher says a junior colleague owes them loyalty for years of mentoring. The junior colleague accepts a different job. What does the added document help determine?",
               "options": [
                 {
-                  "id": "narcissism-f1-l2-revision-0",
-                  "label": "Nolan's claim now has a procedural basis, but the fairness and accuracy of the policy can still be questioned."
+                  "id": "narcissism-f1-l2-deep-new-evidence-answer-0",
+                  "label": "The disagreement is primarily about the cost of replacing the colleague, even if the researcher never mentions staffing."
                 },
                 {
-                  "id": "narcissism-f1-l2-revision-1",
-                  "label": "The written rule proves Nolan has good character."
+                  "id": "narcissism-f1-l2-deep-new-evidence-answer-1",
+                  "label": "The loyalty demand extends beyond the agreement; disappointment may be sincere, but it does not create the claimed obligation."
                 },
                 {
-                  "id": "narcissism-f1-l2-revision-2",
-                  "label": "The rule erases the fact that Aisha did the design."
+                  "id": "narcissism-f1-l2-deep-new-evidence-answer-2",
+                  "label": "The earlier congratulations show that the current demand cannot involve fear of losing a valued role."
                 }
               ],
-              "answer": "narcissism-f1-l2-revision-0",
-              "newEvidence": "The project agreement, signed before work began, says the senior member must be listed first on every external submission, regardless of individual contribution."
+              "answer": "narcissism-f1-l2-deep-new-evidence-answer-1",
+              "newEvidence": "The signed development agreement promised training and feedback. It did not require the junior colleague to remain, and the researcher had previously congratulated others on leaving for promotion."
             },
             {
               "id": "narcissism-f1-l2-deep-recall",
@@ -1221,31 +1221,31 @@
             {
               "id": "narcissism-f1-l3-deep-new-evidence",
               "type": "update",
-              "title": "A short contrasting case",
+              "title": "New evidence in a different relationship",
               "conceptId": "narcissism-f1-l3-deep-concept",
-              "explanation": "Responsive learning undercuts a claim of rigid resistance, even though the original reaction was still real.",
-              "counterexample": "What moves the narcissism hypothesis forward is not one painful feeling but a broader pattern in which exceptional standing, other people's recognition and difficulties in reciprocity organise how the person functions. A competing explanation must be taken seriously when it predicts the evidence equally well.",
+              "explanation": "They can acknowledge a flaw and keep working. The initial defensive language still occurred, but repeated rigidity is not established by it.",
+              "counterexample": "Sustained patterns under different pressures would matter more than either evening alone.",
               "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Narcissistic Personality Disorder: Progress in Recognition and Treatment",
               "image": "",
               "alt": "",
               "caption": "",
-              "prompt": "Which interpretation becomes weaker?",
+              "prompt": "After a poor performance, a public speaker alternates between dismissing the judges and describing themself as worthless. Which account now fits the evidence better?",
               "options": [
                 {
-                  "id": "narcissism-f1-l3-revision-0",
-                  "label": "An inflexible, enduring refusal to revise his self-image becomes less convincing."
+                  "id": "narcissism-f1-l3-deep-new-evidence-answer-0",
+                  "label": "The public dismissal was mainly a plan to damage competitors; the morning response adds little."
                 },
                 {
-                  "id": "narcissism-f1-l3-revision-1",
-                  "label": "His initial disappointment never occurred."
+                  "id": "narcissism-f1-l3-deep-new-evidence-answer-1",
+                  "label": "The morning correction shows there was no painful self-evaluation the previous night."
                 },
                 {
-                  "id": "narcissism-f1-l3-revision-2",
-                  "label": "The revision proves grandiosity and vulnerability are unrelated."
+                  "id": "narcissism-f1-l3-deep-new-evidence-answer-2",
+                  "label": "The speaker shows capacity to move from threatened self-worth toward specific self-assessment, weakening claims of rigid inflexibility."
                 }
               ],
-              "answer": "narcissism-f1-l3-revision-0",
-              "newEvidence": "The judging panel provides detailed feedback showing that Rafi's methodology failed a stated requirement. He reads it, apologises for his assumption and redesigns the work."
+              "answer": "narcissism-f1-l3-deep-new-evidence-answer-2",
+              "newEvidence": "The next morning the speaker requests detailed feedback, admits a technical error and returns to rehearsal without asking anyone to deny it."
             },
             {
               "id": "narcissism-f1-l3-deep-recall",
@@ -1638,31 +1638,31 @@
             {
               "id": "narcissism-f2-l1-deep-new-evidence",
               "type": "update",
-              "title": "A short contrasting case",
+              "title": "New evidence in a different relationship",
               "conceptId": "narcissism-f2-l1-deep-concept",
-              "explanation": "The new context changes the meaning of silence without invalidating Rosa's feelings.",
-              "counterexample": "Looking only for reassurance can also become an obstacle: the performer may stop attending to comments that identify where to improve. The useful distinction is between feedback that updates a skill judgement and feedback treated as proof of personal worth.",
+              "explanation": "A procedural problem and a fair overall outcome can coexist. The evidence does not justify dismissing either the scoring correction or the actual winner's work.",
+              "counterexample": "A separate violation of the assessment criteria could still alter the judgement.",
               "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Krizan & Herlache (2018), The Narcissism Spectrum Model, https://doi.org/10.1177/1088868316685018",
               "image": "",
               "alt": "",
               "caption": "",
-              "prompt": "What changes most?",
+              "prompt": "A classmate says a younger pupil won a prize through favouritism. A review finds one error. How should the complaint change?",
               "options": [
                 {
-                  "id": "narcissism-f2-l1-revision-0",
-                  "label": "The interpretation of his silence as personal rejection loses support."
+                  "id": "narcissism-f2-l1-deep-new-evidence-answer-0",
+                  "label": "The narrow error is real and should be corrected; the broader allegation of an undeserved win now has weaker support."
                 },
                 {
-                  "id": "narcissism-f2-l1-revision-1",
-                  "label": "Rosa's disappointment can no longer be real."
+                  "id": "narcissism-f2-l1-deep-new-evidence-answer-1",
+                  "label": "Finding a scoring mistake makes all claims about the winner's ability equally plausible."
                 },
                 {
-                  "id": "narcissism-f2-l1-revision-2",
-                  "label": "Technical feedback no longer matters."
+                  "id": "narcissism-f2-l1-deep-new-evidence-answer-2",
+                  "label": "Because the pupil was disappointed, the claim of unfairness is best treated as an expression of envy rather than assessed on its merits."
                 }
               ],
-              "answer": "narcissism-f2-l1-revision-0",
-              "newEvidence": "The conductor tells Rosa he was rushing to a rehearsal and had not commented on anyone's performance yet. He sends the same technical notes to all soloists."
+              "answer": "narcissism-f2-l1-deep-new-evidence-answer-0",
+              "newEvidence": "An independent assessor corrects a small scoring mistake but confirms the younger pupil would still have won by a substantial margin."
             },
             {
               "id": "narcissism-f2-l1-deep-recall",
@@ -2072,31 +2072,31 @@
             {
               "id": "narcissism-f2-l2-deep-new-evidence",
               "type": "update",
-              "title": "A short contrasting case",
+              "title": "New evidence in a different relationship",
               "conceptId": "narcissism-f2-l2-deep-concept",
-              "explanation": "Repair is relevant evidence about capacity and responsiveness. The original failure still occurred.",
-              "counterexample": "Do they repair the harm once it is pointed out? Answers to those questions provide better evidence than deciding that one insensitive sentence reveals a whole personality.",
+              "explanation": "Two experiences remain present: the parent feels criticised and the teenager has been hurt. Stopping the action is evidence of repair, not proof that it never mattered.",
+              "counterexample": "A repeated pattern of restarting the comments would weaken the conclusion about sustained change.",
               "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495",
               "image": "",
               "alt": "",
               "caption": "",
-              "prompt": "What claim becomes harder to defend?",
+              "prompt": "A parent jokes about a teenager's accent in public. The teenager says it is humiliating. How should we interpret the parent's later behaviour?",
               "options": [
                 {
-                  "id": "narcissism-f2-l2-revision-0",
-                  "label": "That Elena has a fixed inability to take Tariq's perspective."
+                  "id": "narcissism-f2-l2-deep-new-evidence-answer-0",
+                  "label": "The hurt feeling shows the parent's underlying concern was only about being admired."
                 },
                 {
-                  "id": "narcissism-f2-l2-revision-1",
-                  "label": "That her earlier response was insensitive."
+                  "id": "narcissism-f2-l2-deep-new-evidence-answer-1",
+                  "label": "The changed conduct supports responsiveness to the child's perspective, while the earlier boundary violations remain relevant."
                 },
                 {
-                  "id": "narcissism-f2-l2-revision-2",
-                  "label": "That Tariq had a reasonable need for support."
+                  "id": "narcissism-f2-l2-deep-new-evidence-answer-2",
+                  "label": "Because the joke stopped, the teenager's interpretation of the earlier incidents should be reconsidered as oversensitive."
                 }
               ],
-              "answer": "narcissism-f2-l2-revision-0",
-              "newEvidence": "Elena later calls Tariq privately to apologise, asks about his financial safety and offers to change the booking without involving him."
+              "answer": "narcissism-f2-l2-deep-new-evidence-answer-1",
+              "newEvidence": "After a private conversation, the parent stops the joke and acknowledges that the teenager has been asking for this for months. They still admit feeling hurt by the criticism."
             },
             {
               "id": "narcissism-f2-l2-deep-recall",
@@ -2490,31 +2490,31 @@
             {
               "id": "narcissism-f2-l3-deep-new-evidence",
               "type": "update",
-              "title": "A short contrasting case",
+              "title": "New evidence in a different relationship",
               "conceptId": "narcissism-f2-l3-deep-concept",
-              "explanation": "The stronger explanation of the hiring outcome changes. His treatment of Nia can still be evaluated separately.",
-              "counterexample": "We should not use psychology to dismiss legitimate complaints. Equally, a plausible complaint should not excuse spreading unsupported accusations about a colleague.",
+              "explanation": "The constraint matters and the repair matters. Neither observation alone settles a stable trait; together they give a more complete account of what happened.",
+              "counterexample": "If the pupil remained unsupported after the meeting, the account of successful repair would weaken.",
               "sources": "Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
               "image": "",
               "alt": "",
               "caption": "",
-              "prompt": "How must the analysis update?",
+              "prompt": "A teacher initially talks about school deadlines when a pupil reports distress. The timetable is then clarified. What becomes important?",
               "options": [
                 {
-                  "id": "narcissism-f2-l3-revision-0",
-                  "label": "The procedural complaint now has concrete support, whatever Marcus felt about Nia's success."
+                  "id": "narcissism-f2-l3-deep-new-evidence-answer-0",
+                  "label": "The teacher's first response was justified by institutional priorities, so examining its relational impact adds little."
                 },
                 {
-                  "id": "narcissism-f2-l3-revision-1",
-                  "label": "Marcus's earlier insults are therefore justified."
+                  "id": "narcissism-f2-l3-deep-new-evidence-answer-1",
+                  "label": "The later support establishes that the teacher has no self-focused tendencies across contexts."
                 },
                 {
-                  "id": "narcissism-f2-l3-revision-2",
-                  "label": "The mistake proves social comparison never influenced him."
+                  "id": "narcissism-f2-l3-deep-new-evidence-answer-2",
+                  "label": "The time pressure explains some of the initial attention shift, while the later response demonstrates capacity to address the pupil's need."
                 }
               ],
-              "answer": "narcissism-f2-l3-revision-0",
-              "newEvidence": "The scoring sheets show that Marcus's leadership examples were mistakenly omitted from the panel summary. Recalculating the assessment changes the ranking."
+              "answer": "narcissism-f2-l3-deep-new-evidence-answer-2",
+              "newEvidence": "The deadline was genuine, but another member of staff could handle it. The teacher later made time to listen and arranged follow-up support."
             },
             {
               "id": "narcissism-f2-l3-deep-recall",
@@ -2907,31 +2907,31 @@
             {
               "id": "narcissism-m1-l1-deep-new-evidence",
               "type": "update",
-              "title": "A short contrasting case",
+              "title": "New evidence in a different relationship",
               "conceptId": "narcissism-m1-l1-deep-concept",
-              "explanation": "New evidence can change the evaluation of a decision without requiring another extreme view.",
-              "counterexample": "It is to retain distinctions between an observed harmful action and claims that the whole person is either perfect or worthless. When evidence changes, judgement should change too; the question is whether it changes in proportion to what is known.",
+              "explanation": "The specific event now has a substantial explanation. A fair judgement about the friendship should include it without erasing any genuine recurring disagreements.",
+              "counterexample": "A longer history of neglect could remain important even after a justified cancellation.",
               "sources": "Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
               "image": "",
               "alt": "",
               "caption": "",
-              "prompt": "Which judgement becomes strongest?",
+              "prompt": "Someone concludes that a friend was always selfish after they cancel an important dinner. A new message is found. What follows?",
               "options": [
                 {
-                  "id": "narcissism-m1-l1-revision-0",
-                  "label": "The rejection may have been justified while the supervisor's earlier strengths remain possible."
+                  "id": "narcissism-m1-l1-deep-new-evidence-answer-0",
+                  "label": "The emergency weakens the global claim of selfishness; the missed event can still have been painful."
                 },
                 {
-                  "id": "narcissism-m1-l1-revision-1",
-                  "label": "Ana's distress was imaginary."
+                  "id": "narcissism-m1-l1-deep-new-evidence-answer-1",
+                  "label": "The group-message problem proves the person making the accusation was motivated by envy."
                 },
                 {
-                  "id": "narcissism-m1-l1-revision-2",
-                  "label": "The supervisor is now proven to be perfect."
+                  "id": "narcissism-m1-l1-deep-new-evidence-answer-2",
+                  "label": "The emergency explains the cancellation so completely that earlier unreliability, if any, becomes irrelevant."
                 }
               ],
-              "answer": "narcissism-m1-l1-revision-0",
-              "newEvidence": "Ana sees the proposal's power calculation and realises it cannot support the planned comparison. The supervisor also offers to discuss a redesign."
+              "answer": "narcissism-m1-l1-deep-new-evidence-answer-0",
+              "newEvidence": "The friend had texted earlier that they were in hospital with a family member and could not attend, but the message was buried in a group thread."
             },
             {
               "id": "narcissism-m1-l1-deep-recall",
@@ -3325,31 +3325,31 @@
             {
               "id": "narcissism-m1-l2-deep-new-evidence",
               "type": "update",
-              "title": "A short contrasting case",
+              "title": "New evidence in a different relationship",
               "conceptId": "narcissism-m1-l2-deep-concept",
-              "explanation": "Judge speech and action against their respective evidence; a poor apology and effective repair can coexist.",
-              "counterexample": "Conversely, a calm apology may be insincere or may lead to effective repair. The quality of an apology is better judged through acknowledgement, practical action and changed future behaviour than through emotional intensity alone.",
+              "explanation": "Practical action and the emotional demands of the apology must be assessed separately. The new documents change one judgement without settling the other.",
+              "counterexample": "The information may already have been seen or copied; deletion may not fully repair the harm.",
               "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
               "image": "",
               "alt": "",
               "caption": "",
-              "prompt": "What should we revise?",
+              "prompt": "A sibling posts private information and gives an intensely self-critical apology. New records change part of the picture. Which part?",
               "options": [
                 {
-                  "id": "narcissism-m1-l2-revision-0",
-                  "label": "His initial words still centred himself, but the evidence of practical repair is much stronger."
+                  "id": "narcissism-m1-l2-deep-new-evidence-answer-0",
+                  "label": "The apology is now best understood as a request for absolution rather than practical accountability."
                 },
                 {
-                  "id": "narcissism-m1-l2-revision-1",
-                  "label": "His words alone now prove narcissistic personality disorder."
+                  "id": "narcissism-m1-l2-deep-new-evidence-answer-1",
+                  "label": "The evidence of practical repair strengthens, while asking the affected person to provide immediate reassurance may still create pressure."
                 },
                 {
-                  "id": "narcissism-m1-l2-revision-2",
-                  "label": "Sasha's concern was groundless because the screenshot was eventually deleted."
+                  "id": "narcissism-m1-l2-deep-new-evidence-answer-2",
+                  "label": "A rapid deletion request shows the sibling was not emotionally affected by the mistake."
                 }
               ],
-              "answer": "narcissism-m1-l2-revision-0",
-              "newEvidence": "A follow-up shows Owen removed the screenshot within minutes, contacted the administrator and had already requested deletion from other devices before the meeting."
+              "answer": "narcissism-m1-l2-deep-new-evidence-answer-1",
+              "newEvidence": "The sibling had requested deletion from all recipients before apologising and was already following the organisation's breach procedure."
             },
             {
               "id": "narcissism-m1-l2-deep-recall",
@@ -3759,31 +3759,31 @@
             {
               "id": "narcissism-m1-l3-deep-new-evidence",
               "type": "update",
-              "title": "A short contrasting case",
+              "title": "New evidence in a different relationship",
               "conceptId": "narcissism-m1-l3-deep-concept",
-              "explanation": "Longitudinal evidence strengthens pattern-level concerns without answering all the questions of clinical evaluation.",
-              "counterexample": "It is not a reason to avoid a practical boundary while waiting for certainty. You may need to respond to exploitation or intimidation immediately, whether or not any diagnosis is present.",
+              "explanation": "Different behaviour across subjects suggests the perceived stakes matter. This refines a conditional-worth account and leaves room for competing causes.",
+              "counterexample": "Retrospective accounts and school records cannot establish a single developmental cause.",
               "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
               "image": "",
               "alt": "",
               "caption": "",
-              "prompt": "What can reasonably change?",
+              "prompt": "A student hides poor marks and believes asking for help exposes inadequacy. A fuller account of school life becomes available. What should change?",
               "options": [
                 {
-                  "id": "narcissism-m1-l3-revision-0",
-                  "label": "Concern about a persistent pattern strengthens, while clinical diagnosis still requires appropriate assessment."
+                  "id": "narcissism-m1-l3-deep-new-evidence-answer-0",
+                  "label": "Their family's achievement expectations no longer provide any useful hypothesis."
                 },
                 {
-                  "id": "narcissism-m1-l3-revision-1",
-                  "label": "A personality disorder is now proven beyond doubt."
+                  "id": "narcissism-m1-l3-deep-new-evidence-answer-1",
+                  "label": "The records chiefly support an innate personality explanation because behaviour changes between subjects."
                 },
                 {
-                  "id": "narcissism-m1-l3-revision-2",
-                  "label": "Staff must accept the behaviour until a named diagnosis is confirmed."
+                  "id": "narcissism-m1-l3-deep-new-evidence-answer-2",
+                  "label": "The avoidance may depend on the personal meaning of particular subjects, rather than reflecting a universal inability to seek help."
                 }
               ],
-              "answer": "narcissism-m1-l3-revision-0",
-              "newEvidence": "Independent records show the manager has repeatedly threatened staff over several years and has serious conflicts outside the workplace."
+              "answer": "narcissism-m1-l3-deep-new-evidence-answer-2",
+              "newEvidence": "School records also show several occasions where the student willingly asked teachers for help and responded well to feedback in subjects they did not connect with family approval."
             },
             {
               "id": "narcissism-m1-l3-deep-recall",
@@ -4176,31 +4176,31 @@
             {
               "id": "narcissism-m1-l4-deep-new-evidence",
               "type": "update",
-              "title": "A short contrasting case",
+              "title": "New evidence in a different relationship",
               "conceptId": "narcissism-m1-l4-deep-concept",
-              "explanation": "The indicators define the scope of a score's interpretation.",
-              "counterexample": "An association between shame and a scale does not prove that one caused the other. A careful reader asks how participants were selected, which alternative variables were measured and whether conclusions apply beyond the sampled group.",
+              "explanation": "The operational definitions differ. The papers may be examining related but distinct dimensions; neither label guarantees clinical validity.",
+              "counterexample": "If validated convergent evidence later shows the scales measure the same latent construct, direct comparison becomes more appropriate.",
               "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Initial Construction and Validation of the Pathological Narcissism Inventory, doi:10.1037/a0016530",
               "image": "",
               "alt": "",
               "caption": "",
-              "prompt": "What becomes necessary?",
+              "prompt": "Two studies report different 'narcissism' findings. Reading the measures reveals an important difference. What should the reviewer do?",
               "options": [
                 {
-                  "id": "narcissism-m1-l4-revision-0",
-                  "label": "Interpret each result in relation to its actual items before comparing them."
+                  "id": "narcissism-m1-l4-deep-new-evidence-answer-0",
+                  "label": "Interpret each result through its actual item content before arguing that the findings contradict one another."
                 },
                 {
-                  "id": "narcissism-m1-l4-revision-1",
-                  "label": "Average the two scores and call the result a disorder."
+                  "id": "narcissism-m1-l4-deep-new-evidence-answer-1",
+                  "label": "Treat the second questionnaire as the true clinical measure because it includes distress."
                 },
                 {
-                  "id": "narcissism-m1-l4-revision-2",
-                  "label": "Ignore both because the words overlap."
+                  "id": "narcissism-m1-l4-deep-new-evidence-answer-2",
+                  "label": "Combine their scores because the measures share the same general label."
                 }
               ],
-              "answer": "narcissism-m1-l4-revision-0",
-              "newEvidence": "On reading the methods, Mara discovers that one 'leadership' questionnaire mostly asks about confidence in public speaking, while the other includes items about distress when unadmired."
+              "answer": "narcissism-m1-l4-deep-new-evidence-answer-0",
+              "newEvidence": "One questionnaire mainly asks about enjoying leadership and public visibility. The other asks how people respond emotionally when admiration is withdrawn."
             },
             {
               "id": "narcissism-m1-l4-deep-recall",
@@ -4593,31 +4593,31 @@
             {
               "id": "narcissism-m1-l5-deep-new-evidence",
               "type": "update",
-              "title": "A short contrasting case",
+              "title": "New evidence in a different relationship",
               "conceptId": "narcissism-m1-l5-deep-concept",
-              "explanation": "The time pattern matters; change is judged through behaviour, not a declaration of perfection.",
-              "counterexample": "A person seeking help may also need to work with shame that makes it hard to acknowledge their conduct. Naming those barriers explains why treatment can be difficult; it does not transfer responsibility to somebody else.",
+              "explanation": "The repeated successful repairs count, and so does the lapse. The pattern and conditions of each matter when judging improvement over time.",
+              "counterexample": "The partner's safety and experience remain relevant even when average functioning improves.",
               "sources": "Diamond et al. (2020), PMID:32186987; A Mentalizing Approach for Narcissistic Personality Disorder (2021), doi:10.1176/appi.psychotherapy.20210017",
               "image": "",
               "alt": "",
               "caption": "",
-              "prompt": "What changes most?",
+              "prompt": "A person in therapy reports that conflict no longer leads to prolonged withdrawal. Their partner describes a more complicated month. What does it suggest?",
               "options": [
                 {
-                  "id": "narcissism-m1-l5-revision-0",
-                  "label": "The evidence for sustained improvement becomes stronger, though difficulties may still recur."
+                  "id": "narcissism-m1-l5-deep-new-evidence-answer-0",
+                  "label": "The relapse is more diagnostic than the repairs because it resembles the earlier pattern."
                 },
                 {
-                  "id": "narcissism-m1-l5-revision-1",
-                  "label": "Three months guarantee lifelong change."
+                  "id": "narcissism-m1-l5-deep-new-evidence-answer-1",
+                  "label": "There is evidence of partial behavioural change with a remaining vulnerability under some conditions."
                 },
                 {
-                  "id": "narcissism-m1-l5-revision-2",
-                  "label": "His earlier harmful conduct is erased."
+                  "id": "narcissism-m1-l5-deep-new-evidence-answer-2",
+                  "label": "The acknowledgement after withdrawal is equivalent to the three successful repairs."
                 }
               ],
-              "answer": "narcissism-m1-l5-revision-0",
-              "newEvidence": "Over the next three months Nico repeatedly acknowledges criticism, corrects mistakes promptly and does not demand reassurance before doing so."
+              "answer": "narcissism-m1-l5-deep-new-evidence-answer-1",
+              "newEvidence": "During three disagreements, the person returned after a short pause and repaired the issue. In a fourth, they withdrew for two days and later acknowledged it."
             },
             {
               "id": "narcissism-m1-l5-deep-recall",
@@ -5011,31 +5011,31 @@
             {
               "id": "narcissism-m1-l6-deep-new-evidence",
               "type": "update",
-              "title": "A short contrasting case",
+              "title": "New evidence in a different relationship",
               "conceptId": "narcissism-m1-l6-deep-concept",
-              "explanation": "New context can explain change without settling responsibility or diagnosis.",
-              "counterexample": "The safest account separates four questions: what happened, what seems to maintain it, what additional evidence could change the explanation and what the organisation is responsible for doing now. Those answers can differ without contradiction.",
+              "explanation": "The documents resolve part of the attribution dispute by specifying who did what. The director's relational behaviour remains a separate matter.",
+              "counterexample": "The external award may have formal categories that require carefully defined lead-applicant terminology.",
               "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987; Ronningstam (2015), PMCID:PMC4415495",
               "image": "",
               "alt": "",
               "caption": "",
-              "prompt": "How should your formulation change?",
+              "prompt": "An arts organisation disputes who created a project. New documents separate the roles more clearly. How should the board interpret them?",
               "options": [
                 {
-                  "id": "narcissism-m1-l6-revision-0",
-                  "label": "The financial and status context may help explain the recent shift; neither earlier cooperation nor current harm should be ignored."
+                  "id": "narcissism-m1-l6-deep-new-evidence-answer-0",
+                  "label": "The director's financial work now has priority over the creative work, since implementation made the idea viable."
                 },
                 {
-                  "id": "narcissism-m1-l6-revision-1",
-                  "label": "The funding change excuses any misattribution."
+                  "id": "narcissism-m1-l6-deep-new-evidence-answer-1",
+                  "label": "The co-authors have equal responsibilities for every later managerial decision."
                 },
                 {
-                  "id": "narcissism-m1-l6-revision-2",
-                  "label": "Her earlier corrections prove every current complaint false."
+                  "id": "narcissism-m1-l6-deep-new-evidence-answer-2",
+                  "label": "The record supports recognising different contributions without assuming that funding or authorship erases the other."
                 }
               ],
-              "answer": "narcissism-m1-l6-revision-0",
-              "newEvidence": "A record shows Celeste corrected several staff credits promptly in earlier years, but recent complaints followed a change in senior funding tied to her public image."
+              "answer": "narcissism-m1-l6-deep-new-evidence-answer-2",
+              "newEvidence": "Dated drafts show two employees co-developed the concept; the director subsequently secured the funding and managed delivery."
             },
             {
               "id": "narcissism-m1-l6-deep-recall",
