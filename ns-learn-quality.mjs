@@ -1,0 +1,57 @@
+/**
+ * Editorial support for substantial, readable psychology lessons.
+ * These checks detect structure, never certify scientific or clinical accuracy.
+ */
+const words=s=>String(s||'').trim().split(/\s+/).filter(Boolean).length;
+const exercise=node=>!['read','image'].includes(node?.type);
+const mcq=node=>['choose','respond','repair','investigate','update','perspective','character','predict','dialogue'].includes(node?.type);
+export const learnerText=lesson=>{
+ const pieces=[lesson?.teach||''];
+ for(const node of lesson?.nodes||[]){
+  for(const key of ['title','body','prompt','scenario','reveal','explanation','newEvidence','viewA','viewB'])if(node[key])pieces.push(node[key]);
+  for(const row of node.turns||[])pieces.push(row.text||'');
+  for(const row of node.segments||[])pieces.push(row.text||'');
+  for(const row of node.steps||[])pieces.push(row.label||'');
+  for(const row of node.options||[])pieces.push(row.label||'');
+  for(const check of node.checks||[]){
+   pieces.push(check.prompt||'',check.explanation||'');
+   for(const option of check.options||[])pieces.push(option.label||'');
+  }
+ }
+ return pieces.filter(Boolean).join(' ');
+};
+export function lessonMetrics(lesson){
+ const nodes=lesson?.nodes||[];
+ const drills=nodes.filter(exercise).reduce((n,item)=>n+(item.type==='dialogue'?(item.checks?.length||0):1),0);
+ const reads=nodes.filter(x=>x.type==='read');
+ const multiple=nodes.filter(mcq);
+ const malformed=nodes.filter(x=>x.type==='choose'&&Array.isArray(x.options)&&x.options.length>4);
+ const textWords=words(learnerText(lesson));
+ // A rough, stated estimate: deliberate reading plus decision time for each drill.
+ const estimatedMinutes=Math.max(2,Math.ceil(textWords/165+drills*.42));
+ return {nodes:nodes.length,drills,reads:reads.length,textWords,multipleChoiceNodes:multiple.length,
+  overlyLongChoiceNodes:malformed.length,formats:new Set(nodes.map(x=>x.type)).size,estimatedMinutes};
+}
+export function auditLesson(lesson,{strict=false}={}){
+ const m=lessonMetrics(lesson),warnings=[],blockers=[];
+ const flag=(condition,message,severe=false)=>{if(condition)(severe&&strict?blockers:warnings).push(message);};
+ flag(!lesson?.teach||words(lesson.teach)<40,'Expand the opening: explain the central question and why it matters.');
+ flag(!lesson?.objective||words(lesson.objective)<7,'Write an observable learning outcome: what should the student explain or do afterwards?');
+ flag(m.drills<8,'Add drills. Aim for 8–12 deliberate practice opportunities, not eight multiple-choice screens.',true);
+ flag(m.formats<4,'Vary the cognitive work: observation, explanation, evidence revision and real-life transfer.',true);
+ flag(m.textWords<900,'Add substantive teaching. The visible material is too short for a thorough ten-minute lesson.',true);
+ flag(m.estimatedMinutes<9,'At the current content density, this lesson is unlikely to occupy roughly ten minutes.',true);
+ flag(m.multipleChoiceNodes>Math.max(3,Math.floor(m.drills*.5)),'Too many answer-choice activities. Replace some with evidence selection, sequencing, investigation or applied response.');
+ flag(m.overlyLongChoiceNodes>0,'Reduce conventional multiple-choice tasks to two to four carefully written alternatives.');
+ const missingSources=(lesson?.nodes||[]).filter(n=>exercise(n)&&!n.sources?.trim());
+ flag(missingSources.length>0,missingSources.length+' exercise(s) lack research or guideline attribution.');
+ flag(!lesson?.takeaway||words(lesson.takeaway)<10,'Finish with a usable, specific conclusion rather than a generic recap.');
+ flag(!lesson?.transferPrompt,'Add an explicit novel case or transfer prompt and ask the learner to apply the mechanism.');
+ flag(!lesson?.staffReview,'Record the evidence review and clinical editorial decision before approving the lesson.',true);
+ return {...m,warnings,blockers,standard:strict?'deep-10':'legacy'};
+}
+export function displayedLessonMinutes(lesson){
+ const claimed=Number(lesson?.durationMinutes);
+ if(Number.isFinite(claimed)&&claimed>=3&&claimed<=60)return Math.round(claimed);
+ return lessonMetrics(lesson).estimatedMinutes;
+}
