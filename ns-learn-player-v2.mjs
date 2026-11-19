@@ -180,6 +180,8 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   wire();
   // Feedback cannot hide the permanently visible action row at any zoom.
   if(state.checked){
+   const feedback=root.querySelector('.ns-learn-player__feedback');
+   if(feedback){feedback.tabIndex=-1;feedback.focus({preventScroll:true});}
    const column=root.querySelector('.ns-learn-immersive__content');
    if(column)column.scrollTop=column.scrollHeight;
   }
@@ -222,8 +224,8 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   root.querySelector('[data-start]')?.addEventListener('click',()=>{state.phase='node';state.i=0;reset();paint();});
   root.querySelector('[data-close-lesson]')?.addEventListener('click',()=>root.closest('#cl-preview')?.querySelector('[data-act="close-preview"]')?.click());
   root.querySelector('[data-restart]')?.addEventListener('click',()=>{state.phase='intro';state.i=0;state.answers={};state.options=new Map();state.saved=false;state.repairs=createRepairQueue();state.correcting=false;state.repairTask=null;nodes=arrange(originalNodes);paint();});
-  root.querySelectorAll('[data-segment]').forEach(button=>button.addEventListener('click',()=>{const id=button.dataset.segment;if(state.labels.has(id))state.labels.delete(id);else state.labels.add(id);button.setAttribute('aria-pressed',String(state.labels.has(id)));}));
-  root.querySelectorAll('[data-move]').forEach(button=>button.addEventListener('click',()=>{const a=Number(button.dataset.move),b=a+Number(button.dataset.dir);if(b<0||b>=state.order.length)return;[state.order[a],state.order[b]]=[state.order[b],state.order[a]];paint();root.querySelector('[data-move="'+b+'"][data-dir="'+button.dataset.dir+'"]')?.focus();}));
+  root.querySelectorAll('[data-segment]').forEach(button=>button.addEventListener('click',()=>{if(state.checked)return;const id=button.dataset.segment;if(state.labels.has(id))state.labels.delete(id);else state.labels.add(id);button.setAttribute('aria-pressed',String(state.labels.has(id)));}));
+  root.querySelectorAll('[data-move]').forEach(button=>button.addEventListener('click',()=>{if(state.checked)return;const a=Number(button.dataset.move),b=a+Number(button.dataset.dir);if(b<0||b>=state.order.length)return;[state.order[a],state.order[b]]=[state.order[b],state.order[a]];paint();root.querySelector('[data-move="'+b+'"][data-dir="'+button.dataset.dir+'"]')?.focus();}));
   root.querySelector('[data-next]')?.addEventListener('click',()=>{
    const node=current();
    if(node.type==='dialogue'){
