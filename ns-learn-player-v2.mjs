@@ -10,7 +10,7 @@ import {renderDialogue} from './ns-learn-dialogue.mjs';
 import {displayedLessonMinutes,lessonMetrics} from './ns-learn-quality.mjs';
 import {lessonResearchMarkup} from './ns-learn-evidence.mjs';
 import {createRepairQueue,addRepair,takeRepair,finishRepair,repairSummary,readSoundPreference,saveSoundPreference,playLearningCue,correctAnswerText} from './ns-learn-feedback.mjs';
-import {isLifeNode,lifeNodeMode,lifeNodeDefinition,lifeControls} from './ns-life-node-types.mjs?v=everyday-nodes-v2';
+import {isLifeNode,lifeNodeMode,lifeNodeDefinition,lifeControls} from './ns-life-node-types.mjs?v=narcissism-audit-20261119';
 import {knownCastForLesson,charactersMentioned,characterPortrait} from './ns-learn-cast.mjs';
 import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs';
 const esc=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[ch]));
