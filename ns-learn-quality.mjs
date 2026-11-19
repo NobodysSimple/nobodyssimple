@@ -28,7 +28,7 @@ export function lessonMetrics(lesson){
  const malformed=nodes.filter(x=>x.type==='choose'&&Array.isArray(x.options)&&x.options.length>4);
  const textWords=words(learnerText(lesson));
  // A rough, stated estimate: deliberate reading plus decision time for each drill.
- const estimatedMinutes=Math.max(2,Math.ceil(textWords/165+drills*.42));
+ const estimatedMinutes=Math.max(2,Math.ceil(textWords/205+drills*.25));
  return {nodes:nodes.length,drills,reads:reads.length,textWords,multipleChoiceNodes:multiple.length,
   overlyLongChoiceNodes:malformed.length,formats:new Set(nodes.map(x=>x.type)).size,estimatedMinutes};
 }
