@@ -6,9 +6,9 @@
 import {LEARN_COURSES} from './ns-learn-catalog-v2.mjs';
 import {COURSE_LAB_TYPES,createCourseDraft,newCourseUnit,newCourseLesson,createCourseNode,
  makeCourseId,validateCourseForPublish,safeCourseImage} from './ns-course-lab-schema.mjs';
-import {renderLearnLesson} from './ns-learn-player-v2.mjs?v=deep-learn-20261119-r2';
+import {renderLearnLesson} from './ns-learn-player-v2.mjs?v=narcissism-audit-20261119';
 import {auditLesson} from './ns-learn-quality.mjs';
-import {isLifeNode,lifeNodeEditor} from './ns-life-node-types.mjs?v=everyday-nodes-v2';
+import {isLifeNode,lifeNodeEditor} from './ns-life-node-types.mjs?v=narcissism-audit-20261119';
 import {readCourseLabDraft,saveCourseLabDraft,deleteCourseLabDraft} from './studio-course-lab-drafts.mjs';
 import {fetchCurriculumBlueprint,createDraftFromBlueprint,mergePublishedIntoBlueprint,countAuthoredLessons,makePublishableSubset} from './ns-course-blueprints.mjs';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
