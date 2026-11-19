@@ -1,4 +1,4 @@
-import {LIFE_NODE_TEMPLATES,isLifeNode,createLifeNode,validateLifeNode} from './ns-life-node-types.mjs';
+import {LIFE_NODE_TEMPLATES,isLifeNode,createLifeNode,validateLifeNode} from './ns-life-node-types.mjs?v=everyday-nodes-v2';
 /**
  * Course Lab shared authoring schema: no content, only reusable node templates.
  * Stable IDs survive reorder/revision; published nodes are data, never executable HTML.
