@@ -1,4 +1,5 @@
 import {LIFE_NODE_TEMPLATES,isLifeNode,createLifeNode,validateLifeNode} from './ns-life-node-types.mjs?v=everyday-nodes-v2';
+import {auditLesson} from './ns-learn-quality.mjs';
 /**
  * Course Lab shared authoring schema: no content, only reusable node templates.
  * Stable IDs survive reorder/revision; published nodes are data, never executable HTML.
@@ -46,7 +47,7 @@ export function createCourseDraft(courseId,title=''){
  return {id:courseId,version:1,status:'draft',title,description:'',modules:[]};
 }
 export function newCourseUnit(){return {id:makeCourseId(),title:'New unit',lessons:[]};}
-export function newCourseLesson(){return {id:makeCourseId(),version:1,title:'New lesson',teach:'',nodes:[]};}
+export function newCourseLesson(){return {id:makeCourseId(),version:1,title:'New lesson',teach:'',durationMinutes:10,standard:'deep-10',objective:'',takeaway:'',transferPrompt:'',staffReview:'',editorialStatus:'draft',nodes:[]};}
 export const safeCourseImage=src=>{
  const value=String(src||'').trim();
  return /^(?:media|learn-art)\/[a-zA-Z0-9_./-]+\.(?:png|jpe?g|webp|gif|svg)$/.test(value)&&!value.split('/').includes('..')?value:'';
@@ -67,6 +68,7 @@ export function validateCourseForPublish(course){
   unitIds.push(unit.id);
   for(const [li,lesson] of (unit.lessons||[]).entries()){
    const step=where+', lesson '+(li+1);lessonIds.push(lesson.id);
+   if(lesson.standard==='deep-10')for(const issue of auditLesson(lesson,{strict:true}).blockers)report(step,issue);
    if(!isText(lesson.id)||!isText(lesson.title)||!Array.isArray(lesson.nodes)||!lesson.nodes.length)report(step,'add a title and at least one page or exercise');
    for(const [ni,node] of (lesson.nodes||[]).entries()){
     const here=step+', node '+(ni+1)+' ('+node.type+')';nodeIds.push(node.id);
