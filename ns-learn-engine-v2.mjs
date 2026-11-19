@@ -3,7 +3,7 @@
  * Course Lab node sequences are understood. Pure functions: safe for tests.
  */
 import {COURSE_LAB_EXERCISES,learningNodes,validateCourseForPublish} from './ns-course-lab-schema.mjs';
-import {isLifeNode,gradeLifeNode} from './ns-life-node-types.mjs';
+import {isLifeNode,gradeLifeNode} from './ns-life-node-types.mjs?v=everyday-nodes-v2';
 export const QUESTION_TYPES=Object.freeze([...new Set(['match','sort','choose','complete','sequence','respond',...COURSE_LAB_EXERCISES])]);
 const isObject=o=>o!==null&&typeof o==='object'&&!Array.isArray(o);
 const norm=value=>String(value??'').normalize('NFKC').toLowerCase().replace(/[’]/g,"'").trim().replace(/\s+/g,' ');
