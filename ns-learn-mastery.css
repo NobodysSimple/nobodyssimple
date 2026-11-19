@@ -14,3 +14,14 @@
 .ns-learn-player__sound-toggle:focus-visible{outline:3px solid #9fe1ac;outline-offset:3px}
 .ns-learn-player--immersive input:focus-visible,.ns-learn-player--immersive select:focus-visible,.ns-learn-player--immersive button:focus-visible{outline:3px solid #adcfab;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.ns-learn-player__feedback{animation:none!important;transition:none!important}}
+
+/* The chosen response receives the same verdict colour as the written feedback. */
+.ns-learn-immersive__task:has(.ns-learn-player__feedback--correct) .ns-learn-player__choices label:has(input:checked),
+.ns-learn-immersive__task:has(.ns-learn-player__feedback--correct) .ns-life-node__answers label:has(input:checked){background:#d9f5de!important;color:#144325!important;border:2px solid #278d4b!important}
+.ns-learn-immersive__task:has(.ns-learn-player__feedback--incorrect) .ns-learn-player__choices label:has(input:checked),
+.ns-learn-immersive__task:has(.ns-learn-player__feedback--incorrect) .ns-life-node__answers label:has(input:checked){background:#fbe2e0!important;color:#702721!important;border:2px solid #cb554c!important}
+.cl-quality-panel{padding:13px 14px;margin:13px 0;border:1px solid #d6ded3;border-radius:12px;background:#f8f9f4;color:#294b39}
+.cl-quality-panel summary{cursor:pointer;font-weight:750;line-height:1.5}
+.cl-quality-panel p,.cl-quality-panel li{font-size:.88rem;line-height:1.65}
+.cl-quality-panel ul{padding-inline-start:1.3rem;margin:.6rem 0}
+.cl-quality-bad{color:#8d3029}.cl-quality-good{color:#266743}
