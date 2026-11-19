@@ -74,7 +74,7 @@ import {getNeedsMode} from './ns-needs-catalog.mjs';
 import {attachPathGuide,pathGuideForOption} from './ns-pathway-guidebook.mjs';
 import {attachSteadyGuidebookToTool,steadyGuide} from './ns-steady-guidebook.mjs';
 import {renderReasoningGuide,renderReasoningTool} from './ns-reasoning-bridge.mjs';
-import {renderCourseHub} from './ns-learn-courses.mjs?v=foundations-20261118';
+import {renderCourseHub} from './ns-learn-courses.mjs?v=everyday-nodes-20261119';
 import {renderNotebookBlogPost} from './ns-blog-notebook.mjs?v=hello-notebook-20261115-2';
 import {mountPublishedTopicEditorial} from './ns-topic-publications.mjs';
 import { renderSupport } from "./referrals.mjs";
