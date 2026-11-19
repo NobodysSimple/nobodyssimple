@@ -159,7 +159,8 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
     (report.warnings.length?'<ul>'+report.warnings.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
     '<label class="cl-field"><span>Novel-case transfer prompt</span><textarea data-meta="lesson-transfer" rows="3">'+esc(lesson.transferPrompt||'')+'</textarea></label>'+
     '<label class="cl-field"><span>Research and editorial review notes (staff only)</span><textarea data-meta="lesson-research" rows="4">'+esc(lesson.staffReview||'')+'</textarea></label>'+
-    '<label class="cl-field"><span>Expected learner time, minutes</span><input type="number" min="3" max="60" data-meta="lesson-duration" value="'+esc(lesson.durationMinutes||10)+'"></label>'+
+    '<label class="cl-field"><span>Expected learner time, minutes</span><input type="number" min="3" max="60" data-meta="lesson-duration" value="'+esc(lesson.durationMinutes||10)+'"></label>'+ 
+    '<label class="cl-field"><span>Plain-English glossary (one Term | explanation per line)</span><textarea data-meta="lesson-glossary" rows="4">'+esc((lesson.glossary||[]).map(x=>x.term+' | '+x.definition).join('\n'))+'</textarea></label>'+
     '</details>'+
     '<div class="cl-lesson-actions"><button data-act="lesson-up" type="button">Move lesson ↑</button><button data-act="lesson-down" type="button">Move lesson ↓</button><button data-act="delete-lesson" type="button">Delete lesson</button></div>':'<p class="cl-hint">Select a lesson in the outline, or add one to a unit.</p>';
   $('#cl-nodes').innerHTML=lesson?(lesson.nodes||[]).map((node,i)=>'<article class="cl-node '+(i===n?'active':'')+'" draggable="true" data-node-index="'+i+'"><button type="button" data-act="select-node" data-n="'+i+'"><small>'+String(i+1).padStart(2,'0')+' · '+esc(types[node.type]?.name||node.type)+'</small><strong>'+esc(node.title||node.prompt||node.body?.slice(0,65)||'Untitled node')+'</strong></button><div><button type="button" data-act="node-up" data-n="'+i+'" '+(i===0?'disabled':'')+' aria-label="Move node up">↑</button><button type="button" data-act="node-down" data-n="'+i+'" '+(i===lesson.nodes.length-1?'disabled':'')+' aria-label="Move node down">↓</button><button type="button" data-act="node-copy" data-n="'+i+'" aria-label="Duplicate node">⧉</button><button type="button" data-act="node-delete" data-n="'+i+'" aria-label="Delete node">×</button></div></article>').join('')||'<p class="cl-hint">Add reading pages and exercises in any order.</p>':'';
@@ -222,6 +223,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
    if(target.dataset.meta==='lesson-transfer'&&lesson)lesson.transferPrompt=target.value;
    if(target.dataset.meta==='lesson-research'&&lesson)lesson.staffReview=target.value;
    if(target.dataset.meta==='lesson-duration'&&lesson)lesson.durationMinutes=Math.max(3,Math.min(60,Number(target.value)||10));
+   if(target.dataset.meta==='lesson-glossary'&&lesson)lesson.glossary=target.value.split('\n').map(line=>{const i=line.indexOf('|');return i<0?null:{term:line.slice(0,i).trim(),definition:line.slice(i+1).trim()};}).filter(x=>x?.term&&x?.definition);
    if(target.dataset.meta==='lesson-objective'&&lesson)lesson.objective=target.value;
    if(target.dataset.meta==='lesson-mode'&&lesson)lesson.recommendedType=target.value;
    if(target.dataset.meta==='lesson-status'&&lesson)lesson.editorialStatus=target.value;
