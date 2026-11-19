@@ -36,3 +36,30 @@
 .ns-life-node__surgery button{border:2px solid #457156;background:#e3efdc;color:#2a4f3b;border-radius:.4rem;padding:.18rem .4rem;font:inherit;font-weight:800;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .ns-life-node__surgery button:focus-visible{outline:3px solid #93a899;outline-offset:3px}
 .ns-life-node__surgery button[aria-pressed="true"]{background:#cfe3c9}
+
+
+/* Scoped contrast contract: the immersive player uses pale text by default.
+   Light illustration cards must explicitly restore dark text, even for nested
+   p elements and headings overridden by global immersive typography. */
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) :is(.ns-life-node__scene,.ns-life-node__reveal,.ns-life-node__detail,.ns-life-node__edited,.ns-life-node__surgery) {
+  color:#183c2e !important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) :is(.ns-life-node__scene,.ns-life-node__reveal,.ns-life-node__detail,.ns-life-node__edited,.ns-life-node__surgery) :is(p,small,strong,span) {
+  color:#183c2e !important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__reveal strong {color:#123b29 !important;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__instruction,
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__answers legend {color:#f1f5ef !important;line-height:1.5;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__answers label,
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__answers label :is(span,small) {color:#1c3b2d !important;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__frame,
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__frame span {color:#1d422f !important;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__sort label :is(span,strong) {color:#1e422e !important;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__dial,
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__dial output {color:#1e422e !important;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__scene {border-color:#b8cdb6;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__reveal {border:1px solid #bad0b7;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__detail {margin-top:.75rem;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__answers legend {font-size:1rem !important;font-weight:700;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__reveal-button:focus-visible,
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) .ns-life-node__frame:focus-visible {outline:3px solid #a4deb3;outline-offset:3px;}
