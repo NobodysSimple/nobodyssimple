@@ -1,0 +1,33 @@
+/* Everyday-life learning nodes. One scene and one action; small-screen first. */
+.ns-life-node__scene{position:relative;display:flex;gap:1rem;align-items:center;margin:.65rem 0 1rem;padding:1.25rem 1.1rem;border-radius:1.1rem;background:linear-gradient(130deg,#eff3e9,#fcf5e8);border:1px solid #d9e2d6;color:#264d3d;font-size:1rem;line-height:1.6}
+.ns-life-node__scene p{margin:0;flex:1}
+.ns-life-node__person{width:3rem;height:3.4rem;flex:none;display:flex;justify-content:center;align-items:center;border:2px solid #40644c;background:#fffdf6;border-radius:45% 45% 38% 38%;box-shadow:0 .3rem 0 #d1dfcd;font-size:1.2rem;color:#8fba73}
+.ns-life-node__instruction{font-weight:650;color:var(--text,#234637);margin:.5rem 0}
+.ns-life-node__frames{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,155px),1fr));gap:.65rem;margin:.85rem 0}
+.ns-life-node__frame{display:flex;gap:.6rem;align-items:center;text-align:left;background:#f8f6ed;color:#294c3d;border:1.5px solid #d6dfd3;border-radius:1rem;padding:.8rem .7rem;font:inherit;font-size:.9rem;line-height:1.4;min-height:4.4rem;cursor:pointer;transition:background .12s,border-color .12s,transform .12s}
+.ns-life-node__frame:hover,.ns-life-node__frame:focus-visible{border-color:#65866b;background:#e8f0e4;outline-offset:2px}
+.ns-life-node__frame.is-active{background:#e3efdf;border-color:#365f46;box-shadow:0 0 0 1px #365f46}
+.ns-life-node__number{flex:none;display:grid;place-items:center;width:1.8rem;height:1.8rem;border-radius:50%;background:#dae7d4;color:#2e5340;font-weight:700}
+.ns-life-node__detail{border-left:3px solid #9eac78;margin:.8rem 0;padding:.5rem .85rem;color:#385342;background:#f5f5e9}
+.ns-life-node__reveal{margin:1rem 0;padding:1rem;border-radius:.85rem;background:#eaf1e7;color:#244b37}
+.ns-life-node__reveal strong,.ns-life-node__edited small{display:block;font-weight:750;margin-bottom:.4rem}
+.ns-life-node__reveal p{margin:0;line-height:1.55}
+.ns-life-node__reveal-button{display:block;width:100%;border:1px solid #365c44;background:#345f48;color:#fff;border-radius:.85rem;padding:.85rem 1.1rem;font:inherit;font-weight:700;cursor:pointer;margin:.8rem 0}
+.ns-life-node__reveal-button:disabled{opacity:.45;cursor:not-allowed}
+.ns-life-node__answers{margin:1rem 0;padding:0;border:0;min-width:0;display:grid;gap:.55rem}
+.ns-life-node__answers legend{font-size:.95rem;font-weight:700;line-height:1.5;margin-bottom:.75rem;color:var(--text,#244637)}
+.ns-life-node__answers label{display:flex;align-items:center;gap:.75rem;border:1px solid #d5e0d1;background:#fffdfa;padding:.85rem;border-radius:.85rem;cursor:pointer;color:#234436;font-size:.95rem;line-height:1.4}
+.ns-life-node__answers label:has(input:checked){background:#e7f0e4;border-color:#365e45}
+.ns-life-node__answers input{flex:none;accent-color:#386345;width:1.1rem;height:1.1rem}
+.ns-life-node__sort{display:grid;gap:.75rem;margin:1rem 0}
+.ns-life-node__sort label{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.7rem;border-radius:.8rem;background:#f8f7ed;padding:.85rem;font-weight:600;color:#264c3a}
+.ns-life-node__sort select{max-width:100%;min-height:2.5rem;padding:.4rem;border:1px solid #9eb3a0;border-radius:.5rem;background:#fff;color:#203d2f}
+.ns-life-node__dial{display:grid;gap:.5rem;margin:1rem 0;padding:1rem;background:#faf5e8;border-radius:.8rem;font-weight:650;color:#284536}
+.ns-life-node__dial output{font-variant-numeric:tabular-nums;color:#325b43;font-size:1.2rem}
+.ns-life-node__dial input{width:100%;accent-color:#426e4e}
+.ns-life-node__edited{padding:1rem;border-radius:.85rem;background:#e4eddf;color:#274932}
+.ns-life-node__edited p{font-size:1.05rem;margin:0;font-weight:600}
+.ns-life-node__figure{margin:0 0 .8rem}
+.ns-life-node__figure img{max-height:240px;object-fit:cover;width:100%;border-radius:1.1rem}
+@media(max-width:540px){.ns-life-node__frames{grid-template-columns:1fr 1fr;gap:.45rem}.ns-life-node__frame{font-size:.82rem;padding:.65rem;min-height:4rem}.ns-life-node__scene{padding:.9rem;gap:.75rem}.ns-life-node__person{width:2.4rem;height:2.8rem}}
+@media(prefers-reduced-motion:reduce){.ns-life-node__frame{transition:none}}
