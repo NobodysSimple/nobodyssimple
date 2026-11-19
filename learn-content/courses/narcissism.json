@@ -1,6 +1,6 @@
 {
   "id": "narcissism",
-  "version": 3,
+  "version": 4,
   "status": "published",
   "title": "Narcissism & Personality",
   "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
@@ -810,336 +810,430 @@
       "lessons": [
         {
           "id": "narcissism-m1-l1",
-          "version": 1,
-          "title": "When criticism feels like an attack",
-          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
-          "objective": "Distinguish observable evidence from a tentative explanation of everyday self-focus versus a persistent trait.",
+          "version": 2,
+          "title": "Why does criticism feel like an attack?",
+          "teach": "A presentation is about to go to senior management. Maya completed the analysis; Leo leads the team and is credited with work she did. When Maya asks for an accurate correction, Leo responds as if his professional standing is at risk. In this lesson you will examine the same exchange the way a careful psychologist would: start with observable evidence, build competing explanations, look for what maintains the response, and update your judgement when new messages come to light. You'll finish by applying the reasoning to an unfamiliar relationship.",
+          "objective": "Identify observable evidence of self-worth threat, explain a plausible defensive cycle, distinguish function from conscious intention, revise hypotheses when new evidence appears, and select a proportionate response in a fresh situation.",
           "editorialStatus": "ready",
           "recommendedType": "dialogue",
           "nodes": [
             {
-              "id": "narcissism-m1-node-1",
+              "id": "narcissism-m1-deep-opening",
+              "type": "read",
+              "title": "One correction, several possible meanings",
+              "body": "Maya completed the statistical analysis for a team project. Leo managed the team and is presenting the results to senior management. A slide claims Leo developed the analysis. Maya asks for the credit to be corrected before the presentation is sent.\n\nThis is a useful case because we can examine an ordinary-looking disagreement without assuming that the explanation is obvious. Leo may feel criticised. He may also stand to gain professionally from leaving the slide unchanged. Those possibilities can both be relevant.\n\nBy the end, you should be able to identify what is actually observed, explain how a threat to self-worth might produce defensiveness, revise an interpretation when new evidence arrives, and choose a response that protects Maya's interests. None of those tasks requires diagnosing Leo.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915."
+            },
+            {
+              "id": "narcissism-m1-deep-dialogue",
               "type": "dialogue",
               "title": "Watch the conversation",
-              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
-              "conceptId": "narcissism-opening-process",
-              "explanation": "",
-              "counterexample": "",
-              "sources": "Pincus et al. (2009), Pathological Narcissism Inventory; DSM-5-TR, personality functioning.",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "scenario": "Maya developed the statistical analysis. Leo managed the project and the presentation credits the analysis to him.",
+              "prompt": "Read the exchange. Pay attention to what Leo fears people will think and what Maya needs changed.",
+              "conceptId": "narcissism-threat-response",
+              "scenario": "Slide nine of a project presentation credits Leo for statistical analysis Maya completed. Senior management will see the slide today.",
               "speakerA": "Maya",
               "speakerB": "Leo",
               "turns": [
                 {
-                  "id": "narcissism-m1-node-1-line1",
+                  "id": "narcissism-m1-deep-t1",
                   "speaker": "a",
-                  "text": "The slide says you developed the analysis. I completed that part."
+                  "text": "On slide nine, it says you developed the analysis. I actually did that part. Could we change the credit before it goes out?"
                 },
                 {
-                  "id": "narcissism-m1-node-1-line2",
+                  "id": "narcissism-m1-deep-t2",
                   "speaker": "b",
-                  "text": "I led the project. We agreed I would take ownership."
+                  "text": "I thought we'd agreed I was taking ownership of the results."
                 },
                 {
-                  "id": "narcissism-m1-node-1-line3",
+                  "id": "narcissism-m1-deep-t3",
                   "speaker": "a",
-                  "text": "Of presenting the results, yes. I still want my work acknowledged."
+                  "text": "Of presenting them, yes. My work still needs to be acknowledged."
                 },
                 {
-                  "id": "narcissism-m1-node-1-line4",
+                  "id": "narcissism-m1-deep-t4",
                   "speaker": "b",
-                  "text": "You have no idea how much this promotion matters. They need to see me as capable."
+                  "text": "You don't understand what's riding on this. They're considering me for a promotion."
                 },
                 {
-                  "id": "narcissism-m1-node-1-line5",
+                  "id": "narcissism-m1-deep-t5",
                   "speaker": "a",
-                  "text": "The slide can show that you led the project and I developed the analysis."
+                  "text": "I'm not asking you to give up the credit for leading the project."
                 },
                 {
-                  "id": "narcissism-m1-node-1-line6",
+                  "id": "narcissism-m1-deep-t6",
                   "speaker": "b",
-                  "text": "If we change it now, they'll think I've been taking credit for something I couldn't do."
+                  "text": "If we suddenly change the slide, it'll look like I've been taking credit for something I couldn't do myself."
+                },
+                {
+                  "id": "narcissism-m1-deep-t7",
+                  "speaker": "a",
+                  "text": "Then we can explain who did what."
+                },
+                {
+                  "id": "narcissism-m1-deep-t8",
+                  "speaker": "b",
+                  "text": "It's easy for you to say. You're not the one whose leadership is being judged."
                 }
               ],
               "checks": [
                 {
-                  "id": "narcissism-m1-node-1-check1",
-                  "prompt": "Which psychological interpretation is currently best supported?",
-                  "focusTurn": "narcissism-m1-node-1-line6",
+                  "id": "narcissism-m1-deep-d1",
+                  "prompt": "Which inference is best supported by Leo's actual words?",
+                  "focusTurn": "narcissism-m1-deep-t6",
                   "options": [
                     {
-                      "id": "narcissism-m1-node-1-check1-opt2",
-                      "label": "Leo believes project leadership ordinarily includes public credit for technical work."
+                      "id": "narcissism-m1-deep-d1-a",
+                      "label": "He may experience the correction as a threat to how competent he appears.",
+                      "feedback": "Leo describes the feared impression directly. It still does not establish his entire motive."
                     },
                     {
-                      "id": "narcissism-m1-node-1-check1-opt3",
-                      "label": "Leo may be trying to avoid an awkward correction rather than preserve his self-worth."
+                      "id": "narcissism-m1-deep-d1-b",
+                      "label": "He has been deliberately deceiving colleagues for years.",
+                      "feedback": "A history of deception cannot be inferred from this exchange."
                     },
                     {
-                      "id": "narcissism-m1-node-1-check1-opt1",
-                      "label": "Leo may be treating the correction as a threat to his image of competence."
-                    },
-                    {
-                      "id": "narcissism-m1-node-1-check1-alternative-1",
-                      "label": "Leo may regard technical authorship as less important than managerial accountability and resent the proposed distinction.",
-                      "feedback": "This could explain his opening response; it does not fully account for why the correction feels like a risk to his competence."
-                    },
-                    {
-                      "id": "narcissism-m1-node-1-check1-alternative-2",
-                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
-                      "feedback": "This is a reasonable line of inquiry, although Leo may be treating the correction as a threat to his image of competence. is more directly tied to the words in this scene. Deliberate career advantage and emotional defensiveness can coexist. The wider, enduring pattern matters far more than a single argument."
+                      "id": "narcissism-m1-deep-d1-c",
+                      "label": "He is only confused about project responsibilities.",
+                      "feedback": "Role confusion remains possible, but his expressed concern goes further than an administrative dispute."
                     }
                   ],
-                  "answer": "narcissism-m1-node-1-check1-opt1",
-                  "explanation": "The strongest clues are the character's own words. Leo may be treating the correction as a threat to his image of competence. Leo believes project leadership ordinarily includes public credit for technical work. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
-                  "counterexample": "Deliberate career advantage and emotional defensiveness can coexist. The wider, enduring pattern matters far more than a single argument."
+                  "answer": "narcissism-m1-deep-d1-a",
+                  "explanation": "Leo's words describe a feared judgement: senior colleagues might see him as less capable. The line about promotion raises the stakes, while the claim about leadership explains his interpretation.",
+                  "counterexample": "A person may defend inaccurate credit for personal advantage even when their self-worth is not unusually fragile."
                 },
                 {
-                  "id": "narcissism-m1-node-1-check2",
-                  "prompt": "You are Maya. Which response best addresses the practical problem at this point?",
-                  "focusTurn": "",
+                  "id": "narcissism-m1-deep-d2",
+                  "prompt": "Maya wants the accurate credit recorded before the presentation. Which response keeps that goal clear?",
+                  "focusTurn": "narcissism-m1-deep-t8",
                   "options": [
                     {
-                      "id": "narcissism-m1-node-1-check2-opt2",
-                      "label": "I'd like us to describe the work as a joint result, without breaking down who contributed which part.",
-                      "reply": "I was. That work was excellent.",
-                      "consequence": "A collective credit may reduce tension, but it would still leave the technical attribution ambiguous.",
-                      "feedback": "A collective credit may reduce tension, but it would still leave the technical attribution ambiguous."
+                      "id": "narcissism-m1-deep-d2-a",
+                      "label": "We can credit you for leading the project and me for the analysis. Please change the slide before it goes out.",
+                      "reply": "If we change it, won't they think I wasn't capable of the technical work?",
+                      "consequence": "Maya names a specific correction and need not establish Leo's motive first."
                     },
                     {
-                      "id": "narcissism-m1-node-1-check2-opt3",
-                      "label": "Let's draft the corrected wording together and show it to the director with a brief explanation of our different roles.",
-                      "reply": "I was. That work was excellent.",
-                      "consequence": "Joint drafting might reduce defensiveness, although it requires Leo to cooperate with the correction.",
-                      "feedback": "Joint drafting might reduce defensiveness, although it requires Leo to cooperate with the correction."
+                      "id": "narcissism-m1-deep-d2-b",
+                      "label": "You are obviously a narcissist, and that's why this matters to you.",
+                      "reply": "That's ridiculous. You're attacking me.",
+                      "consequence": "The argument shifts toward defending identities while the slide remains uncorrected."
                     },
                     {
-                      "id": "narcissism-m1-node-1-check2-opt4",
-                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
-                      "reply": "I was. That work was excellent.",
-                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
-                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
+                      "id": "narcissism-m1-deep-d2-c",
+                      "label": "Fine. Leave it as it is. I don't want to upset you.",
+                      "reply": "Thanks. I'll send it.",
+                      "consequence": "The immediate tension may fall, but the inaccurate attribution stays."
                     },
                     {
-                      "id": "narcissism-m1-node-1-check2-opt1",
-                      "label": "We can accurately credit your leadership and the analysis I completed before the slide is sent.",
-                      "reply": "I wanted senior management to think I could do the technical part as well.",
-                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
-                    },
-                    {
-                      "id": "narcissism-m1-node-1-check2-alternative-4",
-                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
-                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer.",
-                      "reply": "I was. That work was excellent.",
-                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer."
+                      "id": "narcissism-m1-deep-d2-d",
+                      "label": "Why do you care so much about what management thinks?",
+                      "reply": "Because my promotion depends on it.",
+                      "consequence": "The question may reveal a concern, but it does not by itself secure accurate attribution."
                     }
                   ],
-                  "answer": "narcissism-m1-node-1-check2-opt1",
-                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
-                  "counterexample": "Deliberate career advantage and emotional defensiveness can coexist. The wider, enduring pattern matters far more than a single argument."
+                  "answer": "narcissism-m1-deep-d2-a",
+                  "explanation": "A concrete request offers a route to a correction without demanding agreement about personality. If Leo refuses, Maya can seek a documented review of the work through appropriate professional channels.",
+                  "counterexample": "If retaliation is likely, Maya may need a safer, documented channel rather than another direct conversation."
                 }
-              ]
+              ],
+              "explanation": "A response can be psychologically informed without relying on a diagnosis.",
+              "counterexample": "One argument cannot establish a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915."
             },
             {
-              "id": "narcissism-m1-node-2",
+              "id": "narcissism-m1-deep-evidence",
               "type": "label",
-              "title": "Find the evidence",
-              "prompt": "Which two statements most directly support the working explanation?",
-              "conceptId": "narcissism-opening-process",
-              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that leo may be treating the correction as a threat to his image of competence. Other remarks establish circumstances, which can matter without revealing a psychological process.",
-              "counterexample": "Deliberate career advantage and emotional defensiveness can coexist. The wider, enduring pattern matters far more than a single argument.",
-              "sources": "Pincus et al. (2009), Pathological Narcissism Inventory; DSM-5-TR, personality functioning.",
-              "image": "",
-              "alt": "",
-              "caption": "",
+              "title": "Select the strongest evidence",
+              "prompt": "Which two lines tell you most directly how Leo thinks the correction will affect his professional image?",
+              "conceptId": "narcissism-threat-response",
               "segments": [
                 {
-                  "id": "narcissism-m1-evidence-1",
-                  "text": "The slide says you developed the analysis. I completed that part.",
+                  "id": "narcissism-m1-deep-e1",
+                  "text": "I thought we'd agreed I was taking ownership of the results.",
                   "answer": false
                 },
                 {
-                  "id": "narcissism-m1-evidence-2",
-                  "text": "I led the project. We agreed I would take ownership.",
+                  "id": "narcissism-m1-deep-e2",
+                  "text": "They're considering me for a promotion.",
                   "answer": false
                 },
                 {
-                  "id": "narcissism-m1-evidence-3",
-                  "text": "Of presenting the results, yes. I still want my work acknowledged.",
-                  "answer": false
-                },
-                {
-                  "id": "narcissism-m1-evidence-4",
-                  "text": "You have no idea how much this promotion matters. They need to see me as capable.",
+                  "id": "narcissism-m1-deep-e3",
+                  "text": "It'll look like I've been taking credit for something I couldn't do myself.",
                   "answer": true
                 },
                 {
-                  "id": "narcissism-m1-evidence-5",
-                  "text": "The slide can show that you led the project and I developed the analysis.",
-                  "answer": false
-                },
-                {
-                  "id": "narcissism-m1-evidence-6",
-                  "text": "If we change it now, they'll think I've been taking credit for something I couldn't do.",
+                  "id": "narcissism-m1-deep-e4",
+                  "text": "You're not the one whose leadership is being judged.",
                   "answer": true
                 }
-              ]
+              ],
+              "explanation": "The promotion explains why the stakes are high. The two selected lines show the specific interpretation Leo fears and the identity he believes is being judged. This distinction matters when you are inferring a psychological process.",
+              "counterexample": "Even clear evidence of perceived threat does not rule out career incentives or conscious misattribution.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915."
             },
             {
-              "id": "narcissism-m1-node-3",
-              "type": "rank",
-              "title": "Rank the explanations",
-              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
-              "conceptId": "narcissism-opening-process",
-              "explanation": "The strongest candidate is leo may be treating the correction as a threat to his image of competence. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
-              "counterexample": "Deliberate career advantage and emotional defensiveness can coexist. The wider, enduring pattern matters far more than a single argument.",
-              "sources": "Pincus et al. (2009), Pathological Narcissism Inventory; DSM-5-TR, personality functioning.",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "steps": [
-                {
-                  "id": "narcissism-m1-rank-strong",
-                  "label": "Leo may be treating the correction as a threat to his image of competence."
-                },
-                {
-                  "id": "narcissism-m1-rank-rival",
-                  "label": "Leo believes project leadership ordinarily includes public credit for technical work."
-                },
-                {
-                  "id": "narcissism-m1-rank-other",
-                  "label": "Leo may be trying to avoid an awkward correction rather than preserve his self-worth."
-                }
-              ]
-            },
-            {
-              "id": "narcissism-m1-node-4",
-              "type": "chain",
-              "title": "Build the process",
-              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
-              "conceptId": "narcissism-opening-process",
-              "explanation": "The trigger is maya asks to correct the attribution. Its possible meaning is leo anticipates being regarded as less capable. The protective behaviour may contribute to a longer-term cost: he may briefly protect his standing while the credit dispute grows.",
-              "counterexample": "Deliberate career advantage and emotional defensiveness can coexist. The wider, enduring pattern matters far more than a single argument.",
-              "sources": "Pincus et al. (2009), Pathological Narcissism Inventory; DSM-5-TR, personality functioning.",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "steps": [
-                {
-                  "id": "narcissism-m1-chain-1",
-                  "label": "Maya asks to correct the attribution."
-                },
-                {
-                  "id": "narcissism-m1-chain-2",
-                  "label": "Leo anticipates being regarded as less capable."
-                },
-                {
-                  "id": "narcissism-m1-chain-3",
-                  "label": "Leo resists the correction and challenges Maya's understanding of leadership."
-                },
-                {
-                  "id": "narcissism-m1-chain-4",
-                  "label": "He may briefly protect his standing while the credit dispute grows."
-                }
-              ]
-            },
-            {
-              "id": "narcissism-m1-node-5",
+              "id": "narcissism-m1-deep-concept",
               "type": "read",
-              "title": "What might be happening?",
-              "body": "In some narcissistic difficulties, a person's sense of worth depends heavily on recognition. A correction can then feel like a broader verdict on competence. Dismissing another person's contribution may offer brief relief while making the relationship more adversarial. This is a tentative self-esteem regulation account, not a diagnosis.\n\nDeliberate career advantage and emotional defensiveness can coexist. The wider, enduring pattern matters far more than a single argument.",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "sources": "Pincus et al. (2009), Pathological Narcissism Inventory; DSM-5-TR, personality functioning."
+              "title": "Why can a correction feel bigger than the correction?",
+              "body": "Think of self-worth as the value someone believes they have as a person. Some people can hear, “This slide is inaccurate,” without treating it as an assessment of their competence. For others, being seen as especially capable may carry a great deal of personal meaning.\n\nPsychologists sometimes call this **contingent self-worth**: feeling valuable depends heavily on meeting a condition, such as receiving approval or appearing successful. When the condition feels threatened, defending it can become more urgent than considering the original issue.\n\nLeo does not say “I am worthless unless I look capable.” We cannot assume that thought is present. What he does say is that a correction might make senior colleagues doubt his ability. That makes threatened professional identity a reasonable working explanation.\n\nA working explanation is a proposal that fits the available facts and can change when new information arrives. We have not discovered a hidden fact about Leo's personality. We have identified a process worth investigating.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915."
             },
             {
-              "id": "narcissism-m1-node-6",
+              "id": "narcissism-m1-deep-rank",
+              "type": "rank",
+              "title": "Rank explanations without inventing certainty",
+              "prompt": "Put the best-supported interpretation first. The lower two remain plausible and their exact order is less important.",
+              "conceptId": "narcissism-threat-response",
+              "steps": [
+                {
+                  "id": "narcissism-m1-deep-r1",
+                  "label": "Leo experiences the correction as a threat to his professional competence."
+                },
+                {
+                  "id": "narcissism-m1-deep-r2",
+                  "label": "Leo genuinely misunderstands how technical and managerial credit should be divided."
+                },
+                {
+                  "id": "narcissism-m1-deep-r3",
+                  "label": "Leo knows the slide is wrong and wants the career advantage of claiming the work."
+                }
+              ],
+              "explanation": "The first explanation best fits what Leo says about appearing capable. Role confusion is still possible. Deliberate credit-taking is also possible, but we need evidence of what Leo knew before Maya raised the issue. A good hypothesis describes the evidence and tells us what would change our mind.",
+              "counterexample": "A person's explanation of feeling threatened can be genuine even while they knowingly benefit from an inaccurate claim.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915."
+            },
+            {
+              "id": "narcissism-m1-deep-chain",
+              "type": "chain",
+              "title": "Build a possible behaviour cycle",
+              "prompt": "Put the events in the order they might happen. This is a hypothesis about a cycle, not an established history.",
+              "conceptId": "narcissism-threat-response",
+              "steps": [
+                {
+                  "id": "narcissism-m1-deep-p1",
+                  "label": "Maya requests an accurate attribution."
+                },
+                {
+                  "id": "narcissism-m1-deep-p2",
+                  "label": "Leo anticipates being seen as less competent."
+                },
+                {
+                  "id": "narcissism-m1-deep-p3",
+                  "label": "Leo resists the request and questions Maya's understanding."
+                },
+                {
+                  "id": "narcissism-m1-deep-p4",
+                  "label": "The immediate threat may feel smaller, but the dispute becomes more serious."
+                }
+              ],
+              "explanation": "If resisting a correction reduces the uncomfortable feeling of exposure, that relief could reinforce the behaviour. 'Reinforce' simply means make a response more likely to occur again under similar circumstances. The longer-term cost matters: Maya is now dealing with the original misattribution and the way Leo responded.",
+              "counterexample": "This proposed loop cannot be established from one conversation. Some defensive responses happen once and do not form a repeated pattern.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915."
+            },
+            {
+              "id": "narcissism-m1-deep-research",
+              "type": "read",
+              "title": "Where narcissism enters the picture",
+              "body": "Clinical researchers have long studied forms of narcissism in which a person's self-esteem is difficult to maintain without outside recognition. Two broad experiences often discussed are **grandiosity**, involving a strong need to appear exceptional, and **vulnerability**, involving sensitivity to feeling inadequate or exposed. They can overlap in the same person. Neither can be confidently identified from a single office argument.\n\nA 2010 review by Pincus and Lukowitsky describes disagreements between clinical definitions and research measures of pathological narcissism. The Pathological Narcissism Inventory, developed by Pincus and colleagues in 2009, was one attempt to measure grandiose and vulnerable expressions more fully. A 2024 systematic review examined how pathological narcissism relates to difficulties regulating emotion; findings depend on how these constructs are defined and measured.\n\nWhat does this contribute to Leo's case? It gives us a plausible account of why criticism might provoke self-protection when recognition is central to someone's self-worth. It does **not** establish that Leo has pathological narcissism. The distinction between a momentary defensive response, a recurring personality tendency, and a clinical disorder requires much more information.\n\nIt also cannot erase Maya's position. She produced the analysis. The slide is inaccurate. Leo's internal experience may help us understand his response, while his responsibility for correcting the attribution remains.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915."
+            },
+            {
+              "id": "narcissism-m1-deep-new-evidence",
+              "type": "update",
+              "title": "Two messages change the case",
+              "prompt": "Last month Leo wrote to Maya, 'Your analysis was excellent. I'm glad you took charge of it.' Yesterday he wrote to management, 'I've personally developed the analysis.' What becomes more likely?",
+              "conceptId": "narcissism-threat-response",
+              "options": [
+                {
+                  "id": "narcissism-m1-deep-new-evidence-c0",
+                  "label": "The evidence now supports knowing misattribution more strongly. The wish to appear capable could still matter."
+                },
+                {
+                  "id": "narcissism-m1-deep-new-evidence-c1",
+                  "label": "The new evidence proves Leo has a personality disorder."
+                },
+                {
+                  "id": "narcissism-m1-deep-new-evidence-c2",
+                  "label": "Leo's sense of threat is now irrelevant, so no psychological account is needed."
+                }
+              ],
+              "answer": "narcissism-m1-deep-new-evidence-c0",
+              "explanation": "Leo previously acknowledged Maya's authorship, then attributed the analysis to himself. That weakens the explanation that he simply misunderstood who did the work. His professional self-image and the possibility of deliberate advantage can coexist.",
+              "counterexample": "These two messages still cannot establish Leo's diagnosis, his complete motives or what he has done in unrelated situations.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915.",
+              "newEvidence": "Private message last month: 'Your analysis was excellent. I'm glad you took charge of it.' Message to management yesterday: 'I've personally developed the analysis.'"
+            },
+            {
+              "id": "narcissism-m1-deep-limits",
+              "type": "read",
+              "title": "What an explanation must leave room for",
+              "body": "An explanation becomes useful when it distinguishes between competing possibilities. If Leo had consistently described the work as a joint responsibility and had never acknowledged Maya's role, confusion about attribution would remain comparatively strong. The earlier message changes that balance.\n\nWe should also separate **function** from **intention**. The function of a response is what it achieves. Leo's refusal may help him avoid embarrassment even if he does not deliberately set out to regulate an uncomfortable feeling. Intention asks what he was consciously trying to accomplish. A behaviour can have more than one function, and a conscious career incentive can exist alongside an emotional one.\n\nThis is how clinical formulation differs from casual labelling. A formulation links a specific situation with an interpretation, a response and its consequences. It remains revisable when better evidence arrives. A diagnostic assessment asks a broader question about lasting patterns and impairment. Neither should be replaced by guessing someone's whole personality from one conflict.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915."
+            },
+            {
+              "id": "narcissism-m1-deep-prediction",
               "type": "predict",
-              "title": "Try a different response",
-              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
-              "conceptId": "narcissism-opening-process",
-              "explanation": "A proportionate response deals with the actual situation: We can accurately credit your leadership and the analysis I completed before the slide is sent. Its value does not depend on the other person accepting an interpretation of their motives.",
-              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. Deliberate career advantage and emotional defensiveness can coexist. The wider, enduring pattern matters far more than a single argument.",
-              "sources": "Pincus et al. (2009), Pathological Narcissism Inventory; DSM-5-TR, personality functioning.",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "changePrompt": "What would you try first?",
+              "title": "Choose a response and examine its cost",
+              "prompt": "Maya has already asked for a correction twice. Choose the next step that most directly protects her contribution.",
+              "conceptId": "narcissism-threat-response",
+              "changePrompt": "What should Maya do next?",
               "changes": [
                 {
-                  "id": "narcissism-m1-plan-opt3",
-                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                  "id": "narcissism-m1-deep-ch1",
+                  "label": "Document the authorship and ask for the slide to be corrected before it is sent."
                 },
                 {
-                  "id": "narcissism-m1-plan-opt1",
-                  "label": "We can accurately credit your leadership and the analysis I completed before the slide is sent."
+                  "id": "narcissism-m1-deep-ch2",
+                  "label": "Spend the remaining time persuading Leo that his self-esteem is fragile."
                 },
                 {
-                  "id": "narcissism-m1-plan-opt2",
-                  "label": "Ask what information each person would need before being willing to revise their position.",
-                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
+                  "id": "narcissism-m1-deep-ch3",
+                  "label": "Accept a vague group-credit line so there is no further argument."
                 }
               ],
               "outcomes": [
                 {
-                  "id": "narcissism-m1-outcome-opt3",
-                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                  "id": "narcissism-m1-deep-out1",
+                  "label": "The disagreement can be reviewed against a concrete record of who completed the analysis."
                 },
                 {
-                  "id": "narcissism-m1-outcome-opt1",
-                  "label": "The concrete problem is addressed while motives remain open to examination."
+                  "id": "narcissism-m1-deep-out2",
+                  "label": "The discussion moves toward Leo's character while the slide stays inaccurate."
                 },
                 {
-                  "id": "narcissism-m1-outcome-opt2",
-                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                  "id": "narcissism-m1-deep-out3",
+                  "label": "Immediate tension falls, but the analysis remains unattributed."
                 }
               ],
-              "correctChange": "narcissism-m1-plan-opt1",
-              "correctOutcome": "narcissism-m1-outcome-opt1"
+              "correctChange": "narcissism-m1-deep-ch1",
+              "correctOutcome": "narcissism-m1-deep-out1",
+              "explanation": "The next step should address the correctable problem. Documented authorship makes the issue easier to resolve fairly, even if Leo stays defensive. If direct correction fails, an independent review may be appropriate.",
+              "counterexample": "If workplace power makes a direct challenge unsafe, Maya may reasonably seek confidential advice or use formal procedures.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915."
             },
             {
-              "id": "narcissism-m1-node-7",
+              "id": "narcissism-m1-deep-repair",
               "type": "repair",
-              "title": "Repair an overclaim",
-              "prompt": "Someone calls leo may be treating the correction as a threat to his image of competence. 'a proven explanation'. Which correction is most faithful to the evidence?",
-              "conceptId": "narcissism-opening-process",
-              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. Deliberate career advantage and emotional defensiveness can coexist. The wider, enduring pattern matters far more than a single argument.",
-              "counterexample": "Deliberate career advantage and emotional defensiveness can coexist. The wider, enduring pattern matters far more than a single argument.",
-              "sources": "Pincus et al. (2009), Pathological Narcissism Inventory; DSM-5-TR, personality functioning.",
-              "image": "",
-              "alt": "",
-              "caption": "",
+              "title": "Repair a tempting overclaim",
+              "prompt": "Someone says, 'Leo was defensive, so he must have narcissistic personality disorder.' Which correction is most defensible?",
+              "conceptId": "narcissism-threat-response",
               "options": [
                 {
-                  "id": "narcissism-m1-repair-opt3",
-                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                  "id": "narcissism-m1-deep-repair-c0",
+                  "label": "Defensiveness may reveal a threatened sense of competence, but diagnosis requires evidence of a much wider enduring pattern."
                 },
                 {
-                  "id": "narcissism-m1-repair-opt4",
-                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                  "id": "narcissism-m1-deep-repair-c1",
+                  "label": "The reaction was too strong to have any normal explanation."
                 },
                 {
-                  "id": "narcissism-m1-repair-opt1",
-                  "label": "The account is consistent with the evidence, but leo believes project leadership ordinarily includes public credit for technical work. still deserves consideration."
-                },
-                {
-                  "id": "narcissism-m1-repair-opt2",
-                  "label": "Because leo believes project leadership ordinarily includes public credit for technical work., the present psychological account should be discarded until certainty is possible."
-                },
-                {
-                  "id": "narcissism-m1-node-7-alternative-1",
-                  "label": "Observe what happens after a clear and workable alternative is offered.",
-                  "feedback": "A response to a specific alternative can reveal what the person is actually trying to preserve."
+                  "id": "narcissism-m1-deep-repair-c2",
+                  "label": "Because a diagnosis is uncertain, there is no point in evaluating Leo's behaviour."
                 }
               ],
-              "answer": "narcissism-m1-repair-opt1"
+              "answer": "narcissism-m1-deep-repair-c0",
+              "explanation": "One response can support a hypothesis about perceived threat. It cannot establish an enduring clinical pattern. Maya is still entitled to accurate recognition and a resolution to the conflict.",
+              "counterexample": "If a clinician identifies a repeated pattern across relationships and contexts, that broader evidence can support a different level of inference.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915."
+            },
+            {
+              "id": "narcissism-m1-deep-transfer-days",
+              "type": "same_person_different_day",
+              "title": "One behaviour, different conditions",
+              "prompt": "Inspect both situations. Which conclusion survives the comparison?",
+              "conceptId": "narcissism-threat-response",
+              "scene": "A manager argues sharply in two meetings when their decisions are questioned.",
+              "reveal": "In the first meeting a factual error threatens a major promotion. In the second, the person is exhausted and reacting to a sudden deadline. The visible behaviour looks similar, but the immediate conditions differ.",
+              "frames": [
+                {
+                  "id": "narcissism-m1-deep-f1",
+                  "label": "Meeting one: a promotion is at stake.",
+                  "detail": "The manager says they fear senior leaders will lose confidence in them."
+                },
+                {
+                  "id": "narcissism-m1-deep-f2",
+                  "label": "Meeting two: the team is under a sudden deadline.",
+                  "detail": "The manager apologises later and changes the decision when the pressure has passed."
+                }
+              ],
+              "options": [
+                {
+                  "id": "narcissism-m1-deep-tf1",
+                  "label": "The same angry behaviour can have different causes. We need information across contexts to judge a stable pattern."
+                },
+                {
+                  "id": "narcissism-m1-deep-tf2",
+                  "label": "Two arguments establish a permanent narcissistic personality style."
+                },
+                {
+                  "id": "narcissism-m1-deep-tf3",
+                  "label": "Because the context changes, the manager cannot be held accountable for either argument."
+                }
+              ],
+              "answer": "narcissism-m1-deep-tf1",
+              "explanation": "How often a behaviour occurs, under what conditions, and with what consequences tells us more than a label drawn from one scene. The need for explanation and the duty to repair can both remain.",
+              "counterexample": "A repeated, persistent pattern despite changing contexts may justify a stronger trait hypothesis than either example alone.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915.",
+              "image": "",
+              "alt": "",
+              "caption": ""
+            },
+            {
+              "id": "narcissism-m1-deep-retrieve",
+              "type": "complete",
+              "title": "Retrieve the term",
+              "prompt": "What term describes a sense of personal worth that depends heavily on meeting a condition, such as being publicly admired?",
+              "conceptId": "narcissism-threat-response",
+              "answers": [
+                "contingent self-worth",
+                "contingent self worth",
+                "contingent self-esteem",
+                "contingent self esteem"
+              ],
+              "hint": "Two words; the first begins with c.",
+              "explanation": "Contingent self-worth means that feeling valuable depends strongly on something specific. The condition is not always admiration: people can also base worth on achievement, appearance or approval.",
+              "counterexample": "Caring about a promotion or enjoying praise alone does not prove that someone's whole self-worth depends on it.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915."
+            },
+            {
+              "id": "narcissism-m1-deep-sam-transfer",
+              "type": "choose",
+              "title": "Transfer the idea to a relationship",
+              "prompt": "Sam's partner says, 'We haven't spent much time together.' Sam replies, 'So I'm a terrible partner now?' You know almost nothing else. What should you examine next?",
+              "conceptId": "narcissism-threat-response",
+              "options": [
+                {
+                  "id": "narcissism-m1-deep-sam-transfer-c0",
+                  "label": "Whether Sam repeatedly interprets ordinary requests as judgements of their overall worth, and what happens afterwards."
+                },
+                {
+                  "id": "narcissism-m1-deep-sam-transfer-c1",
+                  "label": "Whether Sam displays one feature associated with narcissism so you can assign a diagnosis."
+                },
+                {
+                  "id": "narcissism-m1-deep-sam-transfer-c2",
+                  "label": "Whether the partner is always right, because Sam sounded defensive."
+                }
+              ],
+              "answer": "narcissism-m1-deep-sam-transfer-c0",
+              "explanation": "The response may turn a request for closeness into a judgement of personal worth. To infer a recurring pattern, we would need to see how often this happens, whether it occurs in other contexts, and how both people are affected. The immediate conversation is still worth repairing.",
+              "counterexample": "An isolated defensive response can emerge from exhaustion or an unusually hostile interaction without reflecting a stable personality style.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915."
+            },
+            {
+              "id": "narcissism-m1-deep-closing",
+              "type": "read",
+              "title": "What you can now take into real life",
+              "body": "When a person reacts strongly to a correction, begin with what they actually said and did. Ask what the disagreement seems to put at stake. Then consider what their response achieves in the moment and what it might cost later.\n\nIn this case, Leo fears that recognising Maya's work could threaten his image as a capable leader. That offers a plausible account of his defensiveness. The later messages give stronger evidence that he knowingly claimed the analysis. Both observations belong in the explanation.\n\nThe practical lesson is equally important. Maya does not have to establish why Leo is doing this before protecting her contribution. Clear evidence and a proportionate request can help her decide what to do next.\n\nA good psychological account should sharpen your judgement. It should tell you what you know, what remains uncertain, and what would provide a fairer next step.",
+              "sources": "Pincus & Lukowitsky (2010), Annual Review of Clinical Psychology 6:421–446, doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Psychological Assessment 21:365–379, doi:10.1037/a0016530; Blay et al. (2024), Association between Pathological Narcissism and Emotion Dysregulation, PMID:38870915."
             }
           ],
-          "takeaway": "A person can defend their self-worth and still be responsible for how they treat someone else."
+          "takeaway": "A threat to someone's sense of worth may help explain their defensiveness. It does not establish their diagnosis or excuse an inaccurate claim about somebody else's work.",
+          "durationMinutes": 10,
+          "standard": "deep-10",
+          "transferPrompt": "In a new relationship disagreement, identify what was observed, what the person may have felt was at stake, which explanation is supported, and what would need to be known before claiming a stable pattern.",
+          "staffReview": "Reference metadata checked against PubMed and Annual Review of Clinical Psychology (19 November 2026). Primary references: Pincus et al. 2009; Pincus & Lukowitsky 2010; Blay et al. 2024 systematic review. Evidence supports construct-level distinctions, not diagnosis of the fictional Leo. Contains no claims of an externally completed clinical peer review. Independent clinical peer review remains recommended."
         },
         {
           "id": "narcissism-m1-l2",
