@@ -4,12 +4,13 @@
  */
 const words=s=>String(s||'').trim().split(/\s+/).filter(Boolean).length;
 const exercise=node=>!['read','image'].includes(node?.type);
-const mcq=node=>['choose','respond','repair','investigate','update','perspective','character','predict','dialogue'].includes(node?.type);
+const mcq=node=>['choose','respond','repair','investigate','update','perspective','character','predict','dialogue','investigation'].includes(node?.type);
 export const learnerText=lesson=>{
  const pieces=[lesson?.teach||''];
  for(const node of lesson?.nodes||[]){
   for(const key of ['title','body','prompt','scenario','reveal','explanation','newEvidence','viewA','viewB'])if(node[key])pieces.push(node[key]);
   for(const row of node.turns||[])pieces.push(row.text||'');
+  for(const layer of node.layers||[])pieces.push(layer.title||'',layer.analysis||'',layer.alternative||'',layer.test||'');
   for(const row of node.segments||[])pieces.push(row.text||'');
   for(const row of node.steps||[])pieces.push(row.label||'');
   for(const row of node.options||[])pieces.push(row.label||'');
@@ -22,7 +23,7 @@ export const learnerText=lesson=>{
 };
 export function lessonMetrics(lesson){
  const nodes=lesson?.nodes||[];
- const drills=nodes.filter(exercise).reduce((n,item)=>n+(item.type==='dialogue'?(item.checks?.length||0):1),0);
+ const drills=nodes.filter(exercise).reduce((n,item)=>n+(['dialogue','investigation'].includes(item.type)?(item.checks?.length||0):1),0);
  const reads=nodes.filter(x=>x.type==='read');
  const multiple=nodes.filter(mcq);
  const malformed=nodes.filter(x=>x.type==='choose'&&Array.isArray(x.options)&&x.options.length>4);
@@ -43,6 +44,19 @@ export function auditLesson(lesson,{strict=false}={}){
  flag(m.estimatedMinutes<9,'At the current content density, this lesson is unlikely to occupy roughly ten minutes.',true);
  flag(m.multipleChoiceNodes>Math.max(3,Math.floor(m.drills*.5)),'Too many answer-choice activities. Replace some with evidence selection, sequencing, investigation or applied response.');
  flag(m.overlyLongChoiceNodes>0,'Reduce conventional multiple-choice tasks to two to four carefully written alternatives.');
+ const sources=(lesson?.nodes||[]).filter(n=>n.sources).map(n=>n.sources);
+ const repeatedSources=new Set(sources).size===1&&sources.length>=6;
+ flag(repeatedSources,'All cited nodes share the same source string. Check that each study supports the claim beside it.');
+ for(const item of lesson?.nodes||[]){
+  if(['choose','update','dialogue','investigation','repair'].includes(item.type)){
+   const checks=['dialogue','investigation'].includes(item.type)?item.checks||[]:[item];
+   for(const check of checks){
+    const opts=check.options||[];
+    const blunt=opts.filter(o=>/\\b(always|never|everything|everyone|every time|entire personality|automatically proves|definitely proves|must be|certainly has)\\b/i.test(o.label||''));
+    flag(blunt.length>0,'Review implausibly absolute alternatives in '+(item.title||item.type)+'.');
+   }
+  }
+ }
  const missingSources=(lesson?.nodes||[]).filter(n=>exercise(n)&&!n.sources?.trim());
  flag(missingSources.length>0,missingSources.length+' exercise(s) lack research or guideline attribution.');
  flag(!lesson?.takeaway||words(lesson.takeaway)<10,'Finish with a usable, specific conclusion rather than a generic recap.');
