@@ -25,3 +25,10 @@
 .cl-quality-panel p,.cl-quality-panel li{font-size:.88rem;line-height:1.65}
 .cl-quality-panel ul{padding-inline-start:1.3rem;margin:.6rem 0}
 .cl-quality-bad{color:#8d3029}.cl-quality-good{color:#266743}
+
+/* Source notes stay available without interrupting the case sequence. */
+.ns-learn-player__research{margin:16px 0;padding:13px 16px;border:1px solid #b6cdb9;border-radius:13px;background:#eff5eb;color:#244735;text-align:left}
+.ns-learn-player__research summary{font-weight:750;cursor:pointer;line-height:1.5}
+.ns-learn-player__research ol{margin:13px 0 4px;padding-left:1.5rem}
+.ns-learn-player__research li{overflow-wrap:anywhere;font-size:.91rem;line-height:1.6;margin-bottom:.7rem}
+.ns-learn-player__research p{font-size:.94rem;line-height:1.65}
