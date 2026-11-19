@@ -1,6 +1,6 @@
 {
   "id": "narcissism",
-  "version": 4,
+  "version": 5,
   "status": "published",
   "title": "Narcissism & Personality",
   "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
@@ -1230,10 +1230,36 @@
             }
           ],
           "takeaway": "A threat to someone's sense of worth may help explain their defensiveness. It does not establish their diagnosis or excuse an inaccurate claim about somebody else's work.",
-          "durationMinutes": 10,
+          "durationMinutes": 14,
           "standard": "deep-10",
           "transferPrompt": "In a new relationship disagreement, identify what was observed, what the person may have felt was at stake, which explanation is supported, and what would need to be known before claiming a stable pattern.",
-          "staffReview": "Reference metadata checked against PubMed and Annual Review of Clinical Psychology (19 November 2026). Primary references: Pincus et al. 2009; Pincus & Lukowitsky 2010; Blay et al. 2024 systematic review. Evidence supports construct-level distinctions, not diagnosis of the fictional Leo. Contains no claims of an externally completed clinical peer review. Independent clinical peer review remains recommended."
+          "staffReview": "Reference metadata checked against PubMed and Annual Review of Clinical Psychology (19 November 2026). Primary references: Pincus et al. 2009; Pincus & Lukowitsky 2010; Blay et al. 2024 systematic review. Evidence supports construct-level distinctions, not diagnosis of the fictional Leo. Contains no claims of an externally completed clinical peer review. Independent clinical peer review remains recommended.",
+          "glossary": [
+            {
+              "term": "Self-worth",
+              "definition": "The sense that you have value as a person."
+            },
+            {
+              "term": "Contingent self-worth",
+              "definition": "Feeling valuable depends strongly on meeting a condition, such as achievement or approval."
+            },
+            {
+              "term": "Grandiosity",
+              "definition": "A pattern of needing to feel or appear unusually important or exceptional."
+            },
+            {
+              "term": "Vulnerability",
+              "definition": "Sensitivity to feeling inadequate or exposed, especially when one's sense of worth is threatened."
+            },
+            {
+              "term": "Formulation",
+              "definition": "A working explanation linking circumstances, interpretations, behaviour and consequences; it can be revised."
+            },
+            {
+              "term": "Reinforcement",
+              "definition": "A consequence that makes a behaviour more likely to happen again."
+            }
+          ]
         },
         {
           "id": "narcissism-m1-l2",
