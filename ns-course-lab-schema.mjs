@@ -1,4 +1,4 @@
-import {LIFE_NODE_TEMPLATES,isLifeNode,createLifeNode,validateLifeNode} from './ns-life-node-types.mjs?v=everyday-nodes-v2';
+import {LIFE_NODE_TEMPLATES,isLifeNode,createLifeNode,validateLifeNode} from './ns-life-node-types.mjs?v=narcissism-audit-20261119';
 import {auditLesson} from './ns-learn-quality.mjs';
 /**
  * Course Lab shared authoring schema: no content, only reusable node templates.
