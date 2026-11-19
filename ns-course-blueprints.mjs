@@ -28,7 +28,8 @@ export function createDraftFromBlueprint(doc,{id,title,description}={}){
   id:mod.id,title:mod.title,bookId:book.id,bookTitle:book.title,bookNumber:bookIndex+1,
   problem:mod.problem,distinction:book.distinction,lessons:mod.lessons.map(l=>({
    id:l.id,version:1,title:l.title,teach:'',objective:l.objective,
-   recommendedType:l.recommendedType,editorialStatus:'draft',nodes:[]
+   recommendedType:l.recommendedType,editorialStatus:'draft',durationMinutes:10,
+   standard:'deep-10',takeaway:'',transferPrompt:'',staffReview:'',nodes:[]
   }))
  })));
  return draft;
