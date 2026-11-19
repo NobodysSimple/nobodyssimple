@@ -34,6 +34,7 @@ export function playLearningCue(correct,enabled=true,scope=globalThis){
  try{
   const AudioContext=scope.AudioContext||scope.webkitAudioContext;
   context=new AudioContext();
+  const oscillators=[];
   const tone=(offset,freq,duration,gain)=>{
    const oscillator=context.createOscillator(),volume=context.createGain();
    oscillator.type='sine';
@@ -42,11 +43,12 @@ export function playLearningCue(correct,enabled=true,scope=globalThis){
    volume.gain.exponentialRampToValueAtTime(gain,context.currentTime+offset+0.012);
    volume.gain.exponentialRampToValueAtTime(0.0001,context.currentTime+offset+duration);
    oscillator.connect(volume);volume.connect(context.destination);
-   oscillator.start(context.currentTime+offset);oscillator.stop(context.currentTime+offset+duration+0.012);
+   oscillator.start(context.currentTime+offset);oscillator.stop(context.currentTime+offset+duration+0.012);oscillators.push(oscillator);
   };
   if(correct){tone(0,523.25,.14,.035);tone(.15,659.25,.18,.032);}
   else {tone(0,330,.18,.025);tone(.19,246.94,.19,.020);}
-  // No timer or background loop: the oscillator nodes stop themselves.
+  // Release the audio device after the final sound ends; no timer or loop.
+  oscillators.at(-1)?.addEventListener('ended',()=>{void context.close().catch(()=>{});},{once:true});
   return true;
  }catch{
   try{void context?.close?.();}catch{}
