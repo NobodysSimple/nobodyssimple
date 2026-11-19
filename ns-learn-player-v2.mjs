@@ -50,7 +50,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   return ordered;
  };
  const activeUnit=(bundle?.modules||[]).find(m=>(m.lessons||[]).some(l=>l.id===lessonId));
- const glossary=Array.isArray(activeUnit?.glossary)?activeUnit.glossary:[];
+ const glossary=[...(Array.isArray(activeUnit?.glossary)?activeUnit.glossary:[]),...(Array.isArray(lesson.glossary)?lesson.glossary:[])].filter(x=>x&&typeof x.term==='string'&&typeof x.definition==='string');
  const glossaryHelp=glossary.length?'<details class="ns-learn-immersive__glossary"><summary>New word? Open quick definitions</summary><dl>'+glossary.map(item=>'<div><dt>'+esc(item.term)+'</dt><dd>'+esc(item.definition)+'</dd></div>').join('')+'</dl></details>':'';
  const cast=knownCastForLesson(bundle,lesson);
  const castMarkup=names=>names.length?'<div class="ns-learn-immersive__cast" aria-label="People in this example">'+names.map(name=>'<span class="ns-learn-immersive__cast-person">'+characterPortrait(name,cast,esc,true)+'<span>'+esc(name)+'</span></span>').join('')+'</div>':'';
