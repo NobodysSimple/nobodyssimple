@@ -1,5 +1,6 @@
 import {LIFE_NODE_TEMPLATES,isLifeNode,createLifeNode,validateLifeNode} from './ns-life-node-types.mjs?v=narcissism-audit-20261119';
 import {auditLesson} from './ns-learn-quality.mjs';
+import {createInvestigation,validateInvestigation} from './ns-learn-investigation.mjs';
 /**
  * Course Lab shared authoring schema: no content, only reusable node templates.
  * Stable IDs survive reorder/revision; published nodes are data, never executable HTML.
@@ -21,6 +22,7 @@ export const COURSE_LAB_TYPES=Object.freeze([
  {id:'update',name:'Update the belief',hint:'Reconsider a working explanation when new evidence arrives'},
  {id:'perspective',name:'Perspective shift',hint:'Compare two viewpoints before selecting the strongest inference'},
  {id:'dialogue',name:'Dialogue Lab · conversation & conflict',hint:'Study a two-person exchange, identify techniques and answer scene-based questions'},
+ {id:'investigation',name:'Message Investigation · ten reasoning depths',hint:'Analyse a message thread through competing motives, power, defences and evidence revision'},
  ...LIFE_NODE_TEMPLATES.map(({id,name,hint})=>({id,name,hint}))
 ]);
 export const COURSE_LAB_EXERCISES=Object.freeze(COURSE_LAB_TYPES.map(x=>x.id).filter(id=>!['read','image'].includes(id)));
@@ -28,6 +30,7 @@ export const makeCourseId=()=>globalThis.crypto?.randomUUID?.()||'node-'+Date.no
 const option=label=>({id:makeCourseId(),label});
 export function createCourseNode(type){
  if(isLifeNode(type))return createLifeNode(type,makeCourseId);
+ if(type==='investigation')return createInvestigation(makeCourseId);
  const node={id:makeCourseId(),type,title:'',prompt:'',conceptId:'',explanation:'',counterexample:'',sources:'',image:'',alt:'',caption:''};
  if(type==='read')return {id:node.id,type,title:'',body:'',image:'',alt:'',caption:'',sources:''};
  if(type==='image')return {id:node.id,type,title:'',image:'',alt:'',caption:'',sources:''};
@@ -81,6 +84,10 @@ export function validateCourseForPublish(course){
     if(isLifeNode(node.type)){
      if(!isText(node.prompt)||!isText(node.conceptId)||!isText(node.explanation)||!isText(node.counterexample))report(here,'write the task, concept ID, explanation and boundary');
      for(const issue of validateLifeNode(node))report(here,issue);
+     continue;
+    }
+    if(node.type==='investigation'){
+     for(const issue of validateInvestigation(node))report(here,issue);
      continue;
     }
     if(node.type==='dialogue'){
