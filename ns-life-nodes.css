@@ -31,3 +31,8 @@
 .ns-life-node__figure img{max-height:240px;object-fit:cover;width:100%;border-radius:1.1rem}
 @media(max-width:540px){.ns-life-node__frames{grid-template-columns:1fr 1fr;gap:.45rem}.ns-life-node__frame{font-size:.82rem;padding:.65rem;min-height:4rem}.ns-life-node__scene{padding:.9rem;gap:.75rem}.ns-life-node__person{width:2.4rem;height:2.8rem}}
 @media(prefers-reduced-motion:reduce){.ns-life-node__frame{transition:none}}
+
+.ns-life-node__surgery{margin:1rem 0;padding:1.1rem;border-radius:1rem;background:#f7f2e4;border:1px dashed #c5cbb7;color:#264b39;line-height:1.9;font-size:1.1rem}
+.ns-life-node__surgery button{border:2px solid #457156;background:#e3efdc;color:#2a4f3b;border-radius:.4rem;padding:.18rem .4rem;font:inherit;font-weight:800;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.ns-life-node__surgery button:focus-visible{outline:3px solid #93a899;outline-offset:3px}
+.ns-life-node__surgery button[aria-pressed="true"]{background:#cfe3c9}
