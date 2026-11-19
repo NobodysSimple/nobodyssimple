@@ -7,6 +7,7 @@ import {getLearnCourse,LEARN_COMPANIONS} from './ns-learn-catalog-v2.mjs';
 import {validateLearnBundle,gradeLearnItem,learnLessonScore,flattenLearnLessons,QUESTION_TYPES} from './ns-learn-engine-v2.mjs';
 import {learningNodes,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {renderDialogue} from './ns-learn-dialogue.mjs';
+import {isLifeNode,lifeNodeMode,lifeNodeDefinition,lifeControls} from './ns-life-node-types.mjs';
 import {knownCastForLesson,charactersMentioned,characterPortrait} from './ns-learn-cast.mjs';
 import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs';
 const esc=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[ch]));
@@ -53,7 +54,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const castMarkup=names=>names.length?'<div class="ns-learn-immersive__cast" aria-label="People in this example">'+names.map(name=>'<span class="ns-learn-immersive__cast-person">'+characterPortrait(name,cast,esc,true)+'<span>'+esc(name)+'</span></span>').join('')+'</div>':'';
  const originalNodes=learningNodes(lesson);
  let nodes=arrange(originalNodes);
- const state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,saved:false,options:new Map()};
+ const state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,lifeFrame:0,lifeInitial:'',lifeRevealed:false,lifeChoice:'',lifeSort:{},lifeBefore:0,lifeAfter:0,saved:false,options:new Map()};
  const orderedOptions=(name,items)=>{
   const key=name+':'+(items||[]).map(x=>x.id).join('/');
   if(!state.options.has(key))state.options.set(key,scramble(items));
@@ -62,6 +63,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const choiceSet=(name,items,selected='',disabled=false)=>fieldset(name,orderedOptions(name,items),selected,disabled);
  const current=()=>nodes[state.i];
  function renderControls(node){
+  if(isLifeNode(node.type))return lifeControls(node,state);
   if(['choose','respond','repair','investigate','update','perspective'].includes(node.type)){
    const extra=node.type==='update'?'<div class="ns-learn-player__new-evidence"><strong>New evidence</strong><p>'+esc(node.newEvidence)+'</p></div>':node.type==='perspective'?'<div class="ns-learn-player__viewpoints"><div><strong>View A</strong><p>'+esc(node.viewA)+'</p></div><div><strong>View B</strong><p>'+esc(node.viewB)+'</p></div></div>':'';
    return extra+choiceSet('choice',node.options,state.checked?state.answers[node.id]||'':'',!!state.checked);
@@ -81,6 +83,13 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   return '';
  }
  function response(node){
+  if(isLifeNode(node.type)){
+   const mode=lifeNodeMode(node.type);
+   if(mode==='sort')return Object.fromEntries([...root.querySelectorAll('[data-life-sort]')].map(x=>[x.dataset.lifeSort,x.value]));
+   if(mode==='dial')return state.lifeRevealed?{before:Number(state.lifeBefore),after:Number(state.lifeAfter)}:null;
+   if(mode==='reveal'&&!state.lifeRevealed)return null;
+   return root.querySelector('input[name="life-choice"]:checked')?.value||state.lifeChoice||null;
+  }
   if(['choose','respond','repair','investigate','update','perspective'].includes(node.type))return root.querySelector('input[name="choice"]:checked')?.value||null;
   if(node.type==='complete')return root.querySelector('input[name="recall"]')?.value||'';
   if(['match','sort'].includes(node.type))return Object.fromEntries([...root.querySelectorAll('[data-pair]')].map(x=>[x.dataset.pair,x.value]));
@@ -90,7 +99,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   if(node.type==='character')return {evidence:root.querySelector('input[name="evidence"]:checked')?.value||'',action:root.querySelector('input[name="action"]:checked')?.value||''};
   if(node.type==='dialogue')return root.querySelector('input[name="dialogue-choice"]:checked')?.value||'';
  }
- const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;const node=current();const ids=['sequence','chain','rank'].includes(node?.type)?node.steps.map(s=>s.id):[];state.order=scramble(ids);if(ids.length>1&&ids.every((id,i)=>state.order[i]===id))state.order.reverse();};
+ const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;state.lifeFrame=0;state.lifeInitial='';state.lifeRevealed=false;state.lifeChoice='';state.lifeSort={};const node=current();state.lifeBefore=Number(node?.initialValue??80);state.lifeAfter=state.lifeBefore;const ids=['sequence','chain','rank'].includes(node?.type)?node.steps.map(s=>s.id):[];state.order=scramble(ids);if(ids.length>1&&ids.every((id,i)=>state.order[i]===id))state.order.reverse();};
  const advance=()=>{if(state.i+1>=nodes.length)state.phase='done';else {state.i++;reset();}paint();};
  function paint(){
   const guide=LEARN_COMPANIONS[courseId];
@@ -117,7 +126,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    const body=read?'<div class="ns-learn-player__reading">'+(node.type==='read'?paragraphs(node.body):'')+photo(node)+(node.sources?'<p class="ns-learn-player__sources">'+esc(node.sources)+'</p>':'')+'</div>':promptLine+photo(node)+renderControls(node);
    const notice=state.notice?'<p class="ns-learn-player__notice" role="alert">'+esc(state.notice)+'</p>':'';
    const response=checked?'<div class="ns-learn-player__feedback" role="status"><strong>'+(state.checked.correct?'Best-supported answer.':'A useful distinction to review.')+'</strong>'+paragraphs(state.checked.explanation)+(state.checked.counterexample?'<p><small>Where this may differ: '+esc(state.checked.counterexample)+'</small></p>':'')+(node.sources?'<small>Reading: '+esc(node.sources)+'</small>':'')+(state.checked.reply?'<div class="ns-learn-player__branch"><strong>'+esc(node.speakerB||'Possible reply')+'</strong><p>'+esc(state.checked.reply)+'</p>'+(state.checked.consequence?'<small>'+esc(state.checked.consequence)+'</small>':'')+'</div>':'')+'</div>':'';
-   middle='<div class="ns-learn-immersive__task"><p class="ns-learn-player__eyebrow">'+esc(node.type==='dialogue'?'CONVERSATION':node.type.toUpperCase())+' · '+(state.i+1)+' / '+nodes.length+'</p><h1>'+esc(heading)+'</h1>'+faces+glossaryHelp+body+notice+response+'</div>';
+   middle='<div class="ns-learn-immersive__task"><p class="ns-learn-player__eyebrow">'+esc(node.type==='dialogue'?'CONVERSATION':isLifeNode(node.type)?lifeNodeDefinition(node.type).name.toUpperCase():node.type.toUpperCase())+' · '+(state.i+1)+' / '+nodes.length+'</p><h1>'+esc(heading)+'</h1>'+faces+glossaryHelp+body+notice+response+'</div>';
    if(!(node.type==='dialogue'&&state.dialogueCheck<0&&state.dialogueVisible<(node.turns||[]).length)){
     const buttonText=node.type==='dialogue'&&state.dialogueCheck<0?'Analyse the exchange →':
      node.type==='dialogue'&&checked&&state.dialogueCheck<(node.checks?.length||0)-1?'Next question →':
@@ -143,6 +152,26 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   }
  }
  function wire(){
+  root.querySelectorAll('[data-life-frame]').forEach(button=>button.addEventListener('click',()=>{
+   state.lifeFrame=Number(button.dataset.lifeFrame);paint();
+  }));
+  root.querySelectorAll('input[name="life-initial"]').forEach(input=>input.addEventListener('change',()=>{
+   state.lifeInitial=input.value;paint();
+  }));
+  root.querySelectorAll('input[name="life-choice"]').forEach(input=>input.addEventListener('change',()=>{
+   state.lifeChoice=input.value;if(lifeNodeMode(current()?.type)==='edit')paint();
+  }));
+  root.querySelectorAll('[data-life-sort]').forEach(select=>select.addEventListener('change',()=>{
+   state.lifeSort[select.dataset.lifeSort]=select.value;
+  }));
+  root.querySelectorAll('[data-life-slider]').forEach(slider=>slider.addEventListener('input',()=>{
+   const v=Number(slider.value);
+   if(slider.dataset.lifeSlider==='before')state.lifeBefore=v;else state.lifeAfter=v;
+   const output=slider.parentElement?.querySelector('output');if(output)output.textContent=v+'%';
+  }));
+  root.querySelector('[data-life-reveal]')?.addEventListener('click',()=>{
+   state.lifeRevealed=true;state.lifeAfter=state.lifeBefore;paint();
+  });
   root.querySelector('[data-dialogue-reveal]')?.addEventListener('click',()=>{
    const node=current();if(node?.type!=='dialogue')return;
    state.dialogueVisible=Math.min((node.turns||[]).length,state.dialogueVisible+1);
