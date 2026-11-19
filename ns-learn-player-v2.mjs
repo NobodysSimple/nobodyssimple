@@ -148,7 +148,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    middle='<div class="ns-learn-immersive__welcome"><span class="ns-learn-immersive__welcome-art">'+companion+'</span><p class="ns-learn-player__eyebrow">'+esc(course?.title||bundle.title||courseId)+' · Unit '+unitIndex+'</p><h1>'+esc(lesson.title)+'</h1><div class="ns-learn-immersive__lead">'+castMarkup(charactersMentioned({body:lesson.teach},cast))+paragraphs(String(lesson.teach||'Work through a real situation and decide what the evidence can support.').replace(/\s*About (?:five|5) minutes\.?/gi,'').trim())+'</div><p class="ns-learn-player__hint">About '+displayedLessonMinutes(lesson)+' minutes · '+lessonMetrics(lesson).drills+' practice checks · No timer</p></div>';
    foot='<button type="button" class="ns-learn-player__primary" data-start>Start lesson →</button>';
   }else if(state.phase==='done'){
-   const score=learnLessonScore(lesson,state.answers);
+   const score={...learnLessonScore(lesson,state.answers),corrections:repairSummary(state.repairs)};
    const practice=repairSummary(state.repairs);
    middle='<div class="ns-learn-immersive__welcome"><span class="ns-learn-immersive__welcome-art">'+companion+'</span><p class="ns-learn-player__eyebrow">LESSON COMPLETE ✿</p><h1>'+esc(lesson.title)+'</h1><p>You answered '+score.total+' challenges. '+score.correct+' were correct first time.</p>'+(practice.missed?'<p class="ns-learn-player__mastery">You revisited '+practice.retried+' missed '+(practice.retried===1?'question':'questions')+' and corrected '+practice.recovered+'. '+(practice.stillToReview?'Keep '+practice.stillToReview+' on your review list.':'Every missed question was corrected on the second attempt.')+'</p>':'<p class="ns-learn-player__mastery">No corrections needed this time.</p>')+(lesson.takeaway?'<div class="ns-learn-player__takeaway"><strong>Worth remembering</strong><p>'+esc(lesson.takeaway)+'</p></div>':'')+'<p class="ns-learn-immersive__reflect">The aim is to understand why an explanation fits the evidence, and when you would need to revise it.</p><p role="status" data-save></p></div>';
    foot=preview?'<button class="ns-learn-player__primary" type="button" data-restart>Try again</button>':'<a class="ns-learn-player__primary" href="'+home+'">Back to course →</a>';
@@ -173,7 +173,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   }
   root.innerHTML='<section class="ns-learn-player ns-learn-player--immersive" data-immersive><div class="ns-learn-immersive__surface" role="region" aria-label="Focused learning lesson">'+head+'<div class="ns-learn-immersive__content">'+middle+'</div><footer class="ns-learn-immersive__footer">'+foot+'</footer></div><span class="ns-learn-immersive__decoration" aria-hidden="true">✳</span></section>';
   if(state.phase==='done'){
-   const score=learnLessonScore(lesson,state.answers);
+   const score={...learnLessonScore(lesson,state.answers),corrections:repairSummary(state.repairs)};
    if(!preview&&!state.saved){state.saved=true;const result=review?saveLearnReview(bundle,lesson,score):saveLearnCompletion(bundle,lesson,score);root.querySelector('[data-save]').textContent=result.ok?(review?'Review saved.':'Progress saved.'):'Unable to save progress: '+result.error;}
    else if(preview)root.querySelector('[data-save]').textContent='Staff preview · No progress saved.';
   }
