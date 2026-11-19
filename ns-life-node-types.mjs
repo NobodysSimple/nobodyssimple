@@ -470,7 +470,7 @@ export function createLifeNode(type,uid){
  const choices=source.choices.map(label=>({id:uid(),label,feedback:''}));
  return {id:uid(),type,title:source.name,prompt:source.hint,conceptId:source.conceptId,
   scene:source.scene,reveal:source.reveal,frames,options:choices,
-  answer:choices[source.correct]?.id||'',initialValue:80,correctDirection:'lower',
+  answer:choices[source.correct]?.id||'',initialValue:80,correctDirection:'lower',targetPhrase:source.mode==='edit'?'NEVER':'',
   explanation:source.id==='confidence_dial'?'Evidence of an urgent appointment should reduce confidence in a deliberate slight.':source.reveal,
   counterexample:'Other situations may involve different evidence or constraints; do not assume this single example proves a universal rule.',
   sources:'',image:'',alt:'',caption:''};
@@ -484,6 +484,7 @@ export function validateLifeNode(node){
  if(!Array.isArray(node?.frames)||node.frames.length<2||node.frames.length>8||
     !unique((node.frames||[]).map(x=>x.id))||node.frames.some(x=>!nonempty(x?.id)||!nonempty(x?.label)))
   problems.push('add 2–8 distinct scene details or steps');
+ if(mode==='edit'&&(!nonempty(node.targetPhrase)||!String(node.scene).toLowerCase().includes(node.targetPhrase.toLowerCase())))problems.push('choose a phrase that appears in the sentence');
  if(mode==='sort'){
   if(node.frames?.some(x=>!['control','influence','outside'].includes(x.category)))
    problems.push('classify every item as Control, Influence or Outside control');
@@ -525,6 +526,7 @@ export function lifeNodeEditor(node,field){
   html+='</div>';
  });
  html+='</section>';
+ if(mode==='edit')html+=field('Exact word or phrase the learner taps to edit','targetPhrase',node.targetPhrase);
  if(mode==='dial'){
   html+=field('Initial confidence (0–100)','initialValue',node.initialValue,{type:'number'});
   html+='<label class="cl-field"><span>Expected adjustment after evidence</span><select data-field="correctDirection">'+[['lower','Less confident'],['higher','More confident'],['hold','Roughly unchanged']].map(([id,label])=>'<option value="'+id+'"'+(node.correctDirection===id?' selected':'')+'>'+label+'</option>').join('')+'</select></label>';
@@ -553,7 +555,12 @@ export function lifeControls(node,state){
   const initial='<fieldset class="ns-life-node__answers"><legend>Before seeing more, what is your interpretation?</legend>'+opts.map(o=>'<label><input type="radio" name="life-initial" value="'+esc(o.id)+'"'+(state.lifeInitial===o.id?' checked':'')+'><span>'+esc(o.label)+'</span></label>').join('')+'</fieldset>';
   return scene+(!state.lifeRevealed?initial+'<button class="ns-life-node__reveal-button" type="button" data-life-reveal'+(state.lifeInitial?'':' disabled')+'>Reveal what was missing →</button>':'<div class="ns-life-node__reveal"><strong>More context</strong><p>'+esc(node.reveal)+'</p></div>'+detailCards()+frameDetail+choose);
  }
- if(mode==='edit')return scene+'<div class="ns-life-node__reveal"><strong>Try a more precise alternative</strong><p>'+esc(node.reveal)+'</p></div>'+choose+(state.lifeChoice?'<div class="ns-life-node__edited"><small>Your revised line</small><p>'+esc(opts.find(o=>o.id===state.lifeChoice)?.label||'')+'</p></div>':'');
+ if(mode==='edit'){
+  const phrase=String(node.targetPhrase||''),where=String(node.scene).toLowerCase().indexOf(phrase.toLowerCase());
+  const surgery=where>=0?'<p class="ns-life-node__surgery">'+esc(node.scene.slice(0,where))+'<button data-life-target type="button" aria-pressed="'+!!state.lifeTargeted+'">'+esc(node.scene.slice(where,where+phrase.length))+'</button>'+esc(node.scene.slice(where+phrase.length))+'</p>':'';
+  return scene+'<p class="ns-life-node__instruction">Tap the highlighted wording to make a precise change.</p>'+surgery+
+   (state.lifeTargeted?'<div class="ns-life-node__reveal"><strong>Try a more precise alternative</strong><p>'+esc(node.reveal)+'</p></div>'+choose+(state.lifeChoice?'<div class="ns-life-node__edited"><small>Your revised line</small><p>'+esc(opts.find(o=>o.id===state.lifeChoice)?.label||'')+'</p></div>':''):'');
+ }
  if(mode==='hotspot')return scene+'<p class="ns-life-node__instruction">Tap a detail in the scene to inspect it.</p>'+detailCards()+frameDetail+'<div class="ns-life-node__reveal"><strong>What else matters?</strong><p>'+esc(node.reveal)+'</p></div>'+choose;
  if(mode==='timeline')return scene+'<p class="ns-life-node__instruction">Move between moments in the situation.</p>'+detailCards()+frameDetail+'<div class="ns-life-node__reveal"><strong>What the sequence shows</strong><p>'+esc(node.reveal)+'</p></div>'+choose;
  if(mode==='switch')return scene+'<p class="ns-life-node__instruction">Change which circumstance you examine.</p>'+detailCards()+frameDetail+'<div class="ns-life-node__reveal"><strong>Consider the trade-off</strong><p>'+esc(node.reveal)+'</p></div>'+choose;
