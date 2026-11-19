@@ -367,13 +367,106 @@ export const LIFE_NODE_TEMPLATES=Object.freeze([
  }
 ]);
 export const LIFE_NODE_IDS=Object.freeze(LIFE_NODE_TEMPLATES.map(x=>x.id));
+const STORY_DETAILS={
+ "freeze_frame": [
+  "You can verify the missing greeting; you cannot see the colleague's intention.",
+  "Your embarrassment is a genuine feeling, but it isn't direct evidence of the colleague's motive.",
+  "This is a possible explanation, not something the scene establishes."
+ ],
+ "cropped_reality": [
+  "The wording tells you little by itself.",
+  "The speed of a reply does not reliably establish emotion.",
+  "This context was missing from the cropped view."
+ ],
+ "tomorrow_button": [
+  "Relief is an immediate effect, not proof the problem is solved.",
+  "The deadline is now closer and the task remains.",
+  "The cost of delay depends partly on what opportunities remained."
+ ],
+ "invisible_backpack": [
+  "Fatigue may reduce the resources available to begin.",
+  "Repeated interruptions can increase the cost of restarting.",
+  "An unclear starting point creates additional planning demand."
+ ],
+ "one_change_experiment": [
+  "Repeated interruptions may disrupt work.",
+  "Fewer interruptions reduce one source of demand, not every barrier.",
+  "Clarity can change how much planning is needed."
+ ],
+ "hidden_subtitle": [
+  "Sometimes words and feelings match.",
+  "A request for space is not always a sign of rejection.",
+  "Some people avoid conflict when an argument feels unsafe or overwhelming."
+ ],
+ "rewind_point": [
+  "An uncertain event starts the loop.",
+  "The thought assigns meaning that has not been confirmed.",
+  "Checking can make uncertainty feel temporarily bearable.",
+  "Temporary relief can make the urge to repeat the action stronger."
+ ],
+ "confidence_dial": [
+  "You begin with one interpretation of ambiguous behaviour.",
+  "The appointment introduces a plausible competing explanation.",
+  "Confidence should reflect the updated evidence rather than the original impression."
+ ],
+ "invisible_price_tag": [
+  "This choice offers help but uses time you had committed elsewhere.",
+  "Saying no can preserve capacity and still disappoint another person.",
+  "A third option may be possible, but it depends on their needs."
+ ],
+ "attention_spotlight": [
+  "The loudness is visible and may still be inappropriate.",
+  "Repeated interruption changes the immediate context.",
+  "The impact on others matters as well as the speaker's frustration."
+ ],
+ "sentence_surgeon": [
+  "An absolute word may exaggerate a specific problem.",
+  "The alternative identifies the immediate behaviour you want changed.",
+  "A global character judgement is less specific than a request."
+ ],
+ "whose_move": [
+  "Your choice of words and willingness to repair belong to you.",
+  "You can invite a discussion, but the other person chooses whether to engage.",
+  "You do not determine another person's decision to forgive."
+ ],
+ "advice_stress_test": [
+  "A manageable fear may be suitable for gradual practice.",
+  "A real safety threat changes which action is appropriate.",
+  "A challenge can be useful without requiring reckless action."
+ ],
+ "inner_tug_of_war": [
+  "Connection matters to the character.",
+  "The fear may affect how manageable the event feels.",
+  "A limited attendance plan might preserve room for both needs."
+ ],
+ "same_person_different_day": [
+  "The transport failure changes what was possible that morning.",
+  "Forgetting the alarm may create a different kind of responsibility.",
+  "One label such as 'lazy' explains neither day adequately."
+ ],
+ "feeling_decoder": [
+  "Heart rate alone cannot identify why the body is activated.",
+  "Restlessness can occur in many emotional and physical states.",
+  "Checking may be an attempt to reduce uncertainty."
+ ],
+ "prediction_postcard": [
+  "The question has not yet been asked.",
+  "A feared response is a prediction, not a result.",
+  "This example supplies one outcome that can update the prediction."
+ ],
+ "rule_rewrite": [
+  "Disagreement does not establish wrongdoing.",
+  "A reasonable boundary can still upset somebody.",
+  "Some criticism contains information worth considering."
+ ]
+};
 export const lifeNodeDefinition=type=>LIFE_NODE_TEMPLATES.find(x=>x.id===type)||null;
 export const isLifeNode=type=>LIFE_NODE_IDS.includes(type);
 export const lifeNodeMode=type=>lifeNodeDefinition(type)?.mode||'judgement';
 export function createLifeNode(type,uid){
  const source=lifeNodeDefinition(type);
  if(!source)return null;
- const frames=source.frames.map((label,i)=>({id:uid(),label,detail:'',category:source.mode==='sort'?['control','influence','outside'][i%3]:''}));
+ const frames=source.frames.map((label,i)=>({id:uid(),label,detail:STORY_DETAILS[type]?.[i]||'',category:source.mode==='sort'?['control','influence','outside'][i%3]:''}));
  const choices=source.choices.map(label=>({id:uid(),label,feedback:''}));
  return {id:uid(),type,title:source.name,prompt:source.hint,conceptId:source.conceptId,
   scene:source.scene,reveal:source.reveal,frames,options:choices,
