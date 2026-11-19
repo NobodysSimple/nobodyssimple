@@ -1,3 +1,4 @@
+import {LIFE_NODE_TEMPLATES,isLifeNode,createLifeNode,validateLifeNode} from './ns-life-node-types.mjs';
 /**
  * Course Lab shared authoring schema: no content, only reusable node templates.
  * Stable IDs survive reorder/revision; published nodes are data, never executable HTML.
@@ -18,12 +19,14 @@ export const COURSE_LAB_TYPES=Object.freeze([
  {id:'rank',name:'Rank the hypotheses',hint:'Order competing explanations by the available evidence'},
  {id:'update',name:'Update the belief',hint:'Reconsider a working explanation when new evidence arrives'},
  {id:'perspective',name:'Perspective shift',hint:'Compare two viewpoints before selecting the strongest inference'},
- {id:'dialogue',name:'Dialogue Lab · conversation & conflict',hint:'Study a two-person exchange, identify techniques and answer scene-based questions'}
+ {id:'dialogue',name:'Dialogue Lab · conversation & conflict',hint:'Study a two-person exchange, identify techniques and answer scene-based questions'},
+ ...LIFE_NODE_TEMPLATES.map(({id,name,hint})=>({id,name,hint}))
 ]);
 export const COURSE_LAB_EXERCISES=Object.freeze(COURSE_LAB_TYPES.map(x=>x.id).filter(id=>!['read','image'].includes(id)));
 export const makeCourseId=()=>globalThis.crypto?.randomUUID?.()||'node-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);
 const option=label=>({id:makeCourseId(),label});
 export function createCourseNode(type){
+ if(isLifeNode(type))return createLifeNode(type,makeCourseId);
  const node={id:makeCourseId(),type,title:'',prompt:'',conceptId:'',explanation:'',counterexample:'',sources:'',image:'',alt:'',caption:''};
  if(type==='read')return {id:node.id,type,title:'',body:'',image:'',alt:'',caption:'',sources:''};
  if(type==='image')return {id:node.id,type,title:'',image:'',alt:'',caption:'',sources:''};
@@ -73,6 +76,11 @@ export function validateCourseForPublish(course){
     if(node.image&&!safeCourseImage(node.image))report(here,'image must use a site media path');
     if(node.image&&!isText(node.alt))report(here,'describe the image for accessibility');
     if(['read','image'].includes(node.type))continue;
+    if(isLifeNode(node.type)){
+     if(!isText(node.prompt)||!isText(node.conceptId)||!isText(node.explanation)||!isText(node.counterexample))report(here,'write the task, concept ID, explanation and boundary');
+     for(const issue of validateLifeNode(node))report(here,issue);
+     continue;
+    }
     if(node.type==='dialogue'){
      if(!isText(node.prompt)||!isText(node.conceptId)||!isText(node.scenario)||!isText(node.speakerA)||!isText(node.speakerB))report(here,'add the learning focus, concept ID, scene and both character names');
      const turns=Array.isArray(node.turns)?node.turns:[],checks=Array.isArray(node.checks)?node.checks:[];
