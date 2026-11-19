@@ -78,7 +78,13 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   };
  const current=()=>nodes[state.i];
  function renderControls(node){
-  if(isLifeNode(node.type))return lifeControls(node,state);
+  if(isLifeNode(node.type)){
+   // Life-node choices must not always appear in the authored order (in the
+   // three redesigned courses the first authored option is often the key).
+   const key='life:'+node.id;
+   if(!state.options.has(key))state.options.set(key,scramble(node.options||[]));
+   return lifeControls({...node,options:state.options.get(key)},state);
+  }
   if(['choose','respond','repair','investigate','update','perspective'].includes(node.type)){
    const extra=node.type==='update'?'<div class="ns-learn-player__new-evidence"><strong>New evidence</strong><p>'+esc(node.newEvidence)+'</p></div>':node.type==='perspective'?'<div class="ns-learn-player__viewpoints"><div><strong>View A</strong><p>'+esc(node.viewA)+'</p></div><div><strong>View B</strong><p>'+esc(node.viewB)+'</p></div></div>':'';
    return extra+choiceSet('choice',node.options,state.checked?state.answers[node.id]||'':'',!!state.checked);
