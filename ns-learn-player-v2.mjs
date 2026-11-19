@@ -7,7 +7,7 @@ import {getLearnCourse,LEARN_COMPANIONS} from './ns-learn-catalog-v2.mjs';
 import {validateLearnBundle,gradeLearnItem,learnLessonScore,flattenLearnLessons,QUESTION_TYPES} from './ns-learn-engine-v2.mjs';
 import {learningNodes,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {renderDialogue} from './ns-learn-dialogue.mjs';
-import {isLifeNode,lifeNodeMode,lifeNodeDefinition,lifeControls} from './ns-life-node-types.mjs';
+import {isLifeNode,lifeNodeMode,lifeNodeDefinition,lifeControls} from './ns-life-node-types.mjs?v=everyday-nodes-v2';
 import {knownCastForLesson,charactersMentioned,characterPortrait} from './ns-learn-cast.mjs';
 import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs';
 const esc=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[ch]));
