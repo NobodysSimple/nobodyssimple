@@ -58,6 +58,6 @@ export function renderInvestigation(node,state,esc,choiceSet){
  const question=selecting?'<p class="ns-inquiry__ready">When you have examined the messages, choose <strong>Analyse the exchange</strong> to apply what you learned.</p>':
  '<section class="ns-inquiry__question"><p class="ns-inquiry__eyebrow">Your reasoning · '+(state.dialogueCheck+1)+' / '+node.checks.length+'</p>'+
  '<h2>'+esc(check?.prompt||'')+'</h2>'+
- choiceSet('dialogue-choice',check?.options||[],state.checked?'':state.answers?.[node.id]?.[check?.id]||'',!!state.checked)+'</section>';
+ choiceSet('dialogue-choice',check?.options||[],state.investigationChoice||state.answers?.[node.id]?.[check?.id]||'',!!state.checked)+'</section>';
  return '<div class="ns-inquiry">'+intro+messages+'<h2 class="ns-inquiry__depth-title">Examine the psychological layers</h2>'+nav+analysis+question+'</div>';
 }
