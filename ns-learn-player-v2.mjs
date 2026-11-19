@@ -58,7 +58,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const castMarkup=names=>names.length?'<div class="ns-learn-immersive__cast" aria-label="People in this example">'+names.map(name=>'<span class="ns-learn-immersive__cast-person">'+characterPortrait(name,cast,esc,true)+'<span>'+esc(name)+'</span></span>').join('')+'</div>':'';
  const originalNodes=learningNodes(lesson);
  let nodes=arrange(originalNodes);
- const state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,lifeFrame:0,lifeVisited:new Set(),lifeTargeted:false,lifeInitial:'',lifeRevealed:false,lifeChoice:'',lifeSort:{},lifeBefore:0,lifeAfter:0,investigationStage:0,saved:false,options:new Map(),repairs:createRepairQueue(),correcting:false,repairTask:null,soundOn:readSoundPreference()};
+ const state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,lifeFrame:0,lifeVisited:new Set(),lifeTargeted:false,lifeInitial:'',lifeRevealed:false,lifeChoice:'',lifeSort:{},lifeBefore:0,lifeAfter:0,investigationStage:0,investigationChoice:'',saved:false,options:new Map(),repairs:createRepairQueue(),correcting:false,repairTask:null,soundOn:readSoundPreference()};
  const orderedOptions=(name,items)=>{
   const key=name+':'+(items||[]).map(x=>x.id).join('/');
   if(!state.options.has(key))state.options.set(key,scramble(items));
@@ -125,7 +125,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   if(node.type==='character')return {evidence:root.querySelector('input[name="evidence"]:checked')?.value||'',action:root.querySelector('input[name="action"]:checked')?.value||''};
   if(['dialogue','investigation'].includes(node.type))return root.querySelector('input[name="dialogue-choice"]:checked')?.value||'';
  }
- const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;state.lifeFrame=0;state.lifeVisited=new Set();state.lifeTargeted=false;state.investigationStage=0;state.lifeInitial='';state.lifeRevealed=false;state.lifeChoice='';state.lifeSort={};const node=current();state.lifeBefore=Number(node?.initialValue??80);state.lifeAfter=state.lifeBefore;const ids=['sequence','chain','rank'].includes(node?.type)?node.steps.map(s=>s.id):[];state.order=scramble(ids);if(ids.length>1&&ids.every((id,i)=>state.order[i]===id))state.order.reverse();};
+ const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;state.lifeFrame=0;state.lifeVisited=new Set();state.lifeTargeted=false;state.investigationStage=0;state.investigationChoice='';state.lifeInitial='';state.lifeRevealed=false;state.lifeChoice='';state.lifeSort={};const node=current();state.lifeBefore=Number(node?.initialValue??80);state.lifeAfter=state.lifeBefore;const ids=['sequence','chain','rank'].includes(node?.type)?node.steps.map(s=>s.id):[];state.order=scramble(ids);if(ids.length>1&&ids.every((id,i)=>state.order[i]===id))state.order.reverse();};
  const beginNextCorrection=()=>{
    const task=takeRepair(state.repairs);
    if(!task){state.correcting=false;state.repairTask=null;state.phase='done';return;}
@@ -203,6 +203,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  }
  function wire(){
   root.querySelector('[data-sound-toggle]')?.addEventListener('click',()=>{state.soundOn=!state.soundOn;saveSoundPreference(state.soundOn);paint();});
+  root.querySelectorAll('input[name="dialogue-choice"]').forEach(input=>input.addEventListener('change',()=>{state.investigationChoice=input.value;}));
   root.querySelectorAll('[data-investigation-stage]').forEach(button=>button.addEventListener('click',()=>{state.investigationStage=Number(button.dataset.investigationStage);paint();root.querySelector('[data-investigation-stage="'+state.investigationStage+'"]')?.focus();}));
   root.querySelector('[data-life-target]')?.addEventListener('click',()=>{state.lifeTargeted=true;paint();});
   root.querySelectorAll('[data-life-frame]').forEach(button=>button.addEventListener('click',()=>{
@@ -239,15 +240,15 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   root.querySelector('[data-next]')?.addEventListener('click',()=>{
    const node=current();
    if(['dialogue','investigation'].includes(node.type)){
-    if(state.dialogueCheck<0){if(node.type==='dialogue'&&state.dialogueVisible<(node.turns||[]).length)return;state.dialogueCheck=0;state.notice='';paint();return;}
-    if(state.checked){if(state.correcting){advance();return;}if(state.dialogueCheck<node.checks.length-1){state.dialogueCheck++;state.checked=null;state.notice='';paint();}else advance();return;}
+    if(state.dialogueCheck<0){if(node.type==='dialogue'&&state.dialogueVisible<(node.turns||[]).length)return;state.dialogueCheck=0;state.investigationChoice='';state.notice='';paint();return;}
+    if(state.checked){if(state.correcting){advance();return;}if(state.dialogueCheck<node.checks.length-1){state.dialogueCheck++;state.investigationChoice='';state.checked=null;state.notice='';paint();}else advance();return;}
     const check=node.checks[state.dialogueCheck],answer=response(node);
     if(!check.options.some(o=>o.id===answer)){
      const notice=root.querySelector('.ns-learn-player__notice');if(notice)notice.textContent='Choose an answer before checking.';else root.querySelector('[data-next]').insertAdjacentHTML('beforebegin','<p class="ns-learn-player__notice" role="alert">Choose an answer before checking.</p>');return;
     }
     if(!state.correcting&&!state.answers[node.id])state.answers[node.id]={};
     if(!state.correcting)state.answers[node.id][check.id]=answer;
-    const chosen=check.options.find(o=>o.id===answer);state.checked={correct:answer===check.answer,explanation:(chosen?.feedback?chosen.feedback+'\n\n':'')+check.explanation,counterexample:check.counterexample,reply:chosen?.reply||'',consequence:chosen?.consequence||''};recordResult(state.checked.correct,state.dialogueCheck);paint();return;
+    state.investigationChoice=answer;const chosen=check.options.find(o=>o.id===answer);state.checked={correct:answer===check.answer,explanation:(chosen?.feedback?chosen.feedback+'\n\n':'')+check.explanation,counterexample:check.counterexample,reply:chosen?.reply||'',consequence:chosen?.consequence||''};recordResult(state.checked.correct,state.dialogueCheck);paint();return;
    }
    if(['read','image'].includes(node.type)||state.checked){advance();return;}
    const answer=response(node),result=gradeLearnItem(node,answer);
