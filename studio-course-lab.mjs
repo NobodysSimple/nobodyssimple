@@ -54,6 +54,18 @@ function dialogueEditor(node){
  '<label class="cl-field"><span>Boundary / alternative · when might this interpretation not fit?</span><textarea rows="2" data-dialogue-check="'+i+'" data-prop="counterexample">'+esc(c.counterexample||'')+'</textarea></label></div>').join('')+'</section>';
  return html;
 }
+function investigationEditor(node){
+ const lines=node.turns||[],layers=node.layers||[];
+ const choices=lines.map((t,i)=>({id:t.id,label:'Message '+(i+1)+' — '+(t.speaker==='a'?node.speakerA:node.speakerB)}));
+ return '<section class="cl-list"><div class="cl-list-title"><strong>Ten layers of psychological interpretation</strong></div>'+
+ '<p class="cl-hint">Explain what the evidence may mean. Give a plausible alternative and the next detail that would distinguish the accounts.</p>'+
+ layers.map((layer,i)=>'<details class="cl-dialogue-check" '+(i===0?'open':'')+'><summary>Depth '+(i+1)+' — '+esc(layer.title||'')+'</summary>'+
+ '<label class="cl-field"><span>Depth title</span><input data-investigation-layer="'+i+'" data-prop="title" value="'+esc(layer.title||'')+'"></label>'+
+ '<label class="cl-field"><span>Message carrying this clue</span><select data-investigation-layer="'+i+'" data-prop="focusTurn"><option value="">Entire conversation</option>'+options(choices,layer.focusTurn)+'</select></label>'+
+ '<label class="cl-field"><span>Explanation of evidence and mechanism</span><textarea rows="5" data-investigation-layer="'+i+'" data-prop="analysis">'+esc(layer.analysis||'')+'</textarea></label>'+
+ '<label class="cl-field"><span>Another plausible account</span><textarea rows="3" data-investigation-layer="'+i+'" data-prop="alternative">'+esc(layer.alternative||'')+'</textarea></label>'+
+ '<label class="cl-field"><span>What evidence would distinguish them?</span><textarea rows="3" data-investigation-layer="'+i+'" data-prop="test">'+esc(layer.test||'')+'</textarea></label></details>').join('')+'</section>';
+}
 function editorFields(node){
  if(!node)return '<div class="cl-hint">Choose or add a node to begin.</div>';
  const type=types[node.type],head='<p class="cl-eyebrow">'+esc(type?.name||node.type)+'</p><label class="cl-field"><span>Node template</span><select data-node-type="true">'+COURSE_LAB_TYPES.map(t=>'<option value="'+esc(t.id)+'"'+(node.type===t.id?' selected':'')+'>'+esc(t.name)+'</option>').join('')+'</select></label>'+textField('Node heading (optional)','title',node.title);
@@ -62,7 +74,7 @@ function editorFields(node){
  '<button type="button" class="cl-light-button" data-act="choose-image">Browse / upload image</button>'+textField('Alt text','alt',node.alt)+textField('Caption / credit','caption',node.caption)+'</details>';
  if(node.type==='read')return head+(node.editorialPrompt?'<p class="cl-hint">'+esc(node.editorialPrompt)+'</p>':'')+textField('Reading text','body',node.body,{rows:12,hint:'Write freely. Blank lines separate paragraphs.'})+textField('Sources / further reading','sources',node.sources,{rows:3})+media;
  if(node.type==='image')return head+media+textField('Sources / attribution','sources',node.sources,{rows:3});
- if(node.type==='dialogue')return head+(node.editorialPrompt?'<p class="cl-hint">'+esc(node.editorialPrompt)+'</p>':'')+textField('Learning focus / what to notice','prompt',node.prompt,{rows:2})+textField('Concept ID','conceptId',node.conceptId,{hint:'For review, e.g. validation-without-agreement.'})+dialogueEditor(node)+textField('Sources / references','sources',node.sources,{rows:2})+media;
+ if(['dialogue','investigation'].includes(node.type))return head+(node.editorialPrompt?'<p class="cl-hint">'+esc(node.editorialPrompt)+'</p>':'')+textField('Learning focus / what to notice','prompt',node.prompt,{rows:2})+textField('Concept ID','conceptId',node.conceptId,{hint:'For review, e.g. validation-without-agreement.'})+dialogueEditor(node)+(node.type==='investigation'?investigationEditor(node):'')+textField('Sources / references','sources',node.sources,{rows:2})+media;
  if(isLifeNode(node.type))return head+textField('Learning focus / question','prompt',node.prompt,{rows:2})+textField('Concept ID','conceptId',node.conceptId,{hint:'Stable identifier for review.'})+lifeNodeEditor(node,textField)+textField('Explanation after answering','explanation',node.explanation,{rows:4})+textField('Boundary / counterexample','counterexample',node.counterexample,{rows:3})+textField('Evidence / sources','sources',node.sources,{rows:2})+media;
  let html=head+(node.editorialPrompt?'<p class="cl-hint">'+esc(node.editorialPrompt)+'</p>':'')+textField('Question / task','prompt',node.prompt,{rows:3})+
  textField('Concept ID','conceptId',node.conceptId,{hint:'A stable learning concept, e.g. negative-reinforcement.'});
@@ -227,13 +239,14 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
    if(target.dataset.meta==='lesson-objective'&&lesson)lesson.objective=target.value;
    if(target.dataset.meta==='lesson-mode'&&lesson)lesson.recommendedType=target.value;
    if(target.dataset.meta==='lesson-status'&&lesson)lesson.editorialStatus=target.value;
-  }else if(node&&node.type==='dialogue'&&target.dataset.dialogueTurn!==undefined){
+  }else if(node&&['dialogue','investigation'].includes(node.type)&&target.dataset.dialogueTurn!==undefined){
    const row=node.turns?.[Number(target.dataset.dialogueTurn)];if(!row)return;row[target.dataset.prop]=target.value;
-  }else if(node&&node.type==='dialogue'&&target.dataset.dialogueCheck!==undefined){
+  }else if(node&&['dialogue','investigation'].includes(node.type)&&target.dataset.dialogueCheck!==undefined){
    const check=node.checks?.[Number(target.dataset.dialogueCheck)];if(!check)return;
    if(target.dataset.dialogueOption!==undefined){const option=check.options?.[Number(target.dataset.dialogueOption)];if(!option)return;option[target.dataset.prop]=target.value;}
    else check[target.dataset.prop]=target.value;
-  }else if(node&&isLifeNode(node.type)&&target.dataset.lifeFrame!==undefined){const frame=node.frames?.[Number(target.dataset.lifeFrame)];if(frame)frame[target.dataset.prop]=target.value;}
+  }else if(node&&node.type==='investigation'&&target.dataset.investigationLayer!==undefined){const layer=node.layers?.[Number(target.dataset.investigationLayer)];if(!layer)return;layer[target.dataset.prop]=target.value;
+   }else if(node&&isLifeNode(node.type)&&target.dataset.lifeFrame!==undefined){const frame=node.frames?.[Number(target.dataset.lifeFrame)];if(frame)frame[target.dataset.prop]=target.value;}
   else if(node&&isLifeNode(node.type)&&target.dataset.lifeOption!==undefined){const option=node.options?.[Number(target.dataset.lifeOption)];if(option)option[target.dataset.prop]=target.value;}
   else if(node&&target.dataset.field)node[target.dataset.field]=target.value;
   else if(node&&target.dataset.answerIndex!==undefined)node.answers[Number(target.dataset.answerIndex)]=target.value;
