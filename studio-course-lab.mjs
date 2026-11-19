@@ -7,6 +7,7 @@ import {LEARN_COURSES} from './ns-learn-catalog-v2.mjs';
 import {COURSE_LAB_TYPES,createCourseDraft,newCourseUnit,newCourseLesson,createCourseNode,
  makeCourseId,validateCourseForPublish,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {renderLearnLesson} from './ns-learn-player-v2.mjs';
+import {isLifeNode,lifeNodeEditor} from './ns-life-node-types.mjs';
 import {readCourseLabDraft,saveCourseLabDraft,deleteCourseLabDraft} from './studio-course-lab-drafts.mjs';
 import {fetchCurriculumBlueprint,createDraftFromBlueprint,mergePublishedIntoBlueprint,countAuthoredLessons,makePublishableSubset} from './ns-course-blueprints.mjs';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -61,6 +62,7 @@ function editorFields(node){
  if(node.type==='read')return head+textField('Reading text','body',node.body,{rows:12,hint:'Write freely. Blank lines separate paragraphs.'})+textField('Sources / further reading','sources',node.sources,{rows:3})+media;
  if(node.type==='image')return head+media+textField('Sources / attribution','sources',node.sources,{rows:3});
  if(node.type==='dialogue')return head+textField('Learning focus / what to notice','prompt',node.prompt,{rows:2})+textField('Concept ID','conceptId',node.conceptId,{hint:'For review, e.g. validation-without-agreement.'})+dialogueEditor(node)+textField('Sources / references','sources',node.sources,{rows:2})+media;
+ if(isLifeNode(node.type))return head+textField('Learning focus / question','prompt',node.prompt,{rows:2})+textField('Concept ID','conceptId',node.conceptId,{hint:'Stable identifier for review.'})+lifeNodeEditor(node,textField)+textField('Explanation after answering','explanation',node.explanation,{rows:4})+textField('Boundary / counterexample','counterexample',node.counterexample,{rows:3})+textField('Evidence / sources','sources',node.sources,{rows:2})+media;
  let html=head+textField('Question / task','prompt',node.prompt,{rows:3})+
  textField('Concept ID','conceptId',node.conceptId,{hint:'A stable learning concept, e.g. negative-reinforcement.'});
  if(node.type==='character')html+=textField('Character name','characterName',node.characterName)+textField('Character situation','scenario',node.scenario,{rows:4});
@@ -216,7 +218,9 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
    const check=node.checks?.[Number(target.dataset.dialogueCheck)];if(!check)return;
    if(target.dataset.dialogueOption!==undefined){const option=check.options?.[Number(target.dataset.dialogueOption)];if(!option)return;option[target.dataset.prop]=target.value;}
    else check[target.dataset.prop]=target.value;
-  }else if(node&&target.dataset.field)node[target.dataset.field]=target.value;
+  }else if(node&&isLifeNode(node.type)&&target.dataset.lifeFrame!==undefined){const frame=node.frames?.[Number(target.dataset.lifeFrame)];if(frame)frame[target.dataset.prop]=target.value;}
+  else if(node&&isLifeNode(node.type)&&target.dataset.lifeOption!==undefined){const option=node.options?.[Number(target.dataset.lifeOption)];if(option)option[target.dataset.prop]=target.value;}
+  else if(node&&target.dataset.field)node[target.dataset.field]=target.value;
   else if(node&&target.dataset.answerIndex!==undefined)node.answers[Number(target.dataset.answerIndex)]=target.value;
   else if(node&&target.dataset.list){
    const row=node[target.dataset.list]?.[Number(target.dataset.pos)];
@@ -244,7 +248,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   'select-node':b=>{n=Number(b.dataset.n);renderSequence();},
   'node-up':b=>{const i=Number(b.dataset.n);if(move(selectedLesson()?.nodes,i,i-1)){n=i-1;renderSequence();queueSave();}},
   'node-down':b=>{const i=Number(b.dataset.n);if(move(selectedLesson()?.nodes,i,i+1)){n=i+1;renderSequence();queueSave();}},
-  'node-copy':b=>{const lesson=selectedLesson(),i=Number(b.dataset.n);if(!lesson)return;const copy=deep(lesson.nodes[i]),ids=new Map();copy.id=makeCourseId();for(const key of ['pairs','categories','items','segments','options','steps','changes','outcomes','evidenceOptions','responseOptions'])if(Array.isArray(copy[key]))copy[key].forEach(row=>{const fresh=makeCourseId();ids.set(row.id,fresh);row.id=fresh;});for(const key of ['answer','correctChange','correctOutcome','evidenceAnswer','responseAnswer'])if(ids.has(copy[key]))copy[key]=ids.get(copy[key]);for(const item of copy.items||[])if(ids.has(item.answer))item.answer=ids.get(item.answer);if(copy.type==='dialogue'){for(const turn of copy.turns||[]){const oldId=turn.id;turn.id=makeCourseId();ids.set(oldId,turn.id);}for(const check of copy.checks||[]){check.id=makeCourseId();if(ids.has(check.focusTurn))check.focusTurn=ids.get(check.focusTurn);for(const option of check.options||[]){const oldId=option.id;option.id=makeCourseId();if(check.answer===oldId)check.answer=option.id;}}}lesson.nodes.splice(i+1,0,copy);n=i+1;renderSequence();queueSave();},
+  'node-copy':b=>{const lesson=selectedLesson(),i=Number(b.dataset.n);if(!lesson)return;const copy=deep(lesson.nodes[i]),ids=new Map();copy.id=makeCourseId();for(const key of ['pairs','categories','items','segments','options','frames','steps','changes','outcomes','evidenceOptions','responseOptions'])if(Array.isArray(copy[key]))copy[key].forEach(row=>{const fresh=makeCourseId();ids.set(row.id,fresh);row.id=fresh;});for(const key of ['answer','correctChange','correctOutcome','evidenceAnswer','responseAnswer'])if(ids.has(copy[key]))copy[key]=ids.get(copy[key]);for(const item of copy.items||[])if(ids.has(item.answer))item.answer=ids.get(item.answer);if(copy.type==='dialogue'){for(const turn of copy.turns||[]){const oldId=turn.id;turn.id=makeCourseId();ids.set(oldId,turn.id);}for(const check of copy.checks||[]){check.id=makeCourseId();if(ids.has(check.focusTurn))check.focusTurn=ids.get(check.focusTurn);for(const option of check.options||[]){const oldId=option.id;option.id=makeCourseId();if(check.answer===oldId)check.answer=option.id;}}}lesson.nodes.splice(i+1,0,copy);n=i+1;renderSequence();queueSave();},
   'node-delete':b=>{if(!selectedLesson()||!confirm('Remove this node?'))return;selectedLesson().nodes.splice(Number(b.dataset.n),1);n=Math.max(0,Math.min(n,selectedLesson().nodes.length-1));renderSequence();queueSave();},
   'dialogue-add-turn':()=>{const node=selectedNode();if(node?.type!=='dialogue')return;node.turns.push({id:makeCourseId(),speaker:node.turns.at(-1)?.speaker==='a'?'b':'a',text:''});renderSequence();queueSave();},
   'dialogue-remove-turn':b=>{const node=selectedNode();if(node?.type!=='dialogue')return;const [removed]=node.turns.splice(Number(b.dataset.pos),1);for(const check of node.checks)if(check.focusTurn===removed?.id)check.focusTurn='';renderSequence();queueSave();},
@@ -262,6 +266,12 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   'row-down':b=>{const a=selectedNode()?.[b.dataset.list];if(move(a,Number(b.dataset.pos),Number(b.dataset.pos)+1)){renderSequence();queueSave();}},
   'add-answer':()=>{selectedNode()?.answers?.push('');renderSequence();queueSave();},
   'remove-answer':b=>{selectedNode()?.answers?.splice(Number(b.dataset.pos),1);renderSequence();queueSave();},
+  'life-add-frame':()=>{const node=selectedNode();if(!isLifeNode(node?.type)||node.frames.length>=8)return;node.frames.push({id:makeCourseId(),label:'',detail:'',category:'control'});renderSequence();queueSave();},
+  'life-remove-frame':b=>{const node=selectedNode();if(!isLifeNode(node?.type)||node.frames.length<=2)return;node.frames.splice(Number(b.dataset.pos),1);renderSequence();queueSave();},
+  'life-frame-up':b=>{const node=selectedNode();if(isLifeNode(node?.type)&&move(node.frames,Number(b.dataset.pos),Number(b.dataset.pos)-1)){renderSequence();queueSave();}},
+  'life-frame-down':b=>{const node=selectedNode();if(isLifeNode(node?.type)&&move(node.frames,Number(b.dataset.pos),Number(b.dataset.pos)+1)){renderSequence();queueSave();}},
+  'life-add-option':()=>{const node=selectedNode();if(!isLifeNode(node?.type)||node.options.length>=8)return;node.options.push({id:makeCourseId(),label:'',feedback:''});renderSequence();queueSave();},
+  'life-remove-option':b=>{const node=selectedNode();if(!isLifeNode(node?.type)||node.options.length<=2)return;const [old]=node.options.splice(Number(b.dataset.pos),1);if(node.answer===old.id)node.answer='';renderSequence();queueSave();},
   'choose-image':()=>void openMedia(),
   'close-media':()=>$('#cl-media-dialog').close(),
   'preview':()=>{const lesson=selectedLesson();if(!lesson||!lesson.nodes.length){status('Add some lesson nodes before previewing.',true);return;}preview=true;$('#cl-preview').hidden=false;renderLearnLesson($('#cl-preview-host'),courseId,lesson.id,{bundleOverride:{...draft,status:'published',version:expectedVersion||1},preview:true});$('#cl-preview').scrollIntoView({behavior:'smooth',block:'start'});},
