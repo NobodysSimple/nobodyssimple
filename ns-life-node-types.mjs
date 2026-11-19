@@ -552,8 +552,14 @@ export function lifeControls(node,state){
    (state.lifeRevealed?'<div class="ns-life-node__reveal"><strong>New evidence</strong><p>'+esc(node.reveal)+'</p></div><label class="ns-life-node__dial">How certain now? <output>'+Number(state.lifeAfter??state.lifeBefore??node.initialValue)+'%</output><input type="range" min="0" max="100" step="5" data-life-slider="after" value="'+Number(state.lifeAfter??state.lifeBefore??node.initialValue)+'"></label>':'<button type="button" class="ns-life-node__reveal-button" data-life-reveal>Reveal new evidence →</button>');
  }
  if(mode==='reveal'){
-  const initial='<fieldset class="ns-life-node__answers"><legend>Before seeing more, what is your interpretation?</legend>'+opts.map(o=>'<label><input type="radio" name="life-initial" value="'+esc(o.id)+'"'+(state.lifeInitial===o.id?' checked':'')+'><span>'+esc(o.label)+'</span></label>').join('')+'</fieldset>';
-  return scene+(!state.lifeRevealed?initial+'<button class="ns-life-node__reveal-button" type="button" data-life-reveal'+(state.lifeInitial?'':' disabled')+'>Reveal what was missing →</button>':'<div class="ns-life-node__reveal"><strong>More context</strong><p>'+esc(node.reveal)+'</p></div>'+detailCards()+frameDetail+choose);
+  // Do not show possible answers until the additional context is available.
+  // Present this as a single decision: inspect the missing information, then interpret.
+  const before='<p class="ns-life-node__instruction">You have only part of the story. Read the missing context before deciding what it means.</p>'+
+   '<button class="ns-life-node__reveal-button" type="button" data-life-reveal>Show the missing context →</button>';
+  const after='<div class="ns-life-node__reveal"><strong>What was missing</strong><p>'+esc(node.reveal)+'</p></div>'+
+   '<p class="ns-life-node__instruction">Explore the evidence. Select a detail to see why it matters.</p>'+
+   detailCards()+frameDetail+choose;
+  return scene+(state.lifeRevealed?after:before);
  }
  if(mode==='edit'){
   const phrase=String(node.targetPhrase||''),where=String(node.scene).toLowerCase().indexOf(phrase.toLowerCase());
