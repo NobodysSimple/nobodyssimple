@@ -63,7 +63,7 @@ export function gradeLearnItem(item,response){
   correct=valid&&response.evidence===item.evidenceAnswer&&response.action===item.responseAnswer;
  }else if(isLifeNode(item.type)){
   ({valid,correct}=gradeLifeNode(item,response));
- }else if(item.type==='dialogue'){
+ }else if(item.type==='dialogue'||item.type==='investigation'){
   valid=isObject(response)&&Array.isArray(item.checks)&&item.checks.length>0&&item.checks.every(check=>check.options?.some(choice=>choice.id===response[check.id]));
   correct=valid&&item.checks.every(check=>check.answer===response[check.id]);
  }
@@ -74,7 +74,7 @@ export function gradeLearnItem(item,response){
 }
 export function learnLessonScore(lesson,responses){
  const items=learningNodes(lesson).filter(item=>QUESTION_TYPES.includes(item.type));
- const details=items.flatMap(item=>item.type==='dialogue'?(item.checks||[]).map(check=>{
+ const details=items.flatMap(item=>['dialogue','investigation'].includes(item.type)?(item.checks||[]).map(check=>{
   const chosen=responses?.[item.id]?.[check.id];
   const valid=!!check.options?.some(option=>option.id===chosen);
   return {id:item.id+':'+check.id,conceptId:item.conceptId,valid,correct:valid&&check.answer===chosen};
