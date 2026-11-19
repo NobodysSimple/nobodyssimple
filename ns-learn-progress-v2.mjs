@@ -25,7 +25,7 @@ export function saveLearnCompletion(course,lesson,score,storage=globalThis.local
  if(!course?.id||!lesson?.id||!score?.allAnswered||score.total!==expectedChecks(lesson))return {ok:false,error:'Complete every question before saving.'};
  return write(storage,records=>{
   const key=completionKey(course.id,lesson.id);
-  if(!records[key])records[key]={type:'learn-completion',courseId:course.id,lessonId:lesson.id,version:course.version,lessonVersion:lesson.version||1,at,correct:score.correct,total:score.total};
+  if(!records[key]||Number(records[key].lessonVersion||1)<Number(lesson.version||1))records[key]={type:'learn-completion',courseId:course.id,lessonId:lesson.id,version:course.version,lessonVersion:lesson.version||1,at,correct:score.correct,total:score.total,missed:score.corrections?.missed||0,recovered:score.corrections?.recovered||0,stillToReview:score.corrections?.stillToReview||0};
   return records[key];
  });
 }
@@ -36,7 +36,7 @@ export function saveLearnReview(course,lesson,score,storage=globalThis.localStor
   const suffix=globalThis.crypto?.randomUUID?.()||at.replace(/\D/g,'');
   const key=LEARN_PROGRESS_PREFIX+'review:'+course.id+':'+lesson.id+':'+at+':'+suffix;
   if(records[key])return records[key];
-  records[key]={type:'learn-review',courseId:course.id,lessonId:lesson.id,at,correct:score.correct,total:score.total};
+  records[key]={type:'learn-review',courseId:course.id,lessonId:lesson.id,at,correct:score.correct,total:score.total,missed:score.corrections?.missed||0,recovered:score.corrections?.recovered||0,stillToReview:score.corrections?.stillToReview||0};
   return records[key];
  });
 }
