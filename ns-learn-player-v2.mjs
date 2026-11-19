@@ -7,7 +7,7 @@ import {getLearnCourse,LEARN_COMPANIONS} from './ns-learn-catalog-v2.mjs';
 import {validateLearnBundle,gradeLearnItem,learnLessonScore,flattenLearnLessons,QUESTION_TYPES} from './ns-learn-engine-v2.mjs';
 import {learningNodes,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {renderDialogue} from './ns-learn-dialogue.mjs';
-import {displayedLessonMinutes} from './ns-learn-quality.mjs';
+import {displayedLessonMinutes,lessonMetrics} from './ns-learn-quality.mjs';
 import {createRepairQueue,addRepair,takeRepair,finishRepair,repairSummary,readSoundPreference,saveSoundPreference,playLearningCue,correctAnswerText} from './ns-learn-feedback.mjs';
 import {isLifeNode,lifeNodeMode,lifeNodeDefinition,lifeControls} from './ns-life-node-types.mjs?v=everyday-nodes-v2';
 import {knownCastForLesson,charactersMentioned,characterPortrait} from './ns-learn-cast.mjs';
@@ -51,7 +51,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  };
  const activeUnit=(bundle?.modules||[]).find(m=>(m.lessons||[]).some(l=>l.id===lessonId));
  const glossary=Array.isArray(activeUnit?.glossary)?activeUnit.glossary:[];
- const glossaryHelp=activeUnit?.kind!=='foundation'&&glossary.length?'<details class="ns-learn-immersive__glossary"><summary>New word? Open quick definitions</summary><dl>'+glossary.map(item=>'<div><dt>'+esc(item.term)+'</dt><dd>'+esc(item.definition)+'</dd></div>').join('')+'</dl></details>':'';
+ const glossaryHelp=glossary.length?'<details class="ns-learn-immersive__glossary"><summary>New word? Open quick definitions</summary><dl>'+glossary.map(item=>'<div><dt>'+esc(item.term)+'</dt><dd>'+esc(item.definition)+'</dd></div>').join('')+'</dl></details>':'';
  const cast=knownCastForLesson(bundle,lesson);
  const castMarkup=names=>names.length?'<div class="ns-learn-immersive__cast" aria-label="People in this example">'+names.map(name=>'<span class="ns-learn-immersive__cast-person">'+characterPortrait(name,cast,esc,true)+'<span>'+esc(name)+'</span></span>').join('')+'</div>':'';
  const originalNodes=learningNodes(lesson);
@@ -62,7 +62,19 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   if(!state.options.has(key))state.options.set(key,scramble(items));
   return state.options.get(key);
  };
- const choiceSet=(name,items,selected='',disabled=false)=>fieldset(name,orderedOptions(name,items),selected,disabled);
+ const choiceSet=(name,items,selected='',disabled=false)=>{
+   // Four focused choices at most; the authored best answer must always remain.
+   const node=nodes[state.i],check=node?.type==='dialogue'?node.checks?.[state.dialogueCheck]:null;
+   const correct=name==='dialogue-choice'?check?.answer:name==='choice'?node?.answer:null;
+   const eligible=Array.isArray(items)?items:[];
+   const groupKey=name+':'+eligible.map(x=>x.id).join('/');
+   if(!state.options.has(groupKey)){
+    const pool=eligible.length>4&&correct&&eligible.some(x=>x.id===correct)?
+     [eligible.find(x=>x.id===correct),...scramble(eligible.filter(x=>x.id!==correct)).slice(0,3)]:eligible;
+    state.options.set(groupKey,scramble(pool));
+   }
+   return fieldset(name,state.options.get(groupKey),selected,disabled);
+  };
  const current=()=>nodes[state.i];
  function renderControls(node){
   if(isLifeNode(node.type))return lifeControls(node,state);
@@ -133,7 +145,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   const head='<header class="ns-learn-immersive__header">'+exit+'<div class="ns-learn-immersive__meter" role="progressbar" aria-valuenow="'+progress+'" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson progress"><i style="width:'+progress+'%"></i></div><button type="button" class="ns-learn-player__sound-toggle" data-sound-toggle aria-label="'+(state.soundOn?'Mute':'Enable')+' answer sounds" aria-pressed="'+state.soundOn+'" title="'+(state.soundOn?'Mute':'Enable')+' feedback sounds">'+(state.soundOn?'♪':'♪̸')+'</button><span class="ns-learn-immersive__badge" title="Nobody’s Simple">✿</span></header>';
   let middle='',foot='';
   if(state.phase==='intro'){
-   middle='<div class="ns-learn-immersive__welcome"><span class="ns-learn-immersive__welcome-art">'+companion+'</span><p class="ns-learn-player__eyebrow">'+esc(course?.title||bundle.title||courseId)+' · Unit '+unitIndex+'</p><h1>'+esc(lesson.title)+'</h1><div class="ns-learn-immersive__lead">'+castMarkup(charactersMentioned({body:lesson.teach},cast))+paragraphs(String(lesson.teach||'Work through a real situation and decide what the evidence can support.').replace(/\\s*About (?:five|5) minutes\\.?/gi,'').trim())+'</div><p class="ns-learn-player__hint">About '+displayedLessonMinutes(lesson)+' minutes · '+nodes.length+' short activities · No timer</p></div>';
+   middle='<div class="ns-learn-immersive__welcome"><span class="ns-learn-immersive__welcome-art">'+companion+'</span><p class="ns-learn-player__eyebrow">'+esc(course?.title||bundle.title||courseId)+' · Unit '+unitIndex+'</p><h1>'+esc(lesson.title)+'</h1><div class="ns-learn-immersive__lead">'+castMarkup(charactersMentioned({body:lesson.teach},cast))+paragraphs(String(lesson.teach||'Work through a real situation and decide what the evidence can support.').replace(/\s*About (?:five|5) minutes\.?/gi,'').trim())+'</div><p class="ns-learn-player__hint">About '+displayedLessonMinutes(lesson)+' minutes · '+lessonMetrics(lesson).drills+' practice checks · No timer</p></div>';
    foot='<button type="button" class="ns-learn-player__primary" data-start>Start lesson →</button>';
   }else if(state.phase==='done'){
    const score=learnLessonScore(lesson,state.answers);
