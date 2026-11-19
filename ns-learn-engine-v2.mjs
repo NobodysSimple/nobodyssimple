@@ -3,6 +3,7 @@
  * Course Lab node sequences are understood. Pure functions: safe for tests.
  */
 import {COURSE_LAB_EXERCISES,learningNodes,validateCourseForPublish} from './ns-course-lab-schema.mjs';
+import {isLifeNode,gradeLifeNode} from './ns-life-node-types.mjs';
 export const QUESTION_TYPES=Object.freeze([...new Set(['match','sort','choose','complete','sequence','respond',...COURSE_LAB_EXERCISES])]);
 const isObject=o=>o!==null&&typeof o==='object'&&!Array.isArray(o);
 const norm=value=>String(value??'').normalize('NFKC').toLowerCase().replace(/[’]/g,"'").trim().replace(/\s+/g,' ');
@@ -60,11 +61,13 @@ export function gradeLearnItem(item,response){
  }else if(item.type==='character'){
   valid=isObject(response)&&item.evidenceOptions.some(o=>o.id===response.evidence)&&item.responseOptions.some(o=>o.id===response.action);
   correct=valid&&response.evidence===item.evidenceAnswer&&response.action===item.responseAnswer;
+ }else if(isLifeNode(item.type)){
+  ({valid,correct}=gradeLifeNode(item,response));
  }else if(item.type==='dialogue'){
   valid=isObject(response)&&Array.isArray(item.checks)&&item.checks.length>0&&item.checks.every(check=>check.options?.some(choice=>choice.id===response[check.id]));
   correct=valid&&item.checks.every(check=>check.answer===response[check.id]);
  }
- const choice=['choose','respond','repair','investigate','update','perspective'].includes(item.type)?item.options?.find(o=>o.id===response):null;
+ const choice=(['choose','respond','repair','investigate','update','perspective'].includes(item.type)||isLifeNode(item.type))?item.options?.find(o=>o.id===response):null;
  const selected=choice?.feedback?String(choice.feedback):'';
  const explanation=selected?(selected+(correct?'':'\n\n'+(item.explanation||''))):(item.explanation||'');
  return {valid:!!valid,correct:!!correct,explanation,counterexample:item.counterexample||''};
