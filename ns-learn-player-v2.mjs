@@ -163,7 +163,8 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    const node=current(),read=['read','image'].includes(node.type),checked=!!state.checked;
    const heading=node.title||node.prompt||'Learning activity';
     const correctionLabel=state.correcting?'<p class="ns-learn-player__retry-intro" role="note">CORRECTION PRACTICE · You saw this question earlier. Use what you learned before trying again.</p>':'';
-   const promptLine=!read&&node.title&&node.prompt&&node.title!==node.prompt?'<p class="ns-learn-player__question-prompt">'+esc(node.prompt)+'</p>':'';
+   const hideRevealQuestion=isLifeNode(node.type)&&lifeNodeMode(node.type)==='reveal'&&!state.lifeRevealed;
+   const promptLine=!read&&!hideRevealQuestion&&node.title&&node.prompt&&node.title!==node.prompt?'<p class="ns-learn-player__question-prompt">'+esc(node.prompt)+'</p>':'';
    const faces=node.type==='dialogue'?'':castMarkup(charactersMentioned(node,cast));
    // An unrelated course illustration cannot stand in for visual evidence in a case.
    const lifeArt='';
