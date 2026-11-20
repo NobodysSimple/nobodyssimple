@@ -1,0 +1,3339 @@
+{
+  "id": "conversation-patterns",
+  "version": 1,
+  "status": "published",
+  "title": "Conversation Patterns & Reasoning Traps",
+  "description": "Twelve focused conversation-recognition lessons. Each teaches one tactic through two progressive dialogues and a new transfer situation; the extended 209-pattern curriculum is maintained separately.",
+  "modules": [
+    {
+      "id": "conversation-patterns-foundations",
+      "title": "Recognising patterns across contexts",
+      "kind": "foundation",
+      "overview": "Each lesson isolates one technique, then compares its appearance in relationships, work and family.",
+      "glossary": [
+        {
+          "term": "Technique",
+          "definition": "A described way a conversation can redirect decisions, credibility or responsibility."
+        },
+        {
+          "term": "Pattern",
+          "definition": "Repeated behaviour whose meaning depends on context, power and its effect on choices."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "conversation-patterns-gaslighting",
+          "version": 1,
+          "standard": "focused-6",
+          "durationMinutes": 6,
+          "editorialStatus": "ready-for-review",
+          "title": "Gaslighting: when your memory is the target",
+          "objective": "Recognise gaslighting in two conversations, evaluate an alternative and apply the distinction to a new context.",
+          "teach": "Gaslighting is more than two people remembering a conversation differently. The concern is a repeated pattern in which one person undermines another's confidence in their perceptions or memory, especially when facts can be checked. Learn to identify attacks on credibility without treating every disagreement as abuse.\n\nIn this lesson, try to identify the action in the words, not the presumed diagnosis of the speaker. Each example is fictional, and several interpretations can remain plausible. The practice goal is to notice the exact shift in the conversation and decide what evidence or boundary would help next.",
+          "takeaway": "Gaslighting is more than two people remembering a conversation differently. The concern is a repeated pattern in which one person undermines another's confidence in their perceptions or memory, especially when facts can be checked. Learn to identify attacks on credibility without treating every disagreement as abuse. People can misremember events or disagree sincerely. Look for repetition, power and whether a person will examine the evidence.",
+          "transferPrompt": "Family: The family calendar shows that Priya booked Saturday. Her brother replies, 'You always invent arrangements; you can't trust your own memory.'",
+          "staffReview": "Structured first-pass educational authoring, 20 November 2026. Not yet independently clinically reviewed or usability tested.",
+          "evidenceSummary": "Defining Gaslighting in Gender-Based Violence (systematic review): https://pubmed.ncbi.nlm.nih.gov/40650539/",
+          "nodes": [
+            {
+              "id": "gaslighting-opening",
+              "type": "read",
+              "title": "The pattern to notice",
+              "body": "Gaslighting is more than two people remembering a conversation differently. The concern is a repeated pattern in which one person undermines another's confidence in their perceptions or memory, especially when facts can be checked. Learn to identify attacks on credibility without treating every disagreement as abuse.\n\nThe first task is to track the original request. Notice whether a reply changes what must be defended, what counts as proof or what refusal would cost. Then consider whether a plausible ordinary explanation fits.\n\nPeople can misremember events or disagree sincerely. Look for repetition, power and whether a person will examine the evidence.",
+              "sources": "Defining Gaslighting in Gender-Based Violence (systematic review): https://pubmed.ncbi.nlm.nih.gov/40650539/"
+            },
+            {
+              "id": "gaslighting-1-dialogue",
+              "type": "dialogue",
+              "title": "Relationship: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "gaslighting",
+              "scenario": "Nina asks Theo about the agreement to split childcare.",
+              "speakerA": "Nina",
+              "speakerB": "Theo",
+              "turns": [
+                {
+                  "id": "gaslighting-1-t1",
+                  "speaker": "a",
+                  "text": "We agreed you'd pick up Sam on Thursday."
+                },
+                {
+                  "id": "gaslighting-1-t2",
+                  "speaker": "b",
+                  "text": "You imagined that. Your memory has always been unreliable."
+                },
+                {
+                  "id": "gaslighting-1-t3",
+                  "speaker": "a",
+                  "text": "I have the message from Tuesday."
+                },
+                {
+                  "id": "gaslighting-1-t4",
+                  "speaker": "b",
+                  "text": "You're obsessing over evidence because you can't trust your own mind."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "gaslighting-1-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Theo challenges Nina's general ability to remember rather than checking the message."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Theo and Nina may remember the conversation differently without either deliberately lying."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "gaslighting-1-t4",
+                  "explanation": "Theo challenges Nina's general ability to remember rather than checking the message. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "People can misremember events or disagree sincerely. Look for repetition, power and whether a person will examine the evidence."
+                },
+                {
+                  "id": "gaslighting-1-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Theo and Nina may remember the conversation differently without either deliberately lying."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Theo and Nina may remember the conversation differently without either deliberately lying. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "People can misremember events or disagree sincerely. Look for repetition, power and whether a person will examine the evidence."
+                },
+                {
+                  "id": "gaslighting-1-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Keep the written agreement and return to the specific pickup arrangement. Compare the Tuesday message and notice whether Theo can discuss it without attacking Nina's credibility."
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Keep the written agreement and return to the specific pickup arrangement. Compare the Tuesday message and notice whether Theo can discuss it without attacking Nina's credibility.",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "gaslighting-2-dialogue",
+              "type": "dialogue",
+              "title": "Work: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "gaslighting",
+              "scenario": "A manager rejects a documented promise of flexible hours.",
+              "speakerA": "Omar",
+              "speakerB": "Dana",
+              "turns": [
+                {
+                  "id": "gaslighting-2-t1",
+                  "speaker": "a",
+                  "text": "The approval email says I can work from home on Fridays."
+                },
+                {
+                  "id": "gaslighting-2-t2",
+                  "speaker": "b",
+                  "text": "That wasn't approval. You always misunderstand simple instructions."
+                },
+                {
+                  "id": "gaslighting-2-t3",
+                  "speaker": "a",
+                  "text": "Could we read the email together?"
+                },
+                {
+                  "id": "gaslighting-2-t4",
+                  "speaker": "b",
+                  "text": "I won't humour your distorted version of reality."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "gaslighting-2-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Dana attacks Omar's grasp of reality instead of clarifying the written policy."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Dana may genuinely interpret the approval email differently."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "gaslighting-2-t4",
+                  "explanation": "Dana attacks Omar's grasp of reality instead of clarifying the written policy. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "People can misremember events or disagree sincerely. Look for repetition, power and whether a person will examine the evidence."
+                },
+                {
+                  "id": "gaslighting-2-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Dana may genuinely interpret the approval email differently."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Dana may genuinely interpret the approval email differently. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "People can misremember events or disagree sincerely. Look for repetition, power and whether a person will examine the evidence."
+                },
+                {
+                  "id": "gaslighting-2-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Refer to the email and request a clear written decision. Ask for the policy and what wording would establish approval."
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Refer to the email and request a clear written decision. Ask for the policy and what wording would establish approval.",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "gaslighting-transfer",
+              "type": "choose",
+              "title": "Family: practise a new variation",
+              "prompt": "The family calendar shows that Priya booked Saturday. Her brother replies, 'You always invent arrangements; you can't trust your own memory.'",
+              "conceptId": "gaslighting",
+              "options": [
+                {
+                  "id": "correct",
+                  "label": "Identify the credibility attack instead of inferring a diagnosis."
+                },
+                {
+                  "id": "wrong1",
+                  "label": "Assume all family disagreements are gaslighting."
+                },
+                {
+                  "id": "wrong2",
+                  "label": "Decide whose personality is most narcissistic."
+                }
+              ],
+              "answer": "correct",
+              "explanation": "Identify the credibility attack instead of inferring a diagnosis. Remember to distinguish observable wording from a clinical or motivational inference.",
+              "counterexample": "People can misremember events or disagree sincerely. Look for repetition, power and whether a person will examine the evidence."
+            },
+            {
+              "id": "gaslighting-evidence",
+              "type": "label",
+              "title": "Find the revealing words",
+              "prompt": "Which phrase most directly shows the relevant conversational move? Select one phrase.",
+              "conceptId": "gaslighting",
+              "segments": [
+                {
+                  "id": "gaslighting-segment-0",
+                  "text": "The calendar shows Saturday was booked.",
+                  "answer": false
+                },
+                {
+                  "id": "gaslighting-segment-1",
+                  "text": "You can't trust your own memory.",
+                  "answer": true
+                },
+                {
+                  "id": "gaslighting-segment-2",
+                  "text": "Can we check the calendar together?",
+                  "answer": false
+                }
+              ],
+              "explanation": "The wording matters because it changes how the original concern is handled. The surrounding exchange remains important.",
+              "counterexample": "People can misremember events or disagree sincerely. Look for repetition, power and whether a person will examine the evidence."
+            },
+            {
+              "id": "gaslighting-limits",
+              "type": "read",
+              "title": "What research can and cannot tell us",
+              "body": "The example is fictional. The relevant academic or practice literature explains a category of behaviour, not the motive or diagnosis of its imaginary speakers. One exchange can be concerning; sustained coercive patterns are better assessed across time, power and the ability to refuse.\n\nPeople can misremember events or disagree sincerely. Look for repetition, power and whether a person will examine the evidence.\n\nConsider a new situation: The family calendar shows that Priya booked Saturday. Her brother replies, 'You always invent arrangements; you can't trust your own memory.'\n\nA useful response is: Identify the credibility attack instead of inferring a diagnosis.",
+              "sources": "Defining Gaslighting in Gender-Based Violence (systematic review): https://pubmed.ncbi.nlm.nih.gov/40650539/"
+            }
+          ]
+        },
+        {
+          "id": "conversation-patterns-darvo",
+          "version": 1,
+          "standard": "focused-6",
+          "durationMinutes": 6,
+          "editorialStatus": "ready-for-review",
+          "title": "DARVO: reversing who must answer",
+          "objective": "Recognise darvo in two conversations, evaluate an alternative and apply the distinction to a new context.",
+          "teach": "DARVO names a defensive sequence: deny the alleged action, attack the person raising it, then present the accused person as the real victim. Your task is to identify a shift away from an answerable allegation, without assuming that every denial or claim of being hurt is dishonest.\n\nIn this lesson, try to identify the action in the words, not the presumed diagnosis of the speaker. Each example is fictional, and several interpretations can remain plausible. The practice goal is to notice the exact shift in the conversation and decide what evidence or boundary would help next.",
+          "takeaway": "DARVO names a defensive sequence: deny the alleged action, attack the person raising it, then present the accused person as the real victim. Your task is to identify a shift away from an answerable allegation, without assuming that every denial or claim of being hurt is dishonest. An accusation can genuinely be false. A person's distress may be real even while their response is evasive.",
+          "transferPrompt": "Friendship: A friend says, 'I never shared your secret. You're cruel to question me. I'm the victim of your distrust.'",
+          "staffReview": "Structured first-pass educational authoring, 20 November 2026. Not yet independently clinically reviewed or usability tested.",
+          "evidenceSummary": "Freyd, DARVO research overview: https://www.jjfreyd.com/darvo/",
+          "nodes": [
+            {
+              "id": "darvo-opening",
+              "type": "read",
+              "title": "The pattern to notice",
+              "body": "DARVO names a defensive sequence: deny the alleged action, attack the person raising it, then present the accused person as the real victim. Your task is to identify a shift away from an answerable allegation, without assuming that every denial or claim of being hurt is dishonest.\n\nThe first task is to track the original request. Notice whether a reply changes what must be defended, what counts as proof or what refusal would cost. Then consider whether a plausible ordinary explanation fits.\n\nAn accusation can genuinely be false. A person's distress may be real even while their response is evasive.",
+              "sources": "Freyd, DARVO research overview: https://www.jjfreyd.com/darvo/"
+            },
+            {
+              "id": "darvo-1-dialogue",
+              "type": "dialogue",
+              "title": "Relationship: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "darvo",
+              "scenario": "Rowan asks why a private photograph was forwarded.",
+              "speakerA": "Rowan",
+              "speakerB": "Alex",
+              "turns": [
+                {
+                  "id": "darvo-1-t1",
+                  "speaker": "a",
+                  "text": "Did you send that photo to your friends without asking?"
+                },
+                {
+                  "id": "darvo-1-t2",
+                  "speaker": "b",
+                  "text": "I did nothing wrong. You're paranoid for checking."
+                },
+                {
+                  "id": "darvo-1-t3",
+                  "speaker": "a",
+                  "text": "I just want to know who received it."
+                },
+                {
+                  "id": "darvo-1-t4",
+                  "speaker": "b",
+                  "text": "I'm the one being abused here by your accusations."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "darvo-1-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Alex denies, attacks Rowan's credibility and recasts himself as the injured party."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Alex could feel unfairly accused; the original forwarding claim still needs checking."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "darvo-1-t4",
+                  "explanation": "Alex denies, attacks Rowan's credibility and recasts himself as the injured party. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "An accusation can genuinely be false. A person's distress may be real even while their response is evasive."
+                },
+                {
+                  "id": "darvo-1-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Alex could feel unfairly accused; the original forwarding claim still needs checking."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Alex could feel unfairly accused; the original forwarding claim still needs checking. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "An accusation can genuinely be false. A person's distress may be real even while their response is evasive."
+                },
+                {
+                  "id": "darvo-1-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Return to consent and who received the photograph. Check what was sent and whether Alex answers the factual question."
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Return to consent and who received the photograph. Check what was sent and whether Alex answers the factual question.",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "darvo-2-dialogue",
+              "type": "dialogue",
+              "title": "Work: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "darvo",
+              "scenario": "A worker challenges credit being removed from a presentation.",
+              "speakerA": "Maya",
+              "speakerB": "Leo",
+              "turns": [
+                {
+                  "id": "darvo-2-t1",
+                  "speaker": "a",
+                  "text": "My name has disappeared from the draft."
+                },
+                {
+                  "id": "darvo-2-t2",
+                  "speaker": "b",
+                  "text": "I didn't remove it. You're too emotional to understand teamwork."
+                },
+                {
+                  "id": "darvo-2-t3",
+                  "speaker": "a",
+                  "text": "Can we check the revision history?"
+                },
+                {
+                  "id": "darvo-2-t4",
+                  "speaker": "b",
+                  "text": "After all I do, you're publicly attacking me."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "darvo-2-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Leo shifts attention from attribution to Maya's character and his own grievance."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "There may have been an accidental edit, and Leo may feel defensive."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "darvo-2-t4",
+                  "explanation": "Leo shifts attention from attribution to Maya's character and his own grievance. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "An accusation can genuinely be false. A person's distress may be real even while their response is evasive."
+                },
+                {
+                  "id": "darvo-2-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "There may have been an accidental edit, and Leo may feel defensive."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "There may have been an accidental edit, and Leo may feel defensive. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "An accusation can genuinely be false. A person's distress may be real even while their response is evasive."
+                },
+                {
+                  "id": "darvo-2-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Ask for the correction in the presentation and keep the evidence. Review version history and whether Leo corrects authorship when shown it."
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Ask for the correction in the presentation and keep the evidence. Review version history and whether Leo corrects authorship when shown it.",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "darvo-transfer",
+              "type": "choose",
+              "title": "Friendship: practise a new variation",
+              "prompt": "A friend says, 'I never shared your secret. You're cruel to question me. I'm the victim of your distrust.'",
+              "conceptId": "darvo",
+              "options": [
+                {
+                  "id": "correct",
+                  "label": "Identify the deny–attack–reversal sequence."
+                },
+                {
+                  "id": "wrong1",
+                  "label": "Treat feeling criticised as proof of wrongdoing."
+                },
+                {
+                  "id": "wrong2",
+                  "label": "Ignore whether any secret was shared."
+                }
+              ],
+              "answer": "correct",
+              "explanation": "Identify the deny–attack–reversal sequence. Remember to distinguish observable wording from a clinical or motivational inference.",
+              "counterexample": "An accusation can genuinely be false. A person's distress may be real even while their response is evasive."
+            },
+            {
+              "id": "darvo-evidence",
+              "type": "label",
+              "title": "Find the revealing words",
+              "prompt": "Which phrase most directly shows the relevant conversational move? Select one phrase.",
+              "conceptId": "darvo",
+              "segments": [
+                {
+                  "id": "darvo-segment-0",
+                  "text": "I never shared your secret.",
+                  "answer": false
+                },
+                {
+                  "id": "darvo-segment-1",
+                  "text": "You're cruel to question me.",
+                  "answer": true
+                },
+                {
+                  "id": "darvo-segment-2",
+                  "text": "I feel hurt and need a break.",
+                  "answer": false
+                }
+              ],
+              "explanation": "The wording matters because it changes how the original concern is handled. The surrounding exchange remains important.",
+              "counterexample": "An accusation can genuinely be false. A person's distress may be real even while their response is evasive."
+            },
+            {
+              "id": "darvo-limits",
+              "type": "read",
+              "title": "What research can and cannot tell us",
+              "body": "The example is fictional. The relevant academic or practice literature explains a category of behaviour, not the motive or diagnosis of its imaginary speakers. One exchange can be concerning; sustained coercive patterns are better assessed across time, power and the ability to refuse.\n\nAn accusation can genuinely be false. A person's distress may be real even while their response is evasive.\n\nConsider a new situation: A friend says, 'I never shared your secret. You're cruel to question me. I'm the victim of your distrust.'\n\nA useful response is: Identify the deny–attack–reversal sequence.",
+              "sources": "Freyd, DARVO research overview: https://www.jjfreyd.com/darvo/"
+            }
+          ]
+        },
+        {
+          "id": "conversation-patterns-blame-shifting",
+          "version": 1,
+          "standard": "focused-6",
+          "durationMinutes": 6,
+          "editorialStatus": "ready-for-review",
+          "title": "Blame shifting: whose choice was it?",
+          "objective": "Recognise blame shifting in two conversations, evaluate an alternative and apply the distinction to a new context.",
+          "teach": "Blame shifting occurs when someone transfers responsibility for their voluntary conduct to somebody else. Provocation can explain why an interaction was difficult, but it does not make another person responsible for the speaker's threats, insults, lies or broken commitments.\n\nIn this lesson, try to identify the action in the words, not the presumed diagnosis of the speaker. Each example is fictional, and several interpretations can remain plausible. The practice goal is to notice the exact shift in the conversation and decide what evidence or boundary would help next.",
+          "takeaway": "Blame shifting occurs when someone transfers responsibility for their voluntary conduct to somebody else. Provocation can explain why an interaction was difficult, but it does not make another person responsible for the speaker's threats, insults, lies or broken commitments. Context can be relevant to shared problems. Separating responsibility does not require deciding that only one person ever made mistakes.",
+          "transferPrompt": "Family: A parent says, 'I only called you stupid because you asked again.'",
+          "staffReview": "Structured first-pass educational authoring, 20 November 2026. Not yet independently clinically reviewed or usability tested.",
+          "evidenceSummary": "UK Home Office, Controlling or Coercive Behaviour guidance: https://www.gov.uk/government/publications/controlling-or-coercive-behaviour-statutory-guidance-framework",
+          "nodes": [
+            {
+              "id": "blame-shifting-opening",
+              "type": "read",
+              "title": "The pattern to notice",
+              "body": "Blame shifting occurs when someone transfers responsibility for their voluntary conduct to somebody else. Provocation can explain why an interaction was difficult, but it does not make another person responsible for the speaker's threats, insults, lies or broken commitments.\n\nThe first task is to track the original request. Notice whether a reply changes what must be defended, what counts as proof or what refusal would cost. Then consider whether a plausible ordinary explanation fits.\n\nContext can be relevant to shared problems. Separating responsibility does not require deciding that only one person ever made mistakes.",
+              "sources": "UK Home Office, Controlling or Coercive Behaviour guidance: https://www.gov.uk/government/publications/controlling-or-coercive-behaviour-statutory-guidance-framework"
+            },
+            {
+              "id": "blame-shifting-1-dialogue",
+              "type": "dialogue",
+              "title": "Relationship: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "blame-shifting",
+              "scenario": "Emil has shouted during an argument about money.",
+              "speakerA": "Tara",
+              "speakerB": "Emil",
+              "turns": [
+                {
+                  "id": "blame-shifting-1-t1",
+                  "speaker": "a",
+                  "text": "You called me useless when we disagreed."
+                },
+                {
+                  "id": "blame-shifting-1-t2",
+                  "speaker": "b",
+                  "text": "You forced me to shout because you kept asking about the bill."
+                },
+                {
+                  "id": "blame-shifting-1-t3",
+                  "speaker": "a",
+                  "text": "I asked why the account was overdrawn."
+                },
+                {
+                  "id": "blame-shifting-1-t4",
+                  "speaker": "b",
+                  "text": "Then take responsibility for what you made me say."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "blame-shifting-1-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Emil makes Tara responsible for his decision to insult her."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Both may have contributed to the argument becoming heated."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "blame-shifting-1-t4",
+                  "explanation": "Emil makes Tara responsible for his decision to insult her. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Context can be relevant to shared problems. Separating responsibility does not require deciding that only one person ever made mistakes."
+                },
+                {
+                  "id": "blame-shifting-1-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Both may have contributed to the argument becoming heated."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Both may have contributed to the argument becoming heated. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Context can be relevant to shared problems. Separating responsibility does not require deciding that only one person ever made mistakes."
+                },
+                {
+                  "id": "blame-shifting-1-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Separate the bill dispute from accountability for the insult. Can Emil acknowledge choosing his words while still discussing the financial concern?"
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Separate the bill dispute from accountability for the insult. Can Emil acknowledge choosing his words while still discussing the financial concern?",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "blame-shifting-2-dialogue",
+              "type": "dialogue",
+              "title": "Work: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "blame-shifting",
+              "scenario": "A supervisor missed a promised submission deadline.",
+              "speakerA": "Dev",
+              "speakerB": "Pat",
+              "turns": [
+                {
+                  "id": "blame-shifting-2-t1",
+                  "speaker": "a",
+                  "text": "The report wasn't filed on Friday."
+                },
+                {
+                  "id": "blame-shifting-2-t2",
+                  "speaker": "b",
+                  "text": "You made me miss it by asking too many questions."
+                },
+                {
+                  "id": "blame-shifting-2-t3",
+                  "speaker": "a",
+                  "text": "The deadline was in our plan."
+                },
+                {
+                  "id": "blame-shifting-2-t4",
+                  "speaker": "b",
+                  "text": "This is on you for distracting me."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "blame-shifting-2-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Pat transfers ownership of the missed filing without examining roles and deadlines."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Dev's interruptions may genuinely have caused delay."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "blame-shifting-2-t4",
+                  "explanation": "Pat transfers ownership of the missed filing without examining roles and deadlines. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Context can be relevant to shared problems. Separating responsibility does not require deciding that only one person ever made mistakes."
+                },
+                {
+                  "id": "blame-shifting-2-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Dev's interruptions may genuinely have caused delay."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Dev's interruptions may genuinely have caused delay. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Context can be relevant to shared problems. Separating responsibility does not require deciding that only one person ever made mistakes."
+                },
+                {
+                  "id": "blame-shifting-2-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Identify what each person controlled and agree a workable deadline. Check task ownership, time logs and whether the delay could have been managed."
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Identify what each person controlled and agree a workable deadline. Check task ownership, time logs and whether the delay could have been managed.",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "blame-shifting-transfer",
+              "type": "choose",
+              "title": "Family: practise a new variation",
+              "prompt": "A parent says, 'I only called you stupid because you asked again.'",
+              "conceptId": "blame-shifting",
+              "options": [
+                {
+                  "id": "correct",
+                  "label": "Keep responsibility for the insult with the speaker."
+                },
+                {
+                  "id": "wrong1",
+                  "label": "Assume the question cannot ever be annoying."
+                },
+                {
+                  "id": "wrong2",
+                  "label": "Treat asking a question as consent to insult."
+                }
+              ],
+              "answer": "correct",
+              "explanation": "Keep responsibility for the insult with the speaker. Remember to distinguish observable wording from a clinical or motivational inference.",
+              "counterexample": "Context can be relevant to shared problems. Separating responsibility does not require deciding that only one person ever made mistakes."
+            },
+            {
+              "id": "blame-shifting-evidence",
+              "type": "label",
+              "title": "Find the revealing words",
+              "prompt": "Which phrase most directly shows the relevant conversational move? Select one phrase.",
+              "conceptId": "blame-shifting",
+              "segments": [
+                {
+                  "id": "blame-shifting-segment-0",
+                  "text": "You asked again.",
+                  "answer": false
+                },
+                {
+                  "id": "blame-shifting-segment-1",
+                  "text": "I called you stupid.",
+                  "answer": true
+                },
+                {
+                  "id": "blame-shifting-segment-2",
+                  "text": "Can we discuss this without insults?",
+                  "answer": false
+                }
+              ],
+              "explanation": "The wording matters because it changes how the original concern is handled. The surrounding exchange remains important.",
+              "counterexample": "Context can be relevant to shared problems. Separating responsibility does not require deciding that only one person ever made mistakes."
+            },
+            {
+              "id": "blame-shifting-limits",
+              "type": "read",
+              "title": "What research can and cannot tell us",
+              "body": "The example is fictional. The relevant academic or practice literature explains a category of behaviour, not the motive or diagnosis of its imaginary speakers. One exchange can be concerning; sustained coercive patterns are better assessed across time, power and the ability to refuse.\n\nContext can be relevant to shared problems. Separating responsibility does not require deciding that only one person ever made mistakes.\n\nConsider a new situation: A parent says, 'I only called you stupid because you asked again.'\n\nA useful response is: Keep responsibility for the insult with the speaker.",
+              "sources": "UK Home Office, Controlling or Coercive Behaviour guidance: https://www.gov.uk/government/publications/controlling-or-coercive-behaviour-statutory-guidance-framework"
+            }
+          ]
+        },
+        {
+          "id": "conversation-patterns-guilt-tripping",
+          "version": 1,
+          "standard": "focused-6",
+          "durationMinutes": 6,
+          "editorialStatus": "ready-for-review",
+          "title": "Guilt pressure: when no becomes selfish",
+          "objective": "Recognise guilt tripping in two conversations, evaluate an alternative and apply the distinction to a new context.",
+          "teach": "Guilt-tripping uses a person's sense of duty or gratitude to make a refusal feel morally unacceptable. The key question is whether the request can be considered freely or whether disagreement will be treated as evidence of bad character.\n\nIn this lesson, try to identify the action in the words, not the presumed diagnosis of the speaker. Each example is fictional, and several interpretations can remain plausible. The practice goal is to notice the exact shift in the conversation and decide what evidence or boundary would help next.",
+          "takeaway": "Guilt-tripping uses a person's sense of duty or gratitude to make a refusal feel morally unacceptable. The key question is whether the request can be considered freely or whether disagreement will be treated as evidence of bad character. Care obligations can be real. Explaining a person's needs is not automatically manipulation.",
+          "transferPrompt": "Family: A relative says, 'A good child would spend every holiday with us.'",
+          "staffReview": "Structured first-pass educational authoring, 20 November 2026. Not yet independently clinically reviewed or usability tested.",
+          "evidenceSummary": "UK Home Office, Controlling or Coercive Behaviour guidance: https://www.gov.uk/government/publications/controlling-or-coercive-behaviour-statutory-guidance-framework",
+          "nodes": [
+            {
+              "id": "guilt-tripping-opening",
+              "type": "read",
+              "title": "The pattern to notice",
+              "body": "Guilt-tripping uses a person's sense of duty or gratitude to make a refusal feel morally unacceptable. The key question is whether the request can be considered freely or whether disagreement will be treated as evidence of bad character.\n\nThe first task is to track the original request. Notice whether a reply changes what must be defended, what counts as proof or what refusal would cost. Then consider whether a plausible ordinary explanation fits.\n\nCare obligations can be real. Explaining a person's needs is not automatically manipulation.",
+              "sources": "UK Home Office, Controlling or Coercive Behaviour guidance: https://www.gov.uk/government/publications/controlling-or-coercive-behaviour-statutory-guidance-framework"
+            },
+            {
+              "id": "guilt-tripping-1-dialogue",
+              "type": "dialogue",
+              "title": "Relationship: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "guilt-tripping",
+              "scenario": "One partner wants the other to cancel a prearranged weekend.",
+              "speakerA": "Leah",
+              "speakerB": "Ben",
+              "turns": [
+                {
+                  "id": "guilt-tripping-1-t1",
+                  "speaker": "a",
+                  "text": "I'm still visiting my sister this weekend."
+                },
+                {
+                  "id": "guilt-tripping-1-t2",
+                  "speaker": "b",
+                  "text": "After everything I've done for you, this is how you repay me?"
+                },
+                {
+                  "id": "guilt-tripping-1-t3",
+                  "speaker": "a",
+                  "text": "I could call you Saturday evening."
+                },
+                {
+                  "id": "guilt-tripping-1-t4",
+                  "speaker": "b",
+                  "text": "A loving partner wouldn't make me feel abandoned."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "guilt-tripping-1-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Ben uses previous sacrifices and identity as a loving partner to punish refusal."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Ben may sincerely feel lonely and want more time together."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "guilt-tripping-1-t4",
+                  "explanation": "Ben uses previous sacrifices and identity as a loving partner to punish refusal. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Care obligations can be real. Explaining a person's needs is not automatically manipulation."
+                },
+                {
+                  "id": "guilt-tripping-1-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Ben may sincerely feel lonely and want more time together."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Ben may sincerely feel lonely and want more time together. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Care obligations can be real. Explaining a person's needs is not automatically manipulation."
+                },
+                {
+                  "id": "guilt-tripping-1-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Acknowledge Ben's feeling while keeping the existing plan. Can Ben request time without redefining Leah's visit as a moral failure?"
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Acknowledge Ben's feeling while keeping the existing plan. Can Ben request time without redefining Leah's visit as a moral failure?",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "guilt-tripping-2-dialogue",
+              "type": "dialogue",
+              "title": "Work: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "guilt-tripping",
+              "scenario": "A colleague asks someone to cover another shift.",
+              "speakerA": "Izzy",
+              "speakerB": "Mark",
+              "turns": [
+                {
+                  "id": "guilt-tripping-2-t1",
+                  "speaker": "a",
+                  "text": "I can't cover Sunday's shift."
+                },
+                {
+                  "id": "guilt-tripping-2-t2",
+                  "speaker": "b",
+                  "text": "I trained you when you started. You owe me this."
+                },
+                {
+                  "id": "guilt-tripping-2-t3",
+                  "speaker": "a",
+                  "text": "I appreciate that; I have another commitment."
+                },
+                {
+                  "id": "guilt-tripping-2-t4",
+                  "speaker": "b",
+                  "text": "Now I know the kind of teammate you are."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "guilt-tripping-2-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Mark turns gratitude into an enforceable debt."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Mark may be short-staffed and stressed."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "guilt-tripping-2-t4",
+                  "explanation": "Mark turns gratitude into an enforceable debt. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Care obligations can be real. Explaining a person's needs is not automatically manipulation."
+                },
+                {
+                  "id": "guilt-tripping-2-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Mark may be short-staffed and stressed."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Mark may be short-staffed and stressed. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Care obligations can be real. Explaining a person's needs is not automatically manipulation."
+                },
+                {
+                  "id": "guilt-tripping-2-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Separate appreciation for training from an obligation to cancel plans. Would Mark accept a refusal and seek other options?"
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Separate appreciation for training from an obligation to cancel plans. Would Mark accept a refusal and seek other options?",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "guilt-tripping-transfer",
+              "type": "choose",
+              "title": "Family: practise a new variation",
+              "prompt": "A relative says, 'A good child would spend every holiday with us.'",
+              "conceptId": "guilt-tripping",
+              "options": [
+                {
+                  "id": "correct",
+                  "label": "Recognise that an identity-based guilt test replaces negotiation."
+                },
+                {
+                  "id": "wrong1",
+                  "label": "Assume family closeness never matters."
+                },
+                {
+                  "id": "wrong2",
+                  "label": "Accept the rule because they are older."
+                }
+              ],
+              "answer": "correct",
+              "explanation": "Recognise that an identity-based guilt test replaces negotiation. Remember to distinguish observable wording from a clinical or motivational inference.",
+              "counterexample": "Care obligations can be real. Explaining a person's needs is not automatically manipulation."
+            },
+            {
+              "id": "guilt-tripping-evidence",
+              "type": "label",
+              "title": "Find the revealing words",
+              "prompt": "Which phrase most directly shows the relevant conversational move? Select one phrase.",
+              "conceptId": "guilt-tripping",
+              "segments": [
+                {
+                  "id": "guilt-tripping-segment-0",
+                  "text": "We'd love to see you.",
+                  "answer": false
+                },
+                {
+                  "id": "guilt-tripping-segment-1",
+                  "text": "A good child would spend every holiday with us.",
+                  "answer": true
+                },
+                {
+                  "id": "guilt-tripping-segment-2",
+                  "text": "Could we plan another date?",
+                  "answer": false
+                }
+              ],
+              "explanation": "The wording matters because it changes how the original concern is handled. The surrounding exchange remains important.",
+              "counterexample": "Care obligations can be real. Explaining a person's needs is not automatically manipulation."
+            },
+            {
+              "id": "guilt-tripping-limits",
+              "type": "read",
+              "title": "What research can and cannot tell us",
+              "body": "The example is fictional. The relevant academic or practice literature explains a category of behaviour, not the motive or diagnosis of its imaginary speakers. One exchange can be concerning; sustained coercive patterns are better assessed across time, power and the ability to refuse.\n\nCare obligations can be real. Explaining a person's needs is not automatically manipulation.\n\nConsider a new situation: A relative says, 'A good child would spend every holiday with us.'\n\nA useful response is: Recognise that an identity-based guilt test replaces negotiation.",
+              "sources": "UK Home Office, Controlling or Coercive Behaviour guidance: https://www.gov.uk/government/publications/controlling-or-coercive-behaviour-statutory-guidance-framework"
+            }
+          ]
+        },
+        {
+          "id": "conversation-patterns-conditional-affection",
+          "version": 1,
+          "standard": "focused-6",
+          "durationMinutes": 6,
+          "editorialStatus": "ready-for-review",
+          "title": "Conditional affection: warmth as a reward",
+          "objective": "Recognise conditional affection in two conversations, evaluate an alternative and apply the distinction to a new context.",
+          "teach": "Conditional affection is especially concerning when ordinary closeness, affection or care is consistently withheld as leverage for obedience. Nobody owes physical affection, and temporary distance can be legitimate. The pattern to examine is deliberate punishment tied to compliance.\n\nIn this lesson, try to identify the action in the words, not the presumed diagnosis of the speaker. Each example is fictional, and several interpretations can remain plausible. The practice goal is to notice the exact shift in the conversation and decide what evidence or boundary would help next.",
+          "takeaway": "Conditional affection is especially concerning when ordinary closeness, affection or care is consistently withheld as leverage for obedience. Nobody owes physical affection, and temporary distance can be legitimate. The pattern to examine is deliberate punishment tied to compliance. Consent, exhaustion and time alone are valid reasons not to offer affection. Do not label every refusal as controlling.",
+          "transferPrompt": "Friendship: A friend says, 'I'll include you again once you stop talking to Maya.'",
+          "staffReview": "Structured first-pass educational authoring, 20 November 2026. Not yet independently clinically reviewed or usability tested.",
+          "evidenceSummary": "Measuring Psychologically Abusive Behaviors in Adult Intimate Relationships (systematic review, 2026): https://journals.sagepub.com/doi/full/10.1177/15248380261476693",
+          "nodes": [
+            {
+              "id": "conditional-affection-opening",
+              "type": "read",
+              "title": "The pattern to notice",
+              "body": "Conditional affection is especially concerning when ordinary closeness, affection or care is consistently withheld as leverage for obedience. Nobody owes physical affection, and temporary distance can be legitimate. The pattern to examine is deliberate punishment tied to compliance.\n\nThe first task is to track the original request. Notice whether a reply changes what must be defended, what counts as proof or what refusal would cost. Then consider whether a plausible ordinary explanation fits.\n\nConsent, exhaustion and time alone are valid reasons not to offer affection. Do not label every refusal as controlling.",
+              "sources": "Measuring Psychologically Abusive Behaviors in Adult Intimate Relationships (systematic review, 2026): https://journals.sagepub.com/doi/full/10.1177/15248380261476693"
+            },
+            {
+              "id": "conditional-affection-1-dialogue",
+              "type": "dialogue",
+              "title": "Relationship: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "conditional-affection",
+              "scenario": "After a disagreement, Kai asks whether they can reconnect.",
+              "speakerA": "Kai",
+              "speakerB": "Milo",
+              "turns": [
+                {
+                  "id": "conditional-affection-1-t1",
+                  "speaker": "a",
+                  "text": "Could we sit together for a while?"
+                },
+                {
+                  "id": "conditional-affection-1-t2",
+                  "speaker": "b",
+                  "text": "I'll be affectionate again when you admit I'm right about your friends."
+                },
+                {
+                  "id": "conditional-affection-1-t3",
+                  "speaker": "a",
+                  "text": "I'm happy to discuss it, but I still want to see them."
+                },
+                {
+                  "id": "conditional-affection-1-t4",
+                  "speaker": "b",
+                  "text": "Then don't expect any kindness tonight."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "conditional-affection-1-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Milo explicitly ties warmth to Kai giving up an independent choice."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Milo might be genuinely overwhelmed and unable to be affectionate right now."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "conditional-affection-1-t4",
+                  "explanation": "Milo explicitly ties warmth to Kai giving up an independent choice. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Consent, exhaustion and time alone are valid reasons not to offer affection. Do not label every refusal as controlling."
+                },
+                {
+                  "id": "conditional-affection-1-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Milo might be genuinely overwhelmed and unable to be affectionate right now."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Milo might be genuinely overwhelmed and unable to be affectionate right now. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Consent, exhaustion and time alone are valid reasons not to offer affection. Do not label every refusal as controlling."
+                },
+                {
+                  "id": "conditional-affection-1-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Respect bodily autonomy while refusing the demand about friends. Does Milo communicate a need for space, or make kindness conditional on obedience?"
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Respect bodily autonomy while refusing the demand about friends. Does Milo communicate a need for space, or make kindness conditional on obedience?",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "conditional-affection-2-dialogue",
+              "type": "dialogue",
+              "title": "Family: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "conditional-affection",
+              "scenario": "A parent responds to a young adult's course choice.",
+              "speakerA": "Ella",
+              "speakerB": "Dad",
+              "turns": [
+                {
+                  "id": "conditional-affection-2-t1",
+                  "speaker": "a",
+                  "text": "I've decided to study nursing."
+                },
+                {
+                  "id": "conditional-affection-2-t2",
+                  "speaker": "b",
+                  "text": "I only want to hear from you when you choose medicine."
+                },
+                {
+                  "id": "conditional-affection-2-t3",
+                  "speaker": "a",
+                  "text": "We can disagree about my future."
+                },
+                {
+                  "id": "conditional-affection-2-t4",
+                  "speaker": "b",
+                  "text": "Then don't come to me for any support."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "conditional-affection-2-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Dad links contact and care to compliance with a career choice."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Dad may be disappointed and need time to adjust."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "conditional-affection-2-t4",
+                  "explanation": "Dad links contact and care to compliance with a career choice. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Consent, exhaustion and time alone are valid reasons not to offer affection. Do not label every refusal as controlling."
+                },
+                {
+                  "id": "conditional-affection-2-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Dad may be disappointed and need time to adjust."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Dad may be disappointed and need time to adjust. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Consent, exhaustion and time alone are valid reasons not to offer affection. Do not label every refusal as controlling."
+                },
+                {
+                  "id": "conditional-affection-2-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "State the decision and seek support from people who can discuss it respectfully. Will Dad preserve a relationship despite disagreeing with the course?"
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "State the decision and seek support from people who can discuss it respectfully. Will Dad preserve a relationship despite disagreeing with the course?",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "conditional-affection-transfer",
+              "type": "choose",
+              "title": "Friendship: practise a new variation",
+              "prompt": "A friend says, 'I'll include you again once you stop talking to Maya.'",
+              "conceptId": "conditional-affection",
+              "options": [
+                {
+                  "id": "correct",
+                  "label": "Notice belonging being made dependent on controlling another friendship."
+                },
+                {
+                  "id": "wrong1",
+                  "label": "Assume all social invitations must include everyone."
+                },
+                {
+                  "id": "wrong2",
+                  "label": "Accept exclusion as proof Maya is harmful."
+                }
+              ],
+              "answer": "correct",
+              "explanation": "Notice belonging being made dependent on controlling another friendship. Remember to distinguish observable wording from a clinical or motivational inference.",
+              "counterexample": "Consent, exhaustion and time alone are valid reasons not to offer affection. Do not label every refusal as controlling."
+            },
+            {
+              "id": "conditional-affection-evidence",
+              "type": "label",
+              "title": "Find the revealing words",
+              "prompt": "Which phrase most directly shows the relevant conversational move? Select one phrase.",
+              "conceptId": "conditional-affection",
+              "segments": [
+                {
+                  "id": "conditional-affection-segment-0",
+                  "text": "I need some space after the argument.",
+                  "answer": false
+                },
+                {
+                  "id": "conditional-affection-segment-1",
+                  "text": "I'll include you once you stop talking to Maya.",
+                  "answer": true
+                },
+                {
+                  "id": "conditional-affection-segment-2",
+                  "text": "Let's speak tomorrow.",
+                  "answer": false
+                }
+              ],
+              "explanation": "The wording matters because it changes how the original concern is handled. The surrounding exchange remains important.",
+              "counterexample": "Consent, exhaustion and time alone are valid reasons not to offer affection. Do not label every refusal as controlling."
+            },
+            {
+              "id": "conditional-affection-limits",
+              "type": "read",
+              "title": "What research can and cannot tell us",
+              "body": "The example is fictional. The relevant academic or practice literature explains a category of behaviour, not the motive or diagnosis of its imaginary speakers. One exchange can be concerning; sustained coercive patterns are better assessed across time, power and the ability to refuse.\n\nConsent, exhaustion and time alone are valid reasons not to offer affection. Do not label every refusal as controlling.\n\nConsider a new situation: A friend says, 'I'll include you again once you stop talking to Maya.'\n\nA useful response is: Notice belonging being made dependent on controlling another friendship.",
+              "sources": "Measuring Psychologically Abusive Behaviors in Adult Intimate Relationships (systematic review, 2026): https://journals.sagepub.com/doi/full/10.1177/15248380261476693"
+            }
+          ]
+        },
+        {
+          "id": "conversation-patterns-moving-goalposts",
+          "version": 1,
+          "standard": "focused-6",
+          "durationMinutes": 6,
+          "editorialStatus": "ready-for-review",
+          "title": "Moving goalposts: the proof is never enough",
+          "objective": "Recognise moving goalposts in two conversations, evaluate an alternative and apply the distinction to a new context.",
+          "teach": "Moving goalposts means changing the standard for success after the other person has met the earlier requirement. It can make reassurance or repair endless because every fulfilled request gives way to a new condition. Look for a documented shift in criteria.\n\nIn this lesson, try to identify the action in the words, not the presumed diagnosis of the speaker. Each example is fictional, and several interpretations can remain plausible. The practice goal is to notice the exact shift in the conversation and decide what evidence or boundary would help next.",
+          "takeaway": "Moving goalposts means changing the standard for success after the other person has met the earlier requirement. It can make reassurance or repair endless because every fulfilled request gives way to a new condition. Look for a documented shift in criteria. New evidence can justify revising a requirement. The issue is whether the change is reasonable, explicit and reciprocal.",
+          "transferPrompt": "Family: A parent says, 'Getting a B was the deal. Now only an A proves you tried.'",
+          "staffReview": "Structured first-pass educational authoring, 20 November 2026. Not yet independently clinically reviewed or usability tested.",
+          "evidenceSummary": "Stanford Encyclopedia of Philosophy, Fallacies (argument standards and burden of proof): https://plato.stanford.edu/entries/fallacies/",
+          "nodes": [
+            {
+              "id": "moving-goalposts-opening",
+              "type": "read",
+              "title": "The pattern to notice",
+              "body": "Moving goalposts means changing the standard for success after the other person has met the earlier requirement. It can make reassurance or repair endless because every fulfilled request gives way to a new condition. Look for a documented shift in criteria.\n\nThe first task is to track the original request. Notice whether a reply changes what must be defended, what counts as proof or what refusal would cost. Then consider whether a plausible ordinary explanation fits.\n\nNew evidence can justify revising a requirement. The issue is whether the change is reasonable, explicit and reciprocal.",
+              "sources": "Stanford Encyclopedia of Philosophy, Fallacies (argument standards and burden of proof): https://plato.stanford.edu/entries/fallacies/"
+            },
+            {
+              "id": "moving-goalposts-1-dialogue",
+              "type": "dialogue",
+              "title": "Relationship: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "moving-goalposts",
+              "scenario": "Sofia has provided a clear explanation of a missed call.",
+              "speakerA": "Sofia",
+              "speakerB": "Chris",
+              "turns": [
+                {
+                  "id": "moving-goalposts-1-t1",
+                  "speaker": "a",
+                  "text": "You asked for my train ticket; here it is."
+                },
+                {
+                  "id": "moving-goalposts-1-t2",
+                  "speaker": "b",
+                  "text": "Fine, but now prove why you didn't call the moment you boarded."
+                },
+                {
+                  "id": "moving-goalposts-1-t3",
+                  "speaker": "a",
+                  "text": "You said the ticket would settle where I was."
+                },
+                {
+                  "id": "moving-goalposts-1-t4",
+                  "speaker": "b",
+                  "text": "That was before I realised I need every message too."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "moving-goalposts-1-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Chris adds new proof requirements after the stated one was satisfied."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Chris might have a new, specific concern triggered by new information."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "moving-goalposts-1-t4",
+                  "explanation": "Chris adds new proof requirements after the stated one was satisfied. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "New evidence can justify revising a requirement. The issue is whether the change is reasonable, explicit and reciprocal."
+                },
+                {
+                  "id": "moving-goalposts-1-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Chris might have a new, specific concern triggered by new information."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Chris might have a new, specific concern triggered by new information. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "New evidence can justify revising a requirement. The issue is whether the change is reasonable, explicit and reciprocal."
+                },
+                {
+                  "id": "moving-goalposts-1-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Clarify the original question and refuse unlimited surveillance. Can Chris name the new information and agree on a finite, reasonable standard?"
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Clarify the original question and refuse unlimited surveillance. Can Chris name the new information and agree on a finite, reasonable standard?",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "moving-goalposts-2-dialogue",
+              "type": "dialogue",
+              "title": "Work: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "moving-goalposts",
+              "scenario": "A team member finishes the agreed report.",
+              "speakerA": "Amina",
+              "speakerB": "Rob",
+              "turns": [
+                {
+                  "id": "moving-goalposts-2-t1",
+                  "speaker": "a",
+                  "text": "The report meets the signed-off checklist."
+                },
+                {
+                  "id": "moving-goalposts-2-t2",
+                  "speaker": "b",
+                  "text": "Now it also needs an animated dashboard."
+                },
+                {
+                  "id": "moving-goalposts-2-t3",
+                  "speaker": "a",
+                  "text": "That wasn't on the checklist."
+                },
+                {
+                  "id": "moving-goalposts-2-t4",
+                  "speaker": "b",
+                  "text": "Then you clearly haven't done enough to earn approval."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "moving-goalposts-2-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Rob treats an unannounced new requirement as failure on the old one."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "The scope may have legitimately expanded after a new stakeholder request."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "moving-goalposts-2-t4",
+                  "explanation": "Rob treats an unannounced new requirement as failure on the old one. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "New evidence can justify revising a requirement. The issue is whether the change is reasonable, explicit and reciprocal."
+                },
+                {
+                  "id": "moving-goalposts-2-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "The scope may have legitimately expanded after a new stakeholder request."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "The scope may have legitimately expanded after a new stakeholder request. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "New evidence can justify revising a requirement. The issue is whether the change is reasonable, explicit and reciprocal."
+                },
+                {
+                  "id": "moving-goalposts-2-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Preserve the original acceptance criteria and negotiate additions. Ask for documented change control and a new timeline."
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Preserve the original acceptance criteria and negotiate additions. Ask for documented change control and a new timeline.",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "moving-goalposts-transfer",
+              "type": "choose",
+              "title": "Family: practise a new variation",
+              "prompt": "A parent says, 'Getting a B was the deal. Now only an A proves you tried.'",
+              "conceptId": "moving-goalposts",
+              "options": [
+                {
+                  "id": "correct",
+                  "label": "Spot the changed standard after the agreed result."
+                },
+                {
+                  "id": "wrong1",
+                  "label": "Assume academic goals can never change."
+                },
+                {
+                  "id": "wrong2",
+                  "label": "Conclude that the child is lazy."
+                }
+              ],
+              "answer": "correct",
+              "explanation": "Spot the changed standard after the agreed result. Remember to distinguish observable wording from a clinical or motivational inference.",
+              "counterexample": "New evidence can justify revising a requirement. The issue is whether the change is reasonable, explicit and reciprocal."
+            },
+            {
+              "id": "moving-goalposts-evidence",
+              "type": "label",
+              "title": "Find the revealing words",
+              "prompt": "Which phrase most directly shows the relevant conversational move? Select one phrase.",
+              "conceptId": "moving-goalposts",
+              "segments": [
+                {
+                  "id": "moving-goalposts-segment-0",
+                  "text": "We agreed on a B.",
+                  "answer": false
+                },
+                {
+                  "id": "moving-goalposts-segment-1",
+                  "text": "Now only an A proves you tried.",
+                  "answer": true
+                },
+                {
+                  "id": "moving-goalposts-segment-2",
+                  "text": "Your work improved this term.",
+                  "answer": false
+                }
+              ],
+              "explanation": "The wording matters because it changes how the original concern is handled. The surrounding exchange remains important.",
+              "counterexample": "New evidence can justify revising a requirement. The issue is whether the change is reasonable, explicit and reciprocal."
+            },
+            {
+              "id": "moving-goalposts-limits",
+              "type": "read",
+              "title": "What research can and cannot tell us",
+              "body": "The example is fictional. The relevant academic or practice literature explains a category of behaviour, not the motive or diagnosis of its imaginary speakers. One exchange can be concerning; sustained coercive patterns are better assessed across time, power and the ability to refuse.\n\nNew evidence can justify revising a requirement. The issue is whether the change is reasonable, explicit and reciprocal.\n\nConsider a new situation: A parent says, 'Getting a B was the deal. Now only an A proves you tried.'\n\nA useful response is: Spot the changed standard after the agreed result.",
+              "sources": "Stanford Encyclopedia of Philosophy, Fallacies (argument standards and burden of proof): https://plato.stanford.edu/entries/fallacies/"
+            }
+          ]
+        },
+        {
+          "id": "conversation-patterns-double-bind",
+          "version": 1,
+          "standard": "focused-6",
+          "durationMinutes": 6,
+          "editorialStatus": "ready-for-review",
+          "title": "Double binds: two rules you cannot satisfy",
+          "objective": "Recognise double bind in two conversations, evaluate an alternative and apply the distinction to a new context.",
+          "teach": "A double bind arises when a person is held to incompatible demands, then blamed whichever one they follow. It is important to distinguish genuine conflicting needs from rules deliberately or repeatedly used to keep someone failing.\n\nIn this lesson, try to identify the action in the words, not the presumed diagnosis of the speaker. Each example is fictional, and several interpretations can remain plausible. The practice goal is to notice the exact shift in the conversation and decide what evidence or boundary would help next.",
+          "takeaway": "A double bind arises when a person is held to incompatible demands, then blamed whichever one they follow. It is important to distinguish genuine conflicting needs from rules deliberately or repeatedly used to keep someone failing. People can express contradictory preferences without manipulation. Clarification and willingness to revise matter.",
+          "transferPrompt": "Family: A relative says, 'Be completely honest, but don't ever tell me anything upsetting.'",
+          "staffReview": "Structured first-pass educational authoring, 20 November 2026. Not yet independently clinically reviewed or usability tested.",
+          "evidenceSummary": "UK Home Office, Controlling or Coercive Behaviour guidance: https://www.gov.uk/government/publications/controlling-or-coercive-behaviour-statutory-guidance-framework",
+          "nodes": [
+            {
+              "id": "double-bind-opening",
+              "type": "read",
+              "title": "The pattern to notice",
+              "body": "A double bind arises when a person is held to incompatible demands, then blamed whichever one they follow. It is important to distinguish genuine conflicting needs from rules deliberately or repeatedly used to keep someone failing.\n\nThe first task is to track the original request. Notice whether a reply changes what must be defended, what counts as proof or what refusal would cost. Then consider whether a plausible ordinary explanation fits.\n\nPeople can express contradictory preferences without manipulation. Clarification and willingness to revise matter.",
+              "sources": "UK Home Office, Controlling or Coercive Behaviour guidance: https://www.gov.uk/government/publications/controlling-or-coercive-behaviour-statutory-guidance-framework"
+            },
+            {
+              "id": "double-bind-1-dialogue",
+              "type": "dialogue",
+              "title": "Relationship: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "double-bind",
+              "scenario": "Sam is criticised both for checking in and for not checking in.",
+              "speakerA": "Sam",
+              "speakerB": "Jules",
+              "turns": [
+                {
+                  "id": "double-bind-1-t1",
+                  "speaker": "a",
+                  "text": "You said not to message you during work, so I waited."
+                },
+                {
+                  "id": "double-bind-1-t2",
+                  "speaker": "b",
+                  "text": "You should have known I wanted you to check on me."
+                },
+                {
+                  "id": "double-bind-1-t3",
+                  "speaker": "a",
+                  "text": "Last week you were angry when I did."
+                },
+                {
+                  "id": "double-bind-1-t4",
+                  "speaker": "b",
+                  "text": "Stop making excuses. You can't get anything right."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "double-bind-1-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Sam faces penalties both for messaging and for respecting a no-message rule."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Jules may have changed preferences and not communicated them well."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "double-bind-1-t4",
+                  "explanation": "Sam faces penalties both for messaging and for respecting a no-message rule. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "People can express contradictory preferences without manipulation. Clarification and willingness to revise matter."
+                },
+                {
+                  "id": "double-bind-1-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Jules may have changed preferences and not communicated them well."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Jules may have changed preferences and not communicated them well. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "People can express contradictory preferences without manipulation. Clarification and willingness to revise matter."
+                },
+                {
+                  "id": "double-bind-1-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Ask for a consistent expectation and decline character attacks. Can Jules state one actionable expectation and accept reasonable mistakes?"
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Ask for a consistent expectation and decline character attacks. Can Jules state one actionable expectation and accept reasonable mistakes?",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "double-bind-2-dialogue",
+              "type": "dialogue",
+              "title": "Work: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "double-bind",
+              "scenario": "An employee is told to work independently but criticised for decisions.",
+              "speakerA": "Rory",
+              "speakerB": "Manager",
+              "turns": [
+                {
+                  "id": "double-bind-2-t1",
+                  "speaker": "a",
+                  "text": "I completed the task without asking, as requested."
+                },
+                {
+                  "id": "double-bind-2-t2",
+                  "speaker": "b",
+                  "text": "Why didn't you get my approval first?"
+                },
+                {
+                  "id": "double-bind-2-t3",
+                  "speaker": "a",
+                  "text": "You said to stop asking about each step."
+                },
+                {
+                  "id": "double-bind-2-t4",
+                  "speaker": "b",
+                  "text": "Good staff just know when both rules apply."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "double-bind-2-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "The manager gives incompatible instructions without a usable decision rule."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "The task may have included a high-risk exception requiring approval."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "double-bind-2-t4",
+                  "explanation": "The manager gives incompatible instructions without a usable decision rule. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "People can express contradictory preferences without manipulation. Clarification and willingness to revise matter."
+                },
+                {
+                  "id": "double-bind-2-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "The task may have included a high-risk exception requiring approval."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "The task may have included a high-risk exception requiring approval. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "People can express contradictory preferences without manipulation. Clarification and willingness to revise matter."
+                },
+                {
+                  "id": "double-bind-2-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Make the decision boundary explicit rather than guess at hidden rules. Ask which decisions need sign-off and put that rule in writing."
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Make the decision boundary explicit rather than guess at hidden rules. Ask which decisions need sign-off and put that rule in writing.",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "double-bind-transfer",
+              "type": "choose",
+              "title": "Family: practise a new variation",
+              "prompt": "A relative says, 'Be completely honest, but don't ever tell me anything upsetting.'",
+              "conceptId": "double-bind",
+              "options": [
+                {
+                  "id": "correct",
+                  "label": "Identify the incompatible demands."
+                },
+                {
+                  "id": "wrong1",
+                  "label": "Assume honesty must always be harsh."
+                },
+                {
+                  "id": "wrong2",
+                  "label": "Interpret every painful truth as a personal attack."
+                }
+              ],
+              "answer": "correct",
+              "explanation": "Identify the incompatible demands. Remember to distinguish observable wording from a clinical or motivational inference.",
+              "counterexample": "People can express contradictory preferences without manipulation. Clarification and willingness to revise matter."
+            },
+            {
+              "id": "double-bind-evidence",
+              "type": "label",
+              "title": "Find the revealing words",
+              "prompt": "Which phrase most directly shows the relevant conversational move? Select one phrase.",
+              "conceptId": "double-bind",
+              "segments": [
+                {
+                  "id": "double-bind-segment-0",
+                  "text": "Be completely honest.",
+                  "answer": false
+                },
+                {
+                  "id": "double-bind-segment-1",
+                  "text": "Don't ever tell me anything upsetting.",
+                  "answer": true
+                },
+                {
+                  "id": "double-bind-segment-2",
+                  "text": "We can choose a gentler time.",
+                  "answer": false
+                }
+              ],
+              "explanation": "The wording matters because it changes how the original concern is handled. The surrounding exchange remains important.",
+              "counterexample": "People can express contradictory preferences without manipulation. Clarification and willingness to revise matter."
+            },
+            {
+              "id": "double-bind-limits",
+              "type": "read",
+              "title": "What research can and cannot tell us",
+              "body": "The example is fictional. The relevant academic or practice literature explains a category of behaviour, not the motive or diagnosis of its imaginary speakers. One exchange can be concerning; sustained coercive patterns are better assessed across time, power and the ability to refuse.\n\nPeople can express contradictory preferences without manipulation. Clarification and willingness to revise matter.\n\nConsider a new situation: A relative says, 'Be completely honest, but don't ever tell me anything upsetting.'\n\nA useful response is: Identify the incompatible demands.",
+              "sources": "UK Home Office, Controlling or Coercive Behaviour guidance: https://www.gov.uk/government/publications/controlling-or-coercive-behaviour-statutory-guidance-framework"
+            }
+          ]
+        },
+        {
+          "id": "conversation-patterns-triangulation",
+          "version": 1,
+          "standard": "focused-6",
+          "durationMinutes": 6,
+          "editorialStatus": "ready-for-review",
+          "title": "Triangulation: when a third person becomes leverage",
+          "objective": "Recognise triangulation in two conversations, evaluate an alternative and apply the distinction to a new context.",
+          "teach": "Triangulation occurs when another person or group is brought into a dispute to influence, isolate or silence the people directly involved. Sometimes mediation is appropriate. The concern is unverifiable appeals to other people's opinions or recruiting allies to apply pressure.\n\nIn this lesson, try to identify the action in the words, not the presumed diagnosis of the speaker. Each example is fictional, and several interpretations can remain plausible. The practice goal is to notice the exact shift in the conversation and decide what evidence or boundary would help next.",
+          "takeaway": "Triangulation occurs when another person or group is brought into a dispute to influence, isolate or silence the people directly involved. Sometimes mediation is appropriate. The concern is unverifiable appeals to other people's opinions or recruiting allies to apply pressure. Seeking advice, a witness or neutral mediation is not necessarily triangulation.",
+          "transferPrompt": "Family: A sibling says, 'Mum agrees with me, so your opinion doesn't count.'",
+          "staffReview": "Structured first-pass educational authoring, 20 November 2026. Not yet independently clinically reviewed or usability tested.",
+          "evidenceSummary": "UK Home Office, Controlling or Coercive Behaviour guidance: https://www.gov.uk/government/publications/controlling-or-coercive-behaviour-statutory-guidance-framework",
+          "nodes": [
+            {
+              "id": "triangulation-opening",
+              "type": "read",
+              "title": "The pattern to notice",
+              "body": "Triangulation occurs when another person or group is brought into a dispute to influence, isolate or silence the people directly involved. Sometimes mediation is appropriate. The concern is unverifiable appeals to other people's opinions or recruiting allies to apply pressure.\n\nThe first task is to track the original request. Notice whether a reply changes what must be defended, what counts as proof or what refusal would cost. Then consider whether a plausible ordinary explanation fits.\n\nSeeking advice, a witness or neutral mediation is not necessarily triangulation.",
+              "sources": "UK Home Office, Controlling or Coercive Behaviour guidance: https://www.gov.uk/government/publications/controlling-or-coercive-behaviour-statutory-guidance-framework"
+            },
+            {
+              "id": "triangulation-1-dialogue",
+              "type": "dialogue",
+              "title": "Relationship: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "triangulation",
+              "scenario": "Amir asks his partner to discuss a disagreement directly.",
+              "speakerA": "Amir",
+              "speakerB": "Pia",
+              "turns": [
+                {
+                  "id": "triangulation-1-t1",
+                  "speaker": "a",
+                  "text": "Can we talk about the decision just between us?"
+                },
+                {
+                  "id": "triangulation-1-t2",
+                  "speaker": "b",
+                  "text": "Everyone in my group chat says you're controlling."
+                },
+                {
+                  "id": "triangulation-1-t3",
+                  "speaker": "a",
+                  "text": "What did you tell them happened?"
+                },
+                {
+                  "id": "triangulation-1-t4",
+                  "speaker": "b",
+                  "text": "It doesn't matter. Their verdict settles it."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "triangulation-1-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Pia uses an unverifiable social verdict to stop direct examination."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Pia may have sought legitimate support and still value friends' perspectives."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "triangulation-1-t4",
+                  "explanation": "Pia uses an unverifiable social verdict to stop direct examination. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Seeking advice, a witness or neutral mediation is not necessarily triangulation."
+                },
+                {
+                  "id": "triangulation-1-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Pia may have sought legitimate support and still value friends' perspectives."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Pia may have sought legitimate support and still value friends' perspectives. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Seeking advice, a witness or neutral mediation is not necessarily triangulation."
+                },
+                {
+                  "id": "triangulation-1-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Discuss the specific action and consider a genuinely neutral mediator. Can Pia state the actual concern in her own words without treating the group as a tribunal?"
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Discuss the specific action and consider a genuinely neutral mediator. Can Pia state the actual concern in her own words without treating the group as a tribunal?",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "triangulation-2-dialogue",
+              "type": "dialogue",
+              "title": "Work: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "triangulation",
+              "scenario": "A manager invokes anonymous teammates to pressure an employee.",
+              "speakerA": "Jin",
+              "speakerB": "Boss",
+              "turns": [
+                {
+                  "id": "triangulation-2-t1",
+                  "speaker": "a",
+                  "text": "Could we clarify why the rotation changed?"
+                },
+                {
+                  "id": "triangulation-2-t2",
+                  "speaker": "b",
+                  "text": "The whole team thinks you're difficult."
+                },
+                {
+                  "id": "triangulation-2-t3",
+                  "speaker": "a",
+                  "text": "Can I see the feedback or discuss the schedule?"
+                },
+                {
+                  "id": "triangulation-2-t4",
+                  "speaker": "b",
+                  "text": "No. You should just accept what everyone thinks."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "triangulation-2-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "The boss invokes unnamed colleagues as authority to avoid a concrete explanation."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Team members may have raised genuine scheduling concerns."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "triangulation-2-t4",
+                  "explanation": "The boss invokes unnamed colleagues as authority to avoid a concrete explanation. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Seeking advice, a witness or neutral mediation is not necessarily triangulation."
+                },
+                {
+                  "id": "triangulation-2-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Team members may have raised genuine scheduling concerns."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Team members may have raised genuine scheduling concerns. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Seeking advice, a witness or neutral mediation is not necessarily triangulation."
+                },
+                {
+                  "id": "triangulation-2-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Request a documented reason for the rotation. Ask for specific, actionable feedback without demanding others' identities."
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Request a documented reason for the rotation. Ask for specific, actionable feedback without demanding others' identities.",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "triangulation-transfer",
+              "type": "choose",
+              "title": "Family: practise a new variation",
+              "prompt": "A sibling says, 'Mum agrees with me, so your opinion doesn't count.'",
+              "conceptId": "triangulation",
+              "options": [
+                {
+                  "id": "correct",
+                  "label": "Notice a third person's agreement being used to cancel a voice."
+                },
+                {
+                  "id": "wrong1",
+                  "label": "Assume Mum must be lying."
+                },
+                {
+                  "id": "wrong2",
+                  "label": "Conclude mediation can never help."
+                }
+              ],
+              "answer": "correct",
+              "explanation": "Notice a third person's agreement being used to cancel a voice. Remember to distinguish observable wording from a clinical or motivational inference.",
+              "counterexample": "Seeking advice, a witness or neutral mediation is not necessarily triangulation."
+            },
+            {
+              "id": "triangulation-evidence",
+              "type": "label",
+              "title": "Find the revealing words",
+              "prompt": "Which phrase most directly shows the relevant conversational move? Select one phrase.",
+              "conceptId": "triangulation",
+              "segments": [
+                {
+                  "id": "triangulation-segment-0",
+                  "text": "Mum agrees with me.",
+                  "answer": false
+                },
+                {
+                  "id": "triangulation-segment-1",
+                  "text": "Your opinion doesn't count.",
+                  "answer": true
+                },
+                {
+                  "id": "triangulation-segment-2",
+                  "text": "We can hear Mum's view too.",
+                  "answer": false
+                }
+              ],
+              "explanation": "The wording matters because it changes how the original concern is handled. The surrounding exchange remains important.",
+              "counterexample": "Seeking advice, a witness or neutral mediation is not necessarily triangulation."
+            },
+            {
+              "id": "triangulation-limits",
+              "type": "read",
+              "title": "What research can and cannot tell us",
+              "body": "The example is fictional. The relevant academic or practice literature explains a category of behaviour, not the motive or diagnosis of its imaginary speakers. One exchange can be concerning; sustained coercive patterns are better assessed across time, power and the ability to refuse.\n\nSeeking advice, a witness or neutral mediation is not necessarily triangulation.\n\nConsider a new situation: A sibling says, 'Mum agrees with me, so your opinion doesn't count.'\n\nA useful response is: Notice a third person's agreement being used to cancel a voice.",
+              "sources": "UK Home Office, Controlling or Coercive Behaviour guidance: https://www.gov.uk/government/publications/controlling-or-coercive-behaviour-statutory-guidance-framework"
+            }
+          ]
+        },
+        {
+          "id": "conversation-patterns-punitive-silence",
+          "version": 1,
+          "standard": "focused-6",
+          "durationMinutes": 6,
+          "editorialStatus": "ready-for-review",
+          "title": "Punitive silence versus an agreed pause",
+          "objective": "Recognise punitive silence in two conversations, evaluate an alternative and apply the distinction to a new context.",
+          "teach": "Silence can protect someone who is overloaded or frightened. Punitive silence is different: contact is withheld or unpredictably restored to penalise disagreement or force capitulation. Learn to check whether a time-out has a clear purpose and a safe route back to discussion.\n\nIn this lesson, try to identify the action in the words, not the presumed diagnosis of the speaker. Each example is fictional, and several interpretations can remain plausible. The practice goal is to notice the exact shift in the conversation and decide what evidence or boundary would help next.",
+          "takeaway": "Silence can protect someone who is overloaded or frightened. Punitive silence is different: contact is withheld or unpredictably restored to penalise disagreement or force capitulation. Learn to check whether a time-out has a clear purpose and a safe route back to discussion. Nobody has to stay available for a conversation. Respect an explicit request for time and personal safety.",
+          "transferPrompt": "Friendship: A friend says, 'I'm upset and need tonight alone; could we talk at ten tomorrow?'",
+          "staffReview": "Structured first-pass educational authoring, 20 November 2026. Not yet independently clinically reviewed or usability tested.",
+          "evidenceSummary": "Antecedents and consequences of silent treatment in close adult relationships (systematic review): https://pmc.ncbi.nlm.nih.gov/articles/PMC12937000/",
+          "nodes": [
+            {
+              "id": "punitive-silence-opening",
+              "type": "read",
+              "title": "The pattern to notice",
+              "body": "Silence can protect someone who is overloaded or frightened. Punitive silence is different: contact is withheld or unpredictably restored to penalise disagreement or force capitulation. Learn to check whether a time-out has a clear purpose and a safe route back to discussion.\n\nThe first task is to track the original request. Notice whether a reply changes what must be defended, what counts as proof or what refusal would cost. Then consider whether a plausible ordinary explanation fits.\n\nNobody has to stay available for a conversation. Respect an explicit request for time and personal safety.",
+              "sources": "Antecedents and consequences of silent treatment in close adult relationships (systematic review): https://pmc.ncbi.nlm.nih.gov/articles/PMC12937000/"
+            },
+            {
+              "id": "punitive-silence-1-dialogue",
+              "type": "dialogue",
+              "title": "Relationship: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "punitive-silence",
+              "scenario": "A disagreement ends with a refusal to communicate unless someone yields.",
+              "speakerA": "Mo",
+              "speakerB": "Rae",
+              "turns": [
+                {
+                  "id": "punitive-silence-1-t1",
+                  "speaker": "a",
+                  "text": "Can we revisit our plans tomorrow?"
+                },
+                {
+                  "id": "punitive-silence-1-t2",
+                  "speaker": "b",
+                  "text": "I won't speak to you until you agree to cancel that trip."
+                },
+                {
+                  "id": "punitive-silence-1-t3",
+                  "speaker": "a",
+                  "text": "Could we take a break and choose a time?"
+                },
+                {
+                  "id": "punitive-silence-1-t4",
+                  "speaker": "b",
+                  "text": "No. You'll know when you've learned."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "punitive-silence-1-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Rae ties reconnection to compliance rather than naming a pause for regulation."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Rae may genuinely need space, but the conditional punishment is explicit."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "punitive-silence-1-t4",
+                  "explanation": "Rae ties reconnection to compliance rather than naming a pause for regulation. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Nobody has to stay available for a conversation. Respect an explicit request for time and personal safety."
+                },
+                {
+                  "id": "punitive-silence-1-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Rae may genuinely need space, but the conditional punishment is explicit."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Rae may genuinely need space, but the conditional punishment is explicit. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Nobody has to stay available for a conversation. Respect an explicit request for time and personal safety."
+                },
+                {
+                  "id": "punitive-silence-1-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Avoid chasing the silent person; keep a clear boundary about the trip. Does Rae propose a return to discussion independent of Mo surrendering?"
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Avoid chasing the silent person; keep a clear boundary about the trip. Does Rae propose a return to discussion independent of Mo surrendering?",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "punitive-silence-2-dialogue",
+              "type": "dialogue",
+              "title": "Family: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "punitive-silence",
+              "scenario": "A family member refuses contact over a personal decision.",
+              "speakerA": "Ivy",
+              "speakerB": "Uncle",
+              "turns": [
+                {
+                  "id": "punitive-silence-2-t1",
+                  "speaker": "a",
+                  "text": "I'd like to explain why I moved out."
+                },
+                {
+                  "id": "punitive-silence-2-t2",
+                  "speaker": "b",
+                  "text": "You're dead to us until you return home."
+                },
+                {
+                  "id": "punitive-silence-2-t3",
+                  "speaker": "a",
+                  "text": "I want to keep talking without changing that choice."
+                },
+                {
+                  "id": "punitive-silence-2-t4",
+                  "speaker": "b",
+                  "text": "Then you don't get a family."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "punitive-silence-2-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "The withdrawal is used to force reversal of Ivy's choice."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "The uncle may be upset and prefer temporary distance."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "punitive-silence-2-t4",
+                  "explanation": "The withdrawal is used to force reversal of Ivy's choice. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Nobody has to stay available for a conversation. Respect an explicit request for time and personal safety."
+                },
+                {
+                  "id": "punitive-silence-2-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "The uncle may be upset and prefer temporary distance."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "The uncle may be upset and prefer temporary distance. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Nobody has to stay available for a conversation. Respect an explicit request for time and personal safety."
+                },
+                {
+                  "id": "punitive-silence-2-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Seek safe support and avoid bargaining away the right to leave. Does he allow contact while disagreeing, or make belonging conditional on obedience?"
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Seek safe support and avoid bargaining away the right to leave. Does he allow contact while disagreeing, or make belonging conditional on obedience?",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "punitive-silence-transfer",
+              "type": "choose",
+              "title": "Friendship: practise a new variation",
+              "prompt": "A friend says, 'I'm upset and need tonight alone; could we talk at ten tomorrow?'",
+              "conceptId": "punitive-silence",
+              "options": [
+                {
+                  "id": "correct",
+                  "label": "Distinguish this communicated pause from coercive silence."
+                },
+                {
+                  "id": "wrong1",
+                  "label": "Treat any delay as punishment."
+                },
+                {
+                  "id": "wrong2",
+                  "label": "Demand an immediate answer regardless of overwhelm."
+                }
+              ],
+              "answer": "correct",
+              "explanation": "Distinguish this communicated pause from coercive silence. Remember to distinguish observable wording from a clinical or motivational inference.",
+              "counterexample": "Nobody has to stay available for a conversation. Respect an explicit request for time and personal safety."
+            },
+            {
+              "id": "punitive-silence-evidence",
+              "type": "label",
+              "title": "Find the revealing words",
+              "prompt": "Which phrase most directly shows the relevant conversational move? Select one phrase.",
+              "conceptId": "punitive-silence",
+              "segments": [
+                {
+                  "id": "punitive-silence-segment-0",
+                  "text": "I need tonight alone.",
+                  "answer": false
+                },
+                {
+                  "id": "punitive-silence-segment-1",
+                  "text": "Could we talk at ten tomorrow?",
+                  "answer": false
+                },
+                {
+                  "id": "punitive-silence-segment-2",
+                  "text": "I'll never speak unless you apologise.",
+                  "answer": true
+                }
+              ],
+              "explanation": "The wording matters because it changes how the original concern is handled. The surrounding exchange remains important.",
+              "counterexample": "Nobody has to stay available for a conversation. Respect an explicit request for time and personal safety."
+            },
+            {
+              "id": "punitive-silence-limits",
+              "type": "read",
+              "title": "What research can and cannot tell us",
+              "body": "The example is fictional. The relevant academic or practice literature explains a category of behaviour, not the motive or diagnosis of its imaginary speakers. One exchange can be concerning; sustained coercive patterns are better assessed across time, power and the ability to refuse.\n\nNobody has to stay available for a conversation. Respect an explicit request for time and personal safety.\n\nConsider a new situation: A friend says, 'I'm upset and need tonight alone; could we talk at ten tomorrow?'\n\nA useful response is: Distinguish this communicated pause from coercive silence.",
+              "sources": "Antecedents and consequences of silent treatment in close adult relationships (systematic review): https://pmc.ncbi.nlm.nih.gov/articles/PMC12937000/"
+            }
+          ]
+        },
+        {
+          "id": "conversation-patterns-future-faking",
+          "version": 1,
+          "standard": "focused-6",
+          "durationMinutes": 6,
+          "editorialStatus": "ready-for-review",
+          "title": "Future promises: words versus follow-through",
+          "objective": "Recognise future faking in two conversations, evaluate an alternative and apply the distinction to a new context.",
+          "teach": "Promises can be sincere. The phrase 'future faking' is commonly used when attractive future commitments repeatedly secure present concessions without concrete steps toward fulfilment. Do not infer deliberate deceit from one broken promise. Look for repetition, incentives and actual change.\n\nIn this lesson, try to identify the action in the words, not the presumed diagnosis of the speaker. Each example is fictional, and several interpretations can remain plausible. The practice goal is to notice the exact shift in the conversation and decide what evidence or boundary would help next.",
+          "takeaway": "Promises can be sincere. The phrase 'future faking' is commonly used when attractive future commitments repeatedly secure present concessions without concrete steps toward fulfilment. Do not infer deliberate deceit from one broken promise. Look for repetition, incentives and actual change. Plans fail for ordinary reasons. Changed circumstances and honest renegotiation differ from using promises as leverage.",
+          "transferPrompt": "Family: A relative says, 'Lend me the money today; I'll definitely repay you next month,' after repeatedly missing agreed dates.",
+          "staffReview": "Structured first-pass educational authoring, 20 November 2026. Not yet independently clinically reviewed or usability tested.",
+          "evidenceSummary": "Subtle or Covert Abuse Within Intimate Partner Relationships (scoping review): https://pmc.ncbi.nlm.nih.gov/articles/PMC11545147/",
+          "nodes": [
+            {
+              "id": "future-faking-opening",
+              "type": "read",
+              "title": "The pattern to notice",
+              "body": "Promises can be sincere. The phrase 'future faking' is commonly used when attractive future commitments repeatedly secure present concessions without concrete steps toward fulfilment. Do not infer deliberate deceit from one broken promise. Look for repetition, incentives and actual change.\n\nThe first task is to track the original request. Notice whether a reply changes what must be defended, what counts as proof or what refusal would cost. Then consider whether a plausible ordinary explanation fits.\n\nPlans fail for ordinary reasons. Changed circumstances and honest renegotiation differ from using promises as leverage.",
+              "sources": "Subtle or Covert Abuse Within Intimate Partner Relationships (scoping review): https://pmc.ncbi.nlm.nih.gov/articles/PMC11545147/"
+            },
+            {
+              "id": "future-faking-1-dialogue",
+              "type": "dialogue",
+              "title": "Relationship: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "future-faking",
+              "scenario": "A partner asks someone to relocate based on another unfulfilled promise.",
+              "speakerA": "Mae",
+              "speakerB": "Luca",
+              "turns": [
+                {
+                  "id": "future-faking-1-t1",
+                  "speaker": "a",
+                  "text": "Have you applied for the transfer like we discussed?"
+                },
+                {
+                  "id": "future-faking-1-t2",
+                  "speaker": "b",
+                  "text": "Just move now. I'll submit everything next month, I swear."
+                },
+                {
+                  "id": "future-faking-1-t3",
+                  "speaker": "a",
+                  "text": "That's what you said last spring and autumn."
+                },
+                {
+                  "id": "future-faking-1-t4",
+                  "speaker": "b",
+                  "text": "If you trusted our future, you'd take the risk first."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "future-faking-1-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Luca asks Mae for an irreversible concession while offering no verifiable progress on repeated promises."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "The transfer may genuinely be delayed for administrative reasons."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "future-faking-1-t4",
+                  "explanation": "Luca asks Mae for an irreversible concession while offering no verifiable progress on repeated promises. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Plans fail for ordinary reasons. Changed circumstances and honest renegotiation differ from using promises as leverage."
+                },
+                {
+                  "id": "future-faking-1-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "The transfer may genuinely be delayed for administrative reasons."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "The transfer may genuinely be delayed for administrative reasons. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Plans fail for ordinary reasons. Changed circumstances and honest renegotiation differ from using promises as leverage."
+                },
+                {
+                  "id": "future-faking-1-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Do not move on an unverifiable promise; agree on milestones first. Check applications, deadlines and shared risk before relocating."
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Do not move on an unverifiable promise; agree on milestones first. Check applications, deadlines and shared risk before relocating.",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "future-faking-2-dialogue",
+              "type": "dialogue",
+              "title": "Work: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "future-faking",
+              "scenario": "An employer repeatedly promises a promotion after unpaid overtime.",
+              "speakerA": "Hana",
+              "speakerB": "Director",
+              "turns": [
+                {
+                  "id": "future-faking-2-t1",
+                  "speaker": "a",
+                  "text": "The promotion review was meant to be in June."
+                },
+                {
+                  "id": "future-faking-2-t2",
+                  "speaker": "b",
+                  "text": "Keep covering weekends; we'll definitely promote you soon."
+                },
+                {
+                  "id": "future-faking-2-t3",
+                  "speaker": "a",
+                  "text": "This is the third review date to pass."
+                },
+                {
+                  "id": "future-faking-2-t4",
+                  "speaker": "b",
+                  "text": "Committed people invest before they see results."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "future-faking-2-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "The director requests continuing sacrifices without a dependable promotion process."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Budget constraints may have delayed a genuine promotion plan."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "future-faking-2-t4",
+                  "explanation": "The director requests continuing sacrifices without a dependable promotion process. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Plans fail for ordinary reasons. Changed circumstances and honest renegotiation differ from using promises as leverage."
+                },
+                {
+                  "id": "future-faking-2-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Budget constraints may have delayed a genuine promotion plan."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Budget constraints may have delayed a genuine promotion plan. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Plans fail for ordinary reasons. Changed circumstances and honest renegotiation differ from using promises as leverage."
+                },
+                {
+                  "id": "future-faking-2-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Decide whether overtime is worthwhile without counting on the promise. Ask for written criteria, dates and compensation terms."
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Decide whether overtime is worthwhile without counting on the promise. Ask for written criteria, dates and compensation terms.",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "future-faking-transfer",
+              "type": "choose",
+              "title": "Family: practise a new variation",
+              "prompt": "A relative says, 'Lend me the money today; I'll definitely repay you next month,' after repeatedly missing agreed dates.",
+              "conceptId": "future-faking",
+              "options": [
+                {
+                  "id": "correct",
+                  "label": "Examine repayment history and a concrete plan before giving another loan."
+                },
+                {
+                  "id": "wrong1",
+                  "label": "Assume everyone who misses payment is malicious."
+                },
+                {
+                  "id": "wrong2",
+                  "label": "Give unlimited loans to demonstrate trust."
+                }
+              ],
+              "answer": "correct",
+              "explanation": "Examine repayment history and a concrete plan before giving another loan. Remember to distinguish observable wording from a clinical or motivational inference.",
+              "counterexample": "Plans fail for ordinary reasons. Changed circumstances and honest renegotiation differ from using promises as leverage."
+            },
+            {
+              "id": "future-faking-evidence",
+              "type": "label",
+              "title": "Find the revealing words",
+              "prompt": "Which phrase most directly shows the relevant conversational move? Select one phrase.",
+              "conceptId": "future-faking",
+              "segments": [
+                {
+                  "id": "future-faking-segment-0",
+                  "text": "I'll repay you next month.",
+                  "answer": false
+                },
+                {
+                  "id": "future-faking-segment-1",
+                  "text": "I missed the last three agreed dates.",
+                  "answer": true
+                },
+                {
+                  "id": "future-faking-segment-2",
+                  "text": "I have a new payment plan in writing.",
+                  "answer": false
+                }
+              ],
+              "explanation": "The wording matters because it changes how the original concern is handled. The surrounding exchange remains important.",
+              "counterexample": "Plans fail for ordinary reasons. Changed circumstances and honest renegotiation differ from using promises as leverage."
+            },
+            {
+              "id": "future-faking-limits",
+              "type": "read",
+              "title": "What research can and cannot tell us",
+              "body": "The example is fictional. The relevant academic or practice literature explains a category of behaviour, not the motive or diagnosis of its imaginary speakers. One exchange can be concerning; sustained coercive patterns are better assessed across time, power and the ability to refuse.\n\nPlans fail for ordinary reasons. Changed circumstances and honest renegotiation differ from using promises as leverage.\n\nConsider a new situation: A relative says, 'Lend me the money today; I'll definitely repay you next month,' after repeatedly missing agreed dates.\n\nA useful response is: Examine repayment history and a concrete plan before giving another loan.",
+              "sources": "Subtle or Covert Abuse Within Intimate Partner Relationships (scoping review): https://pmc.ncbi.nlm.nih.gov/articles/PMC11545147/"
+            }
+          ]
+        },
+        {
+          "id": "conversation-patterns-false-dilemma",
+          "version": 1,
+          "standard": "focused-6",
+          "durationMinutes": 6,
+          "editorialStatus": "ready-for-review",
+          "title": "False dilemmas: the choice you were not offered",
+          "objective": "Recognise false dilemma in two conversations, evaluate an alternative and apply the distinction to a new context.",
+          "teach": "A false dilemma presents two options as if they exhaust every possibility. In difficult conversations it can transform a reasonable request into a test of loyalty or love. The skill is to find legitimate missing options while accepting that some situations do involve real trade-offs.\n\nIn this lesson, try to identify the action in the words, not the presumed diagnosis of the speaker. Each example is fictional, and several interpretations can remain plausible. The practice goal is to notice the exact shift in the conversation and decide what evidence or boundary would help next.",
+          "takeaway": "A false dilemma presents two options as if they exhaust every possibility. In difficult conversations it can transform a reasonable request into a test of loyalty or love. The skill is to find legitimate missing options while accepting that some situations do involve real trade-offs. Some decisions genuinely have two available outcomes. Evaluate whether a third route is practicable, not merely imaginable.",
+          "transferPrompt": "Family: A parent says, 'Either attend every reunion or admit you don't love us.'",
+          "staffReview": "Structured first-pass educational authoring, 20 November 2026. Not yet independently clinically reviewed or usability tested.",
+          "evidenceSummary": "Stanford Encyclopedia of Philosophy, Fallacies: https://plato.stanford.edu/entries/fallacies/",
+          "nodes": [
+            {
+              "id": "false-dilemma-opening",
+              "type": "read",
+              "title": "The pattern to notice",
+              "body": "A false dilemma presents two options as if they exhaust every possibility. In difficult conversations it can transform a reasonable request into a test of loyalty or love. The skill is to find legitimate missing options while accepting that some situations do involve real trade-offs.\n\nThe first task is to track the original request. Notice whether a reply changes what must be defended, what counts as proof or what refusal would cost. Then consider whether a plausible ordinary explanation fits.\n\nSome decisions genuinely have two available outcomes. Evaluate whether a third route is practicable, not merely imaginable.",
+              "sources": "Stanford Encyclopedia of Philosophy, Fallacies: https://plato.stanford.edu/entries/fallacies/"
+            },
+            {
+              "id": "false-dilemma-1-dialogue",
+              "type": "dialogue",
+              "title": "Relationship: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "false-dilemma",
+              "scenario": "A partner demands access to private messages.",
+              "speakerA": "Asha",
+              "speakerB": "Noel",
+              "turns": [
+                {
+                  "id": "false-dilemma-1-t1",
+                  "speaker": "a",
+                  "text": "I don't want to share my friends' private chats."
+                },
+                {
+                  "id": "false-dilemma-1-t2",
+                  "speaker": "b",
+                  "text": "Either give me your password or admit you're cheating."
+                },
+                {
+                  "id": "false-dilemma-1-t3",
+                  "speaker": "a",
+                  "text": "We could talk about what worries you."
+                },
+                {
+                  "id": "false-dilemma-1-t4",
+                  "speaker": "b",
+                  "text": "Those are the only two possibilities."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "false-dilemma-1-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Noel omits the option of discussing insecurity without surrendering third-party privacy."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Noel may genuinely feel insecure and need reassurance."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "false-dilemma-1-t4",
+                  "explanation": "Noel omits the option of discussing insecurity without surrendering third-party privacy. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Some decisions genuinely have two available outcomes. Evaluate whether a third route is practicable, not merely imaginable."
+                },
+                {
+                  "id": "false-dilemma-1-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Noel may genuinely feel insecure and need reassurance."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Noel may genuinely feel insecure and need reassurance. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Some decisions genuinely have two available outcomes. Evaluate whether a third route is practicable, not merely imaginable."
+                },
+                {
+                  "id": "false-dilemma-1-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Name the missing option: talk about trust without handing over private messages. Can Noel discuss concern without treating privacy as proof of wrongdoing?"
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Name the missing option: talk about trust without handing over private messages. Can Noel discuss concern without treating privacy as proof of wrongdoing?",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "false-dilemma-2-dialogue",
+              "type": "dialogue",
+              "title": "Work: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "false-dilemma",
+              "scenario": "A manager sets up an unnecessary loyalty test.",
+              "speakerA": "Bea",
+              "speakerB": "Manager",
+              "turns": [
+                {
+                  "id": "false-dilemma-2-t1",
+                  "speaker": "a",
+                  "text": "I need one day to review the contract."
+                },
+                {
+                  "id": "false-dilemma-2-t2",
+                  "speaker": "b",
+                  "text": "Either sign immediately or admit you don't care about the company."
+                },
+                {
+                  "id": "false-dilemma-2-t3",
+                  "speaker": "a",
+                  "text": "Could I review it tonight and reply tomorrow?"
+                },
+                {
+                  "id": "false-dilemma-2-t4",
+                  "speaker": "b",
+                  "text": "People who belong here don't ask for time."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "false-dilemma-2-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "The manager equates a normal review period with disloyalty."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "A deadline may be real, but the loyalty judgement is not established."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "false-dilemma-2-t4",
+                  "explanation": "The manager equates a normal review period with disloyalty. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Some decisions genuinely have two available outcomes. Evaluate whether a third route is practicable, not merely imaginable."
+                },
+                {
+                  "id": "false-dilemma-2-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "A deadline may be real, but the loyalty judgement is not established."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "A deadline may be real, but the loyalty judgement is not established. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Some decisions genuinely have two available outcomes. Evaluate whether a third route is practicable, not merely imaginable."
+                },
+                {
+                  "id": "false-dilemma-2-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Request the terms and decide without accepting the loyalty label. Ask for the actual deadline and reasons for urgency."
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Request the terms and decide without accepting the loyalty label. Ask for the actual deadline and reasons for urgency.",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "false-dilemma-transfer",
+              "type": "choose",
+              "title": "Family: practise a new variation",
+              "prompt": "A parent says, 'Either attend every reunion or admit you don't love us.'",
+              "conceptId": "false-dilemma",
+              "options": [
+                {
+                  "id": "correct",
+                  "label": "Spot the missing option of caring while attending selectively."
+                },
+                {
+                  "id": "wrong1",
+                  "label": "Conclude there are never any consequences of absence."
+                },
+                {
+                  "id": "wrong2",
+                  "label": "Accept attendance as the only measure of affection."
+                }
+              ],
+              "answer": "correct",
+              "explanation": "Spot the missing option of caring while attending selectively. Remember to distinguish observable wording from a clinical or motivational inference.",
+              "counterexample": "Some decisions genuinely have two available outcomes. Evaluate whether a third route is practicable, not merely imaginable."
+            },
+            {
+              "id": "false-dilemma-evidence",
+              "type": "label",
+              "title": "Find the revealing words",
+              "prompt": "Which phrase most directly shows the relevant conversational move? Select one phrase.",
+              "conceptId": "false-dilemma",
+              "segments": [
+                {
+                  "id": "false-dilemma-segment-0",
+                  "text": "Either attend every reunion",
+                  "answer": false
+                },
+                {
+                  "id": "false-dilemma-segment-1",
+                  "text": "or admit you don't love us.",
+                  "answer": true
+                },
+                {
+                  "id": "false-dilemma-segment-2",
+                  "text": "Can we choose two dates?",
+                  "answer": false
+                }
+              ],
+              "explanation": "The wording matters because it changes how the original concern is handled. The surrounding exchange remains important.",
+              "counterexample": "Some decisions genuinely have two available outcomes. Evaluate whether a third route is practicable, not merely imaginable."
+            },
+            {
+              "id": "false-dilemma-limits",
+              "type": "read",
+              "title": "What research can and cannot tell us",
+              "body": "The example is fictional. The relevant academic or practice literature explains a category of behaviour, not the motive or diagnosis of its imaginary speakers. One exchange can be concerning; sustained coercive patterns are better assessed across time, power and the ability to refuse.\n\nSome decisions genuinely have two available outcomes. Evaluate whether a third route is practicable, not merely imaginable.\n\nConsider a new situation: A parent says, 'Either attend every reunion or admit you don't love us.'\n\nA useful response is: Spot the missing option of caring while attending selectively.",
+              "sources": "Stanford Encyclopedia of Philosophy, Fallacies: https://plato.stanford.edu/entries/fallacies/"
+            }
+          ]
+        },
+        {
+          "id": "conversation-patterns-whataboutism",
+          "version": 1,
+          "standard": "focused-6",
+          "durationMinutes": 6,
+          "editorialStatus": "ready-for-review",
+          "title": "Whataboutism: the detour away from a question",
+          "objective": "Recognise whataboutism in two conversations, evaluate an alternative and apply the distinction to a new context.",
+          "teach": "Whataboutism responds to a specific concern by introducing a different person's mistake or an unrelated grievance. The new concern might deserve attention, but it does not answer the first one. Learn to acknowledge a separate issue without letting it erase the original.\n\nIn this lesson, try to identify the action in the words, not the presumed diagnosis of the speaker. Each example is fictional, and several interpretations can remain plausible. The practice goal is to notice the exact shift in the conversation and decide what evidence or boundary would help next.",
+          "takeaway": "Whataboutism responds to a specific concern by introducing a different person's mistake or an unrelated grievance. The new concern might deserve attention, but it does not answer the first one. Learn to acknowledge a separate issue without letting it erase the original. Comparisons can be relevant when testing consistency or equal treatment. The question is whether they clarify or merely evade.",
+          "transferPrompt": "Friendship: You ask, 'Why did you share my news?' A friend replies, 'What about when you arrived late?'",
+          "staffReview": "Structured first-pass educational authoring, 20 November 2026. Not yet independently clinically reviewed or usability tested.",
+          "evidenceSummary": "Stanford Encyclopedia of Philosophy, Fallacies: https://plato.stanford.edu/entries/fallacies/",
+          "nodes": [
+            {
+              "id": "whataboutism-opening",
+              "type": "read",
+              "title": "The pattern to notice",
+              "body": "Whataboutism responds to a specific concern by introducing a different person's mistake or an unrelated grievance. The new concern might deserve attention, but it does not answer the first one. Learn to acknowledge a separate issue without letting it erase the original.\n\nThe first task is to track the original request. Notice whether a reply changes what must be defended, what counts as proof or what refusal would cost. Then consider whether a plausible ordinary explanation fits.\n\nComparisons can be relevant when testing consistency or equal treatment. The question is whether they clarify or merely evade.",
+              "sources": "Stanford Encyclopedia of Philosophy, Fallacies: https://plato.stanford.edu/entries/fallacies/"
+            },
+            {
+              "id": "whataboutism-1-dialogue",
+              "type": "dialogue",
+              "title": "Relationship: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "whataboutism",
+              "scenario": "Lena asks why a shared expense was concealed.",
+              "speakerA": "Lena",
+              "speakerB": "Jay",
+              "turns": [
+                {
+                  "id": "whataboutism-1-t1",
+                  "speaker": "a",
+                  "text": "Why wasn't the credit-card bill mentioned?"
+                },
+                {
+                  "id": "whataboutism-1-t2",
+                  "speaker": "b",
+                  "text": "What about when you forgot to buy groceries last month?"
+                },
+                {
+                  "id": "whataboutism-1-t3",
+                  "speaker": "a",
+                  "text": "We can talk about groceries too."
+                },
+                {
+                  "id": "whataboutism-1-t4",
+                  "speaker": "b",
+                  "text": "No, that's the real problem here."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "whataboutism-1-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Jay swaps the financial disclosure question for a different everyday mistake."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "Jay might have a genuine unresolved complaint about shared labour."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "whataboutism-1-t4",
+                  "explanation": "Jay swaps the financial disclosure question for a different everyday mistake. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Comparisons can be relevant when testing consistency or equal treatment. The question is whether they clarify or merely evade."
+                },
+                {
+                  "id": "whataboutism-1-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "Jay might have a genuine unresolved complaint about shared labour."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "Jay might have a genuine unresolved complaint about shared labour. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Comparisons can be relevant when testing consistency or equal treatment. The question is whether they clarify or merely evade."
+                },
+                {
+                  "id": "whataboutism-1-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Return to the credit-card question without denying the groceries issue. Can Jay address the bill and schedule the groceries concern separately?"
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Return to the credit-card question without denying the groceries issue. Can Jay address the bill and schedule the groceries concern separately?",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "whataboutism-2-dialogue",
+              "type": "dialogue",
+              "title": "Work: see the pattern",
+              "prompt": "Read one reply at a time and decide what the wording supports.",
+              "conceptId": "whataboutism",
+              "scenario": "A staff member asks about a safety check that was skipped.",
+              "speakerA": "Eli",
+              "speakerB": "Kim",
+              "turns": [
+                {
+                  "id": "whataboutism-2-t1",
+                  "speaker": "a",
+                  "text": "Why wasn't the safety checklist completed?"
+                },
+                {
+                  "id": "whataboutism-2-t2",
+                  "speaker": "b",
+                  "text": "What about the overtime errors your team made?"
+                },
+                {
+                  "id": "whataboutism-2-t3",
+                  "speaker": "a",
+                  "text": "We can review those after this incident."
+                },
+                {
+                  "id": "whataboutism-2-t4",
+                  "speaker": "b",
+                  "text": "Exactly, you're not perfect either."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "whataboutism-2-c1",
+                  "prompt": "What is the most important move in this exchange?",
+                  "options": [
+                    {
+                      "id": "pattern",
+                      "label": "Kim avoids the checklist by raising a separate error."
+                    },
+                    {
+                      "id": "benign",
+                      "label": "The overtime issue could be materially relevant if it affected the checklist."
+                    },
+                    {
+                      "id": "tone",
+                      "label": "The choice of tone is the only reliable evidence."
+                    }
+                  ],
+                  "answer": "pattern",
+                  "focusTurn": "whataboutism-2-t4",
+                  "explanation": "Kim avoids the checklist by raising a separate error. Notice what was requested and how the reply changes the terms of discussion.",
+                  "counterexample": "Comparisons can be relevant when testing consistency or equal treatment. The question is whether they clarify or merely evade."
+                },
+                {
+                  "id": "whataboutism-2-c2",
+                  "prompt": "Which alternative deserves consideration before deciding intent?",
+                  "options": [
+                    {
+                      "id": "alternative",
+                      "label": "The overtime issue could be materially relevant if it affected the checklist."
+                    },
+                    {
+                      "id": "motive",
+                      "label": "The words establish deliberate malice beyond doubt."
+                    },
+                    {
+                      "id": "diagnosis",
+                      "label": "A personality-disorder diagnosis can be inferred from the text alone."
+                    }
+                  ],
+                  "answer": "alternative",
+                  "explanation": "The overtime issue could be materially relevant if it affected the checklist. This is a competing hypothesis, not an excuse for any harm.",
+                  "counterexample": "Comparisons can be relevant when testing consistency or equal treatment. The question is whether they clarify or merely evade."
+                },
+                {
+                  "id": "whataboutism-2-c3",
+                  "prompt": "Which next step best protects informed judgement?",
+                  "options": [
+                    {
+                      "id": "action",
+                      "label": "Write down the two concerns and assign each an owner. Check whether the overtime issue caused this omission; otherwise address both separately."
+                    },
+                    {
+                      "id": "retaliate",
+                      "label": "Retaliate immediately so the other person feels the same pressure."
+                    },
+                    {
+                      "id": "submit",
+                      "label": "Assume the speaker's account must be true to restore peace."
+                    }
+                  ],
+                  "answer": "action",
+                  "explanation": "Write down the two concerns and assign each an owner. Check whether the overtime issue caused this omission; otherwise address both separately.",
+                  "counterexample": "If direct contact could increase danger, use a safer route; immediate confrontation is not obligatory."
+                }
+              ]
+            },
+            {
+              "id": "whataboutism-transfer",
+              "type": "choose",
+              "title": "Friendship: practise a new variation",
+              "prompt": "You ask, 'Why did you share my news?' A friend replies, 'What about when you arrived late?'",
+              "conceptId": "whataboutism",
+              "options": [
+                {
+                  "id": "correct",
+                  "label": "Keep the privacy concern open while offering to discuss lateness separately."
+                },
+                {
+                  "id": "wrong1",
+                  "label": "Treat lateness as permission to share private news."
+                },
+                {
+                  "id": "wrong2",
+                  "label": "Assume lateness can never matter in a friendship."
+                }
+              ],
+              "answer": "correct",
+              "explanation": "Keep the privacy concern open while offering to discuss lateness separately. Remember to distinguish observable wording from a clinical or motivational inference.",
+              "counterexample": "Comparisons can be relevant when testing consistency or equal treatment. The question is whether they clarify or merely evade."
+            },
+            {
+              "id": "whataboutism-evidence",
+              "type": "label",
+              "title": "Find the revealing words",
+              "prompt": "Which phrase most directly shows the relevant conversational move? Select one phrase.",
+              "conceptId": "whataboutism",
+              "segments": [
+                {
+                  "id": "whataboutism-segment-0",
+                  "text": "Why did you share my news?",
+                  "answer": false
+                },
+                {
+                  "id": "whataboutism-segment-1",
+                  "text": "What about when you arrived late?",
+                  "answer": true
+                },
+                {
+                  "id": "whataboutism-segment-2",
+                  "text": "Let's discuss both issues, one at a time.",
+                  "answer": false
+                }
+              ],
+              "explanation": "The wording matters because it changes how the original concern is handled. The surrounding exchange remains important.",
+              "counterexample": "Comparisons can be relevant when testing consistency or equal treatment. The question is whether they clarify or merely evade."
+            },
+            {
+              "id": "whataboutism-limits",
+              "type": "read",
+              "title": "What research can and cannot tell us",
+              "body": "The example is fictional. The relevant academic or practice literature explains a category of behaviour, not the motive or diagnosis of its imaginary speakers. One exchange can be concerning; sustained coercive patterns are better assessed across time, power and the ability to refuse.\n\nComparisons can be relevant when testing consistency or equal treatment. The question is whether they clarify or merely evade.\n\nConsider a new situation: You ask, 'Why did you share my news?' A friend replies, 'What about when you arrived late?'\n\nA useful response is: Keep the privacy concern open while offering to discuss lateness separately.",
+              "sources": "Stanford Encyclopedia of Philosophy, Fallacies: https://plato.stanford.edu/entries/fallacies/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
