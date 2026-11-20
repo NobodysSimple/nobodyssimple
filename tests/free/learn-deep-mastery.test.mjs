@@ -32,7 +32,7 @@ test('feedback sound is persistent, optional, and does not require an audio devi
 
 test('the published Narcissism curriculum validates and contains deep investigations',()=>{
  const bundle=JSON.parse(readFileSync(new URL('../../learn-content/courses/narcissism.json',import.meta.url),'utf8'));
- assert.equal(bundle.version,13);
+ assert.equal(bundle.version,14);
  assert.deepEqual(validateLearnBundle(bundle,'narcissism'),[]);
  const lessons=bundle.modules.flatMap(m=>m.lessons);
  assert.equal(lessons.length,12);
