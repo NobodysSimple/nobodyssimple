@@ -1,6 +1,6 @@
 {
   "id": "narcissism",
-  "version": 10,
+  "version": 11,
   "status": "published",
   "title": "Narcissism & Personality",
   "description": "Twelve deep message investigations of self-worth, narcissistic functioning, psychological defences and relationships. Learn to test plausible interpretations before applying them.",
@@ -283,6 +283,24 @@
                   "answer": "narcissism-f1-l1-deep-check-3-option-2",
                   "explanation": "A factual correction is justified by the work record. Maya should choose a safe route appropriate to the power imbalance, rather than trying to win an argument about Leo's inner life.",
                   "counterexample": "If there is likely retaliation, an independent or confidential route may be safer than a direct demand."
+                }
+              ],
+              "profiles": [
+                {
+                  "speaker": "a",
+                  "name": "Maya",
+                  "role": "Junior analyst who built the technical model. Leo is the project lead.",
+                  "history": "She has twice asked for the authorship line to be corrected. The model and earlier drafts can be checked.",
+                  "temperament": "In disagreements she tends to return to the wording and the work itself.",
+                  "pressure": "The board will see the slide tomorrow, and Leo has more influence over the presentation."
+                },
+                {
+                  "speaker": "b",
+                  "name": "Leo",
+                  "role": "Project lead seeking promotion. He coordinated six months of delivery.",
+                  "history": "He brought Maya onto the account and sees that decision as one of his contributions.",
+                  "temperament": "He stresses responsibility for the whole result and reacts strongly when his standing seems questioned.",
+                  "pressure": "The board may judge his leadership from how he presents the achievement."
                 }
               ]
             },
@@ -772,6 +790,24 @@
                   "explanation": "The scholarship choice belongs to Eva. Genuine commitments can be examined on their merits without turning gratitude into permanent obedience.",
                   "counterexample": "Financial, caregiving and housing arrangements may require careful planning."
                 }
+              ],
+              "profiles": [
+                {
+                  "speaker": "a",
+                  "name": "Eva",
+                  "role": "Scholarship winner preparing to study away from home.",
+                  "history": "Her father paid for tutoring. She never agreed to join his business after studying.",
+                  "temperament": "She usually thanks him for his help while asking to make her own decisions.",
+                  "pressure": "She wants to accept the scholarship without making the relationship a test of gratitude."
+                },
+                {
+                  "speaker": "b",
+                  "name": "Dad",
+                  "role": "Eva's father, who hoped she would work in the family business.",
+                  "history": "He paid for extra lessons and gave up things he valued. He treated the local business plan as likely, though it was never agreed.",
+                  "temperament": "When upset, he recalls sacrifices and worries about how relatives will judge the family.",
+                  "pressure": "Eva's move could change their contact and his plans for the business."
+                }
               ]
             },
             {
@@ -912,7 +948,7 @@
               "id": "narcissism-f1-l3-deep-investigation",
               "type": "investigation",
               "title": "The brilliant partner and the private collapse",
-              "scenario": "Jules has recently been praised publicly for starting a company. Noor, their partner, helped with the accounts and noticed a serious error in the investor deck. The evening begins after a successful launch party.",
+              "scenario": "Noor founded a company and was praised publicly at its launch. Jules, Noor's partner, helped check the accounts and found an error in the investor presentation. The exchange takes place after the launch party.",
               "conceptId": "narcissism-f1-l3-deep-concept",
               "speakerA": "Jules",
               "speakerB": "Noor",
@@ -1147,6 +1183,24 @@
                   "answer": "narcissism-f1-l3-deep-check-3-option-1",
                   "explanation": "Jules can remain caring while continuing to address the investor problem and the accusations made during the exchange.",
                   "counterexample": "A person should not have to remain in a conversation that becomes threatening."
+                }
+              ],
+              "profiles": [
+                {
+                  "speaker": "a",
+                  "name": "Jules",
+                  "role": "Noor's partner, who helped check the accounts.",
+                  "history": "Jules knows some figures in the investor deck need verification.",
+                  "temperament": "Jules tends to raise difficult practical questions in private and offers help with correcting them.",
+                  "pressure": "Incorrect figures could reach investors if nobody checks them."
+                },
+                {
+                  "speaker": "b",
+                  "name": "Noor",
+                  "role": "Founder who has just been publicly praised at the launch.",
+                  "history": "Noor built the company and places great importance on appearing capable in front of potential investors.",
+                  "temperament": "Confident with an audience; in private, criticism can quickly become a judgement about personal ability.",
+                  "pressure": "The presentation matters to the company's future and to Noor's professional reputation."
                 }
               ]
             },
@@ -1571,6 +1625,24 @@
                   "answer": "narcissism-f2-l1-deep-check-3-option-2",
                   "explanation": "Tessa can take the feeling seriously while refusing to treat resentment as a substitute for evidence.",
                   "counterexample": "If there is actual bullying at school, that also needs direct attention."
+                }
+              ],
+              "profiles": [
+                {
+                  "speaker": "a",
+                  "name": "Ellis",
+                  "role": "Older pupil known for strong science results.",
+                  "history": "Teachers have repeatedly called him the strongest in the subject. He expected to win the prize.",
+                  "temperament": "Usually proud of difficult technical work; after public disappointment he challenges the judging.",
+                  "pressure": "Classmates know he expected the award, which makes the result feel visible."
+                },
+                {
+                  "speaker": "b",
+                  "name": "Tessa",
+                  "role": "Classmate familiar with the winning project.",
+                  "history": "She has seen Farah's data collection and has heard people praise both entrants.",
+                  "temperament": "She tries to separate the result from assumptions about what everyone was thinking.",
+                  "pressure": "She wants to support Ellis without attacking Farah unfairly."
                 }
               ]
             },
@@ -2014,6 +2086,24 @@
                   "explanation": "A clear boundary describes what needs changing; its validity does not depend on establishing Riley's psychological structure.",
                   "counterexample": "Support from others may be appropriate if the behaviour continues."
                 }
+              ],
+              "profiles": [
+                {
+                  "speaker": "a",
+                  "name": "Riley",
+                  "role": "Popular organiser who makes jokes in the group chat.",
+                  "history": "Riley helped Amal prepare and often earns approval through humour.",
+                  "temperament": "Uses joking to connect with people and can take objections as personal rejection.",
+                  "pressure": "Riley is worried that stopping the joke will mean losing a valued role in the group."
+                },
+                {
+                  "speaker": "b",
+                  "name": "Amal",
+                  "role": "Student preparing to speak before a group.",
+                  "history": "People repeated Riley's accent imitation before her presentation. She asked privately for it to stop.",
+                  "temperament": "She focuses on the effect of the joke rather than claiming to know Riley's intentions.",
+                  "pressure": "She needs to present without expecting her own voice to become group entertainment."
+                }
               ]
             },
             {
@@ -2279,7 +2369,7 @@
               "id": "narcissism-f2-l3-deep-investigation",
               "type": "investigation",
               "title": "When somebody else's pain interrupts your own story",
-              "scenario": "Nina is Soren's sister. She has just lost her job and is worried about the rent. Soren is organising a family holiday and fears that cancellation will look like a failure of his planning.",
+              "scenario": "Nina has just lost her job and is afraid she will not cover the rent. Her brother Soren is arranging a family holiday and worries that a cancellation will make his planning appear inadequate. A deposit is due tonight.",
               "conceptId": "narcissism-f2-l3-deep-concept",
               "speakerA": "Soren",
               "speakerB": "Nina",
@@ -2514,6 +2604,24 @@
                   "answer": "narcissism-f2-l3-deep-check-3-option-0",
                   "explanation": "The relevant skill is distinguishing capacity from a behaviour under pressure, then watching for repair.",
                   "counterexample": "Persistent disregard and harm may still justify stronger conclusions about functioning."
+                }
+              ],
+              "profiles": [
+                {
+                  "speaker": "a",
+                  "name": "Soren",
+                  "role": "Nina's brother and organiser of a family holiday.",
+                  "history": "He took charge because others had not arranged the trip; he believes people judge him when plans fail.",
+                  "temperament": "Under pressure, he tends to move quickly into solving the immediate logistical problem.",
+                  "pressure": "A deposit is due, but the conversation has not yet established who can handle it."
+                },
+                {
+                  "speaker": "b",
+                  "name": "Nina",
+                  "role": "Soren's sister, recently made redundant.",
+                  "history": "She has not told their mother about the job loss. Rent is now a serious concern.",
+                  "temperament": "She asks for emotional attention before working through the practical consequences.",
+                  "pressure": "She needs someone to stay with her account of the redundancy, even while the holiday remains undecided."
                 }
               ]
             },
@@ -2876,6 +2984,24 @@
                   "answer": "narcissism-m1-l1-deep-check-3-option-1",
                   "explanation": "The actionable question is what each agreed to do and what can realistically happen now.",
                   "counterexample": "A repeated pattern of pressure may require a broader relationship boundary."
+                }
+              ],
+              "profiles": [
+                {
+                  "speaker": "a",
+                  "name": "Imogen",
+                  "role": "Kareem's friend and collaborator on a joint project.",
+                  "history": "Kareem supported her during a difficult year. Their agreement over the current deadline is disputed.",
+                  "temperament": "She tends to describe closeness in strong terms and is especially sensitive to perceived abandonment.",
+                  "pressure": "A deadline is approaching, and she expected Kareem to do more of the work."
+                },
+                {
+                  "speaker": "b",
+                  "name": "Kareem",
+                  "role": "Imogen's friend and project collaborator.",
+                  "history": "He says he promised to check references, not write her entire section.",
+                  "temperament": "He emphasises practical limits even when he wants to remain supportive.",
+                  "pressure": "He has his own work to finish before the same deadline."
                 }
               ]
             },
@@ -3302,6 +3428,24 @@
                   "answer": "narcissism-m1-l2-deep-check-3-option-2",
                   "explanation": "The immediate task is reducing the privacy risk and using the appropriate process, without requiring Sasha to assess Owen's character.",
                   "counterexample": "A privacy breach may require formal reporting beyond what either individual prefers."
+                }
+              ],
+              "profiles": [
+                {
+                  "speaker": "a",
+                  "name": "Owen",
+                  "role": "Colleague who mistakenly shared confidential information.",
+                  "history": "He posted Sasha's appointment details to a work channel. How far the information spread is still uncertain.",
+                  "temperament": "After mistakes, he becomes preoccupied with what others think of his character.",
+                  "pressure": "He fears being seen as unsafe while the information may remain accessible."
+                },
+                {
+                  "speaker": "b",
+                  "name": "Sasha",
+                  "role": "Colleague whose appointment information was exposed.",
+                  "history": "She saw the details in the work channel and has asked for them to be removed.",
+                  "temperament": "She identifies specific actions that could limit further disclosure.",
+                  "pressure": "She needs privacy protected before the conversation becomes about Owen's need for reassurance."
                 }
               ]
             },
@@ -3757,6 +3901,24 @@
                   "answer": "narcissism-m1-l3-deep-check-3-option-2",
                   "explanation": "The functional problem is concealment. The hypothesis can guide steps that are observable and revisable.",
                   "counterexample": "Formal duties relating to the audit may still apply."
+                }
+              ],
+              "profiles": [
+                {
+                  "speaker": "a",
+                  "name": "Aaron",
+                  "role": "Adult helping run the family business.",
+                  "history": "His father praised him as gifted and sometimes reacted harshly when he did not come first. He recently hid an audit error.",
+                  "temperament": "He values handling problems independently and resists help when it feels like exposure.",
+                  "pressure": "Correcting the reporting error will require admitting that he made a mistake."
+                },
+                {
+                  "speaker": "b",
+                  "name": "Lydia",
+                  "role": "Aaron's sister, involved in the business.",
+                  "history": "She remembers both her father's praise and the way an ordinary setback could change his response.",
+                  "temperament": "She tries to connect their history with how mistakes are handled now.",
+                  "pressure": "She needs the audit error corrected even if Aaron disagrees about its origins."
                 }
               ]
             },
@@ -4244,6 +4406,24 @@
                   "explanation": "A good provisional formulation is explicit about uncertainty and what evidence could settle it.",
                   "counterexample": "Immediate risk and care needs may require action before assessment is complete."
                 }
+              ],
+              "profiles": [
+                {
+                  "speaker": "a",
+                  "name": "Dr Shaw",
+                  "role": "Clinician who interviewed Theo shortly after his redundancy.",
+                  "history": "Theo sounded grandiose and reacted angrily when Shaw asked about conflict at home.",
+                  "temperament": "Shaw takes the interpersonal presentation seriously but has only a narrow interview window.",
+                  "pressure": "A referral needs a defensible assessment rather than a label based on a striking meeting."
+                },
+                {
+                  "speaker": "b",
+                  "name": "Dr Malik",
+                  "role": "Clinician reviewing several years of reports about Theo.",
+                  "history": "Malik has accounts of professional conflict and relationship difficulties, not all of which have been independently checked.",
+                  "temperament": "Malik asks which observations persist and whether the records describe actual impairment.",
+                  "pressure": "The team must reconcile immediate distress with a possible longer-standing pattern."
+                }
               ]
             },
             {
@@ -4606,6 +4786,24 @@
                   "answer": "narcissism-m1-l5-deep-check-3-option-2",
                   "explanation": "Different therapeutic approaches describe plausible targets, yet certainty about individual outcome exceeds the evidence.",
                   "counterexample": "Limited evidence for a particular treatment does not mean that improvement never occurs."
+                }
+              ],
+              "profiles": [
+                {
+                  "speaker": "a",
+                  "name": "Nico",
+                  "role": "Partner who has started therapy after repeated arguments.",
+                  "history": "He previously reacted to criticism with anger and long withdrawal. Recently he has sometimes returned after a pause.",
+                  "temperament": "He can describe feelings of exposure, but his actions during disagreements still need observing.",
+                  "pressure": "Harper has raised an unpaid bill, a practical issue that cannot be resolved by insight alone."
+                },
+                {
+                  "speaker": "b",
+                  "name": "Harper",
+                  "role": "Nico's partner.",
+                  "history": "Promises to handle criticism differently have not always translated into sustained change.",
+                  "temperament": "Harper notices the difference between a convincing explanation and an actual repair.",
+                  "pressure": "She needs financial responsibilities addressed without having to manage Nico's self-worth first."
                 }
               ]
             },
@@ -5045,6 +5243,24 @@
                   "answer": "narcissism-m1-l6-deep-check-3-option-0",
                   "explanation": "Sound formulation preserves the evidence, uncertainty and power asymmetry. The institutional issue can be resolved on documented grounds.",
                   "counterexample": "An independent clinical evaluation, if relevant, would require a different evidence base."
+                }
+              ],
+              "profiles": [
+                {
+                  "speaker": "a",
+                  "name": "Celeste",
+                  "role": "Director of a small arts organisation.",
+                  "history": "She secured funding and led delivery. Staff admire her public work but some report punitive private responses.",
+                  "temperament": "She values being seen as indispensable and stresses the cost of leading the organisation.",
+                  "pressure": "The award submission could affect future funding and her status."
+                },
+                {
+                  "speaker": "b",
+                  "name": "Rohan",
+                  "role": "Employee who disputes the award's account of the project's origins.",
+                  "history": "He produced a proposal draft and has requested joint attribution. The final extent of co-authorship is not yet independently established.",
+                  "temperament": "He separates the director's organisational work from the question of creative authorship.",
+                  "pressure": "He wants accurate credit without provoking retaliation over his employment."
                 }
               ]
             },
