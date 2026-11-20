@@ -5,7 +5,7 @@
  * Future learning material ships only through reviewed published bundles.
  */
 import {LEARN_COURSES,COURSE_CATEGORIES,LESSON_FORMATS,getLearnCourse,filterLearnCourses} from './ns-learn-catalog-v2.mjs';
-import {publishedLearnBundle,renderLearnLesson} from './ns-learn-player-v2.mjs?v=steady-scroll-20261120';
+import {publishedLearnBundle,renderLearnLesson} from './ns-learn-player-v2.mjs?v=brand-makeover-20261120';
 import {readLearnProgress,learnCourseProgress,getCurrentLearnCompletion,dueLearnReviews} from './ns-learn-progress-v2.mjs?v=profile-drills-20261120-r2';
 import {getLearnIndex,hasPublishedLearnCourse,loadPublishedLearnIndex,loadPublishedLearnBundle} from './ns-learn-content-v2.mjs';
 export const LEARN_COURSE_IDEAS=LEARN_COURSES;
@@ -23,12 +23,15 @@ function courseArt(course){
 function card(course,index){
  const bundle=publishedLearnBundle(course.id),cat=COURSE_CATEGORIES.find(c=>c.id===course.category),published=getLearnIndex().courses[course.id];
  const status=bundle||hasPublishedLearnCourse(course.id)?'Lessons available':'In development';
+ const progress=bundle?learnCourseProgress(bundle,readLearnProgress()):null;
+ const percent=progress?.total?Math.round(progress.done/progress.total*100):0;
  return '<a class="ns-course-card" href="'+courseHref(course.id)+'" data-course-subject="'+esc(course.id)+'" data-course-status="'+(bundle||hasPublishedLearnCourse(course.id)?'published':'planned')+'" data-course-tone="'+esc(course.tone)+'" aria-labelledby="ns-course-name-'+index+'">'+
  courseArt(course)+'<div class="ns-course-card__nameplate"><h3 id="ns-course-name-'+index+'">'+esc(published?.title||course.cardTitle||course.title)+'</h3>'+
  '<span class="ns-course-card__status">'+esc(status)+'</span></div>'+
  '<small class="ns-course-card__category">'+esc(cat?.title||'Psychology')+'</small>'+
  '<p class="ns-course-card__description">'+esc(published?.description||course.description)+'</p>'+
- '<span class="ns-course-card__tutor">✿ Meet '+esc(course.companionName)+'</span>'+
+ '<span class="ns-course-card__tutor">✿ Learn with '+esc(course.companionName)+'</span>'+
+ (progress?.total?'<span class="ns-course-card__progress"><span class="ns-course-card__progress-track"><i style="width:'+percent+'%"></i></span><small>'+percent+'% mastered</small></span>':'')+
  '<span class="ns-course-card__arrow" aria-hidden="true">Explore course →</span></a>';
 }
 function sectionHead(title,description){
@@ -42,8 +45,8 @@ function catalogue(root,{category='all',focusCourses=false}={}){
  '<div class="ns-courses-hero__hills" aria-hidden="true"></div><div class="ns-courses-hero__branches" aria-hidden="true"></div>'+
  '<div class="ns-courses-hero__note"><span class="ns-courses-washi" aria-hidden="true"></span>'+
  '<p class="ns-courses-kicker">NOBODY’S SIMPLE · LEARN</p>'+
- '<h1 id="ns-courses-title">Learn<span class="ns-courses-sparkle" aria-hidden="true">✳</span></h1>'+
- '<p>Learn to think psychologically. Small lessons, deeper understanding, useful distinctions.</p>'+
+ '<h1 id="ns-courses-title">A little psychology. A lot more life.<span class="ns-courses-sparkle" aria-hidden="true">✳</span></h1>'+
+ '<p>Short interactive lessons to spot patterns, practise better responses and think for yourself.</p>'+
  '<a class="ns-courses-button" href="#learn/courses"><span class="ns-courses-book" aria-hidden="true">▤</span> Explore courses <span aria-hidden="true">→</span></a></div>'+
  '<div class="ns-courses-hero__figure" aria-hidden="true"><div class="ns-courses-picnic"></div>'+
  image('ns-character-reading.webp','ns-courses-hero__mascot','fetchpriority="high"')+'</div></section>'+
@@ -53,13 +56,13 @@ function catalogue(root,{category='all',focusCourses=false}={}){
  '<div class="ns-courses-feature__visual" aria-hidden="true">'+image('learn-art/scenery-featured.svg','ns-courses-feature__scene')+
  image('ns-character-plant.webp','ns-courses-feature__character')+'</div>'+
  '<div class="ns-courses-feature__copy"><span class="ns-courses-feature__category">THE LEARNING JOURNEY</span>'+
- '<h2 id="ns-courses-featured-title">Beyond the obvious.</h2>'+
+ '<h2 id="ns-courses-featured-title">One skill at a time.</h2>'+
  '<p>Start with the subjects you care about. Discover the science behind them, practise subtle distinctions and build up to more sophisticated reasoning. Each course will have its own clear beginning and progression.</p>'+
  '<p class="ns-courses-feature__availability"><span aria-hidden="true">✿</span> One strategy per lesson · 18 practice questions</p>'+
  '<a class="ns-courses-feature__link" href="#learn/how-it-works">How learning will work <span aria-hidden="true">→</span></a></div>'+
  '<div class="ns-courses-feature__postmark" aria-hidden="true">✳</div></section>'+
  '<section class="ns-courses-section" id="ns-course-catalogue" aria-labelledby="ns-course-catalogue-title">'+
- sectionHead('Discover courses','Choose one subject, then practise its individual strategies through stories and increasingly challenging decisions.')+
+ sectionHead('Choose your course','Pick something you want to understand. Each lesson explores a practical psychological strategy.')+
  '<p class="ns-courses-availability" role="status" data-learn-course-availability>Checking which course lessons are available…</p>'+
  '<div class="ns-catalogue-controls"><label class="ns-catalogue-search" for="ns-course-search"><span>Find a course</span>'+
  '<input id="ns-course-search" type="search" maxlength="90" autocomplete="off" placeholder="Try narcissism, rumination, ADHD, scams…" value="'+esc(rememberedQuery)+'"></label>'+
@@ -121,11 +124,12 @@ function detail(root,id){
  '<div class="ns-catalogue-detail-hero"><div class="ns-catalogue-detail-image" data-course-subject="'+esc(course.id)+'">'+courseArt(course)+'</div>'+
  '<div class="ns-catalogue-detail-copy"><span class="ns-courses-kicker">'+esc(cat?.title||'Psychology')+' · COURSE '+String(LEARN_COURSES.indexOf(course)+1).padStart(2,'0')+'</span>'+
  '<h1>'+esc(bundle?.title||course.title)+'</h1><p>'+esc(bundle?.description||course.description)+'</p>'+
- '<span class="ns-catalogue-development">'+(bundle?'Published lessons available':hasPublishedLearnCourse(id)?'Loading published lessons…':'In development · No lessons published yet')+'</span>'+
+ (bundle?'<div class="ns-learn-detail-progress"><span><strong>'+completed.done+'</strong> of '+completed.total+' strategies practised</span><span class="ns-learn-detail-progress__bar" role="progressbar" aria-label="Course completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+Math.round(completed.total?completed.done/completed.total*100:0)+'"><i style="width:'+Math.round(completed.total?completed.done/completed.total*100:0)+'%"></i></span></div><a class="ns-learn-detail-start" href="'+nextHref+'"><span aria-hidden="true">▶</span> '+(completed.done?'Continue learning':'Start learning')+' <span aria-hidden="true">→</span></a>':'<span class="ns-catalogue-development">'+(hasPublishedLearnCourse(id)?'Loading published lessons…':'In development · No lessons published yet')+'</span>')+
  '<div class="ns-catalogue-tutor"><span class="ns-courses-kicker">A CHARACTER YOU’LL HELP</span>'+
  '<strong>'+esc(course.companionName)+'</strong><span>“'+esc(course.companionQuote)+'”</span>'+
  '<small>Meet the course companion. Practice with '+esc(course.companionName)+' as you learn how people reason through difficult situations.</small>'+
  '</div></div></div>'+
+ (bundle?.strategyCurriculum?'<section class="ns-learn-journey" aria-label="Your learning path"><div class="ns-learn-journey__heading"><div><span class="ns-courses-kicker">YOUR LEARNING PATH</span><h2>A path you can actually follow.</h2><p>Choose a circle to practise. Completed strategies remain available for review.</p></div><span class="ns-learn-journey__count">'+completed.done+' / '+completed.total+' mastered</span></div><div class="ns-learn-journey__track">'+allLessons.slice(Math.max(0,allLessons.findIndex(l=>l.id===nextLesson?.id)-1),Math.max(0,allLessons.findIndex(l=>l.id===nextLesson?.id)-1)+7).map((l,i)=>{const done=!!getCurrentLearnCompletion(bundle,l,records),isNext=l.id===nextLesson?.id;return '<a class="ns-learn-journey__stop '+(done?'is-done':isNext?'is-next':'is-upcoming')+'" href="#learn/lesson/'+encodeURIComponent(id)+'/'+encodeURIComponent(l.id)+'"'+(isNext?' aria-current="step"':'')+'><span class="ns-learn-journey__orb" aria-hidden="true">'+(done?'✓':isNext?'▶':String(i+1))+'</span><span class="ns-learn-journey__caption">'+(isNext?'<small>UP NEXT</small>':'')+esc(l.title)+'</span></a>'}).join('')+'<span class="ns-learn-journey__reward" aria-hidden="true">✦ <small>Keep growing</small></span></div></section>':'')+
  '<div class="ns-catalogue-detail-columns"><section class="ns-catalogue-outline"><span class="ns-courses-kicker">PLANNED LEARNING THEMES</span>'+
  '<h2>What you’ll explore</h2><p>'+(bundle?.strategyCurriculum?'All Atlas strategies are individual practice lessons; learn one process before tackling the next.':'The foundations are playable now. Later units will build on these themes as the course grows.')+'</p>'+
  '<div class="ns-catalogue-focus">'+course.focus.map((t,i)=>'<div><span>'+String(i+1).padStart(2,'0')+'</span><strong>'+esc(t)+'</strong></div>').join('')+'</div></section>'+

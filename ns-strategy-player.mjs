@@ -4,8 +4,21 @@
  * demonstrations, not claims about anybody's intentions or diagnosis.
  */
 import {saveLearnCompletion,saveLearnReview} from "./ns-learn-progress-v2.mjs?v=strategy-atlas-20261120";
+import {getLearnCourse} from "./ns-learn-catalog-v2.mjs";
+import {portraitCoords} from "./ns-learn-cast.mjs";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const count=18;
+const companionVisual=id=>{
+ const course=getLearnCourse(id);
+ if(!course)return '<span class="ns-atlas-lesson__guide-fallback" aria-hidden="true">✿</span>';
+ return course.companionPortrait
+  ?'<img class="ns-atlas-lesson__guide-image" src="'+esc(course.mascot)+'" alt="" loading="lazy">'
+  :'<span class="ns-atlas-lesson__guide-sprite" aria-hidden="true" style="--face-x:'+Number(course.companionX||0)+'%;--face-y:'+Number(course.companionY||0)+'%"></span>';
+};
+const speakerAvatar=(name,cast)=>{
+ const pos=portraitCoords(name,cast);
+ return '<span class="ns-atlas-lesson__avatar" role="img" aria-label="Nobody’s Simple illustration representing '+esc(name)+'" style="--face-x:'+pos.x+'%;--face-y:'+pos.y+'%"></span>';
+};
 const clean=x=>String(x||"").trim();
 const hash=x=>{let h=2166136261;for(const c of String(x)){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;};
 const rotate=(xs,n)=>xs.map((_,i)=>xs[(i+n)%xs.length]);
@@ -137,7 +150,7 @@ export function strategyMastery(scores){
 export function renderStrategyLesson(root,bundle,lesson,{review=false,preview=false}={}){
  const record=lesson.atlasRecord,home="#learn/course/"+encodeURIComponent(bundle.id);
  if(!record){root.textContent="This Atlas lesson has no source record.";return;}
- const state={phase:"intro",question:0,visible:1,round:0,selected:"",checked:false,feedback:null,answers:[],saved:false};
+ const state={phase:"intro",question:0,visible:1,round:0,selected:"",checked:false,feedback:null,answers:[],saved:false,hintOpen:false};
  let scenes=makeAtlasScenes(bundle.id,record,lesson.featuredCase,0),score=null;
  const current=()=>{const scene=scenes[Math.floor(state.question/3)],q=createAtlasQuestions(record,scene,state.round)[state.question%3];return {scene,q};};
  const selected=()=>root.querySelector("input[name=atlas-answer]:checked")?.value||"";
@@ -145,27 +158,39 @@ export function renderStrategyLesson(root,bundle,lesson,{review=false,preview=fa
  function paint({focus=false}={}){
   const previous=root.querySelector(".ns-atlas-lesson__body"),oldScroll=previous?.scrollTop||0;
   const progress=state.phase==="intro"?0:state.phase==="complete"?100:Math.min(99,Math.round(state.question/count*100));
-  const head='<header class="ns-atlas-lesson__head"><a class="ns-atlas-lesson__exit" href="'+home+'" aria-label="Back to course">×</a><div class="ns-atlas-lesson__progress" role="progressbar" aria-label="Mastery drill progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+progress+'"><span style="width:'+progress+'%"></span></div><span class="ns-atlas-lesson__counter">'+(state.phase==="practice"?(state.question+1)+" / "+count:"✿")+'</span></header>';
-  let middle="",footer="",resetScroll=false;
+  const head='<header class="ns-atlas-lesson__head"><a class="ns-atlas-lesson__exit" href="'+home+'" aria-label="Back to course">×</a><div class="ns-atlas-lesson__progress" role="progressbar" aria-label="Mastery drill progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+progress+'"><span style="width:'+progress+'%"></span></div><span class="ns-atlas-lesson__brand" title="Nobody’s Simple">✿</span><span class="ns-atlas-lesson__counter">'+(state.phase==="practice"?(state.question+1)+" / "+count:"Learn")+'</span></header>';
+  let middle="",footer="",feedbackTray="",resetScroll=false;
   if(state.phase==="intro"){
-   middle='<div class="ns-atlas-lesson__intro"><p class="ns-atlas-lesson__kicker">ONE STRATEGY · '+esc(record.kind)+'</p><h1>'+esc(record.title)+'</h1><p class="ns-atlas-lesson__lead">'+esc(record.cue)+'</p><div class="ns-atlas-lesson__knowledge"><strong>Why it might happen</strong><p>'+getText(lesson.teach.split("\n\n")[1]||"The context matters.")+'</p><strong>How to respond or practise</strong><p>'+esc(record.response||lesson.takeaway)+'</p><strong>What else could explain it?</strong><p>'+esc(compact(record.nearMiss||baseNearMiss[record.kind]||baseNearMiss.OBSERVE))+'</p></div><p class="ns-atlas-lesson__muted">Six situations · 18 checks · no timer. Scenes range from absurdly awkward to serious. Mastery requires at least 15 correct, including 5 of the final 6 transfer checks.</p><p class="ns-atlas-lesson__source">Source: Psychology Skills Atlas, editorial reference edition 2. These fictional practice scenes are teaching demonstrations, not validated diagnostic tests.</p></div>';
+   middle='<div class="ns-atlas-lesson__intro"><div class="ns-atlas-lesson__guide" aria-hidden="true">'+companionVisual(bundle.id)+'</div><p class="ns-atlas-lesson__kicker">ONE STRATEGY · '+esc(record.kind)+'</p><h1>'+esc(record.title)+'</h1><p class="ns-atlas-lesson__lead">'+esc(record.cue)+'</p><div class="ns-atlas-lesson__knowledge"><strong>Why it might happen</strong><p>'+getText(lesson.teach.split("\n\n")[1]||"The context matters.")+'</p><strong>How to respond or practise</strong><p>'+esc(record.response||lesson.takeaway)+'</p><strong>What else could explain it?</strong><p>'+esc(compact(record.nearMiss||baseNearMiss[record.kind]||baseNearMiss.OBSERVE))+'</p></div><p class="ns-atlas-lesson__muted">Six situations · 18 checks · no timer. Scenes range from absurdly awkward to serious. Mastery requires at least 15 correct, including 5 of the final 6 transfer checks.</p><p class="ns-atlas-lesson__source">Source: Psychology Skills Atlas, editorial reference edition 2. These fictional practice scenes are teaching demonstrations, not validated diagnostic tests.</p></div>';
    footer='<button class="ns-atlas-lesson__next" type="button" data-begin>Start the story →</button>';resetScroll=true;
   }else if(state.phase==="complete"||state.phase==="retry"){
    const passed=state.phase==="complete";
-   middle='<div class="ns-atlas-lesson__finish"><span aria-hidden="true" class="ns-atlas-lesson__trophy">'+(passed?"✿":"↻")+'</span><p class="ns-atlas-lesson__kicker">'+(passed?"MASTERED IN THIS PRACTICE":"NOT MASTERED YET")+'</p><h1>'+esc(record.title)+'</h1><p>'+score.correct+' of '+count+' correct first time. '+score.late+' of the last six transfer checks were correct.</p><p>'+esc(passed?"You distinguished this strategy across several contexts. It will return in spaced review; one good session is not proof of real-world expertise.":"Try a different set of contexts. We will not record mastery until both the overall and transfer thresholds are met.")+'</p><p role="status" data-saved></p><div class="ns-atlas-lesson__knowledge"><strong>Remember</strong><p>'+esc(record.response||record.cue)+'</p></div></div>';
+   middle='<div class="ns-atlas-lesson__finish"><div class="ns-atlas-lesson__guide is-celebrating" aria-hidden="true">'+companionVisual(bundle.id)+'</div><span aria-hidden="true" class="ns-atlas-lesson__trophy">'+(passed?"✿":"↻")+'</span><p class="ns-atlas-lesson__kicker">'+(passed?"MASTERED IN THIS PRACTICE":"NOT MASTERED YET")+'</p><h1>'+esc(record.title)+'</h1><p>'+score.correct+' of '+count+' correct first time. '+score.late+' of the last six transfer checks were correct.</p><p>'+esc(passed?"You distinguished this strategy across several contexts. It will return in spaced review; one good session is not proof of real-world expertise.":"Try a different set of contexts. We will not record mastery until both the overall and transfer thresholds are met.")+'</p><p role="status" data-saved></p><div class="ns-atlas-lesson__knowledge"><strong>Remember</strong><p>'+esc(record.response||record.cue)+'</p></div></div>';
    footer=passed?'<a class="ns-atlas-lesson__next" href="'+home+'">Back to course →</a>':'<button class="ns-atlas-lesson__next" data-retry type="button">Practise another set →</button>';resetScroll=true;
   }else{
    const {scene,q}=current(),stage=state.question%3,reveal=state.visible<scene.turns.length;
-   middle='<div class="ns-atlas-lesson__task"><p class="ns-atlas-lesson__kicker">'+esc(scene.tone)+' · '+esc(scene.place)+'</p><h1>'+esc(scene.featured?(lesson.featuredCase?.title||record.title):record.title)+'</h1><p class="ns-atlas-lesson__context">'+esc(scene.intro)+'</p>'+(stage===0?'<p class="ns-atlas-lesson__observation"><strong>What is happening around them?</strong> '+esc(scene.note)+'</p>':'')+
-   '<ol class="ns-atlas-lesson__thread" aria-label="Conversation">'+scene.turns.slice(0,state.visible).map((turn,i)=>'<li class="'+(i%2?"is-other":"")+'"><span>'+esc(turn.speaker)+'</span><p>'+esc(turn.text)+'</p></li>').join("")+'</ol>'+
-   (reveal?'<p class="ns-atlas-lesson__muted">See what they say next.</p>':'<fieldset class="ns-atlas-lesson__choices" '+(state.checked?"disabled":"")+'><legend><span>'+esc(q.kind)+'</span> '+esc(q.prompt)+'</legend>'+q.options.map(x=>'<label class="'+(state.selected===x.id?"is-selected":"")+'"><input type="radio" name="atlas-answer" value="'+esc(x.id)+'" '+(state.selected===x.id?"checked":"")+'><span>'+esc(x.label)+'</span></label>').join("")+'</fieldset>')+
-   (state.checked?'<div class="ns-atlas-lesson__feedback '+(state.feedback.correct?"is-correct":"is-incorrect")+'" role="status" tabindex="-1" data-feedback><strong>'+(state.feedback.correct?"✓ That's supported.":"Not this time. Here's the distinction.")+'</strong>'+(state.feedback.correct?'':'<p><strong>Best-supported choice:</strong> '+esc(q.options.find(o=>o.id===q.answer)?.label||'')+'</p>')+'<p>'+esc(q.why)+'</p><p class="ns-atlas-lesson__muted">'+esc(q.caution)+'</p></div>':'')+'</div>';
+   const nodeType=stage===0?'spot':stage===1?'explain':'respond';
+   const nodeName=stage===0?'Spot the pattern':stage===1?'Explain the psychology':'Choose a response';
+   const nodeIcon=stage===0?'◎':stage===1?'✧':'↗';
+   const cast=scene.turns.map(t=>t.speaker);
+   const chat='<ol class="ns-atlas-lesson__thread" aria-label="Conversation">'+scene.turns.slice(0,state.visible).map((turn,i)=>'<li class="'+(i%2?"is-other":"")+'">'+speakerAvatar(turn.speaker,cast)+'<div class="ns-atlas-lesson__bubble"><span>'+esc(turn.speaker)+'</span><p>'+esc(turn.text)+'</p></div></li>').join("")+'</ol>';
+   const compare=stage===0&&scene.isNear&&!reveal?'<div class="ns-atlas-lesson__compare"><div><small>FIRST IMPRESSION</small><p>'+esc(scene.turns[1]?.text||'')+'</p></div><div><small>WHAT HAPPENED NEXT</small><p>'+esc(scene.turns.at(-1)?.text||'')+'</p></div></div>':'';
+   const mechanics=stage===1&&!reveal?'<div class="ns-atlas-lesson__mechanics" aria-label="Examine what happened"><span><b>1</b> Before</span><span aria-hidden="true">→</span><span><b>2</b> Action</span><span aria-hidden="true">→</span><span><b>3</b> After</span></div>':'';
+   const reply=stage===2&&!reveal?'<div class="ns-atlas-lesson__reply-placeholder"><span aria-hidden="true">↳</span> Your next move matters. Choose what fits the situation.</div>':'';
+   const answers=reveal?'<p class="ns-atlas-lesson__muted">Read the next message to find out what happens.</p>':
+    '<fieldset class="ns-atlas-lesson__choices" '+(state.checked?"disabled":"")+'><legend><span>'+esc(q.kind)+'</span>'+esc(q.prompt)+'</legend>'+
+    q.options.map((x,i)=>'<label class="'+(state.selected===x.id?"is-selected":"")+'"><input type="radio" name="atlas-answer" value="'+esc(x.id)+'" '+(state.selected===x.id?"checked":"")+'><span class="ns-atlas-lesson__choice-index" aria-hidden="true">'+String.fromCharCode(65+i)+'</span><span>'+esc(x.label)+'</span></label>').join("")+'</fieldset>';
+   const hint=!reveal&&!state.checked?'<div class="ns-atlas-lesson__coach"><button type="button" class="ns-atlas-lesson__hint-button" data-hint aria-expanded="'+state.hintOpen+'">✧ '+(state.hintOpen?'Hide hint':'Need a hint?')+'</button>'+(state.hintOpen?'<p class="ns-atlas-lesson__hint-text">Notice exactly what changes after someone speaks. Which explanation is supported by what you can observe, rather than what you imagine about their intentions?</p>':'')+'</div>':'';
+   middle='<div class="ns-atlas-lesson__task" data-node-type="'+nodeType+'"><p class="ns-atlas-lesson__kicker">'+esc(scene.tone)+' · '+esc(scene.place)+'</p><div class="ns-atlas-lesson__node-heading"><span class="ns-atlas-lesson__node-icon" aria-hidden="true">'+nodeIcon+'</span><div><span class="ns-atlas-lesson__node-tag">SKILL '+String(Math.floor(state.question/3)+1)+' OF 6</span><h1>'+nodeName+'</h1></div></div><p class="ns-atlas-lesson__context">'+esc(scene.intro)+'</p>'+chat+compare+mechanics+reply+answers+hint+'</div>';
+   if(state.checked){
+    feedbackTray='<div class="ns-atlas-lesson__feedback '+(state.feedback.correct?"is-correct":"is-incorrect")+'" role="status" tabindex="-1" data-feedback><div class="ns-atlas-lesson__feedback-icon" aria-hidden="true">'+(state.feedback.correct?'✓':'↻')+'</div><div><strong>'+(state.feedback.correct?"Good thinking.":"There's an important distinction.")+'</strong>'+(state.feedback.correct?'':'<p><strong>Best-supported answer:</strong> '+esc(q.options.find(o=>o.id===q.answer)?.label||'')+'</p>')+'<p>'+esc(q.why)+'</p><p class="ns-atlas-lesson__muted">'+esc(q.caution)+'</p></div></div>';
+   }
    footer=reveal?'<button class="ns-atlas-lesson__next" type="button" data-reveal>Continue conversation →</button>':state.checked?'<button class="ns-atlas-lesson__next" type="button" data-continue>'+(state.question===count-1?"See result →":"Continue →")+'</button>':'<button class="ns-atlas-lesson__next" data-check type="button" '+(!state.selected?"disabled":"")+'>Check answer</button>';
   }
-  root.innerHTML='<section class="ns-atlas-lesson" aria-label="Strategy mastery lesson"><div class="ns-atlas-lesson__screen">'+head+'<div class="ns-atlas-lesson__body">'+middle+'</div><footer class="ns-atlas-lesson__footer">'+footer+'</footer></div></section>';
+  root.innerHTML='<section class="ns-atlas-lesson" aria-label="Strategy mastery lesson"><div class="ns-atlas-lesson__screen">'+head+'<div class="ns-atlas-lesson__body">'+middle+'</div><footer class="ns-atlas-lesson__footer">'+feedbackTray+footer+'</footer></div></section>';
   const body=root.querySelector(".ns-atlas-lesson__body");
   if(!resetScroll)body.scrollTop=oldScroll;
-  if(state.checked){body.scrollTop=body.scrollHeight;if(focus)root.querySelector("[data-feedback]")?.focus({preventScroll:true});}
+  if(state.checked&&focus)root.querySelector("[data-feedback]")?.focus({preventScroll:true});
   const thread=root.querySelector(".ns-atlas-lesson__thread");if(thread)thread.scrollTop=thread.scrollHeight;
   wire();
  }
@@ -180,10 +205,15 @@ export function renderStrategyLesson(root,bundle,lesson,{review=false,preview=fa
  function wire(){
    root.querySelector("[data-begin]")?.addEventListener("click",()=>{state.phase="practice";state.visible=1;state.question=0;paint();});
    root.querySelector("[data-reveal]")?.addEventListener("click",()=>{const n=current().scene.turns.length;state.visible=Math.min(n,state.visible+1);paint();});
-   root.querySelectorAll('input[name="atlas-answer"]').forEach(input=>input.addEventListener("change",()=>{state.selected=input.value;paint();}));
+   root.querySelectorAll('input[name="atlas-answer"]').forEach(input=>input.addEventListener("change",()=>{
+    state.selected=input.value;
+    root.querySelectorAll(".ns-atlas-lesson__choices label").forEach(label=>label.classList.toggle("is-selected",label.querySelector("input")?.checked));
+    const check=root.querySelector("[data-check]");if(check)check.disabled=false;
+   }));
+   root.querySelector("[data-hint]")?.addEventListener("click",()=>{state.hintOpen=!state.hintOpen;paint();root.querySelector("[data-hint]")?.focus({preventScroll:true});});
    root.querySelector("[data-check]")?.addEventListener("click",()=>{const q=current().q;if(!q.options.some(o=>o.id===state.selected))return;const correct=state.selected===q.answer;state.feedback={correct};state.checked=true;state.answers[state.question]=correct;paint({focus:true});});
-   root.querySelector("[data-continue]")?.addEventListener("click",()=>{state.question++;state.checked=false;state.feedback=null;state.selected="";if(state.question===count)return finish();if(state.question%3===0)state.visible=1;else state.visible=current().scene.turns.length;paint();root.querySelector(".ns-atlas-lesson__body").scrollTop=0;});
-   root.querySelector("[data-retry]")?.addEventListener("click",()=>{state.phase="practice";state.round++;state.question=0;state.visible=1;state.selected="";state.checked=false;state.feedback=null;state.answers=[];scenes=makeAtlasScenes(bundle.id,record,lesson.featuredCase,state.round);paint();});
+   root.querySelector("[data-continue]")?.addEventListener("click",()=>{state.question++;state.checked=false;state.feedback=null;state.selected="";state.hintOpen=false;if(state.question===count)return finish();if(state.question%3===0)state.visible=1;else state.visible=current().scene.turns.length;paint();root.querySelector(".ns-atlas-lesson__body").scrollTop=0;});
+   root.querySelector("[data-retry]")?.addEventListener("click",()=>{state.phase="practice";state.round++;state.question=0;state.visible=1;state.selected="";state.checked=false;state.feedback=null;state.hintOpen=false;state.answers=[];scenes=makeAtlasScenes(bundle.id,record,lesson.featuredCase,state.round);paint();});
  }
  paint();
 }
