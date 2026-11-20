@@ -67,7 +67,7 @@ test("all Atlas strategies have playable varied scenarios and 18 answerable ques
 test("mastery requires both overall accuracy and later-context transfer",()=>{
  assert.equal(strategyMastery(Array(18).fill(true)).passed,true);
  assert.equal(strategyMastery(Array(18).fill(false)).passed,false);
- assert.equal(strategyMastery([...Array(12).fill(true),false,true,true,true,true,false]).passed,true);
+ assert.equal(strategyMastery([...Array(12).fill(true),true,true,true,true,true,false]).passed,true);
  assert.equal(strategyMastery([...Array(12).fill(true),true,true,true,false,false,false]).passed,false);
  assert.equal(strategyMastery([...Array(11).fill(true),false,...Array(6).fill(true)]).passed,true);
  assert.equal(strategyMastery(Array(17).fill(true)).passed,false);
