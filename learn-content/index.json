@@ -2,9 +2,9 @@
   "version": 1,
   "courses": {
     "narcissism": {
-      "version": 9,
+      "version": 10,
       "title": "Narcissism & Personality",
-      "description": "Twelve case-led lessons that teach you to investigate conversations, test competing explanations, and revise your judgement when evidence changes."
+      "description": "Twelve interactive investigations with ten reasoning depths, alternative motives, relational feedback loops and evidence-led practice."
     },
     "manipulation": {
       "version": 4,
