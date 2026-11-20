@@ -1,6 +1,6 @@
 {
   "id": "narcissism",
-  "version": 8,
+  "version": 9,
   "status": "published",
   "title": "Narcissism & Personality",
   "description": "Twelve deep message investigations of self-worth, narcissistic functioning, psychological defences and relationships. Learn to test plausible interpretations before applying them.",
@@ -776,30 +776,44 @@
             },
             {
               "id": "narcissism-f1-l2-deep-rank",
-              "type": "rank",
-              "title": "Compare explanations that could coexist",
+              "type": "predict",
+              "title": "Try a different response to the scholarship",
               "conceptId": "narcissism-entitlement-versus-healthy-confidence",
-              "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
+              "explanation": "The first reply acknowledges a possible worry and leaves Eva's decision in place. If he accepts contact while respecting her choice, the loss-of-contact explanation gains some support. If only obedience settles him, a control-focused explanation strengthens. Neither response is guaranteed.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
               "sources": "",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "prompt": "Order the hypotheses according to the present evidence, keeping weaker alternatives available for revision.",
-              "steps": [
+              "prompt": "Eva wants to tell her father what she has decided. What response gives the best chance of testing whether his worry is about losing contact rather than control?",
+              "changePrompt": "Eva's next message",
+              "changes": [
                 {
-                  "id": "narcissism-f1-l2-deep-r0",
-                  "label": "He may experience her independence as evidence that his place in her life is diminishing."
+                  "id": "narcissism-f1-l2-deep-rank-change-0",
+                  "label": "I hear that the distance scares you. I'll be studying in Manchester, and I'd like to work out when we can see each other."
                 },
                 {
-                  "id": "narcissism-f1-l2-deep-r1",
-                  "label": "A father with genuinely limited finances could fear an immediate hardship from losing Eva's labour at the business."
+                  "id": "narcissism-f1-l2-deep-rank-change-1",
+                  "label": "I'll accept the place only if you promise never to feel disappointed."
                 },
                 {
-                  "id": "narcissism-f1-l2-deep-r2",
-                  "label": "An isolated emotional reaction does not establish an enduring family cycle."
+                  "id": "narcissism-f1-l2-deep-rank-change-2",
+                  "label": "I am going and there is nothing you are allowed to feel about it."
                 }
-              ]
+              ],
+              "outcomes": [
+                {
+                  "id": "narcissism-f1-l2-deep-rank-outcome-0",
+                  "label": "Her father can respond to a concrete contact plan without deciding her future for her."
+                },
+                {
+                  "id": "narcissism-f1-l2-deep-rank-outcome-1",
+                  "label": "The scholarship becomes conditional on her father's emotional state."
+                },
+                {
+                  "id": "narcissism-f1-l2-deep-rank-outcome-2",
+                  "label": "The conversation may become another struggle over whether feelings may be expressed."
+                }
+              ],
+              "correctChange": "narcissism-f1-l2-deep-rank-change-0",
+              "correctOutcome": "narcissism-f1-l2-deep-rank-outcome-0"
             },
             {
               "id": "narcissism-f1-l2-deep-new-evidence",
@@ -1124,30 +1138,30 @@
             },
             {
               "id": "narcissism-f1-l3-deep-rank",
-              "type": "rank",
-              "title": "Compare explanations that could coexist",
+              "type": "perspective",
+              "title": "Two explanations for Noor's silence",
               "conceptId": "narcissism-grandiose-and-vulnerable-expressions",
-              "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
+              "explanation": "Both explanations fit the request for company. The stronger inquiry asks whether Noor can accept Jules's help while tolerating the factual correction, and whether the same pattern recurs in other contexts.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
               "sources": "",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "prompt": "Order the hypotheses according to the present evidence, keeping weaker alternatives available for revision.",
-              "steps": [
+              "prompt": "Jules sees Noor oscillate between dismissing criticism and feeling worthless. How should Jules interpret the request to stay?",
+              "viewA": "Noor may need company because a mistake has threatened their confidence, making the relationship a place to recover a workable sense of self.",
+              "viewB": "Noor may simply want help with a difficult spreadsheet after a long public event. The request for company could be practical and affectionate.",
+              "options": [
                 {
-                  "id": "narcissism-f1-l3-deep-r0",
-                  "label": "The correction may threaten the identity Noor relies on: someone brave and competent enough to create something others could not."
+                  "id": "narcissism-f1-l3-deep-rank-perspective-0",
+                  "label": "The self-worth account is plausible, but the request does not distinguish it from ordinary distress. Watch what happens when the error is discussed calmly."
                 },
                 {
-                  "id": "narcissism-f1-l3-deep-r1",
-                  "label": "A purely situational account becomes stronger if Noor is usually able to tolerate imperfection and recognise others' contributions."
+                  "id": "narcissism-f1-l3-deep-rank-perspective-1",
+                  "label": "The practical explanation is strengthened by the fact that Noor asked Jules to stay, so the earlier global self-criticism is irrelevant."
                 },
                 {
-                  "id": "narcissism-f1-l3-deep-r2",
-                  "label": "We cannot attribute an ongoing dysfunctional loop from this single evening."
+                  "id": "narcissism-f1-l3-deep-rank-perspective-2",
+                  "label": "The self-worth account wins because someone who alternates confidence and shame must be using projection."
                 }
-              ]
+              ],
+              "answer": "narcissism-f1-l3-deep-rank-perspective-0"
             },
             {
               "id": "narcissism-f1-l3-deep-mechanism",
@@ -1603,28 +1617,29 @@
             },
             {
               "id": "narcissism-f2-l1-deep-rank",
-              "type": "rank",
-              "title": "Compare explanations that could coexist",
+              "type": "chain",
+              "title": "Follow the praise-checking loop",
               "conceptId": "narcissism-external-validation-and-unstable-self-evaluation",
-              "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
+              "explanation": "The proposed cycle gives checking a possible function: short relief from uncertainty. A competing explanation is a genuinely important professional endorsement; we would need to see whether the checking persists when practical stakes disappear.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
               "sources": "",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "prompt": "Order the hypotheses according to the present evidence, keeping weaker alternatives available for revision.",
+              "prompt": "Arrange a possible sequence. This is a hypothesis about what might maintain checking, not an established diagnosis.",
               "steps": [
                 {
-                  "id": "narcissism-f2-l1-deep-r0",
-                  "label": "The feared event may not be losing a prize; it may be being seen as less exceptional."
+                  "id": "narcissism-f2-l1-deep-rank-step-0",
+                  "label": "Rosa performs well and receives technical feedback, but no personal compliment."
                 },
                 {
-                  "id": "narcissism-f2-l1-deep-r1",
-                  "label": "There could be a genuine methodological error that has yet to be discovered."
+                  "id": "narcissism-f2-l1-deep-rank-step-1",
+                  "label": "She interprets the missing praise as a judgement that she is not particularly valuable."
                 },
                 {
-                  "id": "narcissism-f2-l1-deep-r2",
-                  "label": "A single contest cannot establish a stable cycle; classmates might simply be comforting someone after a difficult day."
+                  "id": "narcissism-f2-l1-deep-rank-step-2",
+                  "label": "She repeatedly checks for the conductor's endorsement."
+                },
+                {
+                  "id": "narcissism-f2-l1-deep-rank-step-3",
+                  "label": "Checking briefly promises certainty but provides little new evidence, making the missing approval feel more consequential."
                 }
               ]
             },
@@ -2044,30 +2059,44 @@
             },
             {
               "id": "narcissism-f2-l2-deep-rank",
-              "type": "rank",
-              "title": "Compare explanations that could coexist",
+              "type": "predict",
+              "title": "Change what follows the group-chat joke",
               "conceptId": "narcissism-empathy-and-self-focused-attention",
-              "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
+              "explanation": "The first response names an observable boundary and leaves room for Riley to explain their intentions. What they do afterwards is better evidence of responsiveness than the emotional intensity of the initial argument.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
               "sources": "",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "prompt": "Order the hypotheses according to the present evidence, keeping weaker alternatives available for revision.",
-              "steps": [
+              "prompt": "Amal has asked Riley to stop imitating her accent. What response tests whether Riley can tolerate a boundary while preserving a relationship?",
+              "changePrompt": "Amal's response",
+              "changes": [
                 {
-                  "id": "narcissism-f2-l2-deep-r0",
-                  "label": "The imagined threat is not merely 'I can't make this joke'; it may be 'I am no longer seen as the entertaining friend'."
+                  "id": "narcissism-f2-l2-deep-rank-change-0",
+                  "label": "I know you meant it as humour. I'm asking you to stop imitating my accent, including before presentations."
                 },
                 {
-                  "id": "narcissism-f2-l2-deep-r1",
-                  "label": "The speaker may have misunderstood the group's consent to joking; that can explain the initial act without deciding what the next act should be."
+                  "id": "narcissism-f2-l2-deep-rank-change-1",
+                  "label": "You are forbidden from making any jokes about anything ever again."
                 },
                 {
-                  "id": "narcissism-f2-l2-deep-r2",
-                  "label": "One exchange cannot establish that such a cycle already exists."
+                  "id": "narcissism-f2-l2-deep-rank-change-2",
+                  "label": "I'll stay in the chat as long as the group guarantees nobody is ever offended."
                 }
-              ]
+              ],
+              "outcomes": [
+                {
+                  "id": "narcissism-f2-l2-deep-rank-outcome-0",
+                  "label": "Riley can accept a specific limit without having to agree about every past intention."
+                },
+                {
+                  "id": "narcissism-f2-l2-deep-rank-outcome-1",
+                  "label": "The disagreement expands into a general debate about who is allowed to joke."
+                },
+                {
+                  "id": "narcissism-f2-l2-deep-rank-outcome-2",
+                  "label": "A promise nobody can realistically keep becomes the measure of safety."
+                }
+              ],
+              "correctChange": "narcissism-f2-l2-deep-rank-change-0",
+              "correctOutcome": "narcissism-f2-l2-deep-rank-outcome-0"
             },
             {
               "id": "narcissism-f2-l2-deep-new-evidence",
@@ -2462,30 +2491,30 @@
             },
             {
               "id": "narcissism-f2-l3-deep-rank",
-              "type": "rank",
-              "title": "Compare explanations that could coexist",
+              "type": "perspective",
+              "title": "Is Soren self-focused or simply under pressure?",
               "conceptId": "narcissism-social-comparison-and-envy",
-              "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
+              "explanation": "Checking the deadline separates an actual constraint from a status concern. Soren's capacity to return to Nina's needs is further evidence about the interaction.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
               "sources": "",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "prompt": "Order the hypotheses according to the present evidence, keeping weaker alternatives available for revision.",
-              "steps": [
+              "prompt": "Nina has received bad news and Soren talks about the holiday deposit. What conclusion can we defend before learning the booking conditions?",
+              "viewA": "Soren may narrow his attention because the threatened booking also threatens an identity as the person who gets family events right.",
+              "viewB": "Soren may need to act before a genuinely non-refundable deadline, with no wider vulnerability about reputation.",
+              "options": [
                 {
-                  "id": "narcissism-f2-l3-deep-r0",
-                  "label": "His concern may be 'If this falls apart, I will be seen as the person who always fails.' That imagined family verdict could draw his attention away from Nina."
+                  "id": "narcissism-f2-l3-deep-rank-perspective-0",
+                  "label": "Ask whether the deadline is real, then watch whether Soren can turn toward Nina once urgent decisions are dealt with."
                 },
                 {
-                  "id": "narcissism-f2-l3-deep-r1",
-                  "label": "A persistent pattern of disregarding Nina's needs would change the formulation considerably."
+                  "id": "narcissism-f2-l3-deep-rank-perspective-1",
+                  "label": "Because the deposit is due, attending to Nina's feelings is only possible once the holiday is settled."
                 },
                 {
-                  "id": "narcissism-f2-l3-deep-r2",
-                  "label": "A single thoughtful sentence does not prove lasting empathic ability in all situations."
+                  "id": "narcissism-f2-l3-deep-rank-perspective-2",
+                  "label": "Because Soren mentioned his reputation, logistical concerns are probably an excuse rather than a genuine constraint."
                 }
-              ]
+              ],
+              "answer": "narcissism-f2-l3-deep-rank-perspective-0"
             },
             {
               "id": "narcissism-f2-l3-deep-new-evidence",
@@ -2810,28 +2839,29 @@
             },
             {
               "id": "narcissism-m1-l1-deep-rank",
-              "type": "rank",
-              "title": "Compare explanations that could coexist",
+              "type": "chain",
+              "title": "Trace the sudden fall from admiration",
               "conceptId": "narcissism-idealisation-and-devaluation",
-              "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
+              "explanation": "This sequence illustrates a possible self-protective revaluation. It does not establish that Kareem fulfilled his responsibility. The actual agreement determines whether Imogen has a specific justified complaint.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
               "sources": "",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "prompt": "Order the hypotheses according to the present evidence, keeping weaker alternatives available for revision.",
+              "prompt": "Place the moments in the order that could create a devaluation cycle.",
               "steps": [
                 {
-                  "id": "narcissism-m1-l1-deep-r0",
-                  "label": "Imogen appears to experience 'I cannot do this' as 'You are no different from people who abandon me.' That interpretation may be shaped by earlier relational experiences, but the messages cannot establish their origin."
+                  "id": "narcissism-m1-l1-deep-rank-step-0",
+                  "label": "Imogen had regarded Kareem as unusually dependable."
                 },
                 {
-                  "id": "narcissism-m1-l1-deep-r1",
-                  "label": "Imogen may have grounds to question Kareem's reliability that are absent from this exchange."
+                  "id": "narcissism-m1-l1-deep-rank-step-1",
+                  "label": "He cannot provide the help she assumed he had promised."
                 },
                 {
-                  "id": "narcissism-m1-l1-deep-r2",
-                  "label": "We have not established that this pattern has occurred before or will persist."
+                  "id": "narcissism-m1-l1-deep-rank-step-2",
+                  "label": "She interprets the disappointment as evidence that his entire earlier generosity was false."
+                },
+                {
+                  "id": "narcissism-m1-l1-deep-rank-step-3",
+                  "label": "The resulting accusation strains the friendship and reduces the chance of checking the original agreement."
                 }
               ]
             },
@@ -3290,30 +3320,44 @@
             },
             {
               "id": "narcissism-m1-l2-deep-rank",
-              "type": "rank",
-              "title": "Compare explanations that could coexist",
+              "type": "predict",
+              "title": "Choose the first step of real repair",
               "conceptId": "narcissism-accountability-versus-image-management",
-              "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
+              "explanation": "The first route addresses the time-sensitive privacy harm. His shame may be sincere and worthy of support elsewhere, yet Sasha does not need to resolve it before the disclosure is contained.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
               "sources": "",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "prompt": "Order the hypotheses according to the present evidence, keeping weaker alternatives available for revision.",
-              "steps": [
+              "prompt": "A private medical appointment has appeared in the work channel. What should take priority while Owen is distressed about colleagues judging him?",
+              "changePrompt": "Owen's next action",
+              "changes": [
                 {
-                  "id": "narcissism-m1-l2-deep-r0",
-                  "label": "A possible threat is 'I am now seen as a person who harms others.' Shame can make that feel like a verdict about the whole self rather than one preventable error."
+                  "id": "narcissism-m1-l2-deep-rank-change-0",
+                  "label": "Remove the material, seek deletion of copies through the administrator, and account for the breach."
                 },
                 {
-                  "id": "narcissism-m1-l2-deep-r1",
-                  "label": "The apology may be clumsy even while repair is already happening behind the scenes."
+                  "id": "narcissism-m1-l2-deep-rank-change-1",
+                  "label": "Ask Sasha to reassure him that he is a good person before doing anything else."
                 },
                 {
-                  "id": "narcissism-m1-l2-deep-r2",
-                  "label": "One interaction is insufficient to conclude there is such an enduring cycle."
+                  "id": "narcissism-m1-l2-deep-rank-change-2",
+                  "label": "Write a lengthy personal explanation for the team before checking who accessed the information."
                 }
-              ]
+              ],
+              "outcomes": [
+                {
+                  "id": "narcissism-m1-l2-deep-rank-outcome-0",
+                  "label": "The exposure may be contained and an accurate record created for further action."
+                },
+                {
+                  "id": "narcissism-m1-l2-deep-rank-outcome-1",
+                  "label": "Sasha is placed in charge of Owen's reassurance while the risk remains."
+                },
+                {
+                  "id": "narcissism-m1-l2-deep-rank-outcome-2",
+                  "label": "The narrative about Owen may spread while the information problem is unresolved."
+                }
+              ],
+              "correctChange": "narcissism-m1-l2-deep-rank-change-0",
+              "correctOutcome": "narcissism-m1-l2-deep-rank-outcome-0"
             },
             {
               "id": "narcissism-m1-l2-deep-research",
@@ -3731,30 +3775,30 @@
             },
             {
               "id": "narcissism-m1-l3-deep-rank",
-              "type": "rank",
-              "title": "Compare explanations that could coexist",
+              "type": "perspective",
+              "title": "Childhood history or present-day incentives?",
               "conceptId": "narcissism-personality-dysfunction-and-impairment",
-              "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
+              "explanation": "The two accounts could reinforce one another. The next useful evidence is whether safer reporting conditions change Aaron's willingness to disclose mistakes.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
               "sources": "",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "prompt": "Order the hypotheses according to the present evidence, keeping weaker alternatives available for revision.",
-              "steps": [
+              "prompt": "Aaron hides a reporting mistake. Which interpretation should guide a formulation?",
+              "viewA": "Earlier humiliation for errors may have taught Aaron to associate admitting uncertainty with losing worth.",
+              "viewB": "His current organisation may reward apparent self-sufficiency and punish disclosures, making concealment instrumentally useful.",
+              "options": [
                 {
-                  "id": "narcissism-m1-l3-deep-r0",
-                  "label": "Aaron may perceive the revelation of a small mistake as a threat to belonging or status."
+                  "id": "narcissism-m1-l3-deep-rank-perspective-0",
+                  "label": "Investigate the present reporting conditions while taking the developmental account as a hypothesis about why the threat feels personally costly."
                 },
                 {
-                  "id": "narcissism-m1-l3-deep-r1",
-                  "label": "The father may have displayed warmth and support in contexts the siblings are not discussing."
+                  "id": "narcissism-m1-l3-deep-rank-perspective-1",
+                  "label": "The childhood account is strongest because the memories make a causal explanation available."
                 },
                 {
-                  "id": "narcissism-m1-l3-deep-r2",
-                  "label": "The organisation may already have inadequate systems for checking work, independently increasing concealment."
+                  "id": "narcissism-m1-l3-deep-rank-perspective-2",
+                  "label": "Organisational incentives should dominate the formulation because childhood memories are always unreliable."
                 }
-              ]
+              ],
+              "answer": "narcissism-m1-l3-deep-rank-perspective-0"
             },
             {
               "id": "narcissism-m1-l3-deep-new-evidence",
@@ -4148,28 +4192,29 @@
             },
             {
               "id": "narcissism-m1-l4-deep-rank",
-              "type": "rank",
-              "title": "Compare explanations that could coexist",
+              "type": "chain",
+              "title": "Build a careful assessment sequence",
               "conceptId": "narcissism-measurement-validity-and-research-interpretation",
-              "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
+              "explanation": "This sequence moves from evidence to interpretation. A measurement score can inform assessment but does not replace contextual examination of persistent functioning.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
               "sources": "",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "prompt": "Order the hypotheses according to the present evidence, keeping weaker alternatives available for revision.",
+              "prompt": "Order the steps a clinician could take when two accounts of Theo differ.",
               "steps": [
                 {
-                  "id": "narcissism-m1-l4-deep-r0",
-                  "label": "Theo may fear appearing ordinary, incompetent or abandoned."
+                  "id": "narcissism-m1-l4-deep-rank-step-0",
+                  "label": "Identify the concrete difficulties reported across relationships and work."
                 },
                 {
-                  "id": "narcissism-m1-l4-deep-r1",
-                  "label": "A validated scale can still add useful information even when it does not establish a diagnosis alone."
+                  "id": "narcissism-m1-l4-deep-rank-step-1",
+                  "label": "Check when the difficulties started and which circumstances may amplify them."
                 },
                 {
-                  "id": "narcissism-m1-l4-deep-r2",
-                  "label": "A person can function very well in one domain and struggle severely in close relationships."
+                  "id": "narcissism-m1-l4-deep-rank-step-2",
+                  "label": "Compare alternative explanations and the measure's actual validity for the intended clinical claim."
+                },
+                {
+                  "id": "narcissism-m1-l4-deep-rank-step-3",
+                  "label": "Integrate severity and functioning before deciding whether a diagnostic formulation is warranted."
                 }
               ]
             },
@@ -4496,30 +4541,44 @@
             },
             {
               "id": "narcissism-m1-l5-deep-rank",
-              "type": "rank",
-              "title": "Compare explanations that could coexist",
+              "type": "predict",
+              "title": "Predict change when criticism returns",
               "conceptId": "narcissism-treatment-change-and-psychological-formulation",
-              "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
+              "explanation": "Sustained behaviour under the conditions that previously triggered withdrawal is the critical evidence. One success is encouraging but insufficient for a claim of enduring change.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
               "sources": "",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "prompt": "Order the hypotheses according to the present evidence, keeping weaker alternatives available for revision.",
-              "steps": [
+              "prompt": "Nico now recognises why he withdraws after criticism. What would offer stronger evidence of new interpersonal functioning?",
+              "changePrompt": "What Nico practises",
+              "changes": [
                 {
-                  "id": "narcissism-m1-l5-deep-r0",
-                  "label": "The feared meaning of criticism may be 'You see me as useless.' Nico can begin to identify this interpretation as something happening in his mind rather than a fact Harper stated."
+                  "id": "narcissism-m1-l5-deep-rank-change-0",
+                  "label": "When upset, he takes a brief agreed pause, returns to the disagreement and addresses Harper's actual concern."
                 },
                 {
-                  "id": "narcissism-m1-l5-deep-r1",
-                  "label": "A claim of progress may be overstated if the partner continues to feel intimidated or ordinary issues remain unresolved."
+                  "id": "narcissism-m1-l5-deep-rank-change-1",
+                  "label": "He gives Harper an elaborate explanation of his shame before responding to the unpaid bill."
                 },
                 {
-                  "id": "narcissism-m1-l5-deep-r2",
-                  "label": "One calm interaction in therapy may not generalise to arguments outside treatment."
+                  "id": "narcissism-m1-l5-deep-rank-change-2",
+                  "label": "He asks Harper to stop raising financial concerns until his sense of worth is stable."
                 }
-              ]
+              ],
+              "outcomes": [
+                {
+                  "id": "narcissism-m1-l5-deep-rank-outcome-0",
+                  "label": "Repeated successful returns to difficult discussions could establish observable improvement."
+                },
+                {
+                  "id": "narcissism-m1-l5-deep-rank-outcome-1",
+                  "label": "The explanation may grow while the practical problem stays unsolved."
+                },
+                {
+                  "id": "narcissism-m1-l5-deep-rank-outcome-2",
+                  "label": "Harper may learn that ordinary concerns can only be raised after managing Nico's feelings."
+                }
+              ],
+              "correctChange": "narcissism-m1-l5-deep-rank-change-0",
+              "correctOutcome": "narcissism-m1-l5-deep-rank-outcome-0"
             },
             {
               "id": "narcissism-m1-l5-deep-mechanism",
@@ -4976,30 +5035,30 @@
             },
             {
               "id": "narcissism-m1-l6-deep-rank",
-              "type": "rank",
-              "title": "Compare explanations that could coexist",
+              "type": "perspective",
+              "title": "Who is responsible for which part of the conflict?",
               "conceptId": "narcissism-integrative-formulation-and-proportionate-boundaries",
-              "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
+              "explanation": "The organisation can correct a factual attribution without establishing a psychiatric explanation. How Celeste behaves across incentives helps test the self-worth account.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
               "sources": "",
-              "image": "",
-              "alt": "",
-              "caption": "",
-              "prompt": "Order the hypotheses according to the present evidence, keeping weaker alternatives available for revision.",
-              "steps": [
+              "prompt": "The board hears different accounts of Celeste and Rohan's project. What should the investigation separate?",
+              "viewA": "Celeste may have contributed funding and strategic leadership while feeling threatened by recognising Rohan's independent creative work.",
+              "viewB": "The organisation may have rewarded a single visible director, making shared attribution difficult even without unusual personality vulnerabilities.",
+              "options": [
                 {
-                  "id": "narcissism-m1-l6-deep-r0",
-                  "label": "Celeste could feel that her status is challenged whenever another person claims an essential contribution."
+                  "id": "narcissism-m1-l6-deep-rank-perspective-0",
+                  "label": "Examine authorship records and incentive structures separately, while asking whether dismissive treatment recurs when independent credit has little financial cost."
                 },
                 {
-                  "id": "narcissism-m1-l6-deep-r1",
-                  "label": "A credible new document showing the proposal was co-created could change the nature of Rohan's claim."
+                  "id": "narcissism-m1-l6-deep-rank-perspective-1",
+                  "label": "Assume Celeste's financial work establishes her ownership of Rohan's creative idea."
                 },
                 {
-                  "id": "narcissism-m1-l6-deep-r2",
-                  "label": "One incident cannot tell us whether the institution has an entrenched pattern."
+                  "id": "narcissism-m1-l6-deep-rank-perspective-2",
+                  "label": "Assume all disputed credit is an unconscious defence, making institutional incentives secondary."
                 }
-              ]
+              ],
+              "answer": "narcissism-m1-l6-deep-rank-perspective-0"
             },
             {
               "id": "narcissism-m1-l6-deep-research",
