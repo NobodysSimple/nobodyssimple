@@ -72,11 +72,11 @@ test('Mastery only awarded for >=15/18 and >=5/6 late transfer checks',()=>{
 });
 test('Actual published route uses strategy player and cache-busted CSS',()=>{
  const html=read('index.html'),site=read('site.mjs'),hub=read('ns-learn-courses.mjs'),loader=read('ns-learn-content-v2.mjs'),player=read('ns-learn-player-v2.mjs'),sw=read('sw.js');
- assert.ok(html.includes('ns-atlas-immersion.css?v=psy-atlas-20261120'));
- assert.ok(site.includes('ns-learn-courses.mjs?v=psy-atlas-20261120'));
+ assert.ok(html.includes('ns-atlas-immersion.css?v=psy-atlas-tiles-20261120'));
+ assert.ok(site.includes('ns-learn-courses.mjs?v=psy-atlas-tiles-20261120'));
  assert.ok(hub.includes('Find a particular technique'));
  assert.ok(hub.includes('ns-learn-journey__stop'));
  assert.ok(loader.includes('buildStrategyBundle(bundle,atlasSource)'));
  assert.ok(player.includes('renderStrategyLesson(root,bundle,lesson'));
- assert.ok(sw.includes('nobodyssimple-release-v243-atlas-immersion'));
+ assert.ok(sw.includes('nobodyssimple-release-v244-atlas-tiles'));
 });
