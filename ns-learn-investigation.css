@@ -66,3 +66,23 @@
 .ns-inquiry__adjacent button:focus-visible{outline:3px solid #648f76;outline-offset:3px}
 .ns-inquiry__stage-nav button[aria-current="step"]{background:#a7dfbb;color:#173324;border-color:#b5f5ce}
 @media(max-width:550px){.ns-inquiry__adjacent{display:grid;grid-template-columns:1fr}.ns-inquiry__note textarea{font-size:16px}}
+
+/* Two alternate hypotheses remain explicit and testable; the learner can
+   switch accounts instead of being shown a supposed private thought. */
+.ns-inquiry__mind{margin:8px 0 14px}
+.ns-inquiry__mind>p{line-height:1.65}
+.ns-inquiry__mind-choice{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.ns-inquiry__mind-choice button{border:1px solid #9ebca5;border-radius:9px;padding:10px 12px;min-height:44px;color:#234333;background:#f4faf2;font:650 .9rem system-ui,sans-serif;cursor:pointer}
+.ns-inquiry__mind-choice button[aria-pressed="true"]{background:#2d694c;color:#fff;border-color:#245a42}
+.ns-inquiry__mind-choice button:focus-visible{outline:3px solid #528c65;outline-offset:3px}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-inquiry__mind .ns-inquiry__mind-text{background:#e1eee2;border-left:4px solid #5a9870;padding:13px;border-radius:9px;color:#1e3f2e!important}
+.ns-inquiry__loop{margin:15px 0 9px;background:#e1eee0;padding:16px;border:1px solid #b5ceb7;border-radius:13px}
+.ns-inquiry__loop ol{list-style:none;counter-reset:loop;display:grid;gap:9px;padding:0;margin:12px 0}
+.ns-inquiry__loop li{counter-increment:loop;background:#fcfdf7;border:1px solid #c6d8c5;border-radius:10px;padding:12px 12px 12px 43px;position:relative}
+.ns-inquiry__loop li:before{content:counter(loop);position:absolute;left:10px;top:13px;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#d3e6d6;color:#234a33;font-weight:750;font-size:.8rem}
+.ns-inquiry__loop li strong{display:block;color:#224a34;font-size:.89rem}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-inquiry__loop li p{margin:6px 0 0;color:#203e2e!important;font-size:.93rem;line-height:1.55}
+.ns-inquiry__loop button{width:100%;min-height:46px;padding:11px 14px;background:#2b674a;color:#fff;border:1px solid #2b674a;border-radius:10px;font:700 .92rem system-ui,sans-serif;cursor:pointer}
+.ns-inquiry__loop button:focus-visible{outline:3px solid #5b966d;outline-offset:3px}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-inquiry__loop-end{color:#335840!important;font-size:.87rem;line-height:1.55}
+@media(max-width:550px){.ns-inquiry__mind-choice{display:grid;grid-template-columns:1fr 1fr}.ns-inquiry__mind-choice button{font-size:.8rem;padding:9px 8px}}
