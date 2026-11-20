@@ -1,6 +1,6 @@
 {
   "id": "narcissism",
-  "version": 13,
+  "version": 14,
   "status": "published",
   "title": "Narcissism & Personality",
   "description": "Twelve deep message investigations of self-worth, narcissistic functioning, psychological defences and relationships. Learn to test plausible interpretations before applying them.",
@@ -24,7 +24,7 @@
         {
           "id": "narcissism-f1-l1",
           "title": "The correction becomes a betrayal",
-          "version": 8,
+          "version": 9,
           "standard": "deep-10",
           "durationMinutes": 13,
           "editorialStatus": "ready",
@@ -453,11 +453,11 @@
                 },
                 {
                   "id": "narcissism-f1-l1-deep-new-evidence-answer-1",
-                  "label": "The earlier praise makes role confusion the most likely explanation because the lead may mean overall ownership."
+                  "label": "The earlier promise may reflect an informal intention rather than a settled credit convention, so the new evidence leaves the attribution mostly ambiguous."
                 },
                 {
                   "id": "narcissism-f1-l1-deep-new-evidence-answer-2",
-                  "label": "The contradiction chiefly supports a fear of rejection, whereas deliberate career benefit becomes less relevant."
+                  "label": "The promotion context may explain the pressure, but the written contradiction says more about how roles were allocated than about whether the lead knew the author."
                 }
               ],
               "answer": "narcissism-f1-l1-deep-new-evidence-answer-0",
@@ -500,7 +500,7 @@
         {
           "id": "narcissism-f1-l2",
           "title": "The price of being a grateful daughter",
-          "version": 8,
+          "version": 9,
           "standard": "deep-10",
           "durationMinutes": 13,
           "editorialStatus": "ready",
@@ -873,11 +873,11 @@
                 },
                 {
                   "id": "narcissism-f1-l2-deep-rank-change-1",
-                  "label": "I'll accept the place only if you promise never to feel disappointed."
+                  "label": "I know you imagined me working here. Could we agree what help I could still give during holidays while I study?"
                 },
                 {
                   "id": "narcissism-f1-l2-deep-rank-change-2",
-                  "label": "I am going and there is nothing you are allowed to feel about it."
+                  "label": "Would you prefer that I delay replying to the scholarship until we have both worked out a plan?"
                 }
               ],
               "outcomes": [
@@ -887,11 +887,11 @@
                 },
                 {
                   "id": "narcissism-f1-l2-deep-rank-outcome-1",
-                  "label": "The scholarship becomes conditional on her father's emotional state."
+                  "label": "A practical offer might reduce uncertainty but could blur whether his worry concerns contact or business contribution."
                 },
                 {
                   "id": "narcissism-f1-l2-deep-rank-outcome-2",
-                  "label": "The conversation may become another struggle over whether feelings may be expressed."
+                  "label": "A joint decision might make him feel consulted while leaving her education contingent on his approval."
                 }
               ],
               "correctChange": "narcissism-f1-l2-deep-rank-change-0",
@@ -954,7 +954,7 @@
               "options": [
                 {
                   "id": "narcissism-f1-l2-deep-new-evidence-answer-0",
-                  "label": "The disagreement is primarily about the cost of replacing the colleague, even if the researcher never mentions staffing."
+                  "label": "Past congratulations suggest the researcher generally supports mobility, so this dispute may be more about disruption than an expectation of loyalty."
                 },
                 {
                   "id": "narcissism-f1-l2-deep-new-evidence-answer-1",
@@ -962,7 +962,7 @@
                 },
                 {
                   "id": "narcissism-f1-l2-deep-new-evidence-answer-2",
-                  "label": "The earlier congratulations show that the current demand cannot involve fear of losing a valued role."
+                  "label": "The mentoring may have created a shared understanding about staying, even if the written development agreement omitted that expectation."
                 }
               ],
               "answer": "narcissism-f1-l2-deep-new-evidence-answer-1",
@@ -1003,7 +1003,7 @@
         {
           "id": "narcissism-f1-l3",
           "title": "The brilliant partner and the private collapse",
-          "version": 8,
+          "version": 9,
           "standard": "deep-10",
           "durationMinutes": 13,
           "editorialStatus": "ready",
@@ -1308,11 +1308,11 @@
                 },
                 {
                   "id": "narcissism-f1-l3-deep-rank-perspective-1",
-                  "label": "The practical explanation is strengthened by the fact that Noor asked Jules to stay, so the earlier global self-criticism is irrelevant."
+                  "label": "The practical explanation becomes stronger because Noor asks Jules to stay and solve the problem, which may show the earlier self-criticism was transient."
                 },
                 {
                   "id": "narcissism-f1-l3-deep-rank-perspective-2",
-                  "label": "The self-worth account wins because someone who alternates confidence and shame must be using projection."
+                  "label": "The shift from public confidence to private shame makes a self-worth explanation compelling enough to prioritise over ordinary stress."
                 }
               ],
               "answer": "narcissism-f1-l3-deep-rank-perspective-0"
@@ -1428,11 +1428,11 @@
               "options": [
                 {
                   "id": "narcissism-f1-l3-deep-new-evidence-answer-0",
-                  "label": "The public dismissal was mainly a plan to damage competitors; the morning response adds little."
+                  "label": "The speaker's next-day correction may be impression management for the next rehearsal rather than evidence of a more flexible self-view."
                 },
                 {
                   "id": "narcissism-f1-l3-deep-new-evidence-answer-1",
-                  "label": "The morning correction shows there was no painful self-evaluation the previous night."
+                  "label": "A calmer morning response makes the earlier global self-criticism less relevant to understanding how the person reacted at the time."
                 },
                 {
                   "id": "narcissism-f1-l3-deep-new-evidence-answer-2",
@@ -1477,7 +1477,7 @@
         {
           "id": "narcissism-f2-l1",
           "title": "Second place and the story nobody is allowed to challenge",
-          "version": 8,
+          "version": 9,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -1922,11 +1922,11 @@
                 },
                 {
                   "id": "narcissism-f2-l1-deep-new-evidence-answer-1",
-                  "label": "Finding a scoring mistake makes all claims about the winner's ability equally plausible."
+                  "label": "The marking error justifies questioning the whole result until the judges explain their procedure, despite the confirmed margin."
                 },
                 {
                   "id": "narcissism-f2-l1-deep-new-evidence-answer-2",
-                  "label": "Because the pupil was disappointed, the claim of unfairness is best treated as an expression of envy rather than assessed on its merits."
+                  "label": "The corrected score is relevant, but the wider unfairness concern remains about whether the winner received greater informal support."
                 }
               ],
               "answer": "narcissism-f2-l1-deep-new-evidence-answer-0",
@@ -1984,7 +1984,7 @@
         {
           "id": "narcissism-f2-l2",
           "title": "The joke nobody was supposed to question",
-          "version": 8,
+          "version": 9,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -2357,11 +2357,11 @@
                 },
                 {
                   "id": "narcissism-f2-l2-deep-rank-change-1",
-                  "label": "You are forbidden from making any jokes about anything ever again."
+                  "label": "Could we leave the joke out of tomorrow's presentation and revisit it once everyone has calmed down?"
                 },
                 {
                   "id": "narcissism-f2-l2-deep-rank-change-2",
-                  "label": "I'll stay in the chat as long as the group guarantees nobody is ever offended."
+                  "label": "Would you apologise to the group so they understand you weren't trying to humiliate me?"
                 }
               ],
               "outcomes": [
@@ -2371,11 +2371,11 @@
                 },
                 {
                   "id": "narcissism-f2-l2-deep-rank-outcome-1",
-                  "label": "The disagreement expands into a general debate about who is allowed to joke."
+                  "label": "A temporary pause could prevent tomorrow's repetition without resolving whether the boundary will be respected later."
                 },
                 {
                   "id": "narcissism-f2-l2-deep-rank-outcome-2",
-                  "label": "A promise nobody can realistically keep becomes the measure of safety."
+                  "label": "A public apology may change how others view the incident without showing that the specific behaviour has stopped."
                 }
               ],
               "correctChange": "narcissism-f2-l2-deep-rank-change-0",
@@ -2423,7 +2423,7 @@
               "options": [
                 {
                   "id": "narcissism-f2-l2-deep-new-evidence-answer-0",
-                  "label": "The hurt feeling shows the parent's underlying concern was only about being admired."
+                  "label": "Stopping after a private conversation may reflect the parent's wish to preserve peace rather than any increased understanding of the teenager's view."
                 },
                 {
                   "id": "narcissism-f2-l2-deep-new-evidence-answer-1",
@@ -2431,7 +2431,7 @@
                 },
                 {
                   "id": "narcissism-f2-l2-deep-new-evidence-answer-2",
-                  "label": "Because the joke stopped, the teenager's interpretation of the earlier incidents should be reconsidered as oversensitive."
+                  "label": "The later admission of hurt suggests the parent still experiences the request as a personal attack, making the behavioural change less informative."
                 }
               ],
               "answer": "narcissism-f2-l2-deep-new-evidence-answer-1",
@@ -2473,7 +2473,7 @@
         {
           "id": "narcissism-f2-l3",
           "title": "When somebody else's pain interrupts your own story",
-          "version": 8,
+          "version": 9,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -2847,11 +2847,11 @@
                 },
                 {
                   "id": "narcissism-f2-l3-deep-rank-perspective-1",
-                  "label": "Because the deposit is due, attending to Nina's feelings is only possible once the holiday is settled."
+                  "label": "The impending payment may require attention, so the initial reply can be understood as temporary prioritisation until the deadline is checked."
                 },
                 {
                   "id": "narcissism-f2-l3-deep-rank-perspective-2",
-                  "label": "Because Soren mentioned his reputation, logistical concerns are probably an excuse rather than a genuine constraint."
+                  "label": "Soren's reference to being judged gives a status-based account more support than the still-unconfirmed logistical demand."
                 }
               ],
               "answer": "narcissism-f2-l3-deep-rank-perspective-0"
@@ -2913,11 +2913,11 @@
               "options": [
                 {
                   "id": "narcissism-f2-l3-deep-new-evidence-answer-0",
-                  "label": "The teacher's first response was justified by institutional priorities, so examining its relational impact adds little."
+                  "label": "Because the deadline was real, the first response is best understood as a necessary triage decision rather than a failure to notice distress."
                 },
                 {
                   "id": "narcissism-f2-l3-deep-new-evidence-answer-1",
-                  "label": "The later support establishes that the teacher has no self-focused tendencies across contexts."
+                  "label": "The teacher's later support may have been a professional obligation, so it contributes little to assessing their capacity to respond to the pupil emotionally."
                 },
                 {
                   "id": "narcissism-f2-l3-deep-new-evidence-answer-2",
@@ -2962,7 +2962,7 @@
         {
           "id": "narcissism-m1-l1",
           "title": "From 'you're extraordinary' to 'you were never worth knowing'",
-          "version": 8,
+          "version": 9,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -3392,11 +3392,11 @@
                 },
                 {
                   "id": "narcissism-m1-l1-deep-new-evidence-answer-1",
-                  "label": "The group-message problem proves the person making the accusation was motivated by envy."
+                  "label": "The emergency explains this absence but gives no reason to revisit the friend's broader claim about the person's character."
                 },
                 {
                   "id": "narcissism-m1-l1-deep-new-evidence-answer-2",
-                  "label": "The emergency explains the cancellation so completely that earlier unreliability, if any, becomes irrelevant."
+                  "label": "The missing group-thread message is mainly evidence of a communication failure; it tells us little about whether the cancellation was considerate."
                 }
               ],
               "answer": "narcissism-m1-l1-deep-new-evidence-answer-0",
@@ -3438,7 +3438,7 @@
         {
           "id": "narcissism-m1-l2",
           "title": "The apology that asks to be comforted",
-          "version": 8,
+          "version": 9,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -3804,11 +3804,11 @@
                 },
                 {
                   "id": "narcissism-m1-l2-deep-rank-change-1",
-                  "label": "Ask Sasha to reassure him that he is a good person before doing anything else."
+                  "label": "Before contacting the administrator, can I explain to Sasha what went wrong so she understands it was accidental?"
                 },
                 {
                   "id": "narcissism-m1-l2-deep-rank-change-2",
-                  "label": "Write a lengthy personal explanation for the team before checking who accessed the information."
+                  "label": "I will message the channel asking people not to share the screenshot, then find out who has copies."
                 }
               ],
               "outcomes": [
@@ -3818,11 +3818,11 @@
                 },
                 {
                   "id": "narcissism-m1-l2-deep-rank-outcome-1",
-                  "label": "Sasha is placed in charge of Owen's reassurance while the risk remains."
+                  "label": "An explanation may settle the question of intention while leaving the information exposure unresolved."
                 },
                 {
                   "id": "narcissism-m1-l2-deep-rank-outcome-2",
-                  "label": "The narrative about Owen may spread while the information problem is unresolved."
+                  "label": "A request not to share may reduce circulation but does not verify deletion or complete the reporting process."
                 }
               ],
               "correctChange": "narcissism-m1-l2-deep-rank-change-0",
@@ -3892,7 +3892,7 @@
               "options": [
                 {
                   "id": "narcissism-m1-l2-deep-new-evidence-answer-0",
-                  "label": "The apology is now best understood as a request for absolution rather than practical accountability."
+                  "label": "The early deletion effort makes it more likely that the later request for reassurance was an awkward attempt at connection rather than a way of delaying action."
                 },
                 {
                   "id": "narcissism-m1-l2-deep-new-evidence-answer-1",
@@ -3900,7 +3900,7 @@
                 },
                 {
                   "id": "narcissism-m1-l2-deep-new-evidence-answer-2",
-                  "label": "A rapid deletion request shows the sibling was not emotionally affected by the mistake."
+                  "label": "The immediate repair weakens concern about the whole apology enough that its effect on the affected person becomes secondary."
                 }
               ],
               "answer": "narcissism-m1-l2-deep-new-evidence-answer-1",
@@ -3958,7 +3958,7 @@
         {
           "id": "narcissism-m1-l3",
           "title": "What did the family teach him to protect?",
-          "version": 8,
+          "version": 9,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -4332,11 +4332,11 @@
                 },
                 {
                   "id": "narcissism-m1-l3-deep-rank-perspective-1",
-                  "label": "The childhood account is strongest because the memories make a causal explanation available."
+                  "label": "The recollected childhood shaming may be a strong enough explanation to give it priority over incentives that emerged only recently."
                 },
                 {
                   "id": "narcissism-m1-l3-deep-rank-perspective-2",
-                  "label": "Organisational incentives should dominate the formulation because childhood memories are always unreliable."
+                  "label": "The audit responsibility should dominate the formulation; exploring the family history could distract from a straightforward present-day reporting problem."
                 }
               ],
               "answer": "narcissism-m1-l3-deep-rank-perspective-0"
@@ -4383,11 +4383,11 @@
               "options": [
                 {
                   "id": "narcissism-m1-l3-deep-new-evidence-answer-0",
-                  "label": "Their family's achievement expectations no longer provide any useful hypothesis."
+                  "label": "A student's willingness to seek help in unrelated subjects mainly challenges the reliability of their current childhood account."
                 },
                 {
                   "id": "narcissism-m1-l3-deep-new-evidence-answer-1",
-                  "label": "The records chiefly support an innate personality explanation because behaviour changes between subjects."
+                  "label": "The difference between school subjects suggests a preference for some teachers rather than a meaningful link between performance and self-worth."
                 },
                 {
                   "id": "narcissism-m1-l3-deep-new-evidence-answer-2",
@@ -4432,7 +4432,7 @@
         {
           "id": "narcissism-m1-l4",
           "title": "Two clinicians, one assessment: why the diagnosis is not obvious",
-          "version": 8,
+          "version": 9,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -4877,11 +4877,11 @@
                 },
                 {
                   "id": "narcissism-m1-l4-deep-new-evidence-answer-1",
-                  "label": "Treat the second questionnaire as the true clinical measure because it includes distress."
+                  "label": "Different measures may simply reveal complementary aspects of one broader construct, so their apparent disagreement can be summarised without reviewing the items."
                 },
                 {
                   "id": "narcissism-m1-l4-deep-new-evidence-answer-2",
-                  "label": "Combine their scores because the measures share the same general label."
+                  "label": "Since emotional distress is more clinically relevant than enjoying leadership, the second study should normally carry more interpretive weight."
                 }
               ],
               "answer": "narcissism-m1-l4-deep-new-evidence-answer-0",
@@ -4922,7 +4922,7 @@
         {
           "id": "narcissism-m1-l5",
           "title": "How to recognise change when the words sound the same",
-          "version": 8,
+          "version": 9,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -5226,11 +5226,11 @@
                 },
                 {
                   "id": "narcissism-m1-l5-deep-rank-change-1",
-                  "label": "He gives Harper an elaborate explanation of his shame before responding to the unpaid bill."
+                  "label": "When he feels ashamed, Nico can tell Harper which earlier experiences the feeling reminds him of before they discuss the bill."
                 },
                 {
                   "id": "narcissism-m1-l5-deep-rank-change-2",
-                  "label": "He asks Harper to stop raising financial concerns until his sense of worth is stable."
+                  "label": "When criticised, Nico can request a full day before continuing the discussion so he doesn't risk saying something hurtful."
                 }
               ],
               "outcomes": [
@@ -5240,11 +5240,11 @@
                 },
                 {
                   "id": "narcissism-m1-l5-deep-rank-outcome-1",
-                  "label": "The explanation may grow while the practical problem stays unsolved."
+                  "label": "The account of his emotions may improve without changing how the couple resolves the unpaid bill."
                 },
                 {
                   "id": "narcissism-m1-l5-deep-rank-outcome-2",
-                  "label": "Harper may learn that ordinary concerns can only be raised after managing Nico's feelings."
+                  "label": "Longer pauses may lower the intensity of immediate conflict but also prolong the practical disagreement."
                 }
               ],
               "correctChange": "narcissism-m1-l5-deep-rank-change-0",
@@ -5361,7 +5361,7 @@
               "options": [
                 {
                   "id": "narcissism-m1-l5-deep-new-evidence-answer-0",
-                  "label": "The relapse is more diagnostic than the repairs because it resembles the earlier pattern."
+                  "label": "The three successful repairs should be treated as the new pattern; the longer withdrawal is more likely an isolated setback unrelated to the old difficulty."
                 },
                 {
                   "id": "narcissism-m1-l5-deep-new-evidence-answer-1",
@@ -5369,7 +5369,7 @@
                 },
                 {
                   "id": "narcissism-m1-l5-deep-new-evidence-answer-2",
-                  "label": "The acknowledgement after withdrawal is equivalent to the three successful repairs."
+                  "label": "The two-day withdrawal may show the old process has not changed, making the earlier successful repairs less useful as evidence."
                 }
               ],
               "answer": "narcissism-m1-l5-deep-new-evidence-answer-1",
@@ -5411,7 +5411,7 @@
         {
           "id": "narcissism-m1-l6",
           "title": "Four accounts of the same relationship",
-          "version": 8,
+          "version": 9,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -5778,11 +5778,11 @@
                 },
                 {
                   "id": "narcissism-m1-l6-deep-rank-perspective-1",
-                  "label": "Assume Celeste's financial work establishes her ownership of Rohan's creative idea."
+                  "label": "A factual authorship review might settle the award entry, making wider evidence about Celeste's responses to colleagues unnecessary for this particular decision."
                 },
                 {
                   "id": "narcissism-m1-l6-deep-rank-perspective-2",
-                  "label": "Assume all disputed credit is an unconscious defence, making institutional incentives secondary."
+                  "label": "Institutional rewards for visible leadership may explain the dispute, so a fair solution would give all contributors equal recognition without examining the drafts."
                 }
               ],
               "answer": "narcissism-m1-l6-deep-rank-perspective-0"
@@ -5851,11 +5851,11 @@
               "options": [
                 {
                   "id": "narcissism-m1-l6-deep-new-evidence-answer-0",
-                  "label": "The director's financial work now has priority over the creative work, since implementation made the idea viable."
+                  "label": "The new drafts clarify joint origin, so assigning joint credit for every stage is the most consistent way to avoid favouring either contributor."
                 },
                 {
                   "id": "narcissism-m1-l6-deep-new-evidence-answer-1",
-                  "label": "The co-authors have equal responsibilities for every later managerial decision."
+                  "label": "The director's funding contribution may justify stronger recognition than the co-authors', even if the original concept was developed jointly."
                 },
                 {
                   "id": "narcissism-m1-l6-deep-new-evidence-answer-2",
