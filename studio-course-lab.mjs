@@ -6,7 +6,7 @@
 import {LEARN_COURSES} from './ns-learn-catalog-v2.mjs';
 import {COURSE_LAB_TYPES,createCourseDraft,newCourseUnit,newCourseLesson,createCourseNode,
  makeCourseId,validateCourseForPublish,safeCourseImage} from './ns-course-lab-schema.mjs';
-import {renderLearnLesson} from './ns-learn-player-v2.mjs?v=profile-drills-20261120';
+import {renderLearnLesson} from './ns-learn-player-v2.mjs?v=profile-drills-20261120-r2';
 import {auditLesson} from './ns-learn-quality.mjs?v=case-reasoning-20261120';
 import {isLifeNode,lifeNodeEditor} from './ns-life-node-types.mjs?v=narcissism-audit-20261119';
 import {readCourseLabDraft,saveCourseLabDraft,deleteCourseLabDraft} from './studio-course-lab-drafts.mjs';
