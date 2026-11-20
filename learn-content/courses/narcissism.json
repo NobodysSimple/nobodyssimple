@@ -1,6 +1,6 @@
 {
   "id": "narcissism",
-  "version": 11,
+  "version": 12,
   "status": "published",
   "title": "Narcissism & Personality",
   "description": "Twelve deep message investigations of self-worth, narcissistic functioning, psychological defences and relationships. Learn to test plausible interpretations before applying them.",
@@ -24,7 +24,7 @@
         {
           "id": "narcissism-f1-l1",
           "title": "The correction becomes a betrayal",
-          "version": 6,
+          "version": 7,
           "standard": "deep-10",
           "durationMinutes": 13,
           "editorialStatus": "ready",
@@ -408,6 +408,33 @@
               ]
             },
             {
+              "id": "narcissism-f1-l1-context-drill",
+              "type": "match",
+              "title": "What is each clue actually telling you?",
+              "prompt": "Match the details to the particular explanation they support. A person's history changes what a message means, without making the hidden motive certain.",
+              "conceptId": "context-and-competing-explanations",
+              "explanation": "The promotion and the repeated requests answer different questions. One identifies an incentive; the other rules against treating the correction as a sudden surprise. A similar dispute can occur outside a workplace.",
+              "counterexample": "A new verified detail may change which explanation is most defensible.",
+              "sources": "",
+              "pairs": [
+                {
+                  "id": "narcissism-f1-l1-context-drill-p0",
+                  "label": "Leo being considered for promotion",
+                  "answer": "There may be a reward for appearing indispensable"
+                },
+                {
+                  "id": "narcissism-f1-l1-context-drill-p1",
+                  "label": "Maya asking twice for a correction",
+                  "answer": "The authorship issue was already made explicit"
+                },
+                {
+                  "id": "narcissism-f1-l1-context-drill-p2",
+                  "label": "A student group leader objecting to shared credit",
+                  "answer": "Leadership status can be confused with authorship in a different setting"
+                }
+              ]
+            },
+            {
               "id": "narcissism-f1-l1-deep-new-evidence",
               "type": "update",
               "title": "New evidence in a different relationship",
@@ -454,7 +481,12 @@
                 "contingent self esteem",
                 "contingent self-esteem"
               ],
-              "hint": "Write the term or a close plain-English equivalent."
+              "hint": "Choose the term that best completes the idea.",
+              "wordBank": [
+                "contingent self-worth",
+                "self-enhancement",
+                "stable confidence"
+              ]
             },
             {
               "id": "narcissism-f1-l1-deep-closing",
@@ -468,7 +500,7 @@
         {
           "id": "narcissism-f1-l2",
           "title": "The price of being a grateful daughter",
-          "version": 6,
+          "version": 7,
           "standard": "deep-10",
           "durationMinutes": 13,
           "editorialStatus": "ready",
@@ -866,6 +898,48 @@
               "correctOutcome": "narcissism-f1-l2-deep-rank-outcome-0"
             },
             {
+              "id": "narcissism-f1-l2-context-drill",
+              "type": "sort",
+              "title": "What does Eva's history establish?",
+              "prompt": "Place each claim according to whether the case establishes it or whether it still needs independent evidence.",
+              "conceptId": "context-and-competing-explanations",
+              "explanation": "The first and third statements belong to the supplied history. The other two are meaningful hypotheses that can be tested through later behaviour.",
+              "counterexample": "A new verified detail may change which explanation is most defensible.",
+              "sources": "",
+              "categories": [
+                {
+                  "id": "narcissism-f1-l2-context-drill-c0",
+                  "label": "Established in the case"
+                },
+                {
+                  "id": "narcissism-f1-l2-context-drill-c1",
+                  "label": "Still an interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "narcissism-f1-l2-context-drill-s0",
+                  "label": "Eva's father paid for tutoring.",
+                  "answer": "narcissism-f1-l2-context-drill-c0"
+                },
+                {
+                  "id": "narcissism-f1-l2-context-drill-s1",
+                  "label": "His disappointment is mainly fear of losing emotional importance.",
+                  "answer": "narcissism-f1-l2-context-drill-c1"
+                },
+                {
+                  "id": "narcissism-f1-l2-context-drill-s2",
+                  "label": "The two never agreed she would work in the business.",
+                  "answer": "narcissism-f1-l2-context-drill-c0"
+                },
+                {
+                  "id": "narcissism-f1-l2-context-drill-s3",
+                  "label": "He would support her move if she promised regular visits.",
+                  "answer": "narcissism-f1-l2-context-drill-c1"
+                }
+              ]
+            },
+            {
               "id": "narcissism-f1-l2-deep-new-evidence",
               "type": "update",
               "title": "New evidence in a different relationship",
@@ -910,7 +984,12 @@
                 "entitlement",
                 "sense of entitlement"
               ],
-              "hint": "Write the term or a close plain-English equivalent."
+              "hint": "Choose the term that best completes the idea.",
+              "wordBank": [
+                "entitlement",
+                "healthy reciprocity",
+                "social obligation"
+              ]
             },
             {
               "id": "narcissism-f1-l2-deep-closing",
@@ -924,7 +1003,7 @@
         {
           "id": "narcissism-f1-l3",
           "title": "The brilliant partner and the private collapse",
-          "version": 6,
+          "version": 7,
           "standard": "deep-10",
           "durationMinutes": 13,
           "editorialStatus": "ready",
@@ -1308,6 +1387,33 @@
               "counterexample": "A different inference could require examining different lines or information outside the conversation."
             },
             {
+              "id": "narcissism-f1-l3-context-drill",
+              "type": "match",
+              "title": "One error, different meanings",
+              "prompt": "Connect the observations with the distinctions they support. Think of how this could happen after a school performance or a work presentation.",
+              "conceptId": "context-and-competing-explanations",
+              "explanation": "The same correction can be evaluated on its factual merits while the emotional reaction is considered separately. Later behaviour is important evidence about flexibility.",
+              "counterexample": "A new verified detail may change which explanation is most defensible.",
+              "sources": "",
+              "pairs": [
+                {
+                  "id": "narcissism-f1-l3-context-drill-p0",
+                  "label": "Jules checks the numbers after the party",
+                  "answer": "A practical need for accuracy that survives the emotional argument"
+                },
+                {
+                  "id": "narcissism-f1-l3-context-drill-p1",
+                  "label": "Noor says a spreadsheet error means being an idiot",
+                  "answer": "A specific mistake expands into a global self-judgement"
+                },
+                {
+                  "id": "narcissism-f1-l3-context-drill-p2",
+                  "label": "A student accepts feedback the next morning",
+                  "answer": "Evidence of flexibility after an initial defensive reaction"
+                }
+              ]
+            },
+            {
               "id": "narcissism-f1-l3-deep-new-evidence",
               "type": "update",
               "title": "New evidence in a different relationship",
@@ -1352,7 +1458,12 @@
                 "narcissistic vulnerability",
                 "vulnerability"
               ],
-              "hint": "Write the term or a close plain-English equivalent."
+              "hint": "Choose the term that best completes the idea.",
+              "wordBank": [
+                "narcissistic vulnerability",
+                "grandiosity",
+                "social comparison"
+              ]
             },
             {
               "id": "narcissism-f1-l3-deep-closing",
@@ -1366,7 +1477,7 @@
         {
           "id": "narcissism-f2-l1",
           "title": "Second place and the story nobody is allowed to challenge",
-          "version": 6,
+          "version": 7,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -1751,6 +1862,48 @@
               "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Krizan & Herlache (2018), The Narcissism Spectrum Model, https://doi.org/10.1177/1088868316685018"
             },
             {
+              "id": "narcissism-f2-l1-context-drill",
+              "type": "sort",
+              "title": "Which claims about the award can you check?",
+              "prompt": "Sort the claims into those directly supported by the case and those requiring more evidence.",
+              "conceptId": "context-and-competing-explanations",
+              "explanation": "Recognition and disappointment give context for the reaction. Determining whether the result was unfair still needs the marking records.",
+              "counterexample": "A new verified detail may change which explanation is most defensible.",
+              "sources": "",
+              "categories": [
+                {
+                  "id": "narcissism-f2-l1-context-drill-c0",
+                  "label": "Supported observation"
+                },
+                {
+                  "id": "narcissism-f2-l1-context-drill-c1",
+                  "label": "Unresolved explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "narcissism-f2-l1-context-drill-s0",
+                  "label": "Tessa has seen Farah's data collection.",
+                  "answer": "narcissism-f2-l1-context-drill-c0"
+                },
+                {
+                  "id": "narcissism-f2-l1-context-drill-s1",
+                  "label": "The judges intentionally favoured a younger student.",
+                  "answer": "narcissism-f2-l1-context-drill-c1"
+                },
+                {
+                  "id": "narcissism-f2-l1-context-drill-s2",
+                  "label": "Ellis had been publicly praised as the top student.",
+                  "answer": "narcissism-f2-l1-context-drill-c0"
+                },
+                {
+                  "id": "narcissism-f2-l1-context-drill-s3",
+                  "label": "His complaint is only a way to protect an exceptional identity.",
+                  "answer": "narcissism-f2-l1-context-drill-c1"
+                }
+              ]
+            },
+            {
               "id": "narcissism-f2-l1-deep-new-evidence",
               "type": "update",
               "title": "New evidence in a different relationship",
@@ -1795,7 +1948,12 @@
                 "external validation",
                 "social approval"
               ],
-              "hint": "Write the term or a close plain-English equivalent."
+              "hint": "Choose the term that best completes the idea.",
+              "wordBank": [
+                "external validation",
+                "internal motivation",
+                "self-efficacy"
+              ]
             },
             {
               "id": "narcissism-f2-l1-deep-closing",
@@ -1826,7 +1984,7 @@
         {
           "id": "narcissism-f2-l2",
           "title": "The joke nobody was supposed to question",
-          "version": 6,
+          "version": 7,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -2224,6 +2382,33 @@
               "correctOutcome": "narcissism-f2-l2-deep-rank-outcome-0"
             },
             {
+              "id": "narcissism-f2-l2-context-drill",
+              "type": "match",
+              "title": "A boundary is not a verdict on character",
+              "prompt": "Find what each detail tells you, including what the example would mean between two teammates rather than two friends.",
+              "conceptId": "context-and-competing-explanations",
+              "explanation": "A request for a behaviour to stop remains specific even when its recipient feels criticised. Whether the person changes their conduct matters more than the first defensive sentence.",
+              "counterexample": "A new verified detail may change which explanation is most defensible.",
+              "sources": "",
+              "pairs": [
+                {
+                  "id": "narcissism-f2-l2-context-drill-p0",
+                  "label": "Amal raised the imitation privately",
+                  "answer": "The request was not itself a public shaming"
+                },
+                {
+                  "id": "narcissism-f2-l2-context-drill-p1",
+                  "label": "The joke was copied before her presentation",
+                  "answer": "There was an observable consequence"
+                },
+                {
+                  "id": "narcissism-f2-l2-context-drill-p2",
+                  "label": "A teammate asks someone to stop repeating a nickname",
+                  "answer": "A specific behaviour can be limited without judging a whole personality"
+                }
+              ]
+            },
+            {
               "id": "narcissism-f2-l2-deep-new-evidence",
               "type": "update",
               "title": "New evidence in a different relationship",
@@ -2269,7 +2454,12 @@
                 "perspective taking",
                 "perspective-taking"
               ],
-              "hint": "Write the term or a close plain-English equivalent."
+              "hint": "Choose the term that best completes the idea.",
+              "wordBank": [
+                "empathy",
+                "compliance",
+                "reassurance"
+              ]
             },
             {
               "id": "narcissism-f2-l2-deep-closing",
@@ -2283,7 +2473,7 @@
         {
           "id": "narcissism-f2-l3",
           "title": "When somebody else's pain interrupts your own story",
-          "version": 6,
+          "version": 7,
           "standard": "deep-10",
           "durationMinutes": 11,
           "editorialStatus": "ready",
@@ -2667,6 +2857,48 @@
               "answer": "narcissism-f2-l3-deep-rank-perspective-0"
             },
             {
+              "id": "narcissism-f2-l3-context-drill",
+              "type": "sort",
+              "title": "Urgent obligation or threat to identity?",
+              "prompt": "Which details can be verified now, and which describe an inner motive that needs testing?",
+              "conceptId": "context-and-competing-explanations",
+              "explanation": "The booking deadline could be real, which matters. Whether anyone else could act on it helps test how necessary his immediate focus was.",
+              "counterexample": "A new verified detail may change which explanation is most defensible.",
+              "sources": "",
+              "categories": [
+                {
+                  "id": "narcissism-f2-l3-context-drill-c0",
+                  "label": "Can be checked"
+                },
+                {
+                  "id": "narcissism-f2-l3-context-drill-c1",
+                  "label": "Needs interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "narcissism-f2-l3-context-drill-s0",
+                  "label": "The deposit has a written deadline.",
+                  "answer": "narcissism-f2-l3-context-drill-c0"
+                },
+                {
+                  "id": "narcissism-f2-l3-context-drill-s1",
+                  "label": "Soren cannot bear being regarded as a failed organiser.",
+                  "answer": "narcissism-f2-l3-context-drill-c1"
+                },
+                {
+                  "id": "narcissism-f2-l3-context-drill-s2",
+                  "label": "Nina lost her job that morning.",
+                  "answer": "narcissism-f2-l3-context-drill-c0"
+                },
+                {
+                  "id": "narcissism-f2-l3-context-drill-s3",
+                  "label": "Soren kept talking about the booking solely to escape discomfort.",
+                  "answer": "narcissism-f2-l3-context-drill-c1"
+                }
+              ]
+            },
+            {
               "id": "narcissism-f2-l3-deep-new-evidence",
               "type": "update",
               "title": "New evidence in a different relationship",
@@ -2711,7 +2943,12 @@
                 "social comparison",
                 "comparing yourself to others"
               ],
-              "hint": "Write the term or a close plain-English equivalent."
+              "hint": "Choose the term that best completes the idea.",
+              "wordBank": [
+                "social comparison",
+                "perspective taking",
+                "attachment security"
+              ]
             },
             {
               "id": "narcissism-f2-l3-deep-closing",
@@ -2725,7 +2962,7 @@
         {
           "id": "narcissism-m1-l1",
           "title": "From 'you're extraordinary' to 'you were never worth knowing'",
-          "version": 6,
+          "version": 7,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -3110,6 +3347,33 @@
               "counterexample": "A different inference could require examining different lines or information outside the conversation."
             },
             {
+              "id": "narcissism-m1-l1-context-drill",
+              "type": "match",
+              "title": "Track what happened to the friendship",
+              "prompt": "Match each event to its possible role in the dispute. Use the same reasoning for a partner who overpromises support.",
+              "conceptId": "context-and-competing-explanations",
+              "explanation": "Imogen's hurt may be understandable. The factual promise and the meaning she gives to the disappointment must still be examined separately.",
+              "counterexample": "A new verified detail may change which explanation is most defensible.",
+              "sources": "",
+              "pairs": [
+                {
+                  "id": "narcissism-m1-l1-context-drill-p0",
+                  "label": "Kareem says he offered to check references",
+                  "answer": "A disputed limit on the actual promise"
+                },
+                {
+                  "id": "narcissism-m1-l1-context-drill-p1",
+                  "label": "Imogen says he was never generous",
+                  "answer": "A current let-down becomes an account of the entire past"
+                },
+                {
+                  "id": "narcissism-m1-l1-context-drill-p2",
+                  "label": "A partner provides an old message setting the boundary",
+                  "answer": "Independent evidence about what was agreed"
+                }
+              ]
+            },
+            {
               "id": "narcissism-m1-l1-deep-new-evidence",
               "type": "update",
               "title": "New evidence in a different relationship",
@@ -3155,7 +3419,12 @@
                 "idealisation and devaluation",
                 "idealization and devaluation"
               ],
-              "hint": "Write the term or a close plain-English equivalent."
+              "hint": "Choose the term that best completes the idea.",
+              "wordBank": [
+                "devaluation",
+                "reappraisal",
+                "self-compassion"
+              ]
             },
             {
               "id": "narcissism-m1-l1-deep-closing",
@@ -3169,7 +3438,7 @@
         {
           "id": "narcissism-m1-l2",
           "title": "The apology that asks to be comforted",
-          "version": 6,
+          "version": 7,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -3567,6 +3836,48 @@
               "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215"
             },
             {
+              "id": "narcissism-m1-l2-context-drill",
+              "type": "sort",
+              "title": "Repair, reassurance and evidence",
+              "prompt": "Sort the actions by whether they contain the immediate breach or concern how Owen is feeling about himself.",
+              "conceptId": "context-and-competing-explanations",
+              "explanation": "Owen's feelings can be addressed without making Sasha responsible for settling them before her information is protected.",
+              "counterexample": "A new verified detail may change which explanation is most defensible.",
+              "sources": "",
+              "categories": [
+                {
+                  "id": "narcissism-m1-l2-context-drill-c0",
+                  "label": "Contains the privacy breach"
+                },
+                {
+                  "id": "narcissism-m1-l2-context-drill-c1",
+                  "label": "Addresses Owen's emotional response"
+                }
+              ],
+              "items": [
+                {
+                  "id": "narcissism-m1-l2-context-drill-s0",
+                  "label": "Ask the administrator to check for saved copies.",
+                  "answer": "narcissism-m1-l2-context-drill-c0"
+                },
+                {
+                  "id": "narcissism-m1-l2-context-drill-s1",
+                  "label": "Speak privately with an appropriate supporter about guilt.",
+                  "answer": "narcissism-m1-l2-context-drill-c1"
+                },
+                {
+                  "id": "narcissism-m1-l2-context-drill-s2",
+                  "label": "Record who may have accessed the information.",
+                  "answer": "narcissism-m1-l2-context-drill-c0"
+                },
+                {
+                  "id": "narcissism-m1-l2-context-drill-s3",
+                  "label": "Ask someone outside the affected party for help managing shame.",
+                  "answer": "narcissism-m1-l2-context-drill-c1"
+                }
+              ]
+            },
+            {
               "id": "narcissism-m1-l2-deep-new-evidence",
               "type": "update",
               "title": "New evidence in a different relationship",
@@ -3611,7 +3922,12 @@
                 "accountability",
                 "taking responsibility"
               ],
-              "hint": "Write the term or a close plain-English equivalent."
+              "hint": "Choose the term that best completes the idea.",
+              "wordBank": [
+                "accountability",
+                "self-justification",
+                "reassurance seeking"
+              ]
             },
             {
               "id": "narcissism-m1-l2-deep-closing",
@@ -3642,7 +3958,7 @@
         {
           "id": "narcissism-m1-l3",
           "title": "What did the family teach him to protect?",
-          "version": 6,
+          "version": 7,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -4026,6 +4342,33 @@
               "answer": "narcissism-m1-l3-deep-rank-perspective-0"
             },
             {
+              "id": "narcissism-m1-l3-context-drill",
+              "type": "match",
+              "title": "Developmental history is not destiny",
+              "prompt": "Connect the evidence with what it may help explain, using both family and present-day settings.",
+              "conceptId": "context-and-competing-explanations",
+              "explanation": "History may help explain why admitting an error feels costly. The actual difficulty also depends on present consequences and how people react to requests for help.",
+              "counterexample": "A new verified detail may change which explanation is most defensible.",
+              "sources": "",
+              "pairs": [
+                {
+                  "id": "narcissism-m1-l3-context-drill-p0",
+                  "label": "Aaron was shamed for losing a competition",
+                  "answer": "An earlier experience that might affect what an error means"
+                },
+                {
+                  "id": "narcissism-m1-l3-context-drill-p1",
+                  "label": "The business audit needs a correction",
+                  "answer": "A present responsibility independent of family history"
+                },
+                {
+                  "id": "narcissism-m1-l3-context-drill-p2",
+                  "label": "A pupil freely asks a trusted teacher for help",
+                  "answer": "Evidence that needing help can feel different across contexts"
+                }
+              ]
+            },
+            {
               "id": "narcissism-m1-l3-deep-new-evidence",
               "type": "update",
               "title": "New evidence in a different relationship",
@@ -4070,7 +4413,12 @@
                 "impairment",
                 "functional impairment"
               ],
-              "hint": "Write the term or a close plain-English equivalent."
+              "hint": "Choose the term that best completes the idea.",
+              "wordBank": [
+                "impairment",
+                "self-esteem",
+                "social validation"
+              ]
             },
             {
               "id": "narcissism-m1-l3-deep-closing",
@@ -4084,7 +4432,7 @@
         {
           "id": "narcissism-m1-l4",
           "title": "Two clinicians, one assessment: why the diagnosis is not obvious",
-          "version": 6,
+          "version": 7,
           "standard": "deep-10",
           "durationMinutes": 11,
           "editorialStatus": "ready",
@@ -4469,6 +4817,48 @@
               ]
             },
             {
+              "id": "narcissism-m1-l4-context-drill",
+              "type": "sort",
+              "title": "Assessment evidence or an interpretive leap?",
+              "prompt": "Separate information useful to a clinical assessment from conclusions the evidence does not yet justify.",
+              "conceptId": "context-and-competing-explanations",
+              "explanation": "Both time and context matter. Clinical assessment evaluates persistence, actual impairment and the limits of each source of evidence.",
+              "counterexample": "A new verified detail may change which explanation is most defensible.",
+              "sources": "",
+              "categories": [
+                {
+                  "id": "narcissism-m1-l4-context-drill-c0",
+                  "label": "Relevant assessment information"
+                },
+                {
+                  "id": "narcissism-m1-l4-context-drill-c1",
+                  "label": "Premature conclusion"
+                }
+              ],
+              "items": [
+                {
+                  "id": "narcissism-m1-l4-context-drill-s0",
+                  "label": "Several years of documented relationship conflict.",
+                  "answer": "narcissism-m1-l4-context-drill-c0"
+                },
+                {
+                  "id": "narcissism-m1-l4-context-drill-s1",
+                  "label": "One high questionnaire score means Theo has a disorder.",
+                  "answer": "narcissism-m1-l4-context-drill-c1"
+                },
+                {
+                  "id": "narcissism-m1-l4-context-drill-s2",
+                  "label": "A first interview took place days after redundancy.",
+                  "answer": "narcissism-m1-l4-context-drill-c0"
+                },
+                {
+                  "id": "narcissism-m1-l4-context-drill-s3",
+                  "label": "The clinician with more experience must have the accurate formulation.",
+                  "answer": "narcissism-m1-l4-context-drill-c1"
+                }
+              ]
+            },
+            {
               "id": "narcissism-m1-l4-deep-new-evidence",
               "type": "update",
               "title": "New evidence in a different relationship",
@@ -4513,7 +4903,12 @@
                 "validity",
                 "construct validity"
               ],
-              "hint": "Write the term or a close plain-English equivalent."
+              "hint": "Choose the term that best completes the idea.",
+              "wordBank": [
+                "validity",
+                "reliability",
+                "sensitivity"
+              ]
             },
             {
               "id": "narcissism-m1-l4-deep-closing",
@@ -4527,7 +4922,7 @@
         {
           "id": "narcissism-m1-l5",
           "title": "How to recognise change when the words sound the same",
-          "version": 6,
+          "version": 7,
           "standard": "deep-10",
           "durationMinutes": 11,
           "editorialStatus": "ready",
@@ -4925,6 +5320,33 @@
               "counterexample": "A different inference could require examining different lines or information outside the conversation."
             },
             {
+              "id": "narcissism-m1-l5-context-drill",
+              "type": "match",
+              "title": "What counts as evidence of change?",
+              "prompt": "Pair each detail with the type of conclusion it supports. Compare how the principle would apply to a colleague trying to respond differently to criticism.",
+              "conceptId": "context-and-competing-explanations",
+              "explanation": "A description of insight and a pattern of different conduct are distinct outcomes. The latter provides stronger evidence of sustained interpersonal change.",
+              "counterexample": "A new verified detail may change which explanation is most defensible.",
+              "sources": "",
+              "pairs": [
+                {
+                  "id": "narcissism-m1-l5-context-drill-p0",
+                  "label": "Nico can now explain his defensive response",
+                  "answer": "Improved verbal understanding of the difficulty"
+                },
+                {
+                  "id": "narcissism-m1-l5-context-drill-p1",
+                  "label": "Nico returns and pays the outstanding bill",
+                  "answer": "Observable action addressing the original concern"
+                },
+                {
+                  "id": "narcissism-m1-l5-context-drill-p2",
+                  "label": "A colleague handles four difficult reviews without retaliating",
+                  "answer": "Repeated behaviour across more than one occasion"
+                }
+              ]
+            },
+            {
               "id": "narcissism-m1-l5-deep-new-evidence",
               "type": "update",
               "title": "New evidence in a different relationship",
@@ -4970,7 +5392,12 @@
                 "psychological formulation",
                 "functional formulation"
               ],
-              "hint": "Write the term or a close plain-English equivalent."
+              "hint": "Choose the term that best completes the idea.",
+              "wordBank": [
+                "formulation",
+                "diagnostic score",
+                "rationalisation"
+              ]
             },
             {
               "id": "narcissism-m1-l5-deep-closing",
@@ -4984,7 +5411,7 @@
         {
           "id": "narcissism-m1-l6",
           "title": "Four accounts of the same relationship",
-          "version": 6,
+          "version": 7,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -5368,6 +5795,48 @@
               "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987; Ronningstam (2015), PMCID:PMC4415495"
             },
             {
+              "id": "narcissism-m1-l6-context-drill",
+              "type": "sort",
+              "title": "Separate contribution from inferred character",
+              "prompt": "Distinguish evidence about the arts project from hypotheses about Celeste's psychology.",
+              "conceptId": "context-and-competing-explanations",
+              "explanation": "Funding, authorship and management can all be evaluated from records. A psychodynamic account adds a potential explanation, not a substitute for those records.",
+              "counterexample": "A new verified detail may change which explanation is most defensible.",
+              "sources": "",
+              "categories": [
+                {
+                  "id": "narcissism-m1-l6-context-drill-c0",
+                  "label": "Documentable project claim"
+                },
+                {
+                  "id": "narcissism-m1-l6-context-drill-c1",
+                  "label": "Hypothesis about motives"
+                }
+              ],
+              "items": [
+                {
+                  "id": "narcissism-m1-l6-context-drill-s0",
+                  "label": "Celeste arranged funding and managed delivery.",
+                  "answer": "narcissism-m1-l6-context-drill-c0"
+                },
+                {
+                  "id": "narcissism-m1-l6-context-drill-s1",
+                  "label": "Celeste needs to be seen as indispensable to feel worthwhile.",
+                  "answer": "narcissism-m1-l6-context-drill-c1"
+                },
+                {
+                  "id": "narcissism-m1-l6-context-drill-s2",
+                  "label": "Rohan wrote an early proposal draft.",
+                  "answer": "narcissism-m1-l6-context-drill-c0"
+                },
+                {
+                  "id": "narcissism-m1-l6-context-drill-s3",
+                  "label": "Celeste's objections are driven mainly by unconscious shame.",
+                  "answer": "narcissism-m1-l6-context-drill-c1"
+                }
+              ]
+            },
+            {
               "id": "narcissism-m1-l6-deep-new-evidence",
               "type": "update",
               "title": "New evidence in a different relationship",
@@ -5413,7 +5882,12 @@
                 "functional formulation",
                 "psychological formulation"
               ],
-              "hint": "Write the term or a close plain-English equivalent."
+              "hint": "Choose the term that best completes the idea.",
+              "wordBank": [
+                "formulation",
+                "interpersonal projection",
+                "standardisation"
+              ]
             },
             {
               "id": "narcissism-m1-l6-deep-closing",
