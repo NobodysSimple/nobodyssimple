@@ -57,7 +57,13 @@ function dialogueEditor(node){
 function investigationEditor(node){
  const lines=node.turns||[],layers=node.layers||[];
  const choices=lines.map((t,i)=>({id:t.id,label:'Message '+(i+1)+' — '+(t.speaker==='a'?node.speakerA:node.speakerB)}));
- return '<section class="cl-list"><div class="cl-list-title"><strong>Ten layers of psychological interpretation</strong></div>'+
+ const profiles=node.profiles||[];
+ const profileEditor='<section class="cl-list"><div class="cl-list-title"><strong>Two character case files</strong></div>'+
+ '<p class="cl-hint">Use known details and habits that matter to the reading. Keep explanations and unrevealed evidence for later.</p>'+
+ profiles.map((p,i)=>'<details class="cl-dialogue-check" '+(i===0?'open':'')+'><summary>'+esc(p.name||('Person '+(i+1)))+'</summary>'+
+ [['name','Name'],['role','Role in the relationship'],['history','Known history or earlier events'],['temperament','Habitual style (observable or reported)'],['pressure','Current stakes or pressure']].map(([key,label])=>
+ '<label class="cl-field"><span>'+label+'</span><textarea data-investigation-profile="'+i+'" data-prop="'+key+'" rows="3">'+esc(p[key]||'')+'</textarea></label>').join('')+'</details>').join('')+'</section>';
+ return profileEditor+'<section class="cl-list"><div class="cl-list-title"><strong>Ten layers of psychological interpretation</strong></div>'+
  '<p class="cl-hint">Explain what the evidence may mean. Give a plausible alternative and the next detail that would distinguish the accounts.</p>'+
  layers.map((layer,i)=>'<details class="cl-dialogue-check" '+(i===0?'open':'')+'><summary>Depth '+(i+1)+' — '+esc(layer.title||'')+'</summary>'+
  '<label class="cl-field"><span>Depth title</span><input data-investigation-layer="'+i+'" data-prop="title" value="'+esc(layer.title||'')+'"></label>'+
@@ -87,6 +93,7 @@ function editorFields(node){
  if(node.type==='perspective')html+=textField('Viewpoint A','viewA',node.viewA,{rows:3})+textField('Viewpoint B','viewB',node.viewB,{rows:3});
  if(node.type==='predict')html+=textField('Condition / variable to change','changePrompt',node.changePrompt,{rows:2});
  if(node.type==='complete')html+=textField('Optional hint','hint',node.hint)+
+ '<label class="cl-field"><span>Optional word bank (one choice per line)</span><textarea rows="4" data-complete-wordbank>'+esc((node.wordBank||[]).join('\n'))+'</textarea><small>Include the correct answer; leave empty for typed recall. The learner taps a word rather than writing an essay.</small></label>'+
  '<section class="cl-list"><div class="cl-list-title"><strong>Accepted answers (including variants)</strong><button data-act="add-answer" type="button">＋ Add</button></div>'+
  (node.answers||[]).map((x,i)=>'<div class="cl-row"><input aria-label="Accepted answer '+(i+1)+'" data-answer-index="'+i+'" value="'+esc(x)+'"><button type="button" data-act="remove-answer" data-pos="'+i+'">×</button></div>').join('')+'</section>';
  for(const list of ({match:['pairs'],sort:['categories','items'],label:['segments'],choose:['options'],repair:['options'],investigate:['options'],chain:['steps'],rank:['steps'],update:['options'],perspective:['options'],predict:['changes','outcomes'],character:['evidenceOptions','responseOptions']})[node.type]||[])html+=itemList(node,list);
@@ -249,7 +256,12 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
    const check=node.checks?.[Number(target.dataset.dialogueCheck)];if(!check)return;
    if(target.dataset.dialogueOption!==undefined){const option=check.options?.[Number(target.dataset.dialogueOption)];if(!option)return;option[target.dataset.prop]=target.value;}
    else check[target.dataset.prop]=target.value;
-  }else if(node&&node.type==='investigation'&&target.dataset.investigationLoop!==undefined){
+  }else if(node&&node.type==='investigation'&&target.dataset.investigationProfile!==undefined){
+    const person=node.profiles?.[Number(target.dataset.investigationProfile)];if(!person)return;
+    person[target.dataset.prop]=target.value;
+   }else if(node&&node.type==='complete'&&target.dataset.completeWordbank!==undefined){
+    node.wordBank=target.value.split(/\r?\n/).map(v=>v.trim()).filter(Boolean);
+   }else if(node&&node.type==='investigation'&&target.dataset.investigationLoop!==undefined){
     const layer=node.layers?.[7];if(!layer)return;
     layer.loop=layer.loop||{trigger:'',response:'',recipient:'',cycle:'',alternative:''};
     layer.loop[target.dataset.investigationLoop]=target.value;
