@@ -37,7 +37,7 @@ export function createCourseNode(type){
  if(type==='match')return {...node,pairs:[{id:makeCourseId(),label:'',answer:''},{id:makeCourseId(),label:'',answer:''}]};
  if(type==='sort')return {...node,categories:[option('Category 1'),option('Category 2')],items:[{id:makeCourseId(),label:'',answer:''},{id:makeCourseId(),label:'',answer:''}]};
  if(type==='label')return {...node,segments:[{id:makeCourseId(),text:'',answer:false},{id:makeCourseId(),text:'',answer:true}]};
- if(type==='complete')return {...node,answers:[''],hint:''};
+ if(type==='complete')return {...node,answers:[''],wordBank:[],hint:''};
  if(['chain','rank'].includes(type))return {...node,steps:[option(''),option('')]};
  if(type==='update')return {...node,newEvidence:'',options:[option(''),option('')],answer:''};
  if(type==='perspective')return {...node,viewA:'',viewB:'',options:[option(''),option('')],answer:''};
@@ -106,6 +106,12 @@ export function validateCourseForPublish(course){
     if(node.type==='sort'&&(!validOptions(node.categories)||!Array.isArray(node.items)||node.items.length<2||node.items.some(p=>!isText(p.id)||!isText(p.label)||!contains(node.categories,p.answer))))report(here,'add categories and assign every example');
     if(node.type==='label'&&(!Array.isArray(node.segments)||node.segments.length<2||node.segments.some(p=>!isText(p.id)||!isText(p.text))||!node.segments.some(p=>p.answer)))report(here,'add phrases and mark at least one as evidence');
     if(node.type==='complete'&&(!Array.isArray(node.answers)||!node.answers.length||node.answers.some(a=>!isText(a))))report(here,'add accepted answers');
+    if(node.type==='complete'&&node.wordBank?.length){
+     const bank=node.wordBank;
+     if(!Array.isArray(bank)||bank.length<2||bank.length>4||bank.some(w=>!isText(w))||new Set(bank.map(w=>w.toLowerCase().trim())).size!==bank.length||
+       !bank.some(w=>node.answers?.some(a=>a.toLowerCase().trim()===w.toLowerCase().trim())))
+      report(here,'word bank needs 2–4 distinct terms, including one accepted answer');
+    }
     if(['chain','rank'].includes(node.type)&&(!validOptions(node.steps)))report(here,'add at least two ordered steps');
     if(node.type==='update'&&!isText(node.newEvidence))report(here,'add the newly discovered evidence');
     if(node.type==='perspective'&&(!isText(node.viewA)||!isText(node.viewB)))report(here,'write both character viewpoints');
