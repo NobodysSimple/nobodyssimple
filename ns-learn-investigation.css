@@ -86,3 +86,24 @@
 .ns-inquiry__loop button:focus-visible{outline:3px solid #5b966d;outline-offset:3px}
 :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-inquiry__loop-end{color:#335840!important;font-size:.87rem;line-height:1.55}
 @media(max-width:550px){.ns-inquiry__mind-choice{display:grid;grid-template-columns:1fr 1fr}.ns-inquiry__mind-choice button{font-size:.8rem;padding:9px 8px}}
+
+
+/* Sequential message investigation: the case is readable before the learner
+   receives an interpretation. Profiles describe known facts, not diagnoses. */
+.ns-inquiry__profiles{padding:14px;border-radius:15px;border:1px solid #41645b;background:#172b32}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-inquiry__profiles h2{font-size:1.08rem!important;color:#f4f7ef!important;margin:0 0 6px}
+.ns-inquiry__profiles-help{color:#c6d7ce!important;font-size:.88rem;line-height:1.5;margin:0 0 12px}
+.ns-inquiry__profile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ns-inquiry__profile{padding:12px;background:#eff5ed;color:#193d2c;border:1px solid #c2d2c4;border-radius:11px;min-width:0;overflow-wrap:anywhere}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-inquiry__profile :is(h3,p,strong){color:#193d2c!important}
+.ns-inquiry__profile h3{margin:0 0 7px;font-size:1.06rem}
+.ns-inquiry__profile p{font-size:.88rem!important;line-height:1.52!important;margin:0 0 9px!important}
+.ns-inquiry__profile p:last-child{margin-bottom:0!important}
+.ns-inquiry__exchange{display:grid;gap:8px}
+.ns-inquiry__message-count{font-weight:700;font-size:.86rem;color:#e2ede7!important;margin:0}
+.ns-inquiry__next-message{padding:15px 17px;min-height:50px;width:100%;border:1px solid #94c3aa;background:#245d47;color:#fff;border-radius:12px;font:750 1rem system-ui,sans-serif;cursor:pointer}
+.ns-inquiry__next-message:hover{background:#347453}
+.ns-inquiry__next-message:focus-visible{outline:3px solid #ffe1a6;outline-offset:3px}
+.ns-inquiry__all-read{color:#d7e5dc!important;font-size:.88rem;line-height:1.55}
+.ns-inquiry__investigate-hint{color:#385849!important;margin:0 0 13px}
+@media(max-width:640px){.ns-inquiry__profile-grid{grid-template-columns:1fr}.ns-inquiry__profiles{padding:11px}}
