@@ -32,7 +32,7 @@ test('feedback sound is persistent, optional, and does not require an audio devi
 
 test('the published Narcissism curriculum validates and contains deep investigations',()=>{
  const bundle=JSON.parse(readFileSync(new URL('../../learn-content/courses/narcissism.json',import.meta.url),'utf8'));
- assert.equal(bundle.version,10);
+ assert.equal(bundle.version,13);
  assert.deepEqual(validateLearnBundle(bundle,'narcissism'),[]);
  const lessons=bundle.modules.flatMap(m=>m.lessons);
  assert.equal(lessons.length,12);
@@ -40,7 +40,7 @@ test('the published Narcissism curriculum validates and contains deep investigat
   assert.equal(lesson.standard,'deep-10');
   const result=auditLesson(lesson,{strict:true});
   assert.deepEqual(result.blockers,[],lesson.title);
-  assert(result.drills>=8);
+  assert(result.drills>=9);
   assert(result.formats>=4);
   assert(result.textWords>=900);
   assert(displayedLessonMinutes(lesson)>=10);
@@ -48,6 +48,9 @@ test('the published Narcissism curriculum validates and contains deep investigat
   assert(investigation,lesson.title);
   assert.equal(investigation.layers.length,10);
   assert.equal(investigation.checks.length,4);
+  assert.equal(investigation.profiles.length,2);
+  assert(lesson.nodes.some(n=>['match','sort'].includes(n.type)));
+  assert(lesson.nodes.find(n=>n.type==='complete').wordBank.length>=2);
   assert(investigation.layers.every(l=>l.analysis&&l.alternative&&l.test));
  }
 });
