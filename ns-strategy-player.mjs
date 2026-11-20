@@ -219,11 +219,15 @@ export function renderStrategyLesson(root,bundle,lesson,{review=false,preview=fa
    footer=passed?'<a class="ns-atlas-lesson__next" href="'+home+'">Back to course →</a>':'<button class="ns-atlas-lesson__next" data-retry type="button">Practise another set →</button>';resetScroll=true;
   }else{
    const {scene,q}=current(),stage=state.question%3,reveal=state.visible<scene.turns.length;
-   const nodeType=stage===0?'spot':stage===1?'explain':'respond';
-   const nodeName=stage===0?'Spot the pattern':stage===1?'Explain the psychology':'Choose a response';
-   const nodeIcon=stage===0?'◎':stage===1?'✧':'↗';
+   const nodeType=q.mode;
+   const nodeName=q.kind;
+   const nodeIcon={spot:"◎",evidence:"⌕",distinguish:"◐",mechanism:"↺",update:"✦",perspective:"◈",respond:"↗",transfer:"⤴"}[nodeType]||"✧";
    const cast=scene.turns.map(t=>t.speaker);
    const chat='<ol class="ns-atlas-lesson__thread" aria-label="Conversation">'+scene.turns.slice(0,state.visible).map((turn,i)=>'<li class="'+(i%2?"is-other":"")+'">'+speakerAvatar(turn.speaker,cast)+'<div class="ns-atlas-lesson__bubble"><span>'+esc(turn.speaker)+'</span><p>'+esc(turn.text)+'</p></div></li>').join("")+'</ol>';
+   const sourceCue=!reveal&&stage===0&&!scene.featured?
+    '<div class="ns-atlas-lesson__observation"><strong>What can actually be observed</strong><p>'+esc(scene.observation)+'</p></div>':'';
+   const updateEvidence=!reveal&&stage===1&&Math.floor(state.question/3)===3?
+    '<div class="ns-atlas-lesson__observation is-evidence"><strong>New information</strong><p>'+esc(scene.newEvidence)+'</p></div>':'';
    const compare=stage===0&&scene.isNear&&!reveal?'<div class="ns-atlas-lesson__compare"><div><small>FIRST IMPRESSION</small><p>'+esc(scene.turns[1]?.text||'')+'</p></div><div><small>WHAT HAPPENED NEXT</small><p>'+esc(scene.turns.at(-1)?.text||'')+'</p></div></div>':'';
    const mechanics=stage===1&&!reveal?'<div class="ns-atlas-lesson__mechanics" aria-label="Examine what happened"><span><b>1</b> Before</span><span aria-hidden="true">→</span><span><b>2</b> Action</span><span aria-hidden="true">→</span><span><b>3</b> After</span></div>':'';
    const reply=stage===2&&!reveal?'<div class="ns-atlas-lesson__reply-placeholder"><span aria-hidden="true">↳</span> Your next move matters. Choose what fits the situation.</div>':'';
@@ -231,7 +235,7 @@ export function renderStrategyLesson(root,bundle,lesson,{review=false,preview=fa
     '<fieldset class="ns-atlas-lesson__choices" '+(state.checked?"disabled":"")+'><legend><span>'+esc(q.kind)+'</span>'+esc(q.prompt)+'</legend>'+
     q.options.map((x,i)=>'<label class="'+(state.selected===x.id?"is-selected":"")+'"><input type="radio" name="atlas-answer" value="'+esc(x.id)+'" '+(state.selected===x.id?"checked":"")+'><span class="ns-atlas-lesson__choice-index" aria-hidden="true">'+String.fromCharCode(65+i)+'</span><span>'+esc(x.label)+'</span></label>').join("")+'</fieldset>';
    const hint=!reveal&&!state.checked?'<div class="ns-atlas-lesson__coach"><button type="button" class="ns-atlas-lesson__hint-button" data-hint aria-expanded="'+state.hintOpen+'">✧ '+(state.hintOpen?'Hide hint':'Need a hint?')+'</button>'+(state.hintOpen?'<p class="ns-atlas-lesson__hint-text">Notice exactly what changes after someone speaks. Which explanation is supported by what you can observe, rather than what you imagine about their intentions?</p>':'')+'</div>':'';
-   middle='<div class="ns-atlas-lesson__task" data-node-type="'+nodeType+'"><p class="ns-atlas-lesson__kicker">'+esc(scene.tone)+' · '+esc(scene.place)+'</p><div class="ns-atlas-lesson__node-heading"><span class="ns-atlas-lesson__node-icon" aria-hidden="true">'+nodeIcon+'</span><div><span class="ns-atlas-lesson__node-tag">SKILL '+String(Math.floor(state.question/3)+1)+' OF 6</span><h1>'+nodeName+'</h1></div></div><p class="ns-atlas-lesson__context">'+esc(scene.intro)+'</p>'+chat+compare+mechanics+reply+answers+hint+'</div>';
+   middle='<div class="ns-atlas-lesson__task" data-node-type="'+nodeType+'"><p class="ns-atlas-lesson__kicker">'+esc(scene.tone)+' · '+esc(scene.place)+'</p><div class="ns-atlas-lesson__node-heading"><span class="ns-atlas-lesson__node-icon" aria-hidden="true">'+nodeIcon+'</span><div><span class="ns-atlas-lesson__node-tag">SITUATION '+String(Math.floor(state.question/3)+1)+' OF 6 · '+esc(record.title)+'</span><h1>'+nodeName+'</h1></div></div><p class="ns-atlas-lesson__context">'+esc(scene.intro)+'</p>'+chat+sourceCue+updateEvidence+compare+mechanics+reply+answers+hint+'</div>';
    if(state.checked){
     feedbackTray='<div class="ns-atlas-lesson__feedback '+(state.feedback.correct?"is-correct":"is-incorrect")+'" role="status" tabindex="-1" data-feedback><div class="ns-atlas-lesson__feedback-icon" aria-hidden="true">'+(state.feedback.correct?'✓':'↻')+'</div><div><strong>'+(state.feedback.correct?"Good thinking.":"There's an important distinction.")+'</strong>'+(state.feedback.correct?'':'<p><strong>Best-supported answer:</strong> '+esc(q.options.find(o=>o.id===q.answer)?.label||'')+'</p>')+'<p>'+esc(q.why)+'</p><p class="ns-atlas-lesson__muted">'+esc(q.caution)+'</p></div></div>';
    }
