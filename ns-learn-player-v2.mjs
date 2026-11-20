@@ -58,7 +58,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const castMarkup=names=>names.length?'<div class="ns-learn-immersive__cast" aria-label="People in this example">'+names.map(name=>'<span class="ns-learn-immersive__cast-person">'+characterPortrait(name,cast,esc,true)+'<span>'+esc(name)+'</span></span>').join('')+'</div>':'';
  const originalNodes=learningNodes(lesson);
  let nodes=arrange(originalNodes);
- const state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,lifeFrame:0,lifeVisited:new Set(),lifeTargeted:false,lifeInitial:'',lifeRevealed:false,lifeChoice:'',lifeSort:{},lifeBefore:0,lifeAfter:0,investigationStage:0,investigationChoice:'',investigationFocus:'',investigationOpened:{},investigationNotes:{},saved:false,options:new Map(),repairs:createRepairQueue(),correcting:false,repairTask:null,soundOn:readSoundPreference()};
+ const state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,lifeFrame:0,lifeVisited:new Set(),lifeTargeted:false,lifeInitial:'',lifeRevealed:false,lifeChoice:'',lifeSort:{},lifeBefore:0,lifeAfter:0,investigationStage:0,investigationChoice:'',investigationFocus:'',investigationOpened:{},investigationNotes:{},investigationRoutes:{},investigationLoopSteps:{},saved:false,options:new Map(),repairs:createRepairQueue(),correcting:false,repairTask:null,soundOn:readSoundPreference()};
  const orderedOptions=(name,items)=>{
   const key=name+':'+(items||[]).map(x=>x.id).join('/');
   if(!state.options.has(key))state.options.set(key,scramble(items));
@@ -125,7 +125,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   if(node.type==='character')return {evidence:root.querySelector('input[name="evidence"]:checked')?.value||'',action:root.querySelector('input[name="action"]:checked')?.value||''};
   if(['dialogue','investigation'].includes(node.type))return root.querySelector('input[name="dialogue-choice"]:checked')?.value||'';
  }
- const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;state.lifeFrame=0;state.lifeVisited=new Set();state.lifeTargeted=false;state.investigationStage=0;state.investigationChoice='';state.investigationFocus='';state.investigationOpened={};state.investigationNotes={};state.lifeInitial='';state.lifeRevealed=false;state.lifeChoice='';state.lifeSort={};const node=current();state.lifeBefore=Number(node?.initialValue??80);state.lifeAfter=state.lifeBefore;const ids=['sequence','chain','rank'].includes(node?.type)?node.steps.map(s=>s.id):[];state.order=scramble(ids);if(ids.length>1&&ids.every((id,i)=>state.order[i]===id))state.order.reverse();};
+ const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;state.lifeFrame=0;state.lifeVisited=new Set();state.lifeTargeted=false;state.investigationStage=0;state.investigationChoice='';state.investigationFocus='';state.investigationOpened={};state.investigationNotes={};state.investigationRoutes={};state.investigationLoopSteps={};state.lifeInitial='';state.lifeRevealed=false;state.lifeChoice='';state.lifeSort={};const node=current();state.lifeBefore=Number(node?.initialValue??80);state.lifeAfter=state.lifeBefore;const ids=['sequence','chain','rank'].includes(node?.type)?node.steps.map(s=>s.id):[];state.order=scramble(ids);if(ids.length>1&&ids.every((id,i)=>state.order[i]===id))state.order.reverse();};
  const beginNextCorrection=()=>{
    const task=takeRepair(state.repairs);
    if(!task){state.correcting=false;state.repairTask=null;state.phase='done';return;}
@@ -220,6 +220,14 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
     state.investigationOpened[state.investigationStage]=true;paint();
     root.querySelector('.ns-inquiry__revealed h3')?.setAttribute('tabindex','-1');
     root.querySelector('.ns-inquiry__revealed h3')?.focus({preventScroll:true});
+   });
+   root.querySelectorAll('[data-investigation-route]').forEach(button=>button.addEventListener('click',()=>{
+    state.investigationRoutes[state.investigationStage]=Number(button.dataset.investigationRoute);
+    paint();root.querySelector('[data-investigation-route="'+state.investigationRoutes[state.investigationStage]+'"]')?.focus({preventScroll:true});
+   }));
+   root.querySelector('[data-investigation-loop-next]')?.addEventListener('click',()=>{
+    state.investigationLoopSteps[state.investigationStage]=Math.min(5,(state.investigationLoopSteps[state.investigationStage]||1)+1);
+    paint();(root.querySelector('[data-investigation-loop-next]')||root.querySelector('.ns-inquiry__loop-end'))?.focus({preventScroll:true});
    });
   root.querySelector('[data-life-target]')?.addEventListener('click',()=>{state.lifeTargeted=true;paint();});
   root.querySelectorAll('[data-life-frame]').forEach(button=>button.addEventListener('click',()=>{
