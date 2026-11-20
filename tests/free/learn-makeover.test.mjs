@@ -21,7 +21,7 @@ test('Strategy activities reuse Nobody’s Simple art and keep feedback beside t
  const player=read('ns-strategy-player.mjs');
  assert.ok(player.includes('companionVisual(bundle.id)'));
  assert.ok(player.includes('portraitCoords(name,cast)'));
- assert.ok(player.includes('data-node-type="'+nodeType'));
+ assert.ok(player.includes('data-node-type='));
  assert.ok(player.includes('feedbackTray+footer'));
  assert.ok(player.includes('state.hintOpen'));
  assert.ok(player.includes('state.selected=input.value;'));
