@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {renderInvestigation,validateInvestigation} from '../../ns-learn-investigation.mjs';
 import {gradeLearnItem,learnLessonScore,validateLearnBundle} from '../../ns-learn-engine-v2.mjs';
-import {saveLearnCompletion,readLearnProgress} from '../../ns-learn-progress-v2.mjs';
+import {saveLearnCompletion,readLearnProgress,learnCourseProgress,getCurrentLearnCompletion} from '../../ns-learn-progress-v2.mjs';
 import {lessonResearchMarkup,lessonSources,sourceLink} from '../../ns-learn-evidence.mjs';
 const course=()=>JSON.parse(readFileSync(new URL('../../learn-content/courses/narcissism.json',import.meta.url),'utf8'));
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -106,4 +106,16 @@ test('relationship loops remain progressive and inner states remain explicitly h
  const mind=renderInvestigation(n,{investigationVisible:reveal,investigationStage:4,dialogueCheck:-1,investigationOpened:{4:true},investigationRoutes:{4:1}},esc,choices);
  assert.match(mind,/not recordings of private thoughts/);
  assert(mind.includes(esc(n.layers[4].alternative)));
+});
+
+test('outdated completions remain in history but do not count as current mastery',()=>{
+ const bundle=course(),lesson=bundle.modules[0].lessons[0];
+ const records={};
+ records['ns-psy-learn:complete:'+bundle.id+':'+lesson.id]={
+  type:'learn-completion',courseId:bundle.id,lessonId:lesson.id,
+  lessonVersion:lesson.version-1,version:bundle.version-1,at:'2026-11-19T00:00:00.000Z',correct:9,total:9
+ };
+ assert.equal(learnCourseProgress(bundle,records).done,0);
+ assert.equal(getCurrentLearnCompletion(bundle,lesson,records),null);
+ assert(records['ns-psy-learn:complete:'+bundle.id+':'+lesson.id]);
 });
