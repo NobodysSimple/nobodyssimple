@@ -2,7 +2,7 @@
  * Public interactive course player. Also mounts the staff preview without
  * recording completions. Question content is always escaped; never raw HTML.
  */
-import {getLearnContent} from './ns-learn-content-v2.mjs';
+import {getLearnContent} from './ns-learn-content-v2.mjs?v=psy-atlas-20261120';
 import {renderStrategyLesson} from './ns-strategy-player.mjs?v=psy-atlas-20261120';
 import {getLearnCourse,LEARN_COMPANIONS} from './ns-learn-catalog-v2.mjs';
 import {validateLearnBundle,gradeLearnItem,learnLessonScore,flattenLearnLessons,QUESTION_TYPES} from './ns-learn-engine-v2.mjs';
@@ -14,7 +14,7 @@ import {lessonResearchMarkup} from './ns-learn-evidence.mjs?v=case-reasoning-202
 import {createRepairQueue,addRepair,takeRepair,finishRepair,repairSummary,readSoundPreference,saveSoundPreference,playLearningCue,correctAnswerText} from './ns-learn-feedback.mjs';
 import {isLifeNode,lifeNodeMode,lifeNodeDefinition,lifeControls} from './ns-life-node-types.mjs?v=narcissism-audit-20261119';
 import {knownCastForLesson,charactersMentioned,characterPortrait} from './ns-learn-cast.mjs';
-import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs?v=profile-drills-20261120-r2';
+import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs?v=psy-atlas-20261120';
 const esc=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[ch]));
 const opt=(id,label)=>'<option value="'+esc(id)+'">'+esc(label)+'</option>';
 const nodeIllustrations=Object.freeze({
