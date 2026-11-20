@@ -2,9 +2,9 @@
   "version": 1,
   "courses": {
     "narcissism": {
-      "version": 10,
+      "version": 13,
       "title": "Narcissism & Personality",
-      "description": "Twelve interactive investigations with ten reasoning depths, alternative motives, relational feedback loops and evidence-led practice."
+      "description": "Twelve investigations of psychologically complicated relationships: follow messages one at a time, use character histories as clues, compare rival explanations and practise across new situations."
     },
     "manipulation": {
       "version": 4,
