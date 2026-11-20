@@ -107,3 +107,15 @@
 .ns-inquiry__all-read{color:#d7e5dc!important;font-size:.88rem;line-height:1.55}
 .ns-inquiry__investigate-hint{color:#385849!important;margin:0 0 13px}
 @media(max-width:640px){.ns-inquiry__profile-grid{grid-template-columns:1fr}.ns-inquiry__profiles{padding:11px}}
+
+
+/* Quiz phase: review controls are optional; the assessed question stays first. */
+.ns-inquiry--checks{gap:11px!important}
+.ns-inquiry__review{border:1px solid #4a7163;border-radius:12px;background:#183039;color:#eff7f1;overflow:hidden}
+.ns-inquiry__review>summary{padding:13px 16px;cursor:pointer;font-weight:700;color:#eff7f1;min-height:44px;box-sizing:border-box}
+.ns-inquiry__review>summary:focus-visible{outline:3px solid #e1d2a9;outline-offset:-4px}
+.ns-inquiry__review[open]>summary{border-bottom:1px solid #4a7163}
+.ns-inquiry__review>.ns-inquiry__profiles{border:0;border-radius:0}
+.ns-inquiry__review>.ns-inquiry__exchange{padding:13px}
+.ns-inquiry__review>.ns-inquiry__stage-nav{padding:14px}
+.ns-inquiry__review>.ns-inquiry__analysis{border-radius:0;border:0}
