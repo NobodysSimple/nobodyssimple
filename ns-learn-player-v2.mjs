@@ -58,7 +58,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const castMarkup=names=>names.length?'<div class="ns-learn-immersive__cast" aria-label="People in this example">'+names.map(name=>'<span class="ns-learn-immersive__cast-person">'+characterPortrait(name,cast,esc,true)+'<span>'+esc(name)+'</span></span>').join('')+'</div>':'';
  const originalNodes=learningNodes(lesson);
  let nodes=arrange(originalNodes);
- const state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,lifeFrame:0,lifeVisited:new Set(),lifeTargeted:false,lifeInitial:'',lifeRevealed:false,lifeChoice:'',lifeSort:{},lifeBefore:0,lifeAfter:0,investigationStage:0,investigationChoice:'',saved:false,options:new Map(),repairs:createRepairQueue(),correcting:false,repairTask:null,soundOn:readSoundPreference()};
+ const state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,lifeFrame:0,lifeVisited:new Set(),lifeTargeted:false,lifeInitial:'',lifeRevealed:false,lifeChoice:'',lifeSort:{},lifeBefore:0,lifeAfter:0,investigationStage:0,investigationChoice:'',investigationFocus:'',investigationOpened:{},investigationNotes:{},saved:false,options:new Map(),repairs:createRepairQueue(),correcting:false,repairTask:null,soundOn:readSoundPreference()};
  const orderedOptions=(name,items)=>{
   const key=name+':'+(items||[]).map(x=>x.id).join('/');
   if(!state.options.has(key))state.options.set(key,scramble(items));
@@ -125,7 +125,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   if(node.type==='character')return {evidence:root.querySelector('input[name="evidence"]:checked')?.value||'',action:root.querySelector('input[name="action"]:checked')?.value||''};
   if(['dialogue','investigation'].includes(node.type))return root.querySelector('input[name="dialogue-choice"]:checked')?.value||'';
  }
- const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;state.lifeFrame=0;state.lifeVisited=new Set();state.lifeTargeted=false;state.investigationStage=0;state.investigationChoice='';state.lifeInitial='';state.lifeRevealed=false;state.lifeChoice='';state.lifeSort={};const node=current();state.lifeBefore=Number(node?.initialValue??80);state.lifeAfter=state.lifeBefore;const ids=['sequence','chain','rank'].includes(node?.type)?node.steps.map(s=>s.id):[];state.order=scramble(ids);if(ids.length>1&&ids.every((id,i)=>state.order[i]===id))state.order.reverse();};
+ const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;state.lifeFrame=0;state.lifeVisited=new Set();state.lifeTargeted=false;state.investigationStage=0;state.investigationChoice='';state.investigationFocus='';state.investigationOpened={};state.investigationNotes={};state.lifeInitial='';state.lifeRevealed=false;state.lifeChoice='';state.lifeSort={};const node=current();state.lifeBefore=Number(node?.initialValue??80);state.lifeAfter=state.lifeBefore;const ids=['sequence','chain','rank'].includes(node?.type)?node.steps.map(s=>s.id):[];state.order=scramble(ids);if(ids.length>1&&ids.every((id,i)=>state.order[i]===id))state.order.reverse();};
  const beginNextCorrection=()=>{
    const task=takeRepair(state.repairs);
    if(!task){state.correcting=false;state.repairTask=null;state.phase='done';return;}
@@ -176,7 +176,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
     const response=checked?'<div class="ns-learn-player__feedback ns-learn-player__feedback--'+(state.checked.correct?'correct':'incorrect')+'" data-result="'+(state.checked.correct?'correct':'incorrect')+'" role="status"><strong>'+(state.checked.correct?'✓ Correct.':'✕ Not quite. Review the reasoning.')+'</strong>'+(answerLabel?'<p><strong>Best-supported answer:</strong> '+esc(answerLabel)+'</p>':'')+paragraphs(state.checked.explanation)+(state.checked.counterexample?'<p><small>Where this may differ: '+esc(state.checked.counterexample)+'</small></p>':'')+(state.checked.reply?'<div class="ns-learn-player__branch"><strong>'+esc(node.speakerB||'Possible reply')+'</strong><p>'+esc(state.checked.reply)+'</p>'+(state.checked.consequence?'<small>'+esc(state.checked.consequence)+'</small>':'')+'</div>':'')+'</div>':'';
    middle='<div class="ns-learn-immersive__task"><p class="ns-learn-player__eyebrow">'+esc(node.type==='investigation'?'MESSAGE INVESTIGATION':node.type==='dialogue'?'CONVERSATION':isLifeNode(node.type)?lifeNodeDefinition(node.type).name.toUpperCase():node.type.toUpperCase())+' · '+(state.i+1)+' / '+nodes.length+'</p><h1>'+esc(heading)+'</h1>'+correctionLabel+faces+(glossary.some(entry=>JSON.stringify(node).toLowerCase().includes(entry.term.toLowerCase()))?glossaryHelp:'')+body+notice+response+'</div>';
    if(!(node.type==='dialogue'&&state.dialogueCheck<0&&state.dialogueVisible<(node.turns||[]).length)){
-    const buttonText=['dialogue','investigation'].includes(node.type)&&state.dialogueCheck<0?'Analyse the exchange →':
+    const buttonText=['dialogue','investigation'].includes(node.type)&&state.dialogueCheck<0?'Apply your reasoning →':
      ['dialogue','investigation'].includes(node.type)&&checked&&!state.correcting&&state.dialogueCheck<(node.checks?.length||0)-1?'Next question →':
      read||checked?(state.correcting?'Continue correction practice →':state.i+1===nodes.length?(state.repairs.pending.length?'Review missed questions →':'Complete lesson →'):'Continue →'):'Check answer';
     foot='<button type="button" class="ns-learn-player__primary" data-next>'+buttonText+'</button>';
@@ -204,7 +204,23 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  function wire(){
   root.querySelector('[data-sound-toggle]')?.addEventListener('click',()=>{state.soundOn=!state.soundOn;saveSoundPreference(state.soundOn);paint();});
   root.querySelectorAll('input[name="dialogue-choice"]').forEach(input=>input.addEventListener('change',()=>{state.investigationChoice=input.value;}));
-  root.querySelectorAll('[data-investigation-stage]').forEach(button=>button.addEventListener('click',()=>{state.investigationStage=Number(button.dataset.investigationStage);paint();root.querySelector('[data-investigation-stage="'+state.investigationStage+'"]')?.focus();}));
+  root.querySelectorAll('[data-investigation-stage]').forEach(button=>button.addEventListener('click',()=>{
+    state.investigationStage=Number(button.dataset.investigationStage);state.investigationFocus='';
+    paint();root.querySelector('.ns-inquiry__analysis h2')?.setAttribute('tabindex','-1');
+    root.querySelector('.ns-inquiry__analysis h2')?.focus({preventScroll:true});
+   }));
+   root.querySelectorAll('[data-investigation-turn]').forEach(button=>button.addEventListener('click',()=>{
+    state.investigationFocus=button.dataset.investigationTurn;paint();
+    root.querySelector('[data-investigation-turn="'+state.investigationFocus+'"]')?.focus({preventScroll:true});
+   }));
+   root.querySelector('[data-investigation-note]')?.addEventListener('input',event=>{
+    state.investigationNotes[state.investigationStage]=event.target.value;
+   });
+   root.querySelector('[data-investigation-open]')?.addEventListener('click',()=>{
+    state.investigationOpened[state.investigationStage]=true;paint();
+    root.querySelector('.ns-inquiry__revealed h3')?.setAttribute('tabindex','-1');
+    root.querySelector('.ns-inquiry__revealed h3')?.focus({preventScroll:true});
+   });
   root.querySelector('[data-life-target]')?.addEventListener('click',()=>{state.lifeTargeted=true;paint();});
   root.querySelectorAll('[data-life-frame]').forEach(button=>button.addEventListener('click',()=>{
    state.lifeFrame=Number(button.dataset.lifeFrame);state.lifeVisited.add(state.lifeFrame);paint();
