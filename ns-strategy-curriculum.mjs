@@ -49,7 +49,9 @@ export function buildStrategyBundle(original,source){
  const baseCourse=source?.atlas?.courses?.[original?.id];
  if(!baseCourse)return original;
  const blocks=[];
- for(const entry of baseCourse.strategies){
+ for(const [entryIndex,entry] of baseCourse.strategies.entries()){
+   const alternate=baseCourse.strategies.find((x,i)=>i!==entryIndex&&x.section===entry.section&&x.kind===entry.kind)||baseCourse.strategies.find((x,i)=>i!==entryIndex&&x.kind===entry.kind)||baseCourse.strategies[(entryIndex+1)%baseCourse.strategies.length];
+   const contrast={title:alternate.title,cue:alternate.cue};
    const group=entry.kind==="EXTENSION"?"Advanced variations":protect(entry.section)||"Core techniques";
    let unit=blocks[blocks.length-1];
    if(!unit||unit.title!==group){
@@ -63,7 +65,7 @@ export function buildStrategyBundle(original,source){
      objective:"Recognise, explain and respond to "+entry.title+" across varied situations; reject false positives and revise when new evidence appears.",
      teach:entry.cue+"\n\n"+hypotheticalMechanism(entry),
      takeaway:entry.response||"Describe what is observable, test competing explanations and choose a proportionate next step.",
-     durationMinutes:9,atlasRecord:entry,featuredCase:featured||null
+     durationMinutes:9,atlasRecord:{...entry,contrast},featuredCase:featured||null
    });
  }
  return {
