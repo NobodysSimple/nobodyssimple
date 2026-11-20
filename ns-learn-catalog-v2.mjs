@@ -22,6 +22,7 @@ const ORIGINAL_CAST=new Map(WORLDS.flatMap((world,row)=>WORLD_STORIES[world].cha
 export const LEARN_COURSE_COMPANIONS=Object.freeze({
  "narcissism":"Lyra",
  "manipulation":"Ari",
+ "conversation-patterns":"Ari",
  "attachment":"Nell",
  "overthinking":"Moss",
  "boundaries":"Cove",
@@ -52,6 +53,7 @@ const art=Object.freeze({self:'peach',thinking:'blue',emotions:'gold',people:'sa
 const cardTitles=Object.freeze({
  narcissism:'Narcissism & Personality',
  manipulation:'Gaslighting & Manipulation',
+ 'conversation-patterns':'Conversation Skills & Red Flags',
  attachment:'Attachment & Love',
  overthinking:'Overthinking',
  boundaries:'Boundaries & Communication',
@@ -75,7 +77,7 @@ const make=(id,title,description,category,artId,focus,keywords=[])=>{
  const person=LEARN_COMPANIONS[id];
  if(!person)throw Error('Missing original Life Lab companion for course '+id);
  const portrait=id==='neurodiversity';
- const landscape=COURSE_ART_ROOT+id+'-scene.svg';
+ const landscape=COURSE_ART_ROOT+(id==='conversation-patterns'?'manipulation':id)+'-scene.svg';
  const mascot=portrait?COURSE_ART_ROOT+'neurodiversity-companion.webp':COMPANION_ATLAS;
  const tone=art[artId]||'sage';
  return Object.freeze({id,title,cardTitle:cardTitles[id]||title,description,category,
@@ -89,6 +91,7 @@ const make=(id,title,description,category,artId,focus,keywords=[])=>{
 // Ranked discovery order, NOT a compulsory learning sequence.
 export const LEARN_COURSES=Object.freeze([
  make('narcissism','Understanding Narcissism & Personality','Go beyond stereotypes: traits, vulnerability, grandiosity and what a diagnosis cannot tell you.','relationships','self',['Grandiosity and vulnerability','Personality traits versus disorders','Self-esteem and entitlement','Limits of inferring motives'],['narcissistic','personality disorder','grandiosity']),
+ make('conversation-patterns','Conversation Patterns & Reasoning Traps','Learn one recognisable technique per lesson, through fictional messages and evidence-based reasoning in relationships, work and family.','relationships','communication',['Gaslighting and credible disagreement','DARVO and responsibility','Pressure, trust and boundaries','Fallacies and distorted choices'],['narcissism','narcissistic abuse','manipulation','tactics','fallacies','gaslighting','DARVO']),
  make('manipulation','Manipulation, Gaslighting & Psychological Tactics','Distinguish coercion, gaslighting, DARVO and defensiveness without guessing diagnoses.','relationships','boundaries',['Gaslighting and ordinary disagreement','DARVO and responsibility','Coercion and power','Evidence, safety and proportionate responses'],['darvo','coercive','blame shifting','psychological abuse']),
  make('attachment','Attachment, Love & Relationship Patterns','Understand attachment, closeness, reassurance and recurring relationship dynamics.','relationships','people',['Attachment theory and limits','Closeness and reassurance','Conflict and repair','Context and relationship patterns'],['love','romance','attachment style']),
  make('overthinking','Overthinking, Rumination & Mental Loops','Learn why thoughts repeat and when thinking helps rather than keeps you stuck.','mind','thinking',['Worry versus rumination','Checking and reassurance','Solvable problems and uncertainty','Choosing a useful next step'],['worry','rumination','thought loops']),
