@@ -36,28 +36,52 @@ export function validateInvestigation(node){
  }
  return issues;
 }
+/**
+ * A message-led reasoning workspace. The transcript remains visible.
+ * The user's own interpretations are private, optional, and never marked
+ * correct or incorrect by matching them against hidden psychodynamic claims.
+ */
 export function renderInvestigation(node,state,esc,choiceSet){
  const turns=Array.isArray(node.turns)?node.turns:[],layers=Array.isArray(node.layers)?node.layers:[];
- const stage=Math.max(0,Math.min(layers.length-1,Number(state.investigationStage)||0)),layer=layers[stage]||{};
- const selecting=state.dialogueCheck<0;
- const turnText=t=>clean(t.text);
+ const stage=Math.max(0,Math.min(layers.length-1,Number(state.investigationStage)||0));
+ const layer=layers[stage]||{},turnIndex=turns.findIndex(t=>t.id===layer.focusTurn);
+ const selectedTurn=state.investigationFocus||layer.focusTurn;
+ const selecting=state.dialogueCheck<0,opened=!!state.investigationOpened?.[stage];
+ const note=state.investigationNotes?.[stage]||'';
  const messages='<ol class="ns-inquiry__thread" aria-label="Conversation transcript">'+turns.map((t,i)=>{
   const named=t.speaker==='b'?node.speakerB:node.speakerA;
-  return '<li class="ns-inquiry__turn'+(layer.focusTurn===t.id?' is-focus':'')+'" data-speaker="'+esc(t.speaker)+'"><small>'+esc(named)+' · '+(i+1)+'</small><p>'+esc(turnText(t))+'</p></li>';
+  return '<li class="ns-inquiry__turn'+(selectedTurn===t.id?' is-focus':'')+'" data-speaker="'+esc(t.speaker)+'">'+
+   '<button type="button" class="ns-inquiry__message" data-investigation-turn="'+esc(t.id)+'" aria-pressed="'+(selectedTurn===t.id)+'" aria-label="Inspect message '+(i+1)+' from '+esc(named)+'">'+
+   '<small>'+esc(named)+' · '+(i+1)+'</small><span>'+esc(t.text||'')+'</span></button></li>';
  }).join('')+'</ol>';
- const nav='<div class="ns-inquiry__stage-nav" role="group" aria-label="Depth of analysis">'+
- layers.map((l,i)=>'<button type="button" data-investigation-stage="'+i+'" aria-pressed="'+(stage===i)+'" title="'+esc(l.title)+'">'+(i+1)+'</button>').join('')+'</div>';
- const analysis='<section class="ns-inquiry__analysis" aria-live="polite"><p class="ns-inquiry__eyebrow">Depth '+(stage+1)+' of 10</p>'+
- '<h2>'+esc(layer.title||'Interpret the evidence')+'</h2><p>'+esc(layer.analysis||'')+'</p>'+
- '<h3>Another account worth testing</h3><p>'+esc(layer.alternative||'')+'</p>'+
- '<h3>What would help us decide?</h3><p>'+esc(layer.test||'')+'</p>'+
- '</section>';
- const intro='<p class="ns-inquiry__intro">'+esc(node.scenario||'')+'</p>'+
- '<p class="ns-inquiry__help">Read the complete exchange. Select any of the ten numbered depths to examine it more closely; this is an investigation, not ten separate quizzes.</p>';
+ const nav='<nav class="ns-inquiry__stage-nav" aria-label="Depth of analysis">'+layers.map((l,i)=>
+  '<button type="button" data-investigation-stage="'+i+'" aria-current="'+(stage===i?'step':'false')+'" title="'+esc(l.title)+'">'+(i+1)+'</button>'
+ ).join('')+'</nav>';
+ const selected=turns.find(t=>t.id===selectedTurn);
+ const focused=selected?'<div class="ns-inquiry__focused"><strong>Message under examination</strong><p>'+esc((selected.speaker==='b'?node.speakerB:node.speakerA)+': '+selected.text)+'</p></div>':'';
+ const reflection='<label class="ns-inquiry__note"><strong>What is your reading of this moment?</strong>'+
+  '<span>Try an explanation before opening the analysis. You can leave this empty if you want a worked example.</span>'+
+  '<textarea data-investigation-note rows="3" maxlength="1000" placeholder="What might this response achieve? What else could explain it?">'+esc(note)+'</textarea></label>';
+ const analysis=opened?'<div class="ns-inquiry__revealed" role="region" aria-label="Expert working interpretation">'+
+  '<h3>One account supported by the exchange</h3><p>'+esc(layer.analysis||'')+'</p>'+
+  '<h3>A different explanation worth considering</h3><p>'+esc(layer.alternative||'')+'</p>'+
+  '<h3>Which evidence could distinguish them?</h3><p>'+esc(layer.test||'')+'</p>'+
+  '<p class="ns-inquiry__uncertainty">These are working explanations of a fictional scene. A plausible account is not direct access to a person’s private motives.</p>'+
+  '</div>':
+  '<button type="button" class="ns-inquiry__open" data-investigation-open>Compare with the psychological analysis →</button>';
+ const workspace='<section class="ns-inquiry__analysis" aria-label="Develop your interpretation">'+
+  '<p class="ns-inquiry__eyebrow">Reasoning depth '+(stage+1)+' of '+layers.length+'</p>'+
+  '<h2>'+esc(layer.title||'Interpret the evidence')+'</h2>'+focused+reflection+analysis+
+  '<div class="ns-inquiry__adjacent">'+
+   (stage>0?'<button type="button" data-investigation-stage="'+(stage-1)+'">← Earlier depth</button>':'')+
+   (stage<layers.length-1?'<button type="button" data-investigation-stage="'+(stage+1)+'">Explore the next depth →</button>':'')+
+  '</div></section>';
  const check=node.checks?.[state.dialogueCheck];
- const question=selecting?'<p class="ns-inquiry__ready">When you have examined the messages, choose <strong>Analyse the exchange</strong> to apply what you learned.</p>':
- '<section class="ns-inquiry__question"><p class="ns-inquiry__eyebrow">Your reasoning · '+(state.dialogueCheck+1)+' / '+node.checks.length+'</p>'+
- '<h2>'+esc(check?.prompt||'')+'</h2>'+
- choiceSet('dialogue-choice',check?.options||[],state.investigationChoice||state.answers?.[node.id]?.[check?.id]||'',!!state.checked)+'</section>';
- return '<div class="ns-inquiry">'+intro+messages+'<h2 class="ns-inquiry__depth-title">Examine the psychological layers</h2>'+nav+analysis+question+'</div>';
+ const question=selecting?'<p class="ns-inquiry__ready">Explore the messages in any order. When ready, choose <strong>Apply your reasoning</strong> below. Your private notes are not scored.</p>':
+  '<section class="ns-inquiry__question"><p class="ns-inquiry__eyebrow">Apply the reasoning · '+(state.dialogueCheck+1)+' / '+node.checks.length+'</p>'+
+  '<h2>'+esc(check?.prompt||'')+'</h2>'+
+  choiceSet('dialogue-choice',check?.options||[],state.investigationChoice||state.answers?.[node.id]?.[check?.id]||'',!!state.checked)+'</section>';
+ return '<div class="ns-inquiry"><p class="ns-inquiry__intro">'+esc(node.scenario||'')+'</p>'+
+  '<p class="ns-inquiry__help">Select a message to inspect it. Move between psychological depths whenever you like. Form your own account before revealing a worked interpretation.</p>'+
+  messages+'<h2 class="ns-inquiry__depth-title">Investigate the conversation</h2>'+nav+workspace+question+'</div>';
 }
