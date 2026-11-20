@@ -64,7 +64,11 @@ function investigationEditor(node){
  '<label class="cl-field"><span>Message carrying this clue</span><select data-investigation-layer="'+i+'" data-prop="focusTurn"><option value="">Entire conversation</option>'+options(choices,layer.focusTurn)+'</select></label>'+
  '<label class="cl-field"><span>Explanation of evidence and mechanism</span><textarea rows="5" data-investigation-layer="'+i+'" data-prop="analysis">'+esc(layer.analysis||'')+'</textarea></label>'+
  '<label class="cl-field"><span>Another plausible account</span><textarea rows="3" data-investigation-layer="'+i+'" data-prop="alternative">'+esc(layer.alternative||'')+'</textarea></label>'+
- '<label class="cl-field"><span>What evidence would distinguish them?</span><textarea rows="3" data-investigation-layer="'+i+'" data-prop="test">'+esc(layer.test||'')+'</textarea></label></details>').join('')+'</section>';
+ '<label class="cl-field"><span>What evidence would distinguish them?</span><textarea rows="3" data-investigation-layer="'+i+'" data-prop="test">'+esc(layer.test||'')+'</textarea></label>'+
+ (i===7?'<h3>Interactive relationship loop · five revealing steps</h3><p class="cl-hint">The learner explores how each response may influence the other, then sees a possible interruption. Keep the psychological links conditional, not deterministic.</p>'+
+ [['trigger','Initial trigger'],['response','Possible response from the first person'],['recipient','How the other person may respond'],['cycle','What may maintain the pattern'],['alternative','A route that could interrupt the cycle']].map(([key,label])=>
+ '<label class="cl-field"><span>'+label+'</span><textarea rows="3" data-investigation-loop="'+key+'">'+esc(layer.loop?.[key]||'')+'</textarea></label>').join(''):'')+
+ '</details>').join('')+'</section>';
 }
 function editorFields(node){
  if(!node)return '<div class="cl-hint">Choose or add a node to begin.</div>';
@@ -245,7 +249,11 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
    const check=node.checks?.[Number(target.dataset.dialogueCheck)];if(!check)return;
    if(target.dataset.dialogueOption!==undefined){const option=check.options?.[Number(target.dataset.dialogueOption)];if(!option)return;option[target.dataset.prop]=target.value;}
    else check[target.dataset.prop]=target.value;
-  }else if(node&&node.type==='investigation'&&target.dataset.investigationLayer!==undefined){const layer=node.layers?.[Number(target.dataset.investigationLayer)];if(!layer)return;layer[target.dataset.prop]=target.value;
+  }else if(node&&node.type==='investigation'&&target.dataset.investigationLoop!==undefined){
+    const layer=node.layers?.[7];if(!layer)return;
+    layer.loop=layer.loop||{trigger:'',response:'',recipient:'',cycle:'',alternative:''};
+    layer.loop[target.dataset.investigationLoop]=target.value;
+   }else if(node&&node.type==='investigation'&&target.dataset.investigationLayer!==undefined){const layer=node.layers?.[Number(target.dataset.investigationLayer)];if(!layer)return;layer[target.dataset.prop]=target.value;
    }else if(node&&isLifeNode(node.type)&&target.dataset.lifeFrame!==undefined){const frame=node.frames?.[Number(target.dataset.lifeFrame)];if(frame)frame[target.dataset.prop]=target.value;}
   else if(node&&isLifeNode(node.type)&&target.dataset.lifeOption!==undefined){const option=node.options?.[Number(target.dataset.lifeOption)];if(option)option[target.dataset.prop]=target.value;}
   else if(node&&target.dataset.field)node[target.dataset.field]=target.value;
