@@ -6,8 +6,8 @@
  */
 import {LEARN_COURSES,COURSE_CATEGORIES,LESSON_FORMATS,getLearnCourse,filterLearnCourses} from './ns-learn-catalog-v2.mjs';
 import {publishedLearnBundle,renderLearnLesson} from './ns-learn-player-v2.mjs?v=psy-atlas-20261120';
-import {readLearnProgress,learnCourseProgress,getCurrentLearnCompletion,dueLearnReviews} from './ns-learn-progress-v2.mjs?v=profile-drills-20261120-r2';
-import {getLearnIndex,hasPublishedLearnCourse,loadPublishedLearnIndex,loadPublishedLearnBundle} from './ns-learn-content-v2.mjs';
+import {readLearnProgress,learnCourseProgress,getCurrentLearnCompletion,dueLearnReviews} from './ns-learn-progress-v2.mjs?v=psy-atlas-20261120';
+import {getLearnIndex,hasPublishedLearnCourse,loadPublishedLearnIndex,loadPublishedLearnBundle} from './ns-learn-content-v2.mjs?v=psy-atlas-20261120';
 export const LEARN_COURSE_IDEAS=LEARN_COURSES;
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const image=(src,cls='',extra='')=>'<img src="'+esc(src)+'" class="'+esc(cls)+'" alt="" loading="lazy" decoding="async" '+extra+'>';
