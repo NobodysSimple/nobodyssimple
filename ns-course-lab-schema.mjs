@@ -1,6 +1,6 @@
 import {LIFE_NODE_TEMPLATES,isLifeNode,createLifeNode,validateLifeNode} from './ns-life-node-types.mjs?v=narcissism-audit-20261119';
-import {auditLesson} from './ns-learn-quality.mjs';
-import {createInvestigation,validateInvestigation} from './ns-learn-investigation.mjs';
+import {auditLesson} from './ns-learn-quality.mjs?v=case-reasoning-20261120';
+import {createInvestigation,validateInvestigation} from './ns-learn-investigation.mjs?v=case-reasoning-20261120';
 /**
  * Course Lab shared authoring schema: no content, only reusable node templates.
  * Stable IDs survive reorder/revision; published nodes are data, never executable HTML.
