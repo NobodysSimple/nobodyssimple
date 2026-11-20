@@ -84,7 +84,7 @@ function catalogue(root,{category='all',focusCourses=false}={}){
   const result=filterLearnCourses({category:current,query:rememberedQuery});
   const available=Object.keys(getLearnIndex().courses).length;
   const availability=root.querySelector('[data-learn-course-availability]');
-  if(availability)availability.textContent=available?available+' courses have playable first modules, each with twelve lessons across two foundations units and one applied case. Later modules are still being developed.':'Checking lesson availability…';
+  if(availability)availability.textContent=available?available+' courses currently offer playable lessons. Open a course to see its published lessons and any modules still in development.':'Checking lesson availability…';
   grid.innerHTML=result.map(card).join('');
   count.textContent=result.length+' '+(result.length===1?'course':'courses')+' found';
   empty.hidden=!!result.length;
@@ -121,10 +121,10 @@ function detail(root,id){
  '<small>Meet the course companion. Practice with '+esc(course.companionName)+' as you learn how people reason through difficult situations.</small>'+
  '</div></div></div>'+
  '<div class="ns-catalogue-detail-columns"><section class="ns-catalogue-outline"><span class="ns-courses-kicker">PLANNED LEARNING THEMES</span>'+
- '<h2>What you’ll explore</h2><p>The foundations are playable now. Later units will build on these themes as the course grows.</p>'+
+ '<h2>What you’ll explore</h2><p>'+(id==='conversation-patterns'?'Twelve individual techniques are playable now. The broader field syllabus is a roadmap, not a set of completed lessons.':'The foundations are playable now. Later units will build on these themes as the course grows.')+'</p>'+
  '<div class="ns-catalogue-focus">'+course.focus.map((t,i)=>'<div><span>'+String(i+1).padStart(2,'0')+'</span><strong>'+esc(t)+'</strong></div>').join('')+'</div></section>'+
  '<section class="ns-catalogue-outline"><span class="ns-courses-kicker">THE COURSE JOURNEY</span><h2>How you’ll learn</h2>'+
- '<p>Each course opens with plain-English concepts, then teaches how to examine evidence before moving into a longer case.  Dialogue Labs will appear where analysing a conversation or disagreement helps transfer the skill to everyday life.</p>'+
+ '<p>'+(id==='conversation-patterns'?'Pick one technique. Follow a conversation one message at a time, consider a reasonable alternative, then practise in a different situation.':'Each course introduces plain-English concepts and helps you test explanations with evidence and realistic cases.')+'</p>'+
  '<div class="ns-catalogue-phases"><span>Understand the idea</span><span>Spot the distinction</span><span>Apply it carefully</span><span>Review over time</span></div>'+
  '<a href="#learn/how-it-works">See our learning method →</a></section></div>'+
  '<section class="ns-catalogue-syllabus"><h2>Course lessons</h2>'+lessonMarkup+'</section>'+
