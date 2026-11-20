@@ -2,9 +2,9 @@
   "version": 1,
   "courses": {
     "narcissism": {
-      "version": 7,
+      "version": 8,
       "title": "Narcissism & Personality",
-      "description": "Twelve interactive psychological investigations: analyse messages through ten levels, test rival motives and learn when the evidence should change your mind."
+      "description": "Twelve case-led lessons that teach you to investigate conversations, test competing explanations, and revise your judgement when evidence changes."
     },
     "manipulation": {
       "version": 4,
