@@ -120,9 +120,10 @@ export function renderInvestigation(node,state,esc,choiceSet){
  // During checks, keep evidence one click away without forcing the learner
  // to scroll past ten messages and the entire expert explanation for each item.
  if(state.dialogueCheck>=0){
-  const review='<details class="ns-inquiry__review"><summary>Review the character profiles</summary>'+profiles+'</details>'+
-   '<details class="ns-inquiry__review"><summary>Review the full message exchange</summary>'+messages+'</details>'+
-   '<details class="ns-inquiry__review"><summary>Review the psychological analysis</summary>'+nav+workspace+'</details>';
+  const openedReview=state.investigationReviewOpen||{};
+  const review='<details class="ns-inquiry__review" data-investigation-review="profiles"'+(openedReview.profiles?' open':'')+'><summary>Review the character profiles</summary>'+profiles+'</details>'+
+   '<details class="ns-inquiry__review" data-investigation-review="messages"'+(openedReview.messages?' open':'')+'><summary>Review the full message exchange</summary>'+messages+'</details>'+
+   '<details class="ns-inquiry__review" data-investigation-review="analysis"'+(openedReview.analysis?' open':'')+'><summary>Review the psychological analysis</summary>'+nav+workspace+'</details>';
   return '<div class="ns-inquiry ns-inquiry--checks">'+question+review+'</div>';
  }
  return '<div class="ns-inquiry">'+intro+profiles+messages+
