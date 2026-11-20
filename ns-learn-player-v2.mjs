@@ -149,6 +149,12 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    else if(!correct)addRepair(state.repairs,state.i,checkIndex);
   };
  function paint(){
+  // The lesson is re-rendered after every action. Keep its scroll position
+  // while staying on the same node; reset only when the node really changes.
+  const oldColumn=root.querySelector('.ns-learn-immersive__content');
+  const oldOffset=oldColumn?.scrollTop||0;
+  const oldStep=root.dataset.learnRenderedStep||'';
+  const stepKey=state.phase+':'+state.i+':'+(state.correcting?'repair':'first');
   const guide=LEARN_COMPANIONS[courseId];
   const companion=course?.companionPortrait
    ?'<img class="ns-learn-immersive__portrait-img" src="'+esc(course.mascot)+'" alt="">'
@@ -194,11 +200,13 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    else if(preview)root.querySelector('[data-save]').textContent='Staff preview · No progress saved.';
   }
   wire();
+  const column=root.querySelector('.ns-learn-immersive__content');
+  if(column)column.scrollTop=oldStep===stepKey?oldOffset:0;
+  root.dataset.learnRenderedStep=stepKey;
   // Feedback cannot hide the permanently visible action row at any zoom.
   if(state.checked){
    const feedback=root.querySelector('.ns-learn-player__feedback');
    if(feedback){feedback.tabIndex=-1;feedback.focus({preventScroll:true});}
-   const column=root.querySelector('.ns-learn-immersive__content');
    if(column)column.scrollTop=column.scrollHeight;
   }
   if(state.phase==='node'&&current()?.type==='dialogue'){
@@ -269,7 +277,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    paint();
    const transcript=root.querySelector('[data-dialogue-scroll]');
    if(transcript)transcript.scrollTop=transcript.scrollHeight;
-   (root.querySelector('[data-dialogue-reveal]')||root.querySelector('[data-next]'))?.focus();
+   (root.querySelector('[data-dialogue-reveal]')||root.querySelector('[data-next]'))?.focus({preventScroll:true});
   });
   root.querySelector('[data-start]')?.addEventListener('click',()=>{state.phase='node';state.i=0;reset();paint();});
   root.querySelector('[data-close-lesson]')?.addEventListener('click',()=>root.closest('#cl-preview')?.querySelector('[data-act="close-preview"]')?.click());
