@@ -31,7 +31,8 @@ export function saveLearnCompletion(course,lesson,score,storage=globalThis.local
 }
 export function saveLearnReview(course,lesson,score,storage=globalThis.localStorage,at=now()){
  if(!course?.id||!lesson?.id||!score?.allAnswered||score.total!==expectedChecks(lesson))return {ok:false,error:'Review is incomplete.'};
- if(!readLearnProgress(storage)[completionKey(course.id,lesson.id)])return {ok:false,error:'Finish the lesson before reviewing it.'};
+ const current=readLearnProgress(storage)[completionKey(course.id,lesson.id)];
+ if(!current||Number(current.lessonVersion||1)<Number(lesson.version||1))return {ok:false,error:'Complete this updated lesson before reviewing it.'};
  return write(storage,records=>{
   const suffix=globalThis.crypto?.randomUUID?.()||at.replace(/\D/g,'');
   const key=LEARN_PROGRESS_PREFIX+'review:'+course.id+':'+lesson.id+':'+at+':'+suffix;
@@ -41,16 +42,20 @@ export function saveLearnReview(course,lesson,score,storage=globalThis.localStor
  });
 }
 export function getLearnCompletion(courseId,lessonId,records){return records?.[completionKey(courseId,lessonId)]||null;}
+export function getCurrentLearnCompletion(bundle,lesson,records){
+ const record=getLearnCompletion(bundle.id,lesson.id,records);
+ return record&&Number(record.lessonVersion||1)>=Number(lesson.version||1)?record:null;
+}
 export function learnCourseProgress(bundle,records){
  const lessons=(bundle?.modules||[]).flatMap(m=>m.lessons);
- const done=lessons.filter(l=>getLearnCompletion(bundle.id,l.id,records)).length;
+ const done=lessons.filter(l=>getCurrentLearnCompletion(bundle,l,records)).length;
  return {done,total:lessons.length};
 }
 const plusDays=(date,n)=>{const d=new Date(date+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10);};
 export function dueLearnReviews(bundle,records,today=now().slice(0,10)){
  const lessons=(bundle?.modules||[]).flatMap(m=>m.lessons);
  return lessons.flatMap(lesson=>{
-  const completed=getLearnCompletion(bundle.id,lesson.id,records);if(!completed)return[];
+  const completed=getCurrentLearnCompletion(bundle,lesson,records);if(!completed)return[];
   const attempts=Object.entries(records).filter(([key,v])=>key.startsWith(LEARN_PROGRESS_PREFIX+'review:'+bundle.id+':'+lesson.id+':')&&v?.type==='learn-review').map(([,v])=>v).sort((a,b)=>a.at.localeCompare(b.at));
   const last=attempts.at(-1),delay=last&&last.correct<last.total?1:[1,3,7,14,30][Math.min(attempts.length,4)];
   const due=plusDays((last?.at||completed.at).slice(0,10),delay);
