@@ -13,7 +13,7 @@ import {lessonResearchMarkup} from './ns-learn-evidence.mjs?v=case-reasoning-202
 import {createRepairQueue,addRepair,takeRepair,finishRepair,repairSummary,readSoundPreference,saveSoundPreference,playLearningCue,correctAnswerText} from './ns-learn-feedback.mjs';
 import {isLifeNode,lifeNodeMode,lifeNodeDefinition,lifeControls} from './ns-life-node-types.mjs?v=narcissism-audit-20261119';
 import {knownCastForLesson,charactersMentioned,characterPortrait} from './ns-learn-cast.mjs';
-import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs?v=case-reasoning-20261120';
+import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs?v=profile-drills-20261120-r2';
 const esc=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[ch]));
 const opt=(id,label)=>'<option value="'+esc(id)+'">'+esc(label)+'</option>';
 const inline=value=>esc(value).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/(^|[^*])\*([^*]+)\*/g,'$1<em>$2</em>');
