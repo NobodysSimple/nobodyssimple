@@ -5,9 +5,9 @@
  * Future learning material ships only through reviewed published bundles.
  */
 import {LEARN_COURSES,COURSE_CATEGORIES,LESSON_FORMATS,getLearnCourse,filterLearnCourses} from './ns-learn-catalog-v2.mjs';
-import {publishedLearnBundle,renderLearnLesson} from './ns-learn-player-v2.mjs?v=live-redesign-20261120';
-import {readLearnProgress,learnCourseProgress,getCurrentLearnCompletion,dueLearnReviews} from './ns-learn-progress-v2.mjs?v=profile-drills-20261120-r2';
-import {getLearnIndex,hasPublishedLearnCourse,loadPublishedLearnIndex,loadPublishedLearnBundle} from './ns-learn-content-v2.mjs';
+import {publishedLearnBundle,renderLearnLesson} from './ns-learn-player-v2.mjs?v=psy-atlas-20261120';
+import {readLearnProgress,learnCourseProgress,getCurrentLearnCompletion,dueLearnReviews} from './ns-learn-progress-v2.mjs?v=psy-atlas-20261120';
+import {getLearnIndex,hasPublishedLearnCourse,loadPublishedLearnIndex,loadPublishedLearnBundle} from './ns-learn-content-v2.mjs?v=psy-atlas-20261120';
 export const LEARN_COURSE_IDEAS=LEARN_COURSES;
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const image=(src,cls='',extra='')=>'<img src="'+esc(src)+'" class="'+esc(cls)+'" alt="" loading="lazy" decoding="async" '+extra+'>';
@@ -112,7 +112,8 @@ function detail(root,id){
  const nextHref=nextLesson?'#learn/lesson/'+encodeURIComponent(id)+'/'+encodeURIComponent(nextLesson.id):'#learn/courses';
  const activeModule=bundle?.modules.findIndex(m=>m.lessons.some(l=>l.id===nextLesson?.id))??0;
  const lessonMarkup=bundle?'<div class="ns-catalogue-published">'+
- '<p class="ns-catalogue-published__status">'+completed.done+' of '+completed.total+' strategies mastered in practice</p>'+
+ '<p class="ns-catalogue-published__status">'+completed.done+' of '+completed.total+' strategy lessons practised to mastery</p>'+
+ (bundle.strategyCurriculum?'<div class="ns-atlas-syllabus-search"><label for="ns-atlas-search">Find a particular technique</label><input id="ns-atlas-search" type="search" maxlength="100" autocomplete="off" placeholder="e.g. gaslighting, reassurance, boundaries"><span data-match-count>'+completed.total+' skills in this course</span></div>':'')+
  (nextLesson?'<a class="ns-atlas-next-skill" href="'+nextHref+'"><span>✿ '+(completed.done?'CONTINUE YOUR PATH':'START YOUR FIRST STRATEGY')+'</span><strong>'+esc(nextLesson.title)+'</strong><small>Conversation stories · 18 checks · apply in six settings →</small></a>':'')+
  bundle.modules.map((m,i)=>'<details class="ns-catalogue-module ns-atlas-path-unit" data-unit-kind="'+(m.kind==='strategy'?'strategy':m.kind==='foundation'?'foundation':'applied')+'"'+(i===activeModule?' open':'')+'><summary><span class="ns-catalogue-unit__phase">'+(m.kind==='strategy'?'STRATEGY COLLECTION':m.kind==='foundation'?'FOUNDATIONS':'APPLIED CASE')+'</span><strong>Unit '+(i+1)+' · '+esc(m.title)+'</strong><small>'+m.lessons.filter(l=>!!getCurrentLearnCompletion(bundle,l,records)).length+' / '+m.lessons.length+' mastered</small></summary><div class="ns-atlas-path-unit__links">'+
  m.lessons.map(l=>'<a href="#learn/lesson/'+encodeURIComponent(id)+'/'+encodeURIComponent(l.id)+'"'+(l.id===nextLesson?.id?' aria-current="step"':'')+'><span class="ns-atlas-path-unit__marker" aria-hidden="true">'+(getCurrentLearnCompletion(bundle,l,records)?'✓':'○')+'</span>'+esc(l.title)+' <span aria-hidden="true">→</span></a>').join('')+'</div></details>').join('')+'</div>':
@@ -140,6 +141,23 @@ function detail(root,id){
  '<section class="ns-catalogue-syllabus"><h2>Course lessons</h2>'+lessonMarkup+'</section>'+
  '<div class="ns-catalogue-detail-bottom"><a href="#learn/courses">← Browse other courses</a></div>'+
  '</div></div>';
+ const find=root.querySelector('#ns-atlas-search');
+ if(find){
+  const groups=[...root.querySelectorAll('.ns-atlas-path-unit')];
+  const counter=root.querySelector('[data-match-count]');
+  find.addEventListener('input',()=>{
+   const q=find.value.toLocaleLowerCase('en').trim();
+   let matches=0;
+   groups.forEach(group=>{
+    const links=[...group.querySelectorAll('.ns-atlas-path-unit__links a')];
+    let found=0;
+    links.forEach(a=>{const hit=!q||a.textContent.toLocaleLowerCase('en').includes(q);a.hidden=!hit;if(hit){matches++;found++;}});
+    group.hidden=!found;
+    if(q&&found)group.open=true;
+   });
+   if(counter)counter.textContent=matches+' '+(matches===1?'lesson':'lessons')+' found';
+  });
+ }
 }
 function how(root){
  root.innerHTML='<div class="ns-courses-hub"><div class="ns-courses-inner ns-catalogue-detail">'+

@@ -6,10 +6,14 @@ const source=name=>readFileSync(new URL('../../'+name,import.meta.url),'utf8');
 test('live Learn page loads newly versioned course and visual assets',()=>{
  const html=source('index.html'),site=source('site.mjs'),hub=source('ns-learn-courses.mjs'),worker=source('sw.js');
  assert.ok(html.includes('ns-learn-makeover.css?v=live-redesign-20261120'));
- assert.ok(html.includes('site.mjs?v=live-redesign-20261120'));
- assert.ok(site.includes('ns-learn-courses.mjs?v=live-redesign-20261120'));
- assert.ok(hub.includes('ns-learn-player-v2.mjs?v=live-redesign-20261120'));
- assert.ok(worker.includes('nobodyssimple-release-v242-live-learn'));
+ assert.ok(html.includes('ns-atlas-immersion.css?v=psy-atlas-20261120'));
+ assert.ok(html.includes('ns-strategy-player.css?v=psy-atlas-20261120'));
+ assert.ok(html.indexOf('ns-strategy-player.css')<html.indexOf('ns-learn-makeover.css'));
+ assert.ok(html.indexOf('ns-learn-makeover.css')<html.indexOf('ns-atlas-immersion.css'));
+ assert.ok(html.includes('site.mjs?v=psy-atlas-20261120'));
+ assert.ok(site.includes('ns-learn-courses.mjs?v=psy-atlas-20261120'));
+ assert.ok(hub.includes('ns-learn-player-v2.mjs?v=psy-atlas-20261120'));
+ assert.ok(worker.includes('nobodyssimple-release-v243-atlas-immersion'));
  assert.ok(worker.includes('ns-learn-makeover.css'));
 });
 test('existing published courses render real progress and interactive lesson paths',()=>{

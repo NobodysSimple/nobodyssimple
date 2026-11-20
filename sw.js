@@ -3,7 +3,7 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
-const CACHE = 'nobodyssimple-release-v242-live-learn';
+const CACHE = 'nobodyssimple-release-v243-atlas-immersion';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
@@ -12,7 +12,7 @@ const INSTALL_OPTIONAL = [
   'index.html', 'logo.png', 'manifest.webmanifest',
   'styles.css', 'account.css', 'strategy.css', 'community.css', 'ns-community-campfire.css', 'community-ui.mjs', 'community-art/campfire-reference-hero.svg', 'community-art/campfire-hero.svg', 'community-art/lantern-seat.svg', 'community-art/campfire-card.svg',
   'app-design.css', 'ns-shell.css', 'ns-home.css',
-  'ns-tool-library.css', 'ns-learn.css', 'ns-learn-courses.css', 'ns-learn-catalog-v2.css', 'ns-learn-makeover.css', 'ns-learn-immersive.css', 'ns-learn-catalog-v2.mjs', 'ns-learn-content-v2.mjs', 'ns-learn-engine-v2.mjs', 'ns-learn-progress-v2.mjs', 'ns-learn-player-v2.mjs', 'ns-learn-dialogue.mjs', 'ns-learn-cast.mjs',
+  'ns-tool-library.css', 'ns-learn.css', 'ns-learn-courses.css', 'ns-learn-catalog-v2.css', 'ns-learn-makeover.css', 'ns-strategy-player.css', 'ns-atlas-immersion.css', 'ns-learn-immersive.css', 'ns-learn-catalog-v2.mjs', 'ns-learn-content-v2.mjs', 'ns-learn-engine-v2.mjs', 'ns-learn-progress-v2.mjs', 'ns-learn-player-v2.mjs', 'ns-strategy-player.mjs', 'ns-strategy-curriculum.mjs', 'ns-learn-dialogue.mjs', 'ns-learn-cast.mjs',
   'learn-art/scenery-hero.svg', 'learn-art/scenery-featured.svg', 'learn-art/scenery-emotions.svg', 'learn-art/scenery-relationships.svg', 'learn-art/scenery-boundaries.svg', 'learn-art/scenery-focus.svg', 'learn-art/scenery-communication.svg', 'ns-quiet-navigation.css', 'ns-blog-notebook.css', 'ns-field-guide.css', 'ns-field-guide-journal.css', 'ns-field-guide-workspace.css', 'ns-field-guide-workspace-ui.mjs', 'ns-field-guide-workspace-data.mjs', 'field-guide-art/paper-hills.svg', 'field-guide-art/mountain-stamp.svg', 'ns-urge-pause.css',
   'ns-integrations.css', 'ns-vision.css', 'ns-home-refined.css', 'ns-home-scrapbook.css', 'home-art/watercolor-countryside.svg', 'home-art/daisy-sticker.svg',
   'lifestyle.css', 'lifestyle-practice.css', 'ns-lifestyle-studio.css', 'ns-daily-checkin.css', 'ns-daily-deed-quest.css', 'ns-lifestyle-checkin-hero.css', 'lifestyle-art/daily-deed-journey.svg', 'lifestyle-art/mission-garden.svg', 'ns-daily-checkin.mjs', 'lifestyle-art/studio-window.svg', 'lifestyle-art/studio-meadow.svg', 'lifestyle.mjs', 'ns-lifestyle-workflow.mjs', 'lifestyle-practice.mjs', 'lifestyle-practice-content.mjs', 'lifestyle-practice-ui.mjs', 'lifestyle-deeds.mjs', 'simplyfocus.mjs', 'strategy.mjs', 'ns-course-lab-schema.mjs', 'ns-course-blueprints.mjs', 'ns-learn-courses.mjs', 'ns-topic-publications.mjs', 'ns-blog-notebook.mjs', 'site.mjs', 'ns-shell.mjs',
@@ -39,6 +39,7 @@ const INSTALL_OPTIONAL = [
 ];
 const PUBLIC_EXTENSION = /\.(?:css|mjs|js|webp|avif|png|jpe?g|svg|gif|ico|woff2?|mp3|ogg|wav)$/i;
 const SAFE_QUERY = /^\?v=[a-z0-9._-]{1,40}$/i;
+const ATLAS_PUBLIC_JSON = /\/learn-content\/(?:index|strategy-atlas|strategy-featured-cases|courses\/[a-z0-9-]+)\.json$/i;
 const EXCLUDED_PATH = /(?:^|\/)(?:admin|staff)(?:\.html|\/|$)/i;
 const isOwnCache = name => OWN_CACHE_PREFIXES.some(prefix => name.startsWith(prefix));
 const safePublicRequest = (request, url) => {
@@ -47,6 +48,7 @@ const safePublicRequest = (request, url) => {
   if (EXCLUDED_PATH.test(url.pathname)) return false;
   if (url.search && !SAFE_QUERY.test(url.search)) return false;
   if (url.pathname.endsWith('/content.json')) return true; // Published site content only.
+  if (ATLAS_PUBLIC_JSON.test(url.pathname)) return true; // Public learning data, cached after visit.
   return PUBLIC_EXTENSION.test(url.pathname);
 };
 const cacheable = response => {

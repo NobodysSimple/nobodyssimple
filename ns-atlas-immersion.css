@@ -1,0 +1,117 @@
+/* Nobody's Simple — immersive psychology language drills.
+   Complements the original Life Lab character assets; does not use external mascots. */
+body:has(.ns-atlas-lesson){overflow:hidden!important}
+.ns-atlas-lesson{--ns-skill-accent:#61bb32;--ns-skill-soft:#eaf8de}
+.ns-atlas-lesson__screen{width:min(100%,820px)!important;max-width:none!important}
+.ns-atlas-lesson__head{border-bottom:1px solid #edf2eb}
+.ns-atlas-lesson__progress{box-shadow:inset 0 1px 2px #142f1916;border-radius:100px}
+.ns-atlas-lesson__body{scroll-padding-bottom:24px}
+.ns-atlas-lesson__task[data-node-type=spot]{--ns-skill-accent:#59b62e;--ns-skill-soft:#edfbdc}
+.ns-atlas-lesson__task[data-node-type=evidence]{--ns-skill-accent:#3c97da;--ns-skill-soft:#e4f3ff}
+.ns-atlas-lesson__task[data-node-type=mechanism]{--ns-skill-accent:#9c74cc;--ns-skill-soft:#f2e9fe}
+.ns-atlas-lesson__task[data-node-type=distinguish]{--ns-skill-accent:#d29b35;--ns-skill-soft:#fff4db}
+.ns-atlas-lesson__task[data-node-type=update]{--ns-skill-accent:#3979cf;--ns-skill-soft:#e6f1ff}
+.ns-atlas-lesson__task[data-node-type=perspective]{--ns-skill-accent:#9765bd;--ns-skill-soft:#f5ecfd}
+.ns-atlas-lesson__task[data-node-type=respond]{--ns-skill-accent:#d47462;--ns-skill-soft:#fff0eb}
+.ns-atlas-lesson__task[data-node-type=transfer]{--ns-skill-accent:#318d88;--ns-skill-soft:#e2f7f2}
+.ns-atlas-lesson__node-icon{
+ border:2px solid color-mix(in srgb,var(--ns-skill-accent) 40%,white)!important;
+ background:var(--ns-skill-soft)!important;color:var(--ns-skill-accent)!important;
+ border-bottom-width:5px!important;box-shadow:none!important
+}
+.ns-atlas-lesson__node-tag{color:var(--ns-skill-accent)!important;letter-spacing:.06em}
+.ns-atlas-lesson__task .ns-atlas-lesson__kicker{
+ display:inline-flex;gap:8px;align-items:center;
+ background:var(--ns-skill-soft);color:var(--ns-skill-accent)!important;
+ border-radius:30px;padding:6px 12px;margin-bottom:13px!important;
+}
+.ns-atlas-lesson__observation{
+ margin:12px 0 16px!important;padding:14px 17px!important;
+ border:1px solid #d5e9ce!important;border-left:5px solid #64b63a!important;
+ border-radius:13px!important;background:#f4faed!important;
+}
+.ns-atlas-lesson__observation.is-evidence{background:#eaf4ff!important;border-color:#cee4f9!important;border-left-color:#5d9dde!important}
+.ns-atlas-lesson__observation>strong{
+ display:block;font:850 12px/1.4 system-ui,sans-serif;color:#467f3d;margin-bottom:5px;
+}
+.ns-atlas-lesson__observation.is-evidence>strong{color:#387dc2}
+.ns-atlas-lesson__observation>p{margin:0!important;font-size:14px!important;line-height:1.53!important}
+.ns-atlas-lesson__thread{max-height:min(37dvh,300px)!important}
+.ns-atlas-lesson__thread li{animation:ns-skill-pop .16s ease both}
+@keyframes ns-skill-pop{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.ns-atlas-lesson__choices legend{font-weight:850!important}
+.ns-atlas-lesson__choices label:has(input:focus-visible){outline:3px solid #7ecb55;outline-offset:2px}
+.ns-atlas-lesson__task[data-node-type=evidence] .ns-atlas-lesson__choices label,
+.ns-atlas-lesson__task[data-node-type=distinguish] .ns-atlas-lesson__choices label{
+ background:#f8fbff!important;border-color:#d7e6f5!important;
+}
+.ns-atlas-lesson__task[data-node-type=evidence] .ns-atlas-lesson__choices label.is-selected,
+.ns-atlas-lesson__task[data-node-type=distinguish] .ns-atlas-lesson__choices label.is-selected{
+ background:#e7f4ff!important;border-color:#5dace8!important;
+}
+.ns-atlas-lesson__task[data-node-type=update] .ns-atlas-lesson__choices label.is-selected,
+.ns-atlas-lesson__task[data-node-type=perspective] .ns-atlas-lesson__choices label.is-selected,
+.ns-atlas-lesson__task[data-node-type=transfer] .ns-atlas-lesson__choices label.is-selected{
+ border-color:var(--ns-skill-accent)!important;background:var(--ns-skill-soft)!important;
+}
+.ns-atlas-lesson__coach{margin-top:9px}
+.ns-atlas-lesson__hint-button{
+ border:1.5px solid #cfe5cb!important;background:#f4fbef!important;
+ border-radius:11px!important;color:#448549!important;
+ padding:8px 13px!important;cursor:pointer
+}
+.ns-atlas-lesson__hint-button:focus-visible{outline:3px solid #6bb643;outline-offset:2px}
+.ns-atlas-lesson__footer{max-height:40dvh;padding-inline:12px!important}
+.ns-atlas-lesson__feedback{scrollbar-width:thin}
+.ns-atlas-lesson__next{
+ width:100%!important;max-width:500px!important;min-height:54px!important;
+ text-transform:none;letter-spacing:.005em
+}
+.ns-atlas-lesson__next:focus-visible{outline:3px solid #316c41!important;outline-offset:3px}
+.ns-atlas-lesson__guide-sprite,.ns-atlas-lesson__avatar{background-image:url("media/lifelab/companions.png")!important}
+.ns-atlas-lesson__finish .ns-atlas-lesson__guide{animation:ns-lesson-celebrate .45s ease both}
+@keyframes ns-lesson-celebrate{from{transform:scale(.9)}to{transform:scale(1)}}
+.ns-learn-atlas-course-meta{
+ display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:10px 0 14px;
+ color:#477c46;font-size:12px;font-weight:800
+}
+.ns-learn-atlas-course-meta span{
+ border-radius:100px;padding:6px 10px;background:#e9f7e0;border:1px solid #cbe8c5
+}
+.ns-atlas-path-unit__links>a:focus-visible,.ns-learn-journey__stop:focus-visible{
+ outline:3px solid #5fad42!important;outline-offset:3px;
+}
+.ns-atlas-syllabus-search{display:grid;gap:6px;margin:15px 0;padding:0 2px}
+.ns-atlas-syllabus-search label{font:800 13px system-ui,sans-serif;color:#426b48}
+.ns-atlas-syllabus-search input{
+ width:100%;min-height:48px;border:2px solid #d4e6cf;background:#fff;
+ border-radius:13px;padding:11px 15px;font:600 14px system-ui,sans-serif;
+ color:#294630;
+}
+.ns-atlas-syllabus-search input:focus-visible{outline:3px solid #76b35a;outline-offset:2px}
+.ns-atlas-syllabus-search [data-match-count]{font:700 12px system-ui,sans-serif;color:#587764}
+.ns-atlas-path-unit__links>a[hidden],.ns-atlas-path-unit[hidden]{display:none!important}
+html[data-theme=dark] .ns-atlas-lesson__head{border-color:#3b4f43}
+html[data-theme=dark] .ns-atlas-lesson__task .ns-atlas-lesson__kicker{color:#244630!important}
+html[data-theme=dark] .ns-atlas-lesson__observation{
+ background:#284235!important;border-color:#55765c!important;color:#e8f1e7!important
+}
+html[data-theme=dark] .ns-atlas-lesson__observation.is-evidence{
+ background:#25465d!important;border-color:#4b7389!important;
+}
+html[data-theme=dark] .ns-atlas-lesson__observation p{color:#e5f1e7!important}
+html[data-theme=dark] .ns-atlas-syllabus-search input{background:#22342c;color:#eff7e9;border-color:#55705a}
+@media(max-width:600px){
+ .ns-atlas-lesson__footer{padding:10px 9px max(12px,env(safe-area-inset-bottom))!important}
+ .ns-atlas-lesson__head{min-height:58px}
+ .ns-atlas-lesson__thread{max-height:29dvh!important}
+ .ns-atlas-lesson__feedback{max-height:25dvh}
+ .ns-atlas-lesson__node-heading{align-items:flex-start}
+ .ns-atlas-lesson__node-heading h1{font-size:24px!important}
+ .ns-atlas-lesson__observation{padding:11px 13px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .ns-atlas-lesson__thread li,.ns-atlas-lesson__finish .ns-atlas-lesson__guide{
+ animation:none!important;transition:none!important;
+ }
+}
