@@ -7,7 +7,7 @@ export const LEARN_STORAGE_KEY='ns-account-learning-v2';
 export const LEARN_PROGRESS_PREFIX='ns-psy-learn:';
 const completionKey=(id,lesson)=>LEARN_PROGRESS_PREFIX+'complete:'+id+':'+lesson;
 const now=()=>new Date().toISOString();
-const expectedChecks=lesson=>Array.isArray(lesson?.nodes)?lesson.nodes.reduce((n,node)=>n+(['read','image'].includes(node.type)?0:node.type==='dialogue'?(node.checks?.length||0):1),0):lesson?.questions?.length||0;
+const expectedChecks=lesson=>Array.isArray(lesson?.nodes)?lesson.nodes.reduce((n,node)=>n+(['read','image'].includes(node.type)?0:['dialogue','investigation'].includes(node.type)?(node.checks?.length||0):1),0):lesson?.questions?.length||0;
 export function readLearnProgress(storage=globalThis.localStorage){
  try {const value=JSON.parse(storage?.getItem(LEARN_STORAGE_KEY)||'{}');return value&&typeof value==='object'&&!Array.isArray(value)?value:{};}catch{return {};}
 }
