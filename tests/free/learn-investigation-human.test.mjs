@@ -77,3 +77,26 @@ test('source panel links identifiable studies and does not claim a fictional dia
  assert.match(html,/The message conversations are fictional applications/);
  assert.match(html,/Read source/);
 });
+
+test('a relationship loop reveals consequences progressively without treating them as deterministic',()=>{
+ const investigation=course().modules[0].lessons[0].nodes.find(n=>n.type==='investigation');
+ const stage=7,loop=investigation.layers[stage].loop;
+ assert(Object.values(loop).every(Boolean));
+ const early=renderInvestigation(investigation,{investigationStage:stage,dialogueCheck:-1,investigationNotes:{},investigationOpened:{7:true},investigationLoopSteps:{7:1}},escape,fieldset);
+ assert(early.includes(escape(loop.trigger)));
+ assert(!early.includes(escape(loop.alternative)));
+ assert.match(early,/data-investigation-loop-next/);
+ const complete=renderInvestigation(investigation,{investigationStage:stage,dialogueCheck:-1,investigationNotes:{},investigationOpened:{7:true},investigationLoopSteps:{7:5}},escape,fieldset);
+ assert(complete.includes(escape(loop.alternative)));
+ assert.match(complete,/The possible cycle is complete/);
+});
+
+test('hypothetical inner-state views can be switched without asserting mind-reading',()=>{
+ const investigation=course().modules[0].lessons[0].nodes.find(n=>n.type==='investigation');
+ const options={investigationStage:4,dialogueCheck:-1,investigationNotes:{},investigationOpened:{4:true},investigationRoutes:{4:1}};
+ const html=renderInvestigation(investigation,options,escape,fieldset);
+ assert.match(html,/not a recording of anyone’s thoughts/);
+ assert.match(html,/data-investigation-route="0"/);
+ assert.match(html,/data-investigation-route="1"/);
+ assert(html.includes(escape(investigation.layers[4].alternative)));
+});
