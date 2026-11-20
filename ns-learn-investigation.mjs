@@ -17,7 +17,7 @@ export function createInvestigation(id=()=>String(Math.random())){
   prompt:'Study the messages, then examine how each new piece of context changes your interpretation.',
   scenario:'',speakerA:'Person A',speakerB:'Person B',conceptId:'',sources:'',
   turns:[{id:id(),speaker:'a',text:''},{id:id(),speaker:'b',text:''}],
-  layers:INVESTIGATION_DEPTHS.map((title,index)=>({id:id(),title,focusTurn:'',analysis:'',alternative:'',test:''})),
+  layers:INVESTIGATION_DEPTHS.map((title,index)=>({id:id(),title,focusTurn:'',analysis:'',alternative:'',test:'',...(index===7?{loop:{trigger:'',response:'',recipient:'',cycle:'',alternative:''}}:{})})),
   checks:[{id:id(),prompt:'',focusTurn:'',options:[{id:id(),label:''},{id:id(),label:''}],answer:'',explanation:'',counterexample:''}],
   takeaway:''
  };
@@ -30,6 +30,8 @@ export function validateInvestigation(node){
  if(turns.length<6||turns.length>40||!turns.every(t=>validText(t.id)&&validText(t.text)&&['a','b'].includes(t.speaker)))issues.push('Write 6–40 messages from two people.');
  if(layers.length!==10||layers.some(l=>!validText(l.title)||!validText(l.analysis)||!validText(l.alternative)||!validText(l.test)))issues.push('Write all ten depths, including a plausible alternative and discriminating evidence.');
  if(layers.some(l=>l.focusTurn&&!turns.some(t=>t.id===l.focusTurn)))issues.push('Every analysis focus must reference a message in the thread.');
+ const loop=layers[7]?.loop;
+ if(loop&&['trigger','response','recipient','cycle','alternative'].some(key=>!validText(loop[key])))issues.push('Complete all relationship-loop steps, including a possible interruption.');
  if(checks.length<2||checks.length>8)issues.push('Write 2–8 assessed reasoning questions.');
  for(const c of checks){
   if(!validText(c.id)||!validText(c.prompt)||!validText(c.explanation)||!validText(c.counterexample)||!Array.isArray(c.options)||c.options.length<2||c.options.length>4||c.options.some(o=>!validText(o.id)||!validText(o.label))||!c.options.some(o=>o.id===c.answer))issues.push('Every check needs a prompt, 2–4 credible options, an answer, a reason and a limitation.');
