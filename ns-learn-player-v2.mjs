@@ -3,6 +3,7 @@
  * recording completions. Question content is always escaped; never raw HTML.
  */
 import {getLearnContent} from './ns-learn-content-v2.mjs';
+import {renderStrategyLesson} from './ns-strategy-player.mjs?v=psy-atlas-20261120';
 import {getLearnCourse,LEARN_COMPANIONS} from './ns-learn-catalog-v2.mjs';
 import {validateLearnBundle,gradeLearnItem,learnLessonScore,flattenLearnLessons,QUESTION_TYPES} from './ns-learn-engine-v2.mjs';
 import {learningNodes,safeCourseImage} from './ns-course-lab-schema.mjs';
@@ -33,7 +34,7 @@ const photo=node=>safeCourseImage(node.image)?'<figure class="ns-learn-player__f
 const fieldset=(name,options,selected='',disabled=false)=>'<fieldset class="ns-learn-player__choices"><legend class="sr-only">'+esc(name)+'</legend>'+options.map(o=>'<label><input type="radio" name="'+esc(name)+'" value="'+esc(o.id)+'"'+(o.id===selected?' checked':'')+(disabled?' disabled':'')+'><span>'+esc(o.label)+'</span></label>').join('')+'</fieldset>';
 export function publishedLearnBundle(id){
  const c=getLearnCourse(id),b=getLearnContent(id);
- return c&&b&&!validateLearnBundle(b,id).length?b:null;
+ return c&&b&&(b.strategyCurriculum||!validateLearnBundle(b,id).length)?b:null;
 }
 export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOverride=null,preview=false}={}){
  const bundle=bundleOverride||publishedLearnBundle(courseId),course=getLearnCourse(courseId);
@@ -41,6 +42,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const home='#learn/course/'+encodeURIComponent(courseId);
  const unitIndex=Math.max(1,(bundle?.modules||[]).findIndex(m=>(m.lessons||[]).some(l=>l.id===lessonId))+1);
  if(!lesson){root.innerHTML='<section class="ns-learn-player"><a href="'+home+'">← Back to course</a><h1>No published lesson found</h1><p>This course has no available lesson at that address.</p></section>';return;}
+ if(lesson.atlasRecord)return renderStrategyLesson(root,bundle,lesson,{review,preview});
  const scramble=items=>{
   const result=[...(items||[])];
   for(let i=result.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[result[i],result[j]]=[result[j],result[i]];}
