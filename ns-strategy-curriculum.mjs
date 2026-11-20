@@ -10,10 +10,10 @@ const scenarioAnchor=Object.freeze({
  narcissism:"01-022",manipulation:"02-X002",attachment:"03-X007",
  overthinking:"04-035",boundaries:"05-028",anxiety:"06-028",
  emotions:"07-004","self-esteem":"08-003",motivation:"09-001",
- "social-anxiety":"10-003",burnout:"11-015",loneliness:"12-001",
- "social-media":"13-004",misinformation:"14-006",neurodiversity:"15-008",
- sleep:"16-008","low-mood":"17-025",scams:"18-001",
- masculinity:"19-011",vaping:"20-013","conversation-patterns":"21-198"
+ "social-anxiety":"10-003",burnout:"11-046",loneliness:"12-X001",
+ "social-media":"13-001",misinformation:"14-011",neurodiversity:"15-007",
+ sleep:"16-015","low-mood":"17-001",scams:"18-001",
+ masculinity:"19-001",vaping:"20-003","conversation-patterns":"21-198"
 });
 const protect=x=>String(x||"").replace(/\s+/g," ").trim();
 export async function loadStrategyAtlas(){
