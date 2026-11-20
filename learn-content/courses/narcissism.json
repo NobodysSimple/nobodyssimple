@@ -1,6 +1,6 @@
 {
   "id": "narcissism",
-  "version": 9,
+  "version": 10,
   "status": "published",
   "title": "Narcissism & Personality",
   "description": "Twelve deep message investigations of self-worth, narcissistic functioning, psychological defences and relationships. Learn to test plausible interpretations before applying them.",
@@ -24,7 +24,7 @@
         {
           "id": "narcissism-f1-l1",
           "title": "The correction becomes a betrayal",
-          "version": 5,
+          "version": 6,
           "standard": "deep-10",
           "durationMinutes": 13,
           "editorialStatus": "ready",
@@ -169,7 +169,14 @@
                   "focusTurn": "narcissism-f1-l1-deep-turn-8",
                   "analysis": "If Maya reassures him and leaves the slide unchanged, the immediate confrontation may end. Leo learns that invoking loyalty works in credit disputes. Maya learns that asking for recognition risks punishment or withdrawal.",
                   "alternative": "One incident cannot establish reinforcement or an enduring relationship pattern. The dispute might be unusual because of the upcoming board meeting.",
-                  "test": "Review earlier disputes and what happened afterwards. Did similar appeals reliably lead Maya or others to withdraw justified requests?"
+                  "test": "Review earlier disputes and what happened afterwards. Did similar appeals reliably lead Maya or others to withdraw justified requests?",
+                  "loop": {
+                    "trigger": "Maya requests accurate authorship before the presentation.",
+                    "response": "Leo treats that request as a threat to how the board may see his competence.",
+                    "recipient": "Maya begins defending her gratitude and loyalty rather than discussing the slide.",
+                    "cycle": "If the correction disappears, Leo avoids immediate exposure and Maya may hesitate to raise future errors.",
+                    "alternative": "Maya acknowledges his leadership while putting the authorship correction in a written record."
+                  }
                 },
                 {
                   "id": "narcissism-f1-l1-deep-depth-8",
@@ -443,7 +450,7 @@
         {
           "id": "narcissism-f1-l2",
           "title": "The price of being a grateful daughter",
-          "version": 5,
+          "version": 6,
           "standard": "deep-10",
           "durationMinutes": 13,
           "editorialStatus": "ready",
@@ -650,7 +657,14 @@
                   "focusTurn": "narcissism-f1-l2-deep-turn-8",
                   "analysis": "If every autonomous decision triggers talk of betrayal, Eva may learn to conceal future plans. The father then receives less information and may interpret secrecy as further evidence of rejection. Both responses could reinforce the conflict.",
                   "alternative": "An isolated emotional reaction does not establish an enduring family cycle. He might later apologise and take genuine interest in her choice.",
-                  "test": "Look at earlier decisions about work, friendships or travel: were disagreement and concealment recurring features?"
+                  "test": "Look at earlier decisions about work, friendships or travel: were disagreement and concealment recurring features?",
+                  "loop": {
+                    "trigger": "Eva tells her father that she has won a scholarship away from home.",
+                    "response": "Her father links her independence to the sacrifices he has made.",
+                    "recipient": "Eva starts trying to prove that accepting the place does not mean she loves him less.",
+                    "cycle": "If reassurance requires staying, her decisions can become organised around preventing his disappointment.",
+                    "alternative": "Eva recognises his contribution while keeping the scholarship decision separate from future contact arrangements."
+                  }
                 },
                 {
                   "id": "narcissism-f1-l2-deep-depth-8",
@@ -874,7 +888,7 @@
         {
           "id": "narcissism-f1-l3",
           "title": "The brilliant partner and the private collapse",
-          "version": 5,
+          "version": 6,
           "standard": "deep-10",
           "durationMinutes": 13,
           "editorialStatus": "ready",
@@ -1019,7 +1033,14 @@
                   "focusTurn": "narcissism-f1-l3-deep-turn-8",
                   "analysis": "If Jules hides errors to preserve Noor's confidence, public success becomes less reality-based. If Jules only criticises, Noor may feel increasingly unprotected. A better cycle would allow distress to be acknowledged while the error is corrected.",
                   "alternative": "We cannot attribute an ongoing dysfunctional loop from this single evening. The final request to 'stay' may be the beginning of collaborative repair.",
-                  "test": "Compare how later corrections are handled when the couple has more time and fewer social pressures."
+                  "test": "Compare how later corrections are handled when the couple has more time and fewer social pressures.",
+                  "loop": {
+                    "trigger": "Jules points out an error in Noor's investor presentation.",
+                    "response": "Noor hears the correction as a broader judgement about being competent.",
+                    "recipient": "Jules works to prove they are not contemptuous and the figures go unexamined.",
+                    "cycle": "The immediate shame may settle while the technical issue and the fear of future correction remain.",
+                    "alternative": "Jules offers support with the figures while keeping the factual correction and the accusation separate."
+                  }
                 },
                 {
                   "id": "narcissism-f1-l3-deep-depth-8",
@@ -1291,7 +1312,7 @@
         {
           "id": "narcissism-f2-l1",
           "title": "Second place and the story nobody is allowed to challenge",
-          "version": 5,
+          "version": 6,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -1436,7 +1457,14 @@
                   "focusTurn": "narcissism-f2-l1-deep-turn-8",
                   "analysis": "If friends soothe Ellis by attacking every winner, he may never learn to tolerate another person's success. If he accepts evidence, the result may instead improve his future work and preserve friendship.",
                   "alternative": "A single contest cannot establish a stable cycle; classmates might simply be comforting someone after a difficult day.",
-                  "test": "Does Ellis routinely move from disappointment into discrediting others, and what responses from friends have followed?"
+                  "test": "Does Ellis routinely move from disappointment into discrediting others, and what responses from friends have followed?",
+                  "loop": {
+                    "trigger": "Farah wins the science prize Ellis hoped to receive.",
+                    "response": "Ellis treats her success as evidence that his reputation as the strongest student is at risk.",
+                    "recipient": "Tessa is invited to join his criticism of Farah rather than examine the scoring.",
+                    "cycle": "If she agrees without evidence, the group can reward devaluation instead of learning from the result.",
+                    "alternative": "Tessa acknowledges the disappointment and helps check the rubric before accepting an unfairness claim."
+                  }
                 },
                 {
                   "id": "narcissism-f2-l1-deep-depth-8",
@@ -1726,7 +1754,7 @@
         {
           "id": "narcissism-f2-l2",
           "title": "The joke nobody was supposed to question",
-          "version": 5,
+          "version": 6,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -1871,7 +1899,14 @@
                   "focusTurn": "narcissism-f2-l2-deep-turn-8",
                   "analysis": "If Amal repeatedly withdraws boundaries after Riley becomes wounded, Riley may keep using the role of misunderstood helper. Amal may come to speak only after resentment has built up.",
                   "alternative": "One exchange cannot establish that such a cycle already exists. Alternatively, a single argument might end once Riley understands the boundary and Amal sees a genuine change. We need repeated exchanges before inferring that reassurance has become a requirement.",
-                  "test": "Look at previous apologies and whether later behaviour changed."
+                  "test": "Look at previous apologies and whether later behaviour changed.",
+                  "loop": {
+                    "trigger": "Amal asks Riley to stop imitating her accent.",
+                    "response": "Riley experiences the criticism as an attack on their identity as a funny and generous friend.",
+                    "recipient": "Amal feels drawn into comforting Riley before the original boundary is addressed.",
+                    "cycle": "If the imitation continues after apologies, Amal may stop raising concerns until resentment builds.",
+                    "alternative": "Amal repeats the concrete request and watches whether Riley's behaviour changes."
+                  }
                 },
                 {
                   "id": "narcissism-f2-l2-deep-depth-8",
@@ -2158,7 +2193,7 @@
         {
           "id": "narcissism-f2-l3",
           "title": "When somebody else's pain interrupts your own story",
-          "version": 5,
+          "version": 6,
           "standard": "deep-10",
           "durationMinutes": 11,
           "editorialStatus": "ready",
@@ -2365,7 +2400,14 @@
                   "focusTurn": "narcissism-f2-l3-deep-turn-8",
                   "analysis": "The final line suggests an interruption to the cycle: Soren acknowledges the shift and invites her account. If this becomes a repeated response, the relationship may develop more flexibility.",
                   "alternative": "A single thoughtful sentence does not prove lasting empathic ability in all situations.",
-                  "test": "Observe whether he follows through with attention and concrete support in later conversations."
+                  "test": "Observe whether he follows through with attention and concrete support in later conversations.",
+                  "loop": {
+                    "trigger": "Nina reports distress while a holiday payment is pending.",
+                    "response": "Soren worries that a cancellation will make him look incapable of organising the family.",
+                    "recipient": "Nina may have to establish how serious her distress is before Soren can pay attention.",
+                    "cycle": "The more she argues, the more he may focus on defending the booking; this is a hypothesis about an emerging loop.",
+                    "alternative": "They verify the payment deadline, then return to Nina's immediate need without tying either to a judgement of character."
+                  }
                 },
                 {
                   "id": "narcissism-f2-l3-deep-depth-8",
@@ -2575,7 +2617,7 @@
         {
           "id": "narcissism-m1-l1",
           "title": "From 'you're extraordinary' to 'you were never worth knowing'",
-          "version": 5,
+          "version": 6,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -2720,7 +2762,14 @@
                   "focusTurn": "narcissism-m1-l1-deep-turn-8",
                   "analysis": "If Kareem rescues Imogen to preserve the idealised bond, deadlines may repeatedly turn into loyalty crises. If he responds harshly, her sense of betrayal may deepen. Both responses can shape the next episode.",
                   "alternative": "We have not established that this pattern has occurred before or will persist.",
-                  "test": "Examine how previous disagreements were resolved and whether boundaries were eventually accepted."
+                  "test": "Examine how previous disagreements were resolved and whether boundaries were eventually accepted.",
+                  "loop": {
+                    "trigger": "Kareem cannot provide the support Imogen expected.",
+                    "response": "Imogen moves from viewing him as uniquely dependable to calling him ungenerous.",
+                    "recipient": "Kareem starts defending his whole history as a friend rather than clarifying the agreement.",
+                    "cycle": "The original task becomes harder to resolve and each person's global judgement of the other may worsen.",
+                    "alternative": "They compare the actual promise with the outstanding work and discuss whether trust needs repair."
+                  }
                 },
                 {
                   "id": "narcissism-m1-l1-deep-depth-8",
@@ -2994,7 +3043,7 @@
         {
           "id": "narcissism-m1-l2",
           "title": "The apology that asks to be comforted",
-          "version": 5,
+          "version": 6,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -3139,7 +3188,14 @@
                   "focusTurn": "narcissism-m1-l2-deep-turn-8",
                   "analysis": "If Owen seeks absolution after every error and others soothe him before repair, the cycle can leave harmed people waiting. The final message is a possible interruption: he acknowledges the demand and takes action.",
                   "alternative": "One interaction is insufficient to conclude there is such an enduring cycle.",
-                  "test": "Look for repeated episodes and whether practical reparations actually followed earlier apologies."
+                  "test": "Look for repeated episodes and whether practical reparations actually followed earlier apologies.",
+                  "loop": {
+                    "trigger": "Sasha asks Owen to remove private appointment information from a work channel.",
+                    "response": "Owen becomes preoccupied with whether colleagues now see him as a bad person.",
+                    "recipient": "Sasha is pressed to reassure Owen while the privacy risk still requires action.",
+                    "cycle": "If comfort comes first every time, Owen may not practise taking responsibility before seeking relief.",
+                    "alternative": "Owen contains the disclosure, documents the action, and seeks help with his distress separately."
+                  }
                 },
                 {
                   "id": "narcissism-m1-l2-deep-depth-8",
@@ -3442,7 +3498,7 @@
         {
           "id": "narcissism-m1-l3",
           "title": "What did the family teach him to protect?",
-          "version": 5,
+          "version": 6,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -3587,7 +3643,14 @@
                   "focusTurn": "narcissism-m1-l3-deep-turn-8",
                   "analysis": "If Aaron conceals errors, Lydia may watch more closely. Increased scrutiny can make him feel even less trusted, which may reinforce secrecy. This is a possible reciprocal loop, not equal responsibility for the audit mistake.",
                   "alternative": "The organisation may already have inadequate systems for checking work, independently increasing concealment.",
-                  "test": "Look at policies and previous incidents as well as the siblings' conversation."
+                  "test": "Look at policies and previous incidents as well as the siblings' conversation.",
+                  "loop": {
+                    "trigger": "A reporting error creates a need for Aaron to accept assistance.",
+                    "response": "Aaron anticipates that admitting the mistake will make him look weak or incompetent.",
+                    "recipient": "Lydia offers help, and he experiences the offer as another reminder of dependency.",
+                    "cycle": "Avoiding help may provide momentary protection while the uncorrected error becomes more costly.",
+                    "alternative": "They establish a practical process for disclosing and correcting errors without public humiliation."
+                  }
                 },
                 {
                   "id": "narcissism-m1-l3-deep-depth-8",
@@ -3859,7 +3922,7 @@
         {
           "id": "narcissism-m1-l4",
           "title": "Two clinicians, one assessment: why the diagnosis is not obvious",
-          "version": 5,
+          "version": 6,
           "standard": "deep-10",
           "durationMinutes": 11,
           "editorialStatus": "ready",
@@ -4066,7 +4129,14 @@
                   "focusTurn": "narcissism-m1-l4-deep-turn-8",
                   "analysis": "The more useful investigation assesses self-functioning, relational functioning and severity. Repeated difficulties that impair life carry more weight than style alone. Grandiose self-presentation can coexist with substantial difficulty relying on other people. A clinician needs to understand whether those difficulties persist and whether they interfere with relationships or work. The observed impact matters more than the apparent confidence alone.",
                   "alternative": "A person can function very well in one domain and struggle severely in close relationships.",
-                  "test": "Collect information about persistence and impairment rather than relying on occupational success as proof of health."
+                  "test": "Collect information about persistence and impairment rather than relying on occupational success as proof of health.",
+                  "loop": {
+                    "trigger": "Theo speaks defensively about his career after a redundancy.",
+                    "response": "A clinician considers whether this reflects acute shame or a longer-standing interpersonal pattern.",
+                    "recipient": "Other clinicians may give excessive weight either to the immediate crisis or to Theo's confident presentation.",
+                    "cycle": "A premature label can obscure the evidence still needed about severity and functioning.",
+                    "alternative": "The team gathers a timeline and corroborating accounts before treating a formulation as established."
+                  }
                 },
                 {
                   "id": "narcissism-m1-l4-deep-depth-8",
@@ -4277,7 +4347,7 @@
         {
           "id": "narcissism-m1-l5",
           "title": "How to recognise change when the words sound the same",
-          "version": 5,
+          "version": 6,
           "standard": "deep-10",
           "durationMinutes": 11,
           "editorialStatus": "ready",
@@ -4422,7 +4492,14 @@
                   "focusTurn": "narcissism-m1-l5-deep-turn-8",
                   "analysis": "A new pattern could be: notice the threatening interpretation, pause, ask what was actually meant, complete the practical task, and repair any hurtful conduct. Repetition under pressure matters more than a dramatic insight.",
                   "alternative": "One calm interaction in therapy may not generalise to arguments outside treatment.",
-                  "test": "Check responses across weeks and in disagreements involving greater shame or perceived rejection."
+                  "test": "Check responses across weeks and in disagreements involving greater shame or perceived rejection.",
+                  "loop": {
+                    "trigger": "Harper raises an unpaid bill in a discussion with Nico.",
+                    "response": "Nico experiences criticism as exposure and withdraws to protect himself.",
+                    "recipient": "Harper may delay future concerns because they anticipate prolonged silence.",
+                    "cycle": "With each postponed conversation, the practical issue and the expectation of withdrawal may become harder to change.",
+                    "alternative": "Nico uses an agreed pause and returns to address the bill, repeating that response over time."
+                  }
                 },
                 {
                   "id": "narcissism-m1-l5-deep-depth-8",
@@ -4709,7 +4786,7 @@
         {
           "id": "narcissism-m1-l6",
           "title": "Four accounts of the same relationship",
-          "version": 5,
+          "version": 6,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -4854,7 +4931,14 @@
                   "focusTurn": "narcissism-m1-l6-deep-turn-8",
                   "analysis": "If the organisation rewards Celeste for taking total credit, and employees withdraw complaints to retain opportunity, the practice can become self-reinforcing. Their withdrawal does not establish agreement.",
                   "alternative": "One incident cannot tell us whether the institution has an entrenched pattern.",
-                  "test": "Review previous applications, staff turnover and how corrections were handled."
+                  "test": "Review previous applications, staff turnover and how corrections were handled.",
+                  "loop": {
+                    "trigger": "Rohan requests recognition for the creative work used in an award submission.",
+                    "response": "Celeste interprets the request as a threat to her standing as the organisation's indispensable leader.",
+                    "recipient": "Rohan may start proving loyalty instead of asking for accurate authorship.",
+                    "cycle": "If the board rewards only one visible leader, the institution may reinforce the dispute regardless of Celeste's private motives.",
+                    "alternative": "The board reviews dated contributions and corrects the attribution using a fair process."
+                  }
                 },
                 {
                   "id": "narcissism-m1-l6-deep-depth-8",
