@@ -117,6 +117,14 @@ export function renderInvestigation(node,state,esc,choiceSet){
  '<section class="ns-inquiry__question"><p class="ns-inquiry__eyebrow">Reasoning drill '+(state.dialogueCheck+1)+' / '+node.checks.length+'</p>'+
  '<h2>'+esc(check?.prompt||'')+'</h2>'+
  choiceSet('dialogue-choice',check?.options||[],state.investigationChoice||state.answers?.[node.id]?.[check?.id]||'',!!state.checked)+'</section>';
+ // During checks, keep evidence one click away without forcing the learner
+ // to scroll past ten messages and the entire expert explanation for each item.
+ if(state.dialogueCheck>=0){
+  const review='<details class="ns-inquiry__review"><summary>Review the character profiles</summary>'+profiles+'</details>'+
+   '<details class="ns-inquiry__review"><summary>Review the full message exchange</summary>'+messages+'</details>'+
+   '<details class="ns-inquiry__review"><summary>Review the psychological analysis</summary>'+nav+workspace+'</details>';
+  return '<div class="ns-inquiry ns-inquiry--checks">'+question+review+'</div>';
+ }
  return '<div class="ns-inquiry">'+intro+profiles+messages+
   '<h2 class="ns-inquiry__depth-title">Investigate what happened</h2>'+nav+workspace+question+'</div>';
 }
