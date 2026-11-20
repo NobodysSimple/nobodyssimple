@@ -96,34 +96,34 @@ export function createAtlasQuestions(record,scene,round=0){
  const cue=clean(record.cue);
  const near=compact(scene.near);
  const action=scene.correctResponse;
- const core=scene.isNear?"The evidence is closer to an ordinary or competing explanation than to a settled example of this strategy.":"The described cue fits this strategy, though its motive or diagnosis remains uncertain.";
+ const contrast=record.contrast||{title:"a related but different process",cue:"A similar clue could have another explanation."};
  const initial=[
- {id:scene.id+"-spot",kind:"Spot it",prompt:scene.isNear?"What is the most careful interpretation?":"Which interpretation is best supported by the specific behaviour?",
+ {id:scene.id+"-spot",kind:"Spot it",prompt:scene.isNear?"Which interpretation survives a closer look?":"Which concept best fits the observed action?",
   options:[
-   {id:"target",label:scene.isNear?"This must be "+record.title+". No further context is needed.":"The described behaviour may show "+record.title+"; further context can still matter."},
-   {id:"near",label:scene.isNear?"A plausible alternative is "+near:"The behaviour must be completely harmless because intentions cannot be known."},
-   {id:"irrelevant",label:"We can decide the person's full personality or diagnosis from this scene alone."}
+   {id:"target",label:scene.isNear?"The original label, "+record.title+", is proven even with this competing explanation.":"This is most consistent with "+record.title+"."},
+   {id:"near",label:scene.isNear?"Consider an alternative: "+near:"A competing account is possible, so there is no useful evidence for the original concept."},
+   {id:"irrelevant",label:"This is better classified as "+contrast.title+": "+clean(contrast.cue).slice(0,145)}
   ],answer:scene.isNear?"near":"target",
-  why:scene.isNear?"The alternative matters here. "+near:"The observable clue is: "+cue,
-  caution:"A fictional dialogue is not a clinical assessment. Look for the exact action and compare the alternatives."
+  why:scene.isNear?"The counterexample is relevant: "+near:"The particular observation is: "+cue,
+  caution:"A scene can support a behavioural interpretation without proving someone's motive or diagnosis."
  },
- {id:scene.id+"-why",kind:"Explain it",prompt:"What should you consider when explaining why this may happen?",
+ {id:scene.id+"-why",kind:"Explain it",prompt:"What would help explain the psychological process more reliably?",
   options:[
-   {id:"sequence",label:record.kind==="REASON"?"Test the relationship between the claim and its supporting reasons.":record.kind==="PRACTISE"?"Consider which goal the skill serves and whether it fits the person's circumstances.":"Examine the trigger, interpretation, behaviour and immediate consequences before suggesting a motive."},
-   {id:"certain",label:"One line of dialogue reveals the exact hidden motive with certainty."},
-   {id:"fixed",label:"Everyone who behaves this way has the same cause, diagnosis and history."}
+   {id:"sequence",label:record.kind==="REASON"?"Check whether the stated conclusion actually follows from its supporting reasons.":record.kind==="PRACTISE"?"Consider the goal of this skill and whether the situation makes it suitable.":"Examine what happened beforehand, what the person did and which consequences followed."},
+   {id:"certain",label:"Give extra weight to whichever account feels most emotionally convincing."},
+   {id:"fixed",label:"Treat tone as more informative than the circumstances leading up to the behaviour."}
   ],answer:"sequence",
-  why:record.kind==="REASON"?"The reasoning is what must be assessed, not the speaker's character.":record.kind==="PRACTISE"?"Skills are useful when they serve a specific goal and respect the setting.":"A maintaining process is a hypothesis based on what happens before and after, not a fact about someone's private mind.",
-  caution:"Some strategies are adaptive; some are reasoning errors; others may be harmful when used to control. These are not interchangeable."
+  why:record.kind==="REASON"?"For reasoning, check the inference rather than decide whose character is stronger.":record.kind==="PRACTISE"?"Practising a skill requires a goal, consent and suitable context.":"A sequence can help test a functional hypothesis without presuming that a private intention has been proven.",
+  caution:"Psychological explanation can suggest a hypothesis, not settle unobserved motives."
  },
- {id:scene.id+"-act",kind:"Choose a response",prompt:"What is the most useful next move in this setting?",
+ {id:scene.id+"-act",kind:"Choose a response",prompt:"Which next response best fits the evidence and the situation?",
   options:[
    {id:"proportionate",label:action},
-   {id:"fight",label:"Publicly label the other person and force a confession before continuing."},
-   {id:"comply",label:"Give in immediately or abandon the concern without checking the facts."}
+   {id:"fight",label:"Require the other person to admit the psychological label before addressing the specific problem."},
+   {id:"comply",label:"Drop the original evidence and follow the most confident interpretation to prevent further conflict."}
   ],answer:"proportionate",
-  why:"A proportionate response is grounded in what can be observed: "+action,
-  caution:"Safety and power change what is appropriate. Sometimes distance or outside support matters more than any clever comeback."
+  why:"The source-aligned response is: "+action,
+  caution:"Consider risk, consent and unequal power. Sometimes documenting or disengaging is safer than direct discussion."
  }];
  const shift=hash(record.id+scene.id+round)%3;
  return initial.map(q=>({...q,options:rotate(q.options,shift)}));
