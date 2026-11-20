@@ -4,6 +4,7 @@
  * Importing this module NEVER fetches or advertises non-published lessons.
  */
 import {validateLearnBundle} from './ns-learn-engine-v2.mjs';
+import {loadStrategyAtlas,buildStrategyBundle} from './ns-strategy-curriculum.mjs';
 export const PUBLISHED_COURSE_BUNDLES=Object.freeze({});
 const bundles=new Map();
 let index={version:1,courses:{}},indexLoaded=false,inflight=null;
@@ -45,6 +46,8 @@ export async function loadPublishedLearnBundle(id){
  const bundle=await response.json();
  const errors=validateLearnBundle(bundle,id);
  if(errors.length||bundle.version!==record.version)throw Error('Published course failed validation: '+errors.slice(0,3).join('; '));
- bundles.set(id,bundle);
- return bundle;
+ const source=await loadStrategyAtlas();
+ const strategyBundle=buildStrategyBundle(bundle,source);
+ bundles.set(id,strategyBundle);
+ return strategyBundle;
 }

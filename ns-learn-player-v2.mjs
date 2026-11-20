@@ -3,6 +3,7 @@
  * recording completions. Question content is always escaped; never raw HTML.
  */
 import {getLearnContent} from './ns-learn-content-v2.mjs';
+import {renderStrategyLesson} from './ns-strategy-player.mjs?v=brand-makeover-20261120';
 import {getLearnCourse,LEARN_COMPANIONS} from './ns-learn-catalog-v2.mjs';
 import {validateLearnBundle,gradeLearnItem,learnLessonScore,flattenLearnLessons,QUESTION_TYPES} from './ns-learn-engine-v2.mjs';
 import {learningNodes,safeCourseImage} from './ns-course-lab-schema.mjs';
@@ -16,6 +17,12 @@ import {knownCastForLesson,charactersMentioned,characterPortrait} from './ns-lea
 import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs?v=profile-drills-20261120-r2';
 const esc=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[ch]));
 const opt=(id,label)=>'<option value="'+esc(id)+'">'+esc(label)+'</option>';
+const nodeIllustrations=Object.freeze({
+ dialogue:"☏",investigation:"◇",match:"⇄",sort:"▦",label:"⌕",
+ complete:"✎",choose:"◎",repair:"✧",rank:"≡",chain:"↣",
+ update:"↻",perspective:"◐",predict:"↗",character:"♡",
+ read:"▤",image:"▧",investigate:"⌕",respond:"✉"
+});
 const inline=value=>esc(value).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/(^|[^*])\*([^*]+)\*/g,'$1<em>$2</em>');
 const paragraphs=value=>String(value||'').split(/\n\s*\n/).filter(Boolean).map(block=>{
  const lines=block.split('\n');
@@ -27,7 +34,7 @@ const photo=node=>safeCourseImage(node.image)?'<figure class="ns-learn-player__f
 const fieldset=(name,options,selected='',disabled=false)=>'<fieldset class="ns-learn-player__choices"><legend class="sr-only">'+esc(name)+'</legend>'+options.map(o=>'<label><input type="radio" name="'+esc(name)+'" value="'+esc(o.id)+'"'+(o.id===selected?' checked':'')+(disabled?' disabled':'')+'><span>'+esc(o.label)+'</span></label>').join('')+'</fieldset>';
 export function publishedLearnBundle(id){
  const c=getLearnCourse(id),b=getLearnContent(id);
- return c&&b&&!validateLearnBundle(b,id).length?b:null;
+ return c&&b&&(b.strategyCurriculum||!validateLearnBundle(b,id).length)?b:null;
 }
 export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOverride=null,preview=false}={}){
  const bundle=bundleOverride||publishedLearnBundle(courseId),course=getLearnCourse(courseId);
@@ -35,6 +42,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const home='#learn/course/'+encodeURIComponent(courseId);
  const unitIndex=Math.max(1,(bundle?.modules||[]).findIndex(m=>(m.lessons||[]).some(l=>l.id===lessonId))+1);
  if(!lesson){root.innerHTML='<section class="ns-learn-player"><a href="'+home+'">← Back to course</a><h1>No published lesson found</h1><p>This course has no available lesson at that address.</p></section>';return;}
+ if(lesson.atlasRecord)return renderStrategyLesson(root,bundle,lesson,{review,preview});
  const scramble=items=>{
   const result=[...(items||[])];
   for(let i=result.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[result[i],result[j]]=[result[j],result[i]];}
@@ -185,7 +193,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    const notice=state.notice?'<p class="ns-learn-player__notice" role="alert">'+esc(state.notice)+'</p>':'';
    const answerLabel=checked&&!state.checked.correct?correctAnswerText(node,['dialogue','investigation'].includes(node.type)?node.checks?.[state.dialogueCheck]:null):'';
     const response=checked?'<div class="ns-learn-player__feedback ns-learn-player__feedback--'+(state.checked.correct?'correct':'incorrect')+'" data-result="'+(state.checked.correct?'correct':'incorrect')+'" role="status"><strong>'+(state.checked.correct?'✓ Correct.':'✕ Not quite. Review the reasoning.')+'</strong>'+(answerLabel?'<p><strong>Best-supported answer:</strong> '+esc(answerLabel)+'</p>':'')+paragraphs(state.checked.explanation)+(state.checked.counterexample?'<p><small>Where this may differ: '+esc(state.checked.counterexample)+'</small></p>':'')+(state.checked.reply?'<div class="ns-learn-player__branch"><strong>'+esc(node.speakerB||'Possible reply')+'</strong><p>'+esc(state.checked.reply)+'</p>'+(state.checked.consequence?'<small>'+esc(state.checked.consequence)+'</small>':'')+'</div>':'')+'</div>':'';
-   middle='<div class="ns-learn-immersive__task"><p class="ns-learn-player__eyebrow">'+esc(node.type==='investigation'?'MESSAGE INVESTIGATION':node.type==='dialogue'?'CONVERSATION':isLifeNode(node.type)?lifeNodeDefinition(node.type).name.toUpperCase():node.type.toUpperCase())+' · '+(state.i+1)+' / '+nodes.length+'</p><h1>'+esc(heading)+'</h1>'+correctionLabel+faces+(glossary.some(entry=>JSON.stringify(node).toLowerCase().includes(entry.term.toLowerCase()))?glossaryHelp:'')+body+notice+response+'</div>';
+   middle='<div class="ns-learn-immersive__task" data-node-type="'+esc(node.type)+'"><div class="ns-learn-node__banner"><span class="ns-learn-node__symbol" aria-hidden="true">'+(nodeIllustrations[node.type]||"✦")+'</span><span class="ns-learn-node__banner-label">'+esc(node.type==='investigation'?'MESSAGE INVESTIGATION':node.type==='dialogue'?'CONVERSATION':isLifeNode(node.type)?lifeNodeDefinition(node.type).name.toUpperCase():node.type.toUpperCase())+' · '+(state.i+1)+' / '+nodes.length+'</span></div><h1>'+esc(heading)+'</h1>'+correctionLabel+faces+(glossary.some(entry=>JSON.stringify(node).toLowerCase().includes(entry.term.toLowerCase()))?glossaryHelp:'')+body+notice+response+'</div>';
    if(!((node.type==='dialogue'&&state.dialogueCheck<0&&state.dialogueVisible<(node.turns||[]).length)||(node.type==='investigation'&&state.dialogueCheck<0&&state.investigationVisible<(node.turns||[]).length))){
     const buttonText=['dialogue','investigation'].includes(node.type)&&state.dialogueCheck<0?'Apply your reasoning →':
      ['dialogue','investigation'].includes(node.type)&&checked&&!state.correcting&&state.dialogueCheck<(node.checks?.length||0)-1?'Next question →':

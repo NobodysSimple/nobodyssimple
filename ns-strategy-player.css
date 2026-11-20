@@ -1,0 +1,113 @@
+/* Nobody's Simple / Strategy mastery lesson: one clear action per screen */
+body:has(.ns-atlas-lesson){overflow:hidden!important}
+body.app-body.ns-shell-v1 #main .ns-atlas-lesson,
+#cl-preview-host .ns-atlas-lesson{
+ --atlas-bg:#f6faf6;--atlas-ink:#243b2b;--atlas-muted:#61786a;
+ position:fixed;inset:0;width:100vw;height:100dvh;z-index:100001;
+ background:var(--atlas-bg);color:var(--atlas-ink);
+ font:500 16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
+ overflow:hidden;display:flex;align-items:stretch;justify-content:center;
+}
+.ns-atlas-lesson *, .ns-atlas-lesson *:before,.ns-atlas-lesson *:after{box-sizing:border-box}
+.ns-atlas-lesson__screen{
+ width:min(100%,770px);height:100%;display:grid;
+ grid-template-rows:auto minmax(0,1fr) auto;
+ padding:0 clamp(16px,4vw,32px);background:#f6faf6;
+}
+.ns-atlas-lesson__head{display:flex;align-items:center;gap:16px;min-height:72px;padding-top:env(safe-area-inset-top)}
+.ns-atlas-lesson__exit{display:flex;align-items:center;justify-content:center;text-decoration:none!important;
+ width:42px;height:42px;border-radius:12px;color:#647b6b!important;font-size:30px;font-weight:400;flex:none}
+.ns-atlas-lesson__exit:hover,.ns-atlas-lesson__exit:focus-visible{background:#e5efe6}
+.ns-atlas-lesson__progress{height:11px;flex:1;border-radius:999px;background:#e0e9e1;overflow:hidden}
+.ns-atlas-lesson__progress span{display:block;height:100%;background:#69c288;border-radius:inherit;transition:width .19s ease}
+.ns-atlas-lesson__counter{min-width:52px;font-weight:800;font-size:13px;color:#517e62;text-align:right}
+.ns-atlas-lesson__body{min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#c2d9ca transparent;padding:22px 6px 36px}
+.ns-atlas-lesson__body>*{max-width:640px;margin-inline:auto}
+.ns-atlas-lesson__intro,.ns-atlas-lesson__finish,.ns-atlas-lesson__task{width:100%}
+.ns-atlas-lesson :is(h1,h2,p,legend){font-family:inherit;line-height:1.45}
+.ns-atlas-lesson h1{font-size:clamp(22px,3.5vw,31px);line-height:1.22;margin:6px 0 15px!important;letter-spacing:-.035em;color:#223b2d!important}
+.ns-atlas-lesson p{color:#334a3c;margin:0 0 13px}
+.ns-atlas-lesson__kicker{color:#64816c!important;font-size:12px!important;font-weight:800!important;letter-spacing:.045em;text-transform:uppercase;margin-bottom:9px!important}
+.ns-atlas-lesson__lead{font-size:18px!important;font-weight:650;line-height:1.5!important;max-width:580px}
+.ns-atlas-lesson__knowledge{background:#fff;border:1px solid #d7e5da;border-radius:16px;padding:20px 22px;margin:20px 0}
+.ns-atlas-lesson__knowledge strong{display:block;color:#2d5e40;font-weight:800;margin:6px 0 6px}
+.ns-atlas-lesson__knowledge p{font-size:15px;margin-bottom:15px}
+.ns-atlas-lesson__knowledge p:last-child{margin-bottom:0}
+.ns-atlas-lesson__muted,.ns-atlas-lesson__source{font-size:13px!important;color:#62796d!important}
+.ns-atlas-lesson__source{margin-top:19px!important}
+.ns-atlas-lesson__context{font-size:15px!important;color:#5a7161!important}
+.ns-atlas-lesson__observation{border-left:4px solid #75b88d;background:#e8f4e9;padding:10px 14px;border-radius:0 10px 10px 0;margin:15px 0 20px!important;color:#294a35!important;font-size:14px!important}
+.ns-atlas-lesson__observation strong{color:#265d3b}
+.ns-atlas-lesson__thread{display:flex;flex-direction:column;gap:12px;list-style:none;padding:12px 6px;margin:14px 0 20px;max-height:clamp(170px,38vh,350px);overflow:auto;scrollbar-width:thin;border-radius:14px;background:#edf3ee}
+.ns-atlas-lesson__thread li{margin:0 auto 0 0;max-width:86%;padding:12px 16px;border:1px solid #dae5dd;border-radius:15px 15px 15px 5px;background:#fff;box-shadow:0 1px 1px rgba(30,56,36,.04)}
+.ns-atlas-lesson__thread li.is-other{margin:0 0 0 auto;border-radius:15px 15px 5px 15px;background:#def0e2;border-color:#c9e2cf}
+.ns-atlas-lesson__thread li>span{display:block;font-size:12px;font-weight:800;color:#4b805b;margin:0 0 5px}
+.ns-atlas-lesson__thread li>p{margin:0!important;color:#243c2b!important;font-size:15px!important;line-height:1.45!important}
+.ns-atlas-lesson__choices{border:0;margin:16px 0 0!important;padding:0!important;display:grid;gap:10px;min-width:0}
+.ns-atlas-lesson__choices legend{font-size:19px;color:#213b2b!important;font-weight:800;margin:0 0 14px;line-height:1.35}
+.ns-atlas-lesson__choices legend span{display:block;font-size:12px;color:#63866c;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.ns-atlas-lesson__choices label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;
+ padding:15px 17px;background:#fff;border:2px solid #d8e6db;border-radius:12px;color:#253b2d!important;min-height:55px;
+ transition:background .12s,border-color .12s,transform .12s;
+}
+.ns-atlas-lesson__choices label:hover{background:#f0faf1;border-color:#a8d2b4;transform:translateY(-1px)}
+.ns-atlas-lesson__choices label.is-selected{background:#e4f5e9;border-color:#68ba83}
+.ns-atlas-lesson__choices label span{flex:1;font-size:15px;line-height:1.4}
+.ns-atlas-lesson__choices input{accent-color:#438e59;width:18px;height:18px;flex:none;margin:1px 0 0}
+.ns-atlas-lesson__choices[disabled] label{cursor:default}
+.ns-atlas-lesson__feedback{background:#e4f6e8;border:1px solid #a9d6b4;border-radius:14px;margin:17px 0 0;padding:16px 19px;color:#244b35}
+.ns-atlas-lesson__feedback.is-incorrect{background:#fff6ed;border-color:#eed6b6;color:#775025}
+.ns-atlas-lesson__feedback>strong{display:block;font-size:17px;margin-bottom:8px}
+.ns-atlas-lesson__feedback p{font-size:15px;margin:8px 0!important;color:inherit!important}
+.ns-atlas-lesson__feedback .ns-atlas-lesson__muted{color:#647967!important}
+.ns-atlas-lesson__footer{display:flex;align-items:center;justify-content:flex-end;min-height:84px;
+ padding:12px 0 max(12px,env(safe-area-inset-bottom));border-top:1px solid #dbe9de;background:#f6faf6;z-index:2}
+.ns-atlas-lesson__next{font:800 16px/1.3 system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;
+ min-height:50px;min-width:220px;padding:13px 24px;text-decoration:none!important;text-align:center;color:#173b22!important;
+ background:#78cb8e;border:0;border-bottom:3px solid #4ba76a;border-radius:13px;cursor:pointer;box-shadow:none}
+.ns-atlas-lesson__next:hover{background:#8ad89f}
+.ns-atlas-lesson__next:disabled{cursor:not-allowed;filter:grayscale(.6);opacity:.55}
+.ns-atlas-lesson :focus-visible{outline:3px solid #3d8a54!important;outline-offset:3px}
+.ns-atlas-lesson__finish{text-align:center;padding-top:20px}
+.ns-atlas-lesson__finish .ns-atlas-lesson__knowledge{text-align:left}
+.ns-atlas-lesson__trophy{display:inline-grid;place-items:center;border-radius:50%;width:74px;height:74px;background:#ddf2e3;color:#338052;font-size:38px;margin-bottom:12px}
+@media(max-width:640px){
+ .ns-atlas-lesson__head{min-height:59px;gap:10px}
+ .ns-atlas-lesson__body{padding:12px 0 16px}
+ .ns-atlas-lesson__choices label{padding:12px 14px;min-height:48px}
+ .ns-atlas-lesson__thread{max-height:34dvh;gap:8px}
+ .ns-atlas-lesson__thread li{padding:10px 13px}
+ .ns-atlas-lesson__footer{min-height:73px}
+ .ns-atlas-lesson__next{width:100%;min-width:0}
+ .ns-atlas-lesson__knowledge{padding:15px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ns-atlas-lesson__progress span,.ns-atlas-lesson__choices label{transition:none;transform:none!important}
+}
+
+/* The course map shows the next attainable skill, not a wall of 200 links. */
+.ns-catalogue-syllabus .ns-atlas-next-skill{
+ display:flex;flex-direction:column;gap:6px;padding:20px 24px;border-radius:18px;
+ border:2px solid #a6d7af;background:#ebf9ee;color:#254630!important;
+ margin:16px 0 22px;text-decoration:none!important;
+ box-shadow:0 5px 15px rgba(29,77,47,.06);
+}
+.ns-atlas-next-skill>span{font-size:12px;letter-spacing:.08em;color:#397e51;font-weight:800}
+.ns-atlas-next-skill>strong{font-size:clamp(19px,3vw,24px);line-height:1.25;color:#224e32}
+.ns-atlas-next-skill>small{font-size:14px;color:#53765d}
+.ns-catalogue-syllabus details.ns-atlas-path-unit{display:block;padding:0;border:1px solid #dce8dc;border-radius:14px;margin:0 0 12px;background:#fff;overflow:hidden}
+.ns-catalogue-syllabus .ns-atlas-path-unit>summary{cursor:pointer;list-style:none;display:flex;flex-direction:column;gap:3px;padding:16px 20px;background:#f7faf6;color:#29412f}
+.ns-catalogue-syllabus .ns-atlas-path-unit>summary::-webkit-details-marker{display:none}
+.ns-catalogue-syllabus .ns-atlas-path-unit>summary:after{content:"Show strategies ▾";font-size:12px;color:#527861}
+.ns-catalogue-syllabus .ns-atlas-path-unit[open]>summary:after{content:"Hide strategies ▴"}
+.ns-catalogue-syllabus .ns-atlas-path-unit>summary strong{font-size:17px}
+.ns-catalogue-syllabus .ns-atlas-path-unit>summary small{color:#6d8070}
+.ns-atlas-path-unit__links{padding:6px 12px 14px}
+.ns-catalogue-syllabus .ns-atlas-path-unit__links>a{
+ display:flex;align-items:center;gap:10px;border:0;background:transparent;
+ padding:11px 12px;color:#31543a!important;font-size:15px;line-height:1.3;
+ text-decoration:none!important;border-radius:10px;
+}
+.ns-catalogue-syllabus .ns-atlas-path-unit__links>a:hover,
+.ns-catalogue-syllabus .ns-atlas-path-unit__links>a[aria-current="step"]{background:#e9f6eb}
+.ns-atlas-path-unit__marker{font-size:20px;font-weight:800;color:#50976a;min-width:24px}
