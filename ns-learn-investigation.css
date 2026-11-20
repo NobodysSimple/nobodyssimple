@@ -38,3 +38,31 @@
  .ns-inquiry__stage-nav button{width:40px;height:40px;flex-basis:40px}
 }
 @media(prefers-reduced-motion:reduce){.ns-inquiry__stage-nav button{transition:none}}
+
+
+/* Reasoning workspace: the reader can choose a message, draft an account, and
+   inspect an alternative without losing the surrounding evidence thread. */
+.ns-inquiry__message{display:block;width:100%;text-align:left;background:transparent;color:#fcfcf5;border:0;padding:0;font:inherit;cursor:pointer}
+.ns-inquiry__message span{display:block;font-size:1rem;line-height:1.6;overflow-wrap:anywhere}
+.ns-inquiry__message:focus-visible{outline:3px solid #f1d39a;outline-offset:5px;border-radius:5px}
+.ns-inquiry__turn:has(.ns-inquiry__message[aria-pressed="true"]){outline:2px solid #d8eaa6;outline-offset:3px}
+.ns-inquiry__focused{padding:12px 14px;margin:4px 0 16px;border-left:4px solid #4d8c64;background:#f7f8f1;border-radius:8px}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-inquiry__focused :is(p,strong){color:#1d4030!important}
+.ns-inquiry__focused p{margin:6px 0 0!important;line-height:1.6}
+.ns-inquiry__note{display:grid;gap:8px;margin:8px 0 16px}
+.ns-inquiry__note strong{font-weight:750}
+.ns-inquiry__note span{color:#365545;font-size:.89rem;line-height:1.5}
+.ns-inquiry__note textarea{box-sizing:border-box;width:100%;min-height:95px;padding:12px 14px;border:1.5px solid #8aa99a;border-radius:11px;background:#fffef9;color:#173b2b;font:500 1rem/1.55 system-ui,sans-serif;resize:vertical}
+.ns-inquiry__note textarea:focus-visible{outline:3px solid #74b88d;outline-offset:2px}
+.ns-inquiry__open{display:block;width:100%;padding:13px 15px;border:1px solid #316747;background:#245b42;color:#fffefa;border-radius:12px;font:700 .98rem system-ui,sans-serif;cursor:pointer;text-align:left}
+.ns-inquiry__open:focus-visible{outline:3px solid #25563b;outline-offset:3px}
+.ns-inquiry__revealed{border:1px solid #adc8b4;padding:14px 16px;background:#f8faf4;border-radius:11px}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-inquiry__revealed :is(h3,p){color:#203c2d!important}
+.ns-inquiry__revealed h3{margin:14px 0 7px;font-size:1rem}
+.ns-inquiry__revealed h3:first-child{margin-top:0}
+.ns-inquiry__revealed .ns-inquiry__uncertainty{margin-top:14px;font-size:.86rem;line-height:1.5;color:#476452!important}
+.ns-inquiry__adjacent{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;margin-top:18px}
+.ns-inquiry__adjacent button{border:1px solid #598c74;background:#edf6ed;color:#204a33;border-radius:9px;padding:10px 12px;font:650 .92rem system-ui,sans-serif;cursor:pointer;min-height:43px}
+.ns-inquiry__adjacent button:focus-visible{outline:3px solid #648f76;outline-offset:3px}
+.ns-inquiry__stage-nav button[aria-current="step"]{background:#a7dfbb;color:#173324;border-color:#b5f5ce}
+@media(max-width:550px){.ns-inquiry__adjacent{display:grid;grid-template-columns:1fr}.ns-inquiry__note textarea{font-size:16px}}
