@@ -12,7 +12,7 @@ const node=()=>course().modules[0].lessons[0].nodes.find(n=>n.type==='investigat
 
 test('all twelve investigations contain valid case files and ten rival-explanation depths',()=>{
  const bundle=course();
- assert.equal(bundle.version,13);
+ assert.equal(bundle.version,14);
  assert.deepEqual(validateLearnBundle(bundle,'narcissism'),[]);
  const lessons=bundle.modules.flatMap(m=>m.lessons);
  assert.equal(lessons.length,12);
