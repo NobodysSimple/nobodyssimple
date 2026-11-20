@@ -101,7 +101,12 @@ export function makeAtlasScenes(courseId,record,featured=null,round=0){
     tone==="DRAMA"?"New context makes the first explanation much less certain.":
     tone==="SUBTLE"?"The same process can look very different when the words are gentler.":
     tone==="TRANSFER"?"A different setting, similar questions. Apply what you know without the label.":"Observe what happens before deciding what it means.";
-  const dialogue=isFeature?sourceTurn.slice(0,6).map(t=>({
+  // Every generated scene includes a grounded observation from its Atlas card.
+// The introductory scene must not ask learners to infer a pattern that its
+// dialogue never actually depicts. These are fictional situation notes.
+   const evidenceNote=isFeature?"":isNear?(" An additional account suggests: "+near):(" A witness describes this observable detail: "+cue);
+   const groundedIntro=intro+evidenceNote;
+   const dialogue=isFeature?sourceTurn.slice(0,6).map(t=>({
     speaker:t.speaker===sourceTurn[0].speaker?a:b,text:t.text
   })): [
    {speaker:a,text:i===0?"I need to ask you something, and I'm trying not to turn it into a whole saga.":
@@ -112,7 +117,7 @@ export function makeAtlasScenes(courseId,record,featured=null,round=0){
    {speaker:b,text:isNear?"I can explain what happened, and we can check that against the facts.":i===5?
      "That is fair. I think we need to consider the circumstances too.":"I might not agree with you, but let's look at the specific situation."}
   ];
-  return {id:record.id+"-s"+i,place,tone,intro,isNear,featured:isFeature,
+  return {id:record.id+"-s"+i,place,tone,intro:groundedIntro,isNear,featured:isFeature,
    observation:isFeature?(clean(featured.spot)||cue):isNear?near:cue,
    newEvidence:isFeature?clean(featured.newEvidence):i===3?
      "A reliable new fact appears. Consider whether it changes the original explanation or only makes it more precise.":
