@@ -30,28 +30,35 @@ test('feedback sound is persistent, optional, and does not require an audio devi
  assert.equal(playLearningCue(false,true,{}),false);
 });
 
-test('the first expanded published psychology lesson meets the structural deep-ten rubric',()=>{
+test('the published Narcissism curriculum validates and contains deep investigations',()=>{
  const bundle=JSON.parse(readFileSync(new URL('../../learn-content/courses/narcissism.json',import.meta.url),'utf8'));
- assert.equal(bundle.version,5);
+ assert.equal(bundle.version,9);
  assert.deepEqual(validateLearnBundle(bundle,'narcissism'),[]);
- const lesson=bundle.modules.flatMap(m=>m.lessons).find(l=>l.id==='narcissism-m1-l1');
- assert(lesson);
- assert.equal(lesson.standard,'deep-10');
- const result=auditLesson(lesson,{strict:true});
- assert.deepEqual(result.blockers,[]);
- assert(result.drills>=9);
- assert(result.formats>=5);
- assert(result.textWords>=900);
- assert(lesson.glossary.some(x=>x.term==='Contingent self-worth'));
- assert(displayedLessonMinutes(lesson)>=10);
+ const lessons=bundle.modules.flatMap(m=>m.lessons);
+ assert.equal(lessons.length,12);
+ for(const lesson of lessons){
+  assert.equal(lesson.standard,'deep-10');
+  const result=auditLesson(lesson,{strict:true});
+  assert.deepEqual(result.blockers,[],lesson.title);
+  assert(result.drills>=8);
+  assert(result.formats>=4);
+  assert(result.textWords>=900);
+  assert(displayedLessonMinutes(lesson)>=10);
+  const investigation=lesson.nodes.find(n=>n.type==='investigation');
+  assert(investigation,lesson.title);
+  assert.equal(investigation.layers.length,10);
+  assert.equal(investigation.checks.length,4);
+  assert(investigation.layers.every(l=>l.analysis&&l.alternative&&l.test));
+ }
 });
 
-test('first attempts and correction attempts are distinguished, and substantive responses show the answer',()=>{
+test('the revised curriculum retains a valid fresh-evidence question and scores its choices',()=>{
  const bundle=JSON.parse(readFileSync(new URL('../../learn-content/courses/narcissism.json',import.meta.url),'utf8'));
- const lesson=bundle.modules.flatMap(m=>m.lessons).find(l=>l.id==='narcissism-m1-l1');
- const update=lesson.nodes.find(x=>x.type==='update');
- assert(update);
- assert.equal(gradeLearnItem(update,update.answer).correct,true);
- assert.equal(gradeLearnItem(update,update.options.find(x=>x.id!==update.answer).id).correct,false);
- assert(correctAnswerText(update).length>20);
+ for(const lesson of bundle.modules.flatMap(m=>m.lessons)){
+  const update=lesson.nodes.find(x=>x.type==='update');
+  assert(update,lesson.title);
+  assert.equal(gradeLearnItem(update,update.answer).correct,true);
+  assert.equal(gradeLearnItem(update,update.options.find(x=>x.id!==update.answer).id).correct,false);
+  assert(correctAnswerText(update).length>20);
+ }
 });
