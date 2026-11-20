@@ -41,7 +41,7 @@
               "id": "narcissism-f1-l1-deep-opening",
               "type": "read",
               "title": "The actual situation",
-              "body": "Maya completed the analysis on a joint project. Leo leads the team, is being considered for promotion, and will present the findings to the board tomorrow. Their exchanges are private, but the attribution will be public.\n\nMaya is asking for the slide to describe her contribution accurately. Leo repeatedly replies without agreeing to the correction. The earliest question concerns authorship, something the team can check against drafts and work records.\n\nHe may be trying to communicate a legitimate frustration that leadership contributions are overlooked. The shift is still relevant even if the frustration is sincere.",
+              "body": "Maya developed the model behind tomorrow's presentation. Leo led the project and will present it to the board. He is also being considered for promotion. The slide currently says he built the model, although Maya has already asked for that wording to change.\n\nThey are speaking privately, where there is still time to correct the record. Notice what happens to the subject of the conversation as they reply to one another. A sentence that appears to be about professional loyalty might have a different function in a dispute over who did the work.",
               "sources": ""
             },
             {
@@ -198,25 +198,25 @@
               "checks": [
                 {
                   "id": "narcissism-f1-l1-deep-check-0",
-                  "prompt": "Why is Leo's phrase 'I was just a manager' unusually revealing?",
+                  "prompt": "Maya had already requested a correction twice. What is most significant about Leo replying that he 'took a chance' on her?",
                   "focusTurn": "narcissism-f1-l1-deep-turn-3",
                   "options": [
                     {
                       "id": "narcissism-f1-l1-deep-check-0-option-0",
-                      "label": "Leo could be warning that the board will misread how project leadership is credited, rather than expressing personal shame."
+                      "label": "Leo is offering a different explanation of who produced the model, based on his responsibility as lead."
                     },
                     {
                       "id": "narcissism-f1-l1-deep-check-0-option-1",
-                      "label": "It supplies a feared interpretation Maya did not actually propose, which might explain his resistance."
+                      "label": "He introduces a reason Maya might feel indebted to him while leaving the verifiable credit line unresolved."
                     },
                     {
                       "id": "narcissism-f1-l1-deep-check-0-option-2",
-                      "label": "Leo could be arguing that his status authorises a different credit convention, even if Maya produced the model."
+                      "label": "He is asking Maya to acknowledge that supporting junior staff has a professional cost."
                     }
                   ],
                   "answer": "narcissism-f1-l1-deep-check-0-option-1",
-                  "explanation": "Maya offers to recognise both roles. Leo replaces this with a story in which acknowledging her work reduces his own value. That shift is compatible with threatened competence, although the board's incentives also remain relevant.",
-                  "counterexample": "We cannot establish an unconscious fear without further evidence; the phrasing is a clue to how he frames the problem."
+                  "explanation": "The mentoring may have been real, but it does not answer who developed the model. The earlier correction requests matter because Maya has already made the factual question clear; Leo's reminder changes the conversational burden instead of supplying new authorship evidence.",
+                  "counterexample": "A profile detail changes the weight of an explanation; it does not reveal an individual's thoughts with certainty."
                 },
                 {
                   "id": "narcissism-f1-l1-deep-check-1",
@@ -485,7 +485,7 @@
               "id": "narcissism-f1-l2-deep-opening",
               "type": "read",
               "title": "The actual situation",
-              "body": "Eva has won a scholarship to study in another city. Her father paid for extra tutoring when she was younger. He hoped she would stay nearby and join the family business, a future they never explicitly agreed on.\n\nEva announces an achievement and seeks a response from her father. He responds to the destination and to what he believes he has sacrificed. The conversation has not yet established that Eva ever promised to stay.\n\nThe tutoring may have cost the family real opportunities, and his wish for recognition could be reasonable. Acknowledging sacrifice and accepting a daughter's autonomy are separate questions.",
+              "body": "Eva has received a scholarship to study in Manchester. Her father paid for tutoring while she was growing up and imagined that she would eventually work in the family business. They never settled that future together.\n\nHer news is a substantial achievement. It also changes plans that mattered to him. The interesting question is whether two legitimate feelings can remain separate in their conversation: his disappointment and her freedom to choose. Pay attention to the moment her education begins to be discussed as a debt.",
               "sources": ""
             },
             {
@@ -704,25 +704,25 @@
               "checks": [
                 {
                   "id": "narcissism-f1-l2-deep-check-0",
-                  "prompt": "What is most consequential about 'after everything I put into getting you where you are'?",
+                  "prompt": "Eva's father paid for tutoring, yet they never agreed she would join the business. What does that overlooked detail change?",
                   "focusTurn": "narcissism-f1-l2-deep-turn-3",
                   "options": [
                     {
                       "id": "narcissism-f1-l2-deep-check-0-option-0",
-                      "label": "He is describing a real sacrifice and asking Eva to recognise how her departure affects his plans."
+                      "label": "It makes his distress about the distance less credible, because parents who help their children should expect them to leave."
                     },
                     {
                       "id": "narcissism-f1-l2-deep-check-0-option-1",
-                      "label": "He assumes family investment creates reciprocal duties, even though the scholarship choice was never formally discussed."
+                      "label": "It rules out a family expectation; without a formal contract, no shared understanding could exist."
                     },
                     {
                       "id": "narcissism-f1-l2-deep-check-0-option-2",
-                      "label": "It turns earlier parental support into a claim over Eva's current decision."
+                      "label": "It leaves room for genuine disappointment while weakening the claim that Eva owes him a particular career decision."
                     }
                   ],
                   "answer": "narcissism-f1-l2-deep-check-0-option-2",
-                  "explanation": "The father appeals to past sacrifice when Eva names her scholarship. His sacrifice may be real, but its relevance to the choice needs examining rather than assumed.",
-                  "counterexample": "A genuinely agreed family obligation would change what Eva ought to discuss."
+                  "explanation": "An expectation can influence a relationship without becoming an agreed obligation. The father's sacrifice is relevant to why he may feel hurt. The absence of agreement matters to what he may fairly demand.",
+                  "counterexample": "A profile detail changes the weight of an explanation; it does not reveal an individual's thoughts with certainty."
                 },
                 {
                   "id": "narcissism-f1-l2-deep-check-1",
@@ -941,7 +941,7 @@
               "id": "narcissism-f1-l3-deep-opening",
               "type": "read",
               "title": "The actual situation",
-              "body": "Jules has recently been praised publicly for starting a company. Noor, their partner, helped with the accounts and noticed a serious error in the investor deck. The evening begins after a successful launch party.\n\nThe practical dispute concerns an investor slide. Jules's concern about inaccurate figures is checkable. Noor's response is about the meaning of acknowledging a mistake in the presence of a partner.\n\nJules might have raised the issue in a poor moment. Timing can affect emotion even when the information is valid.",
+              "body": "Noor has just enjoyed a successful launch party for a company they founded. Jules, Noor's partner, has been checking the investor figures and found a mistake that needs addressing before publication. The correction is raised in private after the event.\n\nNoor has reasons to feel proud of building the company, and an inaccurate slide could also cause genuine trouble. Read what happens when Jules moves from admiration to a practical concern. The private conversation contains a much more informative contrast than the public presentation alone.",
               "sources": ""
             },
             {
@@ -1098,25 +1098,25 @@
               "checks": [
                 {
                   "id": "narcissism-f1-l3-deep-check-0",
-                  "prompt": "Which detail best supports the idea that Noor's public confidence and private vulnerability are linked?",
+                  "prompt": "Jules raised the numerical error privately after Noor's launch. Which reading gives the best account of the exchange?",
                   "focusTurn": "narcissism-f1-l3-deep-turn-3",
                   "options": [
                     {
                       "id": "narcissism-f1-l3-deep-check-0-option-0",
-                      "label": "Noor asks for Jules's company immediately after the setback, suggesting the relationship remains important."
+                      "label": "The private timing fits an attempt to protect the company; Noor may nevertheless experience the correction as a broader judgement of competence."
                     },
                     {
                       "id": "narcissism-f1-l3-deep-check-0-option-1",
-                      "label": "Noor first asserts exceptional courage, then treats a spreadsheet error as proof of being an idiot."
+                      "label": "Since Jules raised the issue after praise, it most likely reflects a history of Jules reducing Noor's confidence at important moments."
                     },
                     {
                       "id": "narcissism-f1-l3-deep-check-0-option-2",
-                      "label": "Noor's concern about investor scrutiny suggests a practical reputational risk independent of self-worth."
+                      "label": "Noor's reaction chiefly shows a concern about investor liability, with no evidence that personal worth enters the exchange."
                     }
                   ],
-                  "answer": "narcissism-f1-l3-deep-check-0-option-1",
-                  "explanation": "The movement between superior self-presentation and global self-denigration occurs around the same perceived exposure. The researcher should still seek repetition across contexts.",
-                  "counterexample": "A stressful launch could produce a similar reaction without pathological narcissism."
+                  "answer": "narcissism-f1-l3-deep-check-0-option-0",
+                  "explanation": "The figures need checking regardless of how Noor feels. Noor's move from exceptional courage to feeling like an idiot makes a threatened sense of competence plausible. Private timing weakens, though does not eliminate, an account in which Jules intended public humiliation.",
+                  "counterexample": "A profile detail changes the weight of an explanation; it does not reveal an individual's thoughts with certainty."
                 },
                 {
                   "id": "narcissism-f1-l3-deep-check-1",
@@ -1383,7 +1383,7 @@
               "id": "narcissism-f2-l1-deep-opening",
               "type": "read",
               "title": "The actual situation",
-              "body": "Ellis loses a school science prize to a younger classmate, Farah. He sees himself as the student teachers turn to for difficult problems. Tessa knows Farah's winning project well.\n\nEllis has lost a particular competition. His early response questions whether Farah's work counts as 'proper science'. That is a claim about evaluation that could, in principle, be checked.\n\nHe may have observed genuine favouritism or inconsistent criteria, even if his tone is unfair.",
+              "body": "Ellis expected to win the school science prize. Teachers often described him as exceptionally capable in the subject, and his classmates knew he was a favourite. The winner is Farah, a younger pupil whose project Tessa has seen.\n\nThe result may be disappointing without being unfair. We need the judging criteria to decide that. Meanwhile, Ellis's reactions may reveal what the result means to him personally. As the messages arrive, separate his claims about the evidence from his claims about how other people see him.",
               "sources": ""
             },
             {
@@ -1540,25 +1540,25 @@
               "checks": [
                 {
                   "id": "narcissism-f2-l1-deep-check-0",
-                  "prompt": "Ellis moves from the quality of the project to Farah's age. What does that shift suggest?",
+                  "prompt": "Tessa has seen Farah's months of data collection, while Ellis had been repeatedly called the top student. Which distinction matters most?",
                   "focusTurn": "narcissism-f2-l1-deep-turn-3",
                   "options": [
                     {
                       "id": "narcissism-f2-l1-deep-check-0-option-0",
-                      "label": "His criticism is becoming partly about who deserves status, not just the work's quality."
+                      "label": "Tessa's knowledge of Farah's work challenges the claim that the win was merely decorative; Ellis's reputation may still explain why losing feels personally costly."
                     },
                     {
                       "id": "narcissism-f2-l1-deep-check-0-option-1",
-                      "label": "Ellis may be questioning whether the judges applied the criteria consistently across age groups."
+                      "label": "Teachers' earlier praise makes Ellis's suspicion of biased marking the better-supported account until the judges disclose their reasoning."
                     },
                     {
                       "id": "narcissism-f2-l1-deep-check-0-option-2",
-                      "label": "Ellis may be using age as a proxy for differences in access to equipment or supervision."
+                      "label": "Because Tessa knows Farah's project, she is now the impartial authority whose judgement should settle the competition."
                     }
                   ],
                   "answer": "narcissism-f2-l1-deep-check-0-option-0",
-                  "explanation": "Age is introduced as a reason Farah should not outrank him, without identifying a problem in her method.",
-                  "counterexample": "A scoring rule involving age groups would change what is relevant."
+                  "explanation": "Tessa has direct knowledge that bears on the quality of the winning entry, though she cannot settle the scores herself. Ellis's public identity explains a possible emotional stake, not the factual fairness of the judging.",
+                  "counterexample": "A profile detail changes the weight of an explanation; it does not reveal an individual's thoughts with certainty."
                 },
                 {
                   "id": "narcissism-f2-l1-deep-check-1",
@@ -1843,7 +1843,7 @@
               "id": "narcissism-f2-l2-deep-opening",
               "type": "read",
               "title": "The actual situation",
-              "body": "In a group chat, Riley makes a joke about Amal's accent shortly before Amal gives a presentation. Amal asks Riley privately to stop. Riley is a well-liked organiser whose humour usually attracts attention.\n\nAmal asks for one concrete behaviour to stop. Riley never directly explains why continuing the imitation is necessary. The immediate subject is not whether Riley is a good person.\n\nThe help may be substantial and Riley may feel unrecognised. That feeling deserves a hearing without purchasing permission to mock Amal.",
+              "body": "Riley is popular in a group chat partly because of their jokes. They have also spent considerable time helping Amal prepare for a presentation. Amal privately asks Riley to stop imitating her accent after other people begin copying the joke.\n\nThere is a real contribution and a real complaint here. One does not cancel the other. Notice whether the conversation stays with the behaviour Amal wants changed, or shifts toward a broader argument about the sort of person Riley is.",
               "sources": ""
             },
             {
@@ -2000,25 +2000,25 @@
               "checks": [
                 {
                   "id": "narcissism-f2-l2-deep-check-0",
-                  "prompt": "Which shift makes this exchange psychologically revealing?",
+                  "prompt": "Amal spoke to Riley privately and described people repeating the accent imitation. Why does that detail matter?",
                   "focusTurn": "narcissism-f2-l2-deep-turn-3",
                   "options": [
                     {
                       "id": "narcissism-f2-l2-deep-check-0-option-0",
-                      "label": "Riley may be distressed because they believe Amal's criticism was made publicly rather than privately."
+                      "label": "It proves Riley intended to single Amal out, because the joke had visible consequences."
                     },
                     {
                       "id": "narcissism-f2-l2-deep-check-0-option-1",
-                      "label": "Riley treats a request to stop one imitation as a verdict on their entire identity."
+                      "label": "It gives a concrete reason for the boundary and weakens the suggestion that Amal was publicly attacking Riley's character."
                     },
                     {
                       "id": "narcissism-f2-l2-deep-check-0-option-2",
-                      "label": "Riley may be defending a shared group norm of teasing rather than interpreting it as an attack on identity."
+                      "label": "It makes Riley's earlier help irrelevant to whether the two should remain friends."
                     }
                   ],
                   "answer": "narcissism-f2-l2-deep-check-0-option-1",
-                  "explanation": "The phrase 'I can't even be myself' expands a limit on behaviour into a threat to a valued self-image.",
-                  "counterexample": "Riley may have broader concerns about group humour; this exchange alone cannot tell us whether that worry is enduring."
+                  "explanation": "Amal has described an observable consequence and raised it privately. Riley's hurt feelings may be sincere, yet those details make the claim that Amal is staging a public attack difficult to sustain.",
+                  "counterexample": "A profile detail changes the weight of an explanation; it does not reveal an individual's thoughts with certainty."
                 },
                 {
                   "id": "narcissism-f2-l2-deep-check-1",
@@ -2300,7 +2300,7 @@
               "id": "narcissism-f2-l3-deep-opening",
               "type": "read",
               "title": "The actual situation",
-              "body": "Nina is Soren's sister. She has just lost her job and is worried about the rent. Soren is organising a family holiday and fears that cancellation will look like a failure of his planning.\n\nNina reports an immediate loss and a practical fear. Soren responds with a holiday deposit. The mismatch between what Nina needs and what Soren addresses is observable.\n\nThe holiday is a real shared commitment and may require discussion soon.",
+              "body": "Nina has lost her job and is worried about paying rent. She has not yet told her mother. Her brother Soren is organising a family holiday, and a cottage deposit needs attention tonight.\n\nSoren's practical concern is not imaginary. Neither is Nina's immediate need for someone to hear what has happened. Watch how they try to establish what the conversation is about. The most revealing detail may not be his first response but what happens when Nina explains why it misses her need.",
               "sources": ""
             },
             {
@@ -2519,25 +2519,25 @@
               "checks": [
                 {
                   "id": "narcissism-f2-l3-deep-check-0",
-                  "prompt": "Which statement supports the idea that Soren's reputation concerns are narrowing his attention?",
+                  "prompt": "Soren says the deposit is due tonight, and Nina says she may not cover next month's rent. What should be checked before treating his reply as purely self-centred?",
                   "focusTurn": "narcissism-f2-l3-deep-turn-3",
                   "options": [
                     {
                       "id": "narcissism-f2-l3-deep-check-0-option-0",
-                      "label": "'If we cancel, everyone will say I messed up again.'"
+                      "label": "Whether Soren's family usually criticises his holiday planning, since that would explain the defensiveness."
                     },
                     {
                       "id": "narcissism-f2-l3-deep-check-0-option-1",
-                      "label": "'The deposit is due tonight.' could explain why Soren initially prioritises the booking."
+                      "label": "Whether the deposit actually needs immediate action and whether somebody else can handle it, while still recognising Nina's need."
                     },
                     {
                       "id": "narcissism-f2-l3-deep-check-0-option-2",
-                      "label": "'I didn't realise I'd made this about my reputation.' may show he recognised a conflict after Nina challenged him."
+                      "label": "Whether Nina has regularly asked Soren to manage her practical worries before."
                     }
                   ],
-                  "answer": "narcissism-f2-l3-deep-check-0-option-0",
-                  "explanation": "He explicitly connects cancellation with a feared judgement about himself. The later admission recognises that link but is not the first evidence of it.",
-                  "counterexample": "The family's past reactions could make the fear realistic even when the attention shift is unhelpful."
+                  "answer": "narcissism-f2-l3-deep-check-0-option-1",
+                  "explanation": "A genuine time-critical task could explain an initial attention shift. Whether it could be delegated helps determine how much of Soren's continued focus was necessary. It does not erase the effect of his reply on Nina.",
+                  "counterexample": "A profile detail changes the weight of an explanation; it does not reveal an individual's thoughts with certainty."
                 },
                 {
                   "id": "narcissism-f2-l3-deep-check-1",
@@ -2742,7 +2742,7 @@
               "id": "narcissism-m1-l1-deep-opening",
               "type": "read",
               "title": "The actual situation",
-              "body": "Imogen admired her friend Kareem after he helped her through a difficult academic year. They have since worked on a joint project. Kareem has just told her he cannot cover her part of an approaching deadline.\n\nImogen's first line elevates Kareem into a unique source of understanding. The immediate dispute concerns whether Kareem agreed to complete work for her.\n\nKareem may have used broad promises in the past that reasonably created expectations.",
+              "body": "Imogen relied on Kareem during a difficult academic year. They later became collaborators on a project whose deadline is approaching. Kareem says he agreed to check references. Imogen expected more extensive help.\n\nTheir friendship has history, and they both seem to attach meaning to what loyalty requires. The precise promise is still disputed. Read how quickly a limited disagreement over responsibility may turn into an account of what someone has always been like, and ask which evidence could restore proportion.",
               "sources": ""
             },
             {
@@ -2899,25 +2899,25 @@
               "checks": [
                 {
                   "id": "narcissism-m1-l1-deep-check-0",
-                  "prompt": "What is most revealing about 'you were never generous'?",
+                  "prompt": "Kareem says he agreed to check references, while Imogen expected him to finish her section. Which account is most justified before their earlier messages are checked?",
                   "focusTurn": "narcissism-m1-l1-deep-turn-3",
                   "options": [
                     {
                       "id": "narcissism-m1-l1-deep-check-0-option-0",
-                      "label": "Imogen could be expressing that a serious broken commitment changed how she interprets earlier favours."
+                      "label": "A friendship history may have created broad expectations, but the specific promise needs verifying before calling either person dishonest."
                     },
                     {
                       "id": "narcissism-m1-l1-deep-check-0-option-1",
-                      "label": "It converts the current disappointment into a global judgement that erases earlier evidence."
+                      "label": "The strength of Imogen's disappointment indicates Kareem probably gave a firmer promise than he remembers."
                     },
                     {
                       "id": "narcissism-m1-l1-deep-check-0-option-2",
-                      "label": "Imogen may be focusing on the current unmet need rather than deliberately erasing the history."
+                      "label": "Kareem's reference-checking offer establishes that he has met every reasonable expectation of the friendship."
                     }
                   ],
-                  "answer": "narcissism-m1-l1-deep-check-0-option-1",
-                  "explanation": "The claim contradicts the earlier praise without offering new evidence about all previous acts of generosity.",
-                  "counterexample": "A newly discovered serious deception could legitimately cause wider reassessment."
+                  "answer": "narcissism-m1-l1-deep-check-0-option-0",
+                  "explanation": "Imogen may reasonably feel disappointed; Kareem may also be accurately describing a narrow agreement. Their earlier messages would distinguish a broken promise from an expectation neither stated precisely.",
+                  "counterexample": "A profile detail changes the weight of an explanation; it does not reveal an individual's thoughts with certainty."
                 },
                 {
                   "id": "narcissism-m1-l1-deep-check-1",
@@ -3186,7 +3186,7 @@
               "id": "narcissism-m1-l2-deep-opening",
               "type": "read",
               "title": "The actual situation",
-              "body": "Owen accidentally posted Sasha's confidential appointment details to a work channel. Sasha saw them before the post was removed. Owen is upset by how colleagues now see him.\n\nThe urgent fact is a confidentiality breach. Sasha asks for a specific action that could reduce ongoing exposure. Owen's statements primarily concern how the breach reflects on him.\n\nOwen's genuine distress could make coherent action difficult for a short period.",
+              "body": "Owen posted confidential information about Sasha's appointment in a work channel. The message has been removed, but they have not established whether anyone saved a copy. Owen is frightened by what this mistake says about him. Sasha wants the exposure contained.\n\nThe next messages involve two different problems. One needs a concrete response from the person who posted the information. The other concerns how that person is coping emotionally. Notice which of them becomes the condition for addressing the other.",
               "sources": ""
             },
             {
@@ -3343,25 +3343,25 @@
               "checks": [
                 {
                   "id": "narcissism-m1-l2-deep-check-0",
-                  "prompt": "Which feature of Owen's response creates the strongest interpersonal problem?",
+                  "prompt": "Sasha asks about saved copies while Owen wants reassurance that he is good. Which detail most changes what a reasonable next step should be?",
                   "focusTurn": "narcissism-m1-l2-deep-turn-3",
                   "options": [
                     {
                       "id": "narcissism-m1-l2-deep-check-0-option-0",
-                      "label": "His distress could be affecting the clarity of his explanation while the deletion process is already underway."
+                      "label": "Owen's visible distress means the privacy process can wait until both people are calmer."
                     },
                     {
                       "id": "narcissism-m1-l2-deep-check-0-option-1",
-                      "label": "He asks Sasha to confirm that he is good before he will take action about her exposed information."
+                      "label": "Because Owen made an accidental disclosure, he has a weaker duty to investigate whether copies remain."
                     },
                     {
                       "id": "narcissism-m1-l2-deep-check-0-option-2",
-                      "label": "His fear of formal consequences could make him seek reassurance before he understands Sasha's immediate request."
+                      "label": "The possible continued exposure makes containment urgent, even if Owen needs help managing his shame elsewhere."
                     }
                   ],
-                  "answer": "narcissism-m1-l2-deep-check-0-option-1",
-                  "explanation": "Owen makes Sasha's reassurance a condition for an urgent repair step. The burden of managing his shame falls on the harmed person.",
-                  "counterexample": "Feeling remorse is compatible with effective repair when urgent practical action still happens."
+                  "answer": "narcissism-m1-l2-deep-check-0-option-2",
+                  "explanation": "The risk persists after the original message is removed. That practical detail determines the order of action; it does not require a conclusion about whether Owen's distress is sincere.",
+                  "counterexample": "A profile detail changes the weight of an explanation; it does not reveal an individual's thoughts with certainty."
                 },
                 {
                   "id": "narcissism-m1-l2-deep-check-1",
@@ -3659,7 +3659,7 @@
               "id": "narcissism-m1-l3-deep-opening",
               "type": "read",
               "title": "The actual situation",
-              "body": "Lydia is Aaron's sister. Their father once praised Aaron as the gifted one and treated ordinary errors as embarrassing to the family. Aaron now struggles to accept help with the family business. Lydia is trying to reconstruct how that pattern developed without assuming childhood explains everything.\n\nThe siblings discuss specific remembered events and a recent business error. Memory of childhood should be treated as evidence offered by participants, not a complete recording of the past.\n\nHe might worry specifically about liability or reputation after an audit mistake, regardless of childhood.",
+              "body": "Aaron and Lydia grew up with a father who publicly celebrated achievement but could treat mistakes harshly. Aaron now helps run the family business and recently concealed an audit error until it became more serious. Lydia is trying to understand how that happened.\n\nTheir memories are not complete records of childhood, and an adult's earlier experiences never settle the causes of a present action on their own. The conversation offers clues about what admitting a mistake might mean to Aaron. Compare these with the immediate consequences of correcting the audit.",
               "sources": ""
             },
             {
@@ -3816,25 +3816,25 @@
               "checks": [
                 {
                   "id": "narcissism-m1-l3-deep-check-0",
-                  "prompt": "What makes the childhood explanation plausible without establishing it?",
+                  "prompt": "Aaron was praised for achievement and has recently concealed an audit mistake. Which account uses both details without turning them into a single-cause story?",
                   "focusTurn": "narcissism-m1-l3-deep-turn-3",
                   "options": [
                     {
                       "id": "narcissism-m1-l3-deep-check-0-option-0",
-                      "label": "Aaron's present reaction could reflect a learned association between mistakes and social disapproval."
+                      "label": "A feared loss of worth may make admitting errors unusually painful, while present professional consequences can also motivate concealment."
                     },
                     {
                       "id": "narcissism-m1-l3-deep-check-0-option-1",
-                      "label": "His account suggests dependence on achievement may have been rewarded at home, though memory remains selective."
+                      "label": "The childhood account is more likely than immediate incentives, because the same pattern appears in school and business."
                     },
                     {
                       "id": "narcissism-m1-l3-deep-check-0-option-2",
-                      "label": "Aaron links asking for help with a feared change in how people see him, while recalling punishment for failure."
+                      "label": "The audit error is mainly a problem of poor record-keeping; family history adds little unless Aaron accepts it."
                     }
                   ],
-                  "answer": "narcissism-m1-l3-deep-check-0-option-2",
-                  "explanation": "The history and current meaning are consistent with a conditional-worth hypothesis. Consistency is not proof that childhood caused the present pattern.",
-                  "counterexample": "Adult incentives and learned habits could also explain why he concealed the mistake."
+                  "answer": "narcissism-m1-l3-deep-check-0-option-0",
+                  "explanation": "His history provides a plausible meaning for needing help, and the audit supplies a present-day incentive to avoid disclosure. The relative importance of each remains open to testing across situations.",
+                  "counterexample": "A profile detail changes the weight of an explanation; it does not reveal an individual's thoughts with certainty."
                 },
                 {
                   "id": "narcissism-m1-l3-deep-check-1",
@@ -4101,7 +4101,7 @@
               "id": "narcissism-m1-l4-deep-opening",
               "type": "read",
               "title": "The actual situation",
-              "body": "A fictional adult, Theo, has repeated relationship disputes and speaks openly about wanting professional recognition. Two clinicians review the same referral. One saw Theo after a humiliating redundancy; the other has information from several years of work and relationships.\n\nTheo reportedly boasts, reacts angrily to criticism and experiences shame after a major loss. Those are observations and reports at different levels of reliability.\n\nThe first clinician may have seen behaviour important enough to justify an immediate provisional assessment.",
+              "body": "Two clinicians are discussing a referral for Theo, an adult whose relationships and working life have included repeated disputes. Dr Shaw interviewed him just after a painful redundancy. Dr Malik has reports covering a longer period.\n\nThe referral includes striking language about superiority and painful feelings of inadequacy. The difficult work is deciding what these observations establish. Pay attention to which details describe a moment of stress, which suggest a pattern across time, and which require further assessment before a clinical label is justified.",
               "sources": ""
             },
             {
@@ -4320,25 +4320,25 @@
               "checks": [
                 {
                   "id": "narcissism-m1-l4-deep-check-0",
-                  "prompt": "Why is the timing of Dr Shaw's interview important?",
+                  "prompt": "Dr Shaw saw Theo just after redundancy; Dr Malik has earlier reports. Which use of those profiles produces a stronger assessment?",
                   "focusTurn": "narcissism-m1-l4-deep-turn-3",
                   "options": [
                     {
                       "id": "narcissism-m1-l4-deep-check-0-option-0",
-                      "label": "The timing may help distinguish enduring traits from responses to a recent professional loss."
+                      "label": "Give priority to Malik's longer view because recent acute distress makes Shaw's observations unreliable."
                     },
                     {
                       "id": "narcissism-m1-l4-deep-check-0-option-1",
-                      "label": "Theo had just lost a job, creating acute stress that could influence how he presented."
+                      "label": "Use Shaw's interview to understand the current response and Malik's records to test persistence, while assessing the reliability of both."
                     },
                     {
                       "id": "narcissism-m1-l4-deep-check-0-option-2",
-                      "label": "The redundancy may shape what Theo emphasises during a first meeting without determining his longer history."
+                      "label": "Treat the two accounts as equally accurate portraits of a stable personality because both clinicians have training."
                     }
                   ],
                   "answer": "narcissism-m1-l4-deep-check-0-option-1",
-                  "explanation": "A state immediately after loss may not represent usual functioning. Longitudinal information is needed to assess enduring difficulties.",
-                  "counterexample": "Acute stress can also reveal a previously existing pattern rather than replace it."
+                  "explanation": "Timing changes the interpretation of Theo's presentation without making it worthless. Longer records may be more informative about persistence, but they also require corroboration and context.",
+                  "counterexample": "A profile detail changes the weight of an explanation; it does not reveal an individual's thoughts with certainty."
                 },
                 {
                   "id": "narcissism-m1-l4-deep-check-1",
@@ -4544,7 +4544,7 @@
               "id": "narcissism-m1-l5-deep-opening",
               "type": "read",
               "title": "The actual situation",
-              "body": "Nico has begun therapy after repeated arguments in which criticism led to rage and long periods of silence. Harper is their partner. Nico says a therapist has helped him understand why he feels exposed.\n\nThe practical issue is an unpaid bill. Nico describes a familiar reaction and one new behaviour: pausing before returning to the question.\n\nInsight can genuinely reduce shame and open the door to new choices.",
+              "body": "Nico has begun therapy after arguments in which criticism frequently led to anger and prolonged withdrawal. Harper, their partner, wants to know whether the pattern is actually changing. An unpaid bill becomes the next test.\n\nNico may now understand why the criticism feels so painful. Understanding can be meaningful while leaving a practical responsibility unresolved. As the conversation unfolds, look for a change in conduct rather than an increasingly polished explanation of his feelings.",
               "sources": ""
             },
             {
@@ -4701,25 +4701,25 @@
               "checks": [
                 {
                   "id": "narcissism-m1-l5-deep-check-0",
-                  "prompt": "Which change shows more than an intellectual understanding of the problem?",
+                  "prompt": "Nico now names his shame clearly, but Harper remembers repeated withdrawal. Which detail should carry most weight in assessing improvement?",
                   "focusTurn": "narcissism-m1-l5-deep-turn-3",
                   "options": [
                     {
                       "id": "narcissism-m1-l5-deep-check-0-option-0",
-                      "label": "Nico can now recognise a defensive response as it happens, which may precede a change in behaviour."
+                      "label": "Nico's ability to describe shame is strong evidence of change because he previously defended against it."
                     },
                     {
                       "id": "narcissism-m1-l5-deep-check-0-option-1",
-                      "label": "Nico has begun taking ownership of the concrete issue, even if the original emotions are still present."
+                      "label": "Harper's scepticism is evidence that the relationship remains harmful despite any new actions."
                     },
                     {
                       "id": "narcissism-m1-l5-deep-check-0-option-2",
-                      "label": "Nico stops, returns, asks what Harper meant and addresses the bill."
+                      "label": "Whether Nico returns to difficult discussions and resolves the practical issues across repeated episodes, including stressful ones."
                     }
                   ],
                   "answer": "narcissism-m1-l5-deep-check-0-option-2",
-                  "explanation": "The response changes the behaviour and the practical outcome; the insight becomes meaningful because it alters the cycle.",
-                  "counterexample": "The raised voice still mattered and repeated examples are needed."
+                  "explanation": "Insight is a possible step toward change. Repeated observable behaviour is a stronger basis for saying the interpersonal pattern is actually different.",
+                  "counterexample": "A profile detail changes the weight of an explanation; it does not reveal an individual's thoughts with certainty."
                 },
                 {
                   "id": "narcissism-m1-l5-deep-check-1",
@@ -5001,7 +5001,7 @@
               "id": "narcissism-m1-l6-deep-opening",
               "type": "read",
               "title": "The actual situation",
-              "body": "Celeste directs a small arts organisation. Rohan is an employee whose proposal was included in an award submission under Celeste's name. Staff describe Celeste as inspiring in public and punitive in private. An independent reviewer has the correspondence and several interviews.\n\nThe proposal authorship and award wording are checkable. The characters agree Celeste secured funding, which establishes a real contribution. The dispute is whether that contribution justifies naming her as the originator.\n\nHer leadership burden may be genuinely unrecognised, and the dispute may provide a legitimate occasion to discuss it.",
+              "body": "Celeste directs an arts organisation. She secured funding and led delivery of a project, while Rohan disputes how an award entry credits its original idea. Several people describe Celeste as impressive in public and difficult to challenge in private.\n\nThere may be more than one legitimate contribution to the project. The award still requires an accurate account of who did what. Watch how the subject moves between authorship and authority, and consider how a system that rewards a single visible leader might influence the dispute.",
               "sources": ""
             },
             {
@@ -5158,25 +5158,25 @@
               "checks": [
                 {
                   "id": "narcissism-m1-l6-deep-check-0",
-                  "prompt": "What makes the case more complex than a simple theft-of-credit story?",
+                  "prompt": "Celeste funded the project; Rohan produced an early proposal. Which conclusion accounts for both profiles?",
                   "focusTurn": "narcissism-m1-l6-deep-turn-3",
                   "options": [
                     {
                       "id": "narcissism-m1-l6-deep-check-0-option-0",
-                      "label": "Celeste's funding and leadership contributions can be real even if the proposal origin is incorrectly attributed."
+                      "label": "The director's ability to fund the work makes the final award credit primarily a management decision."
                     },
                     {
                       "id": "narcissism-m1-l6-deep-check-0-option-1",
-                      "label": "The record may show separate legitimate contributions despite conflict over how they were described."
+                      "label": "Rohan's early draft is enough to establish that every later contribution should be treated as secondary."
                     },
                     {
                       "id": "narcissism-m1-l6-deep-check-0-option-2",
-                      "label": "The dispute may involve both attribution and organisational incentives that rewarded public sole authorship."
+                      "label": "The original authorship and later delivery are distinct contributions that require documentary checking before credit is assigned."
                     }
                   ],
-                  "answer": "narcissism-m1-l6-deep-check-0-option-0",
-                  "explanation": "Two different contributions may each deserve recognition. Accurate attribution requires identifying them rather than making one contribution erase the other.",
-                  "counterexample": "The application's actual wording and rules could change the conclusion about a particular field."
+                  "answer": "narcissism-m1-l6-deep-check-0-option-2",
+                  "explanation": "Celeste's funding effort is relevant and may be substantial. It does not itself settle who originated the concept. Rohan's draft also needs checking against the fuller record before sole authorship is attributed.",
+                  "counterexample": "A profile detail changes the weight of an explanation; it does not reveal an individual's thoughts with certainty."
                 },
                 {
                   "id": "narcissism-m1-l6-deep-check-1",
