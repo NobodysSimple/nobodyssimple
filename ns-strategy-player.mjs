@@ -189,7 +189,22 @@ export function createAtlasQuestions(record,scene,round=0){
    caution:"If direct challenge is unsafe, documentation, boundaries or disengagement may be more suitable."
   }
  ];
- return questions.map(q=>({...q,options:rotate(q.options,hash(record.id+scene.id+q.id+round)%3)}));
+ if(index===1){
+   questions[1]={
+    id:scene.id+"-sequence",kind:"Build the sequence",mode:"sequence",
+    prompt:"Put the steps of this process in their most useful order.",
+    options:[
+      {id:"trigger",label:"Trigger: an event or unmet need"},
+      {id:"meaning",label:"Interpretation: the person gives the event meaning"},
+      {id:"action",label:"Action: "+cue.slice(0,125)},
+      {id:"outcome",label:"Consequence: notice what happens next"}
+    ],
+    answer:"trigger|meaning|action|outcome",
+    why:"Understanding a process means checking what preceded the behaviour, its possible meaning, what was done and the consequences. This sequence is a working hypothesis, not proof of anyone's hidden intention.",
+    caution:"The sequence is a useful observation tool; real interactions can be reciprocal or more complicated."
+   };
+  }
+  return questions.map(q=>({...q,options:rotate(q.options,hash(record.id+scene.id+q.id+round)%q.options.length)}));
 }
 export function strategyMastery(scores){
  const first=scores.slice(0,count);
@@ -231,15 +246,20 @@ export function renderStrategyLesson(root,bundle,lesson,{review=false,preview=fa
    const compare=stage===0&&scene.isNear&&!reveal?'<div class="ns-atlas-lesson__compare"><div><small>FIRST IMPRESSION</small><p>'+esc(scene.turns[1]?.text||'')+'</p></div><div><small>WHAT HAPPENED NEXT</small><p>'+esc(scene.turns.at(-1)?.text||'')+'</p></div></div>':'';
    const mechanics=stage===1&&!reveal?'<div class="ns-atlas-lesson__mechanics" aria-label="Examine what happened"><span><b>1</b> Before</span><span aria-hidden="true">→</span><span><b>2</b> Action</span><span aria-hidden="true">→</span><span><b>3</b> After</span></div>':'';
    const reply=stage===2&&!reveal?'<div class="ns-atlas-lesson__reply-placeholder"><span aria-hidden="true">↳</span> Your next move matters. Choose what fits the situation.</div>':'';
+   const placed=state.selected?state.selected.split("|"):[];
    const answers=reveal?'<p class="ns-atlas-lesson__muted">Read the next message to find out what happens.</p>':
-    '<fieldset class="ns-atlas-lesson__choices" '+(state.checked?"disabled":"")+'><legend><span>'+esc(q.kind)+'</span>'+esc(q.prompt)+'</legend>'+
-    q.options.map((x,i)=>'<label class="'+(state.selected===x.id?"is-selected":"")+'"><input type="radio" name="atlas-answer" value="'+esc(x.id)+'" '+(state.selected===x.id?"checked":"")+'><span class="ns-atlas-lesson__choice-index" aria-hidden="true">'+String.fromCharCode(65+i)+'</span><span>'+esc(x.label)+'</span></label>').join("")+'</fieldset>';
+    q.mode==="sequence"?
+      '<div class="ns-atlas-lesson__sequence" role="group" aria-label="'+esc(q.prompt)+'"><h2>'+esc(q.prompt)+'</h2><p>Tap the cards in order. Tap an answer slot to move a card back.</p><div class="ns-atlas-lesson__sequence-slots">'+
+      q.options.map((_,i)=>{const id=placed[i],found=q.options.find(o=>o.id===id);return '<button type="button" data-remove-tile="'+i+'" '+(!id||state.checked?"disabled":"")+' aria-label="Step '+(i+1)+(found?": "+esc(found.label):": empty")+'"><span>'+String(i+1)+'</span>'+ (found?esc(found.label):"Tap a card below")+'</button>'}).join("")+
+      '</div><div class="ns-atlas-lesson__sequence-bank" aria-label="Available steps">'+q.options.filter(o=>!placed.includes(o.id)).map(x=>'<button type="button" data-add-tile="'+esc(x.id)+'" '+(state.checked?"disabled":"")+'>'+esc(x.label)+'</button>').join("")+'</div></div>':
+      '<fieldset class="ns-atlas-lesson__choices" '+(state.checked?"disabled":"")+'><legend><span>'+esc(q.kind)+'</span>'+esc(q.prompt)+'</legend>'+
+      q.options.map((x,i)=>'<label class="'+(state.selected===x.id?"is-selected":"")+'"><input type="radio" name="atlas-answer" value="'+esc(x.id)+'" '+(state.selected===x.id?"checked":"")+'><span class="ns-atlas-lesson__choice-index" aria-hidden="true">'+String.fromCharCode(65+i)+'</span><span>'+esc(x.label)+'</span></label>').join("")+'</fieldset>';
    const hint=!reveal&&!state.checked?'<div class="ns-atlas-lesson__coach"><button type="button" class="ns-atlas-lesson__hint-button" data-hint aria-expanded="'+state.hintOpen+'">✧ '+(state.hintOpen?'Hide hint':'Need a hint?')+'</button>'+(state.hintOpen?'<p class="ns-atlas-lesson__hint-text">Notice exactly what changes after someone speaks. Which explanation is supported by what you can observe, rather than what you imagine about their intentions?</p>':'')+'</div>':'';
    middle='<div class="ns-atlas-lesson__task" data-node-type="'+nodeType+'"><p class="ns-atlas-lesson__kicker">'+esc(scene.tone)+' · '+esc(scene.place)+'</p><div class="ns-atlas-lesson__node-heading"><span class="ns-atlas-lesson__node-icon" aria-hidden="true">'+nodeIcon+'</span><div><span class="ns-atlas-lesson__node-tag">SITUATION '+String(Math.floor(state.question/3)+1)+' OF 6 · '+esc(record.title)+'</span><h1>'+nodeName+'</h1></div></div><p class="ns-atlas-lesson__context">'+esc(scene.intro)+'</p>'+chat+sourceCue+updateEvidence+compare+mechanics+reply+answers+hint+'</div>';
    if(state.checked){
-    feedbackTray='<div class="ns-atlas-lesson__feedback '+(state.feedback.correct?"is-correct":"is-incorrect")+'" role="status" tabindex="-1" data-feedback><div class="ns-atlas-lesson__feedback-icon" aria-hidden="true">'+(state.feedback.correct?'✓':'↻')+'</div><div><strong>'+(state.feedback.correct?"Good thinking.":"There's an important distinction.")+'</strong>'+(state.feedback.correct?'':'<p><strong>Best-supported answer:</strong> '+esc(q.options.find(o=>o.id===q.answer)?.label||'')+'</p>')+'<p>'+esc(q.why)+'</p><p class="ns-atlas-lesson__muted">'+esc(q.caution)+'</p></div></div>';
+    feedbackTray='<div class="ns-atlas-lesson__feedback '+(state.feedback.correct?"is-correct":"is-incorrect")+'" role="status" tabindex="-1" data-feedback><div class="ns-atlas-lesson__feedback-icon" aria-hidden="true">'+(state.feedback.correct?'✓':'↻')+'</div><div><strong>'+(state.feedback.correct?"Good thinking.":"There's an important distinction.")+'</strong>'+(state.feedback.correct?'':'<p><strong>Best-supported answer:</strong> '+esc(q.mode==='sequence'?q.answer.split('|').map(id=>q.options.find(o=>o.id===id)?.label).join(' → '):q.options.find(o=>o.id===q.answer)?.label||'')+'</p>')+'<p>'+esc(q.why)+'</p><p class="ns-atlas-lesson__muted">'+esc(q.caution)+'</p></div></div>';
    }
-   footer=reveal?'<button class="ns-atlas-lesson__next" type="button" data-reveal>Continue conversation →</button>':state.checked?'<button class="ns-atlas-lesson__next" type="button" data-continue>'+(state.question===count-1?"See result →":"Continue →")+'</button>':'<button class="ns-atlas-lesson__next" data-check type="button" '+(!state.selected?"disabled":"")+'>Check answer</button>';
+   footer=reveal?'<button class="ns-atlas-lesson__next" type="button" data-reveal>Continue conversation →</button>':state.checked?'<button class="ns-atlas-lesson__next" type="button" data-continue>'+(state.question===count-1?"See result →":"Continue →")+'</button>':'<button class="ns-atlas-lesson__next" data-check type="button" '+(!(q.mode==='sequence'?placed.length===q.options.length:!!state.selected)?"disabled":"")+'>Check answer</button>';
   }
   root.innerHTML='<section class="ns-atlas-lesson" aria-label="Strategy mastery lesson"><div class="ns-atlas-lesson__screen">'+head+'<div class="ns-atlas-lesson__body">'+middle+'</div><footer class="ns-atlas-lesson__footer">'+feedbackTray+footer+'</footer></div></section>';
   const body=root.querySelector(".ns-atlas-lesson__body");
@@ -264,8 +284,21 @@ export function renderStrategyLesson(root,bundle,lesson,{review=false,preview=fa
     root.querySelectorAll(".ns-atlas-lesson__choices label").forEach(label=>label.classList.toggle("is-selected",label.querySelector("input")?.checked));
     const check=root.querySelector("[data-check]");if(check)check.disabled=false;
    }));
+   root.querySelectorAll("[data-add-tile]").forEach(tile=>tile.addEventListener("click",()=>{
+     if(state.checked)return;
+     const id=tile.getAttribute("data-add-tile");
+     const values=state.selected?state.selected.split("|"):[];
+     if(values.includes(id))return;
+     state.selected=[...values,id].join("|");paint();
+   }));
+   root.querySelectorAll("[data-remove-tile]").forEach(slot=>slot.addEventListener("click",()=>{
+     if(state.checked)return;
+     const i=Number(slot.getAttribute("data-remove-tile"));
+     const values=state.selected?state.selected.split("|"):[];
+     values.splice(i,1);state.selected=values.join("|");paint();
+   }));
    root.querySelector("[data-hint]")?.addEventListener("click",()=>{state.hintOpen=!state.hintOpen;paint();root.querySelector("[data-hint]")?.focus({preventScroll:true});});
-   root.querySelector("[data-check]")?.addEventListener("click",()=>{const q=current().q;if(!q.options.some(o=>o.id===state.selected))return;const correct=state.selected===q.answer;state.feedback={correct};state.checked=true;state.answers[state.question]=correct;paint({focus:true});});
+   root.querySelector("[data-check]")?.addEventListener("click",()=>{const q=current().q;if(!(q.mode==="sequence"?state.selected.split("|").length===q.options.length:q.options.some(o=>o.id===state.selected)))return;const correct=state.selected===q.answer;state.feedback={correct};state.checked=true;state.answers[state.question]=correct;paint({focus:true});});
    root.querySelector("[data-continue]")?.addEventListener("click",()=>{state.question++;state.checked=false;state.feedback=null;state.selected="";state.hintOpen=false;if(state.question===count)return finish();if(state.question%3===0)state.visible=1;else state.visible=current().scene.turns.length;paint();root.querySelector(".ns-atlas-lesson__body").scrollTop=0;});
    root.querySelector("[data-retry]")?.addEventListener("click",()=>{state.phase="practice";state.round++;state.question=0;state.visible=1;state.selected="";state.checked=false;state.feedback=null;state.hintOpen=false;state.answers=[];scenes=makeAtlasScenes(bundle.id,record,lesson.featuredCase,state.round);paint();});
  }
