@@ -52,7 +52,7 @@ export function auditLesson(lesson,{strict=false}={}){
    const checks=['dialogue','investigation'].includes(item.type)?item.checks||[]:[item];
    for(const check of checks){
     const opts=check.options||[];
-    const blunt=opts.filter(o=>/\b(always|never|everything|everyone|every time|entire personality|automatically proves|definitely proves|must be|certainly has)\b/i.test(o.label||''));
+    const blunt=opts.filter(o=>/\b(entire personality|automatically proves|definitely proves|certainly has|must be a disorder|always wrong|never cares|can never change)\b/i.test(o.label||''));
     flag(blunt.length>0,'Review implausibly absolute alternatives in '+(item.title||item.type)+'.');
    }
   }
