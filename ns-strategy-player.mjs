@@ -3,7 +3,7 @@
  * Source cards are educational prompts; scene variants are generated editorial
  * demonstrations, not claims about anybody's intentions or diagnosis.
  */
-import {saveLearnCompletion,saveLearnReview} from "./ns-learn-progress-v2.mjs?v=strategy-atlas-20261120";
+import {saveLearnCompletion,saveLearnReview} from "./ns-learn-progress-v2.mjs?v=psy-atlas-20261120";
 import {getLearnCourse,LEARN_COMPANIONS} from "./ns-learn-catalog-v2.mjs";
 import {portraitCoords} from "./ns-learn-cast.mjs";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
