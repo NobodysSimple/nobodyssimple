@@ -84,3 +84,30 @@ body.app-body.ns-shell-v1 #main .ns-atlas-lesson,
 @media(prefers-reduced-motion:reduce){
  .ns-atlas-lesson__progress span,.ns-atlas-lesson__choices label{transition:none;transform:none!important}
 }
+
+/* The course map shows the next attainable skill, not a wall of 200 links. */
+.ns-catalogue-syllabus .ns-atlas-next-skill{
+ display:flex;flex-direction:column;gap:6px;padding:20px 24px;border-radius:18px;
+ border:2px solid #a6d7af;background:#ebf9ee;color:#254630!important;
+ margin:16px 0 22px;text-decoration:none!important;
+ box-shadow:0 5px 15px rgba(29,77,47,.06);
+}
+.ns-atlas-next-skill>span{font-size:12px;letter-spacing:.08em;color:#397e51;font-weight:800}
+.ns-atlas-next-skill>strong{font-size:clamp(19px,3vw,24px);line-height:1.25;color:#224e32}
+.ns-atlas-next-skill>small{font-size:14px;color:#53765d}
+.ns-catalogue-syllabus details.ns-atlas-path-unit{display:block;padding:0;border:1px solid #dce8dc;border-radius:14px;margin:0 0 12px;background:#fff;overflow:hidden}
+.ns-catalogue-syllabus .ns-atlas-path-unit>summary{cursor:pointer;list-style:none;display:flex;flex-direction:column;gap:3px;padding:16px 20px;background:#f7faf6;color:#29412f}
+.ns-catalogue-syllabus .ns-atlas-path-unit>summary::-webkit-details-marker{display:none}
+.ns-catalogue-syllabus .ns-atlas-path-unit>summary:after{content:"Show strategies ▾";font-size:12px;color:#527861}
+.ns-catalogue-syllabus .ns-atlas-path-unit[open]>summary:after{content:"Hide strategies ▴"}
+.ns-catalogue-syllabus .ns-atlas-path-unit>summary strong{font-size:17px}
+.ns-catalogue-syllabus .ns-atlas-path-unit>summary small{color:#6d8070}
+.ns-atlas-path-unit__links{padding:6px 12px 14px}
+.ns-catalogue-syllabus .ns-atlas-path-unit__links>a{
+ display:flex;align-items:center;gap:10px;border:0;background:transparent;
+ padding:11px 12px;color:#31543a!important;font-size:15px;line-height:1.3;
+ text-decoration:none!important;border-radius:10px;
+}
+.ns-catalogue-syllabus .ns-atlas-path-unit__links>a:hover,
+.ns-catalogue-syllabus .ns-atlas-path-unit__links>a[aria-current="step"]{background:#e9f6eb}
+.ns-atlas-path-unit__marker{font-size:20px;font-weight:800;color:#50976a;min-width:24px}
