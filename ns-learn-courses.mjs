@@ -6,7 +6,7 @@
  */
 import {LEARN_COURSES,COURSE_CATEGORIES,LESSON_FORMATS,getLearnCourse,filterLearnCourses} from './ns-learn-catalog-v2.mjs';
 import {publishedLearnBundle,renderLearnLesson} from './ns-learn-player-v2.mjs?v=steady-scroll-20261120';
-import {readLearnProgress,learnCourseProgress,dueLearnReviews} from './ns-learn-progress-v2.mjs?v=profile-drills-20261120-r2';
+import {readLearnProgress,learnCourseProgress,getCurrentLearnCompletion,dueLearnReviews} from './ns-learn-progress-v2.mjs?v=profile-drills-20261120-r2';
 import {getLearnIndex,hasPublishedLearnCourse,loadPublishedLearnIndex,loadPublishedLearnBundle} from './ns-learn-content-v2.mjs';
 export const LEARN_COURSE_IDEAS=LEARN_COURSES;
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -102,13 +102,19 @@ function catalogue(root,{category='all',focusCourses=false}={}){
 function detail(root,id){
  const course=getLearnCourse(id);if(!course){root.innerHTML='<div class="ns-courses-hub"><div class="ns-courses-inner ns-catalogue-detail"><h1>Course not found</h1><p>This course is not in the catalogue.</p><a href="#learn/courses">Browse all courses →</a></div></div>';return;}
  const bundle=publishedLearnBundle(id),cat=COURSE_CATEGORIES.find(c=>c.id===course.category);
- const completed=bundle?learnCourseProgress(bundle,readLearnProgress()):null;
+ const records=readLearnProgress();
+ const completed=bundle?learnCourseProgress(bundle,records):null;
+ const allLessons=bundle?bundle.modules.flatMap(m=>m.lessons):[];
+ const nextLesson=allLessons.find(l=>!getCurrentLearnCompletion(bundle,l,records))||allLessons[0];
+ const nextHref=nextLesson?'#learn/lesson/'+encodeURIComponent(id)+'/'+encodeURIComponent(nextLesson.id):'#learn/courses';
+ const activeModule=bundle?.modules.findIndex(m=>m.lessons.some(l=>l.id===nextLesson?.id))??0;
  const lessonMarkup=bundle?'<div class="ns-catalogue-published">'+
- '<p class="ns-catalogue-published__status">'+completed.done+' of '+completed.total+' lessons completed</p>'+
- bundle.modules.map((m,i)=>'<section class="ns-catalogue-module" data-unit-kind="'+(m.kind==='strategy'?'strategy':m.kind==='foundation'?'foundation':'applied')+'"><span class="ns-catalogue-unit__phase">'+(m.kind==='strategy'?'STRATEGY LESSONS · PRACTISE TO MASTERY':m.kind==='foundation'?(i===0?'START HERE · LEARN THE WORDS':'FOUNDATIONS · PRACTISE REASONING'):'APPLIED CASE · PUT IT TOGETHER')+'</span><h3>Unit '+(i+1)+' · '+esc(m.title)+'</h3>'+
- m.lessons.map(l=>'<a href="#learn/lesson/'+encodeURIComponent(id)+'/'+encodeURIComponent(l.id)+'">'+esc(l.title)+' <span aria-hidden="true">→</span></a>').join('')+'</section>').join('')+'</div>':
+ '<p class="ns-catalogue-published__status">'+completed.done+' of '+completed.total+' strategies mastered in practice</p>'+
+ (nextLesson?'<a class="ns-atlas-next-skill" href="'+nextHref+'"><span>✿ '+(completed.done?'CONTINUE YOUR PATH':'START YOUR FIRST STRATEGY')+'</span><strong>'+esc(nextLesson.title)+'</strong><small>Conversation stories · 18 checks · apply in six settings →</small></a>':'')+
+ bundle.modules.map((m,i)=>'<details class="ns-catalogue-module ns-atlas-path-unit" data-unit-kind="'+(m.kind==='strategy'?'strategy':m.kind==='foundation'?'foundation':'applied')+'"'+(i===activeModule?' open':'')+'><summary><span class="ns-catalogue-unit__phase">'+(m.kind==='strategy'?'STRATEGY COLLECTION':m.kind==='foundation'?'FOUNDATIONS':'APPLIED CASE')+'</span><strong>Unit '+(i+1)+' · '+esc(m.title)+'</strong><small>'+m.lessons.filter(l=>!!getCurrentLearnCompletion(bundle,l,records)).length+' / '+m.lessons.length+' mastered</small></summary><div class="ns-atlas-path-unit__links">'+
+ m.lessons.map(l=>'<a href="#learn/lesson/'+encodeURIComponent(id)+'/'+encodeURIComponent(l.id)+'"'+(l.id===nextLesson?.id?' aria-current="step"':'')+'><span class="ns-atlas-path-unit__marker" aria-hidden="true">'+(getCurrentLearnCompletion(bundle,l,records)?'✓':'○')+'</span>'+esc(l.title)+' <span aria-hidden="true">→</span></a>').join('')+'</div></details>').join('')+'</div>':
  '<div class="ns-catalogue-coming"><strong>Lessons are being developed</strong>'+
- '<p>This is a course outline, not a playable lesson. Its units, exercises and reviews will appear after the material is authored, checked and published. No completion or reward is shown until then.</p>'+
+ '<p>This is a course outline, not a playable lesson. Its units, exercises and reviews will appear after the material is authored, checked and published.</p>'+
  '<a href="#learn/courses">Explore another course →</a></div>';
  root.innerHTML='<div class="ns-courses-hub"><div class="ns-courses-inner ns-catalogue-detail">'+
  '<a class="ns-catalogue-back" href="#learn/courses">← All courses</a>'+
