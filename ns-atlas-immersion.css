@@ -115,3 +115,41 @@ html[data-theme=dark] .ns-atlas-syllabus-search input{background:#22342c;color:#
  animation:none!important;transition:none!important;
  }
 }
+/* Real tap-to-build sequence node, with selectable tiles and reversible slots. */
+.ns-atlas-lesson__task[data-node-type=sequence]{--ns-skill-accent:#8967b5;--ns-skill-soft:#f4ebff}
+.ns-atlas-lesson__sequence{margin:15px 0 24px}
+.ns-atlas-lesson__sequence h2{
+ font:850 clamp(17px,2.5vw,21px)/1.35 system-ui,sans-serif;
+ color:#2a4030;margin:0 0 7px;
+}
+.ns-atlas-lesson__sequence>p{font-size:13px;color:#657768;margin:0 0 15px}
+.ns-atlas-lesson__sequence-slots{display:grid;gap:8px;margin:0 0 20px}
+.ns-atlas-lesson__sequence-slots>button{
+ display:flex;gap:12px;align-items:center;text-align:left;min-height:52px;width:100%;
+ border:2px dashed #c5d9c3;background:#f5faf4;border-radius:13px;
+ padding:10px 12px;color:#567061;font:650 13px/1.4 system-ui,sans-serif;
+}
+.ns-atlas-lesson__sequence-slots>button:not(:disabled){
+ background:#eaf5ff;border:2px solid #8dbbdd;color:#244d66;
+ border-bottom:4px solid #6ea9ce;cursor:pointer
+}
+.ns-atlas-lesson__sequence-slots>button span{
+ display:grid;place-items:center;flex:0 0 26px;width:26px;height:26px;
+ border-radius:8px;background:#fff;color:#50865a;font-weight:900;
+}
+.ns-atlas-lesson__sequence-bank{display:flex;flex-wrap:wrap;gap:9px;min-height:45px}
+.ns-atlas-lesson__sequence-bank>button{
+ font:750 13px/1.35 system-ui,sans-serif;text-align:left;color:#3d4a39;
+ min-height:44px;padding:9px 13px;background:#fff;border:2px solid #d5e1d2;
+ border-bottom:4px solid #cbd8c7;border-radius:11px;cursor:pointer;
+ transition:transform .1s ease;
+}
+.ns-atlas-lesson__sequence-bank>button:hover{transform:translateY(-2px);border-color:#77bc59}
+.ns-atlas-lesson__sequence-bank>button:focus-visible,
+.ns-atlas-lesson__sequence-slots>button:focus-visible{outline:3px solid #60a43e!important;outline-offset:2px}
+html[data-theme=dark] .ns-atlas-lesson__sequence h2{color:#e5f2e6}
+html[data-theme=dark] .ns-atlas-lesson__sequence>p{color:#c3d6c8}
+html[data-theme=dark] .ns-atlas-lesson__sequence-slots>button{background:#263a35;color:#d7e5dc;border-color:#547362}
+html[data-theme=dark] .ns-atlas-lesson__sequence-slots>button:not(:disabled){background:#294856;color:#edfaf7;border-color:#69a6c7}
+html[data-theme=dark] .ns-atlas-lesson__sequence-bank>button{background:#2a3d36;border-color:#526e5d;color:#eef5ee}
+@media(prefers-reduced-motion:reduce){.ns-atlas-lesson__sequence-bank>button{transition:none}}
