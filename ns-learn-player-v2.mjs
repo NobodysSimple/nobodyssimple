@@ -7,7 +7,7 @@ import {getLearnCourse,LEARN_COMPANIONS} from './ns-learn-catalog-v2.mjs';
 import {validateLearnBundle,gradeLearnItem,learnLessonScore,flattenLearnLessons,QUESTION_TYPES} from './ns-learn-engine-v2.mjs';
 import {learningNodes,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {renderDialogue} from './ns-learn-dialogue.mjs';
-import {renderInvestigation} from './ns-learn-investigation.mjs?v=case-reasoning-20261120-r2';
+import {renderInvestigation} from './ns-learn-investigation.mjs?v=profile-drills-20261120';
 import {displayedLessonMinutes,lessonMetrics} from './ns-learn-quality.mjs?v=case-reasoning-20261120';
 import {lessonResearchMarkup} from './ns-learn-evidence.mjs?v=case-reasoning-20261120';
 import {createRepairQueue,addRepair,takeRepair,finishRepair,repairSummary,readSoundPreference,saveSoundPreference,playLearningCue,correctAnswerText} from './ns-learn-feedback.mjs';
