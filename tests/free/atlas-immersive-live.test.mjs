@@ -48,9 +48,10 @@ test('Every lesson has six branded story situations, varied exercises and valid 
     const checks=createAtlasQuestions(l.atlasRecord,scene);
     assert.equal(checks.length,3,l.id);
     for(const q of checks){
-      assert.equal(q.options.length,3,l.id);
-      assert.equal(new Set(q.options.map(x=>x.id)).size,3,l.id);
-      assert.equal(q.options.filter(x=>x.id===q.answer).length,1,l.id);
+      assert.equal(q.options.length,q.mode==='sequence'?4:3,l.id);
+      assert.equal(new Set(q.options.map(x=>x.id)).size,q.options.length,l.id);
+      if(q.mode==='sequence')assert.deepEqual(q.answer.split('|').sort(),q.options.map(x=>x.id).sort(),l.id);
+      else assert.equal(q.options.filter(x=>x.id===q.answer).length,1,l.id);
       assert.ok(q.prompt.length>6&&q.why.length>12,l.id);
       kinds.add(q.mode);itemsChecked++;
     }
@@ -60,7 +61,7 @@ test('Every lesson has six branded story situations, varied exercises and valid 
  }
  assert.equal(casesChecked,10512);
  assert.equal(itemsChecked,31536);
- for(const kind of ['spot','evidence','distinguish','mechanism','update','perspective','respond','transfer'])assert.ok(kinds.has(kind),kind);
+ for(const kind of ['spot','evidence','distinguish','mechanism','sequence','update','perspective','respond','transfer'])assert.ok(kinds.has(kind),kind);
 });
 test('Mastery only awarded for >=15/18 and >=5/6 late transfer checks',()=>{
  assert.equal(strategyMastery(Array(18).fill(true)).passed,true);
