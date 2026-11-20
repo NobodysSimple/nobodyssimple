@@ -4,7 +4,7 @@
  * demonstrations, not claims about anybody's intentions or diagnosis.
  */
 import {saveLearnCompletion,saveLearnReview} from "./ns-learn-progress-v2.mjs?v=strategy-atlas-20261120";
-import {getLearnCourse} from "./ns-learn-catalog-v2.mjs";
+import {getLearnCourse,LEARN_COMPANIONS} from "./ns-learn-catalog-v2.mjs";
 import {portraitCoords} from "./ns-learn-cast.mjs";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const count=18;
@@ -16,7 +16,8 @@ const companionVisual=id=>{
   :'<span class="ns-atlas-lesson__guide-sprite" aria-hidden="true" style="--face-x:'+Number(course.companionX||0)+'%;--face-y:'+Number(course.companionY||0)+'%"></span>';
 };
 const speakerAvatar=(name,cast)=>{
- const pos=portraitCoords(name,cast);
+ const guide=Object.values(LEARN_COMPANIONS).find(c=>c?.name===name);
+ const pos=guide?{x:guide.x,y:guide.y}:portraitCoords(name,cast);
  return '<span class="ns-atlas-lesson__avatar" role="img" aria-label="Nobody’s Simple illustration representing '+esc(name)+'" style="--face-x:'+pos.x+'%;--face-y:'+pos.y+'%"></span>';
 };
 const clean=x=>String(x||"").trim();
@@ -54,7 +55,7 @@ const domainPlaces={
  vaping:["An afternoon craving","A social break","A stressful commute","A party","A quit attempt","A friend's offer"],
  "conversation-patterns":["A disagreement over dinner","A chaotic team chat","The wedding guest list","A school reunion","A family WhatsApp argument","A workplace review"]
 };
-const pairs=[["Maya","Rory"],["Jules","Zara"],["Imani","Ben"],["Nora","Theo"],["Ellie","Sam"],["Ava","Leo"]];
+const supportingCast=["Ari","Nell","Moss","Briar","Fern","Cove","Poppy","Echo","Sunny","Tavi","Rowan","Lyra"];
 const genre=["COMEDY","SERIOUS","DRAMA","SUBTLE","EVERYDAY","TRANSFER"];
 const genericReply=(r,idx)=>{
  const x=(r.title+" "+r.cue).toLowerCase();
@@ -82,64 +83,113 @@ const genericReply=(r,idx)=>{
 };
 export function makeAtlasScenes(courseId,record,featured=null,round=0){
  const contexts=domainPlaces[courseId]||domainPlaces.boundaries;
- const near=record.nearMiss||baseNearMiss[record.kind]||baseNearMiss.OBSERVE;
- const cue=record.cue;
+ const near=compact(record.nearMiss||baseNearMiss[record.kind]||baseNearMiss.OBSERVE);
+ const cue=clean(record.cue);
+ const courseGuide=getLearnCourse(courseId)?.companionName||"Moss";
+ const sourceTurn=Array.isArray(featured?.turns)&&featured.turns.length>=4?featured.turns:null;
  return Array.from({length:6},(_,i)=>{
-   const isNear=i===2||i===4;
-   const place=contexts[(i+round)%contexts.length],tone=genre[i];
-   const [a,b]=pairs[(i+round)%pairs.length];
-   const intro=tone==="COMEDY"?"The situation starts almost comically. Then the conversation gets complicated.":tone==="DRAMA"?"The stakes rise and people have less time to think.":tone==="SERIOUS"?"A real decision must be made; the consequences matter.":tone==="TRANSFER"?"No labels are supplied now. Apply the skill somewhere new.":"An ordinary encounter with more than one plausible interpretation.";
-   const note=isNear?near:cue;
-   const isFeature=!!featured&&i===0&&Array.isArray(featured.turns)&&featured.turns.length>=4;
-   const dialogue=isFeature?featured.turns.slice(0,6).map(t=>({speaker:t.speaker,text:t.text})):
-     [
-       {speaker:a,text:i===0?"Are we really doing this now? My coffee hasn't even started working.":i===2?"I might be misunderstanding. Can we slow down and check what actually happened?":i===5?"This reminds me of something we've discussed, but I don't want to jump to conclusions.":"Can we work out what is happening before we decide what to do?"},
-       {speaker:b,text:isNear?"That could be one explanation. I might just need more context before deciding.":genericReply(record,i)},
-       {speaker:a,text:i===1?"I hear you. The consequences still matter. What part of this can we check?":i===3?"Can you explain what you meant without deciding what I must be thinking?":"What specific detail would make the explanation more reliable?"},
-       {speaker:b,text:isNear?"We can check the facts together and change our interpretation if they suggest something else.":i===4?"I can answer that, though I don't know whether the same explanation fits every situation.":i===5?"I hadn't thought of that. Maybe one sentence isn't enough evidence.":"I don't love being questioned, but I can see why it needs an answer."}
-     ];
-   return {id:record.id+"-s"+i,place,tone,intro,note,isNear,
-     turns:dialogue,featured:isFeature,
-     evidence:isFeature&&featured.newEvidence?featured.newEvidence:"A new piece of relevant context becomes available. Compare it with the original claim before deciding.",
-     near,correctResponse:record.response||"Name the observable behaviour, consider an alternative and choose a safe, proportionate response."};
+  const isNear=i===2||i===4,genreId=(i+round)%genre.length;
+  const tone=genre[genreId],place=contexts[(i+round)%contexts.length];
+  const a=courseGuide,b=supportingCast[(i+round+hash(record.id)%supportingCast.length)%supportingCast.length]===a?
+    supportingCast[(i+round+1)%supportingCast.length]:supportingCast[(i+round+hash(record.id)%supportingCast.length)%supportingCast.length];
+  const isFeature=!!sourceTurn&&i===0&&round===0;
+  const intro=isFeature?clean(featured.intro):
+    tone==="COMEDY"?"An ordinary conversation takes a rather awkward turn.":
+    tone==="SERIOUS"?"This decision has practical consequences for both people.":
+    tone==="DRAMA"?"New context makes the first explanation much less certain.":
+    tone==="SUBTLE"?"The same process can look very different when the words are gentler.":
+    tone==="TRANSFER"?"A different setting, similar questions. Apply what you know without the label.":"Observe what happens before deciding what it means.";
+  const dialogue=isFeature?sourceTurn.slice(0,6).map(t=>({
+    speaker:t.speaker===sourceTurn[0].speaker?a:b,text:t.text
+  })): [
+   {speaker:a,text:i===0?"I need to ask you something, and I'm trying not to turn it into a whole saga.":
+     i===2?"I'm not sure we've heard the whole story yet.":i===5?"The setting is different, but I recognise part of this situation.":"Can we go through what actually happened?"},
+   {speaker:b,text:isNear?"I know it looks a certain way, but there's some context you haven't heard.":genericReply(record,i)},
+   {speaker:a,text:i===1?"I understand your point. What would we see if that explanation were accurate?":
+     i===3?"Can we separate what happened from what we think it meant?":"What could we check before making a judgement?"},
+   {speaker:b,text:isNear?"I can explain what happened, and we can check that against the facts.":i===5?
+     "That is fair. I think we need to consider the circumstances too.":"I might not agree with you, but let's look at the specific situation."}
+  ];
+  return {id:record.id+"-s"+i,place,tone,intro,isNear,featured:isFeature,
+   observation:isFeature?(clean(featured.spot)||cue):isNear?near:cue,
+   newEvidence:isFeature?clean(featured.newEvidence):i===3?
+     "A reliable new fact appears. Consider whether it changes the original explanation or only makes it more precise.":
+     "Further context can help distinguish a pattern from an isolated incident.",
+   turns:dialogue,near,
+   correctResponse:!isNear?(isFeature?clean(featured.bestMove)||record.response:record.response):
+     "Ask what is actually known and what is still missing; choose a response that does not assume the original label is proven."
+  };
  });
 }
 const compact=s=>clean(s).replace(/^A comparable surface behaviour may instead be\s*/i,"").replace(/\s*The learner should check[\s\S]*$/,"").slice(0,240);
 export function createAtlasQuestions(record,scene,round=0){
- const cue=clean(record.cue);
- const near=compact(scene.near);
- const action=scene.correctResponse;
- const contrast=record.contrast||{title:"a related but different process",cue:"A similar clue could have another explanation."};
- const initial=[
- {id:scene.id+"-spot",kind:"Spot it",prompt:scene.isNear?"Which interpretation survives a closer look?":"Which concept best fits the observed action?",
-  options:[
-   {id:"target",label:scene.isNear?"The original label, "+record.title+", is proven even with this competing explanation.":"This is most consistent with "+record.title+"."},
-   {id:"near",label:scene.isNear?"Consider an alternative: "+near:"A competing account is possible, so there is no useful evidence for the original concept."},
-   {id:"irrelevant",label:"This is better classified as "+contrast.title+": "+clean(contrast.cue).slice(0,145)}
-  ],answer:scene.isNear?"near":"target",
-  why:scene.isNear?"The counterexample is relevant: "+near:"The particular observation is: "+cue,
-  caution:"A scene can support a behavioural interpretation without proving someone's motive or diagnosis."
- },
- {id:scene.id+"-why",kind:"Explain it",prompt:"What would help explain the psychological process more reliably?",
-  options:[
-   {id:"sequence",label:record.kind==="REASON"?"Check whether the stated conclusion actually follows from its supporting reasons.":record.kind==="PRACTISE"?"Consider the goal of this skill and whether the situation makes it suitable.":"Examine what happened beforehand, what the person did and which consequences followed."},
-   {id:"certain",label:"Give extra weight to whichever account feels most emotionally convincing."},
-   {id:"fixed",label:"Treat tone as more informative than the circumstances leading up to the behaviour."}
-  ],answer:"sequence",
-  why:record.kind==="REASON"?"For reasoning, check the inference rather than decide whose character is stronger.":record.kind==="PRACTISE"?"Practising a skill requires a goal, consent and suitable context.":"A sequence can help test a functional hypothesis without presuming that a private intention has been proven.",
-  caution:"Psychological explanation can suggest a hypothesis, not settle unobserved motives."
- },
- {id:scene.id+"-act",kind:"Choose a response",prompt:"Which next response best fits the evidence and the situation?",
-  options:[
-   {id:"proportionate",label:action},
-   {id:"fight",label:"Require the other person to admit the psychological label before addressing the specific problem."},
-   {id:"comply",label:"Drop the original evidence and follow the most confident interpretation to prevent further conflict."}
-  ],answer:"proportionate",
-  why:"The source-aligned response is: "+action,
-  caution:"Consider risk, consent and unequal power. Sometimes documenting or disengaging is safer than direct discussion."
- }];
- const shift=hash(record.id+scene.id+round)%3;
- return initial.map(q=>({...q,options:rotate(q.options,shift)}));
+ const cue=clean(record.cue),near=compact(scene.near);
+ const contrast=record.contrast||{title:"a related process",cue:"Other mechanisms can look similar"};
+ const action=clean(scene.correctResponse||record.response||"Look for observable evidence and choose a proportionate response.");
+ const index=Math.max(0,Number(scene.id.match(/-s(\d+)$/)?.[1]||0));
+ const nearAccount=near.length>9?near:"A similar action can occur without the named process.";
+ const idea="An episode might fit "+record.title+" if the observed behaviour persists and competing explanations are addressed.";
+ const target=scene.isNear?
+   "There is not enough evidence to establish "+record.title+" here; the alternative matters.":
+   "The details are consistent with "+record.title+", though intention is not proven.";
+ const questions=[
+  {id:scene.id+"-spot",kind:["Spot the pattern","Identify the cue","Distinguish a near miss","Spot the pattern","Compare interpretations","Transfer the skill"][index],
+   mode:index===1?"evidence":index===4?"perspective":index===5?"transfer":scene.isNear?"distinguish":"spot",
+   prompt:scene.isNear?"Does the scene prove this is "+record.title+"?":"Which conclusion is best supported by what was observed?",
+   options:[
+    {id:"observed",label:target},
+    {id:"assume",label:"We can confidently infer the person's private intention and personality from this exchange."},
+    {id:"unrelated",label:"The best explanation must be "+contrast.title+" because it is another possible concept."}
+   ],answer:"observed",why:scene.isNear?
+     "A look-alike deserves serious consideration: "+nearAccount:
+     "The key observable clue in this example is: "+clean(scene.observation||cue),
+   caution:"An observable cue does not establish diagnosis, motive, or repeated abuse."
+  },
+  {id:scene.id+"-explain",kind:["Find the evidence","Understand the process","Look for alternatives","Update your view","Consider both sides","Explain what transfers"][index],
+   mode:["evidence","mechanism","distinguish","update","perspective","transfer"][index],
+   prompt:index===0?"Which detail should an observer examine before applying the label?":
+    index===2?"What makes the competing explanation important?":
+    index===3?"You learn something new. What should happen to your first interpretation?":
+    index===4?"How can you avoid mistaking a person's feelings for proof of their intention?":
+    index===5?"What must stay the same for the concept to apply in a new setting?":
+    "Which way of reasoning best explains this behaviour?",
+   options:[
+    {id:"test",label:index===0?"The concrete action and its context: "+cue:
+       index===2?"Check whether this plausible alternative fits: "+nearAccount:
+       index===3?"Update the explanation using the new evidence, keeping any facts that remain supported.":
+       index===4?"Separate observed effects from private intentions and ask what each person actually knows.":
+       index===5?"The observable mechanism and its consequences, rather than the setting or personality label.":
+       record.kind==="REASON"?"Check the reasoning and see whether the conclusion follows from the premises.":
+       record.kind==="PRACTISE"?"Consider the person's goal, the method's suitability and their freedom to choose.":
+       "Compare what happened before the action, the action itself and what followed."},
+    {id:"feeling",label:index===3?"Keep the first interpretation unless somebody proves it was deliberately misleading.":
+      index===2?"Discard the original facts whenever a second explanation is imaginable.":
+      "Treat emotional intensity as enough to settle what the behaviour means."},
+    {id:"label",label:index===0?"Decide the person's character first, then look for clues that agree.":
+      index===5?"Look for the same exact words regardless of whether their function changes.":
+      "Rely on the label alone rather than checking what happened."}
+   ],answer:"test",
+   why:index===0?"Source observation: "+cue:
+     index===2?"A discriminating alternative is: "+nearAccount:
+     index===3?"New evidence may strengthen, weaken or qualify a claim. It need not erase everything known.":
+     index===4?"Two people can sincerely disagree about meaning while the effects of their conduct still matter.":
+     index===5?"Recognising a process requires transferable evidence, not a memorised phrase.":
+     "Look for the sequence and competing explanations before assuming a motive.",
+   caution:"Notice the context, the person's actual options and what remains unknown."
+  },
+  {id:scene.id+"-respond",kind:index===5?"Choose a transfer response":"Choose your response",
+   mode:index===5?"transfer":"respond",
+   prompt:index===2||index===4?"How could you respond without overclaiming what happened?":
+     index===5?"Which next step fits this new setting?":"What is the most proportionate next move?",
+   options:[
+    {id:"action",label:action},
+    {id:"force",label:"Demand that the other person admit the psychological label before discussing the specific issue."},
+    {id:"avoid",label:"Make no attempt to distinguish facts from assumptions; treat the issue as settled to keep the peace."}
+   ],answer:"action",why:"Source-aligned decision principle: "+action,
+   caution:"If direct challenge is unsafe, documentation, boundaries or disengagement may be more suitable."
+  }
+ ];
+ return questions.map(q=>({...q,options:rotate(q.options,hash(record.id+scene.id+q.id+round)%3)}));
 }
 export function strategyMastery(scores){
  const first=scores.slice(0,count);
