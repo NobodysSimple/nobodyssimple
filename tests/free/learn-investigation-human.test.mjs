@@ -11,7 +11,7 @@ const fieldset=()=>'<fieldset>Choices</fieldset>';
 
 test('every investigation has a complete ten-depth working account',()=>{
  const bundle=course();
- assert.equal(bundle.version,9);
+ assert.equal(bundle.version,10);
  assert.deepEqual(validateLearnBundle(bundle,'narcissism'),[]);
  for(const lesson of bundle.modules.flatMap(m=>m.lessons)){
   const node=lesson.nodes.find(n=>n.type==='investigation');
