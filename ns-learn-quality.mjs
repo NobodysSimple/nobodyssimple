@@ -52,13 +52,24 @@ export function auditLesson(lesson,{strict=false}={}){
    const checks=['dialogue','investigation'].includes(item.type)?item.checks||[]:[item];
    for(const check of checks){
     const opts=check.options||[];
-    const blunt=opts.filter(o=>/\\b(always|never|everything|everyone|every time|entire personality|automatically proves|definitely proves|must be|certainly has)\\b/i.test(o.label||''));
+    const blunt=opts.filter(o=>/\b(always|never|everything|everyone|every time|entire personality|automatically proves|definitely proves|must be|certainly has)\b/i.test(o.label||''));
     flag(blunt.length>0,'Review implausibly absolute alternatives in '+(item.title||item.type)+'.');
    }
   }
  }
- const missingSources=(lesson?.nodes||[]).filter(n=>exercise(n)&&!n.sources?.trim());
- flag(missingSources.length>0,missingSources.length+' exercise(s) lack research or guideline attribution.');
+ // Fictional cases are applications, not empirical findings about named characters.
+ // Check the research explanation instead of demanding an unrelated citation on
+ // every interaction. A bibliography by itself does not verify claim accuracy.
+ const evidencePages=(lesson?.nodes||[]).filter(n=>n.type==='read'&&/research|evidence|study|studies/i.test(n.title||''));
+ flag(evidencePages.length===0,'Include a research explanation that relates evidence to the lesson claims.');
+ flag(evidencePages.some(n=>!n.sources?.trim()),'Research explanation is missing identifiable source details.',true);
+ const inquiries=(lesson?.nodes||[]).filter(n=>n.type==='investigation');
+ for(const investigation of inquiries){
+  flag(investigation.layers?.length!==10,'Message Investigation needs all ten reasoning depths.',true);
+  flag((investigation.layers||[]).some(x=>words(x.analysis)<24||words(x.alternative)<12||words(x.test)<9),
+   'Deepen each investigation depth with an explanation, a credible rival account and discriminating evidence.');
+ }
+
  flag(!lesson?.takeaway||words(lesson.takeaway)<10,'Finish with a usable, specific conclusion rather than a generic recap.');
  flag(!lesson?.transferPrompt,'Add an explicit novel case or transfer prompt and ask the learner to apply the mechanism.');
  flag(!lesson?.staffReview,'Record the evidence review and clinical editorial decision before approving the lesson.',true);
