@@ -5,8 +5,8 @@
  * Future learning material ships only through reviewed published bundles.
  */
 import {LEARN_COURSES,COURSE_CATEGORIES,LESSON_FORMATS,getLearnCourse,filterLearnCourses} from './ns-learn-catalog-v2.mjs';
-import {publishedLearnBundle,renderLearnLesson} from './ns-learn-player-v2.mjs?v=steady-scroll-20261120';
-import {readLearnProgress,learnCourseProgress,dueLearnReviews} from './ns-learn-progress-v2.mjs?v=profile-drills-20261120-r2';
+import {publishedLearnBundle,renderLearnLesson} from './ns-learn-player-v2.mjs?v=live-redesign-20261120';
+import {readLearnProgress,learnCourseProgress,getCurrentLearnCompletion,dueLearnReviews} from './ns-learn-progress-v2.mjs?v=profile-drills-20261120-r2';
 import {getLearnIndex,hasPublishedLearnCourse,loadPublishedLearnIndex,loadPublishedLearnBundle} from './ns-learn-content-v2.mjs';
 export const LEARN_COURSE_IDEAS=LEARN_COURSES;
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -23,12 +23,15 @@ function courseArt(course){
 function card(course,index){
  const bundle=publishedLearnBundle(course.id),cat=COURSE_CATEGORIES.find(c=>c.id===course.category),published=getLearnIndex().courses[course.id];
  const status=bundle||hasPublishedLearnCourse(course.id)?'Lessons available':'In development';
+ const progress=bundle?learnCourseProgress(bundle,readLearnProgress()):null;
+ const percent=progress?.total?Math.round(progress.done/progress.total*100):0;
  return '<a class="ns-course-card" href="'+courseHref(course.id)+'" data-course-subject="'+esc(course.id)+'" data-course-status="'+(bundle||hasPublishedLearnCourse(course.id)?'published':'planned')+'" data-course-tone="'+esc(course.tone)+'" aria-labelledby="ns-course-name-'+index+'">'+
  courseArt(course)+'<div class="ns-course-card__nameplate"><h3 id="ns-course-name-'+index+'">'+esc(published?.title||course.cardTitle||course.title)+'</h3>'+
  '<span class="ns-course-card__status">'+esc(status)+'</span></div>'+
  '<small class="ns-course-card__category">'+esc(cat?.title||'Psychology')+'</small>'+
  '<p class="ns-course-card__description">'+esc(published?.description||course.description)+'</p>'+
- '<span class="ns-course-card__tutor">✿ Meet '+esc(course.companionName)+'</span>'+
+ '<span class="ns-course-card__tutor">✿ Learn with '+esc(course.companionName)+'</span>'+
+ (progress?.total?'<span class="ns-course-card__progress"><span class="ns-course-card__progress-track"><i style="width:'+percent+'%"></i></span><small>'+percent+'% mastered</small></span>':'')+
  '<span class="ns-course-card__arrow" aria-hidden="true">Explore course →</span></a>';
 }
 function sectionHead(title,description){
@@ -42,8 +45,8 @@ function catalogue(root,{category='all',focusCourses=false}={}){
  '<div class="ns-courses-hero__hills" aria-hidden="true"></div><div class="ns-courses-hero__branches" aria-hidden="true"></div>'+
  '<div class="ns-courses-hero__note"><span class="ns-courses-washi" aria-hidden="true"></span>'+
  '<p class="ns-courses-kicker">NOBODY’S SIMPLE · LEARN</p>'+
- '<h1 id="ns-courses-title">Learn<span class="ns-courses-sparkle" aria-hidden="true">✳</span></h1>'+
- '<p>Learn to think psychologically. Small lessons, deeper understanding, useful distinctions.</p>'+
+ '<h1 id="ns-courses-title">A little psychology. A lot more life.<span class="ns-courses-sparkle" aria-hidden="true">✳</span></h1>'+
+ '<p>Short interactive lessons to spot patterns, practise better responses and think for yourself.</p>'+
  '<a class="ns-courses-button" href="#learn/courses"><span class="ns-courses-book" aria-hidden="true">▤</span> Explore courses <span aria-hidden="true">→</span></a></div>'+
  '<div class="ns-courses-hero__figure" aria-hidden="true"><div class="ns-courses-picnic"></div>'+
  image('ns-character-reading.webp','ns-courses-hero__mascot','fetchpriority="high"')+'</div></section>'+
@@ -53,13 +56,13 @@ function catalogue(root,{category='all',focusCourses=false}={}){
  '<div class="ns-courses-feature__visual" aria-hidden="true">'+image('learn-art/scenery-featured.svg','ns-courses-feature__scene')+
  image('ns-character-plant.webp','ns-courses-feature__character')+'</div>'+
  '<div class="ns-courses-feature__copy"><span class="ns-courses-feature__category">THE LEARNING JOURNEY</span>'+
- '<h2 id="ns-courses-featured-title">Beyond the obvious.</h2>'+
+ '<h2 id="ns-courses-featured-title">One skill at a time.</h2>'+
  '<p>Start with the subjects you care about. Discover the science behind them, practise subtle distinctions and build up to more sophisticated reasoning. Each course will have its own clear beginning and progression.</p>'+
- '<p class="ns-courses-feature__availability"><span aria-hidden="true">✿</span> Start with the foundations · 12 lessons per course</p>'+
+ '<p class="ns-courses-feature__availability"><span aria-hidden="true">✿</span> One strategy per lesson · 18 practice questions</p>'+
  '<a class="ns-courses-feature__link" href="#learn/how-it-works">How learning will work <span aria-hidden="true">→</span></a></div>'+
  '<div class="ns-courses-feature__postmark" aria-hidden="true">✳</div></section>'+
  '<section class="ns-courses-section" id="ns-course-catalogue" aria-labelledby="ns-course-catalogue-title">'+
- sectionHead('Discover courses','Choose the psychology you want to understand. Each course starts with the key ideas before moving into applied cases.')+
+ sectionHead('Choose your course','Pick something you want to understand. Each lesson explores a practical psychological strategy.')+
  '<p class="ns-courses-availability" role="status" data-learn-course-availability>Checking which course lessons are available…</p>'+
  '<div class="ns-catalogue-controls"><label class="ns-catalogue-search" for="ns-course-search"><span>Find a course</span>'+
  '<input id="ns-course-search" type="search" maxlength="90" autocomplete="off" placeholder="Try narcissism, rumination, ADHD, scams…" value="'+esc(rememberedQuery)+'"></label>'+
@@ -102,29 +105,36 @@ function catalogue(root,{category='all',focusCourses=false}={}){
 function detail(root,id){
  const course=getLearnCourse(id);if(!course){root.innerHTML='<div class="ns-courses-hub"><div class="ns-courses-inner ns-catalogue-detail"><h1>Course not found</h1><p>This course is not in the catalogue.</p><a href="#learn/courses">Browse all courses →</a></div></div>';return;}
  const bundle=publishedLearnBundle(id),cat=COURSE_CATEGORIES.find(c=>c.id===course.category);
- const completed=bundle?learnCourseProgress(bundle,readLearnProgress()):null;
+ const records=readLearnProgress();
+ const completed=bundle?learnCourseProgress(bundle,records):null;
+ const allLessons=bundle?bundle.modules.flatMap(m=>m.lessons):[];
+ const nextLesson=allLessons.find(l=>!getCurrentLearnCompletion(bundle,l,records))||allLessons[0];
+ const nextHref=nextLesson?'#learn/lesson/'+encodeURIComponent(id)+'/'+encodeURIComponent(nextLesson.id):'#learn/courses';
+ const activeModule=bundle?.modules.findIndex(m=>m.lessons.some(l=>l.id===nextLesson?.id))??0;
  const lessonMarkup=bundle?'<div class="ns-catalogue-published">'+
- '<p class="ns-catalogue-published__status">'+completed.done+' of '+completed.total+' lessons completed</p>'+
- bundle.modules.map((m,i)=>'<section class="ns-catalogue-module" data-unit-kind="'+(m.kind==='foundation'?'foundation':'applied')+'"><span class="ns-catalogue-unit__phase">'+(m.kind==='foundation'?(i===0?'START HERE · LEARN THE WORDS':'FOUNDATIONS · PRACTISE REASONING'):'APPLIED CASE · PUT IT TOGETHER')+'</span><h3>Unit '+(i+1)+' · '+esc(m.title)+'</h3>'+
- m.lessons.map(l=>'<a href="#learn/lesson/'+encodeURIComponent(id)+'/'+encodeURIComponent(l.id)+'">'+esc(l.title)+' <span aria-hidden="true">→</span></a>').join('')+'</section>').join('')+'</div>':
+ '<p class="ns-catalogue-published__status">'+completed.done+' of '+completed.total+' strategies mastered in practice</p>'+
+ (nextLesson?'<a class="ns-atlas-next-skill" href="'+nextHref+'"><span>✿ '+(completed.done?'CONTINUE YOUR PATH':'START YOUR FIRST STRATEGY')+'</span><strong>'+esc(nextLesson.title)+'</strong><small>Conversation stories · 18 checks · apply in six settings →</small></a>':'')+
+ bundle.modules.map((m,i)=>'<details class="ns-catalogue-module ns-atlas-path-unit" data-unit-kind="'+(m.kind==='strategy'?'strategy':m.kind==='foundation'?'foundation':'applied')+'"'+(i===activeModule?' open':'')+'><summary><span class="ns-catalogue-unit__phase">'+(m.kind==='strategy'?'STRATEGY COLLECTION':m.kind==='foundation'?'FOUNDATIONS':'APPLIED CASE')+'</span><strong>Unit '+(i+1)+' · '+esc(m.title)+'</strong><small>'+m.lessons.filter(l=>!!getCurrentLearnCompletion(bundle,l,records)).length+' / '+m.lessons.length+' mastered</small></summary><div class="ns-atlas-path-unit__links">'+
+ m.lessons.map(l=>'<a href="#learn/lesson/'+encodeURIComponent(id)+'/'+encodeURIComponent(l.id)+'"'+(l.id===nextLesson?.id?' aria-current="step"':'')+'><span class="ns-atlas-path-unit__marker" aria-hidden="true">'+(getCurrentLearnCompletion(bundle,l,records)?'✓':'○')+'</span>'+esc(l.title)+' <span aria-hidden="true">→</span></a>').join('')+'</div></details>').join('')+'</div>':
  '<div class="ns-catalogue-coming"><strong>Lessons are being developed</strong>'+
- '<p>This is a course outline, not a playable lesson. Its units, exercises and reviews will appear after the material is authored, checked and published. No completion or reward is shown until then.</p>'+
+ '<p>This is a course outline, not a playable lesson. Its units, exercises and reviews will appear after the material is authored, checked and published.</p>'+
  '<a href="#learn/courses">Explore another course →</a></div>';
  root.innerHTML='<div class="ns-courses-hub"><div class="ns-courses-inner ns-catalogue-detail">'+
  '<a class="ns-catalogue-back" href="#learn/courses">← All courses</a>'+
  '<div class="ns-catalogue-detail-hero"><div class="ns-catalogue-detail-image" data-course-subject="'+esc(course.id)+'">'+courseArt(course)+'</div>'+
  '<div class="ns-catalogue-detail-copy"><span class="ns-courses-kicker">'+esc(cat?.title||'Psychology')+' · COURSE '+String(LEARN_COURSES.indexOf(course)+1).padStart(2,'0')+'</span>'+
  '<h1>'+esc(bundle?.title||course.title)+'</h1><p>'+esc(bundle?.description||course.description)+'</p>'+
- '<span class="ns-catalogue-development">'+(bundle?'Published lessons available':hasPublishedLearnCourse(id)?'Loading published lessons…':'In development · No lessons published yet')+'</span>'+
+ (bundle?'<div class="ns-learn-detail-progress"><span><strong>'+completed.done+'</strong> of '+completed.total+' strategies practised</span><span class="ns-learn-detail-progress__bar" role="progressbar" aria-label="Course completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+Math.round(completed.total?completed.done/completed.total*100:0)+'"><i style="width:'+Math.round(completed.total?completed.done/completed.total*100:0)+'%"></i></span></div><a class="ns-learn-detail-start" href="'+nextHref+'"><span aria-hidden="true">▶</span> '+(completed.done?'Continue learning':'Start learning')+' <span aria-hidden="true">→</span></a>':'<span class="ns-catalogue-development">'+(hasPublishedLearnCourse(id)?'Loading published lessons…':'In development · No lessons published yet')+'</span>')+
  '<div class="ns-catalogue-tutor"><span class="ns-courses-kicker">A CHARACTER YOU’LL HELP</span>'+
  '<strong>'+esc(course.companionName)+'</strong><span>“'+esc(course.companionQuote)+'”</span>'+
  '<small>Meet the course companion. Practice with '+esc(course.companionName)+' as you learn how people reason through difficult situations.</small>'+
  '</div></div></div>'+
+ (bundle?'<section class="ns-learn-journey" aria-label="Your learning path"><div class="ns-learn-journey__heading"><div><span class="ns-courses-kicker">YOUR LEARNING PATH</span><h2>A path you can actually follow.</h2><p>Choose a circle to practise. Completed strategies remain available for review.</p></div><span class="ns-learn-journey__count">'+completed.done+' / '+completed.total+' mastered</span></div><div class="ns-learn-journey__track">'+allLessons.slice(Math.max(0,allLessons.findIndex(l=>l.id===nextLesson?.id)-1),Math.max(0,allLessons.findIndex(l=>l.id===nextLesson?.id)-1)+7).map((l,i)=>{const done=!!getCurrentLearnCompletion(bundle,l,records),isNext=l.id===nextLesson?.id;return '<a class="ns-learn-journey__stop '+(done?'is-done':isNext?'is-next':'is-upcoming')+'" href="#learn/lesson/'+encodeURIComponent(id)+'/'+encodeURIComponent(l.id)+'"'+(isNext?' aria-current="step"':'')+'><span class="ns-learn-journey__orb" aria-hidden="true">'+(done?'✓':isNext?'▶':String(i+1))+'</span><span class="ns-learn-journey__caption">'+(isNext?'<small>UP NEXT</small>':'')+esc(l.title)+'</span></a>'}).join('')+'<span class="ns-learn-journey__reward" aria-hidden="true">✦ <small>Keep growing</small></span></div></section>':'')+
  '<div class="ns-catalogue-detail-columns"><section class="ns-catalogue-outline"><span class="ns-courses-kicker">PLANNED LEARNING THEMES</span>'+
- '<h2>What you’ll explore</h2><p>'+(id==='conversation-patterns'?'Twelve individual techniques are playable now. The broader field syllabus is a roadmap, not a set of completed lessons.':'The foundations are playable now. Later units will build on these themes as the course grows.')+'</p>'+
+ '<h2>What you’ll explore</h2><p>'+(bundle?.strategyCurriculum?'All Atlas strategies are individual practice lessons; learn one process before tackling the next.':'The foundations are playable now. Later units will build on these themes as the course grows.')+'</p>'+
  '<div class="ns-catalogue-focus">'+course.focus.map((t,i)=>'<div><span>'+String(i+1).padStart(2,'0')+'</span><strong>'+esc(t)+'</strong></div>').join('')+'</div></section>'+
  '<section class="ns-catalogue-outline"><span class="ns-courses-kicker">THE COURSE JOURNEY</span><h2>How you’ll learn</h2>'+
- '<p>'+(id==='conversation-patterns'?'Pick one technique. Follow a conversation one message at a time, consider a reasonable alternative, then practise in a different situation.':'Each course introduces plain-English concepts and helps you test explanations with evidence and realistic cases.')+'</p>'+
+ '<p>'+(bundle?.strategyCurriculum?'Follow six fictional conversations one message at a time, learn how the process works, recognise false positives and choose better responses. Your transfer score determines practice mastery.':'Each course introduces plain-English concepts and helps you test explanations with evidence and realistic cases.')+'</p>'+
  '<div class="ns-catalogue-phases"><span>Understand the idea</span><span>Spot the distinction</span><span>Apply it carefully</span><span>Review over time</span></div>'+
  '<a href="#learn/how-it-works">See our learning method →</a></section></div>'+
  '<section class="ns-catalogue-syllabus"><h2>Course lessons</h2>'+lessonMarkup+'</section>'+

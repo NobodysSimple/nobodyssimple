@@ -1,0 +1,778 @@
+/* Nobody's Simple Learn · Visual System 2026-11-20
+   Inspired by short, tactile language lessons, but uses the existing
+   Nobody's Simple illustrations, cast atlas and progress data.
+   Scope intentionally limited to Learn pages and players. */
+:root{
+ --ns-learn-forest:#224a34;
+ --ns-learn-green:#58bb2a;
+ --ns-learn-green-dark:#38981e;
+ --ns-learn-lime:#edfadf;
+ --ns-learn-mist:#f5faf4;
+ --ns-learn-card:#ffffff;
+ --ns-learn-ink:#243a2c;
+ --ns-learn-muted:#647365;
+ --ns-learn-border:#e0e8dc;
+ --ns-learn-blue:#e8f4ff;
+ --ns-learn-coral:#fbe9e4;
+ --ns-learn-gold:#fff5d6;
+ --ns-learn-round:18px;
+ --ns-learn-shadow:0 5px 0 rgba(33,69,43,.065),0 11px 28px rgba(35,71,51,.055);
+}
+body.app-body.ns-shell-v1 #main > .ns-course-page{background:#f7faf5!important}
+body.app-body.ns-shell-v1 #main .ns-courses-hub{
+ color:var(--ns-learn-ink)!important;
+ background:radial-gradient(ellipse 40% 25% at 98% 6%,#ecf8dc 0,transparent 100%),#f8fbf6!important;
+ font:500 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif!important
+}
+body.app-body.ns-shell-v1 #main .ns-courses-hub :is(h1,h2,h3,strong){letter-spacing:-.025em}
+body.app-body.ns-shell-v1 #main .ns-courses-hero{
+ max-width:1280px;min-height:295px!important;margin:16px auto 20px;
+ padding:clamp(20px,3.5vw,38px)!important;
+ grid-template-columns:minmax(0,1fr) minmax(200px,.48fr)!important;align-items:center!important;
+ background:linear-gradient(117deg,#edfadb 0%,#f8fdf0 58%,#e1f2e1 100%)!important;
+ border:1px solid #d9ecd0!important;border-radius:27px!important;overflow:hidden!important;
+ box-shadow:var(--ns-learn-shadow)!important;
+}
+body.app-body.ns-shell-v1 #main .ns-courses-hero:before,
+body.app-body.ns-shell-v1 #main .ns-courses-hero:after{opacity:.16!important}
+body.app-body.ns-shell-v1 #main .ns-courses-hero__note{
+ width:auto!important;max-width:640px!important;margin:0!important;padding:0!important;
+ background:transparent!important;border:0!important;box-shadow:none!important;
+ transform:none!important;align-self:center!important;
+}
+body.app-body.ns-shell-v1 #main .ns-courses-hero__note h1{
+ font:850 clamp(32px,5.2vw,61px)/1.05 system-ui,-apple-system,"Segoe UI",sans-serif!important;
+ color:#244b33!important;letter-spacing:-.055em!important;margin:10px 0 15px!important;
+}
+body.app-body.ns-shell-v1 #main .ns-courses-hero__note>p:not(.ns-courses-kicker){
+ font:500 clamp(14px,1.6vw,18px)/1.5 system-ui,sans-serif!important;color:#466a50!important;max-width:50ch!important;
+}
+body.app-body.ns-shell-v1 #main .ns-courses-kicker{
+ font:850 11px/1.35 system-ui,sans-serif!important;letter-spacing:.075em!important;color:#4f8454!important;
+}
+body.app-body.ns-shell-v1 #main .ns-courses-hero__figure{
+ position:relative!important;min-height:220px!important;height:100%;align-self:end;isolation:isolate;
+}
+body.app-body.ns-shell-v1 #main .ns-courses-hero__mascot{
+ position:absolute!important;max-height:265px!important;height:95%!important;width:auto!important;
+ right:11%!important;bottom:-32px!important;filter:drop-shadow(0 8px 7px #9bb79b77)!important;
+}
+body.app-body.ns-shell-v1 #main .ns-courses-hero__hills,
+body.app-body.ns-shell-v1 #main .ns-courses-hero__branches{opacity:.22!important}
+body.app-body.ns-shell-v1 #main .ns-courses-button,
+body.app-body.ns-shell-v1 #main .ns-courses-feature__link{
+ display:inline-flex!important;justify-content:center;align-items:center;gap:10px;
+ min-height:49px!important;padding:11px 23px!important;border:0!important;border-radius:12px!important;
+ background:var(--ns-learn-green)!important;color:#16351e!important;
+ box-shadow:0 4px 0 var(--ns-learn-green-dark)!important;
+ font:800 14px/1.3 system-ui,sans-serif!important;text-decoration:none!important;
+}
+body.app-body.ns-shell-v1 #main .ns-courses-button:hover,
+body.app-body.ns-shell-v1 #main .ns-courses-feature__link:hover{
+ background:#71ce3e!important;transform:translateY(-1px)
+}
+body.app-body.ns-shell-v1 #main .ns-courses-inner{
+ max-width:1280px!important;display:flex!important;flex-direction:column!important;gap:24px;
+}
+body.app-body.ns-shell-v1 #main .ns-courses-section{order:0}
+body.app-body.ns-shell-v1 #main .ns-courses-feature{order:1}
+body.app-body.ns-shell-v1 #main .ns-catalogue-learning{order:2}
+body.app-body.ns-shell-v1 #main .ns-courses-ending{order:3}
+body.app-body.ns-shell-v1 #main .ns-courses-section__heading h2,
+body.app-body.ns-shell-v1 #main .ns-catalogue-detail :is(h1,h2),
+body.app-body.ns-shell-v1 #main .ns-catalogue-learning h2{
+ font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;
+ font-weight:850!important;letter-spacing:-.038em!important;color:#233f2d!important;
+}
+body.app-body.ns-shell-v1 #main .ns-courses-section__heading h2{font-size:clamp(27px,3vw,36px)!important}
+body.app-body.ns-shell-v1 #main .ns-courses-section__heading p{
+ max-width:630px;font-size:15px!important;color:#56705c!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-controls{margin:12px 0 4px!important}
+body.app-body.ns-shell-v1 #main .ns-catalogue-search{max-width:690px!important}
+body.app-body.ns-shell-v1 #main .ns-catalogue-search input{
+ border:2px solid #dbe7d9!important;border-radius:14px!important;background:#fff!important;
+ box-shadow:0 3px 0 #e3ede2!important;min-height:52px!important;
+ font:550 15px system-ui,sans-serif!important;color:var(--ns-learn-ink)!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-search input:focus-visible{
+ outline:3px solid #9cda73!important;outline-offset:3px;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-filters{gap:8px!important}
+body.app-body.ns-shell-v1 #main .ns-catalogue-filter{
+ min-height:39px!important;border:1.5px solid #d7e5d4!important;background:#fff!important;
+ border-radius:999px!important;padding:8px 14px!important;
+ color:#54705c!important;font-weight:750!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-filter[aria-current=page]{
+ background:#e5f9d2!important;border-color:#8cce65!important;color:#2d672a!important
+}
+body.app-body.ns-shell-v1 #main .ns-courses-grid{
+ display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ gap:clamp(12px,1.8vw,20px)!important;
+}
+body.app-body.ns-shell-v1 #main .ns-courses-hub .ns-course-card{
+ --tile:#e7f5dc;--tile-edge:#c9e6be;
+ background:#fff!important;border:1.5px solid #e2eae0!important;border-radius:19px!important;
+ overflow:hidden!important;box-shadow:var(--ns-learn-shadow)!important;
+ text-decoration:none!important;min-width:0!important;transform:none;
+ transition:transform .17s ease,box-shadow .17s ease,border-color .17s ease!important;
+}
+body.app-body.ns-shell-v1 #main .ns-courses-hub .ns-course-card:hover{
+ transform:translateY(-4px)!important;box-shadow:0 7px 0 #cfe5ca,0 16px 28px #2c64351b!important;
+ border-color:#a8d38d!important;
+}
+body.app-body.ns-shell-v1 #main .ns-course-card[data-course-tone="blue"],
+body.app-body.ns-shell-v1 #main .ns-course-card[data-course-tone="sky"]{--tile:#dcefff;--tile-edge:#b6d9fa}
+body.app-body.ns-shell-v1 #main .ns-course-card[data-course-tone="peach"]{--tile:#ffe6d7;--tile-edge:#f9cdb8}
+body.app-body.ns-shell-v1 #main .ns-course-card[data-course-tone="gold"]{--tile:#fff2c9;--tile-edge:#f8df9a}
+body.app-body.ns-shell-v1 #main .ns-course-card[data-course-tone="sage"]{--tile:#e7f4db;--tile-edge:#cee7bc}
+body.app-body.ns-shell-v1 #main .ns-course-card[data-course-subject="attachment"],
+body.app-body.ns-shell-v1 #main .ns-course-card[data-course-subject="self-esteem"]{--tile:#ffe7ed;--tile-edge:#f5ceda}
+body.app-body.ns-shell-v1 #main .ns-course-card[data-course-subject="manipulation"],
+body.app-body.ns-shell-v1 #main .ns-course-card[data-course-subject="narcissism"]{--tile:#ffe6d6;--tile-edge:#f2cbb3}
+body.app-body.ns-shell-v1 #main .ns-course-card[data-course-subject="conversation-patterns"]{--tile:#e8f8d8;--tile-edge:#d2edbd}
+body.app-body.ns-shell-v1 #main .ns-course-card[data-course-subject="neurodiversity"],
+body.app-body.ns-shell-v1 #main .ns-course-card[data-course-subject="boundaries"]{--tile:#e1f0ff;--tile-edge:#c9def7}
+body.app-body.ns-shell-v1 #main .ns-course-card__art{
+ aspect-ratio:1.75/1!important;min-height:115px!important;max-height:175px!important;
+ border-radius:18px 18px 13px 13px!important;
+ background:radial-gradient(ellipse at 30% 75%,#ffffff80,transparent 65%),var(--tile)!important;
+ border-bottom:1px solid var(--tile-edge)!important;
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__landscape{opacity:.43!important;object-fit:cover!important}
+body.app-body.ns-shell-v1 #main .ns-course-card__glow{
+ background:radial-gradient(circle at 73% 21%,#ffffffa6,transparent 48%)!important
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__character.ns-course-card__companion{
+ width:56%!important;height:auto!important;aspect-ratio:1!important;
+ left:22%!important;bottom:-9%!important;clip-path:inset(4% 3% 6% 3%)!important;
+ transform:none;filter:drop-shadow(0 5px 3px #365c4028)!important;
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__character.ns-course-card__individual{
+ width:47%!important;height:90%!important;left:27%!important;bottom:-5%!important;
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__flourish{
+ top:10px!important;right:13px!important;font-size:21px!important;
+ color:#64b73b!important;filter:none!important;
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__nameplate{
+ clip-path:none!important;margin:0!important;padding:15px 16px 4px!important;
+ border-radius:0!important;box-shadow:none!important;background:#fff!important;
+ align-items:flex-start!important;gap:5px!important;
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__nameplate h3{
+ color:#203d2b!important;text-align:left!important;
+ font:800 clamp(15px,1.5vw,20px)/1.25 system-ui,-apple-system,"Segoe UI",sans-serif!important;
+ letter-spacing:-.03em!important;margin:0!important;
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__status{
+ font:750 11px/1.45 system-ui,sans-serif!important;color:#497850!important;
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__category{
+ color:#78917b!important;margin:3px 16px 0!important;font-size:10px!important;letter-spacing:.04em!important;
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__description{
+ font:500 12px/1.5 system-ui,sans-serif!important;color:#566e5a!important;
+ display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+ margin:7px 16px 12px!important;min-height:36px;
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__tutor{
+ font-size:11px!important;color:#50785a!important;margin:0 16px 11px!important;
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__progress{
+ display:flex;gap:9px;align-items:center;margin:0 16px 17px;white-space:nowrap;
+ font-size:11px;color:#4d7849;
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__progress-track{
+ flex:1;min-width:24px;height:7px;background:#e8eee7;border-radius:999px;overflow:hidden
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__progress-track i{
+ display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#72c84d,#4faf30)
+}
+body.app-body.ns-shell-v1 #main .ns-course-card__arrow{
+ font:800 12px/1.3 system-ui,sans-serif!important;color:#34853d!important;
+ margin:auto 16px 17px!important;padding-top:0!important;
+}
+body.app-body.ns-shell-v1 #main .ns-course-card:focus-visible{
+ outline:3px solid #5eaa38!important;outline-offset:4px!important
+}
+/* Smaller secondary banner: show the courses before the promotional material. */
+body.app-body.ns-shell-v1 #main .ns-courses-feature{
+ margin-top:6px!important;min-height:195px!important;border-radius:24px!important;
+ background:#eaf6e8!important;border:1px solid #d9e9d6!important;box-shadow:none!important;
+}
+body.app-body.ns-shell-v1 #main .ns-courses-feature__copy{padding:24px!important}
+body.app-body.ns-shell-v1 #main .ns-courses-feature__copy h2{font-size:clamp(25px,3vw,33px)!important}
+body.app-body.ns-shell-v1 #main .ns-courses-feature__copy>p{font-size:14px!important;line-height:1.5!important}
+body.app-body.ns-shell-v1 #main .ns-courses-feature__visual{min-height:180px!important}
+/* Course detail with original brand cast and actual, saved progress. */
+body.app-body.ns-shell-v1 #main .ns-catalogue-detail{max-width:1140px!important;padding-top:26px!important}
+body.app-body.ns-shell-v1 #main .ns-catalogue-detail-hero{
+ background:#fff!important;border:1px solid #e2ebdc!important;border-radius:25px!important;
+ box-shadow:var(--ns-learn-shadow)!important;gap:clamp(22px,4vw,56px)!important;
+ padding:clamp(20px,3.5vw,37px)!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-detail-image{
+ max-width:340px!important;border:0!important;border-radius:23px!important;
+ background:#eaf6e5!important;box-shadow:none!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-detail-image .ns-course-card__art{
+ aspect-ratio:1/1!important;min-height:235px!important;max-height:340px!important;border-radius:23px!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-detail-image .ns-course-card__character.ns-course-card__companion{
+ width:76%!important;left:12%!important;bottom:0!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-detail-copy h1{
+ font:850 clamp(29px,4vw,48px)/1.12 system-ui,-apple-system,"Segoe UI",sans-serif!important;
+ letter-spacing:-.05em!important;color:#1f3c2b!important;margin:7px 0 12px!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-detail-copy p{
+ font:500 15px/1.58 system-ui,sans-serif!important;color:#506b56!important;max-width:55ch!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-tutor{
+ background:#f0f9ed!important;border:1px solid #dbeed6!important;border-radius:13px!important;
+ max-width:none!important;padding:14px 16px!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-tutor strong{
+ font:800 18px/1.3 system-ui,sans-serif!important;color:#295438!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-tutor small{color:#58735d!important}
+body.app-body.ns-shell-v1 #main .ns-learn-detail-progress{
+ display:grid;gap:7px;margin:13px 0;color:#41634c;font-size:13px;font-weight:750
+}
+body.app-body.ns-shell-v1 #main .ns-learn-detail-progress__bar{
+ display:block;height:10px;overflow:hidden;border-radius:99px;background:#e9eee7;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-detail-progress__bar i{
+ display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#68d230,#56ba26);
+}
+body.app-body.ns-shell-v1 #main .ns-learn-detail-start,
+body.app-body.ns-shell-v1 #main .ns-atlas-next-skill{
+ text-decoration:none!important
+}
+body.app-body.ns-shell-v1 #main .ns-learn-detail-start{
+ display:flex;align-items:center;justify-content:center;gap:14px;width:100%;max-width:330px;
+ min-height:52px;padding:12px 20px;margin:18px 0 16px;
+ background:#64c837!important;border:0!important;border-bottom:4px solid #3c9d1d!important;
+ border-radius:13px;color:#183a21!important;font:850 16px/1.3 system-ui,sans-serif!important;
+ box-shadow:none!important;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-detail-start:hover{background:#79d94c!important}
+body.app-body.ns-shell-v1 #main .ns-catalogue-outline,
+body.app-body.ns-shell-v1 #main .ns-catalogue-syllabus{
+ background:#fff!important;border:1px solid #e1eade!important;border-radius:20px!important;
+ box-shadow:0 5px 20px #355f3210!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-detail :is(.ns-catalogue-outline h2,.ns-catalogue-syllabus h2){
+ font:850 clamp(22px,2.5vw,29px)/1.2 system-ui,sans-serif!important;color:#234631!important
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-focus>div,
+body.app-body.ns-shell-v1 #main .ns-catalogue-phases span{
+ border-radius:12px!important;background:#f3f8ee!important;border:1px solid #e2ecdd!important;
+}
+/* Gamified mini journey: the visible nodes link only to real lessons. */
+body.app-body.ns-shell-v1 #main .ns-learn-journey{
+ margin-top:22px;padding:clamp(16px,3vw,30px);border:1px solid #dae9d8;border-radius:22px;
+ background:linear-gradient(180deg,#f8fff2,#fff 58%)!important;
+ box-shadow:var(--ns-learn-shadow);
+}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__heading{
+ display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__heading h2{
+ margin:5px 0!important;font:850 clamp(23px,3vw,31px)/1.2 system-ui,sans-serif!important;color:#254732!important;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__heading p{
+ color:#597660;font-size:13px;margin:3px 0 0
+}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__count{
+ white-space:nowrap;font-weight:850;font-size:13px;color:#42814a;
+ padding:8px 12px;border-radius:999px;background:#e7f7dc;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__track{
+ position:relative;display:flex;justify-content:space-between;align-items:flex-start;
+ gap:7px;padding:30px 4px 12px;margin-top:12px;overflow-x:auto;overflow-y:hidden;
+ scrollbar-width:thin;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__track::before{
+ content:"";position:absolute;left:5%;right:7%;top:63px;z-index:0;
+ border-top:3px dashed #c9dfc6;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__stop{
+ position:relative;z-index:1;min-width:88px;max-width:118px;flex:1;
+ display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none!important;
+ font-size:12px;font-weight:720;color:#5a765e!important;text-align:center;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__orb{
+ display:grid;place-items:center;width:62px;height:62px;border:3px solid #e1e9de;border-bottom-width:6px;
+ border-radius:50%;background:#f3f6f2;color:#78917d;
+ font-size:24px;font-weight:850;box-shadow:0 5px 0 #c8d3c8;
+ transition:transform .18s ease;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__stop:hover .ns-learn-journey__orb{transform:translateY(-4px)}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__stop.is-done .ns-learn-journey__orb{
+ background:#70c845;border-color:#51a72f;color:#fff;box-shadow:0 5px 0 #3e962a;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__stop.is-next .ns-learn-journey__orb{
+ background:#e8f5ff;border-color:#369ce9;color:#208ad1;box-shadow:0 5px 0 #a2cced;
+ outline:5px solid #e0f3ff;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__caption{max-width:110px;line-height:1.3}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__caption small{
+ display:block;margin-bottom:3px;color:#2685bd;letter-spacing:.03em;font-weight:850
+}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__reward{
+ align-self:flex-start;display:flex;flex-direction:column;align-items:center;gap:5px;
+ padding:3px 6px;min-width:79px;font-size:40px;line-height:1;color:#ecb62d;
+ text-shadow:0 2px 0 #fff4bf;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-journey__reward small{
+ font-size:10px;font-weight:800;line-height:1.3;text-shadow:none;color:#927a3f;text-align:center;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-next-skill{
+ background:linear-gradient(120deg,#e9f9d9,#def6e3)!important;border:2px solid #aada96!important;
+ border-bottom:4px solid #86c46d!important;border-radius:17px!important;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-next-skill>strong{font-weight:850!important}
+body.app-body.ns-shell-v1 #main .ns-catalogue-syllabus details.ns-atlas-path-unit{
+ border-radius:15px!important;border:1px solid #e0e9dd!important;box-shadow:0 2px 4px #3858380b!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-syllabus .ns-atlas-path-unit>summary{
+ background:#f7fbf3!important;color:#284830!important;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-syllabus .ns-atlas-path-unit>summary strong{font-weight:850!important}
+body.app-body.ns-shell-v1 #main .ns-catalogue-syllabus .ns-atlas-path-unit__links>a{
+ min-height:48px!important;border-radius:10px!important;color:#3c6544!important;
+}
+/* Focused Atlas lesson: calm full-screen layout and original cast artwork. */
+body.app-body.ns-shell-v1 #main .ns-atlas-lesson,#cl-preview-host .ns-atlas-lesson{
+ --atlas-bg:#fff;--atlas-ink:#20392a;--atlas-muted:#617469;
+ background:#fff!important;color:#20392a!important;
+ font:500 16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif!important;
+}
+.ns-atlas-lesson__screen{
+ max-width:780px!important;background:#fff!important;
+ padding:0 clamp(16px,3.7vw,31px)!important;
+}
+.ns-atlas-lesson__head{
+ min-height:72px!important;gap:13px!important;background:#fff!important;
+}
+.ns-atlas-lesson__exit{
+ color:#89958b!important;font-size:30px!important;min-height:43px;min-width:43px;
+}
+.ns-atlas-lesson__progress{
+ height:13px!important;background:#e8ece9!important;box-shadow:inset 0 1px 1px #00000009!important;
+}
+.ns-atlas-lesson__progress span{
+ background:linear-gradient(90deg,#67cc2f,#51b622)!important;
+ box-shadow:inset 0 -2px 0 #3f9f21!important;
+}
+.ns-atlas-lesson__brand{font-size:22px;color:#6bb74b;line-height:1}
+.ns-atlas-lesson__counter{min-width:47px!important;font-size:12px!important;color:#6c9075!important}
+.ns-atlas-lesson__body{padding:22px 5px 26px!important;scrollbar-gutter:stable;}
+.ns-atlas-lesson__intro,.ns-atlas-lesson__finish,.ns-atlas-lesson__task{max-width:620px!important}
+.ns-atlas-lesson__kicker{
+ color:#4e9650!important;font:850 11px/1.4 system-ui,sans-serif!important;
+ letter-spacing:.07em!important;
+}
+.ns-atlas-lesson h1{font-weight:850!important;color:#273c2d!important;letter-spacing:-.04em!important}
+.ns-atlas-lesson__guide{
+ display:grid;place-items:center;width:clamp(120px,22vw,170px);height:clamp(120px,22vw,170px);
+ margin:4px auto 17px;background:radial-gradient(circle at 50% 52%,#e1f6d4 0 57%,transparent 58%);
+ border-radius:50%;position:relative;isolation:isolate;
+}
+.ns-atlas-lesson__guide:before,.ns-atlas-lesson__guide:after{
+ content:"✦";position:absolute;color:#8bcf61;font-size:23px;z-index:1;top:9%;right:-3%;
+}
+.ns-atlas-lesson__guide:after{top:auto;right:auto;bottom:2%;left:0;color:#f3bf61;font-size:19px}
+.ns-atlas-lesson__guide-sprite{
+ display:block;height:100%;width:100%;background-image:url("media/lifelab/companions.png");
+ background-size:400% 500%;background-position:var(--face-x) var(--face-y);background-repeat:no-repeat;
+ clip-path:inset(4% 3% 3%);filter:drop-shadow(0 8px 4px #42643f30);
+}
+.ns-atlas-lesson__guide-image{max-width:95%;max-height:95%;object-fit:contain}
+.ns-atlas-lesson__guide-fallback{font-size:60px;color:#70b650}
+.ns-atlas-lesson__intro{text-align:center}
+.ns-atlas-lesson__intro .ns-atlas-lesson__lead{text-align:center;margin:0 auto 18px}
+.ns-atlas-lesson__knowledge{
+ text-align:left;background:#f6fbf3!important;border:1px solid #e0eddb!important;
+ border-radius:16px!important;padding:clamp(16px,3vw,23px)!important;
+}
+.ns-atlas-lesson__knowledge strong{font:850 14px system-ui,sans-serif;color:#30683c!important}
+.ns-atlas-lesson__knowledge p{color:#4b6252!important}
+.ns-atlas-lesson__node-heading{display:flex;align-items:center;gap:15px;margin:8px 0 15px}
+.ns-atlas-lesson__node-heading h1{
+ margin:0!important;font:850 clamp(25px,4vw,34px)/1.2 system-ui,sans-serif!important;
+}
+.ns-atlas-lesson__node-tag{
+ font-size:11px!important;font-weight:850;letter-spacing:.055em;color:#67816d;
+ display:block;margin-bottom:3px;
+}
+.ns-atlas-lesson__node-icon{
+ flex:0 0 55px;display:grid;place-items:center;width:55px;height:55px;border-radius:17px;
+ color:#368b40;background:#ecf8e3;font-size:30px;font-weight:800;
+ box-shadow:0 4px 0 #d9eacb;
+}
+.ns-atlas-lesson__task[data-node-type=explain] .ns-atlas-lesson__node-icon{
+ color:#3288c3;background:#e7f3ff;box-shadow:0 4px 0 #cbdff3;
+}
+.ns-atlas-lesson__task[data-node-type=respond] .ns-atlas-lesson__node-icon{
+ color:#bf6a61;background:#fff0e9;box-shadow:0 4px 0 #f1d9d0;
+}
+.ns-atlas-lesson__context{
+ font:500 14px/1.48 system-ui,sans-serif!important;color:#64796b!important;
+ margin:0 0 18px!important;
+}
+.ns-atlas-lesson__thread{
+ max-height:min(35dvh,310px)!important;margin:0 0 19px!important;padding:15px 12px!important;
+ display:flex!important;flex-direction:column;gap:11px!important;
+ background:linear-gradient(135deg,#f8fbf6,#f0f7ef)!important;
+ border:1px solid #e6eee5!important;border-radius:17px!important;
+ scrollbar-color:#c3d8c7 transparent;
+}
+.ns-atlas-lesson__thread li,.ns-atlas-lesson__thread li.is-other{
+ display:flex;align-items:flex-end;gap:9px;max-width:95%;margin:0 auto 0 0!important;
+ border:0!important;border-radius:0!important;box-shadow:none!important;
+ padding:0!important;background:transparent!important;
+}
+.ns-atlas-lesson__thread li.is-other{margin:0 0 0 auto!important;flex-direction:row-reverse}
+.ns-atlas-lesson__avatar{
+ flex:0 0 42px;width:42px;height:42px;display:block;border-radius:50%;
+ background-color:#e1f4d6;background-image:url("media/lifelab/companions.png");
+ background-position:var(--face-x) var(--face-y);background-size:400% 500%;background-repeat:no-repeat;
+ outline:2px solid #fff;box-shadow:0 2px 5px #3854381b;overflow:hidden;
+}
+.ns-atlas-lesson__bubble{
+ max-width:calc(100% - 51px);min-width:0;padding:11px 14px 12px;
+ background:#fff;border:1.5px solid #dfe9dd;border-radius:14px 14px 14px 4px;
+ box-shadow:0 3px 0 #e1e9dd;
+}
+.ns-atlas-lesson__thread li.is-other .ns-atlas-lesson__bubble{
+ background:#e5f4ff;border-color:#cae3f7;box-shadow:0 3px 0 #c9ddea;
+ border-radius:14px 14px 4px 14px;
+}
+.ns-atlas-lesson__bubble>span{display:block;font:850 11px/1.3 system-ui,sans-serif;color:#649868!important;margin-bottom:5px}
+.ns-atlas-lesson__bubble p{font:550 14px/1.48 system-ui,sans-serif!important;color:#2b4031!important}
+.ns-atlas-lesson__thread li.is-other .ns-atlas-lesson__bubble>span{color:#4c88b0!important}
+.ns-atlas-lesson__compare{
+ display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:10px 0 18px;
+}
+.ns-atlas-lesson__compare>div{border:1px solid #dce8df;padding:13px;border-radius:13px;background:#edf8ee}
+.ns-atlas-lesson__compare>div:last-child{background:#eaf5ff;border-color:#d4e8f8}
+.ns-atlas-lesson__compare small{display:block;font-size:10px;font-weight:850;letter-spacing:.05em;color:#63856b;margin-bottom:7px}
+.ns-atlas-lesson__compare p{font-size:12px!important;line-height:1.45!important;margin:0!important}
+.ns-atlas-lesson__mechanics{
+ display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 0 18px;
+ color:#4a8260;font-weight:800;font-size:12px;
+}
+.ns-atlas-lesson__mechanics span{display:flex;align-items:center;gap:5px}
+.ns-atlas-lesson__mechanics b{
+ display:grid;place-items:center;background:#e9f6df;border-radius:50%;
+ width:23px;height:23px;color:#4d944d;font-weight:900;
+}
+.ns-atlas-lesson__reply-placeholder{
+ border:2px dashed #c5dcbd;background:#f8fcf5;border-radius:13px;padding:12px 15px;
+ color:#5a8565;font-weight:750;font-size:13px;margin:0 0 18px;
+}
+.ns-atlas-lesson__reply-placeholder span{color:#58b641;margin-right:7px;font-size:18px}
+.ns-atlas-lesson__choices{margin-top:9px!important;gap:10px!important}
+.ns-atlas-lesson__choices legend{
+ font-size:clamp(17px,2.5vw,21px)!important;line-height:1.35!important;
+ font-weight:850!important;color:#263e2e!important;margin:0 0 14px!important;
+}
+.ns-atlas-lesson__choices legend span{
+ font-size:11px!important;letter-spacing:.08em!important;font-weight:850!important;
+ color:#68a251!important;margin:0 0 5px!important;
+}
+.ns-atlas-lesson__choices label{
+ background:#fff!important;border:2px solid #e0e7df!important;
+ border-bottom:4px solid #dde6db!important;min-height:58px!important;
+ padding:13px 15px!important;border-radius:13px!important;gap:12px!important;
+ transition:border-color .12s ease,background .12s ease,transform .12s ease!important;
+}
+.ns-atlas-lesson__choices label:hover{background:#f6fbf4!important;border-color:#a8d48e!important;transform:translateY(-1px)}
+.ns-atlas-lesson__choices label.is-selected{
+ background:#e9f9dc!important;border-color:#65bc3c!important;border-bottom-color:#50a52e!important;
+ box-shadow:0 0 0 2px #c7edb8!important;
+}
+.ns-atlas-lesson__choices input{
+ flex:0 0 auto;margin-top:4px!important;opacity:0;position:absolute;width:1px!important;height:1px!important;
+}
+.ns-atlas-lesson__choices label:has(input:focus-visible){
+ outline:3px solid #5fae43!important;outline-offset:2px;
+}
+.ns-atlas-lesson__choice-index{
+ flex:0 0 29px;display:grid;place-items:center;width:29px;height:29px;
+ background:#f6f8f4;border:1px solid #dce5d9;border-radius:9px;
+ color:#67806a;font-size:12px;font-weight:900;
+}
+.ns-atlas-lesson__choices label.is-selected .ns-atlas-lesson__choice-index{
+ background:#a4df88;border-color:#69b64b;color:#285b30;
+}
+.ns-atlas-lesson__choices label>span:last-child{
+ color:#2c4130!important;font-size:14px!important;line-height:1.48!important;
+}
+.ns-atlas-lesson__coach{margin:11px 0 20px}
+.ns-atlas-lesson__hint-button{
+ padding:8px 10px;background:transparent;border:0;color:#50895c;cursor:pointer;
+ font:850 12px system-ui,sans-serif;border-radius:9px
+}
+.ns-atlas-lesson__hint-button:hover{background:#e8f7e3}
+.ns-atlas-lesson__hint-text{
+ padding:13px 16px;background:#fff8e5;border:1px solid #f2e1b4;
+ border-radius:12px;color:#735d32!important;font-size:14px!important;
+}
+.ns-atlas-lesson__footer{
+ flex-direction:column!important;justify-content:center!important;align-items:stretch!important;gap:10px;
+ padding:12px 0 max(13px,env(safe-area-inset-bottom))!important;
+ min-height:80px!important;border-top:2px solid #e8eee7!important;
+ background:#fff!important;box-shadow:0 -4px 18px #2a69300a!important;
+}
+.ns-atlas-lesson__next{
+ width:100%!important;max-width:440px!important;align-self:center!important;
+ background:#64c62e!important;color:#173f22!important;font-size:16px!important;font-weight:850!important;
+ border-bottom:4px solid #43a01e!important;border-radius:13px!important;
+ min-height:51px!important;box-shadow:none!important;
+}
+.ns-atlas-lesson__next:hover{background:#74d33f!important}
+.ns-atlas-lesson__next:disabled{background:#e7ebe6!important;color:#8d958f!important;border-color:#dce2db!important;opacity:1!important}
+.ns-atlas-lesson__feedback{
+ display:flex;gap:13px;align-items:flex-start;
+ width:100%!important;max-width:690px!important;max-height:31dvh;overflow:auto;
+ margin:0 auto!important;padding:13px 16px!important;
+ background:#e5f9d9!important;border:1px solid #bce6a3!important;border-radius:14px!important;
+ color:#2e6829!important;
+}
+.ns-atlas-lesson__feedback.is-incorrect{
+ background:#fff0e9!important;border-color:#f4cdc1!important;color:#9f473b!important;
+}
+.ns-atlas-lesson__feedback-icon{
+ flex:0 0 30px;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;
+ font-weight:900;font-size:22px;color:#2f8c2e;background:#c8e9af;
+}
+.ns-atlas-lesson__feedback.is-incorrect .ns-atlas-lesson__feedback-icon{background:#ffd0c6;color:#b44b41}
+.ns-atlas-lesson__feedback>div:last-child{flex:1;min-width:0}
+.ns-atlas-lesson__feedback strong{font-weight:850!important;color:inherit!important}
+.ns-atlas-lesson__feedback p,.ns-atlas-lesson__feedback .ns-atlas-lesson__muted{
+ color:inherit!important;font-size:13px!important;line-height:1.45!important;margin:7px 0!important;
+}
+.ns-atlas-lesson__finish{text-align:center}
+.ns-atlas-lesson__finish .ns-atlas-lesson__guide{margin-bottom:8px}
+.ns-atlas-lesson__trophy{background:#eaf8df!important;color:#68b53e!important}
+.ns-atlas-lesson__finish .ns-atlas-lesson__knowledge{text-align:left}
+/* Legacy published node types: unique palettes while retaining original
+   renderer, native input controls and all existing grading semantics. */
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive){
+ --lp-bg:#fff;--lp-panel:#fff;--lp-line:#dce8dc;--lp-ink:#253c2d;--lp-muted:#607666;
+ --lp-mint:#59b93a;--lp-gold:#4e9f4a;
+ background:#fff!important;color:#253c2d!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__surface{
+ width:min(100%,770px)!important;padding:env(safe-area-inset-top) clamp(17px,4vw,32px) env(safe-area-inset-bottom)!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__meter{height:12px!important;background:#e8eee8!important}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__meter i{
+ background:linear-gradient(90deg,#71c937,#53bb25)!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__content{
+ padding:16px 2px 26px!important;scrollbar-color:#bed9c0 transparent
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__primary{
+ background:#63c732!important;border-bottom:4px solid #459b23!important;min-height:52px!important;
+ border-radius:13px!important;color:#173e21!important;font-weight:850!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__footer{
+ background:#fff!important;border-top:2px solid #e8eee7!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__task{
+ --node-bg:#eaf9e1;--node-ink:#468a43;--node-edge:#cde9c5;max-width:640px!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__task[data-node-type=dialogue],
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__task[data-node-type=investigation]{
+ --node-bg:#e7f5fd;--node-ink:#287dbb;--node-edge:#c6e3f5;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__task[data-node-type=label],
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__task[data-node-type=match]{
+ --node-bg:#fff4d9;--node-ink:#a57a26;--node-edge:#f3e1b5;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__task[data-node-type=sort],
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__task[data-node-type=rank]{
+ --node-bg:#f4ecff;--node-ink:#8762bd;--node-edge:#dfd2f4;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__task[data-node-type=perspective],
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__task[data-node-type=update]{
+ --node-bg:#e8f3ff;--node-ink:#3883b6;--node-edge:#cddff2;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-node__banner{
+ display:flex;align-items:center;gap:13px;margin-bottom:16px;
+ padding:13px 16px;border-radius:15px;background:var(--node-bg);border:1px solid var(--node-edge);
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-node__symbol{
+ display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;
+ border-radius:13px;background:#fff8;color:var(--node-ink);font-size:25px;font-weight:900;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-node__banner-label{
+ font:850 12px/1.25 system-ui,sans-serif;color:var(--node-ink)!important;letter-spacing:.045em;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__task h1{
+ font:850 clamp(23px,3.4vw,31px)/1.22 system-ui,sans-serif!important;color:#263e2f!important;margin:8px 0 15px!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__choices label{
+ border:2px solid #e0e8df!important;border-bottom:4px solid #dce5db!important;
+ border-radius:13px!important;background:#fff!important;color:#2c4132!important;
+ min-height:54px!important;padding:13px 16px!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__choices label:has(input:checked){
+ background:#eafaDF!important;border-color:#73c74b!important;border-bottom-color:#55ac36!important;box-shadow:0 0 0 2px #c8eeb8!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) :is(.ns-learn-player__order,.ns-learn-player__pairs label){
+ border:1.5px solid #dfe9dc!important;border-radius:14px!important;
+ background:#fff!important;box-shadow:0 3px 0 #e6ece4!important;color:#304633!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) :is(.ns-learn-player__order button,.ns-learn-player__reveal){
+ border:1px solid #b9d9b3!important;background:#e9f8e4!important;color:#32743a!important;border-radius:11px!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__segments button{
+ border:1.5px solid #d2e8c9!important;border-radius:11px!important;background:#fff!important;
+ color:#365b40!important;min-height:46px!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__segments button[aria-pressed=true]{
+ background:#e6f8c7!important;color:#315c31!important;border-color:#6abb47!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__new-evidence{
+ background:#fff6dd!important;border:1px solid #f1dfb7!important;border-radius:13px!important;padding:15px!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__viewpoints>div{
+ background:#e9f4ff!important;border-color:#cbdff3!important;border-radius:13px!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__feedback{
+ background:#e7f8dc!important;border:1px solid #bce0aa!important;border-left:4px solid #5dbb3b!important;
+ color:#2c6336!important;border-radius:13px!important;padding:15px!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__feedback--incorrect{
+ background:#fff0ea!important;border-color:#f2c7bf!important;border-left-color:#d57668!important;color:#80473d!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__feedback :is(p,strong,small){color:inherit!important}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-line{
+ background:#f0f8ec!important;border-color:#d3e8ce!important;color:#304934!important;
+ border-radius:18px 18px 18px 5px!important;box-shadow:0 4px 0 #dfebdc!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-line[data-speaker=b]{
+ background:#e7f4ff!important;border-color:#cddff1!important;color:#294960!important;
+ border-radius:18px 18px 5px 18px!important;box-shadow:0 4px 0 #d0e4f1!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__welcome-art{
+ width:132px!important;height:132px!important;border:0!important;background:#e9f8dc!important;
+ border-radius:50%!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-speaker{
+ color:#5a9b5a!important;font-weight:850!important;
+}
+/* Dark mode: low-glare but retains the same interactive hierarchy. */
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-courses-hub{
+ background:#15231e!important;color:#e8f2e8!important;
+}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-courses-hero,
+html[data-theme=dark] body.app-body.ns-shell-v1 #main :is(.ns-catalogue-detail-hero,.ns-catalogue-outline,.ns-catalogue-syllabus,.ns-learn-journey){
+ background:#21352a!important;border-color:#466449!important;
+}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-courses-hub :is(.ns-courses-section__heading h2,.ns-catalogue-detail h1,.ns-catalogue-detail h2,.ns-courses-hero__note h1){
+ color:#ecf5e9!important;
+}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-courses-hub :is(.ns-catalogue-detail-copy p,.ns-learn-journey__heading p,.ns-courses-section__heading p,.ns-courses-hero__note>p){
+ color:#c6dacb!important;
+}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-courses-hub .ns-course-card{
+ background:#263b2e!important;border-color:#436349!important;
+}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-course-card__nameplate{background:#263b2e!important}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-course-card__nameplate h3{color:#e9f2e8!important}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-course-card__description{color:#c6ddcb!important}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-course-card__status{color:#a4d6a4!important}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-catalogue-tutor,
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-catalogue-syllabus details.ns-atlas-path-unit,
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-catalogue-syllabus .ns-atlas-path-unit>summary{
+ background:#294333!important;border-color:#547357!important;color:#e9f3e8!important;
+}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-catalogue-tutor strong,
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-catalogue-tutor small{color:#d9e9d9!important}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-atlas-lesson,
+html[data-theme=dark] #cl-preview-host .ns-atlas-lesson{
+ background:#151f21!important;color:#eff4ed!important;--atlas-ink:#eff4ed;
+}
+html[data-theme=dark] .ns-atlas-lesson__screen,
+html[data-theme=dark] .ns-atlas-lesson__head,
+html[data-theme=dark] .ns-atlas-lesson__footer{background:#151f21!important}
+html[data-theme=dark] .ns-atlas-lesson h1,
+html[data-theme=dark] .ns-atlas-lesson__choices legend{color:#eef4ed!important}
+html[data-theme=dark] .ns-atlas-lesson p,
+html[data-theme=dark] .ns-atlas-lesson__context{color:#c8d5d0!important}
+html[data-theme=dark] .ns-atlas-lesson__thread{background:#233235!important;border-color:#385354!important}
+html[data-theme=dark] .ns-atlas-lesson__bubble,
+html[data-theme=dark] .ns-atlas-lesson__choices label{background:#263c3c!important;border-color:#40585a!important;box-shadow:none!important}
+html[data-theme=dark] .ns-atlas-lesson__thread li.is-other .ns-atlas-lesson__bubble{background:#274450!important;border-color:#4e6673!important}
+html[data-theme=dark] .ns-atlas-lesson__bubble p,
+html[data-theme=dark] .ns-atlas-lesson__choices label>span:last-child{color:#f0f5f1!important}
+html[data-theme=dark] .ns-atlas-lesson__knowledge{background:#263b32!important;border-color:#47644e!important}
+html[data-theme=dark] .ns-atlas-lesson__knowledge p{color:#d0dfd0!important}
+html[data-theme=dark] .ns-atlas-lesson__choices label.is-selected{background:#254d38!important;border-color:#78c65a!important}
+html[data-theme=dark] .ns-atlas-lesson__reply-placeholder{background:#263b32!important;color:#b5dec0!important}
+html[data-theme=dark] .ns-atlas-lesson__compare>div{background:#2a4339!important;border-color:#527262!important}
+html[data-theme=dark] .ns-atlas-lesson__compare>div:last-child{background:#264451!important;border-color:#496c78!important}
+html[data-theme=dark] .ns-atlas-lesson__feedback.is-correct{background:#294b34!important;border-color:#447950!important;color:#d9ffdd!important}
+html[data-theme=dark] .ns-atlas-lesson__feedback.is-incorrect{background:#53332e!important;border-color:#89584e!important;color:#ffded3!important}
+html[data-theme=dark] :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive){
+ background:#152122!important;color:#eaf2e9!important;
+}
+html[data-theme=dark] :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__footer{
+ background:#152122!important;border-color:#364e42!important;
+}
+@media(max-width:1050px){
+ body.app-body.ns-shell-v1 #main .ns-courses-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:720px){
+ body.app-body.ns-shell-v1 #main .ns-courses-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ body.app-body.ns-shell-v1 #main .ns-courses-hero{grid-template-columns:1fr 170px!important;min-height:240px!important}
+ body.app-body.ns-shell-v1 #main .ns-courses-hero__figure{min-height:190px!important}
+ body.app-body.ns-shell-v1 #main .ns-courses-hero__mascot{height:90%!important;bottom:-18px!important;right:0!important}
+ body.app-body.ns-shell-v1 #main .ns-courses-feature{grid-template-columns:1fr!important}
+ body.app-body.ns-shell-v1 #main .ns-catalogue-detail-hero{grid-template-columns:1fr!important}
+ body.app-body.ns-shell-v1 #main .ns-catalogue-detail-image{max-width:300px!important}
+ body.app-body.ns-shell-v1 #main .ns-learn-journey__track{gap:12px}
+ body.app-body.ns-shell-v1 #main .ns-learn-journey__stop{min-width:95px}
+}
+@media(max-width:460px){
+ body.app-body.ns-shell-v1 #main .ns-courses-hero{grid-template-columns:1fr!important;margin:7px 9px 12px!important;min-height:0!important;padding:25px!important}
+ body.app-body.ns-shell-v1 #main .ns-courses-hero__figure{min-height:95px!important}
+ body.app-body.ns-shell-v1 #main .ns-courses-hero__mascot{height:180px!important;right:0!important;bottom:-64px!important;opacity:.8}
+ body.app-body.ns-shell-v1 #main .ns-courses-hero__note h1{font-size:35px!important;max-width:11ch}
+ body.app-body.ns-shell-v1 #main .ns-courses-hero__note>p{max-width:27ch!important}
+ body.app-body.ns-shell-v1 #main .ns-courses-grid{gap:11px!important}
+ body.app-body.ns-shell-v1 #main .ns-course-card__art{aspect-ratio:1.45/1!important;min-height:105px!important}
+ body.app-body.ns-shell-v1 #main .ns-course-card__nameplate{padding:12px 12px 3px!important}
+ body.app-body.ns-shell-v1 #main .ns-course-card__nameplate h3{font-size:15px!important}
+ body.app-body.ns-shell-v1 #main .ns-course-card__description{margin:6px 12px 10px!important;font-size:11px!important}
+ body.app-body.ns-shell-v1 #main .ns-course-card__tutor{margin:0 12px 9px!important;font-size:10px!important}
+ body.app-body.ns-shell-v1 #main .ns-course-card__category{margin:3px 12px 0!important}
+ body.app-body.ns-shell-v1 #main .ns-course-card__arrow{margin:auto 12px 14px!important}
+ body.app-body.ns-shell-v1 #main .ns-learn-journey__heading{display:block}
+ body.app-body.ns-shell-v1 #main .ns-learn-journey__count{display:inline-block;margin-top:9px}
+ .ns-atlas-lesson__body{padding:12px 0 12px!important}
+ .ns-atlas-lesson__node-icon{width:45px;height:45px;flex-basis:45px;font-size:25px}
+ .ns-atlas-lesson__node-heading{gap:10px}
+ .ns-atlas-lesson__thread{max-height:29dvh!important;padding:10px!important}
+ .ns-atlas-lesson__avatar{width:35px;height:35px;flex-basis:35px}
+ .ns-atlas-lesson__bubble{max-width:calc(100% - 45px);padding:9px 11px}
+ .ns-atlas-lesson__bubble p{font-size:13px!important}
+ .ns-atlas-lesson__choices label{min-height:51px!important;padding:11px 12px!important}
+ .ns-atlas-lesson__feedback{max-height:28dvh}
+ .ns-atlas-lesson__footer{padding-bottom:max(11px,env(safe-area-inset-bottom))!important}
+ .ns-atlas-lesson__compare{grid-template-columns:1fr!important}
+}
+@media(prefers-reduced-motion:reduce){
+ body.app-body.ns-shell-v1 #main .ns-course-card,
+ .ns-atlas-lesson__choices label,.ns-learn-journey__orb{
+ transition:none!important;transform:none!important;
+ }
+}
