@@ -3,6 +3,7 @@
  * recording completions. Question content is always escaped; never raw HTML.
  */
 import {getLearnContent} from './ns-learn-content-v2.mjs?v=psy-atlas-20261120';
+import {renderStrategyLesson} from './ns-strategy-player.mjs?v=psy-atlas-tiles-20261120';
 import {renderStrategyLesson} from './ns-strategy-player.mjs?v=language-player-20261120';
 import {getLearnCourse,LEARN_COMPANIONS} from './ns-learn-catalog-v2.mjs';
 import {validateLearnBundle,gradeLearnItem,learnLessonScore,flattenLearnLessons,QUESTION_TYPES} from './ns-learn-engine-v2.mjs';

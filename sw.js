@@ -3,6 +3,7 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
+const CACHE = 'nobodyssimple-release-v244-atlas-tiles';
 const CACHE = 'nobodyssimple-release-v245-language-player';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
