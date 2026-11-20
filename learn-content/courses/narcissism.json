@@ -1,6 +1,6 @@
 {
   "id": "narcissism",
-  "version": 7,
+  "version": 8,
   "status": "published",
   "title": "Narcissism & Personality",
   "description": "Twelve deep message investigations of self-worth, narcissistic functioning, psychological defences and relationships. Learn to test plausible interpretations before applying them.",
@@ -24,7 +24,7 @@
         {
           "id": "narcissism-f1-l1",
           "title": "The correction becomes a betrayal",
-          "version": 4,
+          "version": 5,
           "standard": "deep-10",
           "durationMinutes": 13,
           "editorialStatus": "ready",
@@ -34,7 +34,7 @@
           "transferPrompt": "Use the same method with a different parent, partner, school or workplace case, without copying the answer.",
           "glossary": [],
           "evidenceSummary": "Pincus and Lukowitsky's account of pathological narcissism treats grandiose and vulnerable self-regulation as interrelated. Psychodynamic formulations consider how shame and a valued self-image can shape responses to criticism. Neither literature establishes Leo's motive from this fictional chat.",
-          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026).",
+          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026). Editorial update (20 Nov 2026): tested competing answer choices for contextual plausibility; source attribution separated from fictional cases. Independent expert review remains outstanding.",
           "recommendedType": "investigation",
           "nodes": [
             {
@@ -42,7 +42,7 @@
               "type": "read",
               "title": "The actual situation",
               "body": "Maya completed the analysis on a joint project. Leo leads the team, is being considered for promotion, and will present the findings to the board tomorrow. Their exchanges are private, but the attribution will be public.\n\nMaya is asking for the slide to describe her contribution accurately. Leo repeatedly replies without agreeing to the correction. The earliest question concerns authorship, something the team can check against drafts and work records.\n\nHe may be trying to communicate a legitimate frustration that leadership contributions are overlooked. The shift is still relevant even if the frustration is sincere.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987"
+              "sources": ""
             },
             {
               "id": "narcissism-f1-l1-deep-investigation",
@@ -53,7 +53,7 @@
               "speakerA": "Maya",
               "speakerB": "Leo",
               "prompt": "Explore the conversation. Investigate the message, the possible motive and what evidence would change your interpretation.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987",
+              "sources": "",
               "turns": [
                 {
                   "id": "narcissism-f1-l1-deep-turn-0",
@@ -196,7 +196,7 @@
                   "options": [
                     {
                       "id": "narcissism-f1-l1-deep-check-0-option-0",
-                      "label": "It proves that he was always ashamed of management work."
+                      "label": "Leo could be warning that the board will misread how project leadership is credited, rather than expressing personal shame."
                     },
                     {
                       "id": "narcissism-f1-l1-deep-check-0-option-1",
@@ -204,7 +204,7 @@
                     },
                     {
                       "id": "narcissism-f1-l1-deep-check-0-option-2",
-                      "label": "It establishes that the board's promotion criteria prohibit shared credit."
+                      "label": "Leo could be arguing that his status authorises a different credit convention, even if Maya produced the model."
                     }
                   ],
                   "answer": "narcissism-f1-l1-deep-check-0-option-1",
@@ -218,11 +218,11 @@
                   "options": [
                     {
                       "id": "narcissism-f1-l1-deep-check-1-option-0",
-                      "label": "How many times Maya has thanked Leo for mentoring her."
+                      "label": "How he handles recognition of other team members when the board is present."
                     },
                     {
                       "id": "narcissism-f1-l1-deep-check-1-option-1",
-                      "label": "Whether Leo prefers formal or informal slides."
+                      "label": "Whether he objects to a private technical correction when the promotion is already secured."
                     },
                     {
                       "id": "narcissism-f1-l1-deep-check-1-option-2",
@@ -244,11 +244,11 @@
                     },
                     {
                       "id": "narcissism-f1-l1-deep-check-2-option-1",
-                      "label": "His private praise proves that later self-protection is entirely unconscious."
+                      "label": "He may have planned to recognise Maya separately and treated the slide as an abbreviated account."
                     },
                     {
                       "id": "narcissism-f1-l1-deep-check-2-option-2",
-                      "label": "The message removes any need to correct the slide."
+                      "label": "He might still believe 'lead' includes collective responsibility for the model despite knowing who constructed it."
                     }
                   ],
                   "answer": "narcissism-f1-l1-deep-check-2-option-0",
@@ -262,11 +262,11 @@
                   "options": [
                     {
                       "id": "narcissism-f1-l1-deep-check-3-option-0",
-                      "label": "Make sure Leo admits that his shame is the main reason for his behaviour."
+                      "label": "Ask the board to postpone the decision until Leo and Maya can agree on how to describe project ownership."
                     },
                     {
                       "id": "narcissism-f1-l1-deep-check-3-option-1",
-                      "label": "Tell him the slide can stay unchanged if he praises her in private."
+                      "label": "Raise the discrepancy with a neutral project sponsor before asking Leo again, to avoid a further private conflict."
                     },
                     {
                       "id": "narcissism-f1-l1-deep-check-3-option-2",
@@ -292,7 +292,7 @@
               "title": "Which two messages reveal the conflict?",
               "prompt": "Find the two lines that most directly show how this disagreement became personally meaningful.",
               "conceptId": "narcissism-f1-l1-deep-concept",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987",
+              "sources": "",
               "segments": [
                 {
                   "id": "narcissism-f1-l1-deep-evidence-0",
@@ -362,7 +362,7 @@
               "conceptId": "narcissism-threatened-self-worth",
               "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -389,7 +389,7 @@
               "conceptId": "narcissism-f1-l1-deep-concept",
               "explanation": "The earlier acknowledgement directly weakens an innocent authorship mistake. The draft could still serve both an instrumental interest and protection of the lead's self-image.",
               "counterexample": "A contract that uses 'author' differently could change the attribution dispute, but would need to be shown.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -418,7 +418,7 @@
               "conceptId": "narcissism-f1-l1-deep-concept",
               "explanation": "Contingent self-worth is a way of organising self-evaluation. The condition is the point, not the specific form of praise.",
               "counterexample": "If we notice only dishonesty, we may miss why he reacts so intensely to an available correction. A good account improves practical judgement because it explains what further evidence would distinguish the possibilities.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -436,14 +436,14 @@
               "type": "read",
               "title": "Use the explanation in everyday life",
               "body": "Maya can act without choosing Leo's 'true' unconscious motive. A documented request for accurate authorship addresses the fact. If it is refused, an independent workplace process can assess the records without diagnosing him.\n\nA direct confrontation could expose Maya to retaliation when Leo controls her opportunities. The practical route depends on how safely the correction can be raised.\n\nDecide which correction is needed and who can review the evidence independently. Then evaluate Leo's repeated conduct separately from the authorship record.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987"
+              "sources": ""
             }
           ]
         },
         {
           "id": "narcissism-f1-l2",
           "title": "The price of being a grateful daughter",
-          "version": 4,
+          "version": 5,
           "standard": "deep-10",
           "durationMinutes": 13,
           "editorialStatus": "ready",
@@ -453,7 +453,7 @@
           "transferPrompt": "Use the same method with a different parent, partner, school or workplace case, without copying the answer.",
           "glossary": [],
           "evidenceSummary": "Psychodynamic accounts ask how a valued role, such as being an indispensable parent, is maintained when the child becomes independent. That is one possible account of this fiction. Parental anxiety, practical loss and learned family expectations remain competing explanations.",
-          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026).",
+          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026). Editorial update (20 Nov 2026): tested competing answer choices for contextual plausibility; source attribution separated from fictional cases. Independent expert review remains outstanding.",
           "recommendedType": "investigation",
           "nodes": [
             {
@@ -461,7 +461,7 @@
               "type": "read",
               "title": "The actual situation",
               "body": "Eva has won a scholarship to study in another city. Her father paid for extra tutoring when she was younger. He hoped she would stay nearby and join the family business, a future they never explicitly agreed on.\n\nEva announces an achievement and seeks a response from her father. He responds to the destination and to what he believes he has sacrificed. The conversation has not yet established that Eva ever promised to stay.\n\nThe tutoring may have cost the family real opportunities, and his wish for recognition could be reasonable. Acknowledging sacrifice and accepting a daughter's autonomy are separate questions.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987"
+              "sources": ""
             },
             {
               "id": "narcissism-f1-l2-deep-evidence",
@@ -469,7 +469,7 @@
               "title": "Which two messages reveal the conflict?",
               "prompt": "Find the two lines that most directly show how this disagreement became personally meaningful.",
               "conceptId": "narcissism-f1-l2-deep-concept",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987",
+              "sources": "",
               "segments": [
                 {
                   "id": "narcissism-f1-l2-deep-evidence-0",
@@ -534,7 +534,7 @@
               "speakerA": "Eva",
               "speakerB": "Dad",
               "prompt": "Explore the conversation. Investigate the message, the possible motive and what evidence would change your interpretation.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987",
+              "sources": "",
               "turns": [
                 {
                   "id": "narcissism-f1-l2-deep-turn-0",
@@ -677,11 +677,11 @@
                   "options": [
                     {
                       "id": "narcissism-f1-l2-deep-check-0-option-0",
-                      "label": "It establishes a binding agreement to work in the family business."
+                      "label": "He is describing a real sacrifice and asking Eva to recognise how her departure affects his plans."
                     },
                     {
                       "id": "narcissism-f1-l2-deep-check-0-option-1",
-                      "label": "It proves the father intends to harm Eva."
+                      "label": "He assumes family investment creates reciprocal duties, even though the scholarship choice was never formally discussed."
                     },
                     {
                       "id": "narcissism-f1-l2-deep-check-0-option-2",
@@ -703,11 +703,11 @@
                     },
                     {
                       "id": "narcissism-f1-l2-deep-check-1-option-1",
-                      "label": "Whether Eva has ever disagreed with him before."
+                      "label": "Whether he can support her moving after she agrees to regular contact, while still expressing sadness."
                     },
                     {
                       "id": "narcissism-f1-l2-deep-check-1-option-2",
-                      "label": "Whether he can remember the exact date of her application."
+                      "label": "Whether he continues pressing her to stay if the family business has reliable replacement staffing."
                     }
                   ],
                   "answer": "narcissism-f1-l2-deep-check-1-option-0",
@@ -721,7 +721,7 @@
                   "options": [
                     {
                       "id": "narcissism-f1-l2-deep-check-2-option-0",
-                      "label": "Whether the father has a warm tone for the first five seconds."
+                      "label": "Whether he can discuss his disappointment without requiring Eva to agree with him."
                     },
                     {
                       "id": "narcissism-f1-l2-deep-check-2-option-1",
@@ -729,7 +729,7 @@
                     },
                     {
                       "id": "narcissism-f1-l2-deep-check-2-option-2",
-                      "label": "Whether Eva can argue that he has never done anything for her."
+                      "label": "Whether he sees her leaving as a financial problem that can be addressed through another arrangement."
                     }
                   ],
                   "answer": "narcissism-f1-l2-deep-check-2-option-1",
@@ -743,11 +743,11 @@
                   "options": [
                     {
                       "id": "narcissism-f1-l2-deep-check-3-option-0",
-                      "label": "Eva must leave home immediately because the messages identify a disorder."
+                      "label": "Eva could first negotiate a timeline for her departure while assessing the scholarship's conditions."
                     },
                     {
                       "id": "narcissism-f1-l2-deep-check-3-option-1",
-                      "label": "Eva should abandon the scholarship to avoid her father's distress."
+                      "label": "Eva could invite a family meeting about the business's future before giving her father a final answer."
                     },
                     {
                       "id": "narcissism-f1-l2-deep-check-3-option-2",
@@ -781,7 +781,7 @@
               "conceptId": "narcissism-entitlement-versus-healthy-confidence",
               "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -808,7 +808,7 @@
               "conceptId": "narcissism-f1-l2-deep-concept",
               "explanation": "The actual agreement sets one boundary; the researcher's changing emotional response may have several explanations. Earlier conduct weakens a fixed character claim but does not make the new obligation real.",
               "counterexample": "An additional documented commitment or essential handover responsibility would still need to be considered.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -837,7 +837,7 @@
               "conceptId": "narcissism-f1-l2-deep-concept",
               "explanation": "Entitlement concerns the expectation itself, especially when it is not reciprocally justified.",
               "counterexample": "Neither volume nor manners are reliable tests of a person's underlying trait. The question is whether an expectation remains reasonable when the same standard is applied to everyone affected, and whether the person can revise it when credible evidence arrives.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -853,14 +853,14 @@
               "type": "read",
               "title": "Use the explanation in everyday life",
               "body": "Eva can discuss future contact and any real business obligations without accepting that studying away makes her unloving. She may also decide how much emotional argument she can safely engage in.\n\nA direct confrontation about his supposed narcissism would add little information and could make an already painful discussion more adversarial.\n\nAgree what practical decision must be made now and which relational concerns need a separate conversation when both are ready.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987"
+              "sources": ""
             }
           ]
         },
         {
           "id": "narcissism-f1-l3",
           "title": "The brilliant partner and the private collapse",
-          "version": 4,
+          "version": 5,
           "standard": "deep-10",
           "durationMinutes": 13,
           "editorialStatus": "ready",
@@ -870,7 +870,7 @@
           "transferPrompt": "Use the same method with a different parent, partner, school or workplace case, without copying the answer.",
           "glossary": [],
           "evidenceSummary": "The Pincus–Lukowitsky model distinguishes grandiose and vulnerable manifestations without treating them as separate fixed personalities. In psychodynamic clinical work, shame and an unstable self-image may be relevant, but acute stress and perfectionism remain meaningful alternatives.",
-          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026).",
+          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026). Editorial update (20 Nov 2026): tested competing answer choices for contextual plausibility; source attribution separated from fictional cases. Independent expert review remains outstanding.",
           "recommendedType": "investigation",
           "nodes": [
             {
@@ -878,7 +878,7 @@
               "type": "read",
               "title": "The actual situation",
               "body": "Jules has recently been praised publicly for starting a company. Noor, their partner, helped with the accounts and noticed a serious error in the investor deck. The evening begins after a successful launch party.\n\nThe practical dispute concerns an investor slide. Jules's concern about inaccurate figures is checkable. Noor's response is about the meaning of acknowledging a mistake in the presence of a partner.\n\nJules might have raised the issue in a poor moment. Timing can affect emotion even when the information is valid.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Narcissistic Personality Disorder: Progress in Recognition and Treatment"
+              "sources": ""
             },
             {
               "id": "narcissism-f1-l3-deep-investigation",
@@ -889,7 +889,7 @@
               "speakerA": "Jules",
               "speakerB": "Noor",
               "prompt": "Explore the conversation. Investigate the message, the possible motive and what evidence would change your interpretation.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Narcissistic Personality Disorder: Progress in Recognition and Treatment",
+              "sources": "",
               "turns": [
                 {
                   "id": "narcissism-f1-l3-deep-turn-0",
@@ -1032,7 +1032,7 @@
                   "options": [
                     {
                       "id": "narcissism-f1-l3-deep-check-0-option-0",
-                      "label": "Noor asks Jules to stay after the argument."
+                      "label": "Noor asks for Jules's company immediately after the setback, suggesting the relationship remains important."
                     },
                     {
                       "id": "narcissism-f1-l3-deep-check-0-option-1",
@@ -1040,7 +1040,7 @@
                     },
                     {
                       "id": "narcissism-f1-l3-deep-check-0-option-2",
-                      "label": "Noor wants investor numbers checked before publication."
+                      "label": "Noor's concern about investor scrutiny suggests a practical reputational risk independent of self-worth."
                     }
                   ],
                   "answer": "narcissism-f1-l3-deep-check-0-option-1",
@@ -1058,11 +1058,11 @@
                     },
                     {
                       "id": "narcissism-f1-l3-deep-check-1-option-1",
-                      "label": "Whether Noor knows the definition of projection."
+                      "label": "Whether Jules's silence has previously communicated contempt when financial errors arose."
                     },
                     {
                       "id": "narcissism-f1-l3-deep-check-1-option-2",
-                      "label": "Whether silent people are always abusive."
+                      "label": "Whether Noor reacts similarly to technical corrections offered by investors rather than a partner."
                     }
                   ],
                   "answer": "narcissism-f1-l3-deep-check-1-option-0",
@@ -1076,11 +1076,11 @@
                   "options": [
                     {
                       "id": "narcissism-f1-l3-deep-check-2-option-0",
-                      "label": "A permanent diagnosis has been ruled out."
+                      "label": "Noor may have shifted from a defensive state to more flexible thinking after the immediate stress passed."
                     },
                     {
                       "id": "narcissism-f1-l3-deep-check-2-option-1",
-                      "label": "Jules should never mention technical errors again."
+                      "label": "Noor may have learned a more acceptable way to discuss the mistake without yet changing future behaviour."
                     },
                     {
                       "id": "narcissism-f1-l3-deep-check-2-option-2",
@@ -1098,7 +1098,7 @@
                   "options": [
                     {
                       "id": "narcissism-f1-l3-deep-check-3-option-0",
-                      "label": "Tell Noor they really are the sole reason the company exists."
+                      "label": "Jules could pause the figures discussion until Noor is less overwhelmed while setting a definite time to return."
                     },
                     {
                       "id": "narcissism-f1-l3-deep-check-3-option-1",
@@ -1106,7 +1106,7 @@
                     },
                     {
                       "id": "narcissism-f1-l3-deep-check-3-option-2",
-                      "label": "Hide the errors until Noor receives more praise."
+                      "label": "Jules could first ask what Noor heard in the silence before reviewing the spreadsheet together."
                     }
                   ],
                   "answer": "narcissism-f1-l3-deep-check-3-option-1",
@@ -1129,7 +1129,7 @@
               "conceptId": "narcissism-grandiose-and-vulnerable-expressions",
               "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Narcissistic Personality Disorder: Progress in Recognition and Treatment",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -1162,7 +1162,7 @@
               "title": "Which two messages reveal the conflict?",
               "prompt": "Find the two lines that most directly show how this disagreement became personally meaningful.",
               "conceptId": "narcissism-f1-l3-deep-concept",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Narcissistic Personality Disorder: Progress in Recognition and Treatment",
+              "sources": "",
               "segments": [
                 {
                   "id": "narcissism-f1-l3-deep-evidence-0",
@@ -1225,7 +1225,7 @@
               "conceptId": "narcissism-f1-l3-deep-concept",
               "explanation": "They can acknowledge a flaw and keep working. The initial defensive language still occurred, but repeated rigidity is not established by it.",
               "counterexample": "Sustained patterns under different pressures would matter more than either evening alone.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Narcissistic Personality Disorder: Progress in Recognition and Treatment",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -1254,7 +1254,7 @@
               "conceptId": "narcissism-f1-l3-deep-concept",
               "explanation": "Vulnerability describes one dimension of experience, not a fixed separate type of person.",
               "counterexample": "What moves the narcissism hypothesis forward is not one painful feeling but a broader pattern in which exceptional standing, other people's recognition and difficulties in reciprocity organise how the person functions. A competing explanation must be taken seriously when it predicts the evidence equally well.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Narcissistic Personality Disorder: Progress in Recognition and Treatment",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -1270,14 +1270,14 @@
               "type": "read",
               "title": "Use the explanation in everyday life",
               "body": "The most useful next move is to preserve both facts: the deck needs a correction, and Noor is frightened by what that seems to say about them. Jules can offer to work together without agreeing the error proves worthlessness.\n\nOffering comfort cannot require agreeing to publish unsupported numbers. Nor does accuracy demand humiliating Noor.\n\nAsk whether Noor can remain in the conversation long enough to revise the slide and acknowledge how they reacted.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Narcissistic Personality Disorder: Progress in Recognition and Treatment"
+              "sources": ""
             }
           ]
         },
         {
           "id": "narcissism-f2-l1",
           "title": "Second place and the story nobody is allowed to challenge",
-          "version": 4,
+          "version": 5,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -1287,7 +1287,7 @@
           "transferPrompt": "Use the same method with a different parent, partner, school or workplace case, without copying the answer.",
           "glossary": [],
           "evidenceSummary": "Social comparison and self-worth models help explain why another person's success can be experienced as exposure. Narcissistic grandiosity can involve antagonistic responses to threatened status, but competitive disappointment is widespread and no diagnosis follows from this case.",
-          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026).",
+          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026). Editorial update (20 Nov 2026): tested competing answer choices for contextual plausibility; source attribution separated from fictional cases. Independent expert review remains outstanding.",
           "recommendedType": "investigation",
           "nodes": [
             {
@@ -1295,7 +1295,7 @@
               "type": "read",
               "title": "The actual situation",
               "body": "Ellis loses a school science prize to a younger classmate, Farah. He sees himself as the student teachers turn to for difficult problems. Tessa knows Farah's winning project well.\n\nEllis has lost a particular competition. His early response questions whether Farah's work counts as 'proper science'. That is a claim about evaluation that could, in principle, be checked.\n\nHe may have observed genuine favouritism or inconsistent criteria, even if his tone is unfair.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Krizan & Herlache (2018), The Narcissism Spectrum Model, https://doi.org/10.1177/1088868316685018"
+              "sources": ""
             },
             {
               "id": "narcissism-f2-l1-deep-investigation",
@@ -1306,7 +1306,7 @@
               "speakerA": "Ellis",
               "speakerB": "Tessa",
               "prompt": "Explore the conversation. Investigate the message, the possible motive and what evidence would change your interpretation.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Krizan & Herlache (2018), The Narcissism Spectrum Model, https://doi.org/10.1177/1088868316685018",
+              "sources": "",
               "turns": [
                 {
                   "id": "narcissism-f2-l1-deep-turn-0",
@@ -1453,11 +1453,11 @@
                     },
                     {
                       "id": "narcissism-f2-l1-deep-check-0-option-1",
-                      "label": "The judges necessarily violated age rules."
+                      "label": "Ellis may be questioning whether the judges applied the criteria consistently across age groups."
                     },
                     {
                       "id": "narcissism-f2-l1-deep-check-0-option-2",
-                      "label": "Ellis has no possible legitimate concern about the scoring."
+                      "label": "Ellis may be using age as a proxy for differences in access to equipment or supervision."
                     }
                   ],
                   "answer": "narcissism-f2-l1-deep-check-0-option-0",
@@ -1471,11 +1471,11 @@
                   "options": [
                     {
                       "id": "narcissism-f2-l1-deep-check-1-option-0",
-                      "label": "Whether Ellis looked upset when the prize was announced."
+                      "label": "Compare how the two projects were scored on the same published criteria."
                     },
                     {
                       "id": "narcissism-f2-l1-deep-check-1-option-1",
-                      "label": "Whether Farah usually gets along with Tessa."
+                      "label": "Examine whether the judging panel had undisclosed relationships with either student."
                     },
                     {
                       "id": "narcissism-f2-l1-deep-check-1-option-2",
@@ -1493,7 +1493,7 @@
                   "options": [
                     {
                       "id": "narcissism-f2-l1-deep-check-2-option-0",
-                      "label": "Ellis is now guaranteed never to envy anyone."
+                      "label": "Ellis may be using a more socially acceptable account of his disappointment after reading the rubric."
                     },
                     {
                       "id": "narcissism-f2-l1-deep-check-2-option-1",
@@ -1501,7 +1501,7 @@
                     },
                     {
                       "id": "narcissism-f2-l1-deep-check-2-option-2",
-                      "label": "His disappointment was previously dishonest."
+                      "label": "Ellis may have gained specific information about his method that reduces the threat posed by Farah's win."
                     }
                   ],
                   "answer": "narcissism-f2-l1-deep-check-2-option-1",
@@ -1515,11 +1515,11 @@
                   "options": [
                     {
                       "id": "narcissism-f2-l1-deep-check-3-option-0",
-                      "label": "Repeat Ellis's accusation publicly so he feels supported."
+                      "label": "Tessa could suggest Ellis requests the detailed scores before discussing claims about Farah."
                     },
                     {
                       "id": "narcissism-f2-l1-deep-check-3-option-1",
-                      "label": "Tell him his feelings are irrational and should end immediately."
+                      "label": "Tessa could ask Ellis to separate the factual scoring complaint from how losing affected his confidence."
                     },
                     {
                       "id": "narcissism-f2-l1-deep-check-3-option-2",
@@ -1538,7 +1538,7 @@
               "title": "Which two messages reveal the conflict?",
               "prompt": "Find the two lines that most directly show how this disagreement became personally meaningful.",
               "conceptId": "narcissism-f2-l1-deep-concept",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Krizan & Herlache (2018), The Narcissism Spectrum Model, https://doi.org/10.1177/1088868316685018",
+              "sources": "",
               "segments": [
                 {
                   "id": "narcissism-f2-l1-deep-evidence-0",
@@ -1608,7 +1608,7 @@
               "conceptId": "narcissism-external-validation-and-unstable-self-evaluation",
               "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Krizan & Herlache (2018), The Narcissism Spectrum Model, https://doi.org/10.1177/1088868316685018",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -1642,7 +1642,7 @@
               "conceptId": "narcissism-f2-l1-deep-concept",
               "explanation": "A procedural problem and a fair overall outcome can coexist. The evidence does not justify dismissing either the scoring correction or the actual winner's work.",
               "counterexample": "A separate violation of the assessment criteria could still alter the judgement.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Krizan & Herlache (2018), The Narcissism Spectrum Model, https://doi.org/10.1177/1088868316685018",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -1671,7 +1671,7 @@
               "conceptId": "narcissism-f2-l1-deep-concept",
               "explanation": "External validation can be useful; dependence on it becomes costly when it governs self-worth.",
               "counterexample": "Looking only for reassurance can also become an obstacle: the performer may stop attending to comments that identify where to improve. The useful distinction is between feedback that updates a skill judgement and feedback treated as proof of personal worth.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Krizan & Herlache (2018), The Narcissism Spectrum Model, https://doi.org/10.1177/1088868316685018",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -1687,7 +1687,7 @@
               "type": "read",
               "title": "Use the explanation in everyday life",
               "body": "A useful reply can recognise Ellis's disappointment without endorsing unsupported attacks on Farah. A later request for scoring feedback may serve him better than public accusations.\n\nIf the scoring procedure is genuinely flawed, students should have a route to challenge it fairly.\n\nAsk for a specific reviewable concern, and watch whether the claim becomes more precise or simply moves to another insult.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Krizan & Herlache (2018), The Narcissism Spectrum Model, https://doi.org/10.1177/1088868316685018"
+              "sources": ""
             }
           ]
         }
@@ -1711,7 +1711,7 @@
         {
           "id": "narcissism-f2-l2",
           "title": "The joke nobody was supposed to question",
-          "version": 4,
+          "version": 5,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -1721,7 +1721,7 @@
           "transferPrompt": "Use the same method with a different parent, partner, school or workplace case, without copying the answer.",
           "glossary": [],
           "evidenceSummary": "Psychodynamic accounts distinguish a perceived threat to a valued self-image from a person's actual conduct. Empathy research also warns against treating one insensitive response as a permanent inability to understand others.",
-          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026).",
+          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026). Editorial update (20 Nov 2026): tested competing answer choices for contextual plausibility; source attribution separated from fictional cases. Independent expert review remains outstanding.",
           "recommendedType": "investigation",
           "nodes": [
             {
@@ -1729,7 +1729,7 @@
               "type": "read",
               "title": "The actual situation",
               "body": "In a group chat, Riley makes a joke about Amal's accent shortly before Amal gives a presentation. Amal asks Riley privately to stop. Riley is a well-liked organiser whose humour usually attracts attention.\n\nAmal asks for one concrete behaviour to stop. Riley never directly explains why continuing the imitation is necessary. The immediate subject is not whether Riley is a good person.\n\nThe help may be substantial and Riley may feel unrecognised. That feeling deserves a hearing without purchasing permission to mock Amal.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495"
+              "sources": ""
             },
             {
               "id": "narcissism-f2-l2-deep-investigation",
@@ -1740,7 +1740,7 @@
               "speakerA": "Riley",
               "speakerB": "Amal",
               "prompt": "Explore the conversation. Investigate the message, the possible motive and what evidence would change your interpretation.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495",
+              "sources": "",
               "turns": [
                 {
                   "id": "narcissism-f2-l2-deep-turn-0",
@@ -1883,7 +1883,7 @@
                   "options": [
                     {
                       "id": "narcissism-f2-l2-deep-check-0-option-0",
-                      "label": "Riley disputes whether anyone laughed."
+                      "label": "Riley may be distressed because they believe Amal's criticism was made publicly rather than privately."
                     },
                     {
                       "id": "narcissism-f2-l2-deep-check-0-option-1",
@@ -1891,7 +1891,7 @@
                     },
                     {
                       "id": "narcissism-f2-l2-deep-check-0-option-2",
-                      "label": "Amal gives Riley no opportunity to respond."
+                      "label": "Riley may be defending a shared group norm of teasing rather than interpreting it as an attack on identity."
                     }
                   ],
                   "answer": "narcissism-f2-l2-deep-check-0-option-1",
@@ -1905,11 +1905,11 @@
                   "options": [
                     {
                       "id": "narcissism-f2-l2-deep-check-1-option-0",
-                      "label": "Whether Riley is popular in the group."
+                      "label": "Whether Riley keeps imitating Amal after they have acknowledged the hurt and agreed on a different joke."
                     },
                     {
                       "id": "narcissism-f2-l2-deep-check-1-option-1",
-                      "label": "Whether the joke was originally intended to entertain."
+                      "label": "Whether Riley can accept a private request to stop even when their friends still find the imitation funny."
                     },
                     {
                       "id": "narcissism-f2-l2-deep-check-1-option-2",
@@ -1931,11 +1931,11 @@
                     },
                     {
                       "id": "narcissism-f2-l2-deep-check-2-option-1",
-                      "label": "The original imitation was harmless all along."
+                      "label": "Riley may have changed conduct because social consequences became more noticeable."
                     },
                     {
                       "id": "narcissism-f2-l2-deep-check-2-option-2",
-                      "label": "Amal was mistaken to raise the issue."
+                      "label": "Riley may be trying to restore the friendship through a concrete adjustment without resolving every disagreement."
                     }
                   ],
                   "answer": "narcissism-f2-l2-deep-check-2-option-0",
@@ -1949,11 +1949,11 @@
                   "options": [
                     {
                       "id": "narcissism-f2-l2-deep-check-3-option-0",
-                      "label": "Challenge Riley to prove their self-worth is stable."
+                      "label": "Amal could describe the effect of the imitation and ask Riley how they understood the request."
                     },
                     {
                       "id": "narcissism-f2-l2-deep-check-3-option-1",
-                      "label": "Ask the group to agree that Riley has a personality disorder."
+                      "label": "Amal could request that the group set a clear guideline on jokes made before presentations."
                     },
                     {
                       "id": "narcissism-f2-l2-deep-check-3-option-2",
@@ -1979,7 +1979,7 @@
               "title": "Which two messages reveal the conflict?",
               "prompt": "Find the two lines that most directly show how this disagreement became personally meaningful.",
               "conceptId": "narcissism-f2-l2-deep-concept",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495",
+              "sources": "",
               "segments": [
                 {
                   "id": "narcissism-f2-l2-deep-evidence-0",
@@ -2049,7 +2049,7 @@
               "conceptId": "narcissism-empathy-and-self-focused-attention",
               "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -2076,7 +2076,7 @@
               "conceptId": "narcissism-f2-l2-deep-concept",
               "explanation": "Two experiences remain present: the parent feels criticised and the teenager has been hurt. Stopping the action is evidence of repair, not proof that it never mattered.",
               "counterexample": "A repeated pattern of restarting the comments would weaken the conclusion about sustained change.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -2105,7 +2105,7 @@
               "conceptId": "narcissism-f2-l2-deep-concept",
               "explanation": "Empathy can involve understanding, feeling with and responding to someone; these components need not be identical.",
               "counterexample": "Do they repair the harm once it is pointed out? Answers to those questions provide better evidence than deciding that one insensitive sentence reveals a whole personality.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -2122,14 +2122,14 @@
               "type": "read",
               "title": "Use the explanation in everyday life",
               "body": "A useful resolution separates the behaviour from the relationship: the imitation stops, and Riley can describe feeling hurt without using that feeling to cancel the request.\n\nIf Amal faces retaliation within the group, raising the issue through a trusted organiser may be safer.\n\nChoose an achievable behavioural change and examine whether it occurs over time.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495"
+              "sources": ""
             }
           ]
         },
         {
           "id": "narcissism-f2-l3",
           "title": "When somebody else's pain interrupts your own story",
-          "version": 4,
+          "version": 5,
           "standard": "deep-10",
           "durationMinutes": 11,
           "editorialStatus": "ready",
@@ -2139,7 +2139,7 @@
           "transferPrompt": "Use the same method with a different parent, partner, school or workplace case, without copying the answer.",
           "glossary": [],
           "evidenceSummary": "Empathy in narcissistic functioning is heterogeneous: the ability to understand another perspective and the ability to respond sensitively can be affected differently. A workplace or family vignette is insufficient to establish stable deficits.",
-          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026).",
+          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026). Editorial update (20 Nov 2026): tested competing answer choices for contextual plausibility; source attribution separated from fictional cases. Independent expert review remains outstanding.",
           "recommendedType": "investigation",
           "nodes": [
             {
@@ -2147,7 +2147,7 @@
               "type": "read",
               "title": "The actual situation",
               "body": "Nina is Soren's sister. She has just lost her job and is worried about the rent. Soren is organising a family holiday and fears that cancellation will look like a failure of his planning.\n\nNina reports an immediate loss and a practical fear. Soren responds with a holiday deposit. The mismatch between what Nina needs and what Soren addresses is observable.\n\nThe holiday is a real shared commitment and may require discussion soon.",
-              "sources": "Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215"
+              "sources": ""
             },
             {
               "id": "narcissism-f2-l3-deep-evidence",
@@ -2155,7 +2155,7 @@
               "title": "Which two messages reveal the conflict?",
               "prompt": "Find the two lines that most directly show how this disagreement became personally meaningful.",
               "conceptId": "narcissism-f2-l3-deep-concept",
-              "sources": "Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "segments": [
                 {
                   "id": "narcissism-f2-l3-deep-evidence-0",
@@ -2220,7 +2220,7 @@
               "speakerA": "Soren",
               "speakerB": "Nina",
               "prompt": "Explore the conversation. Investigate the message, the possible motive and what evidence would change your interpretation.",
-              "sources": "Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "turns": [
                 {
                   "id": "narcissism-f2-l3-deep-turn-0",
@@ -2367,11 +2367,11 @@
                     },
                     {
                       "id": "narcissism-f2-l3-deep-check-0-option-1",
-                      "label": "'The deposit is due tonight.'"
+                      "label": "'The deposit is due tonight.' could explain why Soren initially prioritises the booking."
                     },
                     {
                       "id": "narcissism-f2-l3-deep-check-0-option-2",
-                      "label": "'I didn't realise I'd made this about my reputation.'"
+                      "label": "'I didn't realise I'd made this about my reputation.' may show he recognised a conflict after Nina challenged him."
                     }
                   ],
                   "answer": "narcissism-f2-l3-deep-check-0-option-0",
@@ -2385,7 +2385,7 @@
                   "options": [
                     {
                       "id": "narcissism-f2-l3-deep-check-1-option-0",
-                      "label": "Whether Nina usually enjoys holidays."
+                      "label": "Whether the deposit would be forfeited if they delayed the decision."
                     },
                     {
                       "id": "narcissism-f2-l3-deep-check-1-option-1",
@@ -2393,7 +2393,7 @@
                     },
                     {
                       "id": "narcissism-f2-l3-deep-check-1-option-2",
-                      "label": "Whether Soren knows a psychological definition of empathy."
+                      "label": "Whether other guests would incur non-refundable costs if the booking were cancelled."
                     }
                   ],
                   "answer": "narcissism-f2-l3-deep-check-1-option-1",
@@ -2407,11 +2407,11 @@
                   "options": [
                     {
                       "id": "narcissism-f2-l3-deep-check-2-option-0",
-                      "label": "The earlier insensitive responses become irrelevant."
+                      "label": "Soren's question could be an attempt to repair the conversation without yet understanding Nina's concern."
                     },
                     {
                       "id": "narcissism-f2-l3-deep-check-2-option-1",
-                      "label": "Nina's feelings are now guaranteed to be resolved."
+                      "label": "He may be temporarily setting aside the logistical issue and returning to it once Nina is heard."
                     },
                     {
                       "id": "narcissism-f2-l3-deep-check-2-option-2",
@@ -2433,11 +2433,11 @@
                     },
                     {
                       "id": "narcissism-f2-l3-deep-check-3-option-1",
-                      "label": "A single bad reply is conclusive evidence of an absence of empathy."
+                      "label": "Someone may recognise another's need in private yet struggle to do so when a public reputation is threatened."
                     },
                     {
                       "id": "narcissism-f2-l3-deep-check-3-option-2",
-                      "label": "Being upset about your own plans always makes empathy impossible."
+                      "label": "Someone may show concern but still lack capacity to provide the specific practical help requested."
                     }
                   ],
                   "answer": "narcissism-f2-l3-deep-check-3-option-0",
@@ -2467,7 +2467,7 @@
               "conceptId": "narcissism-social-comparison-and-envy",
               "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
-              "sources": "Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -2494,7 +2494,7 @@
               "conceptId": "narcissism-f2-l3-deep-concept",
               "explanation": "The constraint matters and the repair matters. Neither observation alone settles a stable trait; together they give a more complete account of what happened.",
               "counterexample": "If the pupil remained unsupported after the meeting, the account of successful repair would weaken.",
-              "sources": "Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -2523,7 +2523,7 @@
               "conceptId": "narcissism-f2-l3-deep-concept",
               "explanation": "Comparison can inform goals, but the meaning assigned to rank determines its consequences.",
               "counterexample": "We should not use psychology to dismiss legitimate complaints. Equally, a plausible complaint should not excuse spreading unsupported accusations about a colleague.",
-              "sources": "Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -2539,14 +2539,14 @@
               "type": "read",
               "title": "Use the explanation in everyday life",
               "body": "Nina can ask for the conversation she needs without explaining Soren's psychology to him. Soren can acknowledge a missed need and then revisit the deposit once Nina has been heard.\n\nIf the deposit truly expires within minutes, some immediate logistical decision might be necessary.\n\nAgree when to return to practical planning so Nina's distress does not disappear from view.",
-              "sources": "Ronningstam (2015), Empathy in Narcissistic Personality Disorder, PMCID:PMC4415495; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215"
+              "sources": ""
             }
           ]
         },
         {
           "id": "narcissism-m1-l1",
           "title": "From 'you're extraordinary' to 'you were never worth knowing'",
-          "version": 4,
+          "version": 5,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -2556,7 +2556,7 @@
           "transferPrompt": "Use the same method with a different parent, partner, school or workplace case, without copying the answer.",
           "glossary": [],
           "evidenceSummary": "Psychodynamic formulations sometimes examine shifts between idealisation and devaluation as ways of protecting self-coherence after disappointment. Such shifts also arise in non-pathological relationships and cannot be equated automatically with a specific diagnosis.",
-          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026).",
+          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026). Editorial update (20 Nov 2026): tested competing answer choices for contextual plausibility; source attribution separated from fictional cases. Independent expert review remains outstanding.",
           "recommendedType": "investigation",
           "nodes": [
             {
@@ -2564,7 +2564,7 @@
               "type": "read",
               "title": "The actual situation",
               "body": "Imogen admired her friend Kareem after he helped her through a difficult academic year. They have since worked on a joint project. Kareem has just told her he cannot cover her part of an approaching deadline.\n\nImogen's first line elevates Kareem into a unique source of understanding. The immediate dispute concerns whether Kareem agreed to complete work for her.\n\nKareem may have used broad promises in the past that reasonably created expectations.",
-              "sources": "Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215"
+              "sources": ""
             },
             {
               "id": "narcissism-m1-l1-deep-investigation",
@@ -2575,7 +2575,7 @@
               "speakerA": "Imogen",
               "speakerB": "Kareem",
               "prompt": "Explore the conversation. Investigate the message, the possible motive and what evidence would change your interpretation.",
-              "sources": "Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "turns": [
                 {
                   "id": "narcissism-m1-l1-deep-turn-0",
@@ -2718,7 +2718,7 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l1-deep-check-0-option-0",
-                      "label": "It accurately summarises every action Kareem ever took."
+                      "label": "Imogen could be expressing that a serious broken commitment changed how she interprets earlier favours."
                     },
                     {
                       "id": "narcissism-m1-l1-deep-check-0-option-1",
@@ -2726,7 +2726,7 @@
                     },
                     {
                       "id": "narcissism-m1-l1-deep-check-0-option-2",
-                      "label": "It proves Imogen consciously intended to manipulate him."
+                      "label": "Imogen may be focusing on the current unmet need rather than deliberately erasing the history."
                     }
                   ],
                   "answer": "narcissism-m1-l1-deep-check-0-option-1",
@@ -2744,11 +2744,11 @@
                     },
                     {
                       "id": "narcissism-m1-l1-deep-check-1-option-1",
-                      "label": "Whether Imogen likes their shared project."
+                      "label": "Whether Kareem previously sent a clear message agreeing to complete that task."
                     },
                     {
                       "id": "narcissism-m1-l1-deep-check-1-option-2",
-                      "label": "Whether Kareem is generally quiet in groups."
+                      "label": "Whether Imogen communicated the deadline and Kareem acknowledged being responsible for it."
                     }
                   ],
                   "answer": "narcissism-m1-l1-deep-check-1-option-0",
@@ -2762,11 +2762,11 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l1-deep-check-2-option-0",
-                      "label": "Her original hurt was entirely fabricated."
+                      "label": "Imogen may be willing to reconsider her interpretation after receiving evidence about the agreement."
                     },
                     {
                       "id": "narcissism-m1-l1-deep-check-2-option-1",
-                      "label": "Kareem is now proven flawless."
+                      "label": "Imogen may recognise the practical dispute was exaggerated while still feeling let down by the timing."
                     },
                     {
                       "id": "narcissism-m1-l1-deep-check-2-option-2",
@@ -2784,7 +2784,7 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l1-deep-check-3-option-0",
-                      "label": "Argue about which friend is psychologically healthier."
+                      "label": "Agree how to complete the remaining work before discussing whether this changes trust between them."
                     },
                     {
                       "id": "narcissism-m1-l1-deep-check-3-option-1",
@@ -2792,7 +2792,7 @@
                     },
                     {
                       "id": "narcissism-m1-l1-deep-check-3-option-2",
-                      "label": "Promise unlimited help to prevent future disappointment."
+                      "label": "Ask what each person understood from the original agreement and assess the costs of the missed task."
                     }
                   ],
                   "answer": "narcissism-m1-l1-deep-check-3-option-1",
@@ -2815,7 +2815,7 @@
               "conceptId": "narcissism-idealisation-and-devaluation",
               "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
-              "sources": "Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -2848,7 +2848,7 @@
               "title": "Which two messages reveal the conflict?",
               "prompt": "Find the two lines that most directly show how this disagreement became personally meaningful.",
               "conceptId": "narcissism-m1-l1-deep-concept",
-              "sources": "Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "segments": [
                 {
                   "id": "narcissism-m1-l1-deep-evidence-0",
@@ -2911,7 +2911,7 @@
               "conceptId": "narcissism-m1-l1-deep-concept",
               "explanation": "The specific event now has a substantial explanation. A fair judgement about the friendship should include it without erasing any genuine recurring disagreements.",
               "counterexample": "A longer history of neglect could remain important even after a justified cancellation.",
-              "sources": "Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -2940,7 +2940,7 @@
               "conceptId": "narcissism-m1-l1-deep-concept",
               "explanation": "Devaluation is a process of lowering someone in the person's evaluation; it may appear after disappointment, but does not by itself establish a disorder.",
               "counterexample": "It is to retain distinctions between an observed harmful action and claims that the whole person is either perfect or worthless. When evidence changes, judgement should change too; the question is whether it changes in proportion to what is known.",
-              "sources": "Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -2957,14 +2957,14 @@
               "type": "read",
               "title": "Use the explanation in everyday life",
               "body": "A proportionate next step makes the agreement explicit. Kareem can recognise Imogen's worry about the deadline while not accepting a global judgement of his character. Imogen can ask for a workable form of help.\n\nIf the friendship is repeatedly demeaning, Kareem may need stronger limits rather than another task negotiation.\n\nLook at both the practical outcome and whether each person can keep a realistic, mixed picture of the other.",
-              "sources": "Diamond et al. (2020), Principles of Psychodynamic Treatment for Patients With Narcissistic Personality Disorder, PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215"
+              "sources": ""
             }
           ]
         },
         {
           "id": "narcissism-m1-l2",
           "title": "The apology that asks to be comforted",
-          "version": 4,
+          "version": 5,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -2974,7 +2974,7 @@
           "transferPrompt": "Use the same method with a different parent, partner, school or workplace case, without copying the answer.",
           "glossary": [],
           "evidenceSummary": "Psychodynamic work on narcissistic difficulties examines shame and problems regulating the self in relationships. In a practical incident, the strength of remorse does not establish whether the harm has been repaired.",
-          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026).",
+          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026). Editorial update (20 Nov 2026): tested competing answer choices for contextual plausibility; source attribution separated from fictional cases. Independent expert review remains outstanding.",
           "recommendedType": "investigation",
           "nodes": [
             {
@@ -2982,7 +2982,7 @@
               "type": "read",
               "title": "The actual situation",
               "body": "Owen accidentally posted Sasha's confidential appointment details to a work channel. Sasha saw them before the post was removed. Owen is upset by how colleagues now see him.\n\nThe urgent fact is a confidentiality breach. Sasha asks for a specific action that could reduce ongoing exposure. Owen's statements primarily concern how the breach reflects on him.\n\nOwen's genuine distress could make coherent action difficult for a short period.",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215"
+              "sources": ""
             },
             {
               "id": "narcissism-m1-l2-deep-investigation",
@@ -2993,7 +2993,7 @@
               "speakerA": "Owen",
               "speakerB": "Sasha",
               "prompt": "Explore the conversation. Investigate the message, the possible motive and what evidence would change your interpretation.",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "turns": [
                 {
                   "id": "narcissism-m1-l2-deep-turn-0",
@@ -3136,7 +3136,7 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l2-deep-check-0-option-0",
-                      "label": "He expresses distress after making a serious mistake."
+                      "label": "His distress could be affecting the clarity of his explanation while the deletion process is already underway."
                     },
                     {
                       "id": "narcissism-m1-l2-deep-check-0-option-1",
@@ -3144,7 +3144,7 @@
                     },
                     {
                       "id": "narcissism-m1-l2-deep-check-0-option-2",
-                      "label": "He worries that formal consequences might follow."
+                      "label": "His fear of formal consequences could make him seek reassurance before he understands Sasha's immediate request."
                     }
                   ],
                   "answer": "narcissism-m1-l2-deep-check-0-option-1",
@@ -3158,11 +3158,11 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l2-deep-check-1-option-0",
-                      "label": "Whether he used dramatic language today."
+                      "label": "Whether he responds to direct requests for repair after the immediate incident has settled."
                     },
                     {
                       "id": "narcissism-m1-l2-deep-check-1-option-1",
-                      "label": "Whether Sasha has ever complimented him."
+                      "label": "Whether he takes responsibility for lower-stakes mistakes without needing Sasha to confirm his goodness."
                     },
                     {
                       "id": "narcissism-m1-l2-deep-check-1-option-2",
@@ -3184,11 +3184,11 @@
                     },
                     {
                       "id": "narcissism-m1-l2-deep-check-2-option-1",
-                      "label": "Sasha is no longer entitled to feel distressed."
+                      "label": "The deletion request might have been part of a procedural response rather than independent recognition of the harm."
                     },
                     {
                       "id": "narcissism-m1-l2-deep-check-2-option-2",
-                      "label": "Owen's words automatically become harmless."
+                      "label": "Sasha may still have valid concerns about copies circulating even if Owen moved quickly to remove the post."
                     }
                   ],
                   "answer": "narcissism-m1-l2-deep-check-2-option-0",
@@ -3202,11 +3202,11 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l2-deep-check-3-option-0",
-                      "label": "Sasha reassures Owen until he feels safe, then raises privacy."
+                      "label": "Sasha could request a clear written account of who saw the information and what has been done to contain it."
                     },
                     {
                       "id": "narcissism-m1-l2-deep-check-3-option-1",
-                      "label": "Sasha focuses solely on punishing Owen's personality."
+                      "label": "Owen could seek independent supervision for his distress while Sasha pursues the privacy process."
                     },
                     {
                       "id": "narcissism-m1-l2-deep-check-3-option-2",
@@ -3225,7 +3225,7 @@
               "title": "Which two messages reveal the conflict?",
               "prompt": "Find the two lines that most directly show how this disagreement became personally meaningful.",
               "conceptId": "narcissism-m1-l2-deep-concept",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "segments": [
                 {
                   "id": "narcissism-m1-l2-deep-evidence-0",
@@ -3295,7 +3295,7 @@
               "conceptId": "narcissism-accountability-versus-image-management",
               "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -3329,7 +3329,7 @@
               "conceptId": "narcissism-m1-l2-deep-concept",
               "explanation": "Practical action and the emotional demands of the apology must be assessed separately. The new documents change one judgement without settling the other.",
               "counterexample": "The information may already have been seen or copied; deletion may not fully repair the harm.",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -3358,7 +3358,7 @@
               "conceptId": "narcissism-m1-l2-deep-concept",
               "explanation": "Accountability involves action as well as recognition of what happened.",
               "counterexample": "Conversely, a calm apology may be insincere or may lead to effective repair. The quality of an apology is better judged through acknowledgement, practical action and changed future behaviour than through emotional intensity alone.",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -3374,7 +3374,7 @@
               "type": "read",
               "title": "Use the explanation in everyday life",
               "body": "Effective repair involves action and a truthful account of the harm. Owen can acknowledge his distress later with someone other than Sasha; Sasha can decide what further safeguards are necessary.\n\nThe appropriate reporting procedure may be governed by confidentiality policies that neither character can waive.\n\nVerify the policy and communicate the steps already taken without demanding forgiveness.",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215"
+              "sources": ""
             }
           ]
         }
@@ -3398,7 +3398,7 @@
         {
           "id": "narcissism-m1-l3",
           "title": "What did the family teach him to protect?",
-          "version": 4,
+          "version": 5,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -3408,7 +3408,7 @@
           "transferPrompt": "Use the same method with a different parent, partner, school or workplace case, without copying the answer.",
           "glossary": [],
           "evidenceSummary": "Developmental and psychodynamic accounts suggest how contingent recognition might shape later self-regulation. They are hypotheses requiring clinical assessment, not proof that a single parental behaviour caused adult narcissistic traits. A functional explanation must consider temperament, context and consequences.",
-          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026).",
+          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026). Editorial update (20 Nov 2026): tested competing answer choices for contextual plausibility; source attribution separated from fictional cases. Independent expert review remains outstanding.",
           "recommendedType": "investigation",
           "nodes": [
             {
@@ -3416,7 +3416,7 @@
               "type": "read",
               "title": "The actual situation",
               "body": "Lydia is Aaron's sister. Their father once praised Aaron as the gifted one and treated ordinary errors as embarrassing to the family. Aaron now struggles to accept help with the family business. Lydia is trying to reconstruct how that pattern developed without assuming childhood explains everything.\n\nThe siblings discuss specific remembered events and a recent business error. Memory of childhood should be treated as evidence offered by participants, not a complete recording of the past.\n\nHe might worry specifically about liability or reputation after an audit mistake, regardless of childhood.",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215"
+              "sources": ""
             },
             {
               "id": "narcissism-m1-l3-deep-investigation",
@@ -3427,7 +3427,7 @@
               "speakerA": "Aaron",
               "speakerB": "Lydia",
               "prompt": "Explore the conversation. Investigate the message, the possible motive and what evidence would change your interpretation.",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "turns": [
                 {
                   "id": "narcissism-m1-l3-deep-turn-0",
@@ -3570,11 +3570,11 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l3-deep-check-0-option-0",
-                      "label": "Every adult problem can be traced directly to a parent."
+                      "label": "Aaron's present reaction could reflect a learned association between mistakes and social disapproval."
                     },
                     {
                       "id": "narcissism-m1-l3-deep-check-0-option-1",
-                      "label": "Aaron has never had any personal responsibility for his choices."
+                      "label": "His account suggests dependence on achievement may have been rewarded at home, though memory remains selective."
                     },
                     {
                       "id": "narcissism-m1-l3-deep-check-0-option-2",
@@ -3596,11 +3596,11 @@
                     },
                     {
                       "id": "narcissism-m1-l3-deep-check-1-option-1",
-                      "label": "Whether Lydia is usually more expressive than Aaron."
+                      "label": "Whether Aaron responds differently to supportive supervisors than to critical ones."
                     },
                     {
                       "id": "narcissism-m1-l3-deep-check-1-option-2",
-                      "label": "Whether the father liked maths."
+                      "label": "Whether the anxiety appears mainly in tasks resembling earlier family expectations."
                     }
                   ],
                   "answer": "narcissism-m1-l3-deep-check-1-option-0",
@@ -3614,7 +3614,7 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l3-deep-check-2-option-0",
-                      "label": "Recognising family influence is always incorrect."
+                      "label": "The comment could help Aaron explore patterns if he has already independently raised the same concern."
                     },
                     {
                       "id": "narcissism-m1-l3-deep-check-2-option-1",
@@ -3622,7 +3622,7 @@
                     },
                     {
                       "id": "narcissism-m1-l3-deep-check-2-option-2",
-                      "label": "It invites Aaron to discuss how he remembers his father."
+                      "label": "The statement may collapse several contributing experiences into a single family explanation too early."
                     }
                   ],
                   "answer": "narcissism-m1-l3-deep-check-2-option-1",
@@ -3636,11 +3636,11 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l3-deep-check-3-option-0",
-                      "label": "Wait until Aaron agrees with a developmental hypothesis."
+                      "label": "Make an explicit agreement that errors will be reported without public humiliation, then review whether disclosure improves."
                     },
                     {
                       "id": "narcissism-m1-l3-deep-check-3-option-1",
-                      "label": "Ask the father to settle the meaning of every childhood incident."
+                      "label": "Repair the present reporting failure while exploring Aaron's fears of relying on colleagues."
                     },
                     {
                       "id": "narcissism-m1-l3-deep-check-3-option-2",
@@ -3666,7 +3666,7 @@
               "title": "Which two messages reveal the conflict?",
               "prompt": "Find the two lines that most directly show how this disagreement became personally meaningful.",
               "conceptId": "narcissism-m1-l3-deep-concept",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "segments": [
                 {
                   "id": "narcissism-m1-l3-deep-evidence-0",
@@ -3736,7 +3736,7 @@
               "conceptId": "narcissism-personality-dysfunction-and-impairment",
               "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -3763,7 +3763,7 @@
               "conceptId": "narcissism-m1-l3-deep-concept",
               "explanation": "Different behaviour across subjects suggests the perceived stakes matter. This refines a conditional-worth account and leaves room for competing causes.",
               "counterexample": "Retrospective accounts and school records cannot establish a single developmental cause.",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -3792,7 +3792,7 @@
               "conceptId": "narcissism-m1-l3-deep-concept",
               "explanation": "Impairment concerns meaningful difficulties in functioning; clinicians consider it alongside the pattern and context.",
               "counterexample": "It is not a reason to avoid a practical boundary while waiting for certainty. You may need to respond to exploitation or intimidation immediately, whether or not any diagnosis is present.",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -3808,14 +3808,14 @@
               "type": "read",
               "title": "Use the explanation in everyday life",
               "body": "The practical aim is a safer way to disclose and repair errors. Understanding Aaron's history might help tailor communication, yet the organisation still needs accurate records and transparent responsibility.\n\nLydia cannot force Aaron to adopt a psychodynamic account of himself.\n\nAgree on who corrects the audit, and keep personal history as a tentative question rather than a verdict.",
-              "sources": "Diamond et al. (2020), PMID:32186987; Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215"
+              "sources": ""
             }
           ]
         },
         {
           "id": "narcissism-m1-l4",
           "title": "Two clinicians, one assessment: why the diagnosis is not obvious",
-          "version": 4,
+          "version": 5,
           "standard": "deep-10",
           "durationMinutes": 11,
           "editorialStatus": "ready",
@@ -3825,7 +3825,7 @@
           "transferPrompt": "Use the same method with a different parent, partner, school or workplace case, without copying the answer.",
           "glossary": [],
           "evidenceSummary": "Pincus and Lukowitsky describe disagreement across research and clinical definitions of pathological narcissism. Assessment must consider grandiosity and vulnerability, functioning and severity; questionnaire items are not equivalent to diagnosis. Dimensional approaches also matter.",
-          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026).",
+          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026). Editorial update (20 Nov 2026): tested competing answer choices for contextual plausibility; source attribution separated from fictional cases. Independent expert review remains outstanding.",
           "recommendedType": "investigation",
           "nodes": [
             {
@@ -3833,7 +3833,7 @@
               "type": "read",
               "title": "The actual situation",
               "body": "A fictional adult, Theo, has repeated relationship disputes and speaks openly about wanting professional recognition. Two clinicians review the same referral. One saw Theo after a humiliating redundancy; the other has information from several years of work and relationships.\n\nTheo reportedly boasts, reacts angrily to criticism and experiences shame after a major loss. Those are observations and reports at different levels of reliability.\n\nThe first clinician may have seen behaviour important enough to justify an immediate provisional assessment.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Initial Construction and Validation of the Pathological Narcissism Inventory, doi:10.1037/a0016530"
+              "sources": ""
             },
             {
               "id": "narcissism-m1-l4-deep-evidence",
@@ -3841,7 +3841,7 @@
               "title": "Which two messages reveal the conflict?",
               "prompt": "Find the two lines that most directly show how this disagreement became personally meaningful.",
               "conceptId": "narcissism-m1-l4-deep-concept",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Initial Construction and Validation of the Pathological Narcissism Inventory, doi:10.1037/a0016530",
+              "sources": "",
               "segments": [
                 {
                   "id": "narcissism-m1-l4-deep-evidence-0",
@@ -3906,7 +3906,7 @@
               "speakerA": "Dr Shaw",
               "speakerB": "Dr Malik",
               "prompt": "Explore the conversation. Investigate the message, the possible motive and what evidence would change your interpretation.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Initial Construction and Validation of the Pathological Narcissism Inventory, doi:10.1037/a0016530",
+              "sources": "",
               "turns": [
                 {
                   "id": "narcissism-m1-l4-deep-turn-0",
@@ -4049,7 +4049,7 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l4-deep-check-0-option-0",
-                      "label": "It guarantees that all grandiosity was temporary."
+                      "label": "The timing may help distinguish enduring traits from responses to a recent professional loss."
                     },
                     {
                       "id": "narcissism-m1-l4-deep-check-0-option-1",
@@ -4057,7 +4057,7 @@
                     },
                     {
                       "id": "narcissism-m1-l4-deep-check-0-option-2",
-                      "label": "A clinician cannot assess personality after redundancy."
+                      "label": "The redundancy may shape what Theo emphasises during a first meeting without determining his longer history."
                     }
                   ],
                   "answer": "narcissism-m1-l4-deep-check-0-option-1",
@@ -4075,11 +4075,11 @@
                     },
                     {
                       "id": "narcissism-m1-l4-deep-check-1-option-1",
-                      "label": "A single strong questionnaire score."
+                      "label": "Accounts from several settings spanning years, corroborated where appropriate and assessed for actual impairment."
                     },
                     {
                       "id": "narcissism-m1-l4-deep-check-1-option-2",
-                      "label": "The fact that Theo described his work proudly."
+                      "label": "Interviews showing the same problems before and after recovery from the immediate crisis."
                     }
                   ],
                   "answer": "narcissism-m1-l4-deep-check-1-option-0",
@@ -4093,11 +4093,11 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l4-deep-check-2-option-0",
-                      "label": "It conclusively establishes a named personality disorder."
+                      "label": "The scale might be screening a particular trait dimension rather than assessing disorder-level impairment."
                     },
                     {
                       "id": "narcissism-m1-l4-deep-check-2-option-1",
-                      "label": "All scales called narcissism measure identical features."
+                      "label": "Different subscales might reflect grandiose features and vulnerable features that require separate interpretation."
                     },
                     {
                       "id": "narcissism-m1-l4-deep-check-2-option-2",
@@ -4115,7 +4115,7 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l4-deep-check-3-option-0",
-                      "label": "Use the more senior clinician's title to decide."
+                      "label": "Clarify which clinically relevant observations both interviews agree about before reconciling the formulations."
                     },
                     {
                       "id": "narcissism-m1-l4-deep-check-3-option-1",
@@ -4123,7 +4123,7 @@
                     },
                     {
                       "id": "narcissism-m1-l4-deep-check-3-option-2",
-                      "label": "Record neither hypothesis because certainty is impossible."
+                      "label": "Seek additional longitudinal information and examine how each clinician weighted the same evidence."
                     }
                   ],
                   "answer": "narcissism-m1-l4-deep-check-3-option-1",
@@ -4153,7 +4153,7 @@
               "conceptId": "narcissism-measurement-validity-and-research-interpretation",
               "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Initial Construction and Validation of the Pathological Narcissism Inventory, doi:10.1037/a0016530",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -4180,7 +4180,7 @@
               "conceptId": "narcissism-m1-l4-deep-concept",
               "explanation": "The operational definitions differ. The papers may be examining related but distinct dimensions; neither label guarantees clinical validity.",
               "counterexample": "If validated convergent evidence later shows the scales measure the same latent construct, direct comparison becomes more appropriate.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Initial Construction and Validation of the Pathological Narcissism Inventory, doi:10.1037/a0016530",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -4209,7 +4209,7 @@
               "conceptId": "narcissism-m1-l4-deep-concept",
               "explanation": "Validity concerns the evidence for an interpretation; reliability alone cannot establish it.",
               "counterexample": "An association between shame and a scale does not prove that one caused the other. A careful reader asks how participants were selected, which alternative variables were measured and whether conclusions apply beyond the sampled group.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Initial Construction and Validation of the Pathological Narcissism Inventory, doi:10.1037/a0016530",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -4225,14 +4225,14 @@
               "type": "read",
               "title": "Use the explanation in everyday life",
               "body": "The clinicians should leave with an assessment plan rather than a scripted certainty. The person described is more than the most salient behaviour from an interview.\n\nA credible provisional formulation may still be warranted when the available evidence is serious.\n\nSpecify what information would change the conclusion and how it affects the next care decision.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Pincus et al. (2009), Initial Construction and Validation of the Pathological Narcissism Inventory, doi:10.1037/a0016530"
+              "sources": ""
             }
           ]
         },
         {
           "id": "narcissism-m1-l5",
           "title": "How to recognise change when the words sound the same",
-          "version": 4,
+          "version": 5,
           "standard": "deep-10",
           "durationMinutes": 11,
           "editorialStatus": "ready",
@@ -4242,7 +4242,7 @@
           "transferPrompt": "Use the same method with a different parent, partner, school or workplace case, without copying the answer.",
           "glossary": [],
           "evidenceSummary": "Clinical treatment writing discusses shame, interpersonal patterns and self-regulation, but strong disorder-specific outcome trials are limited. Observed repair across time is a more defensible sign of improvement than statements of insight alone.",
-          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026).",
+          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026). Editorial update (20 Nov 2026): tested competing answer choices for contextual plausibility; source attribution separated from fictional cases. Independent expert review remains outstanding.",
           "recommendedType": "investigation",
           "nodes": [
             {
@@ -4250,7 +4250,7 @@
               "type": "read",
               "title": "The actual situation",
               "body": "Nico has begun therapy after repeated arguments in which criticism led to rage and long periods of silence. Harper is their partner. Nico says a therapist has helped him understand why he feels exposed.\n\nThe practical issue is an unpaid bill. Nico describes a familiar reaction and one new behaviour: pausing before returning to the question.\n\nInsight can genuinely reduce shame and open the door to new choices.",
-              "sources": "Diamond et al. (2020), PMID:32186987; A Mentalizing Approach for Narcissistic Personality Disorder (2021), doi:10.1176/appi.psychotherapy.20210017"
+              "sources": ""
             },
             {
               "id": "narcissism-m1-l5-deep-investigation",
@@ -4261,7 +4261,7 @@
               "speakerA": "Nico",
               "speakerB": "Harper",
               "prompt": "Explore the conversation. Investigate the message, the possible motive and what evidence would change your interpretation.",
-              "sources": "Diamond et al. (2020), PMID:32186987; A Mentalizing Approach for Narcissistic Personality Disorder (2021), doi:10.1176/appi.psychotherapy.20210017",
+              "sources": "",
               "turns": [
                 {
                   "id": "narcissism-m1-l5-deep-turn-0",
@@ -4404,11 +4404,11 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l5-deep-check-0-option-0",
-                      "label": "Nico uses the word 'shame' correctly."
+                      "label": "Nico can now recognise a defensive response as it happens, which may precede a change in behaviour."
                     },
                     {
                       "id": "narcissism-m1-l5-deep-check-0-option-1",
-                      "label": "Nico can explain the origins of his anger."
+                      "label": "Nico has begun taking ownership of the concrete issue, even if the original emotions are still present."
                     },
                     {
                       "id": "narcissism-m1-l5-deep-check-0-option-2",
@@ -4430,11 +4430,11 @@
                     },
                     {
                       "id": "narcissism-m1-l5-deep-check-1-option-1",
-                      "label": "Ask Nico to repeat the definition of narcissistic vulnerability."
+                      "label": "Whether improvements persist during more consequential disagreements outside therapy sessions."
                     },
                     {
                       "id": "narcissism-m1-l5-deep-check-1-option-2",
-                      "label": "Check whether Harper gives sufficient compliments immediately afterward."
+                      "label": "Whether Harper observes a more consistent capacity to return to disputes after periods of withdrawal."
                     }
                   ],
                   "answer": "narcissism-m1-l5-deep-check-1-option-0",
@@ -4448,7 +4448,7 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l5-deep-check-2-option-0",
-                      "label": "The relationship becomes free from criticism."
+                      "label": "Harper may feel pressured to become the regulator of Nico's emotions before her concern is heard."
                     },
                     {
                       "id": "narcissism-m1-l5-deep-check-2-option-1",
@@ -4456,7 +4456,7 @@
                     },
                     {
                       "id": "narcissism-m1-l5-deep-check-2-option-2",
-                      "label": "Nico has no legitimate wish for comfort."
+                      "label": "A rule requiring reassurance could reward withdrawal by removing the original criticism."
                     }
                   ],
                   "answer": "narcissism-m1-l5-deep-check-2-option-1",
@@ -4470,11 +4470,11 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l5-deep-check-3-option-0",
-                      "label": "One therapeutic insight permanently cures narcissistic patterns."
+                      "label": "The observed progress can justify cautious hope while further follow-up assesses its durability."
                     },
                     {
                       "id": "narcissism-m1-l5-deep-check-3-option-1",
-                      "label": "Change is impossible in anyone with such difficulties."
+                      "label": "Treatment may improve some responses before other patterns change, requiring a more targeted evaluation."
                     },
                     {
                       "id": "narcissism-m1-l5-deep-check-3-option-2",
@@ -4501,7 +4501,7 @@
               "conceptId": "narcissism-treatment-change-and-psychological-formulation",
               "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
-              "sources": "Diamond et al. (2020), PMID:32186987; A Mentalizing Approach for Narcissistic Personality Disorder (2021), doi:10.1176/appi.psychotherapy.20210017",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -4534,7 +4534,7 @@
               "title": "Which two messages reveal the conflict?",
               "prompt": "Find the two lines that most directly show how this disagreement became personally meaningful.",
               "conceptId": "narcissism-m1-l5-deep-concept",
-              "sources": "Diamond et al. (2020), PMID:32186987; A Mentalizing Approach for Narcissistic Personality Disorder (2021), doi:10.1176/appi.psychotherapy.20210017",
+              "sources": "",
               "segments": [
                 {
                   "id": "narcissism-m1-l5-deep-evidence-0",
@@ -4597,7 +4597,7 @@
               "conceptId": "narcissism-m1-l5-deep-concept",
               "explanation": "The repeated successful repairs count, and so does the lapse. The pattern and conditions of each matter when judging improvement over time.",
               "counterexample": "The partner's safety and experience remain relevant even when average functioning improves.",
-              "sources": "Diamond et al. (2020), PMID:32186987; A Mentalizing Approach for Narcissistic Personality Disorder (2021), doi:10.1176/appi.psychotherapy.20210017",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -4626,7 +4626,7 @@
               "conceptId": "narcissism-m1-l5-deep-concept",
               "explanation": "A formulation organises evidence and guides change; it is tested and revised as new information appears.",
               "counterexample": "A person seeking help may also need to work with shame that makes it hard to acknowledge their conduct. Naming those barriers explains why treatment can be difficult; it does not transfer responsibility to somebody else.",
-              "sources": "Diamond et al. (2020), PMID:32186987; A Mentalizing Approach for Narcissistic Personality Disorder (2021), doi:10.1176/appi.psychotherapy.20210017",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -4643,14 +4643,14 @@
               "type": "read",
               "title": "Use the explanation in everyday life",
               "body": "Harper can watch sustained conduct without promising unconditional forgiveness. Nico's explanation helps him take responsibility only when it leads to action rather than a new reason to avoid it.\n\nIf conflicts involve threats, safety considerations take priority over collaborative exercises.\n\nUse observable goals and time-based review, keeping the option to change boundaries if harm persists.",
-              "sources": "Diamond et al. (2020), PMID:32186987; A Mentalizing Approach for Narcissistic Personality Disorder (2021), doi:10.1176/appi.psychotherapy.20210017"
+              "sources": ""
             }
           ]
         },
         {
           "id": "narcissism-m1-l6",
           "title": "Four accounts of the same relationship",
-          "version": 4,
+          "version": 5,
           "standard": "deep-10",
           "durationMinutes": 12,
           "editorialStatus": "ready",
@@ -4660,7 +4660,7 @@
           "transferPrompt": "Use the same method with a different parent, partner, school or workplace case, without copying the answer.",
           "glossary": [],
           "evidenceSummary": "An integrative case formulation distinguishes observed conduct, self-regulatory hypotheses and institutional incentives. Grandiose and vulnerable processes are plausible theoretical frameworks; no fictional organisational record can certify an individual personality disorder.",
-          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026).",
+          "staffReview": "Substantive editorial redraft using the named references. Independent clinical review, live accessibility testing and learner outcome research remain outstanding (November 2026). Editorial update (20 Nov 2026): tested competing answer choices for contextual plausibility; source attribution separated from fictional cases. Independent expert review remains outstanding.",
           "recommendedType": "investigation",
           "nodes": [
             {
@@ -4668,7 +4668,7 @@
               "type": "read",
               "title": "The actual situation",
               "body": "Celeste directs a small arts organisation. Rohan is an employee whose proposal was included in an award submission under Celeste's name. Staff describe Celeste as inspiring in public and punitive in private. An independent reviewer has the correspondence and several interviews.\n\nThe proposal authorship and award wording are checkable. The characters agree Celeste secured funding, which establishes a real contribution. The dispute is whether that contribution justifies naming her as the originator.\n\nHer leadership burden may be genuinely unrecognised, and the dispute may provide a legitimate occasion to discuss it.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987; Ronningstam (2015), PMCID:PMC4415495"
+              "sources": ""
             },
             {
               "id": "narcissism-m1-l6-deep-investigation",
@@ -4679,7 +4679,7 @@
               "speakerA": "Celeste",
               "speakerB": "Rohan",
               "prompt": "Explore the conversation. Investigate the message, the possible motive and what evidence would change your interpretation.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987; Ronningstam (2015), PMCID:PMC4415495",
+              "sources": "",
               "turns": [
                 {
                   "id": "narcissism-m1-l6-deep-turn-0",
@@ -4826,11 +4826,11 @@
                     },
                     {
                       "id": "narcissism-m1-l6-deep-check-0-option-1",
-                      "label": "Any leader may rightfully claim all work by employees."
+                      "label": "The record may show separate legitimate contributions despite conflict over how they were described."
                     },
                     {
                       "id": "narcissism-m1-l6-deep-check-0-option-2",
-                      "label": "The organisation's needs automatically cancel authorship."
+                      "label": "The dispute may involve both attribution and organisational incentives that rewarded public sole authorship."
                     }
                   ],
                   "answer": "narcissism-m1-l6-deep-check-0-option-0",
@@ -4844,7 +4844,7 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l6-deep-check-1-option-0",
-                      "label": "Whether Celeste dresses confidently at public events."
+                      "label": "Observe whether Celeste credits independent contributions when no public award is involved."
                     },
                     {
                       "id": "narcissism-m1-l6-deep-check-1-option-1",
@@ -4852,7 +4852,7 @@
                     },
                     {
                       "id": "narcissism-m1-l6-deep-check-1-option-2",
-                      "label": "Whether she reports feeling tired after funding meetings."
+                      "label": "Compare her responses to colleagues' recognition when the funding consequences are absent."
                     }
                   ],
                   "answer": "narcissism-m1-l6-deep-check-1-option-1",
@@ -4866,11 +4866,11 @@
                   "options": [
                     {
                       "id": "narcissism-m1-l6-deep-check-2-option-0",
-                      "label": "Every staff complaint is now disproven."
+                      "label": "The dated co-authorship record changes the factual claim without settling Celeste's reactions to disagreement."
                     },
                     {
                       "id": "narcissism-m1-l6-deep-check-2-option-1",
-                      "label": "The board must give the prize to one person."
+                      "label": "The board can credit the original idea jointly while still investigating whether later reports of mistreatment are substantiated."
                     },
                     {
                       "id": "narcissism-m1-l6-deep-check-2-option-2",
@@ -4892,11 +4892,11 @@
                     },
                     {
                       "id": "narcissism-m1-l6-deep-check-3-option-1",
-                      "label": "A single hidden motive that explains every message."
+                      "label": "A defensible formulation should explain when institutional incentives matter and which claims need further checking."
                     },
                     {
                       "id": "narcissism-m1-l6-deep-check-3-option-2",
-                      "label": "That both parties are equally responsible for all consequences."
+                      "label": "A useful conclusion should identify separately what the board can correct and what requires further assessment."
                     }
                   ],
                   "answer": "narcissism-m1-l6-deep-check-3-option-0",
@@ -4911,7 +4911,7 @@
               "title": "Which two messages reveal the conflict?",
               "prompt": "Find the two lines that most directly show how this disagreement became personally meaningful.",
               "conceptId": "narcissism-m1-l6-deep-concept",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987; Ronningstam (2015), PMCID:PMC4415495",
+              "sources": "",
               "segments": [
                 {
                   "id": "narcissism-m1-l6-deep-evidence-0",
@@ -4981,7 +4981,7 @@
               "conceptId": "narcissism-integrative-formulation-and-proportionate-boundaries",
               "explanation": "The first account fits the present words most directly. The other accounts may also help explain the behaviour, but need more evidence.",
               "counterexample": "New information about circumstances, incentives or repeated conduct may change the ranking.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987; Ronningstam (2015), PMCID:PMC4415495",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -5015,7 +5015,7 @@
               "conceptId": "narcissism-m1-l6-deep-concept",
               "explanation": "The documents resolve part of the attribution dispute by specifying who did what. The director's relational behaviour remains a separate matter.",
               "counterexample": "The external award may have formal categories that require carefully defined lead-applicant terminology.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987; Ronningstam (2015), PMCID:PMC4415495",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -5044,7 +5044,7 @@
               "conceptId": "narcissism-m1-l6-deep-concept",
               "explanation": "Formulation is a revisable account, not an identity assigned from one behaviour.",
               "counterexample": "The safest account separates four questions: what happened, what seems to maintain it, what additional evidence could change the explanation and what the organisation is responsible for doing now. Those answers can differ without contradiction.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987; Ronningstam (2015), PMCID:PMC4415495",
+              "sources": "",
               "image": "",
               "alt": "",
               "caption": "",
@@ -5061,7 +5061,7 @@
               "type": "read",
               "title": "Use the explanation in everyday life",
               "body": "A responsible outcome corrects the record where warranted and creates a fair attribution process. The psychological formulation remains open; whether Celeste meets clinical criteria is a separate question requiring assessment.\n\nIf raising concerns exposes staff to retaliation, independent handling and safeguards are essential.\n\nState which claims are established, what remains uncertain and which actions follow without waiting for a diagnosis.",
-              "sources": "Pincus & Lukowitsky (2010), doi:10.1146/annurev.clinpsy.121208.131215; Diamond et al. (2020), PMID:32186987; Ronningstam (2015), PMCID:PMC4415495"
+              "sources": ""
             }
           ]
         }
