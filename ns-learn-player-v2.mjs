@@ -90,7 +90,11 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    const extra=node.type==='update'?'<div class="ns-learn-player__new-evidence"><strong>New evidence</strong><p>'+esc(node.newEvidence)+'</p></div>':node.type==='perspective'?'<div class="ns-learn-player__viewpoints"><div><strong>View A</strong><p>'+esc(node.viewA)+'</p></div><div><strong>View B</strong><p>'+esc(node.viewB)+'</p></div></div>':'';
    return extra+choiceSet('choice',node.options,state.checked?state.answers[node.id]||'':'',!!state.checked);
   }
-  if(node.type==='complete')return '<label class="ns-learn-player__label">Your answer<input name="recall" type="text" maxlength="180" autocomplete="off" placeholder="'+esc(node.hint||'Type your answer')+'"></label>';
+  if(node.type==='complete'){
+   if(Array.isArray(node.wordBank)&&node.wordBank.length>=2)return '<p class="ns-learn-player__label">Choose the term that best completes the idea.</p>'+
+    choiceSet('recall-choice',node.wordBank.map(word=>({id:word,label:word})));
+   return '<label class="ns-learn-player__label">Your answer<input name="recall" type="text" maxlength="180" autocomplete="off" placeholder="'+esc(node.hint||'Type your answer')+'"></label>';
+  }
   if(node.type==='match'||node.type==='sort'){
    const list=node.type==='match'?node.pairs:node.items;
    const choices=node.type==='match'?node.pairs.map(p=>({id:p.answer,label:p.answer})):node.categories;
@@ -117,7 +121,8 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    return root.querySelector('input[name="life-choice"]:checked')?.value||state.lifeChoice||null;
   }
   if(['choose','respond','repair','investigate','update','perspective'].includes(node.type))return root.querySelector('input[name="choice"]:checked')?.value||null;
-  if(node.type==='complete')return root.querySelector('input[name="recall"]')?.value||'';
+  if(node.type==='complete')return (Array.isArray(node.wordBank)&&node.wordBank.length>=2?
+    root.querySelector('input[name="recall-choice"]:checked')?.value:root.querySelector('input[name="recall"]')?.value)||'';
   if(['match','sort'].includes(node.type))return Object.fromEntries([...root.querySelectorAll('[data-pair]')].map(x=>[x.dataset.pair,x.value]));
   if(['sequence','chain','rank'].includes(node.type))return [...state.order];
   if(node.type==='label')return [...state.labels];
