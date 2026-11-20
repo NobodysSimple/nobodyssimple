@@ -5,7 +5,7 @@
  * Future learning material ships only through reviewed published bundles.
  */
 import {LEARN_COURSES,COURSE_CATEGORIES,LESSON_FORMATS,getLearnCourse,filterLearnCourses} from './ns-learn-catalog-v2.mjs';
-import {publishedLearnBundle,renderLearnLesson} from './ns-learn-player-v2.mjs?v=profile-drills-20261120-r2';
+import {publishedLearnBundle,renderLearnLesson} from './ns-learn-player-v2.mjs?v=steady-scroll-20261120';
 import {readLearnProgress,learnCourseProgress,dueLearnReviews} from './ns-learn-progress-v2.mjs?v=profile-drills-20261120-r2';
 import {getLearnIndex,hasPublishedLearnCourse,loadPublishedLearnIndex,loadPublishedLearnBundle} from './ns-learn-content-v2.mjs';
 export const LEARN_COURSE_IDEAS=LEARN_COURSES;
