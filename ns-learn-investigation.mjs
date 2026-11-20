@@ -62,10 +62,28 @@ export function renderInvestigation(node,state,esc,choiceSet){
  const reflection='<label class="ns-inquiry__note"><strong>What is your reading of this moment?</strong>'+
   '<span>Try an explanation before opening the analysis. You can leave this empty if you want a worked example.</span>'+
   '<textarea data-investigation-note rows="3" maxlength="1000" placeholder="What might this response achieve? What else could explain it?">'+esc(note)+'</textarea></label>';
- const analysis=opened?'<div class="ns-inquiry__revealed" role="region" aria-label="Expert working interpretation">'+
-  '<h3>One account supported by the exchange</h3><p>'+esc(layer.analysis||'')+'</p>'+
+ const mindRoute=Number(state.investigationRoutes?.[stage]||0);
+ const inner=(stage===4||stage===5)?'<div class="ns-inquiry__mind">'+
+  '<h3>Inside the head: test two possible accounts</h3>'+
+  '<p>These are proposed explanations, not a recording of anyone’s thoughts.</p>'+
+  '<div class="ns-inquiry__mind-choice" role="group" aria-label="Choose a hypothetical explanation">'+
+  '<button type="button" data-investigation-route="0" aria-pressed="'+(mindRoute===0)+'">Threat or inner conflict</button>'+
+  '<button type="button" data-investigation-route="1" aria-pressed="'+(mindRoute===1)+'">Alternative explanation</button></div>'+
+  '<p class="ns-inquiry__mind-text">'+esc(mindRoute===0?layer.analysis:layer.alternative)+'</p>'+
+  '<h3>What evidence might distinguish them?</h3><p>'+esc(layer.test||'')+'</p></div>':'';
+ const loop=layer.loop&&stage===7?layer.loop:null;
+ const loopKeys=['trigger','response','recipient','cycle','alternative'];
+ const loopNames=['What started it','Possible response from the first person','How the other person may respond','What may reinforce the cycle','One route that may interrupt it'];
+ const shown=Math.max(1,Math.min(5,Number(state.investigationLoopSteps?.[stage]||1)));
+ const loopView=loop?'<div class="ns-inquiry__loop"><h3>Relationship loop · two people, one evolving exchange</h3>'+
+  '<ol>'+loopKeys.slice(0,shown).map((key,i)=>'<li><strong>'+loopNames[i]+'</strong><p>'+esc(loop[key]||'')+'</p></li>').join('')+'</ol>'+
+  (shown<5?'<button type="button" data-investigation-loop-next>See the next effect →</button>':'<p class="ns-inquiry__loop-end">The possible cycle is complete. Compare it with the messages and ask which links still need evidence.</p>')+
+  '</div>':'';
+ const ordinary=!(stage===4||stage===5)?'<h3>One account supported by the exchange</h3><p>'+esc(layer.analysis||'')+'</p>'+
   '<h3>A different explanation worth considering</h3><p>'+esc(layer.alternative||'')+'</p>'+
-  '<h3>Which evidence could distinguish them?</h3><p>'+esc(layer.test||'')+'</p>'+
+  '<h3>Which evidence could distinguish them?</h3><p>'+esc(layer.test||'')+'</p>':'';
+ const analysis=opened?'<div class="ns-inquiry__revealed" role="region" aria-label="Expert working interpretation">'+
+  (inner||ordinary)+loopView+
   '<p class="ns-inquiry__uncertainty">These are working explanations of a fictional scene. A plausible account is not direct access to a person’s private motives.</p>'+
   '</div>':
   '<button type="button" class="ns-inquiry__open" data-investigation-open>Compare with the psychological analysis →</button>';
