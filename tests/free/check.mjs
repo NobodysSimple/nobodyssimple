@@ -1,7 +1,12 @@
 import {readFileSync,readdirSync,existsSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
-for(const f of readdirSync('.').filter(x=>x.endsWith('.mjs')||x==='sw.js'))execFileSync(process.execPath,['--check',f]);
+const syntaxErrors=[];
+for(const f of readdirSync('.').filter(x=>x.endsWith('.mjs')||x==='sw.js')) {
+  try { execFileSync(process.execPath,['--check',f],{stdio:'pipe'}); }
+  catch(error) { syntaxErrors.push(`${f}:\n${String(error.stderr||error.message)}`); }
+}
+if (syntaxErrors.length) throw new Error(`JavaScript syntax errors (${syntaxErrors.length}):\n${syntaxErrors.join('\n\n')}`);
 const html=readFileSync('index.html','utf8');assert.ok(html.includes('account.css'));assert.ok(html.includes('href="#guide"'));assert.ok(html.includes('href="#discussion"'));assert.ok(!html.includes('href="#maps"'));
 // Stage 8: account modules are loaded on demand and cache only as public
 // static JS/CSS files. They no longer have to be in the install precache.
