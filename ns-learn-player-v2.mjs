@@ -42,6 +42,14 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const home='#learn/course/'+encodeURIComponent(courseId);
  const unitIndex=Math.max(1,(bundle?.modules||[]).findIndex(m=>(m.lessons||[]).some(l=>l.id===lessonId))+1);
  if(!lesson){root.innerHTML='<section class="ns-learn-player"><a href="'+home+'">← Back to course</a><h1>No published lesson found</h1><p>This course has no available lesson at that address.</p></section>';return;}
+ if(lesson.authoringType==='contingent-self-worth'){
+  root.innerHTML='<div class="ns-learn-loading" role="status">Opening this lesson…</div>';
+  import('./ns-contingent-selfworth-player.mjs?v=20261121-authored-1').then(module=>{
+   if(root.isConnected)module.renderContingentWorthLesson(root,bundle,lesson,{review,preview});
+  }).catch(err=>{
+   if(root.isConnected)root.innerHTML='<section class="ns-learn-error"><h1>Could not open this lesson</h1><p>'+esc(String(err?.message||err))+'</p><a href="#learn/course/'+encodeURIComponent(courseId)+'">Return to course</a></section>';
+  });return;
+ }
  if(lesson.atlasRecord)return renderStrategyLesson(root,bundle,lesson,{review,preview});
  const scramble=items=>{
   const result=[...(items||[])];

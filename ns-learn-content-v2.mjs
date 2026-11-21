@@ -48,6 +48,27 @@ export async function loadPublishedLearnBundle(id){
  if(errors.length||bundle.version!==record.version)throw Error('Published course failed validation: '+errors.slice(0,3).join('; '));
  const atlasSource=await loadStrategyAtlas();
  const strategyBundle=buildStrategyBundle(bundle,atlasSource);
+ if(id==='self-esteem'){
+  const authoredResponse=await fetch(new URL('contingent-self-worth-unit.json?v=20261121-authored-1',base),{cache:'no-store'});
+  if(!authoredResponse.ok)throw Error('The contingent self-worth unit could not be downloaded ('+authoredResponse.status+').');
+  const authored=await authoredResponse.json();
+  if(authored?.id!=='contingent-self-worth'||authored?.screenCount!==80||authored.lessons?.length!==8||authored.reviews?.length!==3||authored.intro?.screens?.length!==2)throw Error('Incomplete contingent self-worth unit publication.');
+  const isGraded=s=>s.paragraphs?.some(p=>/^(?:Correct answer|Best answer|Best-supported answer|Best-supported response):\s*[A-D]/i.test(p))||s.id==='2.3';
+  const toLesson=(entry,reviewDelayDays=0)=>({
+   id:entry.id,title:entry.title,version:1,number:entry.number||'',authoringType:'contingent-self-worth',
+   editorialStatus:'authored',screens:entry.screens,checkCount:entry.screens.filter(isGraded).length,
+   reviewDelayDays,objective:entry.teachingPurpose||'Practise recognising and responding to contingent self-worth.'
+  });
+  const opening=toLesson({...authored.intro,title:'Welcome · When worth depends on outcomes'});
+  const teaching=authored.lessons.map(entry=>toLesson(entry));
+  const reviews=authored.reviews.map((entry,i)=>toLesson(entry,[1,7,21][i]));
+  strategyBundle.modules=[
+   {id:'self-esteem-authored-contingent-worth',kind:'authored',title:authored.title,lessons:[opening,...teaching]},
+   {id:'self-esteem-contingent-worth-reviews',kind:'review',title:'Return to what you have learnt',lessons:reviews},
+   ...strategyBundle.modules
+  ];
+  strategyBundle.authoredUnitCount=8;
+ }
  bundles.set(id,strategyBundle);
  return strategyBundle;
 }
