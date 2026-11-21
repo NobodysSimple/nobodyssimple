@@ -59,3 +59,38 @@ test('the first entire authored lesson can be completed with different activity 
  await expect(page.locator('.csw-finish')).toContainText('Lesson progress saved');
  await expect.poll(()=>page.evaluate(()=>Object.keys(JSON.parse(localStorage.getItem('ns-account-learning-v2')||'{}')).some(k=>k.includes('csw-lesson-1')))).toBe(true);
 });
+
+test('all eight authored lessons, introduction and three review activities are playable from start to completion',async({page})=>{
+ test.setTimeout(240000);
+ const ids=['csw-introduction',...Array.from({length:8},(_,i)=>'csw-lesson-'+(i+1)),...Array.from({length:3},(_,i)=>'csw-review-'+(i+1))];
+ for(const id of ids){
+  await page.goto('/index.html#learn/lesson/self-esteem/'+id);
+  await expect(page.locator('.csw-unit')).toBeVisible({timeout:30000});
+  for(let step=0;step<160;step++){
+   if(await page.locator('.csw-finish').count())break;
+   if(await page.locator('[data-more-dialogue]').count()){await page.locator('[data-more-dialogue]').click();continue;}
+   if(await page.locator('.csw-flip:not(.is-open)').count()){await page.locator('.csw-flip:not(.is-open)').first().click();continue;}
+   if(await page.locator('[data-reveal]').count()){await page.locator('[data-reveal]').click();continue;}
+   if(await page.locator('[data-check-sort]').count()){
+    const rows=await page.locator('.csw-sort-item').count();
+    for(let i=0;i<rows;i++)await page.locator('.csw-sort-item').nth(i).locator('[data-sort]').first().click();
+    await page.locator('[data-check-sort]').click();continue;
+   }
+   if(await page.locator('[data-add]').count()){await page.locator('[data-add]').first().click();continue;}
+   if(await page.locator('[data-check-sequence]').count()){await page.locator('[data-check-sequence]').click();continue;}
+   if(await page.locator('[data-check]').count()){
+    await page.locator('.csw-option').first().click();
+    await page.locator('[data-check]').click();continue;
+   }
+   if(await page.locator('[data-next]').count()){
+    await expect(page.locator('[data-next]'),id+' has a disabled Continue button').toBeEnabled();
+    await page.locator('[data-next]').click();continue;
+   }
+   throw Error(id+' is stuck on '+await page.locator('.csw-heading h1').textContent());
+  }
+  await expect(page.locator('.csw-finish'),id+' did not finish').toBeVisible();
+  await expect(page.locator('.csw-finish'),id+' failed to save').toContainText('Lesson progress saved');
+ }
+ const keys=await page.evaluate(()=>Object.keys(JSON.parse(localStorage.getItem('ns-account-learning-v2')||'{}')));
+ for(const id of ids)expect(keys.some(k=>k.includes(id)),id+' missing completion').toBe(true);
+});
