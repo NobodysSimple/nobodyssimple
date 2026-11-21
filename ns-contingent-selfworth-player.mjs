@@ -5,7 +5,7 @@
  */
 import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs?v=psy-atlas-20261120';
 const esc=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-const STAMP='20261121-v1';
+const STAMP='20261121-v2';
 const ANSWERS={'1.3':'C','2.3':'B','5.4':'A'};
 const COMPARE=new Set(['5.4','6.8']);
 const JOURNAL={
@@ -46,7 +46,7 @@ const SEQUENCE={
 };
 const DIALOGUES=new Set(['1.2','3.1','4.1','5.1','7.1','7.8']);
 const OPEN_REVIEW=new Set(['2.6']);
-const NOTE=/^(Interaction note:|Design note:|No question yet\.|Learner advances|Teaching purpose:)/i;
+const NOTE=/^(Interaction note:|Design note:|No question yet\.|Learner (?:advances|taps|selects|can)|Teaching purpose:)/i;
 const LABEL=/^(On screen|Question|Answer choices|Options|Conversation|Explanation|Email card|Source card|Interaction note|Closing message)$/i;
 const RESULT_MARK=/^(?:Correct answer|Best answer|Best-supported answer|Best-supported response)\s*:\s*([A-D])/i;
 function parse(screen){
@@ -60,6 +60,7 @@ function parse(screen){
   const ans=p.match(RESULT_MARK);if(ans){d.answer=ans[1].toUpperCase();continue;}
   let m=p.match(/^(?:Feedback|Reveal)\s+for\s+([A-D])$/i);
   if(m){target='choice';chosen=m[1].toUpperCase();d.feedbackBy[chosen]=[];pending=null;continue;}
+  if(/^Card [12] reveal$/i.test(p)){target='extra';chosen='';pending=null;continue;}
   if(/^(Reveal|Feedback|Follow-up|Self-check(?: model answer)?|Alternative path|Research drawer|Correct answer explanation|Example completion)$/i.test(p)){
    target='extra';chosen='';pending=null;continue;
   }
@@ -101,7 +102,8 @@ function prose(paragraphs,visible=Infinity){
   const p=String(item);
   const named=p.match(/^([^:]{2,22}):\s+(.+)$/);
   if(named&&speakerNames.has(named[1])){
-   if(shown++>=visible)continue;
+   if(shown>=visible)break;
+   shown++;
    const who=named[1],tone=['Nina','Jonah','Tara','Leah','Malik','Oliver','Amir','Sophie'].includes(who)?'self':'other';
    html+='<div class="csw-message csw-message--'+tone+'"><span class="csw-message__avatar" aria-hidden="true">'+esc(who.slice(0,1))+'</span><div><strong>'+esc(who)+'</strong><p>'+esc(named[2])+'</p></div></div>';continue;
   }
@@ -114,6 +116,15 @@ function prose(paragraphs,visible=Infinity){
   html+='<p>'+esc(p)+'</p>';
  }
  return html;
+}
+function displayedBody(d){
+ // Source instructions often place the activity cards after "Interaction:".
+ // The player already renders those cards: do not print their answers first.
+ if(!EXPLORE[d.id]&&!SORT[d.id]&&!SEQUENCE[d.id])return d.body;
+ const raw=d.source.paragraphs||[],at=raw.findIndex(v=>/^Interaction:/i.test(v));
+ if(at<0)return d.body;
+ const activityLines=new Set(raw.slice(at+1));
+ return d.body.filter(text=>!activityLines.has(text));
 }
 function readResume(lesson){
  try{const obj=JSON.parse(sessionStorage.getItem('csw-position:'+lesson.id)||'null');return obj&&Number.isInteger(obj.index)?obj:null;}catch{return null;}
@@ -208,8 +219,8 @@ export function renderContingentWorthLesson(root,bundle,lesson,{review=false,pre
   }
   const lessonLabel=lesson.reviewDelayDays?'Review':'Lesson';
   const heading=d.title;
-  const body=d.body.filter(x=>!(/^On screen$/).test(x));
-  const dialogueCount=body.filter(p=>{const a=p.match(/^([^:]{2,22}):\s+/);return a&&speakerNames.has(a[1]);}).length;
+  const body=displayedBody(d).filter(x=>!(/^On screen$/).test(x));
+  const dialogueCount=d.body.filter(p=>{const a=p.match(/^([^:]{2,22}):\s+/);return a&&speakerNames.has(a[1]);}).length;
   let extra='';
   if(state.result&&!readyChoice(d,state)&&!SORT[d.id]&&!SEQUENCE[d.id]&&!JOURNAL[d.id]&&d.extra.length)extra='<section class="csw-feedback"><h3>What this means</h3>'+prose(d.extra)+'</section>';
   if(state.result&&readyChoice(d,state))extra=feedback(d);
