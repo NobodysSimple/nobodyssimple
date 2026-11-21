@@ -2,7 +2,7 @@
  * Public interactive course player. Also mounts the staff preview without
  * recording completions. Question content is always escaped; never raw HTML.
  */
-import {getLearnContent} from './ns-learn-content-v2.mjs?v=psy-atlas-20261120';
+import {getLearnContent} from './ns-learn-content-v2.mjs?v=csw-20261121b';
 import {renderStrategyLesson} from './ns-strategy-player.mjs?v=language-player-20261120';
 import {getLearnCourse,LEARN_COMPANIONS} from './ns-learn-catalog-v2.mjs';
 import {validateLearnBundle,gradeLearnItem,learnLessonScore,flattenLearnLessons,QUESTION_TYPES} from './ns-learn-engine-v2.mjs';
@@ -14,7 +14,7 @@ import {lessonResearchMarkup} from './ns-learn-evidence.mjs?v=case-reasoning-202
 import {createRepairQueue,addRepair,takeRepair,finishRepair,repairSummary,readSoundPreference,saveSoundPreference,playLearningCue,correctAnswerText} from './ns-learn-feedback.mjs';
 import {isLifeNode,lifeNodeMode,lifeNodeDefinition,lifeControls} from './ns-life-node-types.mjs?v=narcissism-audit-20261119';
 import {knownCastForLesson,charactersMentioned,characterPortrait} from './ns-learn-cast.mjs';
-import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs?v=psy-atlas-20261120';
+import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs?v=csw-20261121b';
 const esc=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[ch]));
 const opt=(id,label)=>'<option value="'+esc(id)+'">'+esc(label)+'</option>';
 const nodeIllustrations=Object.freeze({
@@ -44,7 +44,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  if(!lesson){root.innerHTML='<section class="ns-learn-player"><a href="'+home+'">← Back to course</a><h1>No published lesson found</h1><p>This course has no available lesson at that address.</p></section>';return;}
  if(lesson.authoringType==='contingent-self-worth'){
   root.innerHTML='<div class="ns-learn-loading" role="status">Opening this lesson…</div>';
-  import('./ns-contingent-selfworth-player.mjs?v=20261121-authored-1').then(module=>{
+  import('./ns-contingent-selfworth-player.mjs?v=csw-20261121b').then(module=>{
    if(root.isConnected)module.renderContingentWorthLesson(root,bundle,lesson,{review,preview});
   }).catch(err=>{
    if(root.isConnected)root.innerHTML='<section class="ns-learn-error"><h1>Could not open this lesson</h1><p>'+esc(String(err?.message||err))+'</p><a href="#learn/course/'+encodeURIComponent(courseId)+'">Return to course</a></section>';

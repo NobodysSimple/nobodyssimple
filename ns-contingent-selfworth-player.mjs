@@ -3,9 +3,9 @@
  * Screens are drawn from the supplied manuscript; prose is not generated at runtime.
  * Private written reflections are never saved automatically.
  */
-import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs?v=psy-atlas-20261120';
+import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs?v=csw-20261121b';
 const esc=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-const STAMP='20261121-v2';
+const STAMP='csw-20261121b';
 const ANSWERS={'1.3':'C','2.3':'B','5.4':'A'};
 const COMPARE=new Set(['5.4','6.8']);
 const JOURNAL={
@@ -133,7 +133,7 @@ function writeResume(lesson,state){
  try{sessionStorage.setItem('csw-position:'+lesson.id,JSON.stringify({index:state.index,answers:state.answers}));}catch{}
 }
 function clearResume(lesson){try{sessionStorage.removeItem('csw-position:'+lesson.id);}catch{}}
-function readyChoice(d,state){return d.options.length>=2&&!SORT[d.id]&&!SEQUENCE[d.id]&&!JOURNAL[d.id]&&!COMPARE.has(d.id);}
+function readyChoice(d,state){return d.options.length>=2&&!SORT[d.id]&&!SEQUENCE[d.id]&&!JOURNAL[d.id]&&!COMPARE.has(d.id)&&!EXPLORE[d.id];}
 export function renderContingentWorthLesson(root,bundle,lesson,{review=false,preview=false}={}){
  ensureStyle();
  if(!Array.isArray(lesson?.screens)||!lesson.screens.length){

@@ -39,7 +39,9 @@
 .csw-choices{border:0}
 .csw-choices legend{font-size:17px;font-weight:780;line-height:1.37;margin-bottom:12px;color:#254733;padding:0 4px}
 .csw-option{position:relative;display:flex;align-items:flex-start;gap:13px;border:1.5px solid #cadeda;border-radius:13px;background:#fff;margin:10px 0;padding:14px;cursor:pointer;line-height:1.5;box-shadow:0 2px 0 #e8f0ea;font-size:15px}
-.csw-option input{position:absolute;opacity:0;pointer-events:none}
+.csw-option input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;clip-path:inset(50%)}
+.csw-option:focus-within{outline:3px solid #1667b7;outline-offset:2px}
+.csw-option{scroll-margin-bottom:100px}
 .csw-option__letter{display:grid;place-items:center;flex:none;width:30px;height:30px;font-weight:780;border-radius:8px;background:#f1f6f1;border:1px solid #d5e3d4;color:#497151}
 .csw-option.is-selected{border-color:#64b8a0;background:#ecf8f7;box-shadow:0 0 0 2px #c4e7db}
 .csw-option.is-selected .csw-option__letter{background:#bdebc0;border-color:#9bc99b;color:#225b31}

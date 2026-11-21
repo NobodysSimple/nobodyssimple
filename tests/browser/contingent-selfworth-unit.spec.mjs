@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 test('the complete contingent self-worth unit opens as a playable first course unit',async({page})=>{
  await page.goto('/index.html#learn/course/self-esteem');
  await expect(page.getByText('When your worth feels like it depends on something').first()).toBeVisible({timeout:30000});
- await expect(page.locator('a[href="#learn/lesson/self-esteem/csw-lesson-1"]')).toBeVisible();
+ await expect(page.locator('a[href="#learn/lesson/self-esteem/csw-lesson-1"]').first()).toBeVisible();
  await page.goto('/index.html#learn/lesson/self-esteem/csw-lesson-1');
  await expect(page.locator('.csw-unit')).toBeVisible({timeout:30000});
  await expect(page.locator('.csw-heading h1')).toContainText('The rejection');
@@ -20,7 +20,7 @@ test('an authored choice reveals source-specific feedback and can be continued',
  await expect(page.locator('.csw-unit')).toBeVisible({timeout:30000});
  await page.locator('[data-next]').click();
  await expect(page.locator('.csw-choices input')).toHaveCount(3);
- await page.locator('input[name="csw-choice"][value="C"]').check();
+ await page.locator('.csw-option').filter({has:page.locator('input[value="C"]')}).click();
  await page.locator('[data-check]').click();
  await expect(page.locator('.csw-feedback')).toContainText('exam');
 });
@@ -49,7 +49,7 @@ test('the first entire authored lesson can be completed with different activity 
   if(await sequence.count()){await sequence.first().click();continue;}
   if(await page.locator('[data-check-sequence]').count()){await page.locator('[data-check-sequence]').click();continue;}
   if(await page.locator('[data-check]').count()){
-   await page.locator('input[name="csw-choice"]').first().check();
+   await page.locator('.csw-option').first().click();
    await page.locator('[data-check]').click();continue;
   }
   if(await page.locator('[data-next]').count()){await page.locator('[data-next]').click();continue;}
