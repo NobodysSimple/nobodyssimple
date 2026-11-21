@@ -155,6 +155,41 @@
     </nav>
 
     <noscript>Please enable JavaScript to use the library and interactive tools.</noscript>
-        <script type="module" src="site.mjs?v=language-player-20261120"></script>
+        <script>
+    // An unhandled module failure must never leave visitors on a permanent loading screen.
+    (() => {
+      const startupErrors = [];
+      const record = value => { if (value) startupErrors.push(String(value).slice(0, 320)); };
+      window.addEventListener('error', event => record(event.message || event.error?.message), true);
+      window.addEventListener('unhandledrejection', event => record(event.reason?.message || event.reason), true);
+      window.setTimeout(() => {
+        const root = document.querySelector('main');
+        const placeholder = root?.querySelector('.loading');
+        if (!placeholder || !placeholder.textContent.includes('Opening Nobody')) return;
+        const section = document.createElement('section');
+        section.style.cssText = 'max-width:34rem;margin:3rem auto;padding:1.5rem;text-align:center';
+        const heading = document.createElement('h1');
+        heading.textContent = 'This page could not open';
+        const detail = document.createElement('p');
+        detail.textContent = 'The website did not finish starting. Your account and saved work have not been erased.';
+        const retry = document.createElement('button');
+        retry.type = 'button';
+        retry.className = 'button';
+        retry.textContent = 'Try opening again';
+        retry.addEventListener('click', () => location.reload());
+        const more = document.createElement('details');
+        more.style.cssText = 'margin-top:1.5rem;text-align:left';
+        const summary = document.createElement('summary');
+        summary.textContent = 'Technical details';
+        const message = document.createElement('pre');
+        message.style.cssText = 'white-space:pre-wrap;overflow-wrap:anywhere;font-size:0.8rem';
+        message.textContent = startupErrors.slice(-3).join('\n') || 'No browser error was reported.';
+        more.append(summary, message);
+        section.append(heading, detail, retry, more);
+        root.replaceChildren(section);
+      }, 15000);
+    })();
+    </script>
+        <script type="module" src="site.mjs?v=bootfix-20261121"></script>
   </body>
 </html>
